@@ -209,14 +209,16 @@
   font-size: 26rpx;
   line-height: 1.65;
   font-style: italic;
+  font-family: "Kaiti SC", KaiTi, serif;
   letter-spacing: 0;
 }
 
 .reading-article-title {
   color: #17314f;
-  font-size: 38rpx;
+  font-size: 40rpx;
   line-height: 1.38;
   font-weight: 800;
+  font-family: Georgia, "Songti SC", STSong, serif;
   text-align: center;
   letter-spacing: 0;
 }
@@ -227,8 +229,46 @@
   font-size: 27rpx;
   line-height: 1.5;
   font-style: italic;
+  font-family: Georgia, "Kaiti SC", KaiTi, serif;
   text-align: center;
   letter-spacing: 0;
+}
+
+.theme-warm.reading-detail .reading-section-heading {
+  color: #8f5f56;
+}
+
+.theme-warm.reading-detail .reading-source-structure {
+  border-bottom-color: #efc8bd;
+}
+
+.theme-warm.reading-detail .reading-directions {
+  border-left-color: #df8068;
+  background: #fff5f0;
+  color: #614f4b;
+}
+
+.theme-warm.reading-detail .reading-article-title {
+  color: #17314f;
+}
+
+.theme-warm.reading-detail .reading-article-subtitle {
+  color: #8a6a65;
+}
+
+.theme-warm.reading-detail .cloze-inline {
+  min-width: 128rpx;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.theme-warm.reading-detail .cloze-inline-input {
+  padding: 0 10rpx;
+  border: 2rpx solid #d99a89;
+  border-radius: 8rpx;
+  background: #fffdfb;
 }
 
 .passage-paragraph {
@@ -1641,6 +1681,29 @@
   box-shadow: none;
 }
 
+.library-reading-detail .reading-section-heading {
+  color: #80613d;
+}
+
+.library-reading-detail .reading-source-structure {
+  border-bottom-color: var(--lib-rule);
+}
+
+.library-reading-detail .reading-directions {
+  border-left-color: var(--lib-accent-brass);
+  background: var(--lib-bg-paper-muted);
+  color: var(--lib-text-secondary);
+}
+
+.library-reading-detail .reading-article-title {
+  color: var(--lib-text-primary);
+  font-family: "Songti SC", STSong, serif;
+}
+
+.library-reading-detail .reading-article-subtitle {
+  color: var(--lib-text-secondary);
+}
+
 .library-reading-detail .passage-text,
 .library-reading-detail .cloze-passage-text {
   color: var(--lib-text-primary);
@@ -1724,6 +1787,7 @@
 
 .library-cloze-inline {
   min-width: 140rpx;
+  padding: 0 4rpx;
   border-radius: 0;
   background: transparent;
   border: 0;
@@ -2240,6 +2304,38 @@
 .theme-voyage .passage-head { padding-right: 74rpx; border-bottom: 3rpx double rgba(122,78,34,.38); }
 .theme-voyage .passage-meta { color: var(--voyage-brass); font-weight: 700; }
 .theme-voyage .passage-title { color: var(--voyage-ink); font-family: "Songti SC", STSong, serif; font-weight: 800; }
+.theme-voyage .reading-section-heading {
+  color: #795327;
+}
+.theme-voyage .reading-source-structure {
+  border-bottom-color: #b58a52;
+}
+.theme-voyage .reading-directions {
+  border-left-color: var(--voyage-red);
+  background: #f4dfae;
+  color: #5f4930;
+}
+.theme-voyage .reading-article-title {
+  color: var(--voyage-ink);
+  font-family: Georgia, "Songti SC", serif;
+}
+.theme-voyage .reading-article-subtitle {
+  color: #795f42;
+}
+.theme-voyage .cloze-inline {
+  min-width: 132rpx;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.theme-voyage .cloze-inline-input {
+  padding: 0 10rpx;
+  border: 2rpx solid #9d6833;
+  border-radius: 5rpx;
+  background: #fff4d0;
+  color: var(--voyage-ink);
+}
 .theme-voyage .paper-body {
   border-color: rgba(141, 92, 39, 0.28);
   background:
@@ -2399,6 +2495,37 @@
 
 .theme-dragon .passage-meta { color: #6b6680; }
 .theme-dragon .passage-title { color: #102e62; font-weight: 800; }
+.theme-dragon .reading-section-heading {
+  color: #102e62;
+}
+.theme-dragon .reading-source-structure {
+  border-bottom-color: rgba(16, 46, 98, 0.28);
+}
+.theme-dragon .reading-directions {
+  border-left-color: #f45a16;
+  background: #fff3c4;
+  color: #244573;
+}
+.theme-dragon .reading-article-title {
+  color: #102e62;
+}
+.theme-dragon .reading-article-subtitle {
+  color: #655f73;
+}
+.theme-dragon .cloze-inline {
+  min-width: 132rpx;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.theme-dragon .cloze-inline-input {
+  padding: 0 10rpx;
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fffef7;
+  color: #102e62;
+}
 
 .theme-dragon .paper-body {
   border: 2rpx solid rgba(16, 46, 98, 0.22);

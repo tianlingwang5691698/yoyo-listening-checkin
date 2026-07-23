@@ -207,9 +207,14 @@ function normalizePassage(passage, answers, submitted, review) {
     });
   });
   const passageId = structuredPassage._id || structuredPassage.id;
+  const isIeltsPassage = String(passageId || '').indexOf('ielts-') === 0;
+  const headerTitle = isIeltsPassage
+    ? [structuredPassage.paperTitle, structuredPassage.sectionLabel].filter(Boolean).join(' · ')
+    : structuredPassage.title;
   const paragraphRanges = buildReadingParagraphRanges(passageId, cleanPassageText, questions, ieltsParagraphMetadata[passageId]);
   return Object.assign({}, structuredPassage, {
     passage: cleanPassageText,
+    headerTitle: headerTitle || structuredPassage.title,
     directions: String(structuredPassage.directions || '').trim(),
     sectionHeading: String(structuredPassage.sectionHeading || '').trim(),
     articleTitle: String(structuredPassage.articleTitle || '').trim(),

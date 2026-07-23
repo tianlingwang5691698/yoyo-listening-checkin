@@ -25,6 +25,10 @@ ARTICLE_TITLES = {
     'sh-autumn-2025-reading-c': 'How to Save Outdoor Recess',
     'sh-em2-2024-松江-reading-a': 'How to Choose books you’ll love',
     'sh-em2-2019-a-10-qingpu': 'Griffith Observatory (天文台)',
+    'sh-em1-2020-普陀-reading-b': 'FINDING FRIENDS ONLINE',
+    'sh-em1-2020-虹口-reading-b': 'When is the best time to ...',
+    'sh-em1-2020-静安-reading-b': 'Thing to know before you go out in the cold',
+    'sh-em1-2024-浦东-reading-b': 'Company Creates First 3D-Printed Fish',
 }
 
 ARTICLE_SUBTITLES = {}
@@ -40,6 +44,7 @@ PAGE_NOISE_RE = re.compile(
 
 SCORE_PREFIX_RE = re.compile(
     r'^\s*(?:'
+    r'[）)]\s*[（(]\s*\d+\s*分\s*[）)]|'
     r'[（(]\s*(?:_+\s*\d+\s*_+|\d+)\s*分\s*[）)]|'
     r'[（(]\s*每题\s*(?:_+\s*\d+\s*_+|\d+(?:\.\d+)?)\s*分\s*[；;]\s*共\s*\d+\s*分\s*[）)]|'
     r'\d+\s*[.．、]\s*[（(]\s*\d+(?:\.\d+)?\s*分\s*[）)]'
@@ -87,6 +92,55 @@ FEWEST_WORDS_RE = re.compile(
     r'^\s*(?P<directions>(?:in\s+)?the\s+fewest\s+possible\s+words\s*[.．]?)\s*',
     re.I,
 )
+
+TRUNCATED_CLOZE_DIRECTIONS_RE = re.compile(
+    r'^\s*(?:answer\s+)?and\s+complete\s+the\s+passage\s*'
+    r'(?P<directions>[（(]\s*选择最恰当的选项完成短文\s*[）)])\s*',
+    re.I,
+)
+
+JUNIOR_FILL_DIRECTIONS_RE = re.compile(
+    r'^\s*(?P<directions>Read\s+the\s+passage\s+and\s+fill\s+in\s+the\s+blanks'
+    r'\s+with\s+proper\s+words\s*[（(][^）)]*首字母已给[^）)]*[）)])\s*',
+    re.I,
+)
+
+JUNIOR_CHINESE_DIRECTIONS_RE = re.compile(
+    r'^\s*(?P<directions>'
+    r'选择最恰当的选项完成短文[.。]?'
+    r'|在短文的空格内填入适当的词\s*[,，]?\s*使其内容通顺[.。,，]?\s*'
+    r'每空格限填(?:一词|一次)\s*[,，]?\s*首字母已给[.。]?'
+    r')\s*',
+    re.I,
+)
+
+CROSS_SECTION_PREFIX_RE = {
+    'sh-em1-2022-长宁-reading-d': re.compile(
+        r'^[\s\S]*?\bD\s*[.．、)]\s*(?P<directions>Answer\s+the\s+questions\s*[.．]?)'
+        r'(?:\s*[（(][^）)]*回答问题[^）)]*[）)])?'
+        r'(?:\s*[（(]\s*\d+\s*分\s*[）)])?\s*',
+        re.I,
+    ),
+    'sh-em1-2026-金山-reading-d': re.compile(
+        r'^[\s\S]*?\bD\s*[.．、)]\s*(?P<directions>Answer\s+the\s+questions\s*[.．]?)'
+        r'(?:\s*[（(][^）)]*回答问题[^）)]*[）)])?'
+        r'(?:\s*[（(]\s*\d+\s*分\s*[）)])?\s*',
+        re.I,
+    ),
+}
+
+CROSS_SECTION_SUFFIX_RE = {
+    'sh-em1-2022-虹口-reading-c': re.compile(
+        r'\s*\bD\s*[.．、)]\s*Answer\s+the\s+questions[\s\S]*$',
+        re.I,
+    ),
+    'sh-em2-2012-宝山嘉定-reading-c': re.compile(
+        r'\s*\bD\s*[.．、)]\s*Answer\s+the\s+questions[\s\S]*$',
+        re.I,
+    ),
+}
+
+SOURCE_LINK_PREFIX_RE = re.compile(r'^\s*HYPERLINK\s+"https?://[^"]+"\s*', re.I)
 
 
 def compact(value: str) -> str:
@@ -162,6 +216,53 @@ def split_paragraphs(source: str) -> list[str]:
     return [item for item in paragraphs if item]
 
 
+def has_ielts_labelled_body_after_lead(paragraphs: list[str]) -> bool:
+    labels = []
+    for paragraph in paragraphs[1:]:
+        match = re.match(r'^\s*([A-Z])(?:[.、：:]?\s+)', paragraph)
+        if match:
+            labels.append(match.group(1))
+    if 'A' not in labels:
+        return False
+    start = labels.index('A')
+    expected = ord('A')
+    matched = 0
+    for label in labels[start:]:
+        if ord(label) == expected:
+            matched += 1
+            expected += 1
+    return matched >= 2
+
+
+def merge_ielts_standalone_labels(paragraphs: list[str]) -> list[str]:
+    merged = []
+    index = 0
+    while index < len(paragraphs):
+        paragraph = paragraphs[index]
+        if re.fullmatch(r'[A-Z]', paragraph) and index + 1 < len(paragraphs):
+            merged.append(compact(f'{paragraph} {paragraphs[index + 1]}'))
+            index += 2
+            continue
+        merged.append(paragraph)
+        index += 1
+    return merged
+
+
+def split_ielts_subtitle(paragraphs: list[str]) -> tuple[str, list[str]]:
+    paragraphs = merge_ielts_standalone_labels(paragraphs)
+    if len(paragraphs) < 2:
+        return '', paragraphs
+    first = paragraphs[0]
+    has_labelled_body = has_ielts_labelled_body_after_lead(paragraphs)
+    is_short_unlabelled_lead = (
+        len(first) <= 180
+        and not re.search(r'[.!?。！？]["\'”’)]*$', first)
+    )
+    if (has_labelled_body and len(first) <= 220) or is_short_unlabelled_lead:
+        return first, paragraphs[1:]
+    return '', paragraphs
+
+
 def structure_reading_item(item: dict) -> tuple[dict, dict]:
     next_item = dict(item)
     item_id = str(item.get('_id') or item.get('id') or '')
@@ -172,10 +273,32 @@ def structure_reading_item(item: dict) -> tuple[dict, dict]:
     section_heading = compact(item.get('sectionHeading'))
     article_title = ARTICLE_TITLES.get(item_id, '') or compact(item.get('articleTitle'))
     article_subtitle = ARTICLE_SUBTITLES.get(item_id, '') or compact(item.get('articleSubtitle'))
+    is_ielts = item_id.startswith('ielts-')
+    if is_ielts and not article_title:
+        title_parts = [compact(part) for part in str(item.get('title') or '').splitlines() if compact(part)]
+        article_title = title_parts[0] if title_parts else ''
+        if len(title_parts) > 1 and not article_subtitle:
+            article_subtitle = ' '.join(title_parts[1:])
+
+    cross_section_re = CROSS_SECTION_PREFIX_RE.get(item_id)
+    if cross_section_re:
+        cross_section_match = cross_section_re.match(value)
+        if cross_section_match:
+            section_heading = str(item.get('section') or 'D').upper()
+            directions = compact(cross_section_match.group('directions'))
+            pollution.extend(['cross-section-content', 'section-heading', 'question-directions'])
+            value = value[cross_section_match.end():]
+    cross_section_suffix_re = CROSS_SECTION_SUFFIX_RE.get(item_id)
+    if cross_section_suffix_re and cross_section_suffix_re.search(value):
+        pollution.append('cross-section-content')
+        value = cross_section_suffix_re.sub('', value)
 
     if PAGE_NOISE_RE.search(value):
         pollution.append('page-watermark')
         value = PAGE_NOISE_RE.sub(' ', value)
+    if SOURCE_LINK_PREFIX_RE.match(value):
+        pollution.append('source-link')
+        value = SOURCE_LINK_PREFIX_RE.sub('', value)
 
     score_match = SCORE_PREFIX_RE.match(value)
     if score_match:
@@ -201,7 +324,13 @@ def structure_reading_item(item: dict) -> tuple[dict, dict]:
         pollution.append('directions')
         value = value[directions_match.end():]
     elif item_id.startswith(('sh-em1-', 'sh-em2-')):
-        junior_match = PLAIN_JUNIOR_DIRECTIONS_RE.match(value) or JUNIOR_DIRECTIONS_RE.match(value)
+        junior_match = (
+            TRUNCATED_CLOZE_DIRECTIONS_RE.match(value)
+            or JUNIOR_FILL_DIRECTIONS_RE.match(value)
+            or JUNIOR_CHINESE_DIRECTIONS_RE.match(value)
+            or PLAIN_JUNIOR_DIRECTIONS_RE.match(value)
+            or JUNIOR_DIRECTIONS_RE.match(value)
+        )
         if junior_match and junior_match.end() > 0:
             extracted = compact(junior_match.groupdict().get('directions'))
             if extracted:
@@ -229,11 +358,15 @@ def structure_reading_item(item: dict) -> tuple[dict, dict]:
     if value != before_title:
         pollution.append('article-title')
 
-    value = compact(value)
+    value = compact(value) if not is_ielts else str(value or '').strip()
     paragraphs = split_paragraphs(value)
+    if is_ielts and not article_subtitle:
+        article_subtitle, paragraphs = split_ielts_subtitle(paragraphs)
+        if article_subtitle:
+            pollution.append('article-subtitle')
     passage = '\n\n'.join(paragraphs)
     was_structured = any(key in item for key in ('directions', 'sectionHeading', 'articleTitle', 'articleSubtitle', 'passageParagraphs'))
-    affected = bool(pollution or was_structured)
+    affected = bool(pollution or was_structured or is_ielts)
     if not affected:
         return next_item, {'affected': False, 'pollution': []}
 

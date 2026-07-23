@@ -10,6 +10,8 @@
 
 - 一模、二模阅读统一使用 `reading-structured-v1`，拆分 `directions / sectionHeading / articleTitle / articleSubtitle / passageParagraphs[] / passage`。
 - `answer（根据短文内容……）`、`A. Choose the best answer`、分值、页码不得成为正文第 1 段；明确标题从正文移入 `articleTitle`，不明确时留空。
+- `and complete the passage（选择最恰当的选项完成短文）`、`Read the passage and fill in...`、中文首字母填空说明统一进入 `directions`；残缺英文不补写，只保留可确认的完整说明。
+- 同一条记录混入上一篇 C 结尾后再出现 `D. Answer the questions.` 时，只保留 D 标志后的正文，并把 Section 与说明分字段保存；门禁固定检查跨 Section 污染为 0。
 - `passageParagraphs[]` 只存真实正文，`passage` 由段落双换行连接；生成器和正式 JSON 必须同时通过正文污染为 0 的回归门禁。
 
 ## 线上增量上传总规则

@@ -7,14 +7,17 @@
     "passageParagraphs",
     "passage"
   ],
+  "cloudSnapshot": "data/cloud-backups/2026-07-24-junior-ielts-structure",
   "groups": {
     "junior-em1": {
-      "total": 312,
-      "affected": 115,
+      "total": 338,
+      "affected": 128,
       "pollutionTypes": {
-        "question-directions": 96,
-        "score-prefix": 19,
-        "section-heading": 1
+        "article-title": 4,
+        "cross-section-content": 3,
+        "question-directions": 93,
+        "score-prefix": 37,
+        "section-heading": 3
       },
       "ids": [
         "sh-em1-2014-宝山-reading-a",
@@ -55,93 +58,110 @@
         "sh-em1-2019-虹口-reading-a",
         "sh-em1-2019-闵行-reading-a",
         "sh-em1-2019-黄浦-reading-a",
-        "sh-em1-2020-虹口-reading-a",
-        "sh-em1-2020-静安-reading-a",
-        "sh-em1-2021-嘉定-reading-a",
-        "sh-em1-2021-奉贤-reading-a",
-        "sh-em1-2021-宝山-reading-a",
-        "sh-em1-2021-崇明-reading-a",
-        "sh-em1-2021-徐汇-reading-a",
-        "sh-em1-2021-普陀-reading-a",
-        "sh-em1-2021-杨浦-reading-a",
-        "sh-em1-2021-松江-reading-a",
-        "sh-em1-2021-浦东-reading-a",
-        "sh-em1-2021-虹口-reading-a",
-        "sh-em1-2021-金山-reading-a",
-        "sh-em1-2021-闵行-reading-a",
-        "sh-em1-2021-青浦-reading-a",
-        "sh-em1-2021-静安-reading-a",
-        "sh-em1-2021-黄浦-reading-a",
-        "sh-em1-2023-徐汇-reading-a",
-        "sh-em1-2024-嘉定-reading-a",
-        "sh-em1-2024-浦东-reading-a",
-        "sh-em1-2025-松江-reading-a",
-        "sh-em1-2025-金山-reading-a",
         "sh-em1-2020-嘉定-reading-a",
+        "sh-em1-2020-嘉定-reading-c",
         "sh-em1-2020-奉贤-reading-a",
         "sh-em1-2020-奉贤-reading-b",
         "sh-em1-2020-宝山-reading-a",
+        "sh-em1-2020-宝山-reading-c",
         "sh-em1-2020-崇明-reading-a",
         "sh-em1-2020-崇明-reading-b",
         "sh-em1-2020-普陀-reading-a",
         "sh-em1-2020-普陀-reading-b",
         "sh-em1-2020-杨浦-reading-a",
+        "sh-em1-2020-杨浦-reading-c",
+        "sh-em1-2020-虹口-reading-a",
         "sh-em1-2020-虹口-reading-b",
+        "sh-em1-2020-长宁-reading-b",
+        "sh-em1-2020-闵行-reading-c",
         "sh-em1-2020-青浦-reading-a",
         "sh-em1-2020-青浦-reading-b",
+        "sh-em1-2020-静安-reading-a",
         "sh-em1-2020-静安-reading-b",
         "sh-em1-2020-黄浦-reading-b",
+        "sh-em1-2021-虹口-reading-a",
         "sh-em1-2021-虹口-reading-b",
         "sh-em1-2021-虹口-reading-c",
+        "sh-em1-2022-嘉定-reading-c",
+        "sh-em1-2022-奉贤-reading-d",
+        "sh-em1-2022-宝山-reading-c",
+        "sh-em1-2022-崇明-reading-c",
+        "sh-em1-2022-普陀-reading-d",
+        "sh-em1-2022-虹口-reading-c",
         "sh-em1-2022-金山-reading-a",
+        "sh-em1-2022-长宁-reading-d",
+        "sh-em1-2022-闵行-reading-c",
         "sh-em1-2022-青浦-reading-a",
+        "sh-em1-2022-黄浦-reading-d",
         "sh-em1-2023-嘉定-reading-a",
         "sh-em1-2023-嘉定-reading-b",
         "sh-em1-2023-宝山-reading-a",
         "sh-em1-2023-宝山-reading-b",
+        "sh-em1-2023-宝山-reading-c",
         "sh-em1-2023-宝山-reading-d",
+        "sh-em1-2023-徐汇-reading-a",
         "sh-em1-2023-徐汇-reading-b",
         "sh-em1-2023-徐汇-reading-c",
         "sh-em1-2023-徐汇-reading-d",
+        "sh-em1-2023-松江-reading-c",
         "sh-em1-2023-浦东-reading-b",
         "sh-em1-2023-虹口-reading-a",
         "sh-em1-2023-虹口-reading-b",
         "sh-em1-2023-金山-reading-a",
         "sh-em1-2023-金山-reading-b",
+        "sh-em1-2023-金山-reading-c",
         "sh-em1-2023-青浦-reading-a",
         "sh-em1-2023-青浦-reading-b",
         "sh-em1-2023-静安-reading-b",
         "sh-em1-2023-黄浦-reading-a",
         "sh-em1-2023-黄浦-reading-b",
         "sh-em1-2023-黄浦-reading-d",
+        "sh-em1-2024-嘉定-reading-a",
         "sh-em1-2024-嘉定-reading-b",
+        "sh-em1-2024-浦东-reading-a",
+        "sh-em1-2024-浦东-reading-b",
         "sh-em1-2024-浦东-reading-d",
         "sh-em1-2024-金山-reading-d",
         "sh-em1-2024-长宁-reading-a",
         "sh-em1-2024-长宁-reading-d",
+        "sh-em1-2024-青浦-reading-c",
         "sh-em1-2024-静安-reading-d",
         "sh-em1-2024-黄浦-reading-d",
         "sh-em1-2025-嘉定-reading-a",
+        "sh-em1-2025-奉贤-reading-c",
         "sh-em1-2025-宝山-reading-d",
         "sh-em1-2025-崇明-reading-d",
         "sh-em1-2025-徐汇-reading-b",
         "sh-em1-2025-徐汇-reading-d",
         "sh-em1-2025-普陀-reading-c",
         "sh-em1-2025-普陀-reading-d",
+        "sh-em1-2025-杨浦-reading-c",
+        "sh-em1-2025-松江-reading-a",
+        "sh-em1-2025-金山-reading-a",
+        "sh-em1-2025-长宁-reading-c",
         "sh-em1-2025-长宁-reading-d",
+        "sh-em1-2025-青浦-reading-c",
+        "sh-em1-2025-静安-reading-c",
         "sh-em1-2026-嘉定-reading-a",
         "sh-em1-2026-嘉定-reading-b",
-        "sh-em1-2026-金山-reading-a"
+        "sh-em1-2026-金山-reading-a",
+        "sh-em1-2026-金山-reading-d",
+        "sh-em1-2026-闵行-reading-c",
+        "sh-em1-2021-崇明-reading-a"
       ]
     },
     "junior-em2": {
       "total": 441,
-      "affected": 2,
+      "affected": 3,
       "pollutionTypes": {
         "article-title": 2,
-        "question-directions": 1
+        "cross-section-content": 1,
+        "question-directions": 2,
+        "section-heading": 1,
+        "source-link": 1
       },
       "ids": [
+        "sh-em2-2012-宝山嘉定-reading-c",
         "sh-em2-2019-a-10-qingpu",
         "sh-em2-2024-松江-reading-a"
       ]
@@ -208,6 +228,260 @@
         "sh-autumn-2024-reading-c",
         "sh-autumn-2025-grammar-vocabulary-a",
         "sh-autumn-2025-reading-c"
+      ]
+    },
+    "ielts-10": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 7
+      },
+      "ids": [
+        "ielts-academic-10-test-1-reading-passage-1",
+        "ielts-academic-10-test-1-reading-passage-2",
+        "ielts-academic-10-test-1-reading-passage-3",
+        "ielts-academic-10-test-2-reading-passage-1",
+        "ielts-academic-10-test-2-reading-passage-2",
+        "ielts-academic-10-test-2-reading-passage-3",
+        "ielts-academic-10-test-3-reading-passage-1",
+        "ielts-academic-10-test-3-reading-passage-2",
+        "ielts-academic-10-test-3-reading-passage-3",
+        "ielts-academic-10-test-4-reading-passage-1",
+        "ielts-academic-10-test-4-reading-passage-2",
+        "ielts-academic-10-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-11": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 4
+      },
+      "ids": [
+        "ielts-academic-11-test-1-reading-passage-1",
+        "ielts-academic-11-test-1-reading-passage-2",
+        "ielts-academic-11-test-1-reading-passage-3",
+        "ielts-academic-11-test-2-reading-passage-1",
+        "ielts-academic-11-test-2-reading-passage-2",
+        "ielts-academic-11-test-2-reading-passage-3",
+        "ielts-academic-11-test-3-reading-passage-1",
+        "ielts-academic-11-test-3-reading-passage-2",
+        "ielts-academic-11-test-3-reading-passage-3",
+        "ielts-academic-11-test-4-reading-passage-1",
+        "ielts-academic-11-test-4-reading-passage-2",
+        "ielts-academic-11-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-12": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 5,
+        "article-title": 1
+      },
+      "ids": [
+        "ielts-academic-12-test-5-reading-passage-1",
+        "ielts-academic-12-test-5-reading-passage-2",
+        "ielts-academic-12-test-5-reading-passage-3",
+        "ielts-academic-12-test-6-reading-passage-1",
+        "ielts-academic-12-test-6-reading-passage-2",
+        "ielts-academic-12-test-6-reading-passage-3",
+        "ielts-academic-12-test-7-reading-passage-1",
+        "ielts-academic-12-test-7-reading-passage-2",
+        "ielts-academic-12-test-7-reading-passage-3",
+        "ielts-academic-12-test-8-reading-passage-1",
+        "ielts-academic-12-test-8-reading-passage-2",
+        "ielts-academic-12-test-8-reading-passage-3"
+      ]
+    },
+    "ielts-13": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 4
+      },
+      "ids": [
+        "ielts-academic-13-test-1-reading-passage-1",
+        "ielts-academic-13-test-1-reading-passage-2",
+        "ielts-academic-13-test-1-reading-passage-3",
+        "ielts-academic-13-test-2-reading-passage-1",
+        "ielts-academic-13-test-2-reading-passage-2",
+        "ielts-academic-13-test-2-reading-passage-3",
+        "ielts-academic-13-test-3-reading-passage-1",
+        "ielts-academic-13-test-3-reading-passage-2",
+        "ielts-academic-13-test-3-reading-passage-3",
+        "ielts-academic-13-test-4-reading-passage-1",
+        "ielts-academic-13-test-4-reading-passage-2",
+        "ielts-academic-13-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-14": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 5
+      },
+      "ids": [
+        "ielts-academic-14-test-1-reading-passage-1",
+        "ielts-academic-14-test-1-reading-passage-2",
+        "ielts-academic-14-test-1-reading-passage-3",
+        "ielts-academic-14-test-2-reading-passage-1",
+        "ielts-academic-14-test-2-reading-passage-2",
+        "ielts-academic-14-test-2-reading-passage-3",
+        "ielts-academic-14-test-3-reading-passage-1",
+        "ielts-academic-14-test-3-reading-passage-2",
+        "ielts-academic-14-test-3-reading-passage-3",
+        "ielts-academic-14-test-4-reading-passage-1",
+        "ielts-academic-14-test-4-reading-passage-2",
+        "ielts-academic-14-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-15": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 4
+      },
+      "ids": [
+        "ielts-academic-15-test-1-reading-passage-1",
+        "ielts-academic-15-test-1-reading-passage-2",
+        "ielts-academic-15-test-1-reading-passage-3",
+        "ielts-academic-15-test-2-reading-passage-1",
+        "ielts-academic-15-test-2-reading-passage-2",
+        "ielts-academic-15-test-2-reading-passage-3",
+        "ielts-academic-15-test-3-reading-passage-1",
+        "ielts-academic-15-test-3-reading-passage-2",
+        "ielts-academic-15-test-3-reading-passage-3",
+        "ielts-academic-15-test-4-reading-passage-1",
+        "ielts-academic-15-test-4-reading-passage-2",
+        "ielts-academic-15-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-16": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 3
+      },
+      "ids": [
+        "ielts-academic-16-test-1-reading-passage-1",
+        "ielts-academic-16-test-1-reading-passage-2",
+        "ielts-academic-16-test-1-reading-passage-3",
+        "ielts-academic-16-test-2-reading-passage-1",
+        "ielts-academic-16-test-2-reading-passage-2",
+        "ielts-academic-16-test-2-reading-passage-3",
+        "ielts-academic-16-test-3-reading-passage-1",
+        "ielts-academic-16-test-3-reading-passage-2",
+        "ielts-academic-16-test-3-reading-passage-3",
+        "ielts-academic-16-test-4-reading-passage-1",
+        "ielts-academic-16-test-4-reading-passage-2",
+        "ielts-academic-16-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-17": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 4
+      },
+      "ids": [
+        "ielts-academic-17-test-1-reading-passage-1",
+        "ielts-academic-17-test-1-reading-passage-2",
+        "ielts-academic-17-test-1-reading-passage-3",
+        "ielts-academic-17-test-2-reading-passage-1",
+        "ielts-academic-17-test-2-reading-passage-2",
+        "ielts-academic-17-test-2-reading-passage-3",
+        "ielts-academic-17-test-3-reading-passage-1",
+        "ielts-academic-17-test-3-reading-passage-2",
+        "ielts-academic-17-test-3-reading-passage-3",
+        "ielts-academic-17-test-4-reading-passage-1",
+        "ielts-academic-17-test-4-reading-passage-2",
+        "ielts-academic-17-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-18": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 6
+      },
+      "ids": [
+        "ielts-academic-18-test-1-reading-passage-1",
+        "ielts-academic-18-test-1-reading-passage-2",
+        "ielts-academic-18-test-1-reading-passage-3",
+        "ielts-academic-18-test-2-reading-passage-1",
+        "ielts-academic-18-test-2-reading-passage-2",
+        "ielts-academic-18-test-2-reading-passage-3",
+        "ielts-academic-18-test-3-reading-passage-1",
+        "ielts-academic-18-test-3-reading-passage-2",
+        "ielts-academic-18-test-3-reading-passage-3",
+        "ielts-academic-18-test-4-reading-passage-1",
+        "ielts-academic-18-test-4-reading-passage-2",
+        "ielts-academic-18-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-19": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 4
+      },
+      "ids": [
+        "ielts-academic-19-test-1-reading-passage-1",
+        "ielts-academic-19-test-1-reading-passage-2",
+        "ielts-academic-19-test-1-reading-passage-3",
+        "ielts-academic-19-test-2-reading-passage-1",
+        "ielts-academic-19-test-2-reading-passage-2",
+        "ielts-academic-19-test-2-reading-passage-3",
+        "ielts-academic-19-test-3-reading-passage-1",
+        "ielts-academic-19-test-3-reading-passage-2",
+        "ielts-academic-19-test-3-reading-passage-3",
+        "ielts-academic-19-test-4-reading-passage-1",
+        "ielts-academic-19-test-4-reading-passage-2",
+        "ielts-academic-19-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-20": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 4,
+        "article-title": 2
+      },
+      "ids": [
+        "ielts-academic-20-test-1-reading-passage-1",
+        "ielts-academic-20-test-1-reading-passage-2",
+        "ielts-academic-20-test-1-reading-passage-3",
+        "ielts-academic-20-test-2-reading-passage-1",
+        "ielts-academic-20-test-2-reading-passage-2",
+        "ielts-academic-20-test-2-reading-passage-3",
+        "ielts-academic-20-test-3-reading-passage-1",
+        "ielts-academic-20-test-3-reading-passage-2",
+        "ielts-academic-20-test-3-reading-passage-3",
+        "ielts-academic-20-test-4-reading-passage-1",
+        "ielts-academic-20-test-4-reading-passage-2",
+        "ielts-academic-20-test-4-reading-passage-3"
+      ]
+    },
+    "ielts-21": {
+      "total": 12,
+      "affected": 12,
+      "pollutionTypes": {
+        "article-subtitle": 3
+      },
+      "ids": [
+        "ielts-academic-21-test-1-reading-passage-1",
+        "ielts-academic-21-test-1-reading-passage-2",
+        "ielts-academic-21-test-1-reading-passage-3",
+        "ielts-academic-21-test-2-reading-passage-1",
+        "ielts-academic-21-test-2-reading-passage-2",
+        "ielts-academic-21-test-2-reading-passage-3",
+        "ielts-academic-21-test-3-reading-passage-1",
+        "ielts-academic-21-test-3-reading-passage-2",
+        "ielts-academic-21-test-3-reading-passage-3",
+        "ielts-academic-21-test-4-reading-passage-1",
+        "ielts-academic-21-test-4-reading-passage-2",
+        "ielts-academic-21-test-4-reading-passage-3"
       ]
     }
   },
@@ -594,226 +868,6 @@
       "paragraphCount": 6
     },
     {
-      "_id": "sh-em1-2020-虹口-reading-a",
-      "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "05d429e4b718b46161c23e5c10678c3743e501e7190d9eb7be12da5c46df68ce",
-      "newHash": "cb11445e74642e46d57b63b5885401d19896b4cf007635a4eb36cd300ddca486",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2020-静安-reading-a",
-      "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "f881140216bf8a9737dc82f677089237ba79450ea3aeff94be67ccefb01b29e6",
-      "newHash": "45ff03eb8d685181f368c1eae49d8efe30f549624a1ba3a3c700b6fe9faf2e83",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2021-嘉定-reading-a",
-      "sourceFile": "上海市嘉定区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "77ee37f73598d6e55af72d5dd7d43c1e2abc394079a5123e2808c24fc872bd65",
-      "newHash": "b4ef57c16aaa79e3bf288a653365ffd66eda676a038d4048fdff8bbcf777d793",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2021-奉贤-reading-a",
-      "sourceFile": "上海市奉贤区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "d397b95ba37b60621fae68e4820f6de547306b1cb6a955c9b7c070ee4cbb2a95",
-      "newHash": "1c4e1b7496444884d4d6c5ea0a7081106290337020d0bc9f7c663edf50209f3d",
-      "paragraphCount": 2
-    },
-    {
-      "_id": "sh-em1-2021-宝山-reading-a",
-      "sourceFile": "上海市宝山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "f7c8a51769fe051cc51b442478e28503d71e48775c01f1857e3b66f09d2b319e",
-      "newHash": "09b28eb9e9135fe8216153c5e902df93fa36e8e05237ec4e4bf287543d10fb84",
-      "paragraphCount": 4
-    },
-    {
-      "_id": "sh-em1-2021-崇明-reading-a",
-      "sourceFile": "上海市崇明区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "42a035e96409893f689cb4fad12b6db2565b5f6c4e7164d4fb06262638a869f1",
-      "newHash": "0086061d2966d0f53e399aaaef344277b6d3fd1e49738bf062e0ef8d92c4a320",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2021-徐汇-reading-a",
-      "sourceFile": "上海市徐汇区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "94a191e63ed4979c8d3eb86cc89fc79998a5d1a8f80f0208d09f41d08204d0d9",
-      "newHash": "9ed3c663e3618d8da55c3164ef278b8a446042350bd0727e18564776e09c9ef4",
-      "paragraphCount": 4
-    },
-    {
-      "_id": "sh-em1-2021-普陀-reading-a",
-      "sourceFile": "上海市普陀区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "9b528a72d7a2e0eeb7613d629729d4fb742af13d21104d1ab20fa44599c977de",
-      "newHash": "41921043445c64bb37e6e29f974a9dfe419fe6aac60dc830255f1151c026c8c4",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2021-杨浦-reading-a",
-      "sourceFile": "上海市杨浦区2020-2021学年九年级上学期期末（一模）英语试题（无听力原文）（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "544980dfc2074b8025b8cd5945f66d951d2af0e09b220ea8919d72e977cd3109",
-      "newHash": "58372443fc6724d4c92f9d0648d7de506c0df9ed4229fdb9ab32728c01cf4577",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2021-松江-reading-a",
-      "sourceFile": "上海市松江区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "de3864a0e939530d971899f8a071b4f184ab83c79a6407385351d5182686b6b0",
-      "newHash": "47ff124e7ae54363c3d3ba47a11815b1b7b29976135650be5bdd9ffa1d400c47",
-      "paragraphCount": 3
-    },
-    {
-      "_id": "sh-em1-2021-浦东-reading-a",
-      "sourceFile": "上海市浦东新区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "44285311e9fe4da2e101a02ac7da2c20a91182bd978fc5effcd95ed54770b18c",
-      "newHash": "d9460bbcd29ef844559806ee63da86bc191c4398e95c46a12c87c177589a5780",
-      "paragraphCount": 3
-    },
-    {
-      "_id": "sh-em1-2021-虹口-reading-a",
-      "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "89771f9c286076c3b9106f36945b6b04f5a1cbdb3071945121fae0cdb78b438b",
-      "newHash": "203036492025ae683ef957ea46fdc1bf61d831606085a59aa3e216d04c9a14db",
-      "paragraphCount": 6
-    },
-    {
-      "_id": "sh-em1-2021-金山-reading-a",
-      "sourceFile": "上海市金山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "1d73f43c53f1d3e419d24c067dd2dd764053a7b2122ea06e2177bb70fffdc657",
-      "newHash": "1377b3b5a15ea0567c90720c6258732e8563ad9d14ebd9d169ecf27219fd75a0",
-      "paragraphCount": 2
-    },
-    {
-      "_id": "sh-em1-2021-闵行-reading-a",
-      "sourceFile": "上海市闵行区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "20cffb473fa08d98eed593e1ded52412bdb03b40394611fc74bd5cbdb5c19e87",
-      "newHash": "6e7e0913bfe3a7d1bb21159e742554df690ee06e286b95223fbfd3f0261fd4dc",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2021-青浦-reading-a",
-      "sourceFile": "上海市青浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "7c9da88deecc75c610616236009667c6b9e7abbaa87f7bb33e85464d4ad5d3b2",
-      "newHash": "e77c1ced392eec1225f27fbff0a196d522764445c8a4344f91d45c7ee2bf7664",
-      "paragraphCount": 6
-    },
-    {
-      "_id": "sh-em1-2021-静安-reading-a",
-      "sourceFile": "上海市静安区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "e64598cdff229342393983bde4facadd734de7be0c2b184de4a9eb0d41e81ba2",
-      "newHash": "9f8534639a8722351808366dae18146502d9b560c49b4606aa5dcfeb4ad45565",
-      "paragraphCount": 6
-    },
-    {
-      "_id": "sh-em1-2021-黄浦-reading-a",
-      "sourceFile": "上海市黄浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "1b60a3c8a072fb060b79bb5426809fbca0e993c2dd6bf69d572f88e64d07cff4",
-      "newHash": "423930e8fc0f1cf33e9d13507ab3edfee3998067ef4740f4fb44448dccd9f13b",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2023-徐汇-reading-a",
-      "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（解析版）.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "f7ce815347d041a05c51a120a45a810c7036158035f4f377882a167151de239b",
-      "newHash": "b0df9a08cdefe5e91c2c51faeff7d7f06356c12f48f1f6d8531aaed59596694c",
-      "paragraphCount": 2
-    },
-    {
-      "_id": "sh-em1-2024-嘉定-reading-a",
-      "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "4254f35fc01d08dfab5b2183724ed55545af96ad6b8c3ee42eceb6449283c728",
-      "newHash": "f45f2947f8130647b2fc48d0fcaa15542c10ccda05f502c00ef82316b2359a45",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2024-浦东-reading-a",
-      "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（解析版）.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "2a8d74ede5e90f3511e6905e5dc71430fa759ac11347bb735c306e758309fe67",
-      "newHash": "19a11b1108e07d1a27546bf1bb2b45ef248bc08adf54f940597a79bd70194dea",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2025-松江-reading-a",
-      "sourceFile": "2025届松江区初三英语一模试卷.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "034bd0f83f99ed33027196bf1364b857ca8b4d971353c1290ca12c8a2b24570f",
-      "newHash": "396d8567f6e6402de9ce09e85a6b4b99a08b011490648b6461588b4e8a317ede",
-      "paragraphCount": 5
-    },
-    {
-      "_id": "sh-em1-2025-金山-reading-a",
-      "sourceFile": "2025届金山区初三英语一模试卷.docx",
-      "pollution": [
-        "question-directions"
-      ],
-      "oldHash": "9ac89adb014f1dc53d5733bbe53d9e9adba0dd52cbd7a30f8f4f6447de6e7b7f",
-      "newHash": "4c372b037a0e0486ed4c7b231ff1107a72fd49a1f95c0655ce7148511691ff7c",
-      "paragraphCount": 5
-    },
-    {
       "_id": "sh-em1-2020-嘉定-reading-a",
       "sourceFile": "上海市嘉定区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
       "pollution": [
@@ -821,6 +875,16 @@
       ],
       "oldHash": "d094649f499c8b7164a58496dcd72a647ccb249e84e90669ecba83e49ce20e56",
       "newHash": "042072dc241a79fb81ace8012ef6b17b670d9374619acdae8081115116560791",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-嘉定-reading-c",
+      "sourceFile": "上海市嘉定区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "97672397d9449db9388d047a827bfd11cbabf3225ff5cb04de61350c12369e28",
+      "newHash": "ca4e13258a72040717e0f9eb752f953cca5be9f8eeac67ba65660a383d943244",
       "paragraphCount": 4
     },
     {
@@ -840,7 +904,7 @@
         "question-directions"
       ],
       "oldHash": "6fa6eafabd5daa933d8114672ad31a05d533877d1700044bfa2da2779967b488",
-      "newHash": "1375e99039da170d69a80ab39c3436eaa04841a336aaf38aebb7811100ad66d9",
+      "newHash": "247105682d0139da3cdc32b1d403f3c3b2092177ab98ce39055fc69222f2402e",
       "paragraphCount": 4
     },
     {
@@ -852,6 +916,16 @@
       "oldHash": "d944fd102d36c4d140e9764863620532d7da4fcbcb3bcbfe0ba739f832838ac9",
       "newHash": "1d0ad5b7dece1c2f6ae86be34a933bd14e473aa6dc162c3ae074663d8350f7a1",
       "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2020-宝山-reading-c",
+      "sourceFile": "上海市宝山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "78afce2553b697659779c18c9421988df97e86ba4403555b085b4758abfa4954",
+      "newHash": "6200881c95823afff44e22a42a907afae7bbdd7ebedae1e87fb5e60ed2447c21",
+      "paragraphCount": 5
     },
     {
       "_id": "sh-em1-2020-崇明-reading-a",
@@ -870,7 +944,7 @@
         "question-directions"
       ],
       "oldHash": "8954c562e67e881d0729bee410d317d885b497caafbc34cbc2394bd13b604644",
-      "newHash": "d632a7886a8ce21e9ee40439f6f1a9d4841ff11848fba10bcd58191e9224893d",
+      "newHash": "6dd386a0435dc3d5fec7ef8cd560b9c4a84a5bca06506cb37cd2ff337df1446f",
       "paragraphCount": 5
     },
     {
@@ -887,10 +961,11 @@
       "_id": "sh-em1-2020-普陀-reading-b",
       "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
       "pollution": [
+        "article-title",
         "question-directions"
       ],
       "oldHash": "b8560c5c4d7f33f503ab609d24a704431ff4907312cf0126f6c59977992a65c2",
-      "newHash": "241c75b345af878744ce5205d09d1cc40a3e17336a75cbac21905a0a673a6b51",
+      "newHash": "05263cc6be338c60f30cb901725b00503a613823801daf54b091f1cf46d49540",
       "paragraphCount": 5
     },
     {
@@ -904,14 +979,55 @@
       "paragraphCount": 5
     },
     {
-      "_id": "sh-em1-2020-虹口-reading-b",
+      "_id": "sh-em1-2020-杨浦-reading-c",
+      "sourceFile": "上海市杨浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "d54fcde97d8b889c24b4905f641623e04618548b51fc14b1088fee477983e050",
+      "newHash": "2c906c58e2da6d17a334c194caf5dfdb3601e832c211cfa0549fd2c322a285b1",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-虹口-reading-a",
       "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
       "pollution": [
         "question-directions"
       ],
-      "oldHash": "3118bfccfa5d019964502a8f9d4e446f432e4187d8a969b92027867730ad916f",
-      "newHash": "592c3b64ca414f1a170e7e85e0cfa33d17c73ddd015b69ec834664f60b0cf670",
+      "oldHash": "05d429e4b718b46161c23e5c10678c3743e501e7190d9eb7be12da5c46df68ce",
+      "newHash": "cb11445e74642e46d57b63b5885401d19896b4cf007635a4eb36cd300ddca486",
       "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-虹口-reading-b",
+      "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "article-title",
+        "question-directions"
+      ],
+      "oldHash": "3118bfccfa5d019964502a8f9d4e446f432e4187d8a969b92027867730ad916f",
+      "newHash": "ff5ec3018631d5e8937a171bd77ccdf11e4cd1002bdfb8c57764cb398a677e26",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-长宁-reading-b",
+      "sourceFile": "上海市长宁、金山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "0ddfc3e16a0168a1fd524dd7c92c84369c8d637da77385c7c6a99e63b9515d1f",
+      "newHash": "908408371dd291dd1a04b4be454d10e5ee489c3dafec9b50ffa4a87fa332d4be",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-闵行-reading-c",
+      "sourceFile": "上海市闵行区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "29b35c6a4605a29e79bf01a1d7dd7069a91b4248440c27ce070250cabbd4709d",
+      "newHash": "5df707ce2281f16bb6e708806dc1b1e5ead372cf468725a698a507111b00462e",
+      "paragraphCount": 6
     },
     {
       "_id": "sh-em1-2020-青浦-reading-a",
@@ -930,17 +1046,28 @@
         "question-directions"
       ],
       "oldHash": "865b4a0f7298d7eab4f4b63655078e5146fd55d99d9e6b52235450045f4b02bb",
-      "newHash": "0887d4bc4e71e1249d79c73932e53b7ff768b7f2ce42604906ba61e36af814c1",
+      "newHash": "38b38a534dc6ab848db621e28af6345e0ae497f4f578f70bb148406842be2d32",
       "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2020-静安-reading-a",
+      "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "62a22853b363254b874aa96f6fb045545229b857d5611c7e3b01753f24dd0b81",
+      "newHash": "7057b7dbd6e9158d7401012a5dd35b0d750db94c457c536f83b484a9b69f1c22",
+      "paragraphCount": 5
     },
     {
       "_id": "sh-em1-2020-静安-reading-b",
       "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
       "pollution": [
+        "article-title",
         "question-directions"
       ],
       "oldHash": "525a08f384eabebafe796faa331aee357b27ee3c5f8f555d06c6d546b08431a4",
-      "newHash": "7ed384073b065be30ddad18de4e7b3fc50c7e3ed41dd5323865fcee7b4d25e76",
+      "newHash": "e3468b0a36116f6f07766fa3568e16a81fc0c9a95d25ba38ed3b2645d2556378",
       "paragraphCount": 4
     },
     {
@@ -950,8 +1077,18 @@
         "question-directions"
       ],
       "oldHash": "0266f6acc10c4b2d3b788e53dfb7867b4a2db58915f173c86b959300c901cbb9",
-      "newHash": "093731c4412d79683ad0be44c211d9ef21205d70375309e94dfc56258c0b5155",
-      "paragraphCount": 5
+      "newHash": "61301eb62a07ef4fe579bfb685e9553cca85f2f7259a7e6d0d49356b42173ed2",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2021-虹口-reading-a",
+      "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "0a971273d5d336674eae7d632763b4f36715bbd042949e238dc127578d64a791",
+      "newHash": "007798fe83f12ba02a64011c353255e41767ec2ca9ed84aba02152c1b27f7423",
+      "paragraphCount": 6
     },
     {
       "_id": "sh-em1-2021-虹口-reading-b",
@@ -974,6 +1111,67 @@
       "paragraphCount": 3
     },
     {
+      "_id": "sh-em1-2022-嘉定-reading-c",
+      "sourceFile": "上海市嘉定区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "3024a8e004e710d12f85a2a4db4a5db9c83dcff24da0a4b015c0308955bfdb57",
+      "newHash": "032843667e8c3bc630dcd421959eeac8c4f3349b2e9fb7f0f41b1e134b8a98c6",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2022-奉贤-reading-d",
+      "sourceFile": "上海市奉贤区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "1d26f8a1f3b6f7fd08fd80e0344b70f2d424322cc15c38f8ffcb8c72d21f72e9",
+      "newHash": "3d93729bf9dcc5b7f61f2a24f8837262046445b0f6577fd0ba8e4137613a87a9",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "sh-em1-2022-宝山-reading-c",
+      "sourceFile": "上海市宝山区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "adf65285789d90fba969440a3ad901672c653656efe5f5bc7a271e4b14421c6e",
+      "newHash": "6d559d359839958fef0ba92a8391f573a1f59f9acdb73742b7358ec3c589c1bc",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2022-崇明-reading-c",
+      "sourceFile": "上海市崇明区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "20333dc814b00c9a2b53747a8c077cfcde7352d6f57a8d6880933dddc1520405",
+      "newHash": "abfe15c9328103711141c32466d317972fde6a13f3ec2d66fa54500dc0227da1",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2022-普陀-reading-d",
+      "sourceFile": "上海市普陀区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "76454e311fd5747c5b7837be1248d6e0aeab20c34ef68730a581619ff80b7072",
+      "newHash": "b7105bfecf50bd20a2406596abd5fe2fbb5cec6bdf4fe2394cad3a875a728dde",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "sh-em1-2022-虹口-reading-c",
+      "sourceFile": "上海市虹口区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "cross-section-content",
+        "score-prefix"
+      ],
+      "oldHash": "c2ecee2d64ce232068c39ced21e6dad305f60090de0e6809daacba9f99d21bbe",
+      "newHash": "b7e7467f45977c987b60a6864e1e2ccf4c5cb08f748b44084bec29da6f0a7ab9",
+      "paragraphCount": 3
+    },
+    {
       "_id": "sh-em1-2022-金山-reading-a",
       "sourceFile": "上海市金山区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷官方版 ）.docx",
       "pollution": [
@@ -984,6 +1182,28 @@
       "paragraphCount": 2
     },
     {
+      "_id": "sh-em1-2022-长宁-reading-d",
+      "sourceFile": "上海市长宁区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "cross-section-content",
+        "question-directions",
+        "section-heading"
+      ],
+      "oldHash": "b2f1ffe43c1af1cec90baa6b3b880e17104c3c6af65b8f3a282b4118a023b3aa",
+      "newHash": "754849b0cd3292e0030040eec611b291809cfdf6ee8298fd0cec67436f6cbbae",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2022-闵行-reading-c",
+      "sourceFile": "上海市闵行区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "1f009bff57d70da38e54f9284e210ac222a282aed88ea294e23a41c53693f639",
+      "newHash": "819373801a94e3f757990cbc45a4188c6a5140738cb64ed97d359cd2af5f893b",
+      "paragraphCount": 5
+    },
+    {
       "_id": "sh-em1-2022-青浦-reading-a",
       "sourceFile": "上海市青浦区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷官方版 ）.docx",
       "pollution": [
@@ -992,6 +1212,16 @@
       "oldHash": "2dcab0231cc919c87768836d0613029fc6356aa49ee764276d4921f739aed307",
       "newHash": "aea8710c4c51accb867b7ad765ddb371fbe4ce0fcba59fe9ca39fee9799924cb",
       "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2022-黄浦-reading-d",
+      "sourceFile": "上海市黄浦区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "72936eb617907597f1718488cefc6b9f8c6fbe410d25c5b398843fcfef2a1fc8",
+      "newHash": "07da3d810a4865f7ff538fbd8bd6f8e3120dccef53ecf395a46e0ef60c667e43",
+      "paragraphCount": 8
     },
     {
       "_id": "sh-em1-2023-嘉定-reading-a",
@@ -1034,6 +1264,16 @@
       "paragraphCount": 6
     },
     {
+      "_id": "sh-em1-2023-宝山-reading-c",
+      "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "f2e53960a1ca4b095377fddce173a0493115fbc8c2e35b81d3777f7c350121a5",
+      "newHash": "658339e1c4608ad647c44bb2dc514ffb3d7229b62a3a30ebadda88f6fec3ecbc",
+      "paragraphCount": 5
+    },
+    {
       "_id": "sh-em1-2023-宝山-reading-d",
       "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
       "pollution": [
@@ -1042,6 +1282,16 @@
       "oldHash": "6e744c57c908bb324c138eb252b00d7b1877183f5c86ad65b19e98a8e5b005a1",
       "newHash": "7187334fa7ddb8b0c1a53d658b0b0c6f7c9ba482962fdcaf4a01f15c0cef81d9",
       "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-徐汇-reading-a",
+      "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（解析版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "f7ce815347d041a05c51a120a45a810c7036158035f4f377882a167151de239b",
+      "newHash": "b0df9a08cdefe5e91c2c51faeff7d7f06356c12f48f1f6d8531aaed59596694c",
+      "paragraphCount": 2
     },
     {
       "_id": "sh-em1-2023-徐汇-reading-b",
@@ -1057,10 +1307,11 @@
       "_id": "sh-em1-2023-徐汇-reading-c",
       "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
       "pollution": [
+        "question-directions",
         "score-prefix"
       ],
       "oldHash": "71e778d7c59e179ca7277df23ae09f258757ad6c39bd563e3789367ea5f7a97e",
-      "newHash": "b7010af1db18fb3da3b3f66030cdc8ca99d393c0b46c323800992833afa3abea",
+      "newHash": "baab50c93e50cc46b8ca1d62162e9fb757363825197d3185efba450c0c67a279",
       "paragraphCount": 6
     },
     {
@@ -1072,6 +1323,16 @@
       "oldHash": "529097bd58d63f3efa35471ab6cce80a5c38cf0a2ce8268c6fa9e9cd07e0f32a",
       "newHash": "bec2efa950d0cb05cfe8ec175ba0ce1c8943f2bdb0343dc40137c2f3e3028b53",
       "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2023-松江-reading-c",
+      "sourceFile": "精品解析：2023年上海市松江区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "833495c737f68c2a2fa489f4526960b992c2c589f8ea19922219e79227066a45",
+      "newHash": "f6ea05b101a4892a8feeb59525285616caa77bc16f583f5ab51fe3ac979c139d",
+      "paragraphCount": 4
     },
     {
       "_id": "sh-em1-2023-浦东-reading-b",
@@ -1122,6 +1383,16 @@
       "oldHash": "17216625f1bfbbf9ec6424ba7a4d534ea3af54e8ad2bffa4feff0d802c3b5895",
       "newHash": "a6638b58a0281ab1217cec41860b4ea7b0d66a775961c1133e2100159c57945c",
       "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2023-金山-reading-c",
+      "sourceFile": "精品解析：2023年上海市金山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "b5969cf79227c7eb658234244f58fc84090b98e9be787ad51c74578cb2186a6e",
+      "newHash": "327ffaca9c759031c281ffc68c39d2b9e0d2cbd31f694a0493602b461587fef9",
+      "paragraphCount": 12
     },
     {
       "_id": "sh-em1-2023-青浦-reading-a",
@@ -1184,6 +1455,16 @@
       "paragraphCount": 5
     },
     {
+      "_id": "sh-em1-2024-嘉定-reading-a",
+      "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "4254f35fc01d08dfab5b2183724ed55545af96ad6b8c3ee42eceb6449283c728",
+      "newHash": "f45f2947f8130647b2fc48d0fcaa15542c10ccda05f502c00ef82316b2359a45",
+      "paragraphCount": 5
+    },
+    {
       "_id": "sh-em1-2024-嘉定-reading-b",
       "sourceFile": "2024届上海市嘉定区中考一模英语试卷（学生版）.docx",
       "pollution": [
@@ -1192,6 +1473,27 @@
       "oldHash": "be6d796c6cd203a6f0399cc6d7b0695a079eaf9669c3e3cbd383fae82c411f4d",
       "newHash": "42844e81b4b251956558a31d8b0bd9a90b3896908ecfdb9e9464ee0d048c8974",
       "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2024-浦东-reading-a",
+      "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（解析版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "2a8d74ede5e90f3511e6905e5dc71430fa759ac11347bb735c306e758309fe67",
+      "newHash": "19a11b1108e07d1a27546bf1bb2b45ef248bc08adf54f940597a79bd70194dea",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2024-浦东-reading-b",
+      "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
+      "pollution": [
+        "article-title",
+        "question-directions"
+      ],
+      "oldHash": "45efc2f497eae813d3170889c2ea738357f67bb5a931251b2ecd0395f78fad3c",
+      "newHash": "bbcc2a45a2612618a3d91ce52a09f62bb8d49bafcdcf9329fe459bfc2e41b11b",
+      "paragraphCount": 5
     },
     {
       "_id": "sh-em1-2024-浦东-reading-d",
@@ -1234,6 +1536,16 @@
       "paragraphCount": 7
     },
     {
+      "_id": "sh-em1-2024-青浦-reading-c",
+      "sourceFile": "上海市青浦区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "defb1e4a094a1b9533f74e71283132d23fb92fd9ac76d690b71c757b9c6b1c96",
+      "newHash": "75e879a778edca5e00a1fa1d97d403c4b12be7bb96677e2ef31dcd16d9016766",
+      "paragraphCount": 6
+    },
+    {
       "_id": "sh-em1-2024-静安-reading-d",
       "sourceFile": "上海市静安区2023-2024学年九年级上学期（一模）期末英语试卷（word学生版）.docx",
       "pollution": [
@@ -1262,6 +1574,16 @@
       "oldHash": "e1579a4e5cc47a1e492c03ddcea1a3ac71e66f237f03774ee1a813b954e60f25",
       "newHash": "f1269ebdc4332409e122333889145e880c617b87c03c3f5d7ca6165c355514bf",
       "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-奉贤-reading-c",
+      "sourceFile": "2025年上海市奉贤区九年级上学期一模英语试卷（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "7d896cb123e4b985d046162f3f0cbc57f7bf35f2745724cf694bb80383315294",
+      "newHash": "d34796e573935764c231e3b66a2eb6b0ffc66c45e7019a75bcefc4ca25e18643",
+      "paragraphCount": 5
     },
     {
       "_id": "sh-em1-2025-宝山-reading-d",
@@ -1307,10 +1629,11 @@
       "_id": "sh-em1-2025-普陀-reading-c",
       "sourceFile": "2025年上海市普陀区中考一模英语试题（原卷版）.docx",
       "pollution": [
+        "question-directions",
         "score-prefix"
       ],
       "oldHash": "8ccd672d4100ec8b7d1ed6acc77be5dbcb296dfd849d60a0ba543c5daab16d49",
-      "newHash": "934de4b563d79e5e6af2ceb0157a703338dd9abe8e5bc931e091af31e32966da",
+      "newHash": "5132c47688edb5a1201eda3658e1632f72505a1dbcabfb66f3a4cb7223e0fc7d",
       "paragraphCount": 5
     },
     {
@@ -1324,6 +1647,46 @@
       "paragraphCount": 6
     },
     {
+      "_id": "sh-em1-2025-杨浦-reading-c",
+      "sourceFile": "2025年上海市杨浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "8510506f6e4b74bbe012beec48d74d033498f4ca1b0982ea1a36bb6fbf9e2d99",
+      "newHash": "a8ebcb930ba791c069aa44a5e258f90df3cb37219be50cdac4413402dc8afbea",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-松江-reading-a",
+      "sourceFile": "2025届松江区初三英语一模试卷.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "034bd0f83f99ed33027196bf1364b857ca8b4d971353c1290ca12c8a2b24570f",
+      "newHash": "396d8567f6e6402de9ce09e85a6b4b99a08b011490648b6461588b4e8a317ede",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-金山-reading-a",
+      "sourceFile": "2025届金山区初三英语一模试卷.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "9ac89adb014f1dc53d5733bbe53d9e9adba0dd52cbd7a30f8f4f6447de6e7b7f",
+      "newHash": "4c372b037a0e0486ed4c7b231ff1107a72fd49a1f95c0655ce7148511691ff7c",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-长宁-reading-c",
+      "sourceFile": "2025年上海市长宁区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "99bcbee9fa122267cc378b0e1c6f61c6bc9ae030f283dcf2c60856c8650d4103",
+      "newHash": "8c74e00b3b733f27d941c6b81de684f081f24a67c42df3ac345aefe3ebd1787b",
+      "paragraphCount": 5
+    },
+    {
       "_id": "sh-em1-2025-长宁-reading-d",
       "sourceFile": "2025年上海市长宁区中考一模英语试题（原卷版）.docx",
       "pollution": [
@@ -1332,6 +1695,26 @@
       "oldHash": "8983ba2af2bb768a19a9fa05bb805562fde1ce6316a9bd89fc55310a4e939bf3",
       "newHash": "77f93d1e16dc7a944ad55052b6b38e50e3723a17f9609a68aad818c7b01abe04",
       "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-青浦-reading-c",
+      "sourceFile": "2025年上海市青浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "52b8336126fbd0b0b2db31d932e85e5847ebcd602a0f1890658ca81f45f79936",
+      "newHash": "6a501a4e9cfc9be7e90f099bb2818522774fd828f1e06b667eaaae1d98b1cf23",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-静安-reading-c",
+      "sourceFile": "2025年上海市静安区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "7dfffaaf0792d817c4a062881654682aff606d3ba778b491551a3fd03afee060",
+      "newHash": "2a12cdc8dd261a1972b0ef90fd953528ad6746da9408cfdc23bf5864c4f0b0df",
+      "paragraphCount": 4
     },
     {
       "_id": "sh-em1-2026-嘉定-reading-a",
@@ -1364,10 +1747,55 @@
       "paragraphCount": 3
     },
     {
+      "_id": "sh-em1-2026-金山-reading-d",
+      "sourceFile": "2026上海金山初三一模英语试题（原卷版）.docx",
+      "pollution": [
+        "cross-section-content",
+        "question-directions",
+        "section-heading"
+      ],
+      "oldHash": "1a0debaea522e31db10db572de2eccac0041479d70d84e180505f151c95a835c",
+      "newHash": "37e47d66868ad8e9035c2d6549f7601f0a877d36a02f865e2bd2dea092f34021",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2026-闵行-reading-c",
+      "sourceFile": "2026上海闵行初三一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "86c1284737b3fea3e7c16c760ec087ab77082156c10488bbb9767ce8aa87dad8",
+      "newHash": "080c78c9b0b3996a053f9f6419ac58d2b58b654d5aee9944750f993d8cd30151",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-崇明-reading-a",
+      "sourceFile": "上海市崇明区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "0086061d2966d0f53e399aaaef344277b6d3fd1e49738bf062e0ef8d92c4a320",
+      "newHash": "0086061d2966d0f53e399aaaef344277b6d3fd1e49738bf062e0ef8d92c4a320",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em2-2012-宝山嘉定-reading-c",
+      "sourceFile": "上海市宝山、嘉定区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "pollution": [
+        "cross-section-content",
+        "source-link"
+      ],
+      "oldHash": "09ba916746fb922e5aeb4fc3c568798e5b8a72c7e2201f8475fa829f07883cce",
+      "newHash": "34383554358a3bcf86a2a595f355ea59ba6b8178f86c832c1fee187bb6ef46a7",
+      "paragraphCount": 4
+    },
+    {
       "_id": "sh-em2-2019-a-10-qingpu",
       "sourceFile": "上海市青浦区2019届九年级4月质量调研（二模）英语试题及答案（word解析版）---已校对.docx",
       "pollution": [
-        "article-title"
+        "article-title",
+        "question-directions",
+        "section-heading"
       ],
       "oldHash": "9b6614b3407c11d590eaa13080cbe7f0bfd48fad32ffaac9f3c6ca852174f916",
       "newHash": "7955f51229fb8803657592171ad1a0b4e98be0474ba89e2787f1ddd4427cde91",
@@ -1391,7 +1819,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "543b3dee5b13ffaba85c58c97a30d70cc83b15505d2d6c090d76bda447d5079b",
+      "oldHash": "528ac149b7e686b4883bdc005ed7b4ac85b358d41e3814b5d74f16510a1512c1",
       "newHash": "528ac149b7e686b4883bdc005ed7b4ac85b358d41e3814b5d74f16510a1512c1",
       "paragraphCount": 4
     },
@@ -1402,7 +1830,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "dcf03f34bddadc066ed91a4b0fd51aa71498a8ded66685f51b7f9fdd6925825e",
+      "oldHash": "bcc2c55331945e21535fd7fddfb0bf5db5514070afee4e36ac8a7aa56be2f3b7",
       "newHash": "bcc2c55331945e21535fd7fddfb0bf5db5514070afee4e36ac8a7aa56be2f3b7",
       "paragraphCount": 4
     },
@@ -1414,7 +1842,7 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "c2072cc9b25dca8da19c4019e8a40865cd40524df3e92d1879dbad129a9bfa44",
+      "oldHash": "35fdc0da6fdcea88076461b21fb007e9443df539d84bae95db4a684febb9dd8a",
       "newHash": "35fdc0da6fdcea88076461b21fb007e9443df539d84bae95db4a684febb9dd8a",
       "paragraphCount": 7
     },
@@ -1428,7 +1856,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "c2dc35075325cb6894c27ab1f98127391d24af0bb2e903be6b436bfdb9ad4196",
+      "oldHash": "a3f3dde0b473835c223669d03384c6089a1fd0d38e5e6dfb779709597d71efd6",
       "newHash": "a3f3dde0b473835c223669d03384c6089a1fd0d38e5e6dfb779709597d71efd6",
       "paragraphCount": 5
     },
@@ -1438,7 +1866,7 @@
       "pollution": [
         "page-watermark"
       ],
-      "oldHash": "768d743d279d372a714542548bcee878ac6faa0c60e8fa7fe78d4072800cfa86",
+      "oldHash": "44ed1d37e9bd8b946b4106aed36a75a669ae0b0bc248db1d9db4456b82610278",
       "newHash": "44ed1d37e9bd8b946b4106aed36a75a669ae0b0bc248db1d9db4456b82610278",
       "paragraphCount": 7
     },
@@ -1448,7 +1876,7 @@
       "pollution": [
         "page-watermark"
       ],
-      "oldHash": "fe7088b7efbd371e743de300fcf66f0cd290484e29e0769e8a1bfab7c5fc89ba",
+      "oldHash": "849b80330516ed98e8b7286ce8121937c21842ff23215e56abd4714d6afd2b90",
       "newHash": "849b80330516ed98e8b7286ce8121937c21842ff23215e56abd4714d6afd2b90",
       "paragraphCount": 6
     },
@@ -1458,7 +1886,7 @@
       "pollution": [
         "page-watermark"
       ],
-      "oldHash": "0b0573e4a3add18e0e451c26cb062f67a690e9dd0cbb50b53d5f076735703545",
+      "oldHash": "e03612aa8ac77447d1ceb8ebd4aa5dafa409f960acbd2688dd6c7497ed83bf5b",
       "newHash": "e03612aa8ac77447d1ceb8ebd4aa5dafa409f960acbd2688dd6c7497ed83bf5b",
       "paragraphCount": 7
     },
@@ -1468,7 +1896,7 @@
       "pollution": [
         "page-watermark"
       ],
-      "oldHash": "9c24ea0fa382ac5bbafc27b2e8cc00205a440c354737b2ee6965193ca4d10810",
+      "oldHash": "50cf676a4733e8a8ff66cdd0bca2813ad8a5cd7bb5cecdc5974155d1ccc70a58",
       "newHash": "50cf676a4733e8a8ff66cdd0bca2813ad8a5cd7bb5cecdc5974155d1ccc70a58",
       "paragraphCount": 6
     },
@@ -1478,7 +1906,7 @@
       "pollution": [
         "page-watermark"
       ],
-      "oldHash": "dffecd4844e0559738cd12a85e247c3f3df9739afb4e5fffd3728638195985b8",
+      "oldHash": "91e539d8eda3852e2b01ed81f976ce28ea283655cb69dee276fc67689d256fec",
       "newHash": "91e539d8eda3852e2b01ed81f976ce28ea283655cb69dee276fc67689d256fec",
       "paragraphCount": 7
     },
@@ -1488,7 +1916,7 @@
       "pollution": [
         "page-watermark"
       ],
-      "oldHash": "d05159f9c6c3c7d72db7e6fcffe58ddbeeda52d78ce21927665102ec2efe0805",
+      "oldHash": "7d068d180ce31f7bbe66a33ec4c5091e5090de5f6c37c4d7521d360f295badd2",
       "newHash": "7d068d180ce31f7bbe66a33ec4c5091e5090de5f6c37c4d7521d360f295badd2",
       "paragraphCount": 5
     },
@@ -1499,7 +1927,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "ac1e8543f4e59b6e7554a1ee5a40565fe54b1c40fe72ed693bad5479923f97c3",
+      "oldHash": "5864c22f6bcc8aa586d93c08c5eb64b7c964f5d619fa34c4938b4d95c7fd8b8b",
       "newHash": "5864c22f6bcc8aa586d93c08c5eb64b7c964f5d619fa34c4938b4d95c7fd8b8b",
       "paragraphCount": 4
     },
@@ -1510,7 +1938,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "79f567751809bbf90da0c161f1841701f7bcbc77a816675edad39ec4da7ab76c",
+      "oldHash": "1cce20e0b2144002dfb34553078bf370435222f5f31723a2bff337dd3087f9d3",
       "newHash": "1cce20e0b2144002dfb34553078bf370435222f5f31723a2bff337dd3087f9d3",
       "paragraphCount": 6
     },
@@ -1521,7 +1949,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "a9f6da737bcd76b9f83c3e3bde0d103f847211c337fdc52cb52c0473b8b222f1",
+      "oldHash": "261ee1f6a6bba2eff74b075c8bd19fdac1e2a692136518293c046e496c31c360",
       "newHash": "261ee1f6a6bba2eff74b075c8bd19fdac1e2a692136518293c046e496c31c360",
       "paragraphCount": 7
     },
@@ -1533,7 +1961,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "1be2fa07b90ab749040add5aa1d4da82f153db251f5e0d5cfec435cb36bfcd5e",
+      "oldHash": "d9aa8270e08ec901c189da01daea5c51f4bf58e65d79cabdfc86f559b1dac5c7",
       "newHash": "d9aa8270e08ec901c189da01daea5c51f4bf58e65d79cabdfc86f559b1dac5c7",
       "paragraphCount": 4
     },
@@ -1545,7 +1973,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "9b75ac1a0ee28dadd482af46114c92bd8527a6cc15765ec50ca9afa14967589b",
+      "oldHash": "4d3bd1d866a42cea0fff860fa0388f69f27f40d8f77975931d9611ddc98f0445",
       "newHash": "4d3bd1d866a42cea0fff860fa0388f69f27f40d8f77975931d9611ddc98f0445",
       "paragraphCount": 5
     },
@@ -1557,7 +1985,7 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "d7589c1f09a4793a223dfcf10435ef6e25e4636b0ec36433d9035d398095d432",
+      "oldHash": "ac871ba5e8da0b8e1e69a7348483f7a87e015f41676c7587942af87649e13d56",
       "newHash": "ac871ba5e8da0b8e1e69a7348483f7a87e015f41676c7587942af87649e13d56",
       "paragraphCount": 4
     },
@@ -1569,7 +1997,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "8b9740a1452c9afd7b2471e02ee5b4b4e9318bc32d41cc664ad03ee8db61ba2e",
+      "oldHash": "cf01512f76eaf53d34e557b1f79e57e4573d166afcc20b4bb783b26fe791527b",
       "newHash": "cf01512f76eaf53d34e557b1f79e57e4573d166afcc20b4bb783b26fe791527b",
       "paragraphCount": 7
     },
@@ -1581,7 +2009,7 @@
         "directions",
         "score-prefix"
       ],
-      "oldHash": "e9a40d0f94251bfb9e9b93372fea30c6144c79e9a906a44ce700614e58ab1a23",
+      "oldHash": "ab16f8246c7924618e4a6b58981ae9cc239a3ee0a0cd525d17a7307e6847e429",
       "newHash": "ab16f8246c7924618e4a6b58981ae9cc239a3ee0a0cd525d17a7307e6847e429",
       "paragraphCount": 4
     },
@@ -1593,7 +2021,7 @@
         "page-watermark",
         "section-heading"
       ],
-      "oldHash": "c3f7d2a4f02164969d8e038cd18025fde33aec73d1650bac97bbe8d912363322",
+      "oldHash": "38f712b419154daad56207cebce0b9dfc03cf328f245f1db7b76b244f439f238",
       "newHash": "38f712b419154daad56207cebce0b9dfc03cf328f245f1db7b76b244f439f238",
       "paragraphCount": 3
     },
@@ -1604,7 +2032,7 @@
         "page-watermark",
         "score-prefix"
       ],
-      "oldHash": "49c967185769b57dd107e2bf3616ed5228e5f74160fe69fe82c386afdec7089c",
+      "oldHash": "8a11de0775014f3058826d5d93b77b5ff6ea525b1288f521930bac71d5b80f6a",
       "newHash": "8a11de0775014f3058826d5d93b77b5ff6ea525b1288f521930bac71d5b80f6a",
       "paragraphCount": 3
     },
@@ -1615,7 +2043,7 @@
         "page-watermark",
         "score-prefix"
       ],
-      "oldHash": "b631becf77d7ad90052e4b4752a47d540adf035c4cc4147355e1dc11ab923842",
+      "oldHash": "5a77615c6027910cea751695618baeb806eb511de359cf1432954e3be34edd44",
       "newHash": "5a77615c6027910cea751695618baeb806eb511de359cf1432954e3be34edd44",
       "paragraphCount": 5
     },
@@ -1626,7 +2054,7 @@
         "page-watermark",
         "score-prefix"
       ],
-      "oldHash": "06d24a063d141a67ff4de7bd7dbf4ff12421dceba7484adfef49c9c79fabb25c",
+      "oldHash": "617c15cd2e799148b9ca38f4c43270b2542cecd0b71c5634a6663f807918838b",
       "newHash": "617c15cd2e799148b9ca38f4c43270b2542cecd0b71c5634a6663f807918838b",
       "paragraphCount": 7
     },
@@ -1637,7 +2065,7 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "8d38afb5b15e811e68df38f3dd11c4efbf812b1023e043ced8bd9b6d8a867446",
+      "oldHash": "e304b10ab8afecf5a8971ce289c56f5df46ac60b2bfae8089f0ee856a6fcb95f",
       "newHash": "e304b10ab8afecf5a8971ce289c56f5df46ac60b2bfae8089f0ee856a6fcb95f",
       "paragraphCount": 5
     },
@@ -1648,7 +2076,7 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "216e9cef21a38763c6a651126b11ca5b64930ceef88a2dceb3f833b254904173",
+      "oldHash": "eab32b03472a7df5bf575a5f60f47a76e16d9f735cee7354e70e653fac576899",
       "newHash": "eab32b03472a7df5bf575a5f60f47a76e16d9f735cee7354e70e653fac576899",
       "paragraphCount": 6
     },
@@ -1658,7 +2086,7 @@
       "pollution": [
         "section-heading"
       ],
-      "oldHash": "ab612260af67461d812f982e59fe79ec66c51836fd1250a502792454a45d6f91",
+      "oldHash": "376e65bea17da20dc4b77928dd0ab0d2d5dae218e9f2f97c5ef9f161046717e9",
       "newHash": "376e65bea17da20dc4b77928dd0ab0d2d5dae218e9f2f97c5ef9f161046717e9",
       "paragraphCount": 6
     },
@@ -1668,7 +2096,7 @@
       "pollution": [
         "directions"
       ],
-      "oldHash": "09def7e1e995bdf9031af723afb7a5158382b015c363fbebfafd56c23ea2f99c",
+      "oldHash": "1a7440cf21f21a7d105c2ab79bee655a4c006b8bcc8f2e3187dee8fcb778f3fe",
       "newHash": "1a7440cf21f21a7d105c2ab79bee655a4c006b8bcc8f2e3187dee8fcb778f3fe",
       "paragraphCount": 8
     },
@@ -1678,7 +2106,7 @@
       "pollution": [
         "directions"
       ],
-      "oldHash": "5aba477271e02c488fc489ab403efaf0b4c158e59c1cb68a66c97058b8902107",
+      "oldHash": "d6c3d88d79205b4fc31b1145846452456c4a99762895880620953d82bdcf56ce",
       "newHash": "d6c3d88d79205b4fc31b1145846452456c4a99762895880620953d82bdcf56ce",
       "paragraphCount": 9
     },
@@ -1689,7 +2117,7 @@
         "article-title",
         "score-prefix"
       ],
-      "oldHash": "0970d5cc33c81bd9b8f70e851da870507042a3e79bfaa4cc05a592c7945d8600",
+      "oldHash": "7dc763e99c1293153c5d7332a1ec825bdc843acafe5fdc0ba70098d46710171f",
       "newHash": "7dc763e99c1293153c5d7332a1ec825bdc843acafe5fdc0ba70098d46710171f",
       "paragraphCount": 10
     },
@@ -1700,7 +2128,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "0ad4b170dd75e9bbf377de337c6dfd1af34b505e2742b96d151d1779ec88c7e2",
+      "oldHash": "4ec25fe2145ceecc055cc01d37176543c147b049ff1183d1fef93337afddce70",
       "newHash": "4ec25fe2145ceecc055cc01d37176543c147b049ff1183d1fef93337afddce70",
       "paragraphCount": 5
     },
@@ -1712,7 +2140,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "06ad3d1b30c3d18d478d930033660443d9460298839a1a79b813cca7d0651f8c",
+      "oldHash": "49deaa5ebe61237288261fdf25f68104367aae81675dd708bf437b758fd75dd2",
       "newHash": "49deaa5ebe61237288261fdf25f68104367aae81675dd708bf437b758fd75dd2",
       "paragraphCount": 6
     },
@@ -1724,7 +2152,7 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "a4b10c747b56860b28d7ba37696dd325fb076d00975ef338e11377d45c67bfd4",
+      "oldHash": "c0de28677c8f96cf0585374e5e0fa0662a78bd94579325b7d6d40767f3192870",
       "newHash": "c0de28677c8f96cf0585374e5e0fa0662a78bd94579325b7d6d40767f3192870",
       "paragraphCount": 7
     },
@@ -1736,7 +2164,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "0de53298bb95211c80b57c00f180887b1fd1695baf66844b189974719b2272ba",
+      "oldHash": "1e9de1386db3c87b1537c8b7c9e6cfe7176bec8bf1cdb4c17163c6b14e3c2fea",
       "newHash": "1e9de1386db3c87b1537c8b7c9e6cfe7176bec8bf1cdb4c17163c6b14e3c2fea",
       "paragraphCount": 4
     },
@@ -1746,7 +2174,7 @@
       "pollution": [
         "directions"
       ],
-      "oldHash": "b0db6ffd541cd154156e9a7d21730df6de3287216c5ac19c3e671c386487cfd9",
+      "oldHash": "534e4c8a932dfc83e0599587263bf902f070fd77b338b961c99a5c0573116d77",
       "newHash": "534e4c8a932dfc83e0599587263bf902f070fd77b338b961c99a5c0573116d77",
       "paragraphCount": 5
     },
@@ -1757,7 +2185,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "26b0a8d20ae2ef1d99175306f47d5cf0001f6888ab7111fa35e3d037ecd8b122",
+      "oldHash": "f152e71617c3a5f0a824b69864a561f0c77aaf393b5f4fc0ed72eb51d2932d6f",
       "newHash": "f152e71617c3a5f0a824b69864a561f0c77aaf393b5f4fc0ed72eb51d2932d6f",
       "paragraphCount": 7
     },
@@ -1769,7 +2197,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "8f727a4cb8ab3fd16d83017ad75e5ecce25aa49fa6d6a507afc3d1b3ee8923ad",
+      "oldHash": "a49a8a78918d27e6c763e9d294beb65982899dd66f94367ca8ceff713c53f0fd",
       "newHash": "a49a8a78918d27e6c763e9d294beb65982899dd66f94367ca8ceff713c53f0fd",
       "paragraphCount": 5
     },
@@ -1781,7 +2209,7 @@
         "score-prefix",
         "section-heading"
       ],
-      "oldHash": "fe9ed8c944a2aff096856fffe1e185a82209fac748a1fe6f5b302bcaba9d6027",
+      "oldHash": "88c62084865dbc2bd1c156a1d265b3ad84ebb97080d554db52a4a4a35e373c6b",
       "newHash": "88c62084865dbc2bd1c156a1d265b3ad84ebb97080d554db52a4a4a35e373c6b",
       "paragraphCount": 6
     },
@@ -1792,7 +2220,7 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "efa8d180d611b571b2e718200e72eb18342ae6af75477c7b42d53663b4a2e77a",
+      "oldHash": "898c86b37c873845a4c3c2c17a76f3c644a14cf91853f1eca3c7817cb2abd6df",
       "newHash": "898c86b37c873845a4c3c2c17a76f3c644a14cf91853f1eca3c7817cb2abd6df",
       "paragraphCount": 6
     },
@@ -1803,7 +2231,7 @@
         "article-title",
         "directions"
       ],
-      "oldHash": "bd635afe7587794c628de28e8ecb2d63e5cc9d3c9e5d5713784aa620a3c5c488",
+      "oldHash": "da0f719819d5b3c067a345efc5ff29e9780e7860d59c60c71acdb5a77c3d6db5",
       "newHash": "da0f719819d5b3c067a345efc5ff29e9780e7860d59c60c71acdb5a77c3d6db5",
       "paragraphCount": 6
     },
@@ -1815,17 +2243,1284 @@
         "directions",
         "section-heading"
       ],
-      "oldHash": "3d44e1f0309215809e70cfd665b4afb4a9d5534213af7d6cc03814abd47f4cf0",
+      "oldHash": "890b60868b636b374a921d2eff7e2e8b1b56a51d683722babf3c8793e4a270de",
       "newHash": "890b60868b636b374a921d2eff7e2e8b1b56a51d683722babf3c8793e4a270de",
       "paragraphCount": 5
+    },
+    {
+      "_id": "ielts-academic-10-test-1-reading-passage-1",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [],
+      "oldHash": "e5e2b3fe2d84f5d2bbb9924be4daad3562dd6895ad1653ec7cb4b6aa2a8bb564",
+      "newHash": "9189081b7f536063125f03b0888a63ce5c8a5febb1ed2ab78a9394519e83c8a6",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-10-test-1-reading-passage-2",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "c4a194d28984d6a35a1936e607b156b54d68ea59067506cb1953f03ec357a688",
+      "newHash": "632a1b4e8c1cca3743fb97c366a8f944f8321e44de09d07d1c05d6acd1d2b35a",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-10-test-1-reading-passage-3",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [],
+      "oldHash": "cbb22cb8989b24ef9c69876ca5857fc03f1d2a7a2b39e6eb6934e5debe086fb8",
+      "newHash": "666c23f265716cbacd957ceb76576aa4aa5e759cc7d6746d67cd35b32dc1618f",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-10-test-2-reading-passage-1",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "15fcb930ddc251b2cd25b596f7175b824554fbc124959beff7ce80016eb04689",
+      "newHash": "edaf880e89d2df80aa36a2f48d06d980365d3ada2913adf2f818243ba14df50c",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-10-test-2-reading-passage-2",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [],
+      "oldHash": "b7507df126571978c1a3e7db4aec4303a1d08f7aa66b3bd848ec5b0204ab0db9",
+      "newHash": "02ba3498bc7960c71b183ba1ccb6996f6725816ab83b7c1c9e13710af2060bd7",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-10-test-2-reading-passage-3",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [],
+      "oldHash": "c91e304505038255b40025a16f940f2c1ed317d7b8b5ba13207480fc91e90f8a",
+      "newHash": "1879567c3a39d536f72c17c01d591d991a3e8cc7de6a752088441782fb527c70",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-10-test-3-reading-passage-1",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [],
+      "oldHash": "7c282e42bc14644649535117756b451ce2b3424dc02bce05d780726cb799fa7d",
+      "newHash": "a50c1333fe5d0a2645ecebc3a5e32ee8d3df6b0cde8456ea3a3e14ec6532c942",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "ielts-academic-10-test-3-reading-passage-2",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "059a13e99b8eae6a56e7d3e51a3aab9626a374648e87b87a3c5f18c43c226877",
+      "newHash": "db3254535f0362206d481d6761788eccf184132df5340662a36ee397bf632ec0",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-10-test-3-reading-passage-3",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "b4ed5564c7d22a74cfcbaa250cd81b062d638d46d42631d15d374e190b97a354",
+      "newHash": "b3dbf16d13b3447184e35a5bedbe77af1007c9c5a08c42c36120701a30ac5a8d",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-10-test-4-reading-passage-1",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "06140491a299ab8081ed25567ef7a69bcd5a9320ee37b1d452a74bfda7ed5a81",
+      "newHash": "f478a6076a49d9962e3813eda9b7eace3976771efd9061c3300858df98f7e3de",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-10-test-4-reading-passage-2",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "154de8e5687260091d772a8198f5b3b78fc46d6999b2de58a8866d2996a3f270",
+      "newHash": "2f13d043baee867b22314558c7f577d6f1cd919e47bb8384efd359e61297202f",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-10-test-4-reading-passage-3",
+      "sourceFile": "剑10真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "c2abe5e95a86e0d025c00f08dacf081b9d53a971ac64097f373085cf51f54a6d",
+      "newHash": "27d5c69128ca84a1b348590b2bc8f2e24ce03f56b2cfbf7477f3be092fa4c2ac",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-11-test-1-reading-passage-1",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "3a62b2b06784182568cd40a3bda63660987542c623bff6cc33395cc2e74b2aed",
+      "newHash": "8bdf87b5831d645667b0d9e55615097ca30d0ef32ab2761faf9b9a16c079d247",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-11-test-1-reading-passage-2",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "ce1613074eeadf1639a03f46e4055907899974bf442821423e5c1c55dcc0f058",
+      "newHash": "6bccf59fed9279115bfdf296a8ff55e33e7b6c18d911538d1c3df926ea6ecdaf",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-11-test-1-reading-passage-3",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "3b9d305e8dcffe2ce96b5170ac3a12f1a1096b814862ac63f56ff5bcd69e5c1b",
+      "newHash": "0855d47e5092f683b620b0dfca0eec1726b8a1da3d3f6f4bb3b1507a6210036e",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-11-test-2-reading-passage-1",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "ed6476cb614e9d7d98426743a107b5e5a7c4e01b9b725791189e7f1b8ced02b0",
+      "newHash": "1640960c3457fe59351134a14365095a3914b0db6dc4502a74688b733fb074e3",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-11-test-2-reading-passage-2",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "ee82ae61420f3e7976027d00b810c8d99211a9aeb1bd4336160bffebb29c7c33",
+      "newHash": "2196cb4bcf6226b6750a0f0962c05db0076caed70080ced6935451c017596b46",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-11-test-2-reading-passage-3",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "319c3e2757202ff4232d07e47689b510e4e98c7a6c05540b7c63b25c79a3410c",
+      "newHash": "6a669a749f50129fcb2a7d6c7645ab64746766bd64c697c02a988b52dbd44e55",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-11-test-3-reading-passage-1",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "99a955e86b0e4127a1b5a603c45d3e4f9048eea005c136ee80558d52153bfca4",
+      "newHash": "855985817657c2cbd67f9e08f5959a5887f1528aec70e855fbb98f614f1241de",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "ielts-academic-11-test-3-reading-passage-2",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "326f82631156ec713d278d4c0234cb85cfc6f31ac60fe645856180825205aa85",
+      "newHash": "d2d92e3a963cd2846f7c0348e9af3c75e2a7e234c21c5724915d9abb280ec61f",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-11-test-3-reading-passage-3",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "db5d0f9092e35ac194d93f793677a7af0667cc6ed2938677a1218a07c1ae1399",
+      "newHash": "09f23ce085735c4b6e2a5177185716e5795b9220669bf424d70df61bf4b5937f",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-11-test-4-reading-passage-1",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "5d5b413b6a2f4c69ec419472383139c01ad2ebc7baacc045f63b55324ba1e9ab",
+      "newHash": "1f4a379d793b2a495fb764e49d1aa7e9ffd32b32290598e1fcdd3fd180f19b78",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-11-test-4-reading-passage-2",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "48e6c3b968fbfd23cdc2dfb1d5b8b062c2d4f31eeff482fa454089dc0304195c",
+      "newHash": "55eb4a326ca7b62dd7eddc7263c276b059287a0e27a2d5875daaf98172df1528",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-11-test-4-reading-passage-3",
+      "sourceFile": "剑11真题.pdf",
+      "pollution": [],
+      "oldHash": "5c1956f1dac571247ed4a7922b8d8acc110251d13c071a41a48a2c0e9a2b88ee",
+      "newHash": "11aa833dbbb402cec1b7a69b8ae0228c10d7ee33a7b036bfeb6b5e8b4c6d8a34",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-12-test-5-reading-passage-1",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [
+        "article-title"
+      ],
+      "oldHash": "cff492ac5ec4660b7259f2df2b9e5f79aae21a717aa4d152972b6e3734a98d2c",
+      "newHash": "85b25a3de255573dca0cddf3de071add4b74c880fedce9576af162acc059627e",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-12-test-5-reading-passage-2",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [],
+      "oldHash": "e40cf9c46d9e5c01b71c914508498e2d34d3ad1f424dcadb3a08f7135acf5875",
+      "newHash": "7732620ee87165700dfa0c0bf67207a000c37305617065f4558ae4db1c55bba8",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-12-test-5-reading-passage-3",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [],
+      "oldHash": "2708aad1050348c69cb30cb6ca85848db71a6d8f38988829a79fd842ae0dbbf9",
+      "newHash": "40b31ddf5994dcd4b859d862b21e85ff31ff3d6e2c7194f744dbec455682499d",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-12-test-6-reading-passage-1",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "07881c705d595892cc05659658bb6bdcc6c70632a8b900fa7e1229f34e28a55e",
+      "newHash": "ef7f918205a61436e60d3eaae009ff75ba20f915a0023d7907e0f802e5561efa",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-12-test-6-reading-passage-2",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "c77afb344306d6f7bccee0599d4cc1a49e0b5ae2a646582f50222bc9bf63ffc7",
+      "newHash": "7c8695ccc87928d34e2aafdf126c076cb774db22904a055a905b0c085e9eeb4f",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-12-test-6-reading-passage-3",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [],
+      "oldHash": "addaa492b53edb74521e3c5854d5de6bc5149b0f3dbfc0061d879396be8ebc30",
+      "newHash": "d1bada1eb47fb4ad2609c803cd29545dd879662d65f67bc388f0246084896d7c",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-12-test-7-reading-passage-1",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "a63473408703ea51912c2d267b77c8584c3b391b225e0b44a186eac9bc04f9e9",
+      "newHash": "53954ee0b47d3ac368eb4519e9c94ca97817f4799092f69ce0de74809815f68b",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-12-test-7-reading-passage-2",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [],
+      "oldHash": "7456b6ae473f2b6e57110f509f1893f76bfa9575bf457ada4ab420ee80c916de",
+      "newHash": "8df65425f0f102aace5faf904a33d3d6236b0d54bbf23b825533d962f16bac2f",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-12-test-7-reading-passage-3",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "e5ad4c36eb44f885291bd88bf29bc94c7fe2d233b9a725b5871ee3136f9fbd27",
+      "newHash": "62981bd5fe279e16e6e4a919c3eb13194895e00d6f10e1177b9a5adb2c18c2f8",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-12-test-8-reading-passage-1",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [],
+      "oldHash": "9024a2cccdf15e3ab9ae6c4ebfe274f96805eb673eff4863a4234ef508c29d7e",
+      "newHash": "4eb68e2b8f8a6319eba0bb5c614a60cd95737e99e7585e5f271e8d6635b5dfe2",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-12-test-8-reading-passage-2",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "fe43d26ccf87320ad556f845db04c1f032a1814763690b9f27663f593560e5b5",
+      "newHash": "aeb180e67cb2642d78a357a8cd10451a1d44ac6b16b9e2570120fed039d976cc",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-12-test-8-reading-passage-3",
+      "sourceFile": "剑12真题.pdf",
+      "pollution": [],
+      "oldHash": "c6465bfa6af667e49daba8e4cc52bcdc335fffe29dc2f03165b20dedea3de352",
+      "newHash": "b11ca9324c1b7bab1c8ec7fd76021282911fc5806ae813555bbaebd16b94bbf1",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-13-test-1-reading-passage-1",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "0415a08890de52ecbe73b1741a24608a8526f1595c2c97e61fc6dc819aedc716",
+      "newHash": "ccc672283b74e3a1578165667e6469d34a91e09a887ec3e8308d35eb9dd05cb1",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-13-test-1-reading-passage-2",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "7ac0d7e4deec0dbcf14adc6532029d0acdd962ad9ce17615c236a28842a0dcfb",
+      "newHash": "9425d23bbb93c798981b5ad5dda248a091f6b7ff9dc3a676c521f7f29d9b7bb7",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-13-test-1-reading-passage-3",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "de7a984bc8d1ee9543b26f86a18a6e1fd6ede8243c9619ebbae2fff3fca20ea7",
+      "newHash": "62e10555c6258df6b26236622cff0fe0e6dfb3fe9e2ac948779c2b69aa8a97f9",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-13-test-2-reading-passage-1",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "6b8e3723d64f637dde816d48dcaebc6033cc3edba93e682fd23197e3165a0e01",
+      "newHash": "53c32eae0528c44824a6a5bddc7b1d6bdca3adb29a9444eeb2505e2726b43792",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-13-test-2-reading-passage-2",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "6a0eb88d12bd871c601e53dd3fa33639601307ec2fe3378c6aa831c3b853cb48",
+      "newHash": "f57b90bb6246aa7fcb39fb3568e7072b17e528e1772e174dba1ea6094cac8be4",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-13-test-2-reading-passage-3",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "05c4fd7c29215163d30c4b8304d5f9e4649cab734c7435ea8265d736a8591798",
+      "newHash": "7bbb33a3c88558ff57502dd5c205556aa1b95a14f345b2b91d12d9b89018cb70",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-13-test-3-reading-passage-1",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "d030124d9321fde6901b2ce14c70c599107063f169d1e45a6530b7487849f82b",
+      "newHash": "df7d2bc086347f93c13a1c212fbf513b1667cb6ea3777697f83a1bb60598b0c8",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-13-test-3-reading-passage-2",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "c91d6c19c57240106703b22f0342422a911dec31cf1c5efc74f6a9188641ca62",
+      "newHash": "9a64cde03ec5cb49db258d94c0903e8c4c97502f7585e736e5d065b600974070",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-13-test-3-reading-passage-3",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "04a586b324b392f3d611bed499ae0ce671aa79a7c97120b25731f7866b816e94",
+      "newHash": "f5070b5c7c9f788514e2178f7d93ae81973b1fb7366082e83a07aaa646ba4e19",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-13-test-4-reading-passage-1",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [],
+      "oldHash": "32bb6cbff9c1896c4a52f2c7e792a4ce52f87f3fd8dca43bab3f17e91f56003b",
+      "newHash": "e25a83856b6369fe8adf0f29b66050879be204598df9aa7688bbe1403d72e4d8",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-13-test-4-reading-passage-2",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "00f4e55030c07d2f3357049f97049f0b87cb8d9f20cd794d68c4eb0e9c83b3bd",
+      "newHash": "57b4f27e52a07858105e747300bf2abb852db10922631efc84fb3f24e1bbe759",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-13-test-4-reading-passage-3",
+      "sourceFile": "剑13真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "397ef1a3bf8d22f76bd03e13ec135d1b6afa21d9d465ba12100b754e6b3f28e6",
+      "newHash": "6bc4fc004a4ffcb0aeb903900847612618e0d5560918777a4f400e35a1733095",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-14-test-1-reading-passage-1",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "1095578e920bc4ccfdff4fe52655e413f94193af3672a3a7d4fb62b6b3cf9440",
+      "newHash": "983129ecff68c09fe83bcfa95e9926a88e0547786156eb508a8dfda17f184ba3",
+      "paragraphCount": 15
+    },
+    {
+      "_id": "ielts-academic-14-test-1-reading-passage-2",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "df104125a6c06aa1b07f039629cb328cf90c06a7f83d935d6bed520f3174e487",
+      "newHash": "600f1cbd52e01da303c5d5d86a3446580b3ee7746ded5a618b1d6acdf0dd3a55",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-14-test-1-reading-passage-3",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "e2a06912c9f380d247635c5eecf28e6b1db7562fb5e85be8ff3fb6caaf98b5eb",
+      "newHash": "b62703f4c7281f5957503e81227c4421890329a88caea7826e232544dc35b3e8",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-14-test-2-reading-passage-1",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "9a077e6f3e0ece86eedc4e09806ecc95ec77f1d92fcce64278e03dc747a9a365",
+      "newHash": "5523156833ba594f5c5990539ae4d76db57af30d215635cfde6f2fda5ca38a44",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-14-test-2-reading-passage-2",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "14d88ffb9d58a408adc29e4ebe85df34e6e7d490198d8b301017c9e37cc44bbc",
+      "newHash": "aaa5f2ee3928f19fbe28251f902b4813ae7c481ab00f80fd41e2d09e5f34ec69",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-14-test-2-reading-passage-3",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "bc3265277567967f56d98d51273b8c381639d3b0ae74a635ae5724a008b88784",
+      "newHash": "a38d19e94e94a4b2bbcd1926e7ad63b6c901cfd7ed5411f010f0cb1c8a12aae4",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-14-test-3-reading-passage-1",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "eedbd3d226554ae7310668f520874adad8a3ad98251abca8a6b2e76af086ba51",
+      "newHash": "e4d6d2c3a0b79141d5c6c1594470a008aa34eef616ae2b4a887320df89212b9b",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-14-test-3-reading-passage-2",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "bd828d638d1382b13671765fa33a8312d95f38ebf9ea5e903ddd915e7e67c7e3",
+      "newHash": "6567e950320051921f4238601d0c83566beaf5561644bf37146df1051f806adf",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-14-test-3-reading-passage-3",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "43f8f51ece3515bb848817991e178a2ae8aabb6f707277ddf2c58549e5ebd9c5",
+      "newHash": "273a660d2fbed9c9befaef05d6fd0f47dce37a9660c569309a3b806ac00491af",
+      "paragraphCount": 16
+    },
+    {
+      "_id": "ielts-academic-14-test-4-reading-passage-1",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "610e1c3fda4ace097f5a3d9c13c519f5a1ba8a13279c93a0cdace63904ae5d9f",
+      "newHash": "fac0fe891627f864a8e600207850d91f468798129fd5f513ce75b42a2d076303",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-14-test-4-reading-passage-2",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "64be973efe9b178a1943a04e47843d99c9aef3b73bf193b580207c47dc94f17b",
+      "newHash": "f6898011ca8f49608f645b3860358fe175e38099044a3d2b5e8ac2f8325d8eb9",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-14-test-4-reading-passage-3",
+      "sourceFile": "剑14真题.pdf",
+      "pollution": [],
+      "oldHash": "31878c3a32cb783444b025dd14651a6caf21bf511e683b66a95851f95c8ddf8f",
+      "newHash": "c9ae8960e2b52ada5ac5549f918607ab12662396ad0cf28c12615baf47cae1ce",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-15-test-1-reading-passage-1",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "0b819f7912f56b586f470ece81101520c20b29a9692b4c5af6bebc8907b7ebd3",
+      "newHash": "0eff7f034d975aa4db479953574dfeb81dc22da159b8024adb6fd99b98f51302",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-15-test-1-reading-passage-2",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "1b75b135aeeccf1f64881928dff7138d79560b3a1ee9543cfbcb9cb1ca67da68",
+      "newHash": "c3d051c3c60edcafa79a5821fa3901ab148baa1937b3f9684b8e4552effc2aa8",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-15-test-1-reading-passage-3",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "a06091c75404c0e1c8cccc35bf83639a52a5b240e76b69f5c19fd0645c2c9a82",
+      "newHash": "332aa1cc41e64cef892b9cbbc2d40719059345e5b11fb8908b5af91b61229edc",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-15-test-2-reading-passage-1",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "e47383d9a142c5058563535b95c2800b47a8ed7c0a512619485c4e3726acc603",
+      "newHash": "0ee769e5f68af8aaf15542fac2a69f1ae812f408fa979f3deffb6022e4c31d5b",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-15-test-2-reading-passage-2",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "f5ebe7eac85be80e06abba7805938a7e6004bb6e31cf90aa1796506b72703029",
+      "newHash": "6e8f4c85f5217e140cbaa39fa7e62c9aef5b7ad871ae686232227be43f83dea3",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-15-test-2-reading-passage-3",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "2b5e4ecfb492146a83702425fbb77a8598253ff722c8b410c79d5d4e4396ad8b",
+      "newHash": "3e570218dd5287cb29fcac84a06db21d96a8686755274958c2c7a0a360f6bfe4",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-15-test-3-reading-passage-1",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "a8f37c658a6dc3069c5cff46215a74a15891516b6152be58cb400a69c98017f8",
+      "newHash": "0699efc6e2ac2831fa6787b342979d002c27a653dea67a643283af5bdfa54188",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-15-test-3-reading-passage-2",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "e39a2d704e9f04944a481946053486348f96bb6e20d0605c61d7514a7680713f",
+      "newHash": "c3b9987e35a0122a18a647908232d2cbd541f2e92bcd44eb65dc84ca917848d0",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-15-test-3-reading-passage-3",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "f4847fd2643ac658309e2c65b47cf2bb4c8e66a6f5f4f4a7d8137633af3ca072",
+      "newHash": "67dba2dfc545efa5d54e6e479bed154607f473e5c1536966126e6c93f27ed238",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-15-test-4-reading-passage-1",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "60fdf30cf5662ac56b4c7c5aba5e42df7738d0e4531e2e9bb3aeeb523e842abd",
+      "newHash": "28a38128e94dd200a4aadb2eda9709a346e388853f3770e840689d6f35f67c96",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-15-test-4-reading-passage-2",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "a9a4871e86896f0f7bcc986d65a3fab1c69f04786ad6a6b35864fd0cce2c2ab8",
+      "newHash": "05caf5eb6d5e966405d0dcef874e0e8b96a27e430d570ec6180bbe35bca7bd4a",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-15-test-4-reading-passage-3",
+      "sourceFile": "剑15真题.pdf",
+      "pollution": [],
+      "oldHash": "33db940f67e5b301321914433c677efdd4d2374dcbda56075b61c87c99ab5438",
+      "newHash": "531dd2e22fce60b49f159ce8e8b68f82c51385f6f32b1d227c47d50009b6cffc",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-16-test-1-reading-passage-1",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "e9b5b831538508e77f64d2ea4e5d29bbc59e84cc1572e8727dfee252f0d47638",
+      "newHash": "99ca33e4b1c3c3c1d91db21fa554578298da4b852c93d15d8bd0a4131c094145",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-16-test-1-reading-passage-2",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "1dc862f792a0d8db89d58f20d7dac4acc1e593ccda3fa5e9729baae0e3d546e6",
+      "newHash": "dd3133158b000b4cf7d4e5924fc0313415ec1be50b2c1d48155b1fec0d8d9eb8",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-16-test-1-reading-passage-3",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "9cc358c4ddfb3ab429df598fe8c58c1a9376a0e1df85354381a79f17f03bc06e",
+      "newHash": "04c99b2715fd0defad21bda264264ba2c87c23d402d58d9b30876ff1aff7c12a",
+      "paragraphCount": 14
+    },
+    {
+      "_id": "ielts-academic-16-test-2-reading-passage-1",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "6f2e4a84e7ed80e9f1a8d5df5f3566118eb73030f4ae120aeddc9d1e48d79ed3",
+      "newHash": "757b768fc576cd2183b8a089e031120b5663c1403189d9eaba98b87b7270f702",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-16-test-2-reading-passage-2",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "b93294877a5cea6367902e24edd5f2f9195c81b5b7b5111e09e7adb2dfa717d4",
+      "newHash": "c3bb94c5eb9e5d6c56cd4ef3f5f0cbe08256a6f4aa6647f978a19cd6e37ec0f5",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-16-test-2-reading-passage-3",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "22289fef258d0da1776a7aaae5c7cfa4d0fe2604625ce3e481ef349873f4270f",
+      "newHash": "c7ec4c28bcc3cc81d38fb4117b5c9343f68cf9289b983ee53311deaf4176e3e0",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-16-test-3-reading-passage-1",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "8971c469ce1d30cf1b90f7f028ffaff992597f64f9c95a27da4caba9781a53fe",
+      "newHash": "e5c786298310531c9fc37b4858a560cd15554bcfecf7bd6844d5338ea8974ad3",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-16-test-3-reading-passage-2",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "c0ce292093536d497c27286fe7cd8b0038c188c233b12d2ae7bc6c949d7ecdac",
+      "newHash": "c1aa1f2633232a8799e9d409612246c37a37e41d7e27490acf1b16dfdb35b7f5",
+      "paragraphCount": 14
+    },
+    {
+      "_id": "ielts-academic-16-test-3-reading-passage-3",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "e0e3cd5b89efa8835590c9b3d8a9ed20d309e859d4e3b509bcf4a97e21997e5d",
+      "newHash": "ef2c6dffd5b86fad1179759f224d474b76f619a6facbd93f38c50eb2219ddc84",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-16-test-4-reading-passage-1",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "e513c651cb2a8db7d6f858159285461626a9f179c296243cd13c2c9b9b4483ec",
+      "newHash": "21768b641c80a64c41b40ebba73d9dbc75775e4fb2f5fb40e9775e55d76022e6",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "ielts-academic-16-test-4-reading-passage-2",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "ce10b05f9b2732e46416544bba000c3c73bfd69b8ffbe3639e06f10075a45e53",
+      "newHash": "7e03dba8767dd6ff18a22bbe58be5bbb69ced369dcbe025c2417064058c77db7",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-16-test-4-reading-passage-3",
+      "sourceFile": "剑16真题.pdf",
+      "pollution": [],
+      "oldHash": "4a7909561a19a3482c2463a8036d58023b627e3b9cf01a2aa592cd2e54472319",
+      "newHash": "c724283c3f1638bb5f9670651afe0e6bfb805654aa6b095e20e6e67b34ba847a",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-17-test-1-reading-passage-1",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "b9071d154e5897d61de218e16cd1335eabb77e7a3c1000eedf43ba3eba736a8f",
+      "newHash": "c327d3ef283c42a81ceab1c279ed67fa4b647e9342470ada94a9dc64a98bdad0",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-17-test-1-reading-passage-2",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "75e249b6a21dfe2da6d1ee3965dd733314fa8b9192e58d19a9820a04bd003972",
+      "newHash": "40e14e155183157fc94871c7a69e2c5e8e401fd86b44d3aca77a3fd9bf4a1063",
+      "paragraphCount": 15
+    },
+    {
+      "_id": "ielts-academic-17-test-1-reading-passage-3",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "697df405e8c3e861fc0745167cfc486f838b27151d60607f72b990b1064cc9f5",
+      "newHash": "2f2496751aff82c3383a72e00e5f42ab2578e73bdcf4f92cfe94f163ba039ee0",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-17-test-2-reading-passage-1",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "f5605f8fed7b77b31179f9392ca3ddee09166ced0d9077152c88dbf8326f018c",
+      "newHash": "af6c830441b0c58ff78a99bcf06a8875f8317e415c69712f8c3724a58b02cb9f",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-17-test-2-reading-passage-2",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "ec62e56352a23214dcd0dcc47c18022512fab3379217fcfc516bc560e0c28db8",
+      "newHash": "4a31402d6ca8bb08de5fac5ab43764f2d71b1cf29c87ceea3d9536be4055fb79",
+      "paragraphCount": 18
+    },
+    {
+      "_id": "ielts-academic-17-test-2-reading-passage-3",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "fc0a336aec02bc84fd7dff8dd7c42050a5e16078e51152d773f105c2186cf2dc",
+      "newHash": "c161ce4f24a33c1d2b91bb3d845161798016838fa8ea1809b756e696104e9aae",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-17-test-3-reading-passage-1",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "029098cb49036aab56fb4e459dcb0ff333a4ed163c8c860630e3203a208fe2c6",
+      "newHash": "8001d89fbbe73b9c43c76d6244b970768366cf1da383b1cb02d18bd19260c56e",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-17-test-3-reading-passage-2",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "4c3cd730f5333759597a3eaface76c88dfee3f8f739c5e376eb401fe8632779a",
+      "newHash": "87c04cc809612883c9bdacb458a0c328b4efd89d882de47e7e9bbda4088d9346",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-17-test-3-reading-passage-3",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "e5a983d919402e017961f14d9216802ba6df93b43557559292319aa10727148f",
+      "newHash": "f6bcb3393a6bf2235044e595999658767b8c0d3164b7cf8ef3173805d92f569d",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-17-test-4-reading-passage-1",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "f093eb59c882c401904c1aa8825ffe1e23e8f3073bdea5ffb54c561f5fc284d3",
+      "newHash": "ddc45ce40b713741494c7b03caee6fb5efceeacd9637babe6cebee8e22c94938",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-17-test-4-reading-passage-2",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "f9a9622d240f7423ff32cc907dc09db3761ef311cc76f23725cb8bc11fbb3b51",
+      "newHash": "08fe5bf689a5e3ad0dcbe157186082bbefda32318f12463bd58f0bb4e3427c68",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-17-test-4-reading-passage-3",
+      "sourceFile": "剑桥雅思17（A类）.pdf",
+      "pollution": [],
+      "oldHash": "941974c22311ae77ba50bdde32ecd2dd83dba607473f1c27326ec863d8802865",
+      "newHash": "0babaadfca447ee9823546aef4e1cb3bc4258383f2828d524070c40064cde9ef",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-18-test-1-reading-passage-1",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [],
+      "oldHash": "00b019e441e31d3bf0b7e946674563390e435da980f11ea76d5008ce471da070",
+      "newHash": "7f1794db3866d3a5e041231cf36899ec96c9b469a72100f8e8aad57bf1dd810c",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-18-test-1-reading-passage-2",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "cef6f3824b0839013bd26fa032a74e6059f90ee55662f27b7db70371d332c7c4",
+      "newHash": "48d87fef8405c06fc5722c81bbc71152cbd6ac20495278231ded908434570311",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-18-test-1-reading-passage-3",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "3bfb41fc211a82c54311d86f65de0fd8f24c2ba68d498026c8fac2c5effa5a0d",
+      "newHash": "995baf18de3614ab183fe32c16fe08cb50d32ce6cda091f2927423eb6b4cd4bb",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-18-test-2-reading-passage-1",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [],
+      "oldHash": "a9c30ab6794fbd3923a796722a9404ec6b4ddbc690b579b64d6bf4db6330c5c4",
+      "newHash": "e6f39e652c3194ebb4c42f0fb734a01eae0816da16b33e3320b43b337bcae901",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-18-test-2-reading-passage-2",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [],
+      "oldHash": "fed62093a98fa84ce280b13ce8942d9217da10b6d6c855841c2bc9da1e35f8b0",
+      "newHash": "768aa650608aee5b86c3db1400723b37813201fe1c6cb193954eb633bf32c441",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-18-test-2-reading-passage-3",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "5d56a94b6df6d2480e84081da9040f46969ccf851714492cca889263cdb30a48",
+      "newHash": "e095cb7622e1fa70a85952d3a5582bfadae5d2ee14ebe9177fdacef85f139432",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-18-test-3-reading-passage-1",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "0318429729cacd61b87b73c2f4fab0db364a34291b3c07bbe4f3d342592f7133",
+      "newHash": "b91863e75ce8b59feb5bac03c5010c79e0d5ddfd4630f729117880b7e68e1898",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-18-test-3-reading-passage-2",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "e9607edd1efbbce0933c652720c1f51be54ee1192b8e28820218ffe99680a33f",
+      "newHash": "aa07d4517e5421a1521fe808aa1836806f40764a3a14e8ba96bbd5b36e99895e",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-18-test-3-reading-passage-3",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [],
+      "oldHash": "327d4e0c8389216279a9f738ecf7094869e72054628adb20e1e72fc3e48d24b0",
+      "newHash": "b406520aaa40b1ce15894e8398c73702baf839045772e01c587279b55913e7c0",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-18-test-4-reading-passage-1",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [],
+      "oldHash": "1ab7b0bb11db829f1f46977353af877a919d77139e0979c53214dc79899239a9",
+      "newHash": "6d4030d1deef0b958d1f70fe97bb59db8cb549bcf9c1fee3c099dcd525361a2c",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "ielts-academic-18-test-4-reading-passage-2",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [],
+      "oldHash": "7bd5dcad40ceed339b30f02a9a5854cb1c24a54992e75ab034d69e48e791f13d",
+      "newHash": "7781f373c32568014c2e9b660d117253276a904cb794cde0ba239f74a9da8be8",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-18-test-4-reading-passage-3",
+      "sourceFile": "剑桥雅思真题18.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "94ad9ebfccd7ea5f72f0bb96a4ce418c944cc9565fea57366a072d4ed1a27722",
+      "newHash": "49c64cf173240db35dbdd1cce1e56b4f0c57d15ce2e6841e132f70bc0cd1b68e",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-19-test-1-reading-passage-1",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "951c74ac95b0cda9b16dbb80dd3720caabc14e71759c3e95643ac8d63381b13c",
+      "newHash": "f1246b3e407d32b2b3fdf83629b98ae0b9ecb649dd4c28a1306066c2a0e19cfd",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-19-test-1-reading-passage-2",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "88c746d5794021a753bded875e82b2b5d381656d7ef53cbaeaedffc056f52538",
+      "newHash": "ae51a7c227126d0c39f3689992cf41d50960bad223caeec12ae30bae8a92ab80",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-19-test-1-reading-passage-3",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "e494162ea8f29a98f1a3e4302d9f395b9e05dc8f890e72c2fb319a6552795d3a",
+      "newHash": "0bc9cec7699020c822df6a6358d015b57e168886a59ff364416c09e5c4e38dd3",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-19-test-2-reading-passage-1",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "f2980b5384c171263a48076c7f171d07c06c9a2344dab73cf81bf5a867e2f9f7",
+      "newHash": "967b3f64cf81f789369deea76d41a229af47460f0775b5c5000a9e38e22b450d",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-19-test-2-reading-passage-2",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "47be3b2382a839cf0dce26ea631c450b3a2ae15f7c6a1cec24a2615d1ae7f3d7",
+      "newHash": "9e7c09529ba78d7028e7496d3d5db2b043ac8fcabbc0455411b2472495fc51c4",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-19-test-2-reading-passage-3",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "2cfafc96c4b05b3f61ef4dd466a0503814b6888be838d70b8af1617b907df56f",
+      "newHash": "0bf81fc1c74bc917fcafde4c68482a0ea5a3e781ae674a83d02ecddb50c0e826",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-19-test-3-reading-passage-1",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "959659231390fa92524ab265de95c1570fe0345a10134e04ad6d6a940a1c545b",
+      "newHash": "77d5633cb6fe6e9cd14776afb5b12221247ceae5ffb86e93600c449266e9bfa6",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-19-test-3-reading-passage-2",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "8ba90e8a09c79ddd707f1cfcf0d614c728bbdd091046d9d9b0bb68bd75a64282",
+      "newHash": "ea8d2ed69c62f10accad60378a2984f22e68e658457a97b5500ebcd878c98c3f",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-19-test-3-reading-passage-3",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "25b5a69fe8d2b58ae9da460a00658bd63502ad54c3e889283e21cf75e16fcff7",
+      "newHash": "03204ae2ab96aa3d3dead6250121fc885c9d7be4ca099f33831544898c4d0897",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-19-test-4-reading-passage-1",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [],
+      "oldHash": "f0d7485e1daebbc4e99b1592b0ddd4ea9282ea0156b6c7cc8c886c5c581f7eaa",
+      "newHash": "9eaaecf912bb288487ddd57a33bb1713ddc4728700b3c1ec0cc29a248010f2c3",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-19-test-4-reading-passage-2",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "79d48382b2f5503fc744e867f46b3a82fd928c5ec3391d7b2cb0f32bdf54e72f",
+      "newHash": "5a6fa7d59f65b27534d8a579eba0e06331b0926695c6ec75e015797a5af95790",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-19-test-4-reading-passage-3",
+      "sourceFile": "剑19（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "e6342d49d9f3cbe8aaf6439f2f69c66e6bd01a63d37ad07da5436d6a6717d3eb",
+      "newHash": "aa9050391d1a10d9d88ec8d9a490ba772d356a753d54f761ccccb025d3e0a8ca",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-20-test-1-reading-passage-1",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [
+        "article-title"
+      ],
+      "oldHash": "ed7fbd8f049e620dc2a9d765a1a7b1f479729c76d6f03abced3fbf68d142d120",
+      "newHash": "ccf0dccb01ff292bc3d40d5b09a14974979ee8cf1438ef14e14b17c4cba0a71b",
+      "paragraphCount": 14
+    },
+    {
+      "_id": "ielts-academic-20-test-1-reading-passage-2",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "c706dfeaeaa62e6562c07b2f3a2e031ce04425af3229a471012d7d7e885e426e",
+      "newHash": "e0bcfc9a3a0f87b33269746548681f2b376dd6bec41bc6021bc7285c6b74af95",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-20-test-1-reading-passage-3",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [],
+      "oldHash": "d61f6a36c255088d1704dbf114762d998ae8554bb6bd827245ed7a3679d5d9c2",
+      "newHash": "e63361127261fd96b441f38aa739edae9efac877f07e19c641ba4b10a0f96923",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-20-test-2-reading-passage-1",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [
+        "article-title"
+      ],
+      "oldHash": "08c6dc3a6a391fdb7346a89d210beff07c538f56fc6602907eb911c1fcf1bfb8",
+      "newHash": "55d0e3260cd289d2ef198eb8c3ef2883d47038215b3adc45626c00e7bfad48fe",
+      "paragraphCount": 14
+    },
+    {
+      "_id": "ielts-academic-20-test-2-reading-passage-2",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "77d3a60a104a48430313ee26e35399b50cb3c87c214a2beb6d1359b639ebbc62",
+      "newHash": "3f6c2e6bf669e464ad6056685a89aecc81cf2e9976e49b31c78b941971592483",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-20-test-2-reading-passage-3",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [],
+      "oldHash": "2de4087fc41adb9a7a69edc4130ad655e079684d7aec4eb7989aee863221ac11",
+      "newHash": "844693fc208f8840c091efa201e38f5eb82a08c1ab9ee89ad0a6342d2238cf1a",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-20-test-3-reading-passage-1",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "b4fa31372e872fcf84e60d3b30a5ce857a9a757ba7c58f0c01e50d5321e3a24a",
+      "newHash": "da24e96b694db8e9ed75169bfb3ae1257f4c4b2039a6d3879e0e18e5bcfde4c2",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-20-test-3-reading-passage-2",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "60110a87cf54568cabe42cb6657a5cf4679e0d0d1f475c1034a48e2a91a87298",
+      "newHash": "ecbe4e07b9574295e9a616927983176a8ce33ad2e16ba3a2a740afad92d74015",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-20-test-3-reading-passage-3",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [],
+      "oldHash": "9c36c86a2f6bc494936ddba6d0e6c16a0446705697ddc3cd968310b08ed8db5b",
+      "newHash": "a5cdce811047ca4d828bb62f5b36e7ef3ab92f5abe00b1cb88dbf545c84f70e6",
+      "paragraphCount": 14
+    },
+    {
+      "_id": "ielts-academic-20-test-4-reading-passage-1",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [],
+      "oldHash": "f5f1e7675246cb24494f8415d4c7107a1ed4cb4c3f1cc8cc72cc67269b11edc1",
+      "newHash": "1a9ca699ef74dda4a358ac8361415320d53737eb99833dd0245970bff844c6df",
+      "paragraphCount": 12
+    },
+    {
+      "_id": "ielts-academic-20-test-4-reading-passage-2",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [],
+      "oldHash": "bf6d0a24933696a9da37ee05f604e10bf1d8dd5c037a936bf0b85d0c3d5ad7cb",
+      "newHash": "3da54c13154138160b811f61f6c0b3ce77510622aebcda5179067e5e2a0ed203",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "ielts-academic-20-test-4-reading-passage-3",
+      "sourceFile": "剑桥雅思20学术类.pdf",
+      "pollution": [],
+      "oldHash": "e9525a776a9c308c1728ec96b84d5f5eea97dfc3f141bfa82ba9c3294aee7e1f",
+      "newHash": "eeb54d121cf72681514c0b9c4b2937385f9efe0c76b87e95a977974909be66fe",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "ielts-academic-21-test-1-reading-passage-1",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "7ada8435222530f990730e257a43de5318c203666b3e4fbaecbf3b5bf6ffd61a",
+      "newHash": "a5b2c4e7a4148e0df23c8b3b88ec2a6a92ce6561231aecf2f5167b457aafcefe",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-21-test-1-reading-passage-2",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "2c26d7f29e1ba5729a21f5dabaef556646b54b2d1385dc4fc8cdeb276dd2bf9b",
+      "newHash": "0e85fa5aeb5d18136967062e699b09b60928253b9af2810ce997c796c62dc605",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-21-test-1-reading-passage-3",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "2b10939ca0cd3c5b0b99cb2905e1e2abec5edd54599ed9db47842b11e0d7f0a3",
+      "newHash": "7692c9cfe5c5a27781ed9f4e7c26e252ea1a71019312868a85b056657b7a94cd",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-21-test-2-reading-passage-1",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "c3921a7c4b97b965440afcdca0daca867f1664bb2f706303060ed918d322fa75",
+      "newHash": "e221f756876705a7bfee3c9e2bcfe0d0379f2785decf6e0010844861e7573695",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-21-test-2-reading-passage-2",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "ac233e312922ab935a3dca41446563156459db58c37af2f951a04883391157f8",
+      "newHash": "70ff6b7a86e7f401673cfed9a5a94f141270879c0e6593aff3a32a8212c562e1",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "ielts-academic-21-test-2-reading-passage-3",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "0854d61e831e32bbe710d24bcbda121de988ae0c192c8adeb0c1e9efd9c640f0",
+      "newHash": "8ce17197501e8932cce42cfd3cf05a094fab4cb77508f5ed3304ee97f3f854f2",
+      "paragraphCount": 13
+    },
+    {
+      "_id": "ielts-academic-21-test-3-reading-passage-1",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "fcd7cebdd7ababfafdf67dfc0f7ed91112a274ff9af645709bb13873356512bf",
+      "newHash": "0965bed5250fe2eae94956ad73311f577ed993ea1342a96c9bbb8dcf7ed3c435",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-21-test-3-reading-passage-2",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "b7a9e53422693e515166273ba2f923a49e06fba52d48abdb3f21da487f50e1df",
+      "newHash": "e68a9f5af91629e469c5c3733cc70cb48be1e7fdfe0e200acb49d8344dbf0e88",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "ielts-academic-21-test-3-reading-passage-3",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "336ce6148c4bfb5341f81bb96c9039d06764a9d1d20fcde416122c4eff20a1be",
+      "newHash": "f7010d8f220788e30cb97b757d6eae8432cd2d10dc134da7f610ae972851a797",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "ielts-academic-21-test-4-reading-passage-1",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "8919cd4f96a72e246f77dfe20d953a564b3339a0485b13e05e3bfcbfc45bb58f",
+      "newHash": "fba106636f8df30159f0a649fca24f645a0e86d790793859ddf19dd29787bb00",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-21-test-4-reading-passage-2",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [],
+      "oldHash": "d27c2b0b213c064796d4bd6f8462d1471e76dd1c404eec1f1b41d468ae2c55f0",
+      "newHash": "407c5436b40cf49f3742a3e7145e254a46e892102c9585c27bcbd1bfd67f88cd",
+      "paragraphCount": 11
+    },
+    {
+      "_id": "ielts-academic-21-test-4-reading-passage-3",
+      "sourceFile": "剑桥雅思21（A类）.pdf",
+      "pollution": [
+        "article-subtitle"
+      ],
+      "oldHash": "2601c0acc709db3b2891c52cac5b49c28cbf29e7b1f674785c7b68f84002b726",
+      "newHash": "ea4effe204f4f992d6d86d97bffd376048044eba316f145a0e9b8a632953dd68",
+      "paragraphCount": 9
     }
   ],
   "pollutionTypes": {
-    "article-title": 18,
+    "article-subtitle": 53,
+    "article-title": 25,
+    "cross-section-content": 4,
     "directions": 27,
     "page-watermark": 11,
-    "question-directions": 97,
-    "score-prefix": 32,
-    "section-heading": 18
+    "question-directions": 95,
+    "score-prefix": 50,
+    "section-heading": 21,
+    "source-link": 1
   }
 }

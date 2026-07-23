@@ -13,12 +13,24 @@ from reading_content_structure import structure_reading_item
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SNAPSHOT_DIR = ROOT / 'data/cloud-backups/2026-07-24-junior-ielts-structure'
 GROUPS = {
-    'junior-em1': ROOT / 'data/reading-em1/reading-passages.json',
-    'junior-em2': ROOT / 'data/reading/reading-passages.json',
-    'senior-spring': ROOT / 'data/reading-senior-spring/reading-passages.json',
-    'senior-autumn': ROOT / 'data/reading-senior-autumn/reading-passages.json',
+    'junior-em1': {
+        'path': ROOT / 'data/reading-em1/reading-passages.json',
+        'snapshot': SNAPSHOT_DIR / 'reading-em1__reading-passages.json',
+    },
+    'junior-em2': {
+        'path': ROOT / 'data/reading/reading-passages.json',
+        'snapshot': SNAPSHOT_DIR / 'reading__reading-passages.json',
+    },
+    'senior-spring': {'path': ROOT / 'data/reading-senior-spring/reading-passages.json'},
+    'senior-autumn': {'path': ROOT / 'data/reading-senior-autumn/reading-passages.json'},
 }
+for book in range(10, 22):
+    GROUPS[f'ielts-{book}'] = {
+        'path': ROOT / f'data/ielts-academic/cambridge-{book}/reading/v2/reading-passages.json',
+        'snapshot': SNAPSHOT_DIR / f'ielts-academic__cambridge-{book}__reading__v2__reading-passages.json',
+    }
 REPORT_PATH = ROOT / 'data/reading-content-structure-clean-report.json'
 
 
@@ -45,6 +57,18 @@ def baseline_by_id(path: Path) -> dict:
     return {item.get('_id'): item for item in json.loads(result.stdout)}
 
 
+def merge_snapshot_items(path: Path, snapshot_path: Path | None) -> tuple[list[dict], dict]:
+    local_items = json.loads(path.read_text(encoding='utf-8'))
+    if not snapshot_path or not snapshot_path.exists():
+        return local_items, {}
+    snapshot_items = json.loads(snapshot_path.read_text(encoding='utf-8'))
+    snapshot_by_id = {item.get('_id'): item for item in snapshot_items}
+    snapshot_ids = set(snapshot_by_id)
+    merged = list(snapshot_items)
+    merged.extend(item for item in local_items if item.get('_id') not in snapshot_ids)
+    return merged, snapshot_by_id
+
+
 def main():
     previous_rows = {}
     if REPORT_PATH.exists():
@@ -52,13 +76,17 @@ def main():
         previous_rows = {row.get('_id'): row for row in previous.get('affectedIds', [])}
     report = {
         'schema': ['directions', 'sectionHeading', 'articleTitle', 'articleSubtitle', 'passageParagraphs', 'passage'],
+        'cloudSnapshot': str(SNAPSHOT_DIR.relative_to(ROOT)),
         'groups': {},
         'affectedIds': [],
     }
     total_types = Counter()
-    for group, path in GROUPS.items():
-        items = json.loads(path.read_text(encoding='utf-8'))
+    for group, config in GROUPS.items():
+        path = config['path']
+        items, snapshot_by_id = merge_snapshot_items(path, config.get('snapshot'))
         baseline = baseline_by_id(path)
+        old_by_id = dict(baseline)
+        old_by_id.update(snapshot_by_id)
         cleaned = []
         affected = []
         group_types = Counter()
@@ -77,7 +105,7 @@ def main():
                 '_id': item['_id'],
                 'sourceFile': item.get('sourceFile', ''),
                 'pollution': pollution,
-                'oldHash': digest(baseline.get(item['_id'], item)),
+                'oldHash': digest(old_by_id.get(item['_id'], item)),
                 'newHash': digest(next_item),
                 'paragraphCount': detail.get('paragraphCount', 0),
             })

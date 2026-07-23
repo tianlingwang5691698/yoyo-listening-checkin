@@ -34,8 +34,10 @@ function assertCoverage(item, ranges) {
 const POLLUTION_PATTERNS = {
   directions: /^\s*Directions\b/i,
   sectionHeading: /^\s*(?:(?:[IVX]+|[Ⅰ-Ⅹ])\.?\s*)?(?:Reading Comprehension|Grammar and Vocabulary|Section\s+[A-D])\b/i,
-  questionDirections: /^\s*(?:answer\b|根据(?:短文|文章|对话|以下)内容|[A-D][.、)]\s*(?:Choose|Read|Answer)\b)/i,
-  scorePrefix: /^\s*(?:\d+\s*[.．、]\s*)?[（(][^）)]*分[^）)]*[）)]/,
+  questionDirections: /^\s*(?:answer\b|and\s+complete\s+the\s+passage\b|Read\s+the\s+passage\s+and\s+fill\b|选择最恰当的选项完成短文|在短文的空格内填入适当的词|根据(?:短文|文章|对话|以下)内容|[A-D][.、)]\s*(?:Choose|Read|Answer)\b)/i,
+  crossSectionContent: /\bD\s*[.．、)]\s*Answer\s+the\s+questions\b/i,
+  sourceLink: /^\s*HYPERLINK\s+"https?:\/\//i,
+  scorePrefix: /^\s*(?:[）)]\s*)?(?:\d+\s*[.．、]\s*)?[（(][^）)]*分[^）)]*[）)]/,
   pageWatermark: /(?:\bsmart\s*)?第\s*\d+\s*页\s*(?:[（(]?\s*共\s*\d+\s*页\s*[）)]?)?/i
 };
 
@@ -82,6 +84,15 @@ for (let book = 10; book <= 21; book += 1) {
   const items = readJson(`data/ielts-academic/cambridge-${book}/reading/v2/reading-passages.json`);
   let originalLetterLabels = 0;
   items.forEach((item) => {
+    const expectedTitle = String(item.title || '').split(/\r?\n/).map((part) => part.trim()).filter(Boolean)[0] || '';
+    if (item.dataFormat !== 'reading-structured-v1') throw new Error(`ielts-structure:${item._id}`);
+    if (item.articleTitle !== expectedTitle) throw new Error(`ielts-title:${item._id}`);
+    if (!Array.isArray(item.passageParagraphs) || item.passageParagraphs.join('\n\n') !== item.passage) {
+      throw new Error(`ielts-passage-paragraphs:${item._id}`);
+    }
+    if (item.articleSubtitle && item.passageParagraphs[0] === item.articleSubtitle) {
+      throw new Error(`ielts-subtitle-in-passage:${item._id}`);
+    }
     const analysis = analyzeOriginalIeltsParagraphLabels(item.passage);
     const ranges = buildReadingParagraphRanges(item._id, item.passage, item.questions);
     const flattened = item.passage.replace(/\s+/g, ' ');

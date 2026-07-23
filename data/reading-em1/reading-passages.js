@@ -3887,2078 +3887,6 @@ module.exports = [
     ]
   },
   {
-    "_id": "sh-em1-2020-虹口-reading-a",
-    "title": "2020 上海虹口一模阅读 A",
-    "year": 2020,
-    "city": "上海",
-    "district": "虹口",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking.\n\nWhen the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals.\n\nThe ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change.\n\nIn 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world.\n\nRising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef.",
-    "questions": [
-      {
-        "number": 69,
-        "prompt": "_______ has (have) long been threatening the ancient city of Venice.",
-        "options": {
-          "A": "The ancient buildings",
-          "B": "A body of the water",
-          "C": "Rising sea levels",
-          "D": "The level of the Adriatic Sea"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 70,
-        "prompt": "Mount Kilimanjaro is very important because of its _______.",
-        "options": {
-          "A": "highest point measuring almost 6,000 meters in Africa",
-          "B": "support for 5 plant areas and all the animals in the area",
-          "C": "bad effect on ecosystems and Tanzania’s travel industry",
-          "D": "valuable record of thousands of years of weather history"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 71,
-        "prompt": "The underlined word “estimate” in Paragraph 4 means _______.",
-        "options": {
-          "A": "count",
-          "B": "guess",
-          "C": "suggest",
-          "D": "decide"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 72,
-        "prompt": "Which of the following is NOT harmful to the Great Barrier Reef?",
-        "options": {
-          "A": "Warmer temperature.",
-          "B": "Sick or dying coral.",
-          "C": "Water pollution.",
-          "D": "Considerate visitors."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 73,
-        "prompt": "In the passage the writer uses the way of writing EXCEPT by _______.",
-        "options": {
-          "A": "providing examples",
-          "B": "giving definitions",
-          "C": "listing numbers",
-          "D": "making comparisons"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 74,
-        "prompt": "The book is probably called _______.",
-        "options": {
-          "A": "Disappearing destinations",
-          "B": "Treasures in the world",
-          "C": "Ecosystem of the world",
-          "D": "Interesting places"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据以下内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking.",
-      "When the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals.",
-      "The ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change.",
-      "In 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world.",
-      "Rising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef."
-    ]
-  },
-  {
-    "_id": "sh-em1-2020-静安-reading-a",
-    "title": "2020 上海静安一模阅读 A",
-    "year": 2020,
-    "city": "上海",
-    "district": "静安",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park.\n\n“I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City.\n\nFrederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University.\n\nHe also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops.\n\nThere maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?",
-    "questions": [
-      {
-        "number": 69,
-        "prompt": "Jin Hee Park thinks his university campus is ________ for walking and relaxing.",
-        "options": {
-          "A": "basic",
-          "B": "academic",
-          "C": "attractive",
-          "D": "crowded"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 70,
-        "prompt": "Alejandro Vega feels ________ when he jogs in Central Park, for it feels private.",
-        "options": {
-          "A": "enjoyable",
-          "B": "bored",
-          "C": "nervous",
-          "D": "surprised"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 71,
-        "prompt": "Niagara Falls in America was close to the public because of its wonderful ________.",
-        "options": {
-          "A": "lists",
-          "B": "contests",
-          "C": "falls",
-          "D": "footpaths"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 72,
-        "prompt": "“no trip to New York is complete” (in Para. 4) probably means ________.",
-        "options": {
-          "A": "it’s not a perfect trip to New York",
-          "B": "we should never go for a trip to New York",
-          "C": "don’t finish a trip in New York",
-          "D": "New York isn’t a good place to visit"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 73,
-        "prompt": "In all of Olmsted’s designing products, he tried to ________",
-        "options": {
-          "A": "design footpaths for better views of the falls",
-          "B": "protect the natural beauty of an area",
-          "C": "include landscapes of Stanford University campus",
-          "D": "rebuild the Central Park in New York City."
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 74,
-        "prompt": "Which of the following best describes the present situation on Niagara Falls?",
-        "options": {
-          "A": "This area is developed and becomes more lovely.",
-          "B": "Olmsted expected most of the animals there to leave.",
-          "C": "People are no longer allowed to visit souvenir shops.",
-          "D": "Some people are doing learn to the environment."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据以下内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park.",
-      "“I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City.",
-      "Frederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University.",
-      "He also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops.",
-      "There maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-嘉定-reading-a",
-    "title": "2021 上海嘉定一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "嘉定",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市嘉定区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "Most 15-year-old teenagers are worrying about their math homework and trying to fit in with other kids of their age. But Henry Patterson is busy running a successful online business instead. Patterson, a teenager from England, began to have this idea when he was nine. One year later, he started a company called Not Before Tea.\n\nHe began by selling sweets, but soon turned to household products like wash bags and soft toys. The items he sell feature（以…为特色）characters from a book he wrote called The Adventures of Sherb and Pip. Patterson’s early school years were difficult, as he showed great difference from his peers（同辈人）. He saw the world differently and was rarely invited to parties or play with.\n\nHe also had a stammer（口吃）, which made him feel even more lonely. But these things didn’t hold him back. To cheer himself up, Patterson gradually immersed（使…沉浸）himself in designing different animals and writing interesting stories about them. His character started to become popular. He tried very hard to express himself clearly and talk to bigger audience.\n\nHis business has earned him 65,000 pounds and he won big prize at the National Retail Business Awards for Teenagers. On top of this, he does his best to keep his schoolwork as a priority（优选项）. He takes his homework with him to events and does it on the train or after a presentation. Two years ago, he wrote a book called Young and Mighty.\n\nIt describes his search for success and happiness. “The real point of the book is to help people of my age think about how to make their way in the world.” he wrote.",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "Patterson’s business is to ________.",
-        "options": {
-          "A": "help teens with their math homework",
-          "B": "sell household products",
-          "C": "sell sweets and tea",
-          "D": "sell books"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "Patterson ________ in his early school years.",
-        "options": {
-          "A": "tried hard to play with others",
-          "B": "fell behind his classmates",
-          "C": "went to lots of parties",
-          "D": "had a speech problem"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "Patterson dealt with his loneliness by ________.",
-        "options": {
-          "A": "designing things and writing stories",
-          "B": "talking to different people",
-          "C": "reading interesting stories",
-          "D": "doing part-time jobs"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "Patterson’s business is so ________ that he earned money and won a big prize.",
-        "options": {
-          "A": "disappointing",
-          "B": "successful",
-          "C": "creative",
-          "D": "hard"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "Patterson wrote a book to encourage people of his age to ________.",
-        "options": {
-          "A": "be a writer in the future",
-          "B": "start their own business",
-          "C": "balance business and school well",
-          "D": "think about how to be successful"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Most 15-year-old teenagers are worrying about their math homework and trying to fit in with other kids of their age. But Henry Patterson is busy running a successful online business instead. Patterson, a teenager from England, began to have this idea when he was nine. One year later, he started a company called Not Before Tea.",
-      "He began by selling sweets, but soon turned to household products like wash bags and soft toys. The items he sell feature（以…为特色）characters from a book he wrote called The Adventures of Sherb and Pip. Patterson’s early school years were difficult, as he showed great difference from his peers（同辈人）. He saw the world differently and was rarely invited to parties or play with.",
-      "He also had a stammer（口吃）, which made him feel even more lonely. But these things didn’t hold him back. To cheer himself up, Patterson gradually immersed（使…沉浸）himself in designing different animals and writing interesting stories about them. His character started to become popular. He tried very hard to express himself clearly and talk to bigger audience.",
-      "His business has earned him 65,000 pounds and he won big prize at the National Retail Business Awards for Teenagers. On top of this, he does his best to keep his schoolwork as a priority（优选项）. He takes his homework with him to events and does it on the train or after a presentation. Two years ago, he wrote a book called Young and Mighty.",
-      "It describes his search for success and happiness. “The real point of the book is to help people of my age think about how to make their way in the world.” he wrote."
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-奉贤-reading-a",
-    "title": "2021 上海奉贤一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "奉贤",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市奉贤区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "Healthy impact of sunflower seeds Sunflower seeds（葵花籽）are rich in vitamin E. The vitamin is an antioxidant（抗氧化剂）that helps prevent cancer, heart disease, eye problems and possibly aging（衰老）. The strength of seeds One serving of sunflower seeds gives you 14 milligrams（毫克）of vitamin E. Experts say people need 15 milligrams of vitamin E every day!\n\n28g of sunflower seeds: 14 mg of vitamin E Vitamin E needed each day: 15 mg of vitamin E How to serve Eat alone as a snack, on top of salads, in bread, and in vegetable dishes. Sources: World’s Healthiest Foods. Discovery Health, TNS",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "The vitamin in sunflowers can NOT ________.",
-        "options": {
-          "A": "prevent cancer",
-          "B": "make people’s bone stronger",
-          "C": "protect people from heart disease",
-          "D": "make people’s eyes healthier"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "One serving of sunflowers seeds weighs ________.",
-        "options": {
-          "A": "28mg",
-          "B": "28g",
-          "C": "14mg",
-          "D": "14g"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "To get enough vitamin E, we should eat ________ sunflower sees every day.",
-        "options": {
-          "A": "14mg",
-          "B": "28g",
-          "C": "15mg",
-          "D": "30g"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "It is a good way to ________.",
-        "options": {
-          "A": "eat sunflower seeds with vegetables",
-          "B": "put sunflower seeds in water first",
-          "C": "bake sunflower seeds in an oven",
-          "D": "eat sunflower seeds along with other snacks"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "We can find this information ________.",
-        "options": {
-          "A": "in a story book",
-          "B": "on the website of local government",
-          "C": "in a health magazine",
-          "D": "on an advertisement board"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据以下内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Healthy impact of sunflower seeds Sunflower seeds（葵花籽）are rich in vitamin E. The vitamin is an antioxidant（抗氧化剂）that helps prevent cancer, heart disease, eye problems and possibly aging（衰老）. The strength of seeds One serving of sunflower seeds gives you 14 milligrams（毫克）of vitamin E. Experts say people need 15 milligrams of vitamin E every day!",
-      "28g of sunflower seeds: 14 mg of vitamin E Vitamin E needed each day: 15 mg of vitamin E How to serve Eat alone as a snack, on top of salads, in bread, and in vegetable dishes. Sources: World’s Healthiest Foods. Discovery Health, TNS"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-宝山-reading-a",
-    "title": "2021 上海宝山一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "宝山",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市宝山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "Lead Guitarist Wanted We need a boy or girl who can play lead guitar for our new rock band. You do not have to be good at playing yet—we are all learning at the moment—but you must have your own guitar. You must be free to practice on Tuesdays after school. Contact Scott, Phone: 555-1967 Email: scottrock@musiccom.net Cool Singer Wanted We are up-and-coming hip hop band for boys.\n\nWe need another singer who can look cool with us onstage. We practice every Saturday at 3 p.m. If you join us, we will practice at your house sometimes. Emall Troy: Lazyguy@hiphopsters.net Phone: 555-1989 Keyboardist for an All-girl R&B/Pop Band Can you play the Keyboard? We are looking for a girl who likes songs by Mariah Carey, Britney Spears and Jessica Simpson.\n\nYou should be able to play some tunes. You should have long hair and like to dance. You do not need to have your own keyboard, but it will be helpful if you want to practice at home. We are meeting every Sunday afternoon for practice. Call Wendy at 555-1993 or email wendybee@musicgirl.net Music Lovers Needed We are a new group and we play all kinds of music.\n\nJoin us and play any instrument you like (even if you are not good at playing it yet!). We have permission to use the music room and we are free to use the instruments for practice every Tuesday and Thursday afternoons. There are now four boys and three girls in the group—we are a big band and we welcome new people. Call Gary at 555-1985 Email: Garylovesmusic@newgroup.net",
-    "questions": [
-      {
-        "number": 70,
-        "prompt": "Which advertisement says you must have your own instrument?",
-        "options": {
-          "A": "Lead Guitarist Wanted.",
-          "B": "Cool Singer Wanted.",
-          "C": "Keyboardist for an All-girl R&B/Pop Band.",
-          "D": "Music Lovers Needed."
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 71,
-        "prompt": "Judy is good at playing the piano and she is available on weekends. Besides, she is a big fan of Britney Spears. Now, she wants to join a band. She is probably going to call ________.",
-        "options": {
-          "A": "555-1967",
-          "B": "555-1989",
-          "C": "555-1993",
-          "D": "555-1985"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 72,
-        "prompt": "Tom is a cool dresser who lives in a big house. He can sing very well and he is available on weekends. Now, he wants to join a band. He is probably going to email ________.",
-        "options": {
-          "A": "scottrock@musiccorn.net",
-          "B": "Lazyguy@hiphopsters.Net",
-          "C": "wendybee@musicgirl.net",
-          "D": "Garylovesmusic@newgroup.net"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 73,
-        "prompt": "The underlined word“permission”in the text probably means “ ________”.",
-        "options": {
-          "A": "the state of sharing the same opinion of feeling",
-          "B": "an interesting or enjoyable thing to do",
-          "C": "an act of allowing somebody to do something",
-          "D": "an act of appearing in public places"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 74,
-        "prompt": "The text above is written to ________.",
-        "options": {
-          "A": "make more students enjoy the beauty of music",
-          "B": "introduce different bands to others",
-          "C": "share better ways to practice musical instruments",
-          "D": "attract students to join their band"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Lead Guitarist Wanted We need a boy or girl who can play lead guitar for our new rock band. You do not have to be good at playing yet—we are all learning at the moment—but you must have your own guitar. You must be free to practice on Tuesdays after school. Contact Scott, Phone: 555-1967 Email: scottrock@musiccom.net Cool Singer Wanted We are up-and-coming hip hop band for boys.",
-      "We need another singer who can look cool with us onstage. We practice every Saturday at 3 p.m. If you join us, we will practice at your house sometimes. Emall Troy: Lazyguy@hiphopsters.net Phone: 555-1989 Keyboardist for an All-girl R&B/Pop Band Can you play the Keyboard? We are looking for a girl who likes songs by Mariah Carey, Britney Spears and Jessica Simpson.",
-      "You should be able to play some tunes. You should have long hair and like to dance. You do not need to have your own keyboard, but it will be helpful if you want to practice at home. We are meeting every Sunday afternoon for practice. Call Wendy at 555-1993 or email wendybee@musicgirl.net Music Lovers Needed We are a new group and we play all kinds of music.",
-      "Join us and play any instrument you like (even if you are not good at playing it yet!). We have permission to use the music room and we are free to use the instruments for practice every Tuesday and Thursday afternoons. There are now four boys and three girls in the group—we are a big band and we welcome new people. Call Gary at 555-1985 Email: Garylovesmusic@newgroup.net"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-崇明-reading-a",
-    "title": "2021 上海崇明一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "崇明",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市崇明区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet.\n\nEach from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children.\n\nThe teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers.\n\nStudents are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759.\n\nIf students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "To register for the summer camp, ________ must sign the application form.",
-        "options": {
-          "A": "the child's parents",
-          "B": "the school",
-          "C": "the teaching staff",
-          "D": "the children"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "The underlined phrase \"relate to\" most likely means \"________\" in the text.",
-        "options": {
-          "A": "surprise",
-          "B": "understand",
-          "C": "protect",
-          "D": "interview"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "According to the environment, children at the camp can do the following except ________.",
-        "options": {
-          "A": "programming",
-          "B": "swimming",
-          "C": "reading books",
-          "D": "doing experiments"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "If Jane, aged 16, wants to improve her writing skills, she should register for ________.",
-        "options": {
-          "A": "Camp A",
-          "B": "Camp B",
-          "C": "Camp C",
-          "D": "Camp D"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "The text above is writing to ________.",
-        "options": {
-          "A": "introduce a summer camp program",
-          "B": "ask students to respect their teachers",
-          "C": "encourage kids to have more fun",
-          "D": "teach parents how to complete a form"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet.",
-      "Each from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children.",
-      "The teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers.",
-      "Students are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759.",
-      "If students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-徐汇-reading-a",
-    "title": "2021 上海徐汇一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "徐汇",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市徐汇区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "GARDEN CITY COLLEGE GENERAL RULES FOR ONLINE CLASSES It is very important to carefully read the rules and cancellation policies of the online classes before beginning your class. You should enter the virtual（虚构的）classroom at least 2 days before your first class in order to learn how to work within the system. If you need any technical support, you can call our technical staff during their office hours（From 8:30 a.m.\n\nto 5:30 p.m. on weekdays）. Make sure to log onto the platform 15 minutes before your class. We will not make up class time due to late arrivals. Check your course schedule. It is strongly recommended that you actively take part in each class. Listen carefully and don’t talk over with someone. You should behave properly and have good manners.\n\nBeing polite on the Internet should be as common as in real life. Respect other people’s opinions. Besides, online privacy is something you should keep in mind when typing anything. You should stay away from anything considered not suitable and rude. At the beginning of each new course, we will place you with a new teacher.\n\nThis change will allow you to experience different learning styles with other teachers who are fully trained to teach online courses. If your present teacher is not available to teach（due to sickness or an emergency）, we will not cancel class. Instead, class will be given by a substitute（代替的）teacher. These rules may change over time due to the changing nature of the online space.",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "To get yourself familiar with the system, you are suggested to ________.",
-        "options": {
-          "A": "contact school’s technical stall during their office hours",
-          "B": "have a trial test 2 days before the course starts",
-          "C": "log onto the platform every 15 minutes",
-          "D": "avoid late arrivals to enter the virtual classroom"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "Which of the following is suitable to type when you take online classes?",
-        "options": {
-          "A": "“Linda, shall we meet at my place at 8 tonight, 35 High Street?”",
-          "B": "“Ms. Ilanna, can you explain that again? I didn’t quite follow. ”",
-          "C": "“I don’t agree with Joe. It’s an absolutely stupid idea.”",
-          "D": "“Bob! You had a new haircut. That suits you. You look handsome.”"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "You will have a new teacher for each new course because ________.",
-        "options": {
-          "A": "the college is short of trained teachers to teach online courses",
-          "B": "it’s hard to find a substitute teacher at the beginning of the term",
-          "C": "you can benefit from learning with teachers of different styles",
-          "D": "it enables you to take an active part in the new course"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "According to this notice, which of the following is NOT true?",
-        "options": {
-          "A": "Online classes create a real-life learning environment.",
-          "B": "You yourself are responsible for the class time you miss.",
-          "C": "Technical support is only available on weekdays.",
-          "D": "It’s possible that there may be changes to these rules."
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "Reading this notice carefully can help you .",
-        "options": {
-          "A": "know more about your subject teachers",
-          "B": "arrange your course schedule well",
-          "C": "understand the rules and cancellation policies",
-          "D": "apply for a position in Garden City College"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "GARDEN CITY COLLEGE GENERAL RULES FOR ONLINE CLASSES It is very important to carefully read the rules and cancellation policies of the online classes before beginning your class. You should enter the virtual（虚构的）classroom at least 2 days before your first class in order to learn how to work within the system. If you need any technical support, you can call our technical staff during their office hours（From 8:30 a.m.",
-      "to 5:30 p.m. on weekdays）. Make sure to log onto the platform 15 minutes before your class. We will not make up class time due to late arrivals. Check your course schedule. It is strongly recommended that you actively take part in each class. Listen carefully and don’t talk over with someone. You should behave properly and have good manners.",
-      "Being polite on the Internet should be as common as in real life. Respect other people’s opinions. Besides, online privacy is something you should keep in mind when typing anything. You should stay away from anything considered not suitable and rude. At the beginning of each new course, we will place you with a new teacher.",
-      "This change will allow you to experience different learning styles with other teachers who are fully trained to teach online courses. If your present teacher is not available to teach（due to sickness or an emergency）, we will not cancel class. Instead, class will be given by a substitute（代替的）teacher. These rules may change over time due to the changing nature of the online space."
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-普陀-reading-a",
-    "title": "2021 上海普陀一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "普陀",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市普陀区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "What kind of hotel do you look for when you are on holiday? Someone may want a comfortable bed, enjoyable facilities or a convenient place to get close to transportation. The following hotels may offer a stay you won’t soon forget if you want something out of the ordinary. If you are truly brave, you can spend the night in the world’s deepest bedroom in a hotel called Silvermine in Sweden.\n\nAfter a guided tour of the mine(矿井) located 155 metres underground, you’re left alone with a basket of fresh food. In the morning, the guide returns with a delicious breakfast before you return to ground level. If you are fond of the ocean, the Poseidon Undersea Resort in Japan would be your choice.\n\nIt is close to one of Fiji’s rivers. It boasts the world’s first seafloor rooms 12 meters below the surface of the ocean. By day, people enjoy golf, tennis and all kinds of water sports or learn to pilot a three-passenger submarine (潜水艇) to explore the depth of the ocean. If you love nature, then consider a stay at the Ariau Towers Hotel.\n\nIt’s in rainforest beside Brazil’s Negro River(内格罗河) and has rooms built in the air 30 meters above the ground. Overhead walkways connect the rooms to one another and a central dining room. From their rooms among the treetops, guests can see beautiful birds and flowers. And after having a delicious meal in the restaurant, they can enjoy sailing on the river.\n\nIf you would like to experience the coldness of winter, Canada’s Hotel de Glace could be the great favourite. It is built each year by using nearly 7000 kilograms of snow and 300 kilograms of ice. It has over 30 guest rooms. Nearly all of the furniture is made of ice. Inside the hotel, it’s always -3℃ to -5℃. Only the bathrooms are heated. The hotel is only open during the coldest months of the year and accepts booking over the Internet.",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "The underlined word boasts in Paragraph 3 means ________.",
-        "options": {
-          "A": "dreams of",
-          "B": "shows off",
-          "C": "is afraid of",
-          "D": "keeps off"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "A tourist who has a fear of height should NOT stay at the hotel in ________.",
-        "options": {
-          "A": "Silvermine in Sweden",
-          "B": "Canada's Hotel de Glace",
-          "C": "the Ariau Towers Hotel in Brazil",
-          "D": "the Poseidon Undersea Resort in Japan"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "Which of the following is about the hotel in Canada?",
-        "options": {
-          "A": "It needs a lot of repairs.",
-          "B": "It's not always there.",
-          "C": "It's close to transportation.",
-          "D": "It's not allowed to open to public."
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "What do the four hotels have in common?",
-        "options": {
-          "A": "They don't cost much.",
-          "B": "They are friendly to the environment.",
-          "C": "They all need brave guests.",
-          "D": "They are all worth remembering"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "The passage is most probably taken from a magazine called ________.",
-        "options": {
-          "A": "Amazing Journeys",
-          "B": "Social Study",
-          "C": "Frightening Accidents",
-          "D": "Environmental Protection"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "What kind of hotel do you look for when you are on holiday? Someone may want a comfortable bed, enjoyable facilities or a convenient place to get close to transportation. The following hotels may offer a stay you won’t soon forget if you want something out of the ordinary. If you are truly brave, you can spend the night in the world’s deepest bedroom in a hotel called Silvermine in Sweden.",
-      "After a guided tour of the mine(矿井) located 155 metres underground, you’re left alone with a basket of fresh food. In the morning, the guide returns with a delicious breakfast before you return to ground level. If you are fond of the ocean, the Poseidon Undersea Resort in Japan would be your choice.",
-      "It is close to one of Fiji’s rivers. It boasts the world’s first seafloor rooms 12 meters below the surface of the ocean. By day, people enjoy golf, tennis and all kinds of water sports or learn to pilot a three-passenger submarine (潜水艇) to explore the depth of the ocean. If you love nature, then consider a stay at the Ariau Towers Hotel.",
-      "It’s in rainforest beside Brazil’s Negro River(内格罗河) and has rooms built in the air 30 meters above the ground. Overhead walkways connect the rooms to one another and a central dining room. From their rooms among the treetops, guests can see beautiful birds and flowers. And after having a delicious meal in the restaurant, they can enjoy sailing on the river.",
-      "If you would like to experience the coldness of winter, Canada’s Hotel de Glace could be the great favourite. It is built each year by using nearly 7000 kilograms of snow and 300 kilograms of ice. It has over 30 guest rooms. Nearly all of the furniture is made of ice. Inside the hotel, it’s always -3℃ to -5℃. Only the bathrooms are heated. The hotel is only open during the coldest months of the year and accepts booking over the Internet."
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-杨浦-reading-a",
-    "title": "2021 上海杨浦一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "杨浦",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市杨浦区2020-2021学年九年级上学期期末（一模）英语试题（无听力原文）（解析版）.doc",
-    "passage": "D=Detective Ken, W=Wilson D: So, Wilson. What do you believe happened here? W: It’s simple, isn’t it? A thief climbed in through the window and stole the painting! D: Maybe. Or maybe that’s just what somebody wants us to think. W: What do you mean, Ken? D: Well, let’s look at the evidence. Starting at the window.\n\nNow, look outside. What can you see? W: A flower bed with some roses. D: Exactly. A flower bed. And the ground — is it dry or wet? W: It must be quite wet — we’ve had a lot of rain recently. D: But there are no footprints in the flower bed! How is it possible that the thief walks across the flower bed to the window without leaving footprints?\n\nW: Er…no. D: It isn’t! It isn’t possible, Wilson! What we’re dealing with here is … a set up! Somebody has arranged the room to look as if a burglary has taken place. Look at the coffee table. What do you notice? W: It’s got a footstool on top. D: Why has it got a footstool on top? W: Because the thief wanted to climb up… D: There was no thief, Wilson!\n\nBut look how carefully the footstool was put on top of the coffee table. There isn’t a scratch! A thief wouldn’t be so careful. W: No, I see what you mean. D: Who would be so careful, Wilson? Think about it! W: Er…it’s…I suppose… D: The owner of the table! He wouldn’t want to damage it, would he? W: No, no.\n\nHe wouldn’t want to… D: So the owner of the table — the owner of Riverford Manor — has arranged everything in this room to look like a Burglary. But the burglary didn’t happen. W: So, where’s the oil painting? D: That’s what we need to find out! And I think ____64____.",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "What is the possible relationship between Detective Ken and Wilson?",
-        "options": {
-          "A": "Interviewer and interviewee.",
-          "B": "Detective and suspect.",
-          "C": "Detective and assistant.",
-          "D": "Detective and case reporter."
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "Which of the following is an important clue Detective Ken and Wilson found?",
-        "options": {
-          "A": "Mud on the outside wall.",
-          "B": "Footprints in the flower bed.",
-          "C": "An open window.",
-          "D": "An unscratched coffee table."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "Wilson is a person who ________.",
-        "options": {
-          "A": "jumps to conclusions",
-          "B": "pays attention to details",
-          "C": "is good at reasoning",
-          "D": "refuses to change his mind"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "Detective Ken concludes that the case might be a ________.",
-        "options": {
-          "A": "theft",
-          "B": "burglary",
-          "C": "set up",
-          "D": "murder"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "What best fits the blank?",
-        "options": {
-          "A": "we can arrest the servants of the manor",
-          "B": "we should question the owner of the manor",
-          "C": "we can write a report to end the case",
-          "D": "we should look for more clues in the manor"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据对话内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "D=Detective Ken, W=Wilson D: So, Wilson. What do you believe happened here? W: It’s simple, isn’t it? A thief climbed in through the window and stole the painting! D: Maybe. Or maybe that’s just what somebody wants us to think. W: What do you mean, Ken? D: Well, let’s look at the evidence. Starting at the window.",
-      "Now, look outside. What can you see? W: A flower bed with some roses. D: Exactly. A flower bed. And the ground — is it dry or wet? W: It must be quite wet — we’ve had a lot of rain recently. D: But there are no footprints in the flower bed! How is it possible that the thief walks across the flower bed to the window without leaving footprints?",
-      "W: Er…no. D: It isn’t! It isn’t possible, Wilson! What we’re dealing with here is … a set up! Somebody has arranged the room to look as if a burglary has taken place. Look at the coffee table. What do you notice? W: It’s got a footstool on top. D: Why has it got a footstool on top? W: Because the thief wanted to climb up… D: There was no thief, Wilson!",
-      "But look how carefully the footstool was put on top of the coffee table. There isn’t a scratch! A thief wouldn’t be so careful. W: No, I see what you mean. D: Who would be so careful, Wilson? Think about it! W: Er…it’s…I suppose… D: The owner of the table! He wouldn’t want to damage it, would he? W: No, no.",
-      "He wouldn’t want to… D: So the owner of the table — the owner of Riverford Manor — has arranged everything in this room to look like a Burglary. But the burglary didn’t happen. W: So, where’s the oil painting? D: That’s what we need to find out! And I think ____64____."
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-松江-reading-a",
-    "title": "2021 上海松江一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "松江",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市松江区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "For most owners, the thought of losing their beloved pets is unimaginable. Here are four posters of lost pets. LOST DOG Our beloved pet “Susie” has been missing for about a week from Rose Garden area. Susie is a large girl dog, white in colour, with medium length hair. She was wearing a collar. Please contact: Ron Jones 57644653 or 15047982463 LOST BIRD Bambi Yellow and black parrot Missing since Wednesday, December 23 Likes to sing “Our Beautiful World” song If you see her, please call 47325891 or email DennyHu@123.\n\ncom. LOST PET SPIDER Just like the picture I drew. Name: Conrad Last Seen: my bedroom, three days ago Conrad is a very friendly little spider. He likes to sit on your shoulder and play hide and seek. If you see him, do not scream. And please be careful not to squish him. If he’s at your place, please contact me at 14607685250.\n\nLOST CAT Jerry, black and grey, male MISSING ONE MONTH! Wear a black collar Not very friendly Probably get into your house. If you see him, please feed some food and call Sam Chen. 1335784620 $20 REWARD!",
-    "questions": [
-      {
-        "number": 70,
-        "prompt": "If you help find the pet cat, you'll ___________ from the owner.",
-        "options": {
-          "A": "get a black collar",
-          "B": "get some money",
-          "C": "get some food",
-          "D": "get an invitation to the house"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 71,
-        "prompt": "___________ lost a yellow and black parrot.",
-        "options": {
-          "A": "Sam Chen",
-          "B": "Conrad",
-          "C": "Danny Hu",
-          "D": "Bambi"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 72,
-        "prompt": "The underlined word \"squish\" most probably means \"___________\" in Chinese.",
-        "options": {
-          "A": "追打",
-          "B": "压坏",
-          "C": "驱赶",
-          "D": "消灭"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 73,
-        "prompt": "The pet spider can do the following things except ___________.",
-        "options": {
-          "A": "sitting on your shoulder",
-          "B": "playing hide and seek",
-          "C": "making some people scream",
-          "D": "biting people suddenly"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 74,
-        "prompt": "The purpose of the four posters is to ___________.",
-        "options": {
-          "A": "find the owners' lost pets",
-          "B": "advise people to raise pets",
-          "C": "tell people the clues of lost pets",
-          "D": "tell people the disadvantages of raising pets"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "For most owners, the thought of losing their beloved pets is unimaginable. Here are four posters of lost pets. LOST DOG Our beloved pet “Susie” has been missing for about a week from Rose Garden area. Susie is a large girl dog, white in colour, with medium length hair. She was wearing a collar. Please contact: Ron Jones 57644653 or 15047982463 LOST BIRD Bambi Yellow and black parrot Missing since Wednesday, December 23 Likes to sing “Our Beautiful World” song If you see her, please call 47325891 or email DennyHu@123.",
-      "com. LOST PET SPIDER Just like the picture I drew. Name: Conrad Last Seen: my bedroom, three days ago Conrad is a very friendly little spider. He likes to sit on your shoulder and play hide and seek. If you see him, do not scream. And please be careful not to squish him. If he’s at your place, please contact me at 14607685250.",
-      "LOST CAT Jerry, black and grey, male MISSING ONE MONTH! Wear a black collar Not very friendly Probably get into your house. If you see him, please feed some food and call Sam Chen. 1335784620 $20 REWARD!"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-浦东-reading-a",
-    "title": "2021 上海浦东一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "浦东",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市浦东新区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "UNLOCK SERVICE Please dial 5875-811-718 Professional locksmithing for best prices! Work 24 hours, 7 days Quick response Trustable locksmith 24 hours emergency services We promise to be your standby all the time. We offer 24-hour locksmith services 7 days a week to all neighbourhoods in Calgary. You can talk to any of the locksmiths about your problem at any time of the day or night.\n\nOur emergency locksmiths are here 24 hours to solve your problem. Whether it is easy to get you into your house or car or to repair or replace your locks — we’ll be there whether it is 3 in the afternoon or 3 in the morning! You need us when … Lost your home keys — We will unlock your door and cut new keys Locked yourself out — We will let you in again Your home has been broken into — We will repair or change your door or lock Cannot open the door yourself — We can open it in no time Lost our car keys — We can unlock the door and start the car Safety — what we can offer We offer various products and services to provide our customers with complete safety.\n\nHigh Security, Bump-Proof Locks Rekeying Locks Mailbox Locks Patio Locks 63 We do not just serve individuals (个人) or families. Our business covers creating and fixing complex master key systems for companies. We often work with some famous designers to set and fit key systems in new buildings. We can also fix doors and hardware and upgrade master key systems for companies.",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "The underlined word “standby” means the one ________.",
-        "options": {
-          "A": "you can talk to",
-          "B": "you can rely on",
-          "C": "you can wait for",
-          "D": "you can work with"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "If the door to your room is damaged, what will an emergency locksmith most probably do?",
-        "options": {
-          "A": "He will fix the mailbox.",
-          "B": "He will start the car.",
-          "C": "He will get you a new door.",
-          "D": "He will open it quickly."
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "To make sure of customers’ safety, ________ types of locks are provided by Unlock Service.",
-        "options": {
-          "A": "4",
-          "B": "5",
-          "C": "6",
-          "D": "7"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "The best heading for the last paragraph is “________”.",
-        "options": {
-          "A": "We are famous designers",
-          "B": "We are the master of keys",
-          "C": "We provide companies with services",
-          "D": "We can fix everything"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "You may find the above passage in a(n) ________ section.",
-        "options": {
-          "A": "story",
-          "B": "sports",
-          "C": "news",
-          "D": "advertisement"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "UNLOCK SERVICE Please dial 5875-811-718 Professional locksmithing for best prices! Work 24 hours, 7 days Quick response Trustable locksmith 24 hours emergency services We promise to be your standby all the time. We offer 24-hour locksmith services 7 days a week to all neighbourhoods in Calgary. You can talk to any of the locksmiths about your problem at any time of the day or night.",
-      "Our emergency locksmiths are here 24 hours to solve your problem. Whether it is easy to get you into your house or car or to repair or replace your locks — we’ll be there whether it is 3 in the afternoon or 3 in the morning! You need us when … Lost your home keys — We will unlock your door and cut new keys Locked yourself out — We will let you in again Your home has been broken into — We will repair or change your door or lock Cannot open the door yourself — We can open it in no time Lost our car keys — We can unlock the door and start the car Safety — what we can offer We offer various products and services to provide our customers with complete safety.",
-      "High Security, Bump-Proof Locks Rekeying Locks Mailbox Locks Patio Locks 63 We do not just serve individuals (个人) or families. Our business covers creating and fixing complex master key systems for companies. We often work with some famous designers to set and fit key systems in new buildings. We can also fix doors and hardware and upgrade master key systems for companies."
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-虹口-reading-a",
-    "title": "2021 上海虹口一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "虹口",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months.\n\nCan you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion.\n\nIt is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music.\n\nThe brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed.\n\nIn addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited.\n\nIn one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly.",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "CIMON was created _______.",
-        "options": {
-          "A": "for Crew Interactive Mobile Companion",
-          "B": "for the European airplane company, Airbus",
-          "C": "to do a lot of research of IBM",
-          "D": "to make friends with astronauts"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "CIMON is very intelligent, and it can do all the following things except _______.",
-        "options": {
-          "A": "moving here and there",
-          "B": "training computers to understand people",
-          "C": "taking pictures and videos",
-          "D": "understanding what people are saying"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "The underlined word \"companion\" in the 4th paragraph means a friend who _______.",
-        "options": {
-          "A": "works and lives with astronauts",
-          "B": "has the similar tastes, interests, etc.",
-          "C": "runs a company",
-          "D": "is responsible for astronauts"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "Compared with the first CIMON, CIMON 2 has the advantage of _______.",
-        "options": {
-          "A": "becoming confused with others' talk",
-          "B": "understanding people's feelings",
-          "C": "having limited expressions",
-          "D": "keeping calm all the time"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "According to the last paragraph, creators hope that CIMON can _______.",
-        "options": {
-          "A": "float in space for a long time",
-          "B": "help astronauts with their tasks",
-          "C": "use its \"mouth\" to talk or play music",
-          "D": "help people stay calm and make good decisions"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据文章内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months.",
-      "Can you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion.",
-      "It is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music.",
-      "The brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed.",
-      "In addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited.",
-      "In one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly."
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-金山-reading-a",
-    "title": "2021 上海金山一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "金山",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市金山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "To: Grace Yang Date: 6 September Subject: 59 Dear Grace, Thank you for your application for the position of sales manager. We would like to invite you for an interview at 10 a.m. on Monday 21 September at our office at The Shard, 32 London Bridge Street, London. You will meet with our head of sales, Susan Park, and the interview will last for about 45 minutes.\n\nDuring this time, you will have the opportunity to find out more about the position and learn more about our company. Please bring your CV(履历) and references to the interview. You will also need to show a form of ID at reception to receive a visitor’s pass. Please ask for me as soon as you arrive. If you have any questions or if you wish to reschedule, please call me on 555-1234 or email me by 12 September. I look forward to meeting you. Best regards, Anna Green Human Resources Assistant",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "Grace Yang applied for the job of________.",
-        "options": {
-          "A": "head of sales",
-          "B": "sales manager",
-          "C": "sales assistant",
-          "D": "human resource assistant"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "The underlined phrase “this time” refers to________.",
-        "options": {
-          "A": "12 September",
-          "B": "21 September",
-          "C": "10 a.m. on Monday",
-          "D": "the 45 minutes"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "The underlined word “opportunity” in the e-mail means “a/an ________ to do something”.",
-        "options": {
-          "A": "chance",
-          "B": "activity",
-          "C": "decision",
-          "D": "habit"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "According to Anna Green's e-mail, Grace needs to bring ________ kinds of items to the interview.",
-        "options": {
-          "A": "1",
-          "B": "2",
-          "C": "3",
-          "D": "4"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "Grace should ________ as soon as she arrives at the company.",
-        "options": {
-          "A": "hand in her CV",
-          "B": "ask for Anna Green",
-          "C": "show her passport",
-          "D": "meet with Susan Park"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "To: Grace Yang Date: 6 September Subject: 59 Dear Grace, Thank you for your application for the position of sales manager. We would like to invite you for an interview at 10 a.m. on Monday 21 September at our office at The Shard, 32 London Bridge Street, London. You will meet with our head of sales, Susan Park, and the interview will last for about 45 minutes.",
-      "During this time, you will have the opportunity to find out more about the position and learn more about our company. Please bring your CV(履历) and references to the interview. You will also need to show a form of ID at reception to receive a visitor’s pass. Please ask for me as soon as you arrive. If you have any questions or if you wish to reschedule, please call me on 555-1234 or email me by 12 September. I look forward to meeting you. Best regards, Anna Green Human Resources Assistant"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-闵行-reading-a",
-    "title": "2021 上海闵行一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "闵行",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市闵行区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "WELCOME TO SAMESUN BACKPACKERS Venice, CA We work hard and strive to create a clean and safe environment where you can meet other travelers and have a lot of fun while doing so! A few things to make your stay more enjoyable: FREE BREAKFAST is from 7:30-10am in the kitchen (next to reception). Breakfast includes eggs, oatmeal, waffles, bagels and cream cheese, toast with a range of spreads, orange juice, coffee and teas.\n\nFREE AND CHEAP ACTIVITIES run daily. See the activity board beside the front desk or speak to a staff member to get more details. RECEPTION & HOUSEKEEPING — For your comfort and safety there’s always a staff member on duty. Please feel free to see the front desk if you have any questions. Our housekeeping team cleans the hostel daily from 11am-4pm.\n\nDuring this time staff will be entering every room. Need a beach or bath towel? Just ask the front desk! LUGGAGE STORAGE — We provide FREE storage for luggage while you’re staying here. We also offer long-term storage for $3/day per bag. CHECK OUT TIME IS 11AM — Please bring the two white sheets and your pillowcase (not the blanket or pillow) to reception with your key-card.\n\nIf you wish to extend your stay, please see the front desk before 11 am. 62 ● No outside guests in your dormitory, the common room or hostel kitchen. If you have friends visiting, they are welcome in Surfside, our bar downstairs. ● Quiet time is from 12am-7am. Please limit noise and silliness during these hours.\n\n● No outside bedding. All linen is provided — if you need extra blankets, pillows or towels, please see the front desk. ● No smoking inside the building at any time — fines of up to $200 apply. ● Absolutely no drugs in the building at any time. EVERY HOUR IS HAPPY HOUR! Show your room key downstairs at SURFSIDE to receive VIP prices: $6-$8 SELECT EATS $5-$7 SELECT COCKTAILS/BEER/WINE LIVE MUSIC/SPORTS/12TVS/WEEKLY SPECIALS/OPEN LATE",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "The housekeeping team cleans the hostel daily from ________.",
-        "options": {
-          "A": "7:30 am-10:00 am",
-          "B": "11:00 am-4:00 pm",
-          "C": "10:00 am-4:00 pm",
-          "D": "12:00 am-7:00 am"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "The hostel provides the following free things except ________.",
-        "options": {
-          "A": "breakfast",
-          "B": "beer",
-          "C": "activities",
-          "D": "WIFI"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "Which of the following is the best to be filled in the blank?",
-        "options": {
-          "A": "HOUSE RULES",
-          "B": "KITCHEN RULES",
-          "C": "BAR RULES",
-          "D": "NETWORK RULES"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "The underlined word “they” refers to “________”.",
-        "options": {
-          "A": "housekeepers",
-          "B": "businessmen",
-          "C": "your friends",
-          "D": "staff members"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "The form above is aimed at ________.",
-        "options": {
-          "A": "helping staff members to organize activities",
-          "B": "giving introduction of different hostels",
-          "C": "offering resources for job hunting",
-          "D": "providing information for guests to check in the hostel"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "WELCOME TO SAMESUN BACKPACKERS Venice, CA We work hard and strive to create a clean and safe environment where you can meet other travelers and have a lot of fun while doing so! A few things to make your stay more enjoyable: FREE BREAKFAST is from 7:30-10am in the kitchen (next to reception). Breakfast includes eggs, oatmeal, waffles, bagels and cream cheese, toast with a range of spreads, orange juice, coffee and teas.",
-      "FREE AND CHEAP ACTIVITIES run daily. See the activity board beside the front desk or speak to a staff member to get more details. RECEPTION & HOUSEKEEPING — For your comfort and safety there’s always a staff member on duty. Please feel free to see the front desk if you have any questions. Our housekeeping team cleans the hostel daily from 11am-4pm.",
-      "During this time staff will be entering every room. Need a beach or bath towel? Just ask the front desk! LUGGAGE STORAGE — We provide FREE storage for luggage while you’re staying here. We also offer long-term storage for $3/day per bag. CHECK OUT TIME IS 11AM — Please bring the two white sheets and your pillowcase (not the blanket or pillow) to reception with your key-card.",
-      "If you wish to extend your stay, please see the front desk before 11 am. 62 ● No outside guests in your dormitory, the common room or hostel kitchen. If you have friends visiting, they are welcome in Surfside, our bar downstairs. ● Quiet time is from 12am-7am. Please limit noise and silliness during these hours.",
-      "● No outside bedding. All linen is provided — if you need extra blankets, pillows or towels, please see the front desk. ● No smoking inside the building at any time — fines of up to $200 apply. ● Absolutely no drugs in the building at any time. EVERY HOUR IS HAPPY HOUR! Show your room key downstairs at SURFSIDE to receive VIP prices: $6-$8 SELECT EATS $5-$7 SELECT COCKTAILS/BEER/WINE LIVE MUSIC/SPORTS/12TVS/WEEKLY SPECIALS/OPEN LATE"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-青浦-reading-a",
-    "title": "2021 上海青浦一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "青浦",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市青浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "Who you are makes a difference A teacher decided to honour her students by telling them the difference they have made. She presented each of them with a blue ribbon with letters that read, “Who I Am Makes a Difference.” Afterwards, the teacher decided to do a class project to see what kind of influence recognition（赞赏）would have on a community.\n\nShe gave each of the students three more ribbons and instructed them to spread them and follow up on the results, and report back to the class in a week. One boy in the class went to a manager in a company, and honoured him for helping him with his career planning. He gave him a blue ribbon and put it on his shirt.\n\nThen he gave him two extra ribbons, and said, “Would you please find somebody to honour, give them a blue ribbon, then give them the extra so they can find a third person.” Later that day, the manager went to see his boss and gave him the gift of the blue ribbon. He told him that he deeply admired him for being a creative genius.\n\nHis surprised boss accepted it delightedly. The manager placed the blue ribbon right in his boss’s jacket above his heart and gave him the last extra ribbon to pass on. That night, the boss went home to his 14-year-old son and told him about his day. “One of the managers gave me an extra ribbon and asked me to find somebody else to honour and I thought about you.\n\nI want to honour you,” said the boss. “My days are really hectic and when I come home, I don’t pay a lot of attention to you. Sometimes I scream at you for not getting good grades in school and for your bedroom being a mess, but somehow tonight, I just want you to know that you do make a difference to me.\n\nYou’re a great kid, and I love you!” The astonished boy couldn’t stop crying. He looked up at his father and said through his tears, “I was planning to run away from home tomorrow, Dad, because I didn’t think you loved me. Now I will never do that.”",
-    "questions": [
-      {
-        "number": 60,
-        "prompt": "According to the teacher, _______ could receive the blue ribbons.",
-        "options": {
-          "A": "students who get best marks in a school",
-          "B": "people who get high positions in a company",
-          "C": "children who always keep the bedrooms tidy",
-          "D": "people who have made a difference in your life"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "The three blue ribbons were passed on to the honoured persons in _______.",
-        "options": {
-          "A": "one night",
-          "B": "one day",
-          "C": "one week",
-          "D": "one month"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "The correct order of the boy’s three ribbons is: _______.",
-        "options": {
-          "A": "The boss→the manager→the son",
-          "B": "The manager→the son→the boss",
-          "C": "The boss→the son→the manager",
-          "D": "The manager→the boss→the son"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "The underlined word “hectic” in paragraph 5 probably means “_______”.",
-        "options": {
-          "A": "busy",
-          "B": "boring",
-          "C": "short",
-          "D": "over"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "After reading the passage, we can infer that it is _______.",
-        "options": {
-          "A": "a research report",
-          "B": "a speech presentation",
-          "C": "a warming story",
-          "D": "an exciting adventure"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Who you are makes a difference A teacher decided to honour her students by telling them the difference they have made. She presented each of them with a blue ribbon with letters that read, “Who I Am Makes a Difference.” Afterwards, the teacher decided to do a class project to see what kind of influence recognition（赞赏）would have on a community.",
-      "She gave each of the students three more ribbons and instructed them to spread them and follow up on the results, and report back to the class in a week. One boy in the class went to a manager in a company, and honoured him for helping him with his career planning. He gave him a blue ribbon and put it on his shirt.",
-      "Then he gave him two extra ribbons, and said, “Would you please find somebody to honour, give them a blue ribbon, then give them the extra so they can find a third person.” Later that day, the manager went to see his boss and gave him the gift of the blue ribbon. He told him that he deeply admired him for being a creative genius.",
-      "His surprised boss accepted it delightedly. The manager placed the blue ribbon right in his boss’s jacket above his heart and gave him the last extra ribbon to pass on. That night, the boss went home to his 14-year-old son and told him about his day. “One of the managers gave me an extra ribbon and asked me to find somebody else to honour and I thought about you.",
-      "I want to honour you,” said the boss. “My days are really hectic and when I come home, I don’t pay a lot of attention to you. Sometimes I scream at you for not getting good grades in school and for your bedroom being a mess, but somehow tonight, I just want you to know that you do make a difference to me.",
-      "You’re a great kid, and I love you!” The astonished boy couldn’t stop crying. He looked up at his father and said through his tears, “I was planning to run away from home tomorrow, Dad, because I didn’t think you loved me. Now I will never do that.”"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-静安-reading-a",
-    "title": "2021 上海静安一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "静安",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市静安区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "Narrator: Imagine life without light — nothing but darkness. Today, we are going to perform a play in total darkness — you will hear us but not see us. In our play, David is blind while Cassandra is wearing eye patches for a day, to see what life is like. (lights go out; silence) Scene 1 On a busy street (sounds of people and traffic) Cassandra: (nervously) David?\n\nDavid ...? Ump! I’ve stumbled into a rubbish bin. David: Follow my voice ... Cassandra: Oh ... What’s this? Am I touching a person? Sorry ... David: (laughs) It’s me. Take my arm. We’re going to cross the street to the supermarket. (louder traffic noises: honking) Cassandra: (anxiously) There are too many cars!\n\nIsn’t it risky? David: Don’t worry. We’re going to listen for the signal. It’s a chirping noise. (chirping) Do you hear it? There’s one at every pedestrian crossing. It tells blind people when it’s safe to cross. Let’s go. (sound of a bus approaching and braking) Cassandra: Oh no ... is that a bus?\n\nIs there enough time for us to cross? David: Yes, the chirping signal will tell us when the light’s about to change. Keep walking ... Scene 2 In the supermarket (supermarket sounds; shopping carts and announcement) David: When we’re blind, we mainly rely on three senses: smell, touch and hearing. There become invaluable when you can’t see.\n\nCassandra: I’m starting to notice sounds that I didn’t before. Like, I never noticed how noisy supermarkets are! David: No kidding! OK, today I’m buying some vegetables and some tinned tuna ... I’m right beside the onions ... Cassandra: I can tell I’m very, very close to the onions because I can smell them .\n\n.. (excitedly) Yeah, onions! David: OK, there are enough onions in this packet. Now let’s go find the tuna. Cassandra: But ... there are too many kinds of tinned food! How will we know which ones are tuna? David: There are always enough sighted people around to help out. Let’s go. (supermarket sounds; fade out)",
-    "questions": [
-      {
-        "number": 70,
-        "prompt": "The main purpose of the narrator’s words is ________.",
-        "options": {
-          "A": "to explain what blindness is",
-          "B": "to introduce main characters",
-          "C": "to explain about the scene",
-          "D": "to add excitement to the play"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 71,
-        "prompt": "In Scene 1, the underlined word “stumbled” means ________.",
-        "options": {
-          "A": "stepped",
-          "B": "fitted",
-          "C": "turned",
-          "D": "searched"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 72,
-        "prompt": "According to Scene 1, ________ tells ________ they can cross the street safely.",
-        "options": {
-          "A": "a visual signal at some crossings; blind people",
-          "B": "Cassandra; David",
-          "C": "the chirping noise; car drivers",
-          "D": "the chirping noise; people who cannot see"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 73,
-        "prompt": "Cassandra feels happy when she ________ without her sense of sight.",
-        "options": {
-          "A": "tastes tuna",
-          "B": "finds the onions",
-          "C": "see light",
-          "D": "notices new sounds"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 74,
-        "prompt": "David plans to find the tinned tuna by ________.",
-        "options": {
-          "A": "asking Cassandra to go with him",
-          "B": "asking someone who can see to helping him",
-          "C": "feeling the shape of the tins",
-          "D": "using his sense of smell"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Narrator: Imagine life without light — nothing but darkness. Today, we are going to perform a play in total darkness — you will hear us but not see us. In our play, David is blind while Cassandra is wearing eye patches for a day, to see what life is like. (lights go out; silence) Scene 1 On a busy street (sounds of people and traffic) Cassandra: (nervously) David?",
-      "David ...? Ump! I’ve stumbled into a rubbish bin. David: Follow my voice ... Cassandra: Oh ... What’s this? Am I touching a person? Sorry ... David: (laughs) It’s me. Take my arm. We’re going to cross the street to the supermarket. (louder traffic noises: honking) Cassandra: (anxiously) There are too many cars!",
-      "Isn’t it risky? David: Don’t worry. We’re going to listen for the signal. It’s a chirping noise. (chirping) Do you hear it? There’s one at every pedestrian crossing. It tells blind people when it’s safe to cross. Let’s go. (sound of a bus approaching and braking) Cassandra: Oh no ... is that a bus?",
-      "Is there enough time for us to cross? David: Yes, the chirping signal will tell us when the light’s about to change. Keep walking ... Scene 2 In the supermarket (supermarket sounds; shopping carts and announcement) David: When we’re blind, we mainly rely on three senses: smell, touch and hearing. There become invaluable when you can’t see.",
-      "Cassandra: I’m starting to notice sounds that I didn’t before. Like, I never noticed how noisy supermarkets are! David: No kidding! OK, today I’m buying some vegetables and some tinned tuna ... I’m right beside the onions ... Cassandra: I can tell I’m very, very close to the onions because I can smell them .",
-      ".. (excitedly) Yeah, onions! David: OK, there are enough onions in this packet. Now let’s go find the tuna. Cassandra: But ... there are too many kinds of tinned food! How will we know which ones are tuna? David: There are always enough sighted people around to help out. Let’s go. (supermarket sounds; fade out)"
-    ]
-  },
-  {
-    "_id": "sh-em1-2021-黄浦-reading-a",
-    "title": "2021 上海黄浦一模阅读 A",
-    "year": 2021,
-    "city": "上海",
-    "district": "黄浦",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市黄浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "(根据短文内容, 选择最恰当的答案)（12分） The only thing better than reading a good book is reading it with others. In a book club, a group of people choose a book that everyone will read individually and then discuss together. There are no rules to starting a book club, and the plan might well change, depending on the groups.\n\nIt’s good to think ahead about how you’d like the book club to run. Think of 8 to 12 others (people around your age) who you’d like to be part of your book club. Perhaps encourage your friends to invite people whom they know well but you haven’t met. A book club can help you make friends. Having a topic can make the club feel more focused.\n\nFinally make sure you read the book before the meeting, and come prepared with questions to ask and things to talk about. Want to dive into stories with friends and share your thoughts? ● ____71____ A schedule is a good way to make sure everyone gets a chance to choose the book. Alternatively, you could provide a selection of books and ask everyone to vote for what they want to read next.\n\n● What do we talk about? Some questions are especially good for sparking discussion about a book. Try these: if you could give the book a different ending, what would it be? What do you think the main character looked like? What do you think will happen next? ● Where do we meet now? To help ensure social distancing, it’s best to meet up online.\n\nWith an adult’s help, you can set up a video call between book club members. You can then take part from your cosy reading corner and enjoy yourself. · Get advice by visiting clubs-kids.shcolastic.co.uk. · Try contacting your favourite author on social media to see if they will answer your group’s questions about a book. · The Week Junior’s Book Club has tips on what you could read.",
-    "questions": [
-      {
-        "number": 70,
-        "prompt": "According to the text, how can we organize a reading group?",
-        "options": {
-          "A": "By choosing a topic.",
-          "B": "By searching the web.",
-          "C": "By setting up a video call.",
-          "D": "By inviting friends."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 71,
-        "prompt": "Which of the following questions best fits “________”?",
-        "options": {
-          "A": "What books do we choose",
-          "B": "Where can we find books",
-          "C": "How do we choose which books to read",
-          "D": "Why do we need a topic before we discuss together"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 72,
-        "prompt": "The underlined word 'cosy' is closest in meaning to ________.",
-        "options": {
-          "A": "comfortable",
-          "B": "convenient",
-          "C": "flexible",
-          "D": "intelligent"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 73,
-        "prompt": "What can we do if we want to contact our favorite author?",
-        "options": {
-          "A": "Visit a website.",
-          "B": "Write a letter.",
-          "C": "Read a magazine.",
-          "D": "Use social media."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 74,
-        "prompt": "The text is mainly about ________.",
-        "options": {
-          "A": "what books to read",
-          "B": "how to start a reading club",
-          "C": "the effect of online reading",
-          "D": "rules to choose books"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "(根据短文内容, 选择最恰当的答案)（12分） The only thing better than reading a good book is reading it with others. In a book club, a group of people choose a book that everyone will read individually and then discuss together. There are no rules to starting a book club, and the plan might well change, depending on the groups.",
-      "It’s good to think ahead about how you’d like the book club to run. Think of 8 to 12 others (people around your age) who you’d like to be part of your book club. Perhaps encourage your friends to invite people whom they know well but you haven’t met. A book club can help you make friends. Having a topic can make the club feel more focused.",
-      "Finally make sure you read the book before the meeting, and come prepared with questions to ask and things to talk about. Want to dive into stories with friends and share your thoughts? ● ____71____ A schedule is a good way to make sure everyone gets a chance to choose the book. Alternatively, you could provide a selection of books and ask everyone to vote for what they want to read next.",
-      "● What do we talk about? Some questions are especially good for sparking discussion about a book. Try these: if you could give the book a different ending, what would it be? What do you think the main character looked like? What do you think will happen next? ● Where do we meet now? To help ensure social distancing, it’s best to meet up online.",
-      "With an adult’s help, you can set up a video call between book club members. You can then take part from your cosy reading corner and enjoy yourself. · Get advice by visiting clubs-kids.shcolastic.co.uk. · Try contacting your favourite author on social media to see if they will answer your group’s questions about a book. · The Week Junior’s Book Club has tips on what you could read."
-    ]
-  },
-  {
-    "_id": "sh-em1-2023-徐汇-reading-a",
-    "title": "2023 上海徐汇一模阅读 A",
-    "year": 2023,
-    "city": "上海",
-    "district": "徐汇",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（解析版）.docx",
-    "passage": "（根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo.\n\nChoose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS",
-    "questions": [
-      {
-        "number": 56,
-        "prompt": "________ skydiving is new according to the guide.",
-        "options": {
-          "A": "9, 000 feet",
-          "B": "12, 000 feet",
-          "C": "15, 000 feet",
-          "D": "18, 500 feet"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 57,
-        "prompt": "The experience with Taupo Tandem Skydiving can be all the following EXCEPT ________.",
-        "options": {
-          "A": "unforgettable",
-          "B": "fun",
-          "C": "exciting",
-          "D": "boring"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 58,
-        "prompt": "Trevor and Adam are most probably ________ in the review by Camille G",
-        "options": {
-          "A": "the managers of Taupo Tandem Skydiving",
-          "B": "the trainers or coaches of Taupo Tandem Skydiving",
-          "C": "the friends trying skydiving together with Camille G",
-          "D": "the reporters from tripadvisor"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 59,
-        "prompt": "People can get free pickup from Taupo and Rotorua by ________.",
-        "options": {
-          "A": "train",
-          "B": "ferry",
-          "C": "car",
-          "D": "helicopter"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 60,
-        "prompt": "The first part of the passage is a(an) ________ of Taupo Tandem Skydiving.",
-        "options": {
-          "A": "advertisement",
-          "B": "diary",
-          "C": "review",
-          "D": "survey"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "（根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo.",
-      "Choose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS"
-    ]
-  },
-  {
-    "_id": "sh-em1-2024-嘉定-reading-a",
-    "title": "2024 上海嘉定一模阅读 A",
-    "year": 2024,
-    "city": "上海",
-    "district": "嘉定",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
-    "passage": "(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer.\n\nHe liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer.\n\nYou also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers.\n\nAlso, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me?\n\nAdvice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere.",
-    "questions": [
-      {
-        "number": 59,
-        "prompt": "What kind of passage is it?",
-        "options": {
-          "A": "An interview.",
-          "B": "A story.",
-          "C": "A quiz.",
-          "D": "An advertisement."
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 60,
-        "prompt": "Joel Sartore used to _____________________.",
-        "options": {
-          "A": "teach in a school",
-          "B": "work as a scientist",
-          "C": "work for a newspaper",
-          "D": "work in a forest"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "Which of the following can be Question 2?",
-        "options": {
-          "A": "Why do you want to work for National Geographic?",
-          "B": "What do National Geographic photographers like to do?",
-          "C": "What kind of photos do you give to National Geographic?",
-          "D": "What kind of photographer is National Geographic looking for?"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "How many reasons did Joel Sartore mention in his answer to Question 3?",
-        "options": {
-          "A": "1",
-          "B": "2",
-          "C": "3",
-          "D": "4"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "The underlined sentence in the last paragraph is closest in meaning to ______________.",
-        "options": {
-          "A": "Take as many photos as possible.",
-          "B": "There is beauty everywhere.",
-          "C": "It's easy to be a good photographer.",
-          "D": "Photographers should travel everywhere."
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "Who is most likely to be employed by National Geographic?",
-        "options": {
-          "A": "Hanson, a photographer who has worked for many magazines.",
-          "B": "Bowie, a photographer who learnt to take photos at an early age.",
-          "C": "Marina, a photographer who is good at science and diving.",
-          "D": "Jason, a photographer who keeps developing skills and ideas."
-        },
-        "answer": "C",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer.",
-      "He liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer.",
-      "You also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers.",
-      "Also, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me?",
-      "Advice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere."
-    ]
-  },
-  {
-    "_id": "sh-em1-2024-浦东-reading-a",
-    "title": "2024 上海浦东一模阅读 A",
-    "year": 2024,
-    "city": "上海",
-    "district": "浦东",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（解析版）.docx",
-    "passage": "Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities.\n\nAt night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip.\n\nPack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents.\n\nYou should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains.\n\nThe ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals.",
-    "questions": [
-      {
-        "number": 56,
-        "prompt": "According to the passage, which item is essential for camping?",
-        "options": {
-          "A": "A skirt.",
-          "B": "A blanket.",
-          "C": "A hat.",
-          "D": "A rope."
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 57,
-        "prompt": "If the camper faces a strong wind, which kind of tent might be the best choice?",
-        "options": {
-          "A": "Lean-to tents.",
-          "B": "Pup tents.",
-          "C": "Alpine tents.",
-          "D": "Dome tents."
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 58,
-        "prompt": "The underlined word “level” probably means “________”.",
-        "options": {
-          "A": "rough",
-          "B": "steep",
-          "C": "high",
-          "D": "flat"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 59,
-        "prompt": "Which of the following is the best to be filled in the blank?",
-        "options": {
-          "A": "Green camping",
-          "B": "Park rules",
-          "C": "Plant protectors",
-          "D": "Animal lovers"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 60,
-        "prompt": "The main purpose of this passage is to ________.",
-        "options": {
-          "A": "call on more people to take up camping",
-          "B": "introduce the advantages and disadvantages of camping",
-          "C": "offer some suggestions on how to prepare for camping",
-          "D": "remind people to follow the rules of camping"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据以下内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities.",
-      "At night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip.",
-      "Pack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents.",
-      "You should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains.",
-      "The ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals."
-    ]
-  },
-  {
-    "_id": "sh-em1-2025-松江-reading-a",
-    "title": "2025 上海松江一模阅读 A",
-    "year": 2025,
-    "city": "上海",
-    "district": "松江",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "2025届松江区初三英语一模试卷.docx",
-    "passage": "CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today!\n\nDAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai.\n\nLater, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists.\n\nDAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple.\n\nIn the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)",
-    "questions": [
-      {
-        "number": 59,
-        "prompt": "The first stop of the cultural trip is _________.",
-        "options": {
-          "A": "Beijing",
-          "B": "Shanghai",
-          "C": "Nanjing",
-          "D": "Xuanwu"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 60,
-        "prompt": "A lot of hiking will be done on September _________.",
-        "options": {
-          "A": "2",
-          "B": "3",
-          "C": "4",
-          "D": "5"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "The travellers will go to Shanghai by _________.",
-        "options": {
-          "A": "boat",
-          "B": "bus",
-          "C": "plane",
-          "D": "train"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "The travellers should prepare the following important things except _________ for the trip.",
-        "options": {
-          "A": "spending money",
-          "B": "clothes and shoes",
-          "C": "Chinese history books",
-          "D": "passports and tickets"
-        },
-        "answer": "C",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "The underlined word “ITINERARY” means “travel _________”.",
-        "options": {
-          "A": "diary",
-          "B": "guide",
-          "C": "tip",
-          "D": "plan"
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "This passage is most probably written for _________.",
-        "options": {
-          "A": "students",
-          "B": "teachers",
-          "C": "parents",
-          "D": "elderly people"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "根据短文内容，选择最恰当的答案",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today!",
-      "DAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai.",
-      "Later, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists.",
-      "DAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple.",
-      "In the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)"
-    ]
-  },
-  {
-    "_id": "sh-em1-2025-金山-reading-a",
-    "title": "2025 上海金山一模阅读 A",
-    "year": 2025,
-    "city": "上海",
-    "district": "金山",
-    "examType": "一模",
-    "section": "A",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "2025届金山区初三英语一模试卷.docx",
-    "passage": "（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”.\n\nThe “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”.\n\nThe “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to.\n\nFees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot.\n\nAdmission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park.",
-    "questions": [
-      {
-        "number": 59,
-        "prompt": "According to the article, the “South Rim” is _______ than the “North Rim”.",
-        "options": {
-          "A": "more beautiful",
-          "B": "more dangerous",
-          "C": "more popular",
-          "D": "much higher"
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 60,
-        "prompt": "If you want to know how to get to Grand Canyon Village, which part should you read carefully?",
-        "options": {
-          "A": "The first paragraph and the picture.",
-          "B": "The “South Rim”.",
-          "C": "The “North Rim”.",
-          "D": "Fees and passes."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      },
-      {
-        "number": 61,
-        "prompt": "What does the word “access” probably mean?",
-        "options": {
-          "A": "borders",
-          "B": "entrances",
-          "C": "disasters",
-          "D": "references"
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 62,
-        "prompt": "Tom, 17 years old, together with his parents (both 45 years old) and his younger sister(eight years old) plans to visit Grand Canyon National Park. They plan to enter by bus. How much do they have to pay in all?",
-        "options": {
-          "A": "$60.",
-          "B": "$80.",
-          "C": "$85.",
-          "D": "$90."
-        },
-        "answer": "A",
-        "questionType": "choice"
-      },
-      {
-        "number": 63,
-        "prompt": "Danny bought a 2024 Annual Pass on June 1, 2024. When is the deadline (截至日期) he can use the pass without extra payment?",
-        "options": {
-          "A": "December 31, 2024.",
-          "B": "May 31, 2025.",
-          "C": "June 1, 2025.",
-          "D": "December 31, 2025."
-        },
-        "answer": "B",
-        "questionType": "choice"
-      },
-      {
-        "number": 64,
-        "prompt": "Where are people most likely to read the article?",
-        "options": {
-          "A": "In a school newspaper.",
-          "B": "In a comic strip.",
-          "C": "On a personal blog.",
-          "D": "In a travel guide."
-        },
-        "answer": "D",
-        "questionType": "choice"
-      }
-    ],
-    "answerSentences": [],
-    "phrases": [],
-    "vocabulary": [],
-    "sectionLabel": "阅读选择",
-    "difficultyLevel": 1,
-    "difficultyLabel": "基础理解",
-    "dataFormat": "reading-structured-v1",
-    "directions": "",
-    "sectionHeading": "",
-    "articleTitle": "",
-    "articleSubtitle": "",
-    "passageParagraphs": [
-      "（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”.",
-      "The “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”.",
-      "The “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to.",
-      "Fees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot.",
-      "Admission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park."
-    ]
-  },
-  {
     "_id": "sh-em1-2020-嘉定-reading-a",
     "title": "2020 上海嘉定一模阅读 A",
     "year": 2020,
@@ -6156,6 +4084,137 @@ module.exports = [
     "difficultyLabel": "语境词汇"
   },
   {
+    "_id": "sh-em1-2020-嘉定-reading-c",
+    "title": "2020 上海嘉定一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "嘉定",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市嘉定区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Do you remember when you wrote a letter last time? If the answer is “not recently”, don’t worry. You are not a____81____. A survey of 1,000 teenagers around the world done by a French company BIC found that a third of today’s teenagers had never written a letter, half had not written a thank-you letter, and a quarter had not even written a birthday or Christmas card.\n\nIn fact, 58 percent of teenagers c____82____ that handwriting was “too slow” and 17 percent believed it was “outdated”. These results have caused w____83____ that the art of handwriting may one day die out. “Handwring” is one of the most c____84____ art forms we have and should be given the same importance as other art forms such as painting, or photography，’，Jonathan Skyrme, general manager at BIC UK & Ireland, told the Daily Mail.\n\nThe New York Times once explained that a handwritten letter sends a message in a way that o____85____ messages can never do. “When you get an email, you can never be sure that you are the o____86____ person to have received it - or even that it was written by the person who sent it，”said the newspaper. As US author Simon Garfield once wrote,“Emails are a poke (蜻艇点水)，but letters are a loving touch.\n\n” So imagine the powerful message you send when you actually write out your thoughts by hand, buy a stamp, take it to a mailbox, and wait days for your special s____87____ to receive it.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "You are not a____81____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "In fact, 58 percent of teenagers c____82____ that handwriting was “too slow” and 17 percent believed it was “outdated”.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "These results have caused w____83____ that the art of handwriting may one day die out.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "“Handwring” is one of the most c____84____ art forms we have and should be given the same importance as other art forms such as painting, or photography，’，Jonathan Skyrme, general manager at BIC UK & Ireland, told the Daily Mail.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "The New York Times once explained that a handwritten letter sends a message in a way that o____85____ messages can never do.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "“When you get an email, you can never be sure that you are the o____86____ person to have received it - or even that it was written by the person who sent it，”said the newspaper.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "” So imagine the powerful message you send when you actually write out your thoughts by hand, buy a stamp, take it to a mailbox, and wait days for your special s____87____ to receive it.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Do you remember when you wrote a letter last time? If the answer is “not recently”, don’t worry. You are not a____81____. A survey of 1,000 teenagers around the world done by a French company BIC found that a third of today’s teenagers had never written a letter, half had not written a thank-you letter, and a quarter had not even written a birthday or Christmas card.",
+      "In fact, 58 percent of teenagers c____82____ that handwriting was “too slow” and 17 percent believed it was “outdated”. These results have caused w____83____ that the art of handwriting may one day die out. “Handwring” is one of the most c____84____ art forms we have and should be given the same importance as other art forms such as painting, or photography，’，Jonathan Skyrme, general manager at BIC UK & Ireland, told the Daily Mail.",
+      "The New York Times once explained that a handwritten letter sends a message in a way that o____85____ messages can never do. “When you get an email, you can never be sure that you are the o____86____ person to have received it - or even that it was written by the person who sent it，”said the newspaper. As US author Simon Garfield once wrote,“Emails are a poke (蜻艇点水)，but letters are a loving touch.",
+      "” So imagine the powerful message you send when you actually write out your thoughts by hand, buy a stamp, take it to a mailbox, and wait days for your special s____87____ to receive it."
+    ]
+  },
+  {
+    "_id": "sh-em1-2020-嘉定-reading-d",
+    "title": "2020 上海嘉定一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "嘉定",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市嘉定区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Do you think you’re a lucky person? Let’s see what Professor Richard Wiseman，a famous psychologist (心理学家)，has discovered about luck: Ten years ago, I set out a research on luck. I wanted to know why some people are always in the right place at the right time, while others always experience ill luck. Many people volunteered for my research. Over the years I interviewed them, watched their lives and had them take part in my experiments. I carried out a simple experiment to discover why there were differences in their ability to find opportunities. I gave both lucky and unlucky people a newspaper and asked them to look through it and tell me how many photographs were inside. I had secretly placed a large message halfway through the newspaper saying, “Tell the researcher you have seen this and win $50.” This message took up half of the page and was more than two inches high. It was staring everyone straight in the face, but unlucky people tended to (倾向于）miss it and lucky people tended to spot it. Unlucky people are just more nervous than lucky people. They are busy looking only for what they need and this stops them from noticing the unexpected. As a result, they miss out on opportunities. Lucky people tend to be more relaxed and open. They can see everything that is in front of them, rather than just what they are looking for. My research shows that lucky people live by several principles (原则). Here are some of these principles:",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "How long has Professor Richard Wiseman studied on luck?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "What did the volunteers do for the professor during the research?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "What’s the purpose of Professor Richard Wiseman’s small experiment?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "The message in the newspaper was so small that unlucky people couldn’t find it, wasn’t it?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "Why did the unlucky fail to find the message in the newspaper according to the research?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "Which principle of the four is the most important in your opinion? Why?",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
+  },
+  {
     "_id": "sh-em1-2020-奉贤-reading-a",
     "title": "2020 上海奉贤一模阅读 A",
     "year": 2020,
@@ -6269,7 +4328,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other.\n\nThis ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all. You can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be.\n\nCars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors. ____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地).\n\nPeople will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____. They will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs.",
+    "passage": "How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other. This ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all.\n\nYou can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be. Cars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors.\n\n____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地). People will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____.\n\nThey will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs.",
     "questions": [
       {
         "number": 75,
@@ -6352,16 +4411,136 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
     "articleTitle": "",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other.",
-      "This ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all. You can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be.",
-      "Cars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors. ____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地).",
-      "People will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____. They will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs."
+      "How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other. This ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all.",
+      "You can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be. Cars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors.",
+      "____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地). People will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____.",
+      "They will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs."
     ]
+  },
+  {
+    "_id": "sh-em1-2020-奉贤-reading-c",
+    "title": "2020 上海奉贤一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "奉贤",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Once upon a time, there was a family with 8 children living in a village. Two of the children, both boys, loved painting very much, but the family was so p____81____ that it was impossible to send both of them to study at art school at the same time. After many discussions, the two boys finally worked out a plan. They would toss (抛）a coin. The loser would go down into the mines(煤矿）and, with his money, pay for his brother’s college tuition (学费）.Then，when the brother who won the toss f____82____ his studies, he would pay for the other brother to study at the college. One of the brothers, Albrecht Durer, won the toss and his brother Jack went down into the mines. Durer worked with all his h____83____ and his paintings were much better than those of most of his teachers’. He was beginning to make a lot of money for his paintings. Durer returned. When he told Jack he could go to art college, Jack said softly, “The four years in the mines has done too much to my hands. It is too late. Now I can’t even h____84____ a glass.” To show his great love and respect to his brother, Durer drew his brother’s hands with palms(手掌）together and thin fingers t____85____ the sky. He called his drawing The Praying Hands, which became very famous years later. The next time you see a copy of that touching works, take a s____86____ look. Let it be your reminder: No one can ever succeed a____87____!",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "Two of the children, both boys, loved painting very much, but the family was so p____81____ that it was impossible to send both of them to study at art school at the same time.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "Then，when the brother who won the toss f____82____ his studies, he would pay for the other brother to study at the college.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "Durer worked with all his h____83____ and his paintings were much better than those of most of his teachers’.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "Now I can’t even h____84____ a glass.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "” To show his great love and respect to his brother, Durer drew his brother’s hands with palms(手掌）together and thin fingers t____85____ the sky.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "The next time you see a copy of that touching works, take a s____86____ look.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "Let it be your reminder: No one can ever succeed a____87____!",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-奉贤-reading-d",
+    "title": "2020 上海奉贤一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "奉贤",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Follow a strict way of life Self-disciplined(自律的）people are not all outstanding people. But nearly all outstanding people are self-disciplined people. Some of them read every day. Some of them never run late. The real difference between an elite (精英）person and an ordinary person is that an elite person can manage his or her time well. That’s where their success comes from. What people call self-discipline is in fact self-management. One example is staying fit. Never underestimate(低估）someone who is in good shape. Anyone who has ever tried to lose weight knows that it’s not easy. It's even harder to avoid putting weight back on. If someone is in good shape, it shows that he knows the principles(原则)of staying fit and is able to stick to a plan that uses these principles. If someone is in good shape, it means that this person is good at managing themselves and their time. Whether it is natural or acquired, it is a great skill. It also shows that this person is able to keep persevering (坚定不移的）and can balance long-term goals with short-term goals. So if someone is in good shape, he or she is much more than just healthy. How do you learn self-management? First of all, set a goal and write down your reasons for wanting to achieve it. Create a list of all the things you need to do to achieve this goal and start to work on them one at a time. With self-discipline, small things in life will no longer trouble you. Through self-discipline, you can _______________________________.",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Are all outstanding people self-disciplined people?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "What’s the difference between an elite person and an ordinary person?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "Which is even harder to lose weight or to avoid putting weight back on?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "In the writer’s opinion, a person who is in good shape is self-disciplined, isn’t he?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "List one of the suggestions mentioned(涉及）in the passage for starting self-management.",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What can you do through self-discipline? Fill in the blank with your own words.",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
   },
   {
     "_id": "sh-em1-2020-宝山-reading-a",
@@ -6563,6 +4742,138 @@ module.exports = [
     "difficultyLabel": "语境词汇"
   },
   {
+    "_id": "sh-em1-2020-宝山-reading-c",
+    "title": "2020 上海宝山一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "宝山",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市宝山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "A local primary school is considering using tablet computers（平板电脑）in all classrooms from next year. The following text has been written by a teacher at the school. Should we use tablet computers in the classroom? The use of tablet computers（or simply“tablets”）in the classroom has become an increasingly popular choice in many primary schools across the country, including many in our local area.\n\nIt is important that we consider this opportunity, but we must also be a ____81_____ of the problems. On one hand, there are many a____82_____ to use tablets in the classroom. Firstly, tablets could improve productivity（ 效 率 ）during the school day. Because of their familiarity with computers and mobile phones, many of our students can type faster than they can write by hand.\n\nT____83_____, using tablets in the classroom could reduce the time it takes for them to complete tasks. Additionally, there are endless tablet functions（功能）which could provide interesting teaching a____84_____. For example, we could play computer games to teach Maths, or make simple flashes to show how magnets behave.\n\nAlso, students could take photos outdoors and then use them for writing tasks. However, we must also consider the possible problems with introducing tablets to our classrooms. Some students may play with the tablets instead of f____85_____ on their work. Another problem is that, while many students can use tablets already, many of our teachers are not good at it and would need to be trained.\n\nWe may also have problems with the tablets breaking, which would be very expensive to r____86_____. This is in addition to the cost of buying the tablets in the first place. All in all, even though using tablets in the classroom may have many problems, it seems that it would be a wonderful opportunity for students and teachers at our school. There are a lot of costs indeed, but it would c____87_____ prove to be a worthwhile investment（物有所值的投资）.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "It is important that we consider this opportunity, but we must also be a ____81_____ of the problems.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "On one hand, there are many a____82_____ to use tablets in the classroom.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "T____83_____, using tablets in the classroom could reduce the time it takes for them to complete tasks.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "Additionally, there are endless tablet functions（功能）which could provide interesting teaching a____84_____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "Some students may play with the tablets instead of f____85_____ on their work.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "We may also have problems with the tablets breaking, which would be very expensive to r____86_____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "There are a lot of costs indeed, but it would c____87_____ prove to be a worthwhile investment（物有所值的投资）.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A local primary school is considering using tablet computers（平板电脑）in all classrooms from next year. The following text has been written by a teacher at the school. Should we use tablet computers in the classroom? The use of tablet computers（or simply“tablets”）in the classroom has become an increasingly popular choice in many primary schools across the country, including many in our local area.",
+      "It is important that we consider this opportunity, but we must also be a ____81_____ of the problems. On one hand, there are many a____82_____ to use tablets in the classroom. Firstly, tablets could improve productivity（ 效 率 ）during the school day. Because of their familiarity with computers and mobile phones, many of our students can type faster than they can write by hand.",
+      "T____83_____, using tablets in the classroom could reduce the time it takes for them to complete tasks. Additionally, there are endless tablet functions（功能）which could provide interesting teaching a____84_____. For example, we could play computer games to teach Maths, or make simple flashes to show how magnets behave.",
+      "Also, students could take photos outdoors and then use them for writing tasks. However, we must also consider the possible problems with introducing tablets to our classrooms. Some students may play with the tablets instead of f____85_____ on their work. Another problem is that, while many students can use tablets already, many of our teachers are not good at it and would need to be trained.",
+      "We may also have problems with the tablets breaking, which would be very expensive to r____86_____. This is in addition to the cost of buying the tablets in the first place. All in all, even though using tablets in the classroom may have many problems, it seems that it would be a wonderful opportunity for students and teachers at our school. There are a lot of costs indeed, but it would c____87_____ prove to be a worthwhile investment（物有所值的投资）."
+    ]
+  },
+  {
+    "_id": "sh-em1-2020-宝山-reading-d",
+    "title": "2020 上海宝山一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "宝山",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市宝山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Dear Grandma and Grandpa, As you may have heard from my parents, I’m in China right now on a cultural exchange program. I’m enjoying my time here very much. I have made new friends here, many of whom are locals. Through my interaction（相互交流）with them, I’ve noticed some interesting cultural differences. One of the most obvious（明显的）cultural differences is the size of food portions in restaurants. Back home in America, the food portions are usually larger than those I’ve seen in China. We’re even used to seeing super-sized dishes in some restaurants. However, in Asia, food portions are generally not extremely large. I’m just encouraged to eat until I’m full and enjoy different kinds of food. Eating out in Asia is often a big social affair（社交活动）. People here eat out a lot. There are all kinds of restaurants. And there are food stands and food carts-even on the sidewalk（人行道）. Another interesting aspect of eating out is the way food is served. Back home in America, each diner orders their own meal. When people eat out in Asia, they usually order food to share. Nearly every time I eat out with friends in China, each of us has our own bowl of rice or noodles, and we share the rest of the dishes. This is an excellent way to try new foods! One thing that makes me confused is the way people pay for food at a restaurant. In the U.S. we often ask for separate（分开的）checks, so we each pay for our own meal. But here, if diners decide to pay separately, they typically don’t request separate checks. Instead, they give money to one person who pays the bill. People also don’t tip the server. Instead, there is often a service charge added to the bill. I hope you are doing well. I’ll write you again! Love, Margaret",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Margaret has made many local friends during her cultural exchange program, hasn’t she?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "What’s the culture difference in the size of food portions between China and America?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "Why do people in Asia like eating out a lot?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "What does Margaret think of the way food is served in China?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "How do people usually pay the bill in America?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "Do you like the way of eating out in China or in America? Why?",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
+  },
+  {
     "_id": "sh-em1-2020-崇明-reading-a",
     "title": "2020 上海崇明一模阅读 A",
     "year": 2020,
@@ -6676,7 +4987,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s.\n\nThe industry witnessed its most successful periods in the early 20th century. With the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news.\n\nAfternoon newspapers were the first to suffer. People coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not.\n\nBut newspapers suffered another, heavier blow (打击）in the 1990s. With the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold?\n\nWill newspapers die? Maybe not. Many newspapers are now making ____79____. Some are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place.",
+    "passage": "Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s. The industry witnessed its most successful periods in the early 20th century.\n\nWith the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news. Afternoon newspapers were the first to suffer.\n\nPeople coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not. But newspapers suffered another, heavier blow (打击）in the 1990s.\n\nWith the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold? Will newspapers die? Maybe not. Many newspapers are now making ____79____.\n\nSome are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place.",
     "questions": [
       {
         "number": 75,
@@ -6759,17 +5070,137 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
     "articleTitle": "",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s.",
-      "The industry witnessed its most successful periods in the early 20th century. With the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news.",
-      "Afternoon newspapers were the first to suffer. People coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not.",
-      "But newspapers suffered another, heavier blow (打击）in the 1990s. With the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold?",
-      "Will newspapers die? Maybe not. Many newspapers are now making ____79____. Some are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place."
+      "Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s. The industry witnessed its most successful periods in the early 20th century.",
+      "With the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news. Afternoon newspapers were the first to suffer.",
+      "People coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not. But newspapers suffered another, heavier blow (打击）in the 1990s.",
+      "With the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold? Will newspapers die? Maybe not. Many newspapers are now making ____79____.",
+      "Some are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place."
     ]
+  },
+  {
+    "_id": "sh-em1-2020-崇明-reading-c",
+    "title": "2020 上海崇明一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "崇明",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Would you like to travel space? It is 2050. Space tourism has become a reality. So would you want to be a space tourist? Here, some middle school students share their opinions. ❖ Jeea，U.K. I love space very much and would like to be the first teenager to d____81____ a new planet. Then perhaps it would be named after me. I would become famous around the world! ❖ Emily，U.S. Space exploration can be dangerous. What should I do if 1 get l ____82____? I can’t come back to the earth. I am also afraid of heights. It would be very frightening when you look down from a spaceship! ❖ Klaudia，Spain I would love to go to space because from there I could enjoy a nice v____83____ of the Earth. The blue oceans and green forests on the Earth must be magnificent. What’s more, 1 am curious about what life is like without gravity (重力). Perhaps it would be fun to play golf in space! ❖ Edward, U.K. It would be cool. But how lonely and depressed I would be without a____84____ around me! I would miss my family. It also requires a large amount of training to become a space tourist, and I don't think I have time for that. Moreover, I don’t think I can a ____85____ a trip to space. That would definitely cost a lot!. ❖ Zainab, South Africa I’d love to. We studied the solar system in Science classes this semester. I think space is amazing and I desire to know more about it. Unluckily, I have no other way but to search for information about it o____86____. If I can have the chance to travel to space, I would directly see the things I never see on the Earth. ❖ Ana, U.S. I would not like to be a space tourist. I respect those who love space tourism. For me, I only want to f____87____ on what I have on this planet - my family, my school and my pets. I would like to work hard to make progress in what I am doing.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "I love space very much and would like to be the first teenager to d____81____ a new planet.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "What should I do if 1 get l ____82____?",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "❖ Klaudia，Spain I would love to go to space because from there I could enjoy a nice v____83____ of the Earth.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "But how lonely and depressed I would be without a____84____ around me!",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "Moreover, I don’t think I can a ____85____ a trip to space.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "Unluckily, I have no other way but to search for information about it o____86____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "For me, I only want to f____87____ on what I have on this planet - my family, my school and my pets.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-崇明-reading-d",
+    "title": "2020 上海崇明一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "崇明",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "A woman was at the airport waiting for her flight to start boarding. She still had a lot of time, so she went to a shop and bought a book to read. While she was in the shop, she decided to buy a bag of cookies as well. She arrived at her gate, sat down and started reading her book. She read her book so attentively that she didn’t notice what was going on around her. But she did see that a man had sat down next to her and taken one of her cookies out of the bag. She pretended not to notice, as she didn’t want to make a scene (当众大吵). But then the man took more. He kept eating the cookies until there was just one left. The man took the last cookie and broke it in half. He lapped the woman on the shoulder and held out one half to her. The woman could not believe how much nerve this man had to steal all of her cookies and then offer half a cookie in return. She angrily grabbed the half-cookie out of his hand and ate it without any words. Finally, it was time for her to board. As she went to the gate, she reached into her purse. Suddenly, she realized that her bag of cookies was still in her purse. The man had eaten his own cookies the whole time and simply wanted to share the last one with her. The woman’s face turned red with shame. Therefore, she quickly caught up with him and said, “______93_____.” When we’re not paying attention to the world around us, it can be easy to misunderstand what’s happening or even become angry with others. It is better to keep our eyes open and think about every possibility when trying to understand a particular situation.",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Did the woman arrive at the airport so early?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Why couldn’t the woman notice what happened around her at all?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "What did the man do with the last cookie?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "How did the woman feel when she was offered the half-cookie?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "When did the woman realize her mistake?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What did the woman probably say to the man? Please fill in the blank in paragraph 5 with at least TWO sentences.",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
   },
   {
     "_id": "sh-em1-2020-徐汇-reading-a",
@@ -6958,6 +5389,69 @@ module.exports = [
     "difficultyLabel": "语境词汇"
   },
   {
+    "_id": "sh-em1-2020-徐汇-reading-c",
+    "title": "2020 上海徐汇一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "徐汇",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市徐汇区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "If you have ever had trouble doing things you should do or would like to do, you have experienced procrastination (拖延症). When you procrastinate, instead of working on important meaningful tasks, you find yourself performing meaningless activities. If you are a procrastinator, perhaps you spend lots of time watching TV, playing video games, checking Facebook, eating, cleaning or walking back and forth through the room. Afterwards, you feel powerless and have the f 81 of guilt and trouble. Once again, you end up doing nothing. Sound familiar? L 82 people don’t do anything and are just fine with it. Procrastinators, however, want to actually do something but can’t force themselves to s 83 . Another fact about procrastination is that it is d 84 from relaxation. Relaxing recharges you with energy. But procrastination makes you not energetic. The less energy you have, the greater the chances of you putting off your responsibilities, and, once more, you will achieve nothing. My dad always used to say, “Peter, you need to learn how to give yourself orders.” I would always answer, “ I tell myself what to do, I just don’t listen.” Most likely, failure of the ability to listen to o 85 is the main reason. The scientific name of this ability is self-regulation. Self-regulation is the ability to actively control your emotions. The more developed this ability is, the more often you will do what you tell yourself to do. Good news is it is possible to have self-regulation by t 86 . You need to begin by setting the bar as low as possible. Creating habits isn’t about quantity; it’s about small steps and regular repetition. Once you learn a new habit, you can exercise your willpower muscle (肌肉). As you s 87 raise the bar, your willpower will gain strength day by day. Gradual changes are more pleasant than sudden, great changes. Therefore bigger success can be made. f________ 82. L________ 83. s________ 84. d________ 85. o________ t________ 87. s________",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "Afterwards, you feel powerless and have the f 81 of guilt and trouble.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "L 82 people don’t do anything and are just fine with it.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "Procrastinators, however, want to actually do something but can’t force themselves to s 83 .",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "Another fact about procrastination is that it is d 84 from relaxation.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "” Most likely, failure of the ability to listen to o 85 is the main reason.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "Good news is it is possible to have self-regulation by t 86 .",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "As you s 87 raise the bar, your willpower will gain strength day by day.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
     "_id": "sh-em1-2020-徐汇-reading-d",
     "title": "2020 上海徐汇一模阅读 D",
     "year": 2020,
@@ -7129,7 +5623,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） FINDING FRIENDS ONLINE What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___.\n\nUnlike the real world, however, your knowledge about a person is limited to words__76___. There, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies.\n\nIn fact, people __78___ what you think about. This makes the Internet a great place for exciting conversation. Where else can so many people come together to chat about their interests? But some Internet users want more than just someone to chat with. They are looking for serious love relationships.\n\nIs the Internet a good place to find love? Some of these relationships are actually successful. Others fail painfully. Supporters of online relationships say that the Internet allows couples to get to know each other by exchanging ideas first. Your __79___ isn’t so important as that in the real world.\n\nBut others of online relationships __80___ that no one can truly know another person in the Internet world. Why? Because the Internet gives users a lot of control over how others view them. The Internet users can carefully choose their words to fit whatever image they want to give. In fact, they’re not really themselves.",
+    "passage": "What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___. Unlike the real world, however, your knowledge about a person is limited to words__76___.\n\nThere, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies.\n\nIn fact, people __78___ what you think about. This makes the Internet a great place for exciting conversation. Where else can so many people come together to chat about their interests? But some Internet users want more than just someone to chat with. They are looking for serious love relationships.\n\nIs the Internet a good place to find love? Some of these relationships are actually successful. Others fail painfully. Supporters of online relationships say that the Internet allows couples to get to know each other by exchanging ideas first. Your __79___ isn’t so important as that in the real world.\n\nBut others of online relationships __80___ that no one can truly know another person in the Internet world. Why? Because the Internet gives users a lot of control over how others view them. The Internet users can carefully choose their words to fit whatever image they want to give. In fact, they’re not really themselves.",
     "questions": [
       {
         "number": 75,
@@ -7212,17 +5706,137 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
-    "articleTitle": "",
+    "articleTitle": "FINDING FRIENDS ONLINE",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） FINDING FRIENDS ONLINE What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___.",
-      "Unlike the real world, however, your knowledge about a person is limited to words__76___. There, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies.",
+      "What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___. Unlike the real world, however, your knowledge about a person is limited to words__76___.",
+      "There, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies.",
       "In fact, people __78___ what you think about. This makes the Internet a great place for exciting conversation. Where else can so many people come together to chat about their interests? But some Internet users want more than just someone to chat with. They are looking for serious love relationships.",
       "Is the Internet a good place to find love? Some of these relationships are actually successful. Others fail painfully. Supporters of online relationships say that the Internet allows couples to get to know each other by exchanging ideas first. Your __79___ isn’t so important as that in the real world.",
       "But others of online relationships __80___ that no one can truly know another person in the Internet world. Why? Because the Internet gives users a lot of control over how others view them. The Internet users can carefully choose their words to fit whatever image they want to give. In fact, they’re not really themselves."
     ]
+  },
+  {
+    "_id": "sh-em1-2020-普陀-reading-c",
+    "title": "2020 上海普陀一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "普陀",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "For some people, music is no fun at all. About four percent of us are what scientists call amusic. Those amusics are born without the ability to r__81___ , repeat or remember musical notes (音调）. Amusic people often cannot tell the difference between two songs. Amusics can only hear the difference between two notes if they are pretty different. As a result, songs sound like n__82___ to an amusic. Many amusics compare the sound of music to pieces of metal hitting each other. Life can be hard for amusics. Their unfitness to enjoy music makes them away from others. It can be difficult for other people to get to know them. Actually, most people cannot understand what it feels like to be an amusic. Many amusics may not feel very c__83___ when they go to a restaurant or a shopping mall. Sometimes they even feel painful. That is why many amusics usually stay away from places where there is music. “I used to h__84___ parties,” says Margaret, a seventy-year-old woman who only discovered that she was an amusic last month. By studying people like Margaret, scientists are f__85___ learning how to find this unusual condition. Scientists say that the brains of amusics are different from the brains of people who enjoy music. The difference isn’t about defective hearing (听力障碍）. Many amusics are happy when their condition is found. For years, Margaret felt embarrassed about the p__86___ with music. Now she knows that a large number of people are like her. There is a name for the condition. That makes it e__87___ for her to explain “When people invite me to a concert, I just say ‘No thanks, I’m amusic,’ ” says Margaret. “I just wish I had learned to say that when I was seventeen and not seventy.”",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "Those amusics are born without the ability to r__81___ , repeat or remember musical notes (音调）.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "As a result, songs sound like n__82___ to an amusic.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "Many amusics may not feel very c__83___ when they go to a restaurant or a shopping mall.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "“I used to h__84___ parties,” says Margaret, a seventy-year-old woman who only discovered that she was an amusic last month.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "By studying people like Margaret, scientists are f__85___ learning how to find this unusual condition.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "For years, Margaret felt embarrassed about the p__86___ with music.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "That makes it e__87___ for her to explain “When people invite me to a concert, I just say ‘No thanks, I’m amusic,’ ” says Margaret.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-普陀-reading-d",
+    "title": "2020 上海普陀一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "普陀",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "In 1935, when Emma was five years old, her mother died. Although her brothers and sisters were loving and caring, they were no replacement for a mother’s love. Emma, who grew up to be my told me that her family was too poor to afford to buy her a little doll at that time. After her mother’s death, Emma was determined to look after others. She felt that she could make up for her sad childhood through her dedication (奉献）to her own family. But I knew there was still something missing. A few days before Christmas in 1989, one customer came to our company with her beautiful handmade dolls. I decided to get one for my five-year-old daughter, Lucy. Then I asked the customer to make me a doll for my mother, Emma—a special one with grey hair and glasses—a grandmother doll. A friend of mine agreed to play Santa (圣诞老人) to deliver the presents to our home on Christmas morning! I began to get ready for what would turn out to be one special day of my mother’s life. Santa arrived on Christmas Day at the planned time. Lucy was so happy to get the present from Santa. When Santa turned to leave, he looked once more into his huge bag and brought out one more present. Then he asked where Emma was. To my mother’s big heard her name! He handed her the present and also a message card: For Emma, Before my trip this year, I was cleaning my room and found this package. It was supposed to be delivered on December 25, 1935. Many apologies for delivering the present late. Love, Santa She couldn’t speak but only held the doll she had waited fifty-four years to receive as tears of joy ran down her cheeks (脸颊）.That doll, given by “Santa”，made my mother the happiest “child” that Christmas. —An extract (摘录）from An unforgettable moment",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Emma grew up in a rich and happy family, didn’t she?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Why was the writer interested in that customer’s dolls?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "What did the doll for Emma look like?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "Who played Santa to deliver the presents for the writer?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "How did Emma feel when she received the doll?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "Please give a proper title for the passage. (No more than 10 words)",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
   },
   {
     "_id": "sh-em1-2020-杨浦-reading-a",
@@ -7421,6 +6035,137 @@ module.exports = [
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇"
+  },
+  {
+    "_id": "sh-em1-2020-杨浦-reading-c",
+    "title": "2020 上海杨浦一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "杨浦",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市杨浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "A rare experience Imagine the situation. You're walking down the crowded high street and s____81____ a complete stranger stops you and says, “Hi! You were on the beach in the south of Spain six years ago. How are you doing?” This stranger isn't necessarily m____81____. He or she might be a \"super-recogniser”.\n\nThese are people who have the unusual ability to recognise people they have seen only once — a long time ago, maybe in a crowd. Whatever the differences in looks It doesn’t matter what the person looks like now. People change, get different hair styles, dye their hair or go grey. Wrinkles, new glasses and makeups give them new a____83____, but the “super-recognisers” can still recognise them.\n\nAn inborn skill Although scientists have known for a long time that about 2% of people suffer from face-blindness, which means that they have huge problems recognising faces, they are only now realising that some people are the exact o____84____. Tests have shown that a “super-recogniser” can identify people that they only saw for a brief moment — and this is not an ability that we can d____85____, it’s something we are born with.\n\nA great h____86____ The police are starting to use “super-recognisers” to spot criminal faces in videos of crowds. They look for people with a specific build and facial features like beards and moustaches but they can even recognise quite o____87____ people, with no noticeable features at all. As well as surprising our holidaymaker in Spain six years later, this ability can be used for a very practical purpose indeed.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "You're walking down the crowded high street and s____81____ a complete stranger stops you and says, “Hi!",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "” This stranger isn't necessarily m____81____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "Wrinkles, new glasses and makeups give them new a____83____, but the “super-recognisers” can still recognise them.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "An inborn skill Although scientists have known for a long time that about 2% of people suffer from face-blindness, which means that they have huge problems recognising faces, they are only now realising that some people are the exact o____84____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "Tests have shown that a “super-recogniser” can identify people that they only saw for a brief moment — and this is not an ability that we can d____85____, it’s something we are born with.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "A great h____86____ The police are starting to use “super-recognisers” to spot criminal faces in videos of crowds.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "They look for people with a specific build and facial features like beards and moustaches but they can even recognise quite o____87____ people, with no noticeable features at all.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A rare experience Imagine the situation. You're walking down the crowded high street and s____81____ a complete stranger stops you and says, “Hi! You were on the beach in the south of Spain six years ago. How are you doing?” This stranger isn't necessarily m____81____. He or she might be a \"super-recogniser”.",
+      "These are people who have the unusual ability to recognise people they have seen only once — a long time ago, maybe in a crowd. Whatever the differences in looks It doesn’t matter what the person looks like now. People change, get different hair styles, dye their hair or go grey. Wrinkles, new glasses and makeups give them new a____83____, but the “super-recognisers” can still recognise them.",
+      "An inborn skill Although scientists have known for a long time that about 2% of people suffer from face-blindness, which means that they have huge problems recognising faces, they are only now realising that some people are the exact o____84____. Tests have shown that a “super-recogniser” can identify people that they only saw for a brief moment — and this is not an ability that we can d____85____, it’s something we are born with.",
+      "A great h____86____ The police are starting to use “super-recognisers” to spot criminal faces in videos of crowds. They look for people with a specific build and facial features like beards and moustaches but they can even recognise quite o____87____ people, with no noticeable features at all. As well as surprising our holidaymaker in Spain six years later, this ability can be used for a very practical purpose indeed."
+    ]
+  },
+  {
+    "_id": "sh-em1-2020-杨浦-reading-d",
+    "title": "2020 上海杨浦一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "杨浦",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市杨浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "There once was a king who wanted to find the answers to what he considered the three most important questions in life. The three questions are: when is the right time for every action, who are the most important people, and what is the most important thing to do? The king consulted learned men, promising he would richly reward① anyone who could answer the questions, but their answers didn’t satisfy him. In the end, he decided to visit a wise hermit who lived in the woods. The hermit would speak only with common people, so the king put on simple clothes. When he got close to the hermit’s hut, he ordered his bodyguards to wait behind. He approached the place and found the hermit digging. He asked the wise man his three questions, but the hermit didn’t respond. Seeing how old and weak the hermit② was, the king began helping him dig. The king dug for hours, but the hermit never answered his questions. Just as the king was about to leave, a wounded man came running to the hut and fainted before them. Then the king carried the wounded man to Hermit’s hut and took care of him. The king was exhausted and fell asleep as well. When he awoke, he talked with the man, who said that he had wanted to kill the king but was wounded by his bodyguards. He asked for forgiveness and promised to serve the king faithfully. Afterwards, the king went outside and repeated his questions to the hermit once more. The hermit replied, “If you had not helped me dig earlier, you would have left and been killed by the man. So, the most important man back then was me, and the most important time was when you were digging. The most important thing to do was to be kind to me. When the wounded man arrived, he was the most important person, and saving him was the most important thing. By doing so, you made peace with an enemy.” The king finally had his three answers. The most important time is the present, as it’s the only time we have the power to act. The most important person is the one you are with, and the most important thing is always to____92____ . ①reward v. & n. 奖励；回报 ②hermit n. 隐士",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Was the king satisfied with the answers given by learned men?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Where did the hermit live?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "Why did the king help the hermit dig? He thought the hermit",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "Who was the wounded man?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "What best fits the blank in the last sentence?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What were the king’s rewards after he helped the hermit and the wounded man? He",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
   },
   {
     "_id": "sh-em1-2020-松江-reading-b",
@@ -7729,6 +6474,230 @@ module.exports = [
     "difficultyLabel": "语境词汇"
   },
   {
+    "_id": "sh-em1-2020-浦东-reading-c",
+    "title": "2020 上海浦东一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "浦东",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市浦东新区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "We might love to tell others about our unusual experiences—that time we climbed Mount Everest, tasted some rare food or ran into a famous person on the street. But new research suggests that if we s____81____ these unusual experiences with others, it may bring something uncomfortable. “Unusual experiences are pleasant in the moment but can cause social t____82____ in the long run,”says psychological scientist Gus Cooney of Harvard University. “Some people mistakenly thought that having an unusual experience would make them the star. But they were wrong, because to be unusual is to be different from other people, and social interaction is based on something similar.” “We all h____83____ to have experiences that are fine and rare, and when we get what we want, we are always eager to tell our friends. But I’ve noticed that conversations always seem to develop well on more ordinary topics,”Cooney explains.“This made me wonder if unusual experiences were r____84____ as lovely as we had thought.” To find out, Cooney and his colleagues had 68 people come to the lab in groups of f____85____. In each group, one person was asked to watch a popular video of a street magician performing for a crowd, while the other three people were asked to watch an ordinary animated video. After watching the videos, the people sat around a table and had a five-minute free conversation. After the group discussion, the people who watched the magician’s performance felt w____86____ than those who watched the animated video, because they felt they were not included during the discussion. This finding suggests that we ought to give more thought in choosing what to talk about with others. If an experience turns you into someone who has n____87____ in common with others, then no matter how good it is, it won’t make you comfortable in the long run.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "But new research suggests that if we s____81____ these unusual experiences with others, it may bring something uncomfortable.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "“Unusual experiences are pleasant in the moment but can cause social t____82____ in the long run,”says psychological scientist Gus Cooney of Harvard University.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "” “We all h____83____ to have experiences that are fine and rare, and when we get what we want, we are always eager to tell our friends.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "“This made me wonder if unusual experiences were r____84____ as lovely as we had thought.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "” To find out, Cooney and his colleagues had 68 people come to the lab in groups of f____85____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "After the group discussion, the people who watched the magician’s performance felt w____86____ than those who watched the animated video, because they felt they were not included during the discussion.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "If an experience turns you into someone who has n____87____ in common with others, then no matter how good it is, it won’t make you comfortable in the long run.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-浦东-reading-d",
+    "title": "2020 上海浦东一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "浦东",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市浦东新区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "There was a baby whale named Ella. She lived with other whales in a deep bay. One day, she noticed something large pass overhead. It was as big as a whale, but it wasn’t. Ella was frightened. She had never seen a boat before. Although Ella was scared, she was curious, too. She forced herself to swim to the surface. She saw several faces watching her. In fact, they looked very friendly. In the next few months, Ella lost her fear of boats. People in the boats always enjoyed seeing her. As time went by, people and boats became a part of her life. Whenever a boat passed overhead, she swam to the top to say hello. One night, Ella saw a lot of fish swimming around the bottom of a ship. Suddenly, she_____________________________ by a fishing net. She fought hard to get free. Finally, she escaped, but part of the net was tangled (缠住) in her mouth and around her tail. Ella was hurt and confused. Slowly and sadly she made her way towards the deep ocean. Many weeks passed, and the net in her mouth made it hard for her to eat. And every time she struggled for air, the net cut into her tail. But if she didn’t get air every half an hour, she would die. Winter was coming, she had to move to warmer waters with others. However, this time she had no choice but to stay in the bay and wait to die. One morning, to her surprise, the water was filled with boats. When the boats came closer, a person reached into the water. Ella stared at the person’s hand. The hand reminded her of something. She began to feel better. Soon many hands touched her. Ella felt them pulling the lines of the net. Moments later, she was free as before! The people were waving their starfish-shaped hands. Ella knew that the hands would always be there in her life.",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Did Ella see a big whale swim over her head one day?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Why did Ella force herself to swim to the surface?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "Complete the sentence“Suddenly, she",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "According to the story, what do whales need to do before winter comes?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "Why did Ella have no choice but to give up the journey?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What do you think Ella will do when she meets boats again? Please give your reason(s).",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2020-虹口-reading-a",
+    "title": "2020 上海虹口一模阅读 A",
+    "year": 2020,
+    "city": "上海",
+    "district": "虹口",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking.\n\nWhen the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals.\n\nThe ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change.\n\nIn 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world.\n\nRising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef.",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "_______ has (have) long been threatening the ancient city of Venice.",
+        "options": {
+          "A": "The ancient buildings",
+          "B": "A body of the water",
+          "C": "Rising sea levels",
+          "D": "The level of the Adriatic Sea"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 70,
+        "prompt": "Mount Kilimanjaro is very important because of its _______.",
+        "options": {
+          "A": "highest point measuring almost 6,000 meters in Africa",
+          "B": "support for 5 plant areas and all the animals in the area",
+          "C": "bad effect on ecosystems and Tanzania’s travel industry",
+          "D": "valuable record of thousands of years of weather history"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 71,
+        "prompt": "The underlined word “estimate” in Paragraph 4 means _______.",
+        "options": {
+          "A": "count",
+          "B": "guess",
+          "C": "suggest",
+          "D": "decide"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 72,
+        "prompt": "Which of the following is NOT harmful to the Great Barrier Reef?",
+        "options": {
+          "A": "Warmer temperature.",
+          "B": "Sick or dying coral.",
+          "C": "Water pollution.",
+          "D": "Considerate visitors."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 73,
+        "prompt": "In the passage the writer uses the way of writing EXCEPT by _______.",
+        "options": {
+          "A": "providing examples",
+          "B": "giving definitions",
+          "C": "listing numbers",
+          "D": "making comparisons"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 74,
+        "prompt": "The book is probably called _______.",
+        "options": {
+          "A": "Disappearing destinations",
+          "B": "Treasures in the world",
+          "C": "Ecosystem of the world",
+          "D": "Interesting places"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking.",
+      "When the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals.",
+      "The ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change.",
+      "In 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world.",
+      "Rising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef."
+    ]
+  },
+  {
     "_id": "sh-em1-2020-虹口-reading-b",
     "title": "2020 上海虹口一模阅读 B",
     "year": 2020,
@@ -7738,7 +6707,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） When is the best time to ... Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like.\n\nEat It’s best to eat your biggest meal early, against a common American day. A chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m.\n\n, our bodies start to cool down, and we sleep better when we have a low body temperature. But how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running.\n\nBut muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m. on the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks.\n\nSo save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy.",
+    "passage": "Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like. Eat It’s best to eat your biggest meal early, against a common American day.\n\nA chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m., our bodies start to cool down, and we sleep better when we have a low body temperature.\n\nBut how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running. But muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m.\n\non the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks. So save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy.",
     "questions": [
       {
         "number": 75,
@@ -7821,16 +6790,15 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
-    "articleTitle": "",
+    "articleTitle": "When is the best time to ...",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） When is the best time to ... Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like.",
-      "Eat It’s best to eat your biggest meal early, against a common American day. A chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m.",
-      ", our bodies start to cool down, and we sleep better when we have a low body temperature. But how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running.",
-      "But muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m. on the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks.",
-      "So save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy."
+      "Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like. Eat It’s best to eat your biggest meal early, against a common American day.",
+      "A chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m., our bodies start to cool down, and we sleep better when we have a low body temperature.",
+      "But how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running. But muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m.",
+      "on the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks. So save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy."
     ]
   },
   {
@@ -8047,6 +7015,291 @@ module.exports = [
     "difficultyLabel": "基础理解"
   },
   {
+    "_id": "sh-em1-2020-长宁-reading-b",
+    "title": "2020 上海长宁一模阅读 B",
+    "year": 2020,
+    "city": "上海",
+    "district": "长宁",
+    "examType": "一模",
+    "section": "B",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市长宁、金山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "A Simple Act of Gratitude tells a story of one man’s journey to change his life. The book begins one December when the future looks _________ for John Kralik. His small law business is struggling（艰难的）. He’s in the process of divorcing（离婚）his second wife. He doesn’t have much of a relationship with his two sons.\n\nHe’s living in a small, cheap flat, roasting in the summer and freezing in the winter. His ideal dreams for his law business and his _________to become a judge are out of reach. On New Year’s Day, John goes hiking in the mountains near his California home. He gets lost and is stepping around in the wilderness when he hears a voice say, “_________ you learn to be thankful for the things you have, you will not receive the things you want.\n\n” After thinking a while, he comes up with an idea. He decides to find one person to thank each day and write them a thank - you note. By the end of the year, he will have written 365 notes. They would be the way out of his disappointment. At first, John has trouble finding things to be thankful for.\n\nBut day by day, he ________ people to thank for large and small things. He writes thank-yous for gifts and kindnesses. He writes notes to his sons. Writing thank-yous makes him realize he needs to change the way he views life and the people in it. He writes to college friends and doctors, Starbucks clerks, his daughter’s teacher and his apartment manager.\n\nHe writes to anyone who ________ his life in even the smallest way. Almost immediately, surprising things begin to happen. He begins to have the benefit of a changed attitude. By the end of the book, his life isn’t _________, and he still doesn’t have everything he wants. But he realizes that writing thank-you notes is a good thing to do and makes the world a better place.",
+    "questions": [
+      {
+        "number": 75,
+        "prompt": "完形填空第 75 空",
+        "options": {
+          "A": "beautiful",
+          "B": "dark",
+          "C": "attractive",
+          "D": "primary"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 75,
+        "prompt": "完形填空第 75 空",
+        "options": {
+          "A": "beautiful",
+          "B": "dark",
+          "C": "attractive",
+          "D": "primary"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 76,
+        "prompt": "完形填空第 76 空",
+        "options": {
+          "A": "decision",
+          "B": "talent",
+          "C": "choice",
+          "D": "desire"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 76,
+        "prompt": "完形填空第 76 空",
+        "options": {
+          "A": "decision",
+          "B": "talent",
+          "C": "choice",
+          "D": "desire"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 77,
+        "prompt": "完形填空第 77 空",
+        "options": {
+          "A": "If",
+          "B": "Though",
+          "C": "Until",
+          "D": "When"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 77,
+        "prompt": "完形填空第 77 空",
+        "options": {
+          "A": "If",
+          "B": "Though",
+          "C": "Until",
+          "D": "When"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 78,
+        "prompt": "完形填空第 78 空",
+        "options": {
+          "A": "takes up",
+          "B": "turns out",
+          "C": "breaks down",
+          "D": "thinks of"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 78,
+        "prompt": "完形填空第 78 空",
+        "options": {
+          "A": "takes up",
+          "B": "turns out",
+          "C": "breaks down",
+          "D": "thinks of"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 79,
+        "prompt": "完形填空第 79 空",
+        "options": {
+          "A": "touches",
+          "B": "widens",
+          "C": "provides",
+          "D": "beats"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 79,
+        "prompt": "完形填空第 79 空",
+        "options": {
+          "A": "touches",
+          "B": "widens",
+          "C": "provides",
+          "D": "beats"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 80,
+        "prompt": "完形填空第 80 空",
+        "options": {
+          "A": "perfect",
+          "B": "meaningful",
+          "C": "tough",
+          "D": "strange"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "完形填空",
+    "difficultyLevel": 2,
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "选择最恰当的选项完成短文",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A Simple Act of Gratitude tells a story of one man’s journey to change his life. The book begins one December when the future looks _________ for John Kralik. His small law business is struggling（艰难的）. He’s in the process of divorcing（离婚）his second wife. He doesn’t have much of a relationship with his two sons.",
+      "He’s living in a small, cheap flat, roasting in the summer and freezing in the winter. His ideal dreams for his law business and his _________to become a judge are out of reach. On New Year’s Day, John goes hiking in the mountains near his California home. He gets lost and is stepping around in the wilderness when he hears a voice say, “_________ you learn to be thankful for the things you have, you will not receive the things you want.",
+      "” After thinking a while, he comes up with an idea. He decides to find one person to thank each day and write them a thank - you note. By the end of the year, he will have written 365 notes. They would be the way out of his disappointment. At first, John has trouble finding things to be thankful for.",
+      "But day by day, he ________ people to thank for large and small things. He writes thank-yous for gifts and kindnesses. He writes notes to his sons. Writing thank-yous makes him realize he needs to change the way he views life and the people in it. He writes to college friends and doctors, Starbucks clerks, his daughter’s teacher and his apartment manager.",
+      "He writes to anyone who ________ his life in even the smallest way. Almost immediately, surprising things begin to happen. He begins to have the benefit of a changed attitude. By the end of the book, his life isn’t _________, and he still doesn’t have everything he wants. But he realizes that writing thank-you notes is a good thing to do and makes the world a better place."
+    ]
+  },
+  {
+    "_id": "sh-em1-2020-长宁-reading-c",
+    "title": "2020 上海长宁一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "长宁",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市长宁、金山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Free-diving is diving underwater, holding your breath, without the use of equipment. In ancient times people had to free-dive to get food, such as fish and shellfish. Free divers also c________ treasures lying at the bottom of the ocean. The Mediterranean Sea, south of Europe, had many trading ships passing through. Often ships sank, sometimes because of storms. They would swim down to the shipwreck and try to lift the most precious pieces. In modern times, free-diving is part of many different a________ such as underwater photography and spearfishing. Sports such as underwater football, rugby and hockey also involve free-diving. The most dangerous free-diving is practised by a small group of extreme sportsmen and sportswomen who swim very deep. They aim to go to great depths and d________ for a long time on a single breath, wearing only a wetsuit. Deep under the water it is cold and black. The weight or pressure on your body is much h ________ than that at the surface. That weight, and going so long on only one breath, can cause a person to become unconscious（无意识的）because of a lack of oxygen, and then die. Why do people want to take part in a sport that is so dangerous? You need to be fit to swim so deep, but you also need to be very strong mentally（精神上）. At first it is difficult to sink. You have to stay c________ and even slow your thinking. But finally the air is pushed from your body, and you start to sink. It is as if the water were d________ you down. This is a very peaceful feeling. Natalia wrote many poems about her love of being in the deep blue ocean. She felt at one with nature there, as if in an ancient space. She would go into a deep state of being quiet and thinking before she went into the water. She would leave b________ her the stress of life, which she called “surface fuss”. According to Natalia, when you stop breathing, most of your body’s functions stop. It is as if time itself stopped.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "Free divers also c________ treasures lying at the bottom of the ocean.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "In modern times, free-diving is part of many different a________ such as underwater photography and spearfishing.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "They aim to go to great depths and d________ for a long time on a single breath, wearing only a wetsuit.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "The weight or pressure on your body is much h ________ than that at the surface.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "You have to stay c________ and even slow your thinking.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "It is as if the water were d________ you down.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "She would leave b________ her the stress of life, which she called “surface fuss”.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-长宁-reading-d",
+    "title": "2020 上海长宁一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "长宁",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市长宁、金山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "“O boys, don’t throw stones at the poor bird,” said an old grey-headed man, “Sir,” said a little fellow, “she makes such a loud noise that we can’t suffer from her.” “Yes, but she uses the voice which nature gave her, and I am afraid the stone will rebound（弹回）, and hurt you as long as you live!” “Rebound! We don’t understand you, sir!” “Well, come and I will tell you a story.” “Fifty years ago, I was a boy like you. I used to throw stones until I became very accurate. One day I went to work for an old couple. They were very kind to everybody and everything. Few had so many birds making their nests under the roofs of their houses. The birds seemed to love the couple. For seven years a bird had come, after the long winter was over, and built her nest in the same place, and raised her young chicks there. She and her mate had just returned when I went there to work, and the couple welcomed them heartily. The bird hopped hopped about as if glad to be back. During the day, I thought I would try my skill upon her. She sat on a pole and looked at me trustfully. I found a nice stone, and I threw it with my utmost skill. It struck the bird on the head and she drooped dead!” “I was sorry when I saw her fall. But the deed was done. I said nothing to the old couple about it. But one of their grandchildren told them what I had done. Though the couple never said a word to me, I knew that they were deeply saddened by my cruelty. I could never look at them in the face afterwards. Oh, that I should have told them how sorry I was!” “They have been dead many years, and so has the poor bird; but don’t you see how that stone rebounded, and hit me? How much the memory of it has hurt me! My dear boys, I would pay a great deal today if I could release from my present feeling! For fifty years I have remembered it. I have never spoken of it before; but if what my words will prevent you from throwing a stone that may rebound, I will be happy.”",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "What kind of skill did he author get when he was a boy?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "How can we know that the bird was happy to meet the couple again?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "Why couldn’t the author look at the couple in the face afterwards?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "According to the author, what would hurt the boy for lifetime if he threw stones at the bird?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "Why did the author tell his story to the boy?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What would the boy probably do after hearing the author’s words? (At least two things)",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
+  },
+  {
     "_id": "sh-em1-2020-闵行-reading-b",
     "title": "2020 上海闵行一模阅读 B",
     "year": 2020,
@@ -8138,6 +7391,139 @@ module.exports = [
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇"
+  },
+  {
+    "_id": "sh-em1-2020-闵行-reading-c",
+    "title": "2020 上海闵行一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "闵行",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市闵行区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "I don’t believe it! It’s 11 p.m. and I’m still sitting here writing this article for the school magazine! I’ve had two weeks to write it and my teacher wants it tomorrow. She’s always c____81____ that I leave things to the last minute. Maybe she’s right. A month ago, I made up my mind to be more efficient this year and not to leave things to the last minute.\n\nBut I’ve failed. I’ve also been trying to get fitter for four weeks now. I’ve started going to the gym. I’ve taken up karate lessons and I’ve changed my diet. I’ve even been going to bed earlier. But I’m not feeling any fitter. I felt just a little u____82____. I miss my bad habits. Why is leading a better life so hard?\n\nI’ve just read an article on a website and I’ve found out that it isn’t my fault! In fact, it isn’t anyone’s fault! It’s our brains. They’re programmed, therefore, it is difficult to break bad habits. There’s nothing we can do. Scientists have done experiments that show we use one part of our brain when we think about o____83____ and another when we think about other people.\n\nHowever, when we think about the ‘future us’, we use the part of the brain that we usually use to think about other people. In other words, the brain sees the ‘future you’ as a different person to your ‘present you’. And that’s why we don’t always find it easy to make sensible d____84____ in the future when we face difficulties.\n\nBut that’s not all. Scientists have also found out that it takes around ten weeks to form a good habit. For example, if I want to keep fit，it’s going to take me ten weeks to go to the gym and then it will become an automatic part of my life. That’s because ten weeks is the amount of time the brain needs to change and a____85____ new ways of behaviour as a part of everyday life.\n\nThe good news is that once you make it to ten weeks, everything becomes much easier. The bad news is that ten weeks is a really long time, so it’s easy to give up on (打消）your good plan s____86____. So there you are. Maybe we want to change our ways and become better people but our brains won’t let us. Or is this just an e____87____? Look! I’ve finished my article on time. Anything is possible!",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "She’s always c____81____ that I leave things to the last minute.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "I felt just a little u____82____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "Scientists have done experiments that show we use one part of our brain when we think about o____83____ and another when we think about other people.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "And that’s why we don’t always find it easy to make sensible d____84____ in the future when we face difficulties.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "That’s because ten weeks is the amount of time the brain needs to change and a____85____ new ways of behaviour as a part of everyday life.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "The bad news is that ten weeks is a really long time, so it’s easy to give up on (打消）your good plan s____86____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "Or is this just an e____87____?",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "I don’t believe it! It’s 11 p.m. and I’m still sitting here writing this article for the school magazine! I’ve had two weeks to write it and my teacher wants it tomorrow. She’s always c____81____ that I leave things to the last minute. Maybe she’s right. A month ago, I made up my mind to be more efficient this year and not to leave things to the last minute.",
+      "But I’ve failed. I’ve also been trying to get fitter for four weeks now. I’ve started going to the gym. I’ve taken up karate lessons and I’ve changed my diet. I’ve even been going to bed earlier. But I’m not feeling any fitter. I felt just a little u____82____. I miss my bad habits. Why is leading a better life so hard?",
+      "I’ve just read an article on a website and I’ve found out that it isn’t my fault! In fact, it isn’t anyone’s fault! It’s our brains. They’re programmed, therefore, it is difficult to break bad habits. There’s nothing we can do. Scientists have done experiments that show we use one part of our brain when we think about o____83____ and another when we think about other people.",
+      "However, when we think about the ‘future us’, we use the part of the brain that we usually use to think about other people. In other words, the brain sees the ‘future you’ as a different person to your ‘present you’. And that’s why we don’t always find it easy to make sensible d____84____ in the future when we face difficulties.",
+      "But that’s not all. Scientists have also found out that it takes around ten weeks to form a good habit. For example, if I want to keep fit，it’s going to take me ten weeks to go to the gym and then it will become an automatic part of my life. That’s because ten weeks is the amount of time the brain needs to change and a____85____ new ways of behaviour as a part of everyday life.",
+      "The good news is that once you make it to ten weeks, everything becomes much easier. The bad news is that ten weeks is a really long time, so it’s easy to give up on (打消）your good plan s____86____. So there you are. Maybe we want to change our ways and become better people but our brains won’t let us. Or is this just an e____87____? Look! I’ve finished my article on time. Anything is possible!"
+    ]
+  },
+  {
+    "_id": "sh-em1-2020-闵行-reading-d",
+    "title": "2020 上海闵行一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "闵行",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市闵行区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "There was once a boy who was afraid of the dark. He thought that his bedroom was filled up with monsters when it was dark. But there came a time when he was too old to be allowed to keep sleeping with the light on. That first night he was filled with fear, his mind full of monsters. Therefore, he went over to his wardrobe to get a torch. But when he opened the wardrobe door, he saw a monster, face to face，and he let out the loudest scream in the world. The monster took a step backwards, grabbed his colourful hair, stared at the boy with his single red eye, and …started crying! The monster cried for so long that the boy’s shock and fear disappeared. He calmed the monster as much as he could，and started talking to him, asking him why he was crying, and what he was doing there. The monster told him he lived in the wardrobe, but almost never went out, because he was afraid of the boy. When the boy asked him why, the monster told him the boy’s face seemed to him the most horrible thing he’d ever seen with eyes, ears and a nose. The boy felt the similar way about the monster with a huge head full of mouths and hair. The two of them talked so much that they became quite friendly, and they came to know that both of them had been afraid of the thing: the unknown. To lose their fear, all they had to do was to get to know each other. Together they travelled around the world, seeing lions, tigers, crocodiles and dragons. It was the first time either of them had seen such creatures, but they made the effort to get to know them. In the end, they ______________ and ______________. And, although his parents weren’t too happy, because they thought he was too old to still believe in monsters, the truth of it was that all kinds of creatures visited the boy’s bedroom each night. And, instead of fearing them, he had learned to get to know them and be friends with them.",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "What was the boy afraid of when he was sleeping at night?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Why did the boy go to the wardrobe that night?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "How did the monster in the wardrobe feel at first when he saw the boy?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "What did the monster look like?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "How did the boy and the monster get to know each other? List at least two things they did.",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What can be filled in the blanks in paragraph 5?",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
   },
   {
     "_id": "sh-em1-2020-青浦-reading-a",
@@ -8254,7 +7640,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports.\n\nYou will then find taxis waiting at Cambridge bus station which you can hire to reach your host family. However, if you prefer, we can order a taxi straight from the airport to your host family. ____77____ for this are (is) listed on the enclosed sheet. Summer courses — — If you are coming on any summer courses and you arrive at Heathrow or Gatwick airports between 09:00 and 18:00 on Sunday before the beginning of your course, ____78____ from the school will be waiting for you at the airport.\n\nThey will send you on the transfer coach to Cambridge where a school bus will take you on to the host family. Transport is 79 free of charge to the airport on Saturday after the end of our course. YOUR FIRST DAY AT THE SCHOOL You will need to arrive at the school by 09:15 on your first day. Your host family will be ____80____ your transportation to and from school. Here you will be met by our Director of Studies. He will give you all the information you need and show you round the school.",
+    "passage": "A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports.\n\nYou will then find taxis waiting at Cambridge bus station which you can hire to reach your host family. However, if you prefer, we can order a taxi straight from the airport to your host family. ____77____ for this are (is) listed on the enclosed sheet. Summer courses — — If you are coming on any summer courses and you arrive at Heathrow or Gatwick airports between 09:00 and 18:00 on Sunday before the beginning of your course, ____78____ from the school will be waiting for you at the airport.\n\nThey will send you on the transfer coach to Cambridge where a school bus will take you on to the host family. Transport is 79 free of charge to the airport on Saturday after the end of our course. YOUR FIRST DAY AT THE SCHOOL You will need to arrive at the school by 09:15 on your first day. Your host family will be ____80____ your transportation to and from school. Here you will be met by our Director of Studies. He will give you all the information you need and show you round the school.",
     "questions": [
       {
         "number": 75,
@@ -8337,14 +7723,248 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
     "articleTitle": "",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports.",
+      "A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports.",
       "You will then find taxis waiting at Cambridge bus station which you can hire to reach your host family. However, if you prefer, we can order a taxi straight from the airport to your host family. ____77____ for this are (is) listed on the enclosed sheet. Summer courses — — If you are coming on any summer courses and you arrive at Heathrow or Gatwick airports between 09:00 and 18:00 on Sunday before the beginning of your course, ____78____ from the school will be waiting for you at the airport.",
       "They will send you on the transfer coach to Cambridge where a school bus will take you on to the host family. Transport is 79 free of charge to the airport on Saturday after the end of our course. YOUR FIRST DAY AT THE SCHOOL You will need to arrive at the school by 09:15 on your first day. Your host family will be ____80____ your transportation to and from school. Here you will be met by our Director of Studies. He will give you all the information you need and show you round the school."
+    ]
+  },
+  {
+    "_id": "sh-em1-2020-青浦-reading-c",
+    "title": "2020 上海青浦一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "青浦",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "The Best Language for Learning Math What is the best language for learning math? Hint (提示）：You are not reading it. Chinese, Japanese and Korean all have simpler number words. They express math concepts (概念）more c___81____ than English. The language gap has drawn lots of attention. Several recent studies have 1___82____ weaker math abilities in English-speaking children to English number words. Chinese, for example, has just ten basic number words. English, however, has more than two dozen (—打）.The trouble starts at“e___83____ English has a word for that number. Chinese, Japanese and Korean have words that can be translated as“ten-one” — spoken with the “Hen” first. That makes it easier for children to understand the place value. Students can easily see that the number system is based on units of 10. English number words over 10 don't make the place value clear. Words for numbers 13 to 19 change the order of the ones (个位) and tens. Children are more 1___84____ to confuse 17 with 71. therefore, children working with English number words have a harder time doing complex (复杂） calculations. They make more m___85____. It also feels more natural for Chinese speakers than for English speakers to use the “make-a-ten” method. When they a___86____ two numbers, Chinese students often break down the numbers into parts and regroup them into tens and ones. For example, 9 plus 5 becomes 9 plus 1 plus 4. This method greatly helps students work out math problems. Many teachers in America are teaching their students the “make-a-ten” method. However, they are having a hard time because of the confusing English number words. Now, you should feel 1___87____ that you are learning math in China. Thanks to your mother language, all the math problems have become less difficult and less confusing.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "They express math concepts (概念）more c___81____ than English.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "Several recent studies have 1___82____ weaker math abilities in English-speaking children to English number words.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "The trouble starts at“e___83____ English has a word for that number.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "Children are more 1___84____ to confuse 17 with 71.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "They make more m___85____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "When they a___86____ two numbers, Chinese students often break down the numbers into parts and regroup them into tens and ones.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "Now, you should feel 1___87____ that you are learning math in China.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-青浦-reading-d",
+    "title": "2020 上海青浦一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "青浦",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Forever Friends of FRIENDS Twenty-five years have passed since the American TV series, Friends, was shown for the first time. However, it is still making friends. Many Chinese teenagers love it. Through watching the show, they can not only learn about American culture but also improve their conversational (口语的）English. Perhaps you haven’t seen the series. It’s a story of six young people. They came to New York City to find love, success, adventure and fun. Each of the characters had a different personality. However, they were able to overlook (忽略）their differences and became good friends. There was no social media at that time, but they always “liked” and supported one another. “I’ll be there for you.” says the opening song, “because you’re there for me. too.” Many fans thought that the show taught them many things which could not be learned from school and parents. These things include being sincere and honest with people around you. One fan said, “There are many lessons we can’t learn from books. I learned so much conversational English through watching the show.” For example, Joey sometimes greets people by saying, “Hey, guys! How yadoin?” That’s a phrase that you won't find in your textbook. New phrases and strange pronunciation are two things that make learning English difficult. So, watching TV series such as Friends is really helpful. You can write down the words and phrases you don’t understand. Translate them and then imitate (模仿）the pronunciation. And, to make it more fun, think about the life lessons you can learn from the show. Practice being “Friends” with your own friends.",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Is the TV series, FRIENDS, still welcomed nowadays?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Why did the six young people in the story come to New York City?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "What does the underlined sentence of the opening song mean?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "Which is the topic sentence of the third paragraph?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "How can we learn English by watching TV?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "Why does the author write this passage?",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2020-静安-reading-a",
+    "title": "2020 上海静安一模阅读 A",
+    "year": 2020,
+    "city": "上海",
+    "district": "静安",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park.\n\n“I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City.\n\nFrederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University.\n\nHe also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops.\n\nThere maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "Jin Hee Park thinks his university campus is ________ for walking and relaxing.",
+        "options": {
+          "A": "basic",
+          "B": "academic",
+          "C": "attractive",
+          "D": "crowded"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 70,
+        "prompt": "Alejandro Vega feels ________ when he jogs in Central Park, for it feels private.",
+        "options": {
+          "A": "enjoyable",
+          "B": "bored",
+          "C": "nervous",
+          "D": "surprised"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 71,
+        "prompt": "Niagara Falls in America was close to the public because of its wonderful ________.",
+        "options": {
+          "A": "lists",
+          "B": "contests",
+          "C": "falls",
+          "D": "footpaths"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 72,
+        "prompt": "“no trip to New York is complete” (in Para. 4) probably means ________.",
+        "options": {
+          "A": "it’s not a perfect trip to New York",
+          "B": "we should never go for a trip to New York",
+          "C": "don’t finish a trip in New York",
+          "D": "New York isn’t a good place to visit"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 73,
+        "prompt": "In all of Olmsted’s designing products, he tried to ________",
+        "options": {
+          "A": "design footpaths for better views of the falls",
+          "B": "protect the natural beauty of an area",
+          "C": "include landscapes of Stanford University campus",
+          "D": "rebuild the Central Park in New York City."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 74,
+        "prompt": "Which of the following best describes the present situation on Niagara Falls?",
+        "options": {
+          "A": "This area is developed and becomes more lovely.",
+          "B": "Olmsted expected most of the animals there to leave.",
+          "C": "People are no longer allowed to visit souvenir shops.",
+          "D": "Some people are doing learn to the environment."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [
+      {
+        "localPath": "data/reading-em1/images/sh-em1-2020-静安-reading-a-image-1.png",
+        "cloudPath": "_content/reading-em1/images/sh-em1-2020-静安-reading-a-image-1.png"
+      },
+      {
+        "localPath": "data/reading-em1/images/sh-em1-2020-静安-reading-a-image-2.png",
+        "cloudPath": "_content/reading-em1/images/sh-em1-2020-静安-reading-a-image-2.png"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park.",
+      "“I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City.",
+      "Frederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University.",
+      "He also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops.",
+      "There maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?"
     ]
   },
   {
@@ -8357,7 +7977,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） Thing to know before you go out in the cold Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath.\n\nDrink up In the summer, when you feel thirsty, you need to drink water. This isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm.\n\nSpend the night in a four-season tent in your backyard when it’s freezing outside. That way, if you ____78____ at 2 a.m. that’s too cold, you can just move inside and try again another time. If you wake up shivering in the middle of the night, add layers of clothing, drink warm liquids and ask for help.\n\nEat right Simple meals that need little preparation are often the most ____79____ choices during winter. But nutrition (营养） is also necessary. Your body needs healthy food to produce ____80____. Choose meals with more protein and fat than what you’d eat during warmer weather. Some good choices are hot cereal with fruit for breakfast, peanut butter on crackers with hot soup for lunch and meat with noodles, rice or potatoes for dinner.",
+    "passage": "Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath. Drink up In the summer, when you feel thirsty, you need to drink water.\n\nThis isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm.\n\nSpend the night in a four-season tent in your backyard when it’s freezing outside. That way, if you ____78____ at 2 a.m. that’s too cold, you can just move inside and try again another time. If you wake up shivering in the middle of the night, add layers of clothing, drink warm liquids and ask for help.\n\nEat right Simple meals that need little preparation are often the most ____79____ choices during winter. But nutrition (营养） is also necessary. Your body needs healthy food to produce ____80____. Choose meals with more protein and fat than what you’d eat during warmer weather. Some good choices are hot cereal with fruit for breakfast, peanut butter on crackers with hot soup for lunch and meat with noodles, rice or potatoes for dinner.",
     "questions": [
       {
         "number": 75,
@@ -8440,16 +8060,136 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
-    "articleTitle": "",
+    "articleTitle": "Thing to know before you go out in the cold",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） Thing to know before you go out in the cold Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath.",
-      "Drink up In the summer, when you feel thirsty, you need to drink water. This isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm.",
+      "Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath. Drink up In the summer, when you feel thirsty, you need to drink water.",
+      "This isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm.",
       "Spend the night in a four-season tent in your backyard when it’s freezing outside. That way, if you ____78____ at 2 a.m. that’s too cold, you can just move inside and try again another time. If you wake up shivering in the middle of the night, add layers of clothing, drink warm liquids and ask for help.",
       "Eat right Simple meals that need little preparation are often the most ____79____ choices during winter. But nutrition (营养） is also necessary. Your body needs healthy food to produce ____80____. Choose meals with more protein and fat than what you’d eat during warmer weather. Some good choices are hot cereal with fruit for breakfast, peanut butter on crackers with hot soup for lunch and meat with noodles, rice or potatoes for dinner."
     ]
+  },
+  {
+    "_id": "sh-em1-2020-静安-reading-c",
+    "title": "2020 上海静安一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "静安",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Taking Action At Seven Oaks Middle School, Daniela Carrera was searching for a club. There was a dance club, a choir, an exercise club, and an action club that found creative ways to raise money for other people. Daniela was thinking about j____81____ the dance club because dancing was her favourite. Then Daniela’s friend Ciara told her about the action club’s new p____82____. At first, Daniela was puzzled.“Why would people in a nursing home want a video-game console (平台）？”she asked Ciara. “This would be a s____83____ kind of console that plays fitness games. The games help people who need to exercise but weren’t able to get to a gym or exercise a____84____ out of their rooms. Besides, everybody loves video games, don’t they?” Ciara replied. “Not my great – grandmother，”Daniela said, laughing. But she agreed to go to the club meeting the next day. At the meeting, Mr. Washington, the club’s manager, d____85____ to Daniela and the others how fitness video games helped encourage people to move. He explained how the consloes could help distract (使分心）people who s____86____ from severe pains. That was all Daniela needed to hear. “How can I help?” She asked as she signed up for the club. “We’re selling raffle (抽奖增卖）tickets. With the money we get, we’ll buy two fitness consoles. We’ll give one to the w____87____ of the raffle. We’ll give the other console to the nursing home，”explained Mr. Washington. “Great! Let’s get started. I’m motivated to sell the tickets immediately!” said Daniela.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "Daniela was thinking about j____81____ the dance club because dancing was her favourite.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "Then Daniela’s friend Ciara told her about the action club’s new p____82____.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "“This would be a s____83____ kind of console that plays fitness games.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "The games help people who need to exercise but weren’t able to get to a gym or exercise a____84____ out of their rooms.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "Washington, the club’s manager, d____85____ to Daniela and the others how fitness video games helped encourage people to move.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "He explained how the consloes could help distract (使分心）people who s____86____ from severe pains.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "We’ll give one to the w____87____ of the raffle.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-静安-reading-d",
+    "title": "2020 上海静安一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "静安",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "The sixth sense The “sixth sense” is often said to be a strong feeling that a person has about something or someone. Read about one mother’s experience. I had a feeling ... Kathy Sansano arrived home from work two months ago at 7:00 in the evening.“Usually, my husband is home before me, but when I got in, his briefcase was there, but he wasn’t,” recalls Sansano. She just thought that he want to the store for something. Sansano began preparing dinner, but couldn’t shake the feeling that something was wrong. “I just started feeling very anxious and had to sit down. Five minutes later my husband phoned to say that our son had been injured in a football game at school.” Luckily, the boy only had a broken wrist, but Sansano still can’t explain how she knew something was wrong. “It might have been ‘mother’s intuition (直觉）’” she laughs. “My son and I have always been very close.” Science points out five basic senses that humans use to experience the world. There is now evidence that human may also own a sixth sense ― or an intuition about people or events. Recent studies suggest that insects and animals release odorless(meaning “without any smells”）chemicals into the environment to send signal emotions such as fear or aggression (侵略）.When another creature of the same kind senses the chemical, certain behavior is caused in that creature; for example, it will prepare to fight or to protect itself. Scientists believe that humans long ago may have communicated using these kinds of chemical signals. “I walked into the room, and something just didn’t seem right.” It may be that the person is sensing chemical messages that have been produced by others. Kathy Sansano’s husband may have left the house feeling afraid and worried about their son. When Kathy got home, she sensed his worry.",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "Kathy’s husband came home earlier than his wife that evening, didn’t he?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "What happened to their son at school?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "What made Kathy have the feeling that something was wrong?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "According to recent studies, how do insects and animals send signal emotions?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "What will you probably do if you sense the messages of “fear”？",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "Do you believe there is a sixth sense in life? Show you reason(s) or example(s).",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
   },
   {
     "_id": "sh-em1-2020-黄浦-reading-b",
@@ -8461,7 +8201,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "and complete the passage （选择最恰当的选项完成短文） There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple.\n\nSome scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green. Plants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color.\n\nDuring the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺). But 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors.\n\nIn 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color. In 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color.\n\nThis discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes.",
+    "passage": "There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple. Some scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green.\n\nPlants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color. During the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺).\n\nBut 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors. In 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color.\n\nIn 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color. This discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes.",
     "questions": [
       {
         "number": 75,
@@ -8544,17 +8284,229 @@ module.exports = [
     "difficultyLevel": 2,
     "difficultyLabel": "语境词汇",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "选择最恰当的选项完成短文",
     "sectionHeading": "",
     "articleTitle": "",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "and complete the passage （选择最恰当的选项完成短文） There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple.",
-      "Some scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green. Plants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color.",
-      "During the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺). But 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors.",
-      "In 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color. In 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color.",
-      "This discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes."
+      "There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple. Some scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green.",
+      "Plants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color. During the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺).",
+      "But 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors. In 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color.",
+      "In 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color. This discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes."
     ]
+  },
+  {
+    "_id": "sh-em1-2020-黄浦-reading-c",
+    "title": "2020 上海黄浦一模阅读 C",
+    "year": 2020,
+    "city": "上海",
+    "district": "黄浦",
+    "examType": "一模",
+    "section": "C",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市黄浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "Run for Class President Two months ago, when our class election (选举）started. I decided to run for class president. I enjoyed speaking in pubic and got along well with people, so I felt it easy to win. But I was a ___81___ that people would feel had for me if I lost. I was busy preparing in the following week. My plan wasn’t to make promise to do things I couldn’t m___82___ but to show my class why I wanted to be president I put up my posters in hallways and in the classroom. I also spent three hours writing my speeds, saying that I was the one they could turn to whenever they had a problem. Since I was c___83___ prepared. I felt that my chances of winning were strong. However, when I gave my speech on Election Day, the response wasn’t what I had c___84___. Few people actually listened. When it was my opponent’s (对手的）turn, everyone was scteaming his name. His speech was short, but all to the point. By then, I realized I should have made mine shorter and c___85___. It was obvious who would win. For the rest of the day. I felt like it was over. I wanted to just go home and cry, but I made it through. My prediction was right: I didn’t win. The next day, people were still talking about the election. I just pretended not to hear. But later, things got better. People f___86___ about the election and talked to me just as they did before. I don’t regret putting time and energy into the election because I’ve learned that things aren’t always going the way I look forward to. And moments of failure like this build c___87___ --- since then I’ve learned to face disappointment and grown stronger.",
+    "questions": [
+      {
+        "number": 81,
+        "prompt": "But I was a ___81___ that people would feel had for me if I lost.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 82,
+        "prompt": "My plan wasn’t to make promise to do things I couldn’t m___82___ but to show my class why I wanted to be president I put up my posters in hallways and in the classroom.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 83,
+        "prompt": "Since I was c___83___ prepared.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 84,
+        "prompt": "However, when I gave my speech on Election Day, the response wasn’t what I had c___84___.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 85,
+        "prompt": "By then, I realized I should have made mine shorter and c___85___.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 86,
+        "prompt": "People f___86___ about the election and talked to me just as they did before.",
+        "answer": "",
+        "questionType": "blank"
+      },
+      {
+        "number": 87,
+        "prompt": "And moments of failure like this build c___87___ --- since then I’ve learned to face disappointment and grown stronger.",
+        "answer": "",
+        "questionType": "blank"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "首字母填空",
+    "difficultyLevel": 3,
+    "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2020-黄浦-reading-d",
+    "title": "2020 上海黄浦一模阅读 D",
+    "year": 2020,
+    "city": "上海",
+    "district": "黄浦",
+    "examType": "一模",
+    "section": "D",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市黄浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+    "passage": "The sun was falling behind the hills. Andrea was driving back home to Brockboune. Then she saw an old lady, standing by the road, with a sign saying “Brockboune” in her hand. Andrea stopped the car. When he old lady got in, Andrea could see that she was not that little. She was in a long dress and had a hat pulled down low over her eyes. She put her big brown shopping bag down onto the floor. “Do you live in Brochboune?”asked Andrea.“No, dear”，answered the old lay in a low voice. “I’m just going to visit a friend, but my car won’t start, so I decided to hitchhike.” Something in the way the lady spoke made Andrea uneasy. Andrea secretly studied the half- covered face, the shapeless body, and the arms with their thick black hairs ... Thick black hairs? Andrea’s blood froze. This wasn’t a woman. It was a man! Her heart was beating wildly and her mind raced. Then suddenly, an idea came up to her. She stopped the car in sudden. “My god!” she shouted, “A child! Did you see the child? I think I hit her!” “I didn’t see anything.” the “old lady” said. “I don’t think you hit anything.” “I’m sure it was a child!” shouted Andrea, “Could you just get our and have a look?” The “old lady” slowly opened the car door, leaving her bag inside. As soon as she was out of the car, Andrea drove away as soon as possible. Several minutes later, Andrea thought about the “old lady’s” bag and opened it carefully. There was only one thing in it --- a shining knife. To be continued (未完待续）",
+    "questions": [
+      {
+        "number": 88,
+        "prompt": "When was Andrea driving back home to Brockboune?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 89,
+        "prompt": "Did the “old lady” want to take a free ride to Brockboune?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 90,
+        "prompt": "What made Andrea doub (怀疑）about the“old lady”? Please list two details.",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 91,
+        "prompt": "How did Andrea get the “old lady” out of her car successfully?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 92,
+        "prompt": "What did Andrea do as soon as the “old lady” got out of the car?",
+        "answer": "",
+        "questionType": "answer"
+      },
+      {
+        "number": 93,
+        "prompt": "What do you think of Andrea according to the story and why? (Use two adjectives to describe Andrea and give your reasons.)",
+        "answer": "",
+        "questionType": "answer"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "回答问题",
+    "difficultyLevel": 4,
+    "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2021-嘉定-reading-a",
+    "title": "2021 上海嘉定一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "嘉定",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市嘉定区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "Most 15-year-old teenagers are worrying about their math homework and trying to fit in with other kids of their age. But Henry Patterson is busy running a successful online business instead. Patterson, a teenager from England, began to have this idea when he was nine. One year later, he started a company called Not Before Tea. He began by selling sweets, but soon turned to household products like wash bags and soft toys. The items he sell feature（以…为特色）characters from a book he wrote called The Adventures of Sherb and Pip. Patterson’s early school years were difficult, as he showed great difference from his peers（同辈人）. He saw the world differently and was rarely invited to parties or play with. He also had a stammer（口吃）, which made him feel even more lonely. But these things didn’t hold him back. To cheer himself up, Patterson gradually immersed（使…沉浸）himself in designing different animals and writing interesting stories about them. His character started to become popular. He tried very hard to express himself clearly and talk to bigger audience. His business has earned him 65,000 pounds and he won big prize at the National Retail Business Awards for Teenagers. On top of this, he does his best to keep his schoolwork as a priority（优选项）. He takes his homework with him to events and does it on the train or after a presentation. Two years ago, he wrote a book called Young and Mighty. It describes his search for success and happiness. “The real point of the book is to help people of my age think about how to make their way in the world.” he wrote.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "Henry Patterson began his business when he was ________.",
+        "options": {
+          "A": "9",
+          "B": "10",
+          "C": "12",
+          "D": "15"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "Patterson’s business is to ________.",
+        "options": {
+          "A": "help teens with their math homework",
+          "B": "sell household products",
+          "C": "sell sweets and tea",
+          "D": "sell books"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "Patterson ________ in his early school years.",
+        "options": {
+          "A": "tried hard to play with others",
+          "B": "fell behind his classmates",
+          "C": "went to lots of parties",
+          "D": "had a speech problem"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "Patterson dealt with his loneliness by ________.",
+        "options": {
+          "A": "designing things and writing stories",
+          "B": "talking to different people",
+          "C": "reading interesting stories",
+          "D": "doing part-time jobs"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "Patterson’s business is so ________ that he earned money and won a big prize.",
+        "options": {
+          "A": "disappointing",
+          "B": "successful",
+          "C": "creative",
+          "D": "hard"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "Patterson wrote a book to encourage people of his age to ________.",
+        "options": {
+          "A": "be a writer in the future",
+          "B": "start their own business",
+          "C": "balance business and school well",
+          "D": "think about how to be successful"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em1-2021-嘉定-reading-b",
@@ -8770,6 +8722,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-奉贤-reading-a",
+    "title": "2021 上海奉贤一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "奉贤",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市奉贤区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "Healthy impact of sunflower seeds Sunflower seeds（葵花籽）are rich in vitamin E. The vitamin is an antioxidant（抗氧化剂）that helps prevent cancer, heart disease, eye problems and possibly aging（衰老）. The strength of seeds One serving of sunflower seeds gives you 14 milligrams（毫克）of vitamin E. Experts say people need 15 milligrams of vitamin E every day! 28g of sunflower seeds: 14 mg of vitamin E Vitamin E needed each day: 15 mg of vitamin E How to serve Eat alone as a snack, on top of salads, in bread, and in vegetable dishes. Sources: World’s Healthiest Foods. Discovery Health, TNS",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "Sunflower seeds have ________.",
+        "options": {
+          "A": "Vitamin A",
+          "B": "Vitamin B",
+          "C": "Vitamin C",
+          "D": "Vitamin E"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "The vitamin in sunflowers can NOT ________.",
+        "options": {
+          "A": "prevent cancer",
+          "B": "make people’s bone stronger",
+          "C": "protect people from heart disease",
+          "D": "make people’s eyes healthier"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "One serving of sunflowers seeds weighs ________.",
+        "options": {
+          "A": "28mg",
+          "B": "28g",
+          "C": "14mg",
+          "D": "14g"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "To get enough vitamin E, we should eat ________ sunflower sees every day.",
+        "options": {
+          "A": "14mg",
+          "B": "28g",
+          "C": "15mg",
+          "D": "30g"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "It is a good way to ________.",
+        "options": {
+          "A": "eat sunflower seeds with vegetables",
+          "B": "put sunflower seeds in water first",
+          "C": "bake sunflower seeds in an oven",
+          "D": "eat sunflower seeds along with other snacks"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "We can find this information ________.",
+        "options": {
+          "A": "in a story book",
+          "B": "on the website of local government",
+          "C": "in a health magazine",
+          "D": "on an advertisement board"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-奉贤-reading-b",
     "title": "2021 上海奉贤一模阅读 B",
     "year": 2021,
@@ -8981,6 +9026,99 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2021-宝山-reading-a",
+    "title": "2021 上海宝山一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "宝山",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市宝山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "Lead Guitarist Wanted We need a boy or girl who can play lead guitar for our new rock band. You do not have to be good at playing yet—we are all learning at the moment—but you must have your own guitar. You must be free to practice on Tuesdays after school. Contact Scott, Phone: 555-1967 Email: scottrock@musiccom.net Cool Singer Wanted We are up-and-coming hip hop band for boys. We need another singer who can look cool with us onstage. We practice every Saturday at 3 p.m. If you join us, we will practice at your house sometimes. Emall Troy: Lazyguy@hiphopsters.net Phone: 555-1989 Keyboardist for an All-girl R&B/Pop Band Can you play the Keyboard? We are looking for a girl who likes songs by Mariah Carey, Britney Spears and Jessica Simpson. You should be able to play some tunes. You should have long hair and like to dance. You do not need to have your own keyboard, but it will be helpful if you want to practice at home. We are meeting every Sunday afternoon for practice. Call Wendy at 555-1993 or email wendybee@musicgirl.net Music Lovers Needed We are a new group and we play all kinds of music. Join us and play any instrument you like (even if you are not good at playing it yet!). We have permission to use the music room and we are free to use the instruments for practice every Tuesday and Thursday afternoons. There are now four boys and three girls in the group—we are a big band and we welcome new people. Call Gary at 555-1985 Email: Garylovesmusic@newgroup.net",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "Which advertisement says the band is for boys only?",
+        "options": {
+          "A": "Lead Guitarist Wanted.",
+          "B": "Cool Singer Wanted.",
+          "C": "Keyboardist for an All-girl R&B/Pop Band.",
+          "D": "Music Lovers Needed."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 70,
+        "prompt": "Which advertisement says you must have your own instrument?",
+        "options": {
+          "A": "Lead Guitarist Wanted.",
+          "B": "Cool Singer Wanted.",
+          "C": "Keyboardist for an All-girl R&B/Pop Band.",
+          "D": "Music Lovers Needed."
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 71,
+        "prompt": "Judy is good at playing the piano and she is available on weekends. Besides, she is a big fan of Britney Spears. Now, she wants to join a band. She is probably going to call ________.",
+        "options": {
+          "A": "555-1967",
+          "B": "555-1989",
+          "C": "555-1993",
+          "D": "555-1985"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 72,
+        "prompt": "Tom is a cool dresser who lives in a big house. He can sing very well and he is available on weekends. Now, he wants to join a band. He is probably going to email ________.",
+        "options": {
+          "A": "scottrock@musiccorn.net",
+          "B": "Lazyguy@hiphopsters.Net",
+          "C": "wendybee@musicgirl.net",
+          "D": "Garylovesmusic@newgroup.net"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 73,
+        "prompt": "The underlined word“permission”in the text probably means “ ________”.",
+        "options": {
+          "A": "the state of sharing the same opinion of feeling",
+          "B": "an interesting or enjoyable thing to do",
+          "C": "an act of allowing somebody to do something",
+          "D": "an act of appearing in public places"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 74,
+        "prompt": "The text above is written to ________.",
+        "options": {
+          "A": "make more students enjoy the beauty of music",
+          "B": "introduce different bands to others",
+          "C": "share better ways to practice musical instruments",
+          "D": "attract students to join their band"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em1-2021-宝山-reading-b",
@@ -9409,6 +9547,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-徐汇-reading-a",
+    "title": "2021 上海徐汇一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "徐汇",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市徐汇区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "GARDEN CITY COLLEGE GENERAL RULES FOR ONLINE CLASSES It is very important to carefully read the rules and cancellation policies of the online classes before beginning your class. You should enter the virtual（虚构的）classroom at least 2 days before your first class in order to learn how to work within the system. If you need any technical support, you can call our technical staff during their office hours（From 8:30 a.m. to 5:30 p.m. on weekdays）. Make sure to log onto the platform 15 minutes before your class. We will not make up class time due to late arrivals. Check your course schedule. It is strongly recommended that you actively take part in each class. Listen carefully and don’t talk over with someone. You should behave properly and have good manners. Being polite on the Internet should be as common as in real life. Respect other people’s opinions. Besides, online privacy is something you should keep in mind when typing anything. You should stay away from anything considered not suitable and rude. At the beginning of each new course, we will place you with a new teacher. This change will allow you to experience different learning styles with other teachers who are fully trained to teach online courses. If your present teacher is not available to teach（due to sickness or an emergency）, we will not cancel class. Instead, class will be given by a substitute（代替的）teacher. These rules may change over time due to the changing nature of the online space.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "This notice is probably written for ________ to read.",
+        "options": {
+          "A": "parents",
+          "B": "teachers",
+          "C": "technical staff",
+          "D": "students"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "To get yourself familiar with the system, you are suggested to ________.",
+        "options": {
+          "A": "contact school’s technical stall during their office hours",
+          "B": "have a trial test 2 days before the course starts",
+          "C": "log onto the platform every 15 minutes",
+          "D": "avoid late arrivals to enter the virtual classroom"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "Which of the following is suitable to type when you take online classes?",
+        "options": {
+          "A": "“Linda, shall we meet at my place at 8 tonight, 35 High Street?”",
+          "B": "“Ms. Ilanna, can you explain that again? I didn’t quite follow. ”",
+          "C": "“I don’t agree with Joe. It’s an absolutely stupid idea.”",
+          "D": "“Bob! You had a new haircut. That suits you. You look handsome.”"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "You will have a new teacher for each new course because ________.",
+        "options": {
+          "A": "the college is short of trained teachers to teach online courses",
+          "B": "it’s hard to find a substitute teacher at the beginning of the term",
+          "C": "you can benefit from learning with teachers of different styles",
+          "D": "it enables you to take an active part in the new course"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "According to this notice, which of the following is NOT true?",
+        "options": {
+          "A": "Online classes create a real-life learning environment.",
+          "B": "You yourself are responsible for the class time you miss.",
+          "C": "Technical support is only available on weekdays.",
+          "D": "It’s possible that there may be changes to these rules."
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "Reading this notice carefully can help you .",
+        "options": {
+          "A": "know more about your subject teachers",
+          "B": "arrange your course schedule well",
+          "C": "understand the rules and cancellation policies",
+          "D": "apply for a position in Garden City College"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-徐汇-reading-b",
     "title": "2021 上海徐汇一模阅读 B",
     "year": 2021,
@@ -9622,6 +9853,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-普陀-reading-a",
+    "title": "2021 上海普陀一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "普陀",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市普陀区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "What kind of hotel do you look for when you are on holiday? Someone may want a comfortable bed, enjoyable facilities or a convenient place to get close to transportation. The following hotels may offer a stay you won’t soon forget if you want something out of the ordinary. If you are truly brave, you can spend the night in the world’s deepest bedroom in a hotel called Silvermine in Sweden. After a guided tour of the mine(矿井) located 155 metres underground, you’re left alone with a basket of fresh food. In the morning, the guide returns with a delicious breakfast before you return to ground level. If you are fond of the ocean, the Poseidon Undersea Resort in Japan would be your choice. It is close to one of Fiji’s rivers. It boasts the world’s first seafloor rooms 12 meters below the surface of the ocean. By day, people enjoy golf, tennis and all kinds of water sports or learn to pilot a three-passenger submarine (潜水艇) to explore the depth of the ocean. If you love nature, then consider a stay at the Ariau Towers Hotel. It’s in rainforest beside Brazil’s Negro River(内格罗河) and has rooms built in the air 30 meters above the ground. Overhead walkways connect the rooms to one another and a central dining room. From their rooms among the treetops, guests can see beautiful birds and flowers. And after having a delicious meal in the restaurant, they can enjoy sailing on the river. If you would like to experience the coldness of winter, Canada’s Hotel de Glace could be the great favourite. It is built each year by using nearly 7000 kilograms of snow and 300 kilograms of ice. It has over 30 guest rooms. Nearly all of the furniture is made of ice. Inside the hotel, it’s always -3℃ to -5℃. Only the bathrooms are heated. The hotel is only open during the coldest months of the year and accepts booking over the Internet.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "According to the passage, the hotels in _______ are located below the surface of the earth.",
+        "options": {
+          "A": "Sweden and Japan",
+          "B": "Sweden and Brazil",
+          "C": "Brazil and Canada",
+          "D": "Japan and Canada"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "The underlined word boasts in Paragraph 3 means ________.",
+        "options": {
+          "A": "dreams of",
+          "B": "shows off",
+          "C": "is afraid of",
+          "D": "keeps off"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "A tourist who has a fear of height should NOT stay at the hotel in ________.",
+        "options": {
+          "A": "Silvermine in Sweden",
+          "B": "Canada's Hotel de Glace",
+          "C": "the Ariau Towers Hotel in Brazil",
+          "D": "the Poseidon Undersea Resort in Japan"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "Which of the following is about the hotel in Canada?",
+        "options": {
+          "A": "It needs a lot of repairs.",
+          "B": "It's not always there.",
+          "C": "It's close to transportation.",
+          "D": "It's not allowed to open to public."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "What do the four hotels have in common?",
+        "options": {
+          "A": "They don't cost much.",
+          "B": "They are friendly to the environment.",
+          "C": "They all need brave guests.",
+          "D": "They are all worth remembering"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "The passage is most probably taken from a magazine called ________.",
+        "options": {
+          "A": "Amazing Journeys",
+          "B": "Social Study",
+          "C": "Frightening Accidents",
+          "D": "Environmental Protection"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-普陀-reading-b",
     "title": "2021 上海普陀一模阅读 B",
     "year": 2021,
@@ -9776,6 +10100,99 @@ module.exports = [
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
     "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2021-杨浦-reading-a",
+    "title": "2021 上海杨浦一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "杨浦",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市杨浦区2020-2021学年九年级上学期期末（一模）英语试题（无听力原文）（解析版）.doc",
+    "passage": "D=Detective Ken, W=Wilson D: So, Wilson. What do you believe happened here? W: It’s simple, isn’t it? A thief climbed in through the window and stole the painting! D: Maybe. Or maybe that’s just what somebody wants us to think. W: What do you mean, Ken? D: Well, let’s look at the evidence. Starting at the window. Now, look outside. What can you see? W: A flower bed with some roses. D: Exactly. A flower bed. And the ground — is it dry or wet? W: It must be quite wet — we’ve had a lot of rain recently. D: But there are no footprints in the flower bed! How is it possible that the thief walks across the flower bed to the window without leaving footprints? W: Er…no. D: It isn’t! It isn’t possible, Wilson! What we’re dealing with here is … a set up! Somebody has arranged the room to look as if a burglary has taken place. Look at the coffee table. What do you notice? W: It’s got a footstool on top. D: Why has it got a footstool on top? W: Because the thief wanted to climb up… D: There was no thief, Wilson! But look how carefully the footstool was put on top of the coffee table. There isn’t a scratch! A thief wouldn’t be so careful. W: No, I see what you mean. D: Who would be so careful, Wilson? Think about it! W: Er…it’s…I suppose… D: The owner of the table! He wouldn’t want to damage it, would he? W: No, no. He wouldn’t want to… D: So the owner of the table — the owner of Riverford Manor — has arranged everything in this room to look like a Burglary. But the burglary didn’t happen. W: So, where’s the oil painting? D: That’s what we need to find out! And I think ____64____.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "The conversation probably takes place________.",
+        "options": {
+          "A": "at a police station",
+          "B": "at an art museum",
+          "C": "at a rose garden",
+          "D": "at Riverford Manor"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "What is the possible relationship between Detective Ken and Wilson?",
+        "options": {
+          "A": "Interviewer and interviewee.",
+          "B": "Detective and suspect.",
+          "C": "Detective and assistant.",
+          "D": "Detective and case reporter."
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "Which of the following is an important clue Detective Ken and Wilson found?",
+        "options": {
+          "A": "Mud on the outside wall.",
+          "B": "Footprints in the flower bed.",
+          "C": "An open window.",
+          "D": "An unscratched coffee table."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "Wilson is a person who ________.",
+        "options": {
+          "A": "jumps to conclusions",
+          "B": "pays attention to details",
+          "C": "is good at reasoning",
+          "D": "refuses to change his mind"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "Detective Ken concludes that the case might be a ________.",
+        "options": {
+          "A": "theft",
+          "B": "burglary",
+          "C": "set up",
+          "D": "murder"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "What best fits the blank?",
+        "options": {
+          "A": "we can arrest the servants of the manor",
+          "B": "we should question the owner of the manor",
+          "C": "we can write a report to end the case",
+          "D": "we should look for more clues in the manor"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em1-2021-杨浦-reading-b",
@@ -9991,6 +10408,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-松江-reading-a",
+    "title": "2021 上海松江一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "松江",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市松江区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "For most owners, the thought of losing their beloved pets is unimaginable. Here are four posters of lost pets. LOST DOG Our beloved pet “Susie” has been missing for about a week from Rose Garden area. Susie is a large girl dog, white in colour, with medium length hair. She was wearing a collar. Please contact: Ron Jones 57644653 or 15047982463 LOST BIRD Bambi Yellow and black parrot Missing since Wednesday, December 23 Likes to sing “Our Beautiful World” song If you see her, please call 47325891 or email DennyHu@123.com. LOST PET SPIDER Just like the picture I drew. Name: Conrad Last Seen: my bedroom, three days ago Conrad is a very friendly little spider. He likes to sit on your shoulder and play hide and seek. If you see him, do not scream. And please be careful not to squish him. If he’s at your place, please contact me at 14607685250. LOST CAT Jerry, black and grey, male MISSING ONE MONTH! Wear a black collar Not very friendly Probably get into your house. If you see him, please feed some food and call Sam Chen. 1335784620 $20 REWARD!",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "___________ hasn't been seen for about one week.",
+        "options": {
+          "A": "A pet dog",
+          "B": "A pet bird",
+          "C": "A pet spider",
+          "D": "A pet cat"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 70,
+        "prompt": "If you help find the pet cat, you'll ___________ from the owner.",
+        "options": {
+          "A": "get a black collar",
+          "B": "get some money",
+          "C": "get some food",
+          "D": "get an invitation to the house"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 71,
+        "prompt": "___________ lost a yellow and black parrot.",
+        "options": {
+          "A": "Sam Chen",
+          "B": "Conrad",
+          "C": "Danny Hu",
+          "D": "Bambi"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 72,
+        "prompt": "The underlined word \"squish\" most probably means \"___________\" in Chinese.",
+        "options": {
+          "A": "追打",
+          "B": "压坏",
+          "C": "驱赶",
+          "D": "消灭"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 73,
+        "prompt": "The pet spider can do the following things except ___________.",
+        "options": {
+          "A": "sitting on your shoulder",
+          "B": "playing hide and seek",
+          "C": "making some people scream",
+          "D": "biting people suddenly"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 74,
+        "prompt": "The purpose of the four posters is to ___________.",
+        "options": {
+          "A": "find the owners' lost pets",
+          "B": "advise people to raise pets",
+          "C": "tell people the clues of lost pets",
+          "D": "tell people the disadvantages of raising pets"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-松江-reading-b",
     "title": "2021 上海松江一模阅读 B",
     "year": 2021,
@@ -10204,6 +10714,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-浦东-reading-a",
+    "title": "2021 上海浦东一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "浦东",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市浦东新区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "UNLOCK SERVICE Please dial 5875-811-718 Professional locksmithing for best prices! Work 24 hours, 7 days Quick response Trustable locksmith 24 hours emergency services We promise to be your standby all the time. We offer 24-hour locksmith services 7 days a week to all neighbourhoods in Calgary. You can talk to any of the locksmiths about your problem at any time of the day or night. Our emergency locksmiths are here 24 hours to solve your problem. Whether it is easy to get you into your house or car or to repair or replace your locks — we’ll be there whether it is 3 in the afternoon or 3 in the morning! You need us when … Lost your home keys — We will unlock your door and cut new keys Locked yourself out — We will let you in again Your home has been broken into — We will repair or change your door or lock Cannot open the door yourself — We can open it in no time Lost our car keys — We can unlock the door and start the car Safety — what we can offer We offer various products and services to provide our customers with complete safety. High Security, Bump-Proof Locks Rekeying Locks Mailbox Locks Patio Locks 63 We do not just serve individuals (个人) or families. Our business covers creating and fixing complex master key systems for companies. We often work with some famous designers to set and fit key systems in new buildings. We can also fix doors and hardware and upgrade master key systems for companies.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "People in Calgary can contact Unlock Service by ________.",
+        "options": {
+          "A": "message",
+          "B": "e-mail",
+          "C": "fax",
+          "D": "phone"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "The underlined word “standby” means the one ________.",
+        "options": {
+          "A": "you can talk to",
+          "B": "you can rely on",
+          "C": "you can wait for",
+          "D": "you can work with"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "If the door to your room is damaged, what will an emergency locksmith most probably do?",
+        "options": {
+          "A": "He will fix the mailbox.",
+          "B": "He will start the car.",
+          "C": "He will get you a new door.",
+          "D": "He will open it quickly."
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "To make sure of customers’ safety, ________ types of locks are provided by Unlock Service.",
+        "options": {
+          "A": "4",
+          "B": "5",
+          "C": "6",
+          "D": "7"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "The best heading for the last paragraph is “________”.",
+        "options": {
+          "A": "We are famous designers",
+          "B": "We are the master of keys",
+          "C": "We provide companies with services",
+          "D": "We can fix everything"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "You may find the above passage in a(n) ________ section.",
+        "options": {
+          "A": "story",
+          "B": "sports",
+          "C": "news",
+          "D": "advertisement"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-浦东-reading-b",
     "title": "2021 上海浦东一模阅读 B",
     "year": 2021,
@@ -10415,6 +11018,112 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2021-虹口-reading-a",
+    "title": "2021 上海虹口一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "虹口",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months.\n\nCan you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion.\n\nIt is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music.\n\nThe brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed.\n\nIn addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited.\n\nIn one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "CIMON 2 planned to stay in the International Space Station for _______.",
+        "options": {
+          "A": "five months",
+          "B": "six months",
+          "C": "three years",
+          "D": "two years"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "CIMON was created _______.",
+        "options": {
+          "A": "for Crew Interactive Mobile Companion",
+          "B": "for the European airplane company, Airbus",
+          "C": "to do a lot of research of IBM",
+          "D": "to make friends with astronauts"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "CIMON is very intelligent, and it can do all the following things except _______.",
+        "options": {
+          "A": "moving here and there",
+          "B": "training computers to understand people",
+          "C": "taking pictures and videos",
+          "D": "understanding what people are saying"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "The underlined word \"companion\" in the 4th paragraph means a friend who _______.",
+        "options": {
+          "A": "works and lives with astronauts",
+          "B": "has the similar tastes, interests, etc.",
+          "C": "runs a company",
+          "D": "is responsible for astronauts"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "Compared with the first CIMON, CIMON 2 has the advantage of _______.",
+        "options": {
+          "A": "becoming confused with others' talk",
+          "B": "understanding people's feelings",
+          "C": "having limited expressions",
+          "D": "keeping calm all the time"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "According to the last paragraph, creators hope that CIMON can _______.",
+        "options": {
+          "A": "float in space for a long time",
+          "B": "help astronauts with their tasks",
+          "C": "use its \"mouth\" to talk or play music",
+          "D": "help people stay calm and make good decisions"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months.",
+      "Can you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion.",
+      "It is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music.",
+      "The brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed.",
+      "In addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited.",
+      "In one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly."
+    ]
   },
   {
     "_id": "sh-em1-2021-虹口-reading-b",
@@ -10649,6 +11358,99 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2021-金山-reading-a",
+    "title": "2021 上海金山一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "金山",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市金山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "To: Grace Yang Date: 6 September Subject: 59 Dear Grace, Thank you for your application for the position of sales manager. We would like to invite you for an interview at 10 a.m. on Monday 21 September at our office at The Shard, 32 London Bridge Street, London. You will meet with our head of sales, Susan Park, and the interview will last for about 45 minutes. During this time, you will have the opportunity to find out more about the position and learn more about our company. Please bring your CV(履历) and references to the interview. You will also need to show a form of ID at reception to receive a visitor’s pass. Please ask for me as soon as you arrive. If you have any questions or if you wish to reschedule, please call me on 555-1234 or email me by 12 September. I look forward to meeting you. Best regards, Anna Green Human Resources Assistant",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "The subject of the e-mail should be “________”.",
+        "options": {
+          "A": "Congratulations to Grace",
+          "B": "Introduction of the company",
+          "C": "Invitation to job interview",
+          "D": "Instruction of the way to our office"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "Grace Yang applied for the job of________.",
+        "options": {
+          "A": "head of sales",
+          "B": "sales manager",
+          "C": "sales assistant",
+          "D": "human resource assistant"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "The underlined phrase “this time” refers to________.",
+        "options": {
+          "A": "12 September",
+          "B": "21 September",
+          "C": "10 a.m. on Monday",
+          "D": "the 45 minutes"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "The underlined word “opportunity” in the e-mail means “a/an ________ to do something”.",
+        "options": {
+          "A": "chance",
+          "B": "activity",
+          "C": "decision",
+          "D": "habit"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "According to Anna Green's e-mail, Grace needs to bring ________ kinds of items to the interview.",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "4"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "Grace should ________ as soon as she arrives at the company.",
+        "options": {
+          "A": "hand in her CV",
+          "B": "ask for Anna Green",
+          "C": "show her passport",
+          "D": "meet with Susan Park"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em1-2021-金山-reading-b",
@@ -11095,6 +11897,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-闵行-reading-a",
+    "title": "2021 上海闵行一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "闵行",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市闵行区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "WELCOME TO SAMESUN BACKPACKERS Venice, CA We work hard and strive to create a clean and safe environment where you can meet other travelers and have a lot of fun while doing so! A few things to make your stay more enjoyable: FREE BREAKFAST is from 7:30-10am in the kitchen (next to reception). Breakfast includes eggs, oatmeal, waffles, bagels and cream cheese, toast with a range of spreads, orange juice, coffee and teas. FREE AND CHEAP ACTIVITIES run daily. See the activity board beside the front desk or speak to a staff member to get more details. RECEPTION & HOUSEKEEPING — For your comfort and safety there’s always a staff member on duty. Please feel free to see the front desk if you have any questions. Our housekeeping team cleans the hostel daily from 11am-4pm. During this time staff will be entering every room. Need a beach or bath towel? Just ask the front desk! LUGGAGE STORAGE — We provide FREE storage for luggage while you’re staying here. We also offer long-term storage for $3/day per bag. CHECK OUT TIME IS 11AM — Please bring the two white sheets and your pillowcase (not the blanket or pillow) to reception with your key-card. If you wish to extend your stay, please see the front desk before 11 am. 62 ● No outside guests in your dormitory, the common room or hostel kitchen. If you have friends visiting, they are welcome in Surfside, our bar downstairs. ● Quiet time is from 12am-7am. Please limit noise and silliness during these hours. ● No outside bedding. All linen is provided — if you need extra blankets, pillows or towels, please see the front desk. ● No smoking inside the building at any time — fines of up to $200 apply. ● Absolutely no drugs in the building at any time. EVERY HOUR IS HAPPY HOUR! Show your room key downstairs at SURFSIDE to receive VIP prices: $6-$8 SELECT EATS $5-$7 SELECT COCKTAILS/BEER/WINE LIVE MUSIC/SPORTS/12TVS/WEEKLY SPECIALS/OPEN LATE",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "The underlined word “strive” means “________”.",
+        "options": {
+          "A": "change mind",
+          "B": "take action",
+          "C": "make a plan",
+          "D": "make great efforts"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "The housekeeping team cleans the hostel daily from ________.",
+        "options": {
+          "A": "7:30 am-10:00 am",
+          "B": "11:00 am-4:00 pm",
+          "C": "10:00 am-4:00 pm",
+          "D": "12:00 am-7:00 am"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "The hostel provides the following free things except ________.",
+        "options": {
+          "A": "breakfast",
+          "B": "beer",
+          "C": "activities",
+          "D": "WIFI"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "Which of the following is the best to be filled in the blank?",
+        "options": {
+          "A": "HOUSE RULES",
+          "B": "KITCHEN RULES",
+          "C": "BAR RULES",
+          "D": "NETWORK RULES"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "The underlined word “they” refers to “________”.",
+        "options": {
+          "A": "housekeepers",
+          "B": "businessmen",
+          "C": "your friends",
+          "D": "staff members"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "The form above is aimed at ________.",
+        "options": {
+          "A": "helping staff members to organize activities",
+          "B": "giving introduction of different hostels",
+          "C": "offering resources for job hunting",
+          "D": "providing information for guests to check in the hostel"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-闵行-reading-b",
     "title": "2021 上海闵行一模阅读 B",
     "year": 2021,
@@ -11308,6 +12203,99 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2021-青浦-reading-a",
+    "title": "2021 上海青浦一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "青浦",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市青浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "Who you are makes a difference A teacher decided to honour her students by telling them the difference they have made. She presented each of them with a blue ribbon with letters that read, “Who I Am Makes a Difference.” Afterwards, the teacher decided to do a class project to see what kind of influence recognition（赞赏）would have on a community. She gave each of the students three more ribbons and instructed them to spread them and follow up on the results, and report back to the class in a week. One boy in the class went to a manager in a company, and honoured him for helping him with his career planning. He gave him a blue ribbon and put it on his shirt. Then he gave him two extra ribbons, and said, “Would you please find somebody to honour, give them a blue ribbon, then give them the extra so they can find a third person.” Later that day, the manager went to see his boss and gave him the gift of the blue ribbon. He told him that he deeply admired him for being a creative genius. His surprised boss accepted it delightedly. The manager placed the blue ribbon right in his boss’s jacket above his heart and gave him the last extra ribbon to pass on. That night, the boss went home to his 14-year-old son and told him about his day. “One of the managers gave me an extra ribbon and asked me to find somebody else to honour and I thought about you. I want to honour you,” said the boss. “My days are really hectic and when I come home, I don’t pay a lot of attention to you. Sometimes I scream at you for not getting good grades in school and for your bedroom being a mess, but somehow tonight, I just want you to know that you do make a difference to me. You’re a great kid, and I love you!” The astonished boy couldn’t stop crying. He looked up at his father and said through his tears, “I was planning to run away from home tomorrow, Dad, because I didn’t think you loved me. Now I will never do that.”",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "The teacher decided to do a class project to _______.",
+        "options": {
+          "A": "honour the best one of her students",
+          "B": "present her students with ribbons",
+          "C": "see the influence of recognition",
+          "D": "get the results from the community"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "According to the teacher, _______ could receive the blue ribbons.",
+        "options": {
+          "A": "students who get best marks in a school",
+          "B": "people who get high positions in a company",
+          "C": "children who always keep the bedrooms tidy",
+          "D": "people who have made a difference in your life"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "The three blue ribbons were passed on to the honoured persons in _______.",
+        "options": {
+          "A": "one night",
+          "B": "one day",
+          "C": "one week",
+          "D": "one month"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "The correct order of the boy’s three ribbons is: _______.",
+        "options": {
+          "A": "The boss→the manager→the son",
+          "B": "The manager→the son→the boss",
+          "C": "The boss→the son→the manager",
+          "D": "The manager→the boss→the son"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "The underlined word “hectic” in paragraph 5 probably means “_______”.",
+        "options": {
+          "A": "busy",
+          "B": "boring",
+          "C": "short",
+          "D": "over"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "After reading the passage, we can infer that it is _______.",
+        "options": {
+          "A": "a research report",
+          "B": "a speech presentation",
+          "C": "a warming story",
+          "D": "an exciting adventure"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
     "_id": "sh-em1-2021-青浦-reading-b",
     "title": "2021 上海青浦一模阅读 B",
     "year": 2021,
@@ -11462,6 +12450,99 @@ module.exports = [
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
     "difficultyLabel": "综合运用"
+  },
+  {
+    "_id": "sh-em1-2021-静安-reading-a",
+    "title": "2021 上海静安一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "静安",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市静安区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "Narrator: Imagine life without light — nothing but darkness. Today, we are going to perform a play in total darkness — you will hear us but not see us. In our play, David is blind while Cassandra is wearing eye patches for a day, to see what life is like. (lights go out; silence) Scene 1 On a busy street (sounds of people and traffic) Cassandra: (nervously) David? David ...? Ump! I’ve stumbled into a rubbish bin. David: Follow my voice ... Cassandra: Oh ... What’s this? Am I touching a person? Sorry ... David: (laughs) It’s me. Take my arm. We’re going to cross the street to the supermarket. (louder traffic noises: honking) Cassandra: (anxiously) There are too many cars! Isn’t it risky? David: Don’t worry. We’re going to listen for the signal. It’s a chirping noise. (chirping) Do you hear it? There’s one at every pedestrian crossing. It tells blind people when it’s safe to cross. Let’s go. (sound of a bus approaching and braking) Cassandra: Oh no ... is that a bus? Is there enough time for us to cross? David: Yes, the chirping signal will tell us when the light’s about to change. Keep walking ... Scene 2 In the supermarket (supermarket sounds; shopping carts and announcement) David: When we’re blind, we mainly rely on three senses: smell, touch and hearing. There become invaluable when you can’t see. Cassandra: I’m starting to notice sounds that I didn’t before. Like, I never noticed how noisy supermarkets are! David: No kidding! OK, today I’m buying some vegetables and some tinned tuna ... I’m right beside the onions ... Cassandra: I can tell I’m very, very close to the onions because I can smell them ... (excitedly) Yeah, onions! David: OK, there are enough onions in this packet. Now let’s go find the tuna. Cassandra: But ... there are too many kinds of tinned food! How will we know which ones are tuna? David: There are always enough sighted people around to help out. Let’s go. (supermarket sounds; fade out)",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "The play is about ________.",
+        "options": {
+          "A": "a blind person’s unusual experience",
+          "B": "how a person became blind",
+          "C": "two blind people go to the supermarket",
+          "D": "what it is like to be blind"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 70,
+        "prompt": "The main purpose of the narrator’s words is ________.",
+        "options": {
+          "A": "to explain what blindness is",
+          "B": "to introduce main characters",
+          "C": "to explain about the scene",
+          "D": "to add excitement to the play"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 71,
+        "prompt": "In Scene 1, the underlined word “stumbled” means ________.",
+        "options": {
+          "A": "stepped",
+          "B": "fitted",
+          "C": "turned",
+          "D": "searched"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 72,
+        "prompt": "According to Scene 1, ________ tells ________ they can cross the street safely.",
+        "options": {
+          "A": "a visual signal at some crossings; blind people",
+          "B": "Cassandra; David",
+          "C": "the chirping noise; car drivers",
+          "D": "the chirping noise; people who cannot see"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 73,
+        "prompt": "Cassandra feels happy when she ________ without her sense of sight.",
+        "options": {
+          "A": "tastes tuna",
+          "B": "finds the onions",
+          "C": "see light",
+          "D": "notices new sounds"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 74,
+        "prompt": "David plans to find the tinned tuna by ________.",
+        "options": {
+          "A": "asking Cassandra to go with him",
+          "B": "asking someone who can see to helping him",
+          "C": "feeling the shape of the tins",
+          "D": "using his sense of smell"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em1-2021-静安-reading-b",
@@ -11675,6 +12756,99 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2021-黄浦-reading-a",
+    "title": "2021 上海黄浦一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "黄浦",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市黄浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "The only thing better than reading a good book is reading it with others. In a book club, a group of people choose a book that everyone will read individually and then discuss together. There are no rules to starting a book club, and the plan might well change, depending on the groups. It’s good to think ahead about how you’d like the book club to run. Think of 8 to 12 others (people around your age) who you’d like to be part of your book club. Perhaps encourage your friends to invite people whom they know well but you haven’t met. A book club can help you make friends. Having a topic can make the club feel more focused. Finally make sure you read the book before the meeting, and come prepared with questions to ask and things to talk about. Want to dive into stories with friends and share your thoughts? ● ____71____ A schedule is a good way to make sure everyone gets a chance to choose the book. Alternatively, you could provide a selection of books and ask everyone to vote for what they want to read next. ● What do we talk about? Some questions are especially good for sparking discussion about a book. Try these: if you could give the book a different ending, what would it be? What do you think the main character looked like? What do you think will happen next? ● Where do we meet now? To help ensure social distancing, it’s best to meet up online. With an adult’s help, you can set up a video call between book club members. You can then take part from your cosy reading corner and enjoy yourself. · Get advice by visiting clubs-kids.shcolastic.co.uk. · Try contacting your favourite author on social media to see if they will answer your group’s questions about a book. · The Week Junior’s Book Club has tips on what you could read.",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "Who is the text above written for?",
+        "options": {
+          "A": "Senior citizens.",
+          "B": "Children studying at home.",
+          "C": "Teachers online.",
+          "D": "Parents working from home."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 70,
+        "prompt": "According to the text, how can we organize a reading group?",
+        "options": {
+          "A": "By choosing a topic.",
+          "B": "By searching the web.",
+          "C": "By setting up a video call.",
+          "D": "By inviting friends."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 71,
+        "prompt": "Which of the following questions best fits “________”?",
+        "options": {
+          "A": "What books do we choose",
+          "B": "Where can we find books",
+          "C": "How do we choose which books to read",
+          "D": "Why do we need a topic before we discuss together"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 72,
+        "prompt": "The underlined word 'cosy' is closest in meaning to ________.",
+        "options": {
+          "A": "comfortable",
+          "B": "convenient",
+          "C": "flexible",
+          "D": "intelligent"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 73,
+        "prompt": "What can we do if we want to contact our favorite author?",
+        "options": {
+          "A": "Visit a website.",
+          "B": "Write a letter.",
+          "C": "Read a magazine.",
+          "D": "Use social media."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 74,
+        "prompt": "The text is mainly about ________.",
+        "options": {
+          "A": "what books to read",
+          "B": "how to start a reading club",
+          "C": "the effect of online reading",
+          "D": "rules to choose books"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      }
+    ],
+    "images": [],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em1-2021-黄浦-reading-b",
@@ -12083,7 +13257,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": ") (14分) On Dec 9, three Chinese astronauts who are working aboard the Tiangong Space Station, gave a lecture above Earth and showed millions of students their life there. They also did some fun s___71___ experiments. Let's take a look at some of them. Use it or lose it The human body grows with the pull of Earth's gravity (重力). But in space, our bones and muscles don't need to s___72___ our body's weight. This will cause bone and muscle loss. It is said that astronauts can lose up to 20 percent of their muscles after just a couple of weeks. That is dangerous for astronauts because they will be too w___73___ to work. Astronauts have different ways to prevent this. During the lecture, Zhai introduced a special uniform Ye was wearing. It's called a \"penguin suit\". It can keep their muscles strong. Wang also showed students how she walked on a treadmill (跑步机) and rode a bicycle. Astronauts usually e___74___ with these tools every day to keep their body strong. Space water is different During another experiment, Wang made a water film (膜). Then she added more water drops onto the film to make it a water ball. But this can n___75___ happen on Earth. Why? We need to first u___76___ the surface tension (表面张力) of water. Surface tension is like a “skin” of water. The \"skin” is there because water molecules (分子) are drawn to each other. One example on the Earth is that some bugs (昆虫) can “walk on water”. Most of the time, gravity is too strong and it breaks the \"skin\". But with zero gravity in space, the “skin\" stays much stronger and the water ball will not b___77___. Space water is different in many other ways from that on Earth. For example, water will not flow downward if you try to pour it into a cup. If astronauts cry, the tears will not fall down. They have to wipe them away!",
+    "passage": "On Dec 9, three Chinese astronauts who are working aboard the Tiangong Space Station, gave a lecture above Earth and showed millions of students their life there. They also did some fun s___71___ experiments. Let's take a look at some of them. Use it or lose it The human body grows with the pull of Earth's gravity (重力).\n\nBut in space, our bones and muscles don't need to s___72___ our body's weight. This will cause bone and muscle loss. It is said that astronauts can lose up to 20 percent of their muscles after just a couple of weeks. That is dangerous for astronauts because they will be too w___73___ to work. Astronauts have different ways to prevent this.\n\nDuring the lecture, Zhai introduced a special uniform Ye was wearing. It's called a \"penguin suit\". It can keep their muscles strong. Wang also showed students how she walked on a treadmill (跑步机) and rode a bicycle. Astronauts usually e___74___ with these tools every day to keep their body strong. Space water is different During another experiment, Wang made a water film (膜).\n\nThen she added more water drops onto the film to make it a water ball. But this can n___75___ happen on Earth. Why? We need to first u___76___ the surface tension (表面张力) of water. Surface tension is like a “skin” of water. The \"skin” is there because water molecules (分子) are drawn to each other. One example on the Earth is that some bugs (昆虫) can “walk on water”.\n\nMost of the time, gravity is too strong and it breaks the \"skin\". But with zero gravity in space, the “skin\" stays much stronger and the water ball will not b___77___. Space water is different in many other ways from that on Earth. For example, water will not flow downward if you try to pour it into a cup. If astronauts cry, the tears will not fall down. They have to wipe them away!",
     "questions": [
       {
         "number": 71,
@@ -12133,7 +13307,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "On Dec 9, three Chinese astronauts who are working aboard the Tiangong Space Station, gave a lecture above Earth and showed millions of students their life there. They also did some fun s___71___ experiments. Let's take a look at some of them. Use it or lose it The human body grows with the pull of Earth's gravity (重力).",
+      "But in space, our bones and muscles don't need to s___72___ our body's weight. This will cause bone and muscle loss. It is said that astronauts can lose up to 20 percent of their muscles after just a couple of weeks. That is dangerous for astronauts because they will be too w___73___ to work. Astronauts have different ways to prevent this.",
+      "During the lecture, Zhai introduced a special uniform Ye was wearing. It's called a \"penguin suit\". It can keep their muscles strong. Wang also showed students how she walked on a treadmill (跑步机) and rode a bicycle. Astronauts usually e___74___ with these tools every day to keep their body strong. Space water is different During another experiment, Wang made a water film (膜).",
+      "Then she added more water drops onto the film to make it a water ball. But this can n___75___ happen on Earth. Why? We need to first u___76___ the surface tension (表面张力) of water. Surface tension is like a “skin” of water. The \"skin” is there because water molecules (分子) are drawn to each other. One example on the Earth is that some bugs (昆虫) can “walk on water”.",
+      "Most of the time, gravity is too strong and it breaks the \"skin\". But with zero gravity in space, the “skin\" stays much stronger and the water ball will not b___77___. Space water is different in many other ways from that on Earth. For example, water will not flow downward if you try to pour it into a cup. If astronauts cry, the tears will not fall down. They have to wipe them away!"
+    ]
   },
   {
     "_id": "sh-em1-2022-嘉定-reading-d",
@@ -12293,7 +13479,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "Read the passage and fill in the blanks with proper words (在短文的空格内填入适当的词，是其内容通顺，每空格限填一次，首字母已给) It was a cloudy afternoon. I was walking in the park near my neighborhood. The wind was blowing hard and I knew it was about to rain. Even so, I didn’t want to go home. I had a terrible argument with my mom and ran out of the house just 10 minutes earlier. I sat down near a lake. There were many children playing with their parents nearby. I felt a little l___71___. \" Shall we play together?\" A little girl came toward me with a ball in her hands. I agreed and she h___72___ me the ball with a sweet smile. When it began to rain, all the children at the lakeside went home with their parents. Where are your parents? I asked the girl. \"My mom is selling candied fruit (蜜饯) outside the park. She hardly takes care of me,\" the girl explained \"I usually play alone here. It’s OK i___73___ you need to go home now. I am old enough to stay here and wait for my mom.\" \"But it’s raining.\" I said. \"You’d better not be here alone when it's dark.\" \"It’s no problem. Mom won’t leave me alone. She is coming soon,\" the girl replied. \"She is my mom, even if she s___74___ cares for her daughter.\" A 5-year old girl taught me to love and believe in my mom. Should I listen to her and say s___75___ to my mom? In the end, I took the little girl to her mom’s vending cart (售货摊) and then ran home quickly. Opening the door, my mom was close to t___76___： \"Where have you been? I looked for you everywhere! See how wet your coat is! Don’t come to my room even if you get a cold tonight!\" But I knew she wasn’t angry anymore. A___77___ taking a shower, I heard her shouting outside my room： \"Dinner time! Come out if you feel like eating some fish balls.\" D. Read the passage below and answer the following questions (根据文章内容回答下列问题) Who can jump the highest at your school? Who has the most skips over a rope? Who’s the fastest at solving a Rubik’s Cube (魔方)? Everyone can be the best at something. Recently, Beijing 101 Middle School held an activity called \"Guinness Campus\" to help students find their potential (潜力). \"There are all kinds of projects you can take part in and all kinds of records for you to set,\" said ninth-grader Liu, \"I choose Domino Tower because I have the most confidence in this.\" Students needed to build a tower using dominoes (多米诺骨牌). Who ever built the tallest tower in one minute won. Liu set the record with 33 levels. \"At first I didn’t do it well, but after learning from other people and trying over and over again. I found some ways to do it faster,\" she said. \"The game requires you to be calm and patient. If you lose your temper (脾气) when the tower falls you may lose the chance to win.\" Seventh-grader Wang set a record for the longest juggle (颠球) of a soccer ball with one foot. He did it for 4 minutes and 34 seconds. \"I started to play soccer at 5 and have been practicing juggling for three or four years, so I’m confident I can do it well,\" said Wang.\" Juggling with only one foot needs good balance and stability (稳定性) ，which I’m good at. You also need to train hard for sure.\" When asked if he was afraid that someone else would break his record one day, Wang said he was expecting that to happen. \"The charm (魅力) of Guinness Campus is that we keep reaching higher goals. If someone breaks my record next year, I’ll be even more encouraged to try harder finding more potential within me.\"",
+    "passage": "It was a cloudy afternoon. I was walking in the park near my neighborhood. The wind was blowing hard and I knew it was about to rain. Even so, I didn’t want to go home. I had a terrible argument with my mom and ran out of the house just 10 minutes earlier. I sat down near a lake. There were many children playing with their parents nearby.\n\nI felt a little l___71___. \" Shall we play together?\" A little girl came toward me with a ball in her hands. I agreed and she h___72___ me the ball with a sweet smile. When it began to rain, all the children at the lakeside went home with their parents. Where are your parents? I asked the girl. \"My mom is selling candied fruit (蜜饯) outside the park.\n\nShe hardly takes care of me,\" the girl explained \"I usually play alone here. It’s OK i___73___ you need to go home now. I am old enough to stay here and wait for my mom.\" \"But it’s raining.\" I said. \"You’d better not be here alone when it's dark.\" \"It’s no problem. Mom won’t leave me alone. She is coming soon,\" the girl replied.\n\n\"She is my mom, even if she s___74___ cares for her daughter.\" A 5-year old girl taught me to love and believe in my mom. Should I listen to her and say s___75___ to my mom? In the end, I took the little girl to her mom’s vending cart (售货摊) and then ran home quickly. Opening the door, my mom was close to t___76___： \"Where have you been?\n\nI looked for you everywhere! See how wet your coat is! Don’t come to my room even if you get a cold tonight!\" But I knew she wasn’t angry anymore. A___77___ taking a shower, I heard her shouting outside my room： \"Dinner time! Come out if you feel like eating some fish balls.\" D. Read the passage below and answer the following questions (根据文章内容回答下列问题) Who can jump the highest at your school?\n\nWho has the most skips over a rope? Who’s the fastest at solving a Rubik’s Cube (魔方)? Everyone can be the best at something. Recently, Beijing 101 Middle School held an activity called \"Guinness Campus\" to help students find their potential (潜力). \"There are all kinds of projects you can take part in and all kinds of records for you to set,\" said ninth-grader Liu, \"I choose Domino Tower because I have the most confidence in this.\n\n\" Students needed to build a tower using dominoes (多米诺骨牌). Who ever built the tallest tower in one minute won. Liu set the record with 33 levels. \"At first I didn’t do it well, but after learning from other people and trying over and over again. I found some ways to do it faster,\" she said. \"The game requires you to be calm and patient.\n\nIf you lose your temper (脾气) when the tower falls you may lose the chance to win.\" Seventh-grader Wang set a record for the longest juggle (颠球) of a soccer ball with one foot. He did it for 4 minutes and 34 seconds. \"I started to play soccer at 5 and have been practicing juggling for three or four years, so I’m confident I can do it well,\" said Wang.\n\n\" Juggling with only one foot needs good balance and stability (稳定性) ，which I’m good at. You also need to train hard for sure.\" When asked if he was afraid that someone else would break his record one day, Wang said he was expecting that to happen. \"The charm (魅力) of Guinness Campus is that we keep reaching higher goals. If someone breaks my record next year, I’ll be even more encouraged to try harder finding more potential within me.\"",
     "questions": [
       {
         "number": 78,
@@ -12337,7 +13523,23 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "Read the passage and fill in the blanks with proper words (在短文的空格内填入适当的词，是其内容通顺，每空格限填一次，首字母已给",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "It was a cloudy afternoon. I was walking in the park near my neighborhood. The wind was blowing hard and I knew it was about to rain. Even so, I didn’t want to go home. I had a terrible argument with my mom and ran out of the house just 10 minutes earlier. I sat down near a lake. There were many children playing with their parents nearby.",
+      "I felt a little l___71___. \" Shall we play together?\" A little girl came toward me with a ball in her hands. I agreed and she h___72___ me the ball with a sweet smile. When it began to rain, all the children at the lakeside went home with their parents. Where are your parents? I asked the girl. \"My mom is selling candied fruit (蜜饯) outside the park.",
+      "She hardly takes care of me,\" the girl explained \"I usually play alone here. It’s OK i___73___ you need to go home now. I am old enough to stay here and wait for my mom.\" \"But it’s raining.\" I said. \"You’d better not be here alone when it's dark.\" \"It’s no problem. Mom won’t leave me alone. She is coming soon,\" the girl replied.",
+      "\"She is my mom, even if she s___74___ cares for her daughter.\" A 5-year old girl taught me to love and believe in my mom. Should I listen to her and say s___75___ to my mom? In the end, I took the little girl to her mom’s vending cart (售货摊) and then ran home quickly. Opening the door, my mom was close to t___76___： \"Where have you been?",
+      "I looked for you everywhere! See how wet your coat is! Don’t come to my room even if you get a cold tonight!\" But I knew she wasn’t angry anymore. A___77___ taking a shower, I heard her shouting outside my room： \"Dinner time! Come out if you feel like eating some fish balls.\" D. Read the passage below and answer the following questions (根据文章内容回答下列问题) Who can jump the highest at your school?",
+      "Who has the most skips over a rope? Who’s the fastest at solving a Rubik’s Cube (魔方)? Everyone can be the best at something. Recently, Beijing 101 Middle School held an activity called \"Guinness Campus\" to help students find their potential (潜力). \"There are all kinds of projects you can take part in and all kinds of records for you to set,\" said ninth-grader Liu, \"I choose Domino Tower because I have the most confidence in this.",
+      "\" Students needed to build a tower using dominoes (多米诺骨牌). Who ever built the tallest tower in one minute won. Liu set the record with 33 levels. \"At first I didn’t do it well, but after learning from other people and trying over and over again. I found some ways to do it faster,\" she said. \"The game requires you to be calm and patient.",
+      "If you lose your temper (脾气) when the tower falls you may lose the chance to win.\" Seventh-grader Wang set a record for the longest juggle (颠球) of a soccer ball with one foot. He did it for 4 minutes and 34 seconds. \"I started to play soccer at 5 and have been practicing juggling for three or four years, so I’m confident I can do it well,\" said Wang.",
+      "\" Juggling with only one foot needs good balance and stability (稳定性) ，which I’m good at. You also need to train hard for sure.\" When asked if he was afraid that someone else would break his record one day, Wang said he was expecting that to happen. \"The charm (魅力) of Guinness Campus is that we keep reaching higher goals. If someone breaks my record next year, I’ll be even more encouraged to try harder finding more potential within me.\""
+    ]
   },
   {
     "_id": "sh-em1-2022-宝山-reading-a",
@@ -12533,7 +13735,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": ") (14分) Fruit, meat, milk and vegetables all come from farms. Farms are i___71___ because they provide shops and supermarkets with food. But have you ever been to a farm and do you know what farmers do? Every year, a group called Linking Environment and Farming (LEAF) o___72___ Open Farm Sunday. On 9 June, about 350 UK farms will be free for visitors to explore and enjoy. A___73___ may include farm walks, pond dipping (using a net to take things out of ponds to look at them more closely), talks with farmers, tractor (拖拉机) rides and mini markets. Lots of farms sell their p___74___ in the markets, such as fruit, vegetables, meat and tasty homemade cakes. Visitors will also be able to get plenty of exercise and fresh air on a farm visit. Open Farm Sunday was set up in 2006 and more than two million students have enjoyed the experiences s___75___ then. They have visited a farm with their schools and seen animals, machines and plants, as well as farmers doing their jobs. Farm trips show how the land has to be looked after, how the weather affects crops and how animals are cared for. They've also got the chance to help look after and feed the animals. Some farms have an educational area that shows what farming used to be like. Visitors can l___76___ about traditional methods, the history of the farm and how farming has changed as a business. A___77___ who is 10 or older can job Linking Environment and Farming and take part in Open Farm Sunday. For more details about Open Farms Sunday, please visit farmsunday.org/visit-a-farm.",
+    "passage": "Fruit, meat, milk and vegetables all come from farms. Farms are i___71___ because they provide shops and supermarkets with food. But have you ever been to a farm and do you know what farmers do? Every year, a group called Linking Environment and Farming (LEAF) o___72___ Open Farm Sunday. On 9 June, about 350 UK farms will be free for visitors to explore and enjoy.\n\nA___73___ may include farm walks, pond dipping (using a net to take things out of ponds to look at them more closely), talks with farmers, tractor (拖拉机) rides and mini markets. Lots of farms sell their p___74___ in the markets, such as fruit, vegetables, meat and tasty homemade cakes. Visitors will also be able to get plenty of exercise and fresh air on a farm visit.\n\nOpen Farm Sunday was set up in 2006 and more than two million students have enjoyed the experiences s___75___ then. They have visited a farm with their schools and seen animals, machines and plants, as well as farmers doing their jobs. Farm trips show how the land has to be looked after, how the weather affects crops and how animals are cared for.\n\nThey've also got the chance to help look after and feed the animals. Some farms have an educational area that shows what farming used to be like. Visitors can l___76___ about traditional methods, the history of the farm and how farming has changed as a business. A___77___ who is 10 or older can job Linking Environment and Farming and take part in Open Farm Sunday. For more details about Open Farms Sunday, please visit farmsunday.org/visit-a-farm.",
     "questions": [
       {
         "number": 71,
@@ -12583,7 +13785,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Fruit, meat, milk and vegetables all come from farms. Farms are i___71___ because they provide shops and supermarkets with food. But have you ever been to a farm and do you know what farmers do? Every year, a group called Linking Environment and Farming (LEAF) o___72___ Open Farm Sunday. On 9 June, about 350 UK farms will be free for visitors to explore and enjoy.",
+      "A___73___ may include farm walks, pond dipping (using a net to take things out of ponds to look at them more closely), talks with farmers, tractor (拖拉机) rides and mini markets. Lots of farms sell their p___74___ in the markets, such as fruit, vegetables, meat and tasty homemade cakes. Visitors will also be able to get plenty of exercise and fresh air on a farm visit.",
+      "Open Farm Sunday was set up in 2006 and more than two million students have enjoyed the experiences s___75___ then. They have visited a farm with their schools and seen animals, machines and plants, as well as farmers doing their jobs. Farm trips show how the land has to be looked after, how the weather affects crops and how animals are cared for.",
+      "They've also got the chance to help look after and feed the animals. Some farms have an educational area that shows what farming used to be like. Visitors can l___76___ about traditional methods, the history of the farm and how farming has changed as a business. A___77___ who is 10 or older can job Linking Environment and Farming and take part in Open Farm Sunday. For more details about Open Farms Sunday, please visit farmsunday.org/visit-a-farm."
+    ]
   },
   {
     "_id": "sh-em1-2022-宝山-reading-d",
@@ -12835,7 +14048,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": ") (14分) When Emily Cummins was four years old, her grandfather gave her a hammer. She loved using it, and started to learn how to make toys from old things that nobody used any more. When she was a teenager, she was very c___71___ and always thought lot about making inventions to help other people. Emily’s grandfather had an illness. He had a lot of pain in his hands and fingers. One day, Emily saw that he had t___72___ getting toothpaste (牙膏) out of the tube. She made an invention that helped him with this, and won the Young Engineer for Britain Award for her toothpaste dispenser. A few years later, Emily learnt about the serious water shortage in some African countries. The women and children there often walk many kilometres a day to get water for their villages. They usually put the buckets on their heads. Therefore, they have to walk c___73___ so as not to spill (溅出) the water. Emily's invention is a simple water carrier. It makes it possible for the women to transport up to five buckets each time. Besides, it is easy for them to r___74___ the water carrier when it is broken as it is made of wood. Her latest project is a simple fridge that runs without electricity, but only needs the e___75___ that comes from the sun. There are now thousands of families in villages in Zambia, Namibia and South Africa who use it to keep milk, food and medicines cool. Emily is now a young woman. She is the winner of several p___76___ for her inventions. She was named one of the world's top ten young people. Emily frequently visits schools and talks to teenagers. She wants to e___77___ them to come up with new ideas that make the world a better place. She wants to use her skills to make a difference.",
+    "passage": "When Emily Cummins was four years old, her grandfather gave her a hammer. She loved using it, and started to learn how to make toys from old things that nobody used any more. When she was a teenager, she was very c___71___ and always thought lot about making inventions to help other people. Emily’s grandfather had an illness.\n\nHe had a lot of pain in his hands and fingers. One day, Emily saw that he had t___72___ getting toothpaste (牙膏) out of the tube. She made an invention that helped him with this, and won the Young Engineer for Britain Award for her toothpaste dispenser. A few years later, Emily learnt about the serious water shortage in some African countries.\n\nThe women and children there often walk many kilometres a day to get water for their villages. They usually put the buckets on their heads. Therefore, they have to walk c___73___ so as not to spill (溅出) the water. Emily's invention is a simple water carrier. It makes it possible for the women to transport up to five buckets each time.\n\nBesides, it is easy for them to r___74___ the water carrier when it is broken as it is made of wood. Her latest project is a simple fridge that runs without electricity, but only needs the e___75___ that comes from the sun. There are now thousands of families in villages in Zambia, Namibia and South Africa who use it to keep milk, food and medicines cool.\n\nEmily is now a young woman. She is the winner of several p___76___ for her inventions. She was named one of the world's top ten young people. Emily frequently visits schools and talks to teenagers. She wants to e___77___ them to come up with new ideas that make the world a better place. She wants to use her skills to make a difference.",
     "questions": [
       {
         "number": 71,
@@ -12885,7 +14098,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "When Emily Cummins was four years old, her grandfather gave her a hammer. She loved using it, and started to learn how to make toys from old things that nobody used any more. When she was a teenager, she was very c___71___ and always thought lot about making inventions to help other people. Emily’s grandfather had an illness.",
+      "He had a lot of pain in his hands and fingers. One day, Emily saw that he had t___72___ getting toothpaste (牙膏) out of the tube. She made an invention that helped him with this, and won the Young Engineer for Britain Award for her toothpaste dispenser. A few years later, Emily learnt about the serious water shortage in some African countries.",
+      "The women and children there often walk many kilometres a day to get water for their villages. They usually put the buckets on their heads. Therefore, they have to walk c___73___ so as not to spill (溅出) the water. Emily's invention is a simple water carrier. It makes it possible for the women to transport up to five buckets each time.",
+      "Besides, it is easy for them to r___74___ the water carrier when it is broken as it is made of wood. Her latest project is a simple fridge that runs without electricity, but only needs the e___75___ that comes from the sun. There are now thousands of families in villages in Zambia, Namibia and South Africa who use it to keep milk, food and medicines cool.",
+      "Emily is now a young woman. She is the winner of several p___76___ for her inventions. She was named one of the world's top ten young people. Emily frequently visits schools and talks to teenagers. She wants to e___77___ them to come up with new ideas that make the world a better place. She wants to use her skills to make a difference."
+    ]
   },
   {
     "_id": "sh-em1-2022-崇明-reading-d",
@@ -13045,7 +14270,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": "Read the passage and fill in the blanks with proper words(在短文的空格内填入适当的词，是其内容通顺，每空格限填一次，首字母已给) It was the last day for Teddy in the company. After he packed up all his personal belongings, he started back home. An old lady stood on the side of the road. He a___71___ didn't see her. Even in the dim (微弱) light of day, he could see she was in trouble. Teddy stopped his car and got out, walked towards the old lady. Even with the smile on his face, she was w___72___. No one had stopped to help for the last hour or so. Was he going to hurt her? He didn't look safe. He said, \"I am here to help you, Madam. Why don't you wait in the car where it is warm? By the way, my name is Teddy.\" Well, all she had was a flat tire (爆胎), but for an old lady, that was bad enough. Teddy lay down and moved under the car changing the tire. But he had to get d___73___ and his hands hurt. As he was tightening up the lug nuts, she rolled down the window and began to talk to him. She told him that she was from St. Louis and was only just passing though. She was grateful for his help. Teddy just smiled as he finished the work. The lady asked how much she owed him. Any amount would be all right with her. She already i___74___ all the awful things that might happen if he had not stopped. Teddy never thought about being paid. This was not a j___75___ to him. This was helping someone in need, and God knows there were plenty who had given him a hand in the past. He had lived his whole life that way, and it never occurred to him to act any other way. He told her that if she really wanted to pay him back, the next time she saw someone who needed help, she could do him or her a favour w___76___ hesitation. Teddy added, \"And think of me.\" He waited until she started her car and drove off. It had been a cold day and he had felt d___77___ just now. Now he felt good as he went home, disappearing into the twilight (暮色). D. Read the passage below and answer the following questions(根据文章内容回答下列问题) Maria was a teacher in my high school. I still remember the first time I saw her. It was in the ninth grade. We met on a stage (舞台) design team for a play and she was one of the directors. She had an unpleasant voice and a direct way of speaking. For some reason, she then made a deep impression on me. Maria would ask me for my opinion. She wanted to know how I thought we should deal with things. At first, I had no idea how to answer because I knew nothing about stage design. But I slowly began to respond to her questions. It was cause and effect: She believed me and encourage me, So I began to form opinions and completed things perfectly. Most importantly, I began to believe in myself. Maria's motto (格言) was, \"Try it. We can always paint over it later!\" I began to take risks (冒险). I had been so afraid of failing but suddenly there was no failing -- only things to be improved. With her help, I learned to dip my brush into the paint and create something with great confidence. The shy, quiet starter achieved success that year. I was selected into the program as \"Student Art Assistant\" because of the time and effort I'd put in. It was that year that I realized I wanted to spend the rest of my life doing stage design. Being on that stage design team with the Maria changed me completely. I not only _____________________, but also _____________________. She taught me not to care what people think I should do. She taught me to take chances and not be afraid. Maria was such a great teacher.",
+    "passage": "It was the last day for Teddy in the company. After he packed up all his personal belongings, he started back home. An old lady stood on the side of the road. He a___71___ didn't see her. Even in the dim (微弱) light of day, he could see she was in trouble. Teddy stopped his car and got out, walked towards the old lady.\n\nEven with the smile on his face, she was w___72___. No one had stopped to help for the last hour or so. Was he going to hurt her? He didn't look safe. He said, \"I am here to help you, Madam. Why don't you wait in the car where it is warm? By the way, my name is Teddy.\" Well, all she had was a flat tire (爆胎), but for an old lady, that was bad enough.\n\nTeddy lay down and moved under the car changing the tire. But he had to get d___73___ and his hands hurt. As he was tightening up the lug nuts, she rolled down the window and began to talk to him. She told him that she was from St. Louis and was only just passing though. She was grateful for his help.\n\nTeddy just smiled as he finished the work. The lady asked how much she owed him. Any amount would be all right with her. She already i___74___ all the awful things that might happen if he had not stopped. Teddy never thought about being paid. This was not a j___75___ to him. This was helping someone in need, and God knows there were plenty who had given him a hand in the past.\n\nHe had lived his whole life that way, and it never occurred to him to act any other way. He told her that if she really wanted to pay him back, the next time she saw someone who needed help, she could do him or her a favour w___76___ hesitation. Teddy added, \"And think of me.\" He waited until she started her car and drove off.\n\nIt had been a cold day and he had felt d___77___ just now. Now he felt good as he went home, disappearing into the twilight (暮色). D. Read the passage below and answer the following questions(根据文章内容回答下列问题) Maria was a teacher in my high school. I still remember the first time I saw her. It was in the ninth grade.\n\nWe met on a stage (舞台) design team for a play and she was one of the directors. She had an unpleasant voice and a direct way of speaking. For some reason, she then made a deep impression on me. Maria would ask me for my opinion. She wanted to know how I thought we should deal with things. At first, I had no idea how to answer because I knew nothing about stage design.\n\nBut I slowly began to respond to her questions. It was cause and effect: She believed me and encourage me, So I began to form opinions and completed things perfectly. Most importantly, I began to believe in myself. Maria's motto (格言) was, \"Try it. We can always paint over it later!\" I began to take risks (冒险).\n\nI had been so afraid of failing but suddenly there was no failing -- only things to be improved. With her help, I learned to dip my brush into the paint and create something with great confidence. The shy, quiet starter achieved success that year. I was selected into the program as \"Student Art Assistant\" because of the time and effort I'd put in.\n\nIt was that year that I realized I wanted to spend the rest of my life doing stage design. Being on that stage design team with the Maria changed me completely. I not only _____________________, but also _____________________. She taught me not to care what people think I should do. She taught me to take chances and not be afraid. Maria was such a great teacher.",
     "questions": [
       {
         "number": 78,
@@ -13089,7 +14314,24 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "Read the passage and fill in the blanks with proper words(在短文的空格内填入适当的词，是其内容通顺，每空格限填一次，首字母已给",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "It was the last day for Teddy in the company. After he packed up all his personal belongings, he started back home. An old lady stood on the side of the road. He a___71___ didn't see her. Even in the dim (微弱) light of day, he could see she was in trouble. Teddy stopped his car and got out, walked towards the old lady.",
+      "Even with the smile on his face, she was w___72___. No one had stopped to help for the last hour or so. Was he going to hurt her? He didn't look safe. He said, \"I am here to help you, Madam. Why don't you wait in the car where it is warm? By the way, my name is Teddy.\" Well, all she had was a flat tire (爆胎), but for an old lady, that was bad enough.",
+      "Teddy lay down and moved under the car changing the tire. But he had to get d___73___ and his hands hurt. As he was tightening up the lug nuts, she rolled down the window and began to talk to him. She told him that she was from St. Louis and was only just passing though. She was grateful for his help.",
+      "Teddy just smiled as he finished the work. The lady asked how much she owed him. Any amount would be all right with her. She already i___74___ all the awful things that might happen if he had not stopped. Teddy never thought about being paid. This was not a j___75___ to him. This was helping someone in need, and God knows there were plenty who had given him a hand in the past.",
+      "He had lived his whole life that way, and it never occurred to him to act any other way. He told her that if she really wanted to pay him back, the next time she saw someone who needed help, she could do him or her a favour w___76___ hesitation. Teddy added, \"And think of me.\" He waited until she started her car and drove off.",
+      "It had been a cold day and he had felt d___77___ just now. Now he felt good as he went home, disappearing into the twilight (暮色). D. Read the passage below and answer the following questions(根据文章内容回答下列问题) Maria was a teacher in my high school. I still remember the first time I saw her. It was in the ninth grade.",
+      "We met on a stage (舞台) design team for a play and she was one of the directors. She had an unpleasant voice and a direct way of speaking. For some reason, she then made a deep impression on me. Maria would ask me for my opinion. She wanted to know how I thought we should deal with things. At first, I had no idea how to answer because I knew nothing about stage design.",
+      "But I slowly began to respond to her questions. It was cause and effect: She believed me and encourage me, So I began to form opinions and completed things perfectly. Most importantly, I began to believe in myself. Maria's motto (格言) was, \"Try it. We can always paint over it later!\" I began to take risks (冒险).",
+      "I had been so afraid of failing but suddenly there was no failing -- only things to be improved. With her help, I learned to dip my brush into the paint and create something with great confidence. The shy, quiet starter achieved success that year. I was selected into the program as \"Student Art Assistant\" because of the time and effort I'd put in.",
+      "It was that year that I realized I wanted to spend the rest of my life doing stage design. Being on that stage design team with the Maria changed me completely. I not only _____________________, but also _____________________. She taught me not to care what people think I should do. She taught me to take chances and not be afraid. Maria was such a great teacher."
+    ]
   },
   {
     "_id": "sh-em1-2022-杨浦-reading-b",
@@ -13273,7 +14515,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": ") (14分) Bruce Lee (1940-1973), the greatest action movie star of all time, should be given a lifetime achievement award for his work in the movies. U___71___, Bruce died tragically in 1973, so he wouldn’t be able to receive the award himself, but his f___72___ all over the world would love to see him honored. Why was Bruce Lee so great? The fight scenes in his films are a___73___ and Bruce was always in top physical condition. His body was almost perfect. He was also a great actor. He s___74___ acting when he was just six years old. He was very comfortable and n___75___ in front of the camera. His face was very expressive. Therefore, he was able to communicate a lot of feeling with a simple look. Bruce Lee was a talented actor, a brilliant fighter, and an almost perfect example of physical fitness. His films brought traditional Hong Kong kung fu movies to a new l___76___ of popularity. His films also i___771___ kung fu to millions of people in the West. He should receive an award that recognizes his great contribution (贡献) to the art of film making. D. Answer the questions (根据短文内容回答问题) (12分) Real Superheroes Photographer Josh Rossi has used his cameras to show the world’s real superheroes—young children who are battling severe disease and disabilities. The heartwarming project began in 2016, when Rossi realized his then three-year-old daughter’s dream of becoming Wonder Woman (神奇女侠). The photographer says, \"I got so many emails and calls from families who had children with diseases. They kept telling me that their kids were the REAL superheroes.\" Since it was Wonder Woman that created the idea. Rossi decided to focus on the superheroes that appear with her in the movie Justice League. To make the photos more meaningful, he matched each child with a superhero. They had the most in common. Teagan Pettit was born with only half a heart. The nine-year-old loves and respects Superman. The photographer says, \"Superman and Teagan both have hearts of steel!\" The second member was Kayden Kinckle. The five-year-old uses prosthetics (假肢) to walk. To Rossi, Kayden’s perfect superhero was Cyborg, who was a healthy boy before a terrible accident, forcing his father to keep him alive with robotic parts. Simon Fullmer, who suffers from a rare type of nerve cancer (神经癌), is fond of Batman. According to his mom, the five-year-old never complains. Since the brave boy is dealing with his \"enemy\" like a true superhero, Rossi, thought he was the perfect Batman. 78. According to the passage, who is a real superhero? 79. What did Rossi get from families with children who are fighting against diseases? 80. What’s Teagan Pettit’s trouble? 81. Why did Rossi think Kayden Kinckle was similar to Cyborg? 82. What does the underlined word \"enemy\" refer to? 83. Why does Rossi think Simon Fullmer is brave? Why is bravery (勇气) so important in our real life?",
+    "passage": "Bruce Lee (1940-1973), the greatest action movie star of all time, should be given a lifetime achievement award for his work in the movies. U___71___, Bruce died tragically in 1973, so he wouldn’t be able to receive the award himself, but his f___72___ all over the world would love to see him honored. Why was Bruce Lee so great?\n\nThe fight scenes in his films are a___73___ and Bruce was always in top physical condition. His body was almost perfect. He was also a great actor. He s___74___ acting when he was just six years old. He was very comfortable and n___75___ in front of the camera. His face was very expressive. Therefore, he was able to communicate a lot of feeling with a simple look.\n\nBruce Lee was a talented actor, a brilliant fighter, and an almost perfect example of physical fitness. His films brought traditional Hong Kong kung fu movies to a new l___76___ of popularity. His films also i___771___ kung fu to millions of people in the West. He should receive an award that recognizes his great contribution (贡献) to the art of film making.",
     "questions": [
       {
         "number": 71,
@@ -13317,7 +14559,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Bruce Lee (1940-1973), the greatest action movie star of all time, should be given a lifetime achievement award for his work in the movies. U___71___, Bruce died tragically in 1973, so he wouldn’t be able to receive the award himself, but his f___72___ all over the world would love to see him honored. Why was Bruce Lee so great?",
+      "The fight scenes in his films are a___73___ and Bruce was always in top physical condition. His body was almost perfect. He was also a great actor. He s___74___ acting when he was just six years old. He was very comfortable and n___75___ in front of the camera. His face was very expressive. Therefore, he was able to communicate a lot of feeling with a simple look.",
+      "Bruce Lee was a talented actor, a brilliant fighter, and an almost perfect example of physical fitness. His films brought traditional Hong Kong kung fu movies to a new l___76___ of popularity. His films also i___771___ kung fu to millions of people in the West. He should receive an award that recognizes his great contribution (贡献) to the art of film making."
+    ]
   },
   {
     "_id": "sh-em1-2022-金山-reading-a",
@@ -13578,7 +14830,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": "read faster and more accurately. So far, the results are mixed. However, scientists are sure that careful font design is an important s_____77_____ toward helping dyslexics meet their challenges. D. Answer the questions. Sometimes it may seem that what you are learning at school will be useless in the future. It may seem that you are wasting your life away or only learning to get into the right university. But you will be surprised to find how much of what you learnt at school is helpful to you one day. Three people were asked what they found most useful at school, and their thoughts are shared below. I hated typing at school about 20 years ago. Only secretaries typed in those days; no one had computers at home or at work. What’s more, I was no good at all. I was as bad at typing as I was at tennis! I made so many mistakes. But today I’m the fastest typist at the keyboard. I get the job done faster and more easily than my colleagues in the office. That one year of typing class has made my whole life easier. We had a class called Guidance to learn about making good decision in life. I found it pretty boring and didn’t pay much attention. One day the teacher made us guess which appliance we should buy first once we had our own homes. The answer was a fridge. Without a fridge, you cannot keep your food fresh and will waste a great deal of money with food going off. I learnt that it was true once I had my own place. The first day I bought some chicken meat. By dinner time it smelled and I couldn’t even eat it! My housemate and I started saving to buy a fridge immediately even though we were university students without much money. When I used to ask my teacher how to spell something, she often said, I don’t know. Then she would take out the dictionary and took it up. She always dared to admit that she did not know the answer. I learnt two things. You don’t have to know everything; and if you don’t know how to spell something, just get the dictionary out. Both are very useful lessons!",
+    "passage": "Sometimes it may seem that what you are learning at school will be useless in the future. It may seem that you are wasting your life away or only learning to get into the right university. But you will be surprised to find how much of what you learnt at school is helpful to you one day. Three people were asked what they found most useful at school, and their thoughts are shared below.\n\nI hated typing at school about 20 years ago. Only secretaries typed in those days; no one had computers at home or at work. What’s more, I was no good at all. I was as bad at typing as I was at tennis! I made so many mistakes. But today I’m the fastest typist at the keyboard. I get the job done faster and more easily than my colleagues in the office.\n\nThat one year of typing class has made my whole life easier. We had a class called Guidance to learn about making good decision in life. I found it pretty boring and didn’t pay much attention. One day the teacher made us guess which appliance we should buy first once we had our own homes. The answer was a fridge.\n\nWithout a fridge, you cannot keep your food fresh and will waste a great deal of money with food going off. I learnt that it was true once I had my own place. The first day I bought some chicken meat. By dinner time it smelled and I couldn’t even eat it! My housemate and I started saving to buy a fridge immediately even though we were university students without much money.\n\nWhen I used to ask my teacher how to spell something, she often said, I don’t know. Then she would take out the dictionary and took it up. She always dared to admit that she did not know the answer. I learnt two things. You don’t have to know everything; and if you don’t know how to spell something, just get the dictionary out. Both are very useful lessons!",
     "questions": [
       {
         "number": 78,
@@ -13622,7 +14874,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "Answer the questions.",
+    "sectionHeading": "D",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Sometimes it may seem that what you are learning at school will be useless in the future. It may seem that you are wasting your life away or only learning to get into the right university. But you will be surprised to find how much of what you learnt at school is helpful to you one day. Three people were asked what they found most useful at school, and their thoughts are shared below.",
+      "I hated typing at school about 20 years ago. Only secretaries typed in those days; no one had computers at home or at work. What’s more, I was no good at all. I was as bad at typing as I was at tennis! I made so many mistakes. But today I’m the fastest typist at the keyboard. I get the job done faster and more easily than my colleagues in the office.",
+      "That one year of typing class has made my whole life easier. We had a class called Guidance to learn about making good decision in life. I found it pretty boring and didn’t pay much attention. One day the teacher made us guess which appliance we should buy first once we had our own homes. The answer was a fridge.",
+      "Without a fridge, you cannot keep your food fresh and will waste a great deal of money with food going off. I learnt that it was true once I had my own place. The first day I bought some chicken meat. By dinner time it smelled and I couldn’t even eat it! My housemate and I started saving to buy a fridge immediately even though we were university students without much money.",
+      "When I used to ask my teacher how to spell something, she often said, I don’t know. Then she would take out the dictionary and took it up. She always dared to admit that she did not know the answer. I learnt two things. You don’t have to know everything; and if you don’t know how to spell something, just get the dictionary out. Both are very useful lessons!"
+    ]
   },
   {
     "_id": "sh-em1-2022-闵行-reading-a",
@@ -13818,7 +15082,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": ") (14分) Good things often come in small packages. This is e___71___ true in the case of miniature art (微型艺术), where, upon close observation, great things are often revealed. The National Gallery of London describes \"an artist who paints in great details on a very small scale\" as a miniaturist. The pieces that miniaturists create are called miniature art. E___72___ examples can be dated back to centuries ago in many places around the world. In India, tiny drawings were painted on to palm leaves 7.62 centimeters wide. A 12.5-millimeter-tall carving of a bird, d___73___ in Lingjing, China, has been called China's oldest work of art. The carving, about 13,500 years old, might be one of the world's oldest pieces of miniature art. Over the years, miniaturists have used many different m___74___, from paper to plant seeds, to create tiny paintings, sculptures and engravings of people, animals and scenery. Two things are required of each artist: plenty of time and being p___75___ to create miniature art. The pieces are so tiny that they need to be worked on carefully and slowly. Though small, the pieces must be perfectly formed. Someone o___76___ said, \"A miniature must always be designed for close observation. It is meant to be held in the hand, watched closely and even to be looked at with a magnifying glass.\" Tiny miniature paintings must be accomplished with such fine strokes (笔划) that when the piece is magnified, its amazing detail is enhanced. The same is true for miniature sculptures and all other forms of miniature art. Miniature art began to l___77___ its attraction in the 19th century when photography appeared. Over the last 30 years, though, miniatures have been made popular again. It is unlikely that miniature art will ever go away as long as people remain fascinated by tiny masterpieces.",
+    "passage": "Good things often come in small packages. This is e___71___ true in the case of miniature art (微型艺术), where, upon close observation, great things are often revealed. The National Gallery of London describes \"an artist who paints in great details on a very small scale\" as a miniaturist. The pieces that miniaturists create are called miniature art.\n\nE___72___ examples can be dated back to centuries ago in many places around the world. In India, tiny drawings were painted on to palm leaves 7.62 centimeters wide. A 12.5-millimeter-tall carving of a bird, d___73___ in Lingjing, China, has been called China's oldest work of art. The carving, about 13,500 years old, might be one of the world's oldest pieces of miniature art.\n\nOver the years, miniaturists have used many different m___74___, from paper to plant seeds, to create tiny paintings, sculptures and engravings of people, animals and scenery. Two things are required of each artist: plenty of time and being p___75___ to create miniature art. The pieces are so tiny that they need to be worked on carefully and slowly.\n\nThough small, the pieces must be perfectly formed. Someone o___76___ said, \"A miniature must always be designed for close observation. It is meant to be held in the hand, watched closely and even to be looked at with a magnifying glass.\" Tiny miniature paintings must be accomplished with such fine strokes (笔划) that when the piece is magnified, its amazing detail is enhanced.\n\nThe same is true for miniature sculptures and all other forms of miniature art. Miniature art began to l___77___ its attraction in the 19th century when photography appeared. Over the last 30 years, though, miniatures have been made popular again. It is unlikely that miniature art will ever go away as long as people remain fascinated by tiny masterpieces.",
     "questions": [
       {
         "number": 71,
@@ -13868,7 +15132,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Good things often come in small packages. This is e___71___ true in the case of miniature art (微型艺术), where, upon close observation, great things are often revealed. The National Gallery of London describes \"an artist who paints in great details on a very small scale\" as a miniaturist. The pieces that miniaturists create are called miniature art.",
+      "E___72___ examples can be dated back to centuries ago in many places around the world. In India, tiny drawings were painted on to palm leaves 7.62 centimeters wide. A 12.5-millimeter-tall carving of a bird, d___73___ in Lingjing, China, has been called China's oldest work of art. The carving, about 13,500 years old, might be one of the world's oldest pieces of miniature art.",
+      "Over the years, miniaturists have used many different m___74___, from paper to plant seeds, to create tiny paintings, sculptures and engravings of people, animals and scenery. Two things are required of each artist: plenty of time and being p___75___ to create miniature art. The pieces are so tiny that they need to be worked on carefully and slowly.",
+      "Though small, the pieces must be perfectly formed. Someone o___76___ said, \"A miniature must always be designed for close observation. It is meant to be held in the hand, watched closely and even to be looked at with a magnifying glass.\" Tiny miniature paintings must be accomplished with such fine strokes (笔划) that when the piece is magnified, its amazing detail is enhanced.",
+      "The same is true for miniature sculptures and all other forms of miniature art. Miniature art began to l___77___ its attraction in the 19th century when photography appeared. Over the last 30 years, though, miniatures have been made popular again. It is unlikely that miniature art will ever go away as long as people remain fascinated by tiny masterpieces."
+    ]
   },
   {
     "_id": "sh-em1-2022-闵行-reading-d",
@@ -14223,7 +15499,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷精校版 ）.docx",
-    "passage": "Read the passage and fill in the blanks with proper words (在短文的空格内填入适当的词, 是其内容通顺, 每空格限填一次, 首字母已给) If you had to describe yourself to someone else, what would you say? It can be difficult to see yourself from the o___71___, but being aware of who you are can help you understand emotions and strengthen friendships. Self-awareness means tuning into your thoughts, feelings and behaviour, and understanding how they can a___72___ other people. If you're self-aware, you may know that you love playing an instrument because you're good at it, and music makes you happy. Dr Tasha Eurich describes self-awareness as \"an ability\" to see ourselves c___73___, to understand who we are, how others see us, and how we fit into the world. Knowing what you like and dislike, what you're good at and what you find difficult a___74___ you to make better decisions about friendships, schoolwork and even which films to watch. You learn to trust your own feelings more, which builds c___75___. The World Health Organisation says self-awareness is one of 10 important life s___76___ that help young people lead happier, healthier lives. Being self-aware doesn't mean only thinking of yourself. By understanding your own feelings, you have more respect for other people too. A good way to learn about anything is to ask questions. Dr. Eurich s___77___ asking yourself questions that start with \"What\" instead of \"Why\". So if you don't understand why you keep arguing with a friend, ask yourself what you disagree instead of why you're arguing. D. Read the passage below and answer the following questions (根据文章内容回答下列问题) I ran up the stairs two at a time, holding the book from the library, the one with my essay printed out in it. I couldn't wait to tell my parents. Before I could open my mouth, my mother looked at my book and frowned (皱眉). \"Another new book, Mia?\" she said. \"You should be spending more time doing maths. Something you can actually get good at.\" Then she became homesick. \"You know when I was your age, I used to attend my brother's maths lessons ...\" Yesh, yeah, yeah. I didn't have time for this. \"I'm not you, Mom,\" I yelled. The words came shooting out of my mouth, and my mom was shocked. \"I'm sorry. I just mean ... Maybe I like something else.\" \"Like what?\" she asked. She put her broom down and crossed her arms. I bit my lip. \"Like writing?\" \"English writing?\" she asked, \"like it was the most useless thing in the world, like I'd said basket weaving?\" I nodded. \"You gotta be native at English. And I'm sorry, but we are just not. You can, however, be native at maths.\" \"I don't want to be native at maths ...\" I said. My mm frowned. \"You're not getting it, are you?\" she said. She sat down on the bed and looked at me in the eye. \"You just can't be as good as the white kids in their language, honey. It's their language.\" My gaze sank to the floor. As I dragged myself out of the room, my mother called after me, \"Someday you'll think me!\" \"You are ________. I believe that if ________________________________.\" I said to myself firmly.",
+    "passage": "If you had to describe yourself to someone else, what would you say? It can be difficult to see yourself from the o___71___, but being aware of who you are can help you understand emotions and strengthen friendships. Self-awareness means tuning into your thoughts, feelings and behaviour, and understanding how they can a___72___ other people.\n\nIf you're self-aware, you may know that you love playing an instrument because you're good at it, and music makes you happy. Dr Tasha Eurich describes self-awareness as \"an ability\" to see ourselves c___73___, to understand who we are, how others see us, and how we fit into the world. Knowing what you like and dislike, what you're good at and what you find difficult a___74___ you to make better decisions about friendships, schoolwork and even which films to watch.\n\nYou learn to trust your own feelings more, which builds c___75___. The World Health Organisation says self-awareness is one of 10 important life s___76___ that help young people lead happier, healthier lives. Being self-aware doesn't mean only thinking of yourself. By understanding your own feelings, you have more respect for other people too.\n\nA good way to learn about anything is to ask questions. Dr. Eurich s___77___ asking yourself questions that start with \"What\" instead of \"Why\". So if you don't understand why you keep arguing with a friend, ask yourself what you disagree instead of why you're arguing. D. Read the passage below and answer the following questions (根据文章内容回答下列问题) I ran up the stairs two at a time, holding the book from the library, the one with my essay printed out in it.\n\nI couldn't wait to tell my parents. Before I could open my mouth, my mother looked at my book and frowned (皱眉). \"Another new book, Mia?\" she said. \"You should be spending more time doing maths. Something you can actually get good at.\" Then she became homesick. \"You know when I was your age, I used to attend my brother's maths lessons .\n\n..\" Yesh, yeah, yeah. I didn't have time for this. \"I'm not you, Mom,\" I yelled. The words came shooting out of my mouth, and my mom was shocked. \"I'm sorry. I just mean ... Maybe I like something else.\" \"Like what?\" she asked. She put her broom down and crossed her arms. I bit my lip. \"Like writing?\n\n\" \"English writing?\" she asked, \"like it was the most useless thing in the world, like I'd said basket weaving?\" I nodded. \"You gotta be native at English. And I'm sorry, but we are just not. You can, however, be native at maths.\" \"I don't want to be native at maths ...\" I said. My mm frowned. \"You're not getting it, are you?\n\n\" she said. She sat down on the bed and looked at me in the eye. \"You just can't be as good as the white kids in their language, honey. It's their language.\" My gaze sank to the floor. As I dragged myself out of the room, my mother called after me, \"Someday you'll think me!\" \"You are ________. I believe that if ________________________________. \" I said to myself firmly.",
     "questions": [
       {
         "number": 78,
@@ -14267,7 +15543,22 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "Read the passage and fill in the blanks with proper words (在短文的空格内填入适当的词, 是其内容通顺, 每空格限填一次, 首字母已给",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "If you had to describe yourself to someone else, what would you say? It can be difficult to see yourself from the o___71___, but being aware of who you are can help you understand emotions and strengthen friendships. Self-awareness means tuning into your thoughts, feelings and behaviour, and understanding how they can a___72___ other people.",
+      "If you're self-aware, you may know that you love playing an instrument because you're good at it, and music makes you happy. Dr Tasha Eurich describes self-awareness as \"an ability\" to see ourselves c___73___, to understand who we are, how others see us, and how we fit into the world. Knowing what you like and dislike, what you're good at and what you find difficult a___74___ you to make better decisions about friendships, schoolwork and even which films to watch.",
+      "You learn to trust your own feelings more, which builds c___75___. The World Health Organisation says self-awareness is one of 10 important life s___76___ that help young people lead happier, healthier lives. Being self-aware doesn't mean only thinking of yourself. By understanding your own feelings, you have more respect for other people too.",
+      "A good way to learn about anything is to ask questions. Dr. Eurich s___77___ asking yourself questions that start with \"What\" instead of \"Why\". So if you don't understand why you keep arguing with a friend, ask yourself what you disagree instead of why you're arguing. D. Read the passage below and answer the following questions (根据文章内容回答下列问题) I ran up the stairs two at a time, holding the book from the library, the one with my essay printed out in it.",
+      "I couldn't wait to tell my parents. Before I could open my mouth, my mother looked at my book and frowned (皱眉). \"Another new book, Mia?\" she said. \"You should be spending more time doing maths. Something you can actually get good at.\" Then she became homesick. \"You know when I was your age, I used to attend my brother's maths lessons .",
+      "..\" Yesh, yeah, yeah. I didn't have time for this. \"I'm not you, Mom,\" I yelled. The words came shooting out of my mouth, and my mom was shocked. \"I'm sorry. I just mean ... Maybe I like something else.\" \"Like what?\" she asked. She put her broom down and crossed her arms. I bit my lip. \"Like writing?",
+      "\" \"English writing?\" she asked, \"like it was the most useless thing in the world, like I'd said basket weaving?\" I nodded. \"You gotta be native at English. And I'm sorry, but we are just not. You can, however, be native at maths.\" \"I don't want to be native at maths ...\" I said. My mm frowned. \"You're not getting it, are you?",
+      "\" she said. She sat down on the bed and looked at me in the eye. \"You just can't be as good as the white kids in their language, honey. It's their language.\" My gaze sank to the floor. As I dragged myself out of the room, my mother called after me, \"Someday you'll think me!\" \"You are ________. I believe that if ________________________________. \" I said to myself firmly."
+    ]
   },
   {
     "_id": "sh-em1-2023-嘉定-reading-a",
@@ -14865,7 +16156,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
-    "passage": "）（14分） In Japan, travelling by train is very popular. When railways first spread, many railway stations were managed by stationmasters(火车站站长). These stationmasters needed to make sure that everything went well at their own stations. Many stations stopped employing(雇用) stationmasters a long time ago. However, in recent years, a new type of stationmaster has a____51____ in Japan: the animal stationmaster. This all started when a station in Japan decided to employ a cat named Tama as its stationmaster in order to improve business. The area around Kishi Station didn’t get any v____52____. The trains were often empty. In 2004, the station was almost shut down because there were few customers. The man who worked at Kishi Station as an unofficial stationmaster was also the owner of a grocery store(杂货店) next to the station. He took care of a street cat named Tama. In 2007, he decided to i____53____ Tama to the manager of the railway line as the stationmaster. Before that, Tama had already been a popular cat among local people. The manager noticed Tama’s popularity and made her the new stationmaster of Kishi Station. Tama’s bosses did not have to give her any money as salaries. I____54____, they gave her free food. She needed to greet customers and wear a stationmaster’s hat and a uniform. After all, a stationmaster must look s____55____ for the customers at all times. Soon, Tama attracted a lot of attention. More and more people would go all the way to the station to see Tama and take pictures with her. In a very short time, Tama not only brought business to the station, but also brought a few billion yen(日元) to the local e____56____. Tama seemed to enjoy being the centre of attention, and continued to work at the station until she died in 2015 at the age of 16. It’s a great age for a cat (about 80 in human years). Her funeral(葬礼) was attended by many of her fans, who s____57____ said goodbye to the super stationmaster for one last time.",
+    "passage": "In Japan, travelling by train is very popular. When railways first spread, many railway stations were managed by stationmasters(火车站站长). These stationmasters needed to make sure that everything went well at their own stations. Many stations stopped employing(雇用) stationmasters a long time ago. However, in recent years, a new type of stationmaster has a____51____ in Japan: the animal stationmaster.\n\nThis all started when a station in Japan decided to employ a cat named Tama as its stationmaster in order to improve business. The area around Kishi Station didn’t get any v____52____. The trains were often empty. In 2004, the station was almost shut down because there were few customers. The man who worked at Kishi Station as an unofficial stationmaster was also the owner of a grocery store(杂货店) next to the station.\n\nHe took care of a street cat named Tama. In 2007, he decided to i____53____ Tama to the manager of the railway line as the stationmaster. Before that, Tama had already been a popular cat among local people. The manager noticed Tama’s popularity and made her the new stationmaster of Kishi Station. Tama’s bosses did not have to give her any money as salaries.\n\nI____54____, they gave her free food. She needed to greet customers and wear a stationmaster’s hat and a uniform. After all, a stationmaster must look s____55____ for the customers at all times. Soon, Tama attracted a lot of attention. More and more people would go all the way to the station to see Tama and take pictures with her.\n\nIn a very short time, Tama not only brought business to the station, but also brought a few billion yen(日元) to the local e____56____. Tama seemed to enjoy being the centre of attention, and continued to work at the station until she died in 2015 at the age of 16. It’s a great age for a cat (about 80 in human years). Her funeral(葬礼) was attended by many of her fans, who s____57____ said goodbye to the super stationmaster for one last time.",
     "questions": [
       {
         "number": 71,
@@ -14915,7 +16206,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "In Japan, travelling by train is very popular. When railways first spread, many railway stations were managed by stationmasters(火车站站长). These stationmasters needed to make sure that everything went well at their own stations. Many stations stopped employing(雇用) stationmasters a long time ago. However, in recent years, a new type of stationmaster has a____51____ in Japan: the animal stationmaster.",
+      "This all started when a station in Japan decided to employ a cat named Tama as its stationmaster in order to improve business. The area around Kishi Station didn’t get any v____52____. The trains were often empty. In 2004, the station was almost shut down because there were few customers. The man who worked at Kishi Station as an unofficial stationmaster was also the owner of a grocery store(杂货店) next to the station.",
+      "He took care of a street cat named Tama. In 2007, he decided to i____53____ Tama to the manager of the railway line as the stationmaster. Before that, Tama had already been a popular cat among local people. The manager noticed Tama’s popularity and made her the new stationmaster of Kishi Station. Tama’s bosses did not have to give her any money as salaries.",
+      "I____54____, they gave her free food. She needed to greet customers and wear a stationmaster’s hat and a uniform. After all, a stationmaster must look s____55____ for the customers at all times. Soon, Tama attracted a lot of attention. More and more people would go all the way to the station to see Tama and take pictures with her.",
+      "In a very short time, Tama not only brought business to the station, but also brought a few billion yen(日元) to the local e____56____. Tama seemed to enjoy being the centre of attention, and continued to work at the station until she died in 2015 at the age of 16. It’s a great age for a cat (about 80 in human years). Her funeral(葬礼) was attended by many of her fans, who s____57____ said goodbye to the super stationmaster for one last time."
+    ]
   },
   {
     "_id": "sh-em1-2023-宝山-reading-d",
@@ -15134,6 +16437,95 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2023-徐汇-reading-a",
+    "title": "2023 上海徐汇一模阅读 A",
+    "year": 2023,
+    "city": "上海",
+    "district": "徐汇",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（解析版）.docx",
+    "passage": "（根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo.\n\nChoose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS",
+    "questions": [
+      {
+        "number": 56,
+        "prompt": "________ skydiving is new according to the guide.",
+        "options": {
+          "A": "9, 000 feet",
+          "B": "12, 000 feet",
+          "C": "15, 000 feet",
+          "D": "18, 500 feet"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 57,
+        "prompt": "The experience with Taupo Tandem Skydiving can be all the following EXCEPT ________.",
+        "options": {
+          "A": "unforgettable",
+          "B": "fun",
+          "C": "exciting",
+          "D": "boring"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 58,
+        "prompt": "Trevor and Adam are most probably ________ in the review by Camille G",
+        "options": {
+          "A": "the managers of Taupo Tandem Skydiving",
+          "B": "the trainers or coaches of Taupo Tandem Skydiving",
+          "C": "the friends trying skydiving together with Camille G",
+          "D": "the reporters from tripadvisor"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 59,
+        "prompt": "People can get free pickup from Taupo and Rotorua by ________.",
+        "options": {
+          "A": "train",
+          "B": "ferry",
+          "C": "car",
+          "D": "helicopter"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "The first part of the passage is a(an) ________ of Taupo Tandem Skydiving.",
+        "options": {
+          "A": "advertisement",
+          "B": "diary",
+          "C": "review",
+          "D": "survey"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "（根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo.",
+      "Choose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS"
+    ]
+  },
+  {
     "_id": "sh-em1-2023-徐汇-reading-b",
     "title": "2023 上海徐汇一模阅读 B",
     "year": 2023,
@@ -15247,7 +16639,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
-    "passage": "在短文的空格内填入适当的词, 使其内容通顺。每空格限填一词, 首字母已给。 Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant.\n\nHis class was at a middle school there. The conversation started with teen’s small talk-asking each other about TV shows, music and school life. But as the teens grew more comfortable, the chat turned s___68___ , such as families issues, stories of social problems. Some kids shared how hopeless they felt, for they could do n___69___ about the danger or threat caused by the climate change.\n\nAfter both groups said their goodbyes the brothers had an idea: since the conversation was designed to broaden the students’ views about life outside their h___70___, let’s keep it on. Students could continue to benefit from bridging geographical and cultural differences. They called their organization Break The Divide.\n\nThe students used social media to spread the word about their task to create eye-opening conversations. Other schools began reaching out, and Break The Divide helped them to start their own stations. They p___71___ different useful resources, such as a list of guiding questions to get the conversation started, and technical tips for video calls.\n\nDifferent stations are encouraged to connect with each other based on big topics, such as mental health and climate change. There are now over two dozen stations located across Canada as well as schools in other countries. Last year, Abhay and Sukhmeet had their first employees, enabling them to d___72___ an app that will act as a social platform to connect Break The Divide stations worldwide.\n\nThe brothers are happy to find that the organization can play a central role in how youth solve the most d___73___ problems. “I hope that we can be part of creating a world where we are all listening to each other for learning and for change, “says Abhay.",
+    "passage": "Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant.\n\nHis class was at a middle school there. The conversation started with teen’s small talk-asking each other about TV shows, music and school life. But as the teens grew more comfortable, the chat turned s___68___ , such as families issues, stories of social problems. Some kids shared how hopeless they felt, for they could do n___69___ about the danger or threat caused by the climate change.\n\nAfter both groups said their goodbyes the brothers had an idea: since the conversation was designed to broaden the students’ views about life outside their h___70___, let’s keep it on. Students could continue to benefit from bridging geographical and cultural differences. They called their organization Break The Divide.\n\nThe students used social media to spread the word about their task to create eye-opening conversations. Other schools began reaching out, and Break The Divide helped them to start their own stations. They p___71___ different useful resources, such as a list of guiding questions to get the conversation started, and technical tips for video calls.\n\nDifferent stations are encouraged to connect with each other based on big topics, such as mental health and climate change. There are now over two dozen stations located across Canada as well as schools in other countries. Last year, Abhay and Sukhmeet had their first employees, enabling them to d___72___ an app that will act as a social platform to connect Break The Divide stations worldwide.\n\nThe brothers are happy to find that the organization can play a central role in how youth solve the most d___73___ problems. “I hope that we can be part of creating a world where we are all listening to each other for learning and for change, “says Abhay.",
     "questions": [
       {
         "number": 71,
@@ -15299,12 +16691,12 @@ module.exports = [
     "difficultyLevel": 3,
     "difficultyLabel": "综合运用",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "在短文的空格内填入适当的词, 使其内容通顺。每空格限填一词, 首字母已给。",
     "sectionHeading": "",
     "articleTitle": "",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "在短文的空格内填入适当的词, 使其内容通顺。每空格限填一词, 首字母已给。 Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant.",
+      "Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant.",
       "His class was at a middle school there. The conversation started with teen’s small talk-asking each other about TV shows, music and school life. But as the teens grew more comfortable, the chat turned s___68___ , such as families issues, stories of social problems. Some kids shared how hopeless they felt, for they could do n___69___ about the danger or threat caused by the climate change.",
       "After both groups said their goodbyes the brothers had an idea: since the conversation was designed to broaden the students’ views about life outside their h___70___, let’s keep it on. Students could continue to benefit from bridging geographical and cultural differences. They called their organization Break The Divide.",
       "The students used social media to spread the word about their task to create eye-opening conversations. Other schools began reaching out, and Break The Divide helped them to start their own stations. They p___71___ different useful resources, such as a list of guiding questions to get the conversation started, and technical tips for video calls.",
@@ -15915,7 +17307,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市松江区中考一模英语试题（原卷版）.docx",
-    "passage": "在短文的空格内填入适当的词，使其内容通顺。每空格限填一词，首字母已给。 Most of us have told a lie at one time or another. Some lies are harmful while others are mostly h____51____. Some lies may be created to protect other people. But no matter what kind of lie you tell, it takes a surprising amount of brainpower. Here’s an example. Imagine you’re l____52____ for class and the teacher asks why and you decide to lie. You now have to either come up with a story on the spot or remember the story you made up as you were rushing to class. So you say, “I stopped by the library and b____53____ a book.” Your teacher asks, “The book I assigned (布置) last week?” Immediately and quickly, you must decide how to r____54____ . If you say yes, the teacher might ask to see the book. Or she might expect you to read it in class. You have to imagine these possibilities. So you might say, “No. It was a different book.” Now you have to be ready with another title in case (万一) the teacher asks which book you checked out. And you have to make sure it’s a book the school library a____55____ owns. You have lied with only two sentences, but you’ve been A. trying to make up a story; B. thinking about the various directions the conversation might take; and C. working out what you need to say to k____56____ this lie from being detected. You might not be aware that you just gave your brain a ton of extra work. Maybe it’s much better to tell the t____57____, “I was talking to some friends outside the gym and lost track of the time.”",
+    "passage": "Most of us have told a lie at one time or another. Some lies are harmful while others are mostly h____51____. Some lies may be created to protect other people. But no matter what kind of lie you tell, it takes a surprising amount of brainpower. Here’s an example. Imagine you’re l____52____ for class and the teacher asks why and you decide to lie.\n\nYou now have to either come up with a story on the spot or remember the story you made up as you were rushing to class. So you say, “I stopped by the library and b____53____ a book.” Your teacher asks, “The book I assigned (布置) last week?” Immediately and quickly, you must decide how to r____54____ .\n\nIf you say yes, the teacher might ask to see the book. Or she might expect you to read it in class. You have to imagine these possibilities. So you might say, “No. It was a different book.” Now you have to be ready with another title in case (万一) the teacher asks which book you checked out. And you have to make sure it’s a book the school library a____55____ owns.\n\nYou have lied with only two sentences, but you’ve been A. trying to make up a story; B. thinking about the various directions the conversation might take; and C. working out what you need to say to k____56____ this lie from being detected. You might not be aware that you just gave your brain a ton of extra work. Maybe it’s much better to tell the t____57____, “I was talking to some friends outside the gym and lost track of the time.”",
     "questions": [
       {
         "number": 71,
@@ -15965,7 +17357,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "在短文的空格内填入适当的词，使其内容通顺。每空格限填一词，首字母已给。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Most of us have told a lie at one time or another. Some lies are harmful while others are mostly h____51____. Some lies may be created to protect other people. But no matter what kind of lie you tell, it takes a surprising amount of brainpower. Here’s an example. Imagine you’re l____52____ for class and the teacher asks why and you decide to lie.",
+      "You now have to either come up with a story on the spot or remember the story you made up as you were rushing to class. So you say, “I stopped by the library and b____53____ a book.” Your teacher asks, “The book I assigned (布置) last week?” Immediately and quickly, you must decide how to r____54____ .",
+      "If you say yes, the teacher might ask to see the book. Or she might expect you to read it in class. You have to imagine these possibilities. So you might say, “No. It was a different book.” Now you have to be ready with another title in case (万一) the teacher asks which book you checked out. And you have to make sure it’s a book the school library a____55____ owns.",
+      "You have lied with only two sentences, but you’ve been A. trying to make up a story; B. thinking about the various directions the conversation might take; and C. working out what you need to say to k____56____ this lie from being detected. You might not be aware that you just gave your brain a ton of extra work. Maybe it’s much better to tell the t____57____, “I was talking to some friends outside the gym and lost track of the time.”"
+    ]
   },
   {
     "_id": "sh-em1-2023-松江-reading-d",
@@ -16600,7 +18003,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市金山区中考一模英语试题（原卷版）.docx",
-    "passage": "）（14分） Yuhang (余杭) in Hangzhou is known for making oil paper umbrellas for more than 230 years. In 2015, Liu Weixue gave up a well-paid job as a designer to learn from his grandfather the a___51___ of making Yuhang oil paper umbrellas. “I began to love it at a very young age, I wanted to bring it to life.” Liu said.“When it rains, someone uses the umbrella---that’s what I want to see.” There are more than 70 steps to make a Yuhang oil paper umbrella. Making bamboo ribs(伞骨) and pasting (糊) papers are two i___52___ skills among them. It takes no less than a week to make an umbrella. After learning the skills, Liu opened a studio (工作坊) and worked with local umbrella-making masters (能手). Liu i____53____ the umbrellas to win the hearts of young people. As the paper broke e____54____, he used a thicker paper. In a test, his umbrellas were opened and closed 1,000 times without breaking. He uses a l____55____ kind of bamboo to make the ribs, so the umbrellas weigh less. As young people like hand-painted pictures, he invites painters to draw patterns on the umbrella covers. When online shopping became popular, Liu opened an online shop to sell umbrellas. It now has more than 80,000 followers. S____56____, he doesn’t hurry. To ensure quality, his studio makes only 1,000 umbrellas each year. He hopes that he can enter local schools to teach students e____57____ he knows on how to make this kind of umbrellas. D. Read and answer the questions（阅读短文，根据以下内容回答问题）（12分） Last month, the Grade Nine students in Garden School had a debate(辩论) on the topic “Is it a good idea for parents to talk about the family finances(家庭财政) with their kids?”. Here are some opinions from Lisa, one of the students who thinks it is a good idea. Most parents believe it is not proper to tell their kids about how much they make and how much they spend, so most families don’t talk about money with their kids. They basically feel it is not their concern. You could easily agree. But is it really none of our business? Doesn’t our parents’ income(收入) affect us? They use the money to pay for food, clothing and shelter. If they lost their jobs and became unemployed, wouldn’t that affect us, too? I’m not going to say parents should show their kids every bill before paying it or that they should ask their kids for advice on big financial decisions, but I will say they should keep kids involved and informed. It is part of teaching them about money and life. Kids follow their parents’ every move and learn from them. Parents have to teach their kids about money because kids don’t learn it in school. As a parent, it’s necessary to teach them about saving, investing and staying away from credit(赊欠). Also, parents have to manage their own money well if they really want to set an example. So I think it’s a good idea for parents to talk about the family finances with their kids. Tell them how much your salary is. It might help them decide which career to choose. Tell them how you spend your own money and talk to them before you make big purchases such as a new car. Include them in the process so that they know how it works and are satisfied with it. You can include them more and more as they get older. Don’t make money a taboo(禁忌) issue in your home. 58. Most families talk about money with their kids, don’t they? ________________________________________________. 59. When did the Grade Nine students in Garden School have a debate? _____________________________________________________________. 60. According to Lisa, what do parents use money to do? _____________________________________________________________. 61. Why do parents have to teach their kids about money? _____________________________________________________________. 62. What does Lisa mean by saying “Is it really none of our business”? _____________________________________________________________. 63. Do you want your parents to talk about family finances with you? Why or why not? Please give at least two reasons. _____________________________________________________________.",
+    "passage": "Yuhang (余杭) in Hangzhou is known for making oil paper umbrellas for more than 230 years. In 2015, Liu Weixue gave up a well-paid job as a designer to learn from his grandfather the a___51___ of making Yuhang oil paper umbrellas. “I began to love it at a very young age, I wanted to bring it to life.” Liu said.\n\n“When it rains, someone uses the umbrella---that’s what I want to see.” There are more than 70 steps to make a Yuhang oil paper umbrella. Making bamboo ribs(伞骨) and pasting (糊) papers are two i___52___ skills among them. It takes no less than a week to make an umbrella. After learning the skills, Liu opened a studio (工作坊) and worked with local umbrella-making masters (能手).\n\nLiu i____53____ the umbrellas to win the hearts of young people. As the paper broke e____54____, he used a thicker paper. In a test, his umbrellas were opened and closed 1,000 times without breaking. He uses a l____55____ kind of bamboo to make the ribs, so the umbrellas weigh less. As young people like hand-painted pictures, he invites painters to draw patterns on the umbrella covers.\n\nWhen online shopping became popular, Liu opened an online shop to sell umbrellas. It now has more than 80,000 followers. S____56____, he doesn’t hurry. To ensure quality, his studio makes only 1,000 umbrellas each year. He hopes that he can enter local schools to teach students e____57____ he knows on how to make this kind of umbrellas.\n\nD. Read and answer the questions（阅读短文，根据以下内容回答问题）（12分） Last month, the Grade Nine students in Garden School had a debate(辩论) on the topic “Is it a good idea for parents to talk about the family finances(家庭财政) with their kids?”. Here are some opinions from Lisa, one of the students who thinks it is a good idea.\n\nMost parents believe it is not proper to tell their kids about how much they make and how much they spend, so most families don’t talk about money with their kids. They basically feel it is not their concern. You could easily agree. But is it really none of our business? Doesn’t our parents’ income(收入) affect us?\n\nThey use the money to pay for food, clothing and shelter. If they lost their jobs and became unemployed, wouldn’t that affect us, too? I’m not going to say parents should show their kids every bill before paying it or that they should ask their kids for advice on big financial decisions, but I will say they should keep kids involved and informed.\n\nIt is part of teaching them about money and life. Kids follow their parents’ every move and learn from them. Parents have to teach their kids about money because kids don’t learn it in school. As a parent, it’s necessary to teach them about saving, investing and staying away from credit(赊欠). Also, parents have to manage their own money well if they really want to set an example.\n\nSo I think it’s a good idea for parents to talk about the family finances with their kids. Tell them how much your salary is. It might help them decide which career to choose. Tell them how you spend your own money and talk to them before you make big purchases such as a new car. Include them in the process so that they know how it works and are satisfied with it.\n\nYou can include them more and more as they get older. Don’t make money a taboo(禁忌) issue in your home. 58. Most families talk about money with their kids, don’t they? ________________________________________________. 59. When did the Grade Nine students in Garden School have a debate? _____________________________________________________________.\n\n60. According to Lisa, what do parents use money to do? _____________________________________________________________. 61. Why do parents have to teach their kids about money? _____________________________________________________________. 62. What does Lisa mean by saying “Is it really none of our business”?\n\n_____________________________________________________________. 63. Do you want your parents to talk about family finances with you? Why or why not? Please give at least two reasons. _____________________________________________________________.",
     "questions": [
       {
         "number": 71,
@@ -16650,7 +18053,26 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Yuhang (余杭) in Hangzhou is known for making oil paper umbrellas for more than 230 years. In 2015, Liu Weixue gave up a well-paid job as a designer to learn from his grandfather the a___51___ of making Yuhang oil paper umbrellas. “I began to love it at a very young age, I wanted to bring it to life.” Liu said.",
+      "“When it rains, someone uses the umbrella---that’s what I want to see.” There are more than 70 steps to make a Yuhang oil paper umbrella. Making bamboo ribs(伞骨) and pasting (糊) papers are two i___52___ skills among them. It takes no less than a week to make an umbrella. After learning the skills, Liu opened a studio (工作坊) and worked with local umbrella-making masters (能手).",
+      "Liu i____53____ the umbrellas to win the hearts of young people. As the paper broke e____54____, he used a thicker paper. In a test, his umbrellas were opened and closed 1,000 times without breaking. He uses a l____55____ kind of bamboo to make the ribs, so the umbrellas weigh less. As young people like hand-painted pictures, he invites painters to draw patterns on the umbrella covers.",
+      "When online shopping became popular, Liu opened an online shop to sell umbrellas. It now has more than 80,000 followers. S____56____, he doesn’t hurry. To ensure quality, his studio makes only 1,000 umbrellas each year. He hopes that he can enter local schools to teach students e____57____ he knows on how to make this kind of umbrellas.",
+      "D. Read and answer the questions（阅读短文，根据以下内容回答问题）（12分） Last month, the Grade Nine students in Garden School had a debate(辩论) on the topic “Is it a good idea for parents to talk about the family finances(家庭财政) with their kids?”. Here are some opinions from Lisa, one of the students who thinks it is a good idea.",
+      "Most parents believe it is not proper to tell their kids about how much they make and how much they spend, so most families don’t talk about money with their kids. They basically feel it is not their concern. You could easily agree. But is it really none of our business? Doesn’t our parents’ income(收入) affect us?",
+      "They use the money to pay for food, clothing and shelter. If they lost their jobs and became unemployed, wouldn’t that affect us, too? I’m not going to say parents should show their kids every bill before paying it or that they should ask their kids for advice on big financial decisions, but I will say they should keep kids involved and informed.",
+      "It is part of teaching them about money and life. Kids follow their parents’ every move and learn from them. Parents have to teach their kids about money because kids don’t learn it in school. As a parent, it’s necessary to teach them about saving, investing and staying away from credit(赊欠). Also, parents have to manage their own money well if they really want to set an example.",
+      "So I think it’s a good idea for parents to talk about the family finances with their kids. Tell them how much your salary is. It might help them decide which career to choose. Tell them how you spend your own money and talk to them before you make big purchases such as a new car. Include them in the process so that they know how it works and are satisfied with it.",
+      "You can include them more and more as they get older. Don’t make money a taboo(禁忌) issue in your home. 58. Most families talk about money with their kids, don’t they? ________________________________________________. 59. When did the Grade Nine students in Garden School have a debate? _____________________________________________________________.",
+      "60. According to Lisa, what do parents use money to do? _____________________________________________________________. 61. Why do parents have to teach their kids about money? _____________________________________________________________. 62. What does Lisa mean by saying “Is it really none of our business”?",
+      "_____________________________________________________________. 63. Do you want your parents to talk about family finances with you? Why or why not? Please give at least two reasons. _____________________________________________________________."
+    ]
   },
   {
     "_id": "sh-em1-2023-长宁-reading-a",
@@ -17533,6 +18955,110 @@ module.exports = [
     ]
   },
   {
+    "_id": "sh-em1-2024-嘉定-reading-a",
+    "title": "2024 上海嘉定一模阅读 A",
+    "year": 2024,
+    "city": "上海",
+    "district": "嘉定",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
+    "passage": "(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer.\n\nHe liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer.\n\nYou also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers.\n\nAlso, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me?\n\nAdvice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "What kind of passage is it?",
+        "options": {
+          "A": "An interview.",
+          "B": "A story.",
+          "C": "A quiz.",
+          "D": "An advertisement."
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "Joel Sartore used to _____________________.",
+        "options": {
+          "A": "teach in a school",
+          "B": "work as a scientist",
+          "C": "work for a newspaper",
+          "D": "work in a forest"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "Which of the following can be Question 2?",
+        "options": {
+          "A": "Why do you want to work for National Geographic?",
+          "B": "What do National Geographic photographers like to do?",
+          "C": "What kind of photos do you give to National Geographic?",
+          "D": "What kind of photographer is National Geographic looking for?"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "How many reasons did Joel Sartore mention in his answer to Question 3?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "4"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "The underlined sentence in the last paragraph is closest in meaning to ______________.",
+        "options": {
+          "A": "Take as many photos as possible.",
+          "B": "There is beauty everywhere.",
+          "C": "It's easy to be a good photographer.",
+          "D": "Photographers should travel everywhere."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "Who is most likely to be employed by National Geographic?",
+        "options": {
+          "A": "Hanson, a photographer who has worked for many magazines.",
+          "B": "Bowie, a photographer who learnt to take photos at an early age.",
+          "C": "Marina, a photographer who is good at science and diving.",
+          "D": "Jason, a photographer who keeps developing skills and ideas."
+        },
+        "answer": "C",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer.",
+      "He liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer.",
+      "You also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers.",
+      "Also, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me?",
+      "Advice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere."
+    ]
+  },
+  {
     "_id": "sh-em1-2024-嘉定-reading-b",
     "title": "2024 上海嘉定一模阅读 B",
     "year": 2024,
@@ -18056,6 +19582,98 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2024-浦东-reading-a",
+    "title": "2024 上海浦东一模阅读 A",
+    "year": 2024,
+    "city": "上海",
+    "district": "浦东",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（解析版）.docx",
+    "passage": "Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities.\n\nAt night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip.\n\nPack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents.\n\nYou should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains.\n\nThe ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals.",
+    "questions": [
+      {
+        "number": 56,
+        "prompt": "According to the passage, which item is essential for camping?",
+        "options": {
+          "A": "A skirt.",
+          "B": "A blanket.",
+          "C": "A hat.",
+          "D": "A rope."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 57,
+        "prompt": "If the camper faces a strong wind, which kind of tent might be the best choice?",
+        "options": {
+          "A": "Lean-to tents.",
+          "B": "Pup tents.",
+          "C": "Alpine tents.",
+          "D": "Dome tents."
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 58,
+        "prompt": "The underlined word “level” probably means “________”.",
+        "options": {
+          "A": "rough",
+          "B": "steep",
+          "C": "high",
+          "D": "flat"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 59,
+        "prompt": "Which of the following is the best to be filled in the blank?",
+        "options": {
+          "A": "Green camping",
+          "B": "Park rules",
+          "C": "Plant protectors",
+          "D": "Animal lovers"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "The main purpose of this passage is to ________.",
+        "options": {
+          "A": "call on more people to take up camping",
+          "B": "introduce the advantages and disadvantages of camping",
+          "C": "offer some suggestions on how to prepare for camping",
+          "D": "remind people to follow the rules of camping"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities.",
+      "At night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip.",
+      "Pack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents.",
+      "You should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains.",
+      "The ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals."
+    ]
+  },
+  {
     "_id": "sh-em1-2024-浦东-reading-b",
     "title": "2024 上海浦东一模阅读 B",
     "year": 2024,
@@ -18065,7 +19683,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
-    "passage": "选择最恰当的选项完成短文。 Company Creates First 3D-Printed Fish Do you enjoy seafood? Many of us do, but overfishing is a problem. There are many ways to respond to this. One is to only eat seafood that is caught through scientific fishing methods. Another is not to eat fish at all. However, a new ____61____ is 3D-printed fish, which may offer a new way to solve the problem and perhaps be healthier to eat. It sounds like ____62____, but it’s happening now. “The product tastes, and melts in your mouth exactly like fish should,” says Mihir Pershad, the CEO of Umami Meats. Umami Meats, a Singapore company, cultivates stem cells (干细胞) taken from live fish. Stem cells are grown in labs for 2 weeks and ____63____ muscle and fat samples (样本) after another week. The second company, Steakholder Foods, uses the muscle and fat samples in high-tech 3D printers. They are able to ____64____ the shape and size of the piece of “fish” first, and then mix muscles and fat together. This makes the final product nearly the same as real fish. The ability to create 3D-printed fish is an incredible technological achievement. Umami Meats focuses on helping protect some endangered fish like tuna, reducing the need for overfishing. 3D-printed fish is ____65____ of harmful chemicals that are common in a lot of seafood. It can also be produced quite cheaply compared to live fish. However, a lot of research on the ____66____ of eating 3D-printed food needs to be done. This is why restaurants aren’t allowed to serve these products now. The earliest we will see them is likely some time in 2024. 61.A. example B. choice C. decision D. message",
+    "passage": "Do you enjoy seafood? Many of us do, but overfishing is a problem. There are many ways to respond to this. One is to only eat seafood that is caught through scientific fishing methods. Another is not to eat fish at all. However, a new ____61____ is 3D-printed fish, which may offer a new way to solve the problem and perhaps be healthier to eat.\n\nIt sounds like ____62____, but it’s happening now. “The product tastes, and melts in your mouth exactly like fish should,” says Mihir Pershad, the CEO of Umami Meats. Umami Meats, a Singapore company, cultivates stem cells (干细胞) taken from live fish. Stem cells are grown in labs for 2 weeks and ____63____ muscle and fat samples (样本) after another week.\n\nThe second company, Steakholder Foods, uses the muscle and fat samples in high-tech 3D printers. They are able to ____64____ the shape and size of the piece of “fish” first, and then mix muscles and fat together. This makes the final product nearly the same as real fish. The ability to create 3D-printed fish is an incredible technological achievement.\n\nUmami Meats focuses on helping protect some endangered fish like tuna, reducing the need for overfishing. 3D-printed fish is ____65____ of harmful chemicals that are common in a lot of seafood. It can also be produced quite cheaply compared to live fish. However, a lot of research on the ____66____ of eating 3D-printed food needs to be done.\n\nThis is why restaurants aren’t allowed to serve these products now. The earliest we will see them is likely some time in 2024. 61.A. example B. choice C. decision D. message",
     "questions": [
       {
         "number": 65,
@@ -18133,7 +19751,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "选择最恰当的选项完成短文。",
+    "sectionHeading": "",
+    "articleTitle": "Company Creates First 3D-Printed Fish",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Do you enjoy seafood? Many of us do, but overfishing is a problem. There are many ways to respond to this. One is to only eat seafood that is caught through scientific fishing methods. Another is not to eat fish at all. However, a new ____61____ is 3D-printed fish, which may offer a new way to solve the problem and perhaps be healthier to eat.",
+      "It sounds like ____62____, but it’s happening now. “The product tastes, and melts in your mouth exactly like fish should,” says Mihir Pershad, the CEO of Umami Meats. Umami Meats, a Singapore company, cultivates stem cells (干细胞) taken from live fish. Stem cells are grown in labs for 2 weeks and ____63____ muscle and fat samples (样本) after another week.",
+      "The second company, Steakholder Foods, uses the muscle and fat samples in high-tech 3D printers. They are able to ____64____ the shape and size of the piece of “fish” first, and then mix muscles and fat together. This makes the final product nearly the same as real fish. The ability to create 3D-printed fish is an incredible technological achievement.",
+      "Umami Meats focuses on helping protect some endangered fish like tuna, reducing the need for overfishing. 3D-printed fish is ____65____ of harmful chemicals that are common in a lot of seafood. It can also be produced quite cheaply compared to live fish. However, a lot of research on the ____66____ of eating 3D-printed food needs to be done.",
+      "This is why restaurants aren’t allowed to serve these products now. The earliest we will see them is likely some time in 2024. 61.A. example B. choice C. decision D. message"
+    ]
   },
   {
     "_id": "sh-em1-2024-浦东-reading-c",
@@ -19480,7 +21110,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
-    "passage": ")(14分) Name: Dame Jane Morris Goodall Born: 3 April 1934 Known for: Being the first person to study chimpanzees (黑猩猩) in the wild Important discoveries: Found that chimpanzees have emotions, use tools and eat meat. (N: National Geographic Kids Magazine J: Jane Goodall) N: Hi Jane, when did you first know you wanted to work with animals? J: I was ten when I decided I wanted to go to Africa and live with wild animals and write books about them. That’s about 70 years ago now, and at that time then girls in England didn’t have those opportunities (机会). So everybody laughed at me and said, “Jane, d___51___ about something you can achieve.” But my mother said, “If you really want something, you’re going to have to work hard and never give up!” N: Great a___52___! What’ s been unusual about the work you’ve done? J: I studied animals in a different way. While I was in Tanzania in the 1960s, other scientists told me I’d done my whole study of chimpanzees w___53___. They explained that I shouldn’t have given the chimpanzees names and that they should have been numbered. I was told I couldn’t talk about their personalities, minds or emotions because they thought only humans had those things. But luckily, I’d learned from my dog as a child that what they said was not t___54___ at all. N: It sounds like having a childhood pet really helped you in your studies! What are you most p___55___ of? J: Helping people to understand that humans are part of the animal kingdom, not separate from it. When I started out, nobody else was studying chimpanzees in the wild, so I was able to show how their behaviour is like o___56___-kissing, hugging, holding hands, patting one another, etc. N: What t___57___ would you give to NG Kids readers who want to have a wild career like yours? J: You’ve got to really, really want it! You could go to university and go straight into research, but there are also lots of chances for volunteering or for working at zoos. Keep your ears open for opportunities. N: Thanks for the chat, Jane!",
+    "passage": "Name: Dame Jane Morris Goodall Born: 3 April 1934 Known for: Being the first person to study chimpanzees (黑猩猩) in the wild Important discoveries: Found that chimpanzees have emotions, use tools and eat meat. (N: National Geographic Kids Magazine J: Jane Goodall) N: Hi Jane, when did you first know you wanted to work with animals? J: I was ten when I decided I wanted to go to Africa and live with wild animals and write books about them.\n\nThat’s about 70 years ago now, and at that time then girls in England didn’t have those opportunities (机会). So everybody laughed at me and said, “Jane, d___51___ about something you can achieve.” But my mother said, “If you really want something, you’re going to have to work hard and never give up!” N: Great a___52___!\n\nWhat’ s been unusual about the work you’ve done? J: I studied animals in a different way. While I was in Tanzania in the 1960s, other scientists told me I’d done my whole study of chimpanzees w___53___. They explained that I shouldn’t have given the chimpanzees names and that they should have been numbered.\n\nI was told I couldn’t talk about their personalities, minds or emotions because they thought only humans had those things. But luckily, I’d learned from my dog as a child that what they said was not t___54___ at all. N: It sounds like having a childhood pet really helped you in your studies! What are you most p___55___ of?\n\nJ: Helping people to understand that humans are part of the animal kingdom, not separate from it. When I started out, nobody else was studying chimpanzees in the wild, so I was able to show how their behaviour is like o___56___-kissing, hugging, holding hands, patting one another, etc. N: What t___57___ would you give to NG Kids readers who want to have a wild career like yours?\n\nJ: You’ve got to really, really want it! You could go to university and go straight into research, but there are also lots of chances for volunteering or for working at zoos. Keep your ears open for opportunities. N: Thanks for the chat, Jane!",
     "questions": [
       {
         "number": 71,
@@ -19530,7 +21160,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Name: Dame Jane Morris Goodall Born: 3 April 1934 Known for: Being the first person to study chimpanzees (黑猩猩) in the wild Important discoveries: Found that chimpanzees have emotions, use tools and eat meat. (N: National Geographic Kids Magazine J: Jane Goodall) N: Hi Jane, when did you first know you wanted to work with animals? J: I was ten when I decided I wanted to go to Africa and live with wild animals and write books about them.",
+      "That’s about 70 years ago now, and at that time then girls in England didn’t have those opportunities (机会). So everybody laughed at me and said, “Jane, d___51___ about something you can achieve.” But my mother said, “If you really want something, you’re going to have to work hard and never give up!” N: Great a___52___!",
+      "What’ s been unusual about the work you’ve done? J: I studied animals in a different way. While I was in Tanzania in the 1960s, other scientists told me I’d done my whole study of chimpanzees w___53___. They explained that I shouldn’t have given the chimpanzees names and that they should have been numbered.",
+      "I was told I couldn’t talk about their personalities, minds or emotions because they thought only humans had those things. But luckily, I’d learned from my dog as a child that what they said was not t___54___ at all. N: It sounds like having a childhood pet really helped you in your studies! What are you most p___55___ of?",
+      "J: Helping people to understand that humans are part of the animal kingdom, not separate from it. When I started out, nobody else was studying chimpanzees in the wild, so I was able to show how their behaviour is like o___56___-kissing, hugging, holding hands, patting one another, etc. N: What t___57___ would you give to NG Kids readers who want to have a wild career like yours?",
+      "J: You’ve got to really, really want it! You could go to university and go straight into research, but there are also lots of chances for volunteering or for working at zoos. Keep your ears open for opportunities. N: Thanks for the chat, Jane!"
+    ]
   },
   {
     "_id": "sh-em1-2024-青浦-reading-d",
@@ -20380,7 +22023,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市奉贤区九年级上学期一模英语试卷（原卷版）.docx",
-    "passage": "）（14分） Stand up and join in When most kids go to the beach, they’re too focused on playing with sand to notice litter. But for Cash Daniels, noticing a plastic straw (吸管) several years ago started a lifelong career in saving the planet. Cash has always loved n____51____. He grew up fishing along the Chattanooga River, after all! But once he learned that 80% of waste from land and rivers ends up in the ocean, he couldn’t sit back and do nothing. With the help of his family, Cash took the first step toward change—cleaning up the river. It q____52____ went from a family act to a community effort with volunteers and neighbors. Now 14 years old, Cash has had a really p____53____ influence on his hometown. B____54____ hosting river cleanups, he has written a children’s book about river pollution. He has also raised enough money to put 17 recycling bins along the Tennessee River. In the process, he’s helped remove 14,000 pounds of waste and r____55____ 1.5 tons of aluminum (铝), and that is just the beginning! “I started The Cleanup Kids with my friend Ella,” Cash said. “Our g____56____ is to make a difference where we live. We want to teach kids how their actions are connected to the water and the ocean.” “I also want to help them feel connected to the ocean. Because if you are connected to the ocean—if you love it and love what lives in it—you’ll want to p____57____,” Cash continued. “Every little action matters. One person can make a big change if he simply stands up and joins in.”",
+    "passage": "Stand up and join in When most kids go to the beach, they’re too focused on playing with sand to notice litter. But for Cash Daniels, noticing a plastic straw (吸管) several years ago started a lifelong career in saving the planet. Cash has always loved n____51____. He grew up fishing along the Chattanooga River, after all!\n\nBut once he learned that 80% of waste from land and rivers ends up in the ocean, he couldn’t sit back and do nothing. With the help of his family, Cash took the first step toward change—cleaning up the river. It q____52____ went from a family act to a community effort with volunteers and neighbors.\n\nNow 14 years old, Cash has had a really p____53____ influence on his hometown. B____54____ hosting river cleanups, he has written a children’s book about river pollution. He has also raised enough money to put 17 recycling bins along the Tennessee River. In the process, he’s helped remove 14,000 pounds of waste and r____55____ 1.\n\n5 tons of aluminum (铝), and that is just the beginning! “I started The Cleanup Kids with my friend Ella,” Cash said. “Our g____56____ is to make a difference where we live. We want to teach kids how their actions are connected to the water and the ocean.” “I also want to help them feel connected to the ocean.\n\nBecause if you are connected to the ocean—if you love it and love what lives in it—you’ll want to p____57____,” Cash continued. “Every little action matters. One person can make a big change if he simply stands up and joins in.”",
     "questions": [
       {
         "number": 71,
@@ -20430,7 +22073,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Stand up and join in When most kids go to the beach, they’re too focused on playing with sand to notice litter. But for Cash Daniels, noticing a plastic straw (吸管) several years ago started a lifelong career in saving the planet. Cash has always loved n____51____. He grew up fishing along the Chattanooga River, after all!",
+      "But once he learned that 80% of waste from land and rivers ends up in the ocean, he couldn’t sit back and do nothing. With the help of his family, Cash took the first step toward change—cleaning up the river. It q____52____ went from a family act to a community effort with volunteers and neighbors.",
+      "Now 14 years old, Cash has had a really p____53____ influence on his hometown. B____54____ hosting river cleanups, he has written a children’s book about river pollution. He has also raised enough money to put 17 recycling bins along the Tennessee River. In the process, he’s helped remove 14,000 pounds of waste and r____55____ 1.",
+      "5 tons of aluminum (铝), and that is just the beginning! “I started The Cleanup Kids with my friend Ella,” Cash said. “Our g____56____ is to make a difference where we live. We want to teach kids how their actions are connected to the water and the ocean.” “I also want to help them feel connected to the ocean.",
+      "Because if you are connected to the ocean—if you love it and love what lives in it—you’ll want to p____57____,” Cash continued. “Every little action matters. One person can make a big change if he simply stands up and joins in.”"
+    ]
   },
   {
     "_id": "sh-em1-2025-奉贤-reading-d",
@@ -21300,7 +22955,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市普陀区中考一模英语试题（原卷版）.docx",
-    "passage": "在短文的空格内填入适当的词，使其内容通顺，每空格限填一词，首字母已给。 They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body.\n\nThey have two sets of wings. The front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length.\n\nImagine if you could do that! Have you ever tried to catch a grasshopper? You won’t even have a chance. It’s because they have five eyes in total, which help them see in almost every direction. This means they can r____53____ miss noticing any danger coming. Music Makers If you hear a pleasant chirp (唧唧声) on a summer night, it could be a male grasshopper trying to attract a female one, or ask other males to stay away.\n\nIt p____54____ the sound by rubbing the back leg against its forewing, just like playing the violin. Next time you hear the chirping sound in summer, remember it’s a grasshopper’s l____55____ song or a warning call. Friend or enemy? Some grasshoppers like the taste of wheat, corn and cotton—all things we use and farmers hate to l____56____.\n\nIn fact, a large group of grasshoppers called locusts can quickly and easily eat up a farmer’s crops in just a few minutes. However, not all grasshoppers are monsters. A type of grasshoppers called Turnbull helps c____57____ the growth of weeds (野草) by eating them. The Two-Striped grasshoppers eat plants that are harmful to cows.",
+    "passage": "They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body. They have two sets of wings.\n\nThe front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length.\n\nImagine if you could do that! Have you ever tried to catch a grasshopper? You won’t even have a chance. It’s because they have five eyes in total, which help them see in almost every direction. This means they can r____53____ miss noticing any danger coming. Music Makers If you hear a pleasant chirp (唧唧声) on a summer night, it could be a male grasshopper trying to attract a female one, or ask other males to stay away.\n\nIt p____54____ the sound by rubbing the back leg against its forewing, just like playing the violin. Next time you hear the chirping sound in summer, remember it’s a grasshopper’s l____55____ song or a warning call. Friend or enemy? Some grasshoppers like the taste of wheat, corn and cotton—all things we use and farmers hate to l____56____.\n\nIn fact, a large group of grasshoppers called locusts can quickly and easily eat up a farmer’s crops in just a few minutes. However, not all grasshoppers are monsters. A type of grasshoppers called Turnbull helps c____57____ the growth of weeds (野草) by eating them. The Two-Striped grasshoppers eat plants that are harmful to cows.",
     "questions": [
       {
         "number": 71,
@@ -21352,13 +23007,13 @@ module.exports = [
     "difficultyLevel": 3,
     "difficultyLabel": "综合运用",
     "dataFormat": "reading-structured-v1",
-    "directions": "",
+    "directions": "在短文的空格内填入适当的词，使其内容通顺，每空格限填一词，首字母已给。",
     "sectionHeading": "",
     "articleTitle": "",
     "articleSubtitle": "",
     "passageParagraphs": [
-      "在短文的空格内填入适当的词，使其内容通顺，每空格限填一词，首字母已给。 They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body.",
-      "They have two sets of wings. The front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length.",
+      "They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body. They have two sets of wings.",
+      "The front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length.",
       "Imagine if you could do that! Have you ever tried to catch a grasshopper? You won’t even have a chance. It’s because they have five eyes in total, which help them see in almost every direction. This means they can r____53____ miss noticing any danger coming. Music Makers If you hear a pleasant chirp (唧唧声) on a summer night, it could be a male grasshopper trying to attract a female one, or ask other males to stay away.",
       "It p____54____ the sound by rubbing the back leg against its forewing, just like playing the violin. Next time you hear the chirping sound in summer, remember it’s a grasshopper’s l____55____ song or a warning call. Friend or enemy? Some grasshoppers like the taste of wheat, corn and cotton—all things we use and farmers hate to l____56____.",
       "In fact, a large group of grasshoppers called locusts can quickly and easily eat up a farmer’s crops in just a few minutes. However, not all grasshoppers are monsters. A type of grasshoppers called Turnbull helps c____57____ the growth of weeds (野草) by eating them. The Two-Striped grasshoppers eat plants that are harmful to cows."
@@ -21615,7 +23270,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市杨浦区中考一模英语试题（原卷版）.docx",
-    "passage": ") (14分) Have we lost the ability to focus on a single task? Daniel Goleman thinks so. Here, the bestselling science writer shares e____67____ that show how technology takes over our attention and weakens real-life connections. On a ferry to a holiday island, a little girl was nervous and hugged her mother tightly. The mother, however, didn’t seem to n____68____; she was focused on her tablet the whole time. Something similar happened a few minutes later in a shared taxi van with nine students going on a weekend trip. As soon as they sat down, everyone began checking their phones or tablets. There was little conversation, just silence. These moments show how devices like mobile phones and tablets take our attention away from the people around us. Among all age groups, teenagers are e____69____ affected. In recent years, their monthly text messages have doubled, reaching an average of 3, 417. At the same time, the time they spend on face to face conversation has become l____70____. Young people may be good with devices, but they often have trouble understanding body language or behavior in person. This can lead to embarrassing or even r____71____ actions, like checking a text during a conversation without realizing it might upset someone. Adults also face challenges in focusing. In Mexico a person who works in advertising says people used to watch longer videos, but now they quickly lose i____72____ and check their phones. Some offices have stopped using laptops and phones during meetings to help people focus. A teacher who loves movies is reading a book about a famous director. But he finds it hard to read more than two pages without wanting to check his email. He w____73____ deeply that he’s losing his ability to concentrate. Goleman suggests that by understanding these effects, we can take steps to balance technology use and rebuild meaningful connections.",
+    "passage": "Have we lost the ability to focus on a single task? Daniel Goleman thinks so. Here, the bestselling science writer shares e____67____ that show how technology takes over our attention and weakens real-life connections. On a ferry to a holiday island, a little girl was nervous and hugged her mother tightly.\n\nThe mother, however, didn’t seem to n____68____; she was focused on her tablet the whole time. Something similar happened a few minutes later in a shared taxi van with nine students going on a weekend trip. As soon as they sat down, everyone began checking their phones or tablets. There was little conversation, just silence.\n\nThese moments show how devices like mobile phones and tablets take our attention away from the people around us. Among all age groups, teenagers are e____69____ affected. In recent years, their monthly text messages have doubled, reaching an average of 3, 417. At the same time, the time they spend on face to face conversation has become l____70____.\n\nYoung people may be good with devices, but they often have trouble understanding body language or behavior in person. This can lead to embarrassing or even r____71____ actions, like checking a text during a conversation without realizing it might upset someone. Adults also face challenges in focusing.\n\nIn Mexico a person who works in advertising says people used to watch longer videos, but now they quickly lose i____72____ and check their phones. Some offices have stopped using laptops and phones during meetings to help people focus. A teacher who loves movies is reading a book about a famous director.\n\nBut he finds it hard to read more than two pages without wanting to check his email. He w____73____ deeply that he’s losing his ability to concentrate. Goleman suggests that by understanding these effects, we can take steps to balance technology use and rebuild meaningful connections.",
     "questions": [
       {
         "number": 71,
@@ -21665,7 +23320,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Have we lost the ability to focus on a single task? Daniel Goleman thinks so. Here, the bestselling science writer shares e____67____ that show how technology takes over our attention and weakens real-life connections. On a ferry to a holiday island, a little girl was nervous and hugged her mother tightly.",
+      "The mother, however, didn’t seem to n____68____; she was focused on her tablet the whole time. Something similar happened a few minutes later in a shared taxi van with nine students going on a weekend trip. As soon as they sat down, everyone began checking their phones or tablets. There was little conversation, just silence.",
+      "These moments show how devices like mobile phones and tablets take our attention away from the people around us. Among all age groups, teenagers are e____69____ affected. In recent years, their monthly text messages have doubled, reaching an average of 3, 417. At the same time, the time they spend on face to face conversation has become l____70____.",
+      "Young people may be good with devices, but they often have trouble understanding body language or behavior in person. This can lead to embarrassing or even r____71____ actions, like checking a text during a conversation without realizing it might upset someone. Adults also face challenges in focusing.",
+      "In Mexico a person who works in advertising says people used to watch longer videos, but now they quickly lose i____72____ and check their phones. Some offices have stopped using laptops and phones during meetings to help people focus. A teacher who loves movies is reading a book about a famous director.",
+      "But he finds it hard to read more than two pages without wanting to check his email. He w____73____ deeply that he’s losing his ability to concentrate. Goleman suggests that by understanding these effects, we can take steps to balance technology use and rebuild meaningful connections."
+    ]
   },
   {
     "_id": "sh-em1-2025-杨浦-reading-d",
@@ -21722,6 +23390,110 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2025-松江-reading-a",
+    "title": "2025 上海松江一模阅读 A",
+    "year": 2025,
+    "city": "上海",
+    "district": "松江",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "2025届松江区初三英语一模试卷.docx",
+    "passage": "CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today!\n\nDAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai.\n\nLater, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists.\n\nDAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple.\n\nIn the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "The first stop of the cultural trip is _________.",
+        "options": {
+          "A": "Beijing",
+          "B": "Shanghai",
+          "C": "Nanjing",
+          "D": "Xuanwu"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "A lot of hiking will be done on September _________.",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "5"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "The travellers will go to Shanghai by _________.",
+        "options": {
+          "A": "boat",
+          "B": "bus",
+          "C": "plane",
+          "D": "train"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "The travellers should prepare the following important things except _________ for the trip.",
+        "options": {
+          "A": "spending money",
+          "B": "clothes and shoes",
+          "C": "Chinese history books",
+          "D": "passports and tickets"
+        },
+        "answer": "C",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "The underlined word “ITINERARY” means “travel _________”.",
+        "options": {
+          "A": "diary",
+          "B": "guide",
+          "C": "tip",
+          "D": "plan"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "This passage is most probably written for _________.",
+        "options": {
+          "A": "students",
+          "B": "teachers",
+          "C": "parents",
+          "D": "elderly people"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today!",
+      "DAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai.",
+      "Later, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists.",
+      "DAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple.",
+      "In the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)"
+    ]
   },
   {
     "_id": "sh-em1-2025-松江-reading-b",
@@ -22156,6 +23928,110 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em1-2025-金山-reading-a",
+    "title": "2025 上海金山一模阅读 A",
+    "year": 2025,
+    "city": "上海",
+    "district": "金山",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "2025届金山区初三英语一模试卷.docx",
+    "passage": "（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”.\n\nThe “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”.\n\nThe “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to.\n\nFees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot.\n\nAdmission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park.",
+    "questions": [
+      {
+        "number": 59,
+        "prompt": "According to the article, the “South Rim” is _______ than the “North Rim”.",
+        "options": {
+          "A": "more beautiful",
+          "B": "more dangerous",
+          "C": "more popular",
+          "D": "much higher"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 60,
+        "prompt": "If you want to know how to get to Grand Canyon Village, which part should you read carefully?",
+        "options": {
+          "A": "The first paragraph and the picture.",
+          "B": "The “South Rim”.",
+          "C": "The “North Rim”.",
+          "D": "Fees and passes."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "What does the word “access” probably mean?",
+        "options": {
+          "A": "borders",
+          "B": "entrances",
+          "C": "disasters",
+          "D": "references"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "Tom, 17 years old, together with his parents (both 45 years old) and his younger sister(eight years old) plans to visit Grand Canyon National Park. They plan to enter by bus. How much do they have to pay in all?",
+        "options": {
+          "A": "$60.",
+          "B": "$80.",
+          "C": "$85.",
+          "D": "$90."
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "Danny bought a 2024 Annual Pass on June 1, 2024. When is the deadline (截至日期) he can use the pass without extra payment?",
+        "options": {
+          "A": "December 31, 2024.",
+          "B": "May 31, 2025.",
+          "C": "June 1, 2025.",
+          "D": "December 31, 2025."
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "Where are people most likely to read the article?",
+        "options": {
+          "A": "In a school newspaper.",
+          "B": "In a comic strip.",
+          "C": "On a personal blog.",
+          "D": "In a travel guide."
+        },
+        "answer": "D",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”.",
+      "The “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”.",
+      "The “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to.",
+      "Fees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot.",
+      "Admission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park."
+    ]
+  },
+  {
     "_id": "sh-em1-2025-金山-reading-b",
     "title": "2025 上海金山一模阅读 B",
     "year": 2025,
@@ -22485,7 +24361,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市长宁区中考一模英语试题（原卷版）.docx",
-    "passage": "）（14分） Memory is a key skill for students, especially when it comes to studying for tests or learning new things. Here are some e____51____ memory techniques that can help you remember information more easily. 1. Mnemonics Mnemonics are tools that help you remember information using patterns or phrases. For example, to remember the colors of the rainbow, you can use “ROYGBIV” to s____52____ for Red, Orange, Yellow, Green, Blue, Indigo, and Violet. Having your own mnemonics can be a fun way to learn. 2. Visualization Visualizing information can increase memory. When you learn something new, try to c____53____ a mental image of it. For example, if you are studying biology and learning about the parts of a cell, imagine each part as a different object. This technique helps your brain make a stronger c____54____ to the information. 3. Chunking Chunking is a technique where you break information into s____55____ parts. For instance, if you need to memorize a long number like 987654321, you can break it into chunks: 987-654-321. This method helps your brain recall the information more easily. 4. Repetition Repetition is one of the best ways to strengthen your memory. Review your notes r____56____ and say the information out loud. Repeating what you’ve learned helps your brain remember it better. 5. Teaching Others Teaching someone else what you’ve learned is a great way to build up your memory. When you explain a topic to a friend or family member, you review the information and identify what you still need to learn. By using these memory techniques, you can improve your a____57____ to learn and remember important information. Try adding these methods to your study routine, and you might find studying becomes much easier and more enjoyable!",
+    "passage": "Memory is a key skill for students, especially when it comes to studying for tests or learning new things. Here are some e____51____ memory techniques that can help you remember information more easily. 1. Mnemonics Mnemonics are tools that help you remember information using patterns or phrases. For example, to remember the colors of the rainbow, you can use “ROYGBIV” to s____52____ for Red, Orange, Yellow, Green, Blue, Indigo, and Violet.\n\nHaving your own mnemonics can be a fun way to learn. 2. Visualization Visualizing information can increase memory. When you learn something new, try to c____53____ a mental image of it. For example, if you are studying biology and learning about the parts of a cell, imagine each part as a different object.\n\nThis technique helps your brain make a stronger c____54____ to the information. 3. Chunking Chunking is a technique where you break information into s____55____ parts. For instance, if you need to memorize a long number like 987654321, you can break it into chunks: 987-654-321. This method helps your brain recall the information more easily.\n\n4. Repetition Repetition is one of the best ways to strengthen your memory. Review your notes r____56____ and say the information out loud. Repeating what you’ve learned helps your brain remember it better. 5. Teaching Others Teaching someone else what you’ve learned is a great way to build up your memory.\n\nWhen you explain a topic to a friend or family member, you review the information and identify what you still need to learn. By using these memory techniques, you can improve your a____57____ to learn and remember important information. Try adding these methods to your study routine, and you might find studying becomes much easier and more enjoyable!",
     "questions": [
       {
         "number": 71,
@@ -22535,7 +24411,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Memory is a key skill for students, especially when it comes to studying for tests or learning new things. Here are some e____51____ memory techniques that can help you remember information more easily. 1. Mnemonics Mnemonics are tools that help you remember information using patterns or phrases. For example, to remember the colors of the rainbow, you can use “ROYGBIV” to s____52____ for Red, Orange, Yellow, Green, Blue, Indigo, and Violet.",
+      "Having your own mnemonics can be a fun way to learn. 2. Visualization Visualizing information can increase memory. When you learn something new, try to c____53____ a mental image of it. For example, if you are studying biology and learning about the parts of a cell, imagine each part as a different object.",
+      "This technique helps your brain make a stronger c____54____ to the information. 3. Chunking Chunking is a technique where you break information into s____55____ parts. For instance, if you need to memorize a long number like 987654321, you can break it into chunks: 987-654-321. This method helps your brain recall the information more easily.",
+      "4. Repetition Repetition is one of the best ways to strengthen your memory. Review your notes r____56____ and say the information out loud. Repeating what you’ve learned helps your brain remember it better. 5. Teaching Others Teaching someone else what you’ve learned is a great way to build up your memory.",
+      "When you explain a topic to a friend or family member, you review the information and identify what you still need to learn. By using these memory techniques, you can improve your a____57____ to learn and remember important information. Try adding these methods to your study routine, and you might find studying becomes much easier and more enjoyable!"
+    ]
   },
   {
     "_id": "sh-em1-2025-长宁-reading-d",
@@ -22979,7 +24867,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市青浦区中考一模英语试题（原卷版）.docx",
-    "passage": ") (14分) In recent years, there has been a shortage of people applying to work as waiters in the UK. Because of this, some b___51___ are using robots in different jobs to replace humans. Some robots can already make pizzas, and others operate as waiters. Some of them look like bookshelves on wheels, with shelves for trays and plates. They can g___52___ customers and show them to their table, while human employees take food orders and load the plates on and off the robots. Some people think robots are the future of dining, but others say it’s not a good idea. What do you think, should robots work in restaurants? Yes—robots are efficient and fun Robots are a great s___53___ for those restaurants that are short of waiters. They are expensive to buy but they don’t need to be paid, so they can work out cheaper than people. Also, machines don’t need breaks or holidays, and they can work long hours, which humans find t___54___. Some people say that robots make fewer mistakes than humans, plus they can do the basic jobs that are boring for people, freeing up the human waiters to do more complicated jobs. Besides, robots are a fun addition because they can a___55___ new customers to restaurants. No—robots can’t replace people Who wants to talk to a machine? Diners want human communication, and some people might even find a robot waiter upsetting. Also, considering how much they cost, robot waiters don’t do much. They can’t answer questions that they aren’t p___56___ to answer, so a human will often have to step in anyway. Plus, most of the robot waiters used at the moment require staff to load and unload their trays. Even if they were amazing, we shouldn’t use them instead of humans, because it’s unfair to take people’s jobs away. Also, robot waiters may not react f___57___ enough if an object or a person appears unexpectedly in their path, and what if they run out of power or drop things?",
+    "passage": "In recent years, there has been a shortage of people applying to work as waiters in the UK. Because of this, some b___51___ are using robots in different jobs to replace humans. Some robots can already make pizzas, and others operate as waiters. Some of them look like bookshelves on wheels, with shelves for trays and plates.\n\nThey can g___52___ customers and show them to their table, while human employees take food orders and load the plates on and off the robots. Some people think robots are the future of dining, but others say it’s not a good idea. What do you think, should robots work in restaurants? Yes—robots are efficient and fun Robots are a great s___53___ for those restaurants that are short of waiters.\n\nThey are expensive to buy but they don’t need to be paid, so they can work out cheaper than people. Also, machines don’t need breaks or holidays, and they can work long hours, which humans find t___54___. Some people say that robots make fewer mistakes than humans, plus they can do the basic jobs that are boring for people, freeing up the human waiters to do more complicated jobs.\n\nBesides, robots are a fun addition because they can a___55___ new customers to restaurants. No—robots can’t replace people Who wants to talk to a machine? Diners want human communication, and some people might even find a robot waiter upsetting. Also, considering how much they cost, robot waiters don’t do much.\n\nThey can’t answer questions that they aren’t p___56___ to answer, so a human will often have to step in anyway. Plus, most of the robot waiters used at the moment require staff to load and unload their trays. Even if they were amazing, we shouldn’t use them instead of humans, because it’s unfair to take people’s jobs away.\n\nAlso, robot waiters may not react f___57___ enough if an object or a person appears unexpectedly in their path, and what if they run out of power or drop things?",
     "questions": [
       {
         "number": 71,
@@ -23029,7 +24917,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "In recent years, there has been a shortage of people applying to work as waiters in the UK. Because of this, some b___51___ are using robots in different jobs to replace humans. Some robots can already make pizzas, and others operate as waiters. Some of them look like bookshelves on wheels, with shelves for trays and plates.",
+      "They can g___52___ customers and show them to their table, while human employees take food orders and load the plates on and off the robots. Some people think robots are the future of dining, but others say it’s not a good idea. What do you think, should robots work in restaurants? Yes—robots are efficient and fun Robots are a great s___53___ for those restaurants that are short of waiters.",
+      "They are expensive to buy but they don’t need to be paid, so they can work out cheaper than people. Also, machines don’t need breaks or holidays, and they can work long hours, which humans find t___54___. Some people say that robots make fewer mistakes than humans, plus they can do the basic jobs that are boring for people, freeing up the human waiters to do more complicated jobs.",
+      "Besides, robots are a fun addition because they can a___55___ new customers to restaurants. No—robots can’t replace people Who wants to talk to a machine? Diners want human communication, and some people might even find a robot waiter upsetting. Also, considering how much they cost, robot waiters don’t do much.",
+      "They can’t answer questions that they aren’t p___56___ to answer, so a human will often have to step in anyway. Plus, most of the robot waiters used at the moment require staff to load and unload their trays. Even if they were amazing, we shouldn’t use them instead of humans, because it’s unfair to take people’s jobs away.",
+      "Also, robot waiters may not react f___57___ enough if an object or a person appears unexpectedly in their path, and what if they run out of power or drop things?"
+    ]
   },
   {
     "_id": "sh-em1-2025-青浦-reading-d",
@@ -23281,7 +25182,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市静安区中考一模英语试题（原卷版）.docx",
-    "passage": "）（14分） Dear Jack, I hope you’re doing well. Last month, while exploring traditional arts and crafts, I d____56____ an attractive traditional toy from Zhenjiang, Jiangsu, called taiping nijiaojiao. It looks like a simple toy, but it’s a whistle (哨子)! This toy has had a history of over a thousand years. It came from Huashan village and it is an important p____57____ of the local culture and traditions. Taiping nijiaojiao is made from local mountain mud. The process of making it i____58____ more than ten steps. These toys come in many shapes like animals and plants, often showing traditional cultural designs. In 2016, the art of making taiping nijiaojiao was added to Jiangsu’s intangible cultural heritage (非遗) list. Once I heard about the s____59____ of Zhou Baokang, an artist who loves this craft. About 20 years ago, Zhou saw taiping nijiaojiao at a market in Huashan village and thought it was amazing. He loved art, so he learned the s____60____ from local artists. Now, he is very good at making these toys. He uses his imagination to shape the mud without following any pre-made designs. Zhou enjoys making animal-shaped whistles, especially those inspired by Chinese zodiac (生肖). In the year of the tiger, he c____61____ tiger whistles, with big mouths and sharp teeth. His designs are influenced by traditional Chinese xieyi paintings, which are simple but very impressive. I thought you might find taiping nijiaojiao as i____62____ as I do, especially since you love traditional arts and crafts. Maybe one day, we can visit Zhenjiang together and try making these lovely whistles. Take care and hope to see you soon. Best regards, Rose",
+    "passage": "Dear Jack, I hope you’re doing well. Last month, while exploring traditional arts and crafts, I d____56____ an attractive traditional toy from Zhenjiang, Jiangsu, called taiping nijiaojiao. It looks like a simple toy, but it’s a whistle (哨子)! This toy has had a history of over a thousand years. It came from Huashan village and it is an important p____57____ of the local culture and traditions.\n\nTaiping nijiaojiao is made from local mountain mud. The process of making it i____58____ more than ten steps. These toys come in many shapes like animals and plants, often showing traditional cultural designs. In 2016, the art of making taiping nijiaojiao was added to Jiangsu’s intangible cultural heritage (非遗) list.\n\nOnce I heard about the s____59____ of Zhou Baokang, an artist who loves this craft. About 20 years ago, Zhou saw taiping nijiaojiao at a market in Huashan village and thought it was amazing. He loved art, so he learned the s____60____ from local artists. Now, he is very good at making these toys. He uses his imagination to shape the mud without following any pre-made designs.\n\nZhou enjoys making animal-shaped whistles, especially those inspired by Chinese zodiac (生肖). In the year of the tiger, he c____61____ tiger whistles, with big mouths and sharp teeth. His designs are influenced by traditional Chinese xieyi paintings, which are simple but very impressive. I thought you might find taiping nijiaojiao as i____62____ as I do, especially since you love traditional arts and crafts. Maybe one day, we can visit Zhenjiang together and try making these lovely whistles. Take care and hope to see you soon. Best regards, Rose",
     "questions": [
       {
         "number": 71,
@@ -23331,7 +25232,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Dear Jack, I hope you’re doing well. Last month, while exploring traditional arts and crafts, I d____56____ an attractive traditional toy from Zhenjiang, Jiangsu, called taiping nijiaojiao. It looks like a simple toy, but it’s a whistle (哨子)! This toy has had a history of over a thousand years. It came from Huashan village and it is an important p____57____ of the local culture and traditions.",
+      "Taiping nijiaojiao is made from local mountain mud. The process of making it i____58____ more than ten steps. These toys come in many shapes like animals and plants, often showing traditional cultural designs. In 2016, the art of making taiping nijiaojiao was added to Jiangsu’s intangible cultural heritage (非遗) list.",
+      "Once I heard about the s____59____ of Zhou Baokang, an artist who loves this craft. About 20 years ago, Zhou saw taiping nijiaojiao at a market in Huashan village and thought it was amazing. He loved art, so he learned the s____60____ from local artists. Now, he is very good at making these toys. He uses his imagination to shape the mud without following any pre-made designs.",
+      "Zhou enjoys making animal-shaped whistles, especially those inspired by Chinese zodiac (生肖). In the year of the tiger, he c____61____ tiger whistles, with big mouths and sharp teeth. His designs are influenced by traditional Chinese xieyi paintings, which are simple but very impressive. I thought you might find taiping nijiaojiao as i____62____ as I do, especially since you love traditional arts and crafts. Maybe one day, we can visit Zhenjiang together and try making these lovely whistles. Take care and hope to see you soon. Best regards, Rose"
+    ]
   },
   {
     "_id": "sh-em1-2025-静安-reading-d",
@@ -24994,7 +26906,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "2026上海金山初三一模英语试题（原卷版）.docx",
-    "passage": "To survive, old brands must be b____57____ enough to change with the times. D. Answer the questions. (根据以下内容回答问题。) (12分) In the cultural heart of Paris, along the streets of Saint-Germain-des-Pres, an elderly man’s cheerful voice often rings out: “France is getting better!” Ali Akbar, now 73, has been selling newspapers here for decades (十年). With copies of Le Monde under his arm, he walks through the Left Bank, creating his own catchy headlines to attract customers. “I do it to create a good mood,” he says. “I want people to live happily.” Akbar came to France in 1973 and began working as a newspaper hawker. Unlike others who stayed in busy spots, he chose to walk around the sixth arrondissement (区) a university area near the River Seine (塞纳河). He remembers learning French by chatting with students. Over time, he became a beloved part of the neighborhood. “Even regular tourists ask where he is if they don’t see him,” says Amina Qissi, a local waitress. Though Paris once had about 40 hawkers, Akbar stood out with his energy and optimism. His hard work was finally recognized by the country, and he even received a high national honor from the French government. Akbar believes this honor ________. Today, Akbar still works from afternoon until evening, selling about 30 papers daily. In a digital age, his presence reminds people of a simpler joy. As a young cafe visitor, Amel Ghali, says: “He is inspiring (鼓舞人心的). Unfortunately, our children might not experience the simple pleasure of reading a newspaper with a coffee.”",
+    "passage": "In the cultural heart of Paris, along the streets of Saint-Germain-des-Pres, an elderly man’s cheerful voice often rings out: “France is getting better!” Ali Akbar, now 73, has been selling newspapers here for decades (十年). With copies of Le Monde under his arm, he walks through the Left Bank, creating his own catchy headlines to attract customers.\n\n“I do it to create a good mood,” he says. “I want people to live happily.” Akbar came to France in 1973 and began working as a newspaper hawker. Unlike others who stayed in busy spots, he chose to walk around the sixth arrondissement (区) a university area near the River Seine (塞纳河). He remembers learning French by chatting with students.\n\nOver time, he became a beloved part of the neighborhood. “Even regular tourists ask where he is if they don’t see him,” says Amina Qissi, a local waitress. Though Paris once had about 40 hawkers, Akbar stood out with his energy and optimism. His hard work was finally recognized by the country, and he even received a high national honor from the French government.\n\nAkbar believes this honor ________. Today, Akbar still works from afternoon until evening, selling about 30 papers daily. In a digital age, his presence reminds people of a simpler joy. As a young cafe visitor, Amel Ghali, says: “He is inspiring (鼓舞人心的). Unfortunately, our children might not experience the simple pleasure of reading a newspaper with a coffee. ”",
     "questions": [
       {
         "number": 78,
@@ -25038,7 +26950,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "Answer the questions.",
+    "sectionHeading": "D",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "In the cultural heart of Paris, along the streets of Saint-Germain-des-Pres, an elderly man’s cheerful voice often rings out: “France is getting better!” Ali Akbar, now 73, has been selling newspapers here for decades (十年). With copies of Le Monde under his arm, he walks through the Left Bank, creating his own catchy headlines to attract customers.",
+      "“I do it to create a good mood,” he says. “I want people to live happily.” Akbar came to France in 1973 and began working as a newspaper hawker. Unlike others who stayed in busy spots, he chose to walk around the sixth arrondissement (区) a university area near the River Seine (塞纳河). He remembers learning French by chatting with students.",
+      "Over time, he became a beloved part of the neighborhood. “Even regular tourists ask where he is if they don’t see him,” says Amina Qissi, a local waitress. Though Paris once had about 40 hawkers, Akbar stood out with his energy and optimism. His hard work was finally recognized by the country, and he even received a high national honor from the French government.",
+      "Akbar believes this honor ________. Today, Akbar still works from afternoon until evening, selling about 30 papers daily. In a digital age, his presence reminds people of a simpler joy. As a young cafe visitor, Amel Ghali, says: “He is inspiring (鼓舞人心的). Unfortunately, our children might not experience the simple pleasure of reading a newspaper with a coffee. ”"
+    ]
   },
   {
     "_id": "sh-em1-2026-闵行-reading-b",
@@ -25130,7 +27053,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2026上海闵行初三一模英语试题（原卷版）.docx",
-    "passage": ") （14分) A team of scientists working in Oxfordshire England, has found dinosaur footprints dating back about 166 million years ago. They found so many tracks in one place, and they have nicknamed it the “dinosaur highway”. The footprints had been buried under clay in a limestone quarry (采石场). Gary Johnson, a quarry worker, was using a vehicle to remove a layer of clay from the bottom when he noticed the u____51____ bumps (隆起) in the hard surface. Experts from the Universities of Oxford and Birmingham came to investigate. In the middle of the year 2024, they began their work. The workers, i____52____ many experts from various fields, students and quarry workers, worked side by side. More than 100 people spent a week on the site. The work was completed after a year and the research team announced the d____53____ of their findings in January—more than 200 footprints, following five separate trackways. Among them, four of the trackways were probably made by Cetiosaurus, huge long-necked, herbivorous (食草的) dinosaurs, which could grow to be up to 18 metres long. The footprints are a mixture of sizes, which could suggest there was a group of dinosaurs of different ages travelling t____54____. And the dinosaurs were likely heading in the same general direction during their journey. At one part of the trail, the footprints of the Megalosaurus, the meat-eater, cross over the footprints of the Cetiosaurus. The research team says this may show that the meat-eater was following and possibly h____55____ the Cetiosaurus. Kirsty Edgar, a professor at the University of Birmingham, said to the media that the footprints are “a w____56____ into the lives of dinosaurs.” They help researchers understand how the dinosaurs moved, how they interacted with each other, and the type of environment they lived in. The tracks will finally be covered up again. During the work, the research team used drones (无人机) to take more than 20,000 digital pictures of the site. They have also made 3D models of the footprints. They wanted to record as much as possible, so they can c____57____ to study the tracks after the dinosaur highway is reburied.",
+    "passage": "A team of scientists working in Oxfordshire England, has found dinosaur footprints dating back about 166 million years ago. They found so many tracks in one place, and they have nicknamed it the “dinosaur highway”. The footprints had been buried under clay in a limestone quarry (采石场). Gary Johnson, a quarry worker, was using a vehicle to remove a layer of clay from the bottom when he noticed the u____51____ bumps (隆起) in the hard surface.\n\nExperts from the Universities of Oxford and Birmingham came to investigate. In the middle of the year 2024, they began their work. The workers, i____52____ many experts from various fields, students and quarry workers, worked side by side. More than 100 people spent a week on the site. The work was completed after a year and the research team announced the d____53____ of their findings in January—more than 200 footprints, following five separate trackways.\n\nAmong them, four of the trackways were probably made by Cetiosaurus, huge long-necked, herbivorous (食草的) dinosaurs, which could grow to be up to 18 metres long. The footprints are a mixture of sizes, which could suggest there was a group of dinosaurs of different ages travelling t____54____. And the dinosaurs were likely heading in the same general direction during their journey.\n\nAt one part of the trail, the footprints of the Megalosaurus, the meat-eater, cross over the footprints of the Cetiosaurus. The research team says this may show that the meat-eater was following and possibly h____55____ the Cetiosaurus. Kirsty Edgar, a professor at the University of Birmingham, said to the media that the footprints are “a w____56____ into the lives of dinosaurs.\n\n” They help researchers understand how the dinosaurs moved, how they interacted with each other, and the type of environment they lived in. The tracks will finally be covered up again. During the work, the research team used drones (无人机) to take more than 20,000 digital pictures of the site. They have also made 3D models of the footprints. They wanted to record as much as possible, so they can c____57____ to study the tracks after the dinosaur highway is reburied.",
     "questions": [
       {
         "number": 71,
@@ -25180,7 +27103,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A team of scientists working in Oxfordshire England, has found dinosaur footprints dating back about 166 million years ago. They found so many tracks in one place, and they have nicknamed it the “dinosaur highway”. The footprints had been buried under clay in a limestone quarry (采石场). Gary Johnson, a quarry worker, was using a vehicle to remove a layer of clay from the bottom when he noticed the u____51____ bumps (隆起) in the hard surface.",
+      "Experts from the Universities of Oxford and Birmingham came to investigate. In the middle of the year 2024, they began their work. The workers, i____52____ many experts from various fields, students and quarry workers, worked side by side. More than 100 people spent a week on the site. The work was completed after a year and the research team announced the d____53____ of their findings in January—more than 200 footprints, following five separate trackways.",
+      "Among them, four of the trackways were probably made by Cetiosaurus, huge long-necked, herbivorous (食草的) dinosaurs, which could grow to be up to 18 metres long. The footprints are a mixture of sizes, which could suggest there was a group of dinosaurs of different ages travelling t____54____. And the dinosaurs were likely heading in the same general direction during their journey.",
+      "At one part of the trail, the footprints of the Megalosaurus, the meat-eater, cross over the footprints of the Cetiosaurus. The research team says this may show that the meat-eater was following and possibly h____55____ the Cetiosaurus. Kirsty Edgar, a professor at the University of Birmingham, said to the media that the footprints are “a w____56____ into the lives of dinosaurs.",
+      "” They help researchers understand how the dinosaurs moved, how they interacted with each other, and the type of environment they lived in. The tracks will finally be covered up again. During the work, the research team used drones (无人机) to take more than 20,000 digital pictures of the site. They have also made 3D models of the footprints. They wanted to record as much as possible, so they can c____57____ to study the tracks after the dinosaur highway is reburied."
+    ]
   },
   {
     "_id": "sh-em1-2026-闵行-reading-d",
@@ -25441,5 +27376,97 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em1-2021-崇明-reading-a",
+    "title": "2021 上海崇明一模阅读 A",
+    "year": 2021,
+    "city": "上海",
+    "district": "崇明",
+    "examType": "一模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市崇明区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+    "passage": "（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet.\n\nEach from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children.\n\nThe teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers.\n\nStudents are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759.\n\nIf students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form",
+    "questions": [
+      {
+        "number": 60,
+        "prompt": "To register for the summer camp, ________ must sign the application form.",
+        "options": {
+          "A": "the child's parents",
+          "B": "the school",
+          "C": "the teaching staff",
+          "D": "the children"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      },
+      {
+        "number": 61,
+        "prompt": "The underlined phrase \"relate to\" most likely means \"________\" in the text.",
+        "options": {
+          "A": "surprise",
+          "B": "understand",
+          "C": "protect",
+          "D": "interview"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 62,
+        "prompt": "According to the environment, children at the camp can do the following except ________.",
+        "options": {
+          "A": "programming",
+          "B": "swimming",
+          "C": "reading books",
+          "D": "doing experiments"
+        },
+        "answer": "B",
+        "questionType": "choice"
+      },
+      {
+        "number": 63,
+        "prompt": "If Jane, aged 16, wants to improve her writing skills, she should register for ________.",
+        "options": {
+          "A": "Camp A",
+          "B": "Camp B",
+          "C": "Camp C",
+          "D": "Camp D"
+        },
+        "answer": "D",
+        "questionType": "choice"
+      },
+      {
+        "number": 64,
+        "prompt": "The text above is writing to ________.",
+        "options": {
+          "A": "introduce a summer camp program",
+          "B": "ask students to respect their teachers",
+          "C": "encourage kids to have more fun",
+          "D": "teach parents how to complete a form"
+        },
+        "answer": "A",
+        "questionType": "choice"
+      }
+    ],
+    "answerSentences": [],
+    "phrases": [],
+    "vocabulary": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet.",
+      "Each from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children.",
+      "The teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers.",
+      "Students are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759.",
+      "If students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form"
+    ]
   }
 ];

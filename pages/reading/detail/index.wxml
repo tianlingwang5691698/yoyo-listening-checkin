@@ -12,7 +12,7 @@
     <block wx:elif="{{passage}}">
       <view class="library-desk-header">
         <view class="desk-kicker">{{texts.title}}</view>
-        <view class="desk-title">{{passage.title}}</view>
+        <view class="desk-title">{{passage.headerTitle}}</view>
         <view class="desk-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · {{passage.sectionDisplay}} · {{passage.difficultyDisplay}}</view>
       </view>
 
@@ -360,7 +360,7 @@
         <view class="paper-margin-line"></view>
         <view class="passage-head">
           <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · {{passage.sectionDisplay}} · {{passage.difficultyDisplay}}</view>
-          <view class="passage-title">{{passage.title}}</view>
+          <view class="passage-title">{{passage.headerTitle}}</view>
         </view>
         <view class="highlight-actions" wx:if="{{submitted && review}}">
           <block wx:for="{{highlightButtons}}" wx:key="key">
