@@ -84,3 +84,20 @@ test('两套页面分支和四主题均接入作文题纸层级样式', () => {
   assert.match(styles, /\.theme-voyage \.writing-prompt-section/);
   assert.match(styles, /\.theme-dragon \.writing-prompt-section/);
 });
+
+test('四主题题目纸折角不会覆盖标题字数和分值', () => {
+  const template = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxml'), 'utf8');
+  const styles = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxss'), 'utf8');
+
+  assert.match(template, /class="prompt-paper-head"[\s\S]*?class="prompt-rules"/);
+  assert.match(styles, /\.paper-fold\s*\{[\s\S]*?width: 74rpx;[\s\S]*?pointer-events: none;/);
+  assert.match(styles, /\.prompt-paper-head\s*\{[\s\S]*?padding-right: 88rpx;/);
+  assert.match(template, /class="library-prompt-sheet"[\s\S]*?class="library-paper-fold"[\s\S]*?class="library-sheet-head"/);
+  assert.match(styles, /\.library-paper-fold\s*\{[\s\S]*?width: 72rpx;[\s\S]*?pointer-events: none;/);
+  assert.match(styles, /\.library-prompt-sheet \.library-sheet-head\s*\{[\s\S]*?padding-right: 86rpx;/);
+
+  ['theme-warm', 'theme-voyage', 'theme-dragon'].forEach((theme) => {
+    assert.match(template, /theme-\{\{theme\}\}[\s\S]*?class="prompt-card"/, theme);
+  });
+  assert.match(template, /theme === 'library'[\s\S]*?class="library-prompt-sheet"/);
+});
