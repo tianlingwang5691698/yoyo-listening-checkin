@@ -41,7 +41,7 @@
 
 ## 5. IELTS 评分
 
-- 正式组合固定为腾讯 SOE + `gpt-5.6-sol`：SOE 提供发音与流利度证据，GPT 评估内容、语法、词汇和反馈；禁止静默回退其他模型。
+- Terra 试用组合固定为腾讯 SOE + `gpt-5.6-terra`：SOE 提供发音与流利度证据，Terra 评估内容、语法、词汇和反馈；禁止静默回退其他模型。
 - Part 1、Part 2、Part 3 均按 IELTS Speaking 四项公开标准输出：Fluency and Coherence、Lexical Resource、Grammatical Range and Accuracy、Pronunciation，各占 25%。
 - 四项先给整数 Band，总分按 0.5 Band 取整；SOE 缺失时不得伪造 Pronunciation Band，也不得返回看似完整的报告。
 - Part 1 按日常问答，Part 2 按长回答与组织，Part 3 按抽象讨论、分析和推测分别评估；不得用同一短回答模板评分三个 Part。

@@ -1214,6 +1214,8 @@ async function explainGrammarQuestion(event) {
   const force = Boolean(payload.force);
   const cacheOnly = Boolean(payload.cacheOnly);
   const personalOnly = Boolean(payload.personalOnly);
+  const model = process.env.GRAMMAR_EXPLAIN_MODEL || process.env.READING_STUDY_MODEL || 'gpt-5.6-terra';
+  const fallbackModel = process.env.GRAMMAR_EXPLAIN_FALLBACK_MODEL || process.env.READING_STUDY_FALLBACK_MODEL || 'gpt-5.6-terra';
   if (!question._id) {
     return { explanation: null, source: 'skipped-no-question' };
   }
@@ -1228,8 +1230,6 @@ async function explainGrammarQuestion(event) {
   }
   const endpoint = process.env.GRAMMAR_EXPLAIN_ENDPOINT || process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '';
   const apiKey = process.env.GRAMMAR_EXPLAIN_API_KEY || process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '';
-  const model = process.env.GRAMMAR_EXPLAIN_MODEL || process.env.READING_STUDY_MODEL || 'gpt-5.6-sol';
-  const fallbackModel = process.env.GRAMMAR_EXPLAIN_FALLBACK_MODEL || process.env.READING_STUDY_FALLBACK_MODEL || 'gpt-5.5';
   if (!endpoint || !apiKey) {
     return { explanation: fallbackExplanation(question, 'missing-env'), source: 'fallback', error: 'missing-env' };
   }

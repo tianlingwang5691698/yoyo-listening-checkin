@@ -80,6 +80,27 @@ const GRAMMATICAL_RANGE_ACCURACY = {
   0: TASK_1_ACHIEVEMENT[0]
 };
 
+function getOfficialCriterionDescriptor(taskType, criterionKey, band) {
+  const score = Number(band);
+  if (!Number.isInteger(score) || score < 0 || score > 9) return '';
+  if (criterionKey === 'task') {
+    return (taskType === 'ielts-task-1' ? TASK_1_ACHIEVEMENT : TASK_2_RESPONSE)[score] || '';
+  }
+  if (criterionKey === 'coherenceCohesion') {
+    return (taskType === 'ielts-task-1' ? TASK_1_COHERENCE : TASK_2_COHERENCE)[score] || '';
+  }
+  if (criterionKey === 'lexicalResource') return LEXICAL_RESOURCE[score] || '';
+  if (criterionKey === 'grammaticalRangeAccuracy') return GRAMMATICAL_RANGE_ACCURACY[score] || '';
+  return '';
+}
+
+function getOfficialCriterionFeatures(taskType, criterionKey, band) {
+  return getOfficialCriterionDescriptor(taskType, criterionKey, band)
+    .split(/(?<=\.)\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
 function buildOfficialWritingBandGuide(taskType) {
   const isTask1 = taskType === 'ielts-task-1';
   const taskLabel = isTask1 ? 'Task Achievement' : 'Task Response';
@@ -124,6 +145,8 @@ module.exports = {
   VERSION,
   buildOfficialWritingBandGuide,
   buildOfficialBandSelectionProtocol,
+  getOfficialCriterionDescriptor,
+  getOfficialCriterionFeatures,
   _test: {
     TASK_1_ACHIEVEMENT,
     TASK_2_RESPONSE,

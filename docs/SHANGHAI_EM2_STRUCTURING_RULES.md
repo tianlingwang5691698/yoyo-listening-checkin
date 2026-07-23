@@ -189,7 +189,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 云函数 `reading.service.js` 会同时读取两份文件，小程序按 `examType: 一模/二模` 分组显示。
 
-一模阅读清洗优先规则抽取，不用 GPT 改题干、选项、答案；`gpt-5.6-sol` 只用于用户提交后生成逐题解析、原文答案句和中文翻译。
+一模阅读清洗优先规则抽取，不用 GPT 改题干、选项、答案；Terra 试用期间由 `gpt-5.6-terra` 在用户提交后生成逐题解析、原文答案句和中文翻译。
 
 ## 一模写作上传规则
 

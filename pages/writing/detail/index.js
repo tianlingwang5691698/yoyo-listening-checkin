@@ -277,7 +277,12 @@ Page({
     }
   },
   onShow() {
+    this.writingPageActive = true;
     page.syncTheme(this);
+    const attemptId = String(this.data.currentAttemptId || '');
+    if (attemptId && this.data.grading && this.data.prompt) {
+      this.scheduleWritingResultPoll(attemptId, this.data.prompt, null, 1000);
+    }
   },
   async resolvePromptImages(prompt) {
     const promptId = String(prompt && prompt._id || '');

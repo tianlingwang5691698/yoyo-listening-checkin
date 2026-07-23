@@ -1450,7 +1450,7 @@ async function scoreSpeakingAttempt(payload) {
   const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint)).trim();
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
   const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
-  const contentModel = getEnvValue(['SPEAKING_CONTENT_SCORE_MODEL', 'SPEAKING_CONTENT_SCORE_MODE', 'SPEAKING_SCORE_PREFERRED_MODEL']) || 'gpt-5.6-sol';
+  const contentModel = getEnvValue(['SPEAKING_CONTENT_SCORE_MODEL', 'SPEAKING_CONTENT_SCORE_MODE', 'SPEAKING_SCORE_PREFERRED_MODEL']) || 'gpt-5.6-terra';
   const fallbackContentModel = String(process.env.SPEAKING_CONTENT_ALLOW_FALLBACK || '').trim() === '1'
     ? getEnvValue(['SPEAKING_SCORE_FALLBACK_MODEL', 'SPEAKING_SCORE_FALLBACK_MODE', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODEL', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODE'])
     : '';

@@ -15,19 +15,33 @@ test('写作提交先快速落库，再由独立长时调用完成批改', () =>
   assert.match(submitBlock, /PREVIEW_COLLECTION[\s\S]*?previewDocumentId[\s\S]*?pending: true/);
   assert.match(submitBlock, /attempt: savedAttempt,[\s\S]*?pending: true,[\s\S]*?resumable: true/);
   assert.match(service, /async function gradeWritingAttempt[\s\S]*?review: command\.set\(review\)[\s\S]*?saveWritingCompletion/);
-  assert.match(service, /const shouldResume = \['grading-pending', 'grading-failed'\][\s\S]*?gradingAgeMs > 170000/);
+  assert.match(service, /const WRITING_GRADING_STALE_MS = 330000/);
+  assert.match(service, /const shouldResume = \['grading-pending', 'grading-failed'\][\s\S]*?gradingAgeMs > WRITING_GRADING_STALE_MS/);
+  assert.match(service, /gradeError: command\.remove\(\)/);
   assert.match(completion, /const documentId = current && current\._id[\s\S]*?\.doc\(documentId\)\.set/);
   assert.match(service, /saveWritingCompletion[\s\S]*?upsertStudyCompletion[\s\S]*?upsertDailyReport/);
   assert.match(service, /writing-completion-sync-failed/);
 });
 
-test('写作批改使用独立配置并固定 gpt-5.6-sol', () => {
+test('写作批改使用独立配置并固定 gpt-5.6-terra', () => {
   const service = read('cloudfunctions/yoyo/services/writing.service.js');
   assert.match(service, /endpoint: process\.env\.WRITING_SCORE_ENDPOINT \|\| ''/);
   assert.match(service, /apiKey: process\.env\.WRITING_SCORE_API_KEY \|\| ''/);
-  assert.match(service, /model: process\.env\.WRITING_SCORE_MODEL \|\| 'gpt-5\.6-sol'/);
+  assert.match(service, /model: process\.env\.WRITING_SCORE_MODEL \|\| 'gpt-5\.6-terra'/);
   assert.doesNotMatch(service, /WRITING_SCORE_(?:ENDPOINT|API_KEY|MODEL)[^\n]*READING_STUDY/);
   assert.doesNotMatch(service, /WRITING_SCORE_FALLBACK_MODEL|fallbackModel/);
+});
+
+test('内容评分与学习解析运行时默认统一使用 gpt-5.6-terra', () => {
+  const reading = read('cloudfunctions/yoyo/services/reading.service.js');
+  const listening = read('cloudfunctions/yoyo/services/listening.service.js');
+  const grammar = read('cloudfunctions/yoyo/services/grammar.service.js');
+  const speaking = read('cloudfunctions/yoyo/lib/speaking-engine.js');
+  assert.match(reading, /READING_STUDY_MODEL \|\| 'gpt-5\.6-terra'/);
+  assert.match(reading, /READING_STUDY_FALLBACK_MODEL \|\| 'gpt-5\.6-terra'/);
+  assert.match(listening, /READING_STUDY_MODEL \|\| 'gpt-5\.6-terra'/);
+  assert.match(grammar, /GRAMMAR_EXPLAIN_MODEL \|\| process\.env\.READING_STUDY_MODEL \|\| 'gpt-5\.6-terra'/);
+  assert.match(speaking, /SPEAKING_SCORE_PREFERRED_MODEL'\]\) \|\| 'gpt-5\.6-terra'/);
 });
 
 test('阅读提交先保存解析，记录页缺失时自动续接', () => {
@@ -67,6 +81,7 @@ test('家长预览断线后轮询独立任务且不写学生本地完成记录',
   assert.match(shared, /'writingPreviewAttempts'/);
   assert.match(page, /continueWritingResultPolling[\s\S]*?scheduleWritingResultPoll/);
   assert.match(page, /getWritingAttemptDetail\(attemptId\)/);
+  assert.match(page, /onShow\(\)[\s\S]*?writingPageActive = true[\s\S]*?scheduleWritingResultPoll/);
   assert.match(page, /if \(!attempt\.isPreview\) \{[\s\S]*?completed\.addCompletedItem/);
   assert.match(history, /attempt\.isPreview[\s\S]*?家长预览/);
 });

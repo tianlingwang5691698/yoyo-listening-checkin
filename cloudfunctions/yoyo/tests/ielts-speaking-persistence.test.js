@@ -35,7 +35,7 @@ function mockContext(t, role) {
     ieltsPart: 1,
     ieltsAssessmentScope: 'practice-answer',
     ieltsDescriptorVersion: 'official-public-speaking-band-descriptors',
-    scoreModel: 'gpt-5.6-sol',
+    scoreModel: 'gpt-5.6-terra',
     pronunciationProvider: 'tencent-soe',
     transcript: 'I enjoy living in my city because it is convenient.',
     feedback: '回答切题，继续补充细节。',
@@ -90,7 +90,7 @@ test('IELTS 学生提交即使传 preview 仍写记录并刷新日报', async (t
   assert.equal(records[0].ieltsGrammaticalRangeAccuracyBand, 8);
   assert.equal(records[0].ieltsPronunciationBand, 6);
   assert.equal(records[0].ieltsAssessmentScope, 'practice-answer');
-  assert.equal(records[0].scoreModel, 'gpt-5.6-sol');
+  assert.equal(records[0].scoreModel, 'gpt-5.6-terra');
   assert.equal(reportDate, '2026-07-22');
   assert.equal(result.attempt.attemptId, 'attempt-ielts-1');
 });

@@ -2,7 +2,7 @@ const https = require('https');
 
 process.env.SPEAKING_CONTENT_SCORE_MODEL = process.env.SPEAKING_CONTENT_SCORE_MODEL
   || process.env.SPEAKING_CONTENT_SCORE_MODE
-  || 'gpt-5.6-sol';
+  || 'gpt-5.6-terra';
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -232,7 +232,7 @@ async function scoreSpeakingAttemptLegacy(payload) {
   const audioModel = String(process.env.SPEAKING_AUDIO_TRANSCRIBE_MODEL || '').trim();
   const audioModels = [...new Set([audioModel].filter(Boolean))];
   const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
-  const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.6-sol').trim();
+  const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.6-terra').trim();
   if (!endpoint || !transcribeEndpoint) {
     return fallbackSpeakingScore(payload, 'missing-endpoint');
   }

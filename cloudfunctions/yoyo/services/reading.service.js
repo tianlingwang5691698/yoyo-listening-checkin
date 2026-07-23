@@ -1073,8 +1073,8 @@ function getReadingStudyModelConfig() {
   return {
     endpoint: process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
     apiKey: process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
-    model: process.env.READING_STUDY_MODEL || 'gpt-5.5',
-    fallbackModel: process.env.READING_STUDY_FALLBACK_MODEL || 'deepseek-v4-pro'
+    model: process.env.READING_STUDY_MODEL || 'gpt-5.6-terra',
+    fallbackModel: process.env.READING_STUDY_FALLBACK_MODEL || 'gpt-5.6-terra'
   };
 }
 

@@ -4,6 +4,14 @@ const test = require('node:test');
 const writing = require('../services/writing.service')._test;
 const officialDescriptors = require('../lib/ielts-writing-band-descriptors');
 
+function buildFeatureChecks(taskType, key, band, evidence = 'Student evidence') {
+  return officialDescriptors.getOfficialCriterionFeatures(taskType, key, band).map((feature) => ({
+    feature,
+    met: true,
+    evidence: [evidence]
+  }));
+}
+
 test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   const task1 = {
     title: 'Cambridge IELTS 21 Test 1 Writing Task 1',
@@ -34,8 +42,11 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /officialBandDecisions/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /从 Band 9 向下/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
-  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v6-official-fullband-/);
+  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v8-terra-trial-/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /awardedBandFeatureChecks/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /仅有常规图表词、准确但重复的趋势词不能自动满足/);
+  assert.match(require('node:fs').readFileSync(require.resolve('../services/writing.service'), 'utf8'), /writing-ielts-official-decision-invalid/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原文证据/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题图片为最终事实来源/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /task1FactCheck/);
@@ -124,11 +135,12 @@ test('雅思证据化评分必须四项字段完整', () => {
 });
 
 test('雅思四项按官方逐档决策确定档位', () => {
-  const decision = (awardedBand, evidence, unmet) => ({
+  const decision = (key, awardedBand, evidence, unmet) => ({
     awardedBand,
     checkedFromBand9: true,
     awardedBandFullyMet: true,
     awardedBandEvidence: [evidence],
+    awardedBandFeatureChecks: buildFeatureChecks('ielts-task-1', key, awardedBand, evidence),
     nextHigherBand: awardedBand === 9 ? null : awardedBand + 1,
     nextHigherBandFullyMet: awardedBand === 9 ? null : false,
     unmetHigherBandFeatures: awardedBand === 9 ? [] : [unmet],
@@ -142,10 +154,10 @@ test('雅思四项按官方逐档决策确定档位', () => {
       grammaticalRangeAccuracy: 8
     },
     officialBandDecisions: {
-      taskAchievement: decision(7, 'A clear overview is present.', 'Key features are not skilfully illustrated.'),
-      coherenceCohesion: decision(7, 'Ideas progress clearly.', 'Cohesion is not consistently well managed.'),
-      lexicalResource: decision(7, 'Some less common items are used.', 'Word choice is not consistently precise.'),
-      grammaticalRangeAccuracy: decision(8, 'Most sentences are error-free.', 'The range is not fully controlled.')
+      taskAchievement: decision('task', 7, 'A clear overview is present.', 'Key features are not skilfully illustrated.'),
+      coherenceCohesion: decision('coherenceCohesion', 7, 'Ideas progress clearly.', 'Cohesion is not consistently well managed.'),
+      lexicalResource: decision('lexicalResource', 7, 'Some less common items are used.', 'Word choice is not consistently precise.'),
+      grammaticalRangeAccuracy: decision('grammaticalRangeAccuracy', 8, 'Most sentences are error-free.', 'The range is not fully controlled.')
     }
   }, { contentType: 'ielts-writing-task-1', score: 9 });
 
@@ -162,16 +174,17 @@ test('雅思四项按官方逐档决策确定档位', () => {
 
 test('雅思官方逐档决策覆盖 Band 0–9 全部档位', () => {
   for (let band = 0; band <= 9; band += 1) {
-    const decision = {
+    const decision = (key) => ({
       awardedBand: band,
       checkedFromBand9: true,
       awardedBandFullyMet: true,
       awardedBandEvidence: [`Band ${band} evidence`],
+      awardedBandFeatureChecks: buildFeatureChecks('ielts-task-2', key, band, `Band ${band} evidence`),
       nextHigherBand: band === 9 ? null : band + 1,
       nextHigherBandFullyMet: band === 9 ? null : false,
       unmetHigherBandFeatures: band === 9 ? [] : [`Band ${band + 1} feature not fully met`],
       decisionReason: `Band ${band} is the highest fully met band.`
-    };
+    });
     const review = writing.normalizeReview({
       dimensionScores: {
         taskResponse: band,
@@ -180,10 +193,10 @@ test('雅思官方逐档决策覆盖 Band 0–9 全部档位', () => {
         grammaticalRangeAccuracy: band
       },
       officialBandDecisions: {
-        taskResponse: decision,
-        coherenceCohesion: decision,
-        lexicalResource: decision,
-        grammaticalRangeAccuracy: decision
+        taskResponse: decision('task'),
+        coherenceCohesion: decision('coherenceCohesion'),
+        lexicalResource: decision('lexicalResource'),
+        grammaticalRangeAccuracy: decision('grammaticalRangeAccuracy')
       }
     }, { contentType: 'ielts-writing-task-2', score: 9 });
 
@@ -191,6 +204,35 @@ test('雅思官方逐档决策覆盖 Band 0–9 全部档位', () => {
     assert.equal(review.score, band);
     assert.equal(writing.hasCompleteOfficialBandDecisions(review), true);
   }
+});
+
+test('Band 8 逐档决策缺少任一官方正向特征证据时不得覆盖维度分', () => {
+  const checks = buildFeatureChecks('ielts-task-1', 'lexicalResource', 8);
+  checks.pop();
+  const review = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 7,
+      coherenceCohesion: 7,
+      lexicalResource: 7,
+      grammaticalRangeAccuracy: 7
+    },
+    officialBandDecisions: {
+      lexicalResource: {
+        awardedBand: 8,
+        checkedFromBand9: true,
+        awardedBandFullyMet: true,
+        awardedBandEvidence: ['Accurate trend vocabulary.'],
+        awardedBandFeatureChecks: checks,
+        nextHigherBand: 9,
+        nextHigherBandFullyMet: false,
+        unmetHigherBandFeatures: ['Not fully flexible.'],
+        decisionReason: 'Claims Band 8 without complete feature evidence.'
+      }
+    }
+  }, { contentType: 'ielts-writing-task-1', score: 9 });
+
+  assert.equal(review.dimensionScores.lexicalResource, 7);
+  assert.equal(review.officialBandDecisionsComplete, false);
 });
 
 test('不完整的逐档决策不能覆盖有效维度分', () => {
