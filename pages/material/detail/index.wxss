@@ -1,3 +1,27 @@
+.question-mark-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  margin: 18rpx 0 12rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 12rpx;
+  background: rgba(255, 210, 69, 0.14);
+  color: #607087;
+  font-size: 22rpx;
+  line-height: 1.4;
+}
+
+.question-mark-clear {
+  flex: 0 0 auto;
+  color: #c5522f;
+  font-weight: 600;
+}
+
+.manual-mark-word { border-radius: 5rpx; background: rgba(255, 210, 69, 0.58); }
+.manual-mark-phrase { border-radius: 5rpx; background: rgba(91, 169, 233, 0.34); }
+.manual-mark-sentence { background: rgba(92, 177, 119, 0.20); box-shadow: inset 4rpx 0 0 rgba(46, 129, 77, 0.48); }
+
 .listening-detail-page {
   padding-top: 72rpx;
   padding-bottom: 72rpx;

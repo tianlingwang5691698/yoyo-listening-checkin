@@ -49,6 +49,10 @@
       <view class="library-paper-title">{{texts.answerSheet}}</view>
       <view class="library-score" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
     </view>
+    <view class="question-mark-toolbar">
+      <text>{{texts.manualMarkHint}}</text>
+      <text class="question-mark-clear" wx:if="{{questionMarkCount && !submitted}}" bindtap="clearQuestionMarks">{{texts.clearManualMarks}}</text>
+    </view>
     <view class="library-section-heading" wx:if="{{item.images && item.images.length}}">A. Listen and choose the right picture.</view>
     <view class="library-picture-composite" wx:if="{{item.imageDisplayMode === 'composite'}}">
       <image class="library-picture-composite-item" mode="aspectFit" src="{{item.images[0].src}}"></image>
@@ -75,7 +79,9 @@
           <view class="library-listening-form-value">{{given.value}}</view>
         </view>
       </view>
-      <view class="library-question-title">{{item.number}}. {{item.prompt}}</view>
+      <view class="library-question-title {{questionSentenceMarks[item.markScope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{item.markScope}}" bindlongpress="handleQuestionSentenceMark">
+        <text>{{item.number}}. </text><text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{questionTokenMarks[token.markKey] ? 'manual-mark-' + questionTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{item.markScope}}" catchtap="handleQuestionMarkToken">{{token.text}}</text>
+      </view>
       <view class="library-option-list" wx:if="{{item.optionsList.length}}">
         <view class="library-option-row {{option.isWide ? 'is-wide' : ''}} {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
           {{option.label}}
@@ -203,6 +209,10 @@
       <view class="question-label">{{texts.answerArea}}</view>
       <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
     </view>
+    <view class="question-mark-toolbar">
+      <text>{{texts.manualMarkHint}}</text>
+      <text class="question-mark-clear" wx:if="{{questionMarkCount && !submitted}}" bindtap="clearQuestionMarks">{{texts.clearManualMarks}}</text>
+    </view>
     <view class="section-heading" wx:if="{{item.images && item.images.length}}">A. Listen and choose the right picture.</view>
     <view class="picture-composite" wx:if="{{item.imageDisplayMode === 'composite'}}">
       <image class="picture-composite-item" mode="aspectFit" src="{{item.images[0].src}}"></image>
@@ -229,7 +239,9 @@
           <view class="listening-form-value">{{given.value}}</view>
         </view>
       </view>
-      <view class="question-title">{{item.number}}. {{item.prompt}}</view>
+      <view class="question-title {{questionSentenceMarks[item.markScope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{item.markScope}}" bindlongpress="handleQuestionSentenceMark">
+        <text>{{item.number}}. </text><text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{questionTokenMarks[token.markKey] ? 'manual-mark-' + questionTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{item.markScope}}" catchtap="handleQuestionMarkToken">{{token.text}}</text>
+      </view>
       <view class="option-list" wx:if="{{item.optionsList.length}}">
         <view class="option-row {{option.isWide ? 'is-wide' : ''}} {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
           {{option.label}}
@@ -240,7 +252,7 @@
     </view>
   </view>
 
-  <button class="button-primary submit-button" bindtap="submit">{{texts.submit}}</button>
+  <button class="button-primary submit-button" wx:if="{{!submitted}}" bindtap="submit">{{texts.submit}}</button>
 
   <view class="study-card floating-study-card card">
     <view class="question-top">

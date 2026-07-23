@@ -4,6 +4,7 @@ const snapshotStore = require('../../../utils/snapshot');
 const i18n = require('../../../utils/i18n');
 const { formatAudioTime, formatAudioDuration } = require('../../../utils/audio-time');
 const { stripRepeatedQuestionTitles } = require('../../../utils/listening-question-display');
+const { tokenizeScopedText, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../../utils/scoped-manual-marks');
 
 const text = (key, fallback) => i18n.getPageText('materialDetail', key, undefined, fallback);
 
@@ -40,9 +41,13 @@ function buildQuestions(item) {
     lastSection = section.key;
     if (groupKey) lastGroup = groupKey;
     if (formTitle) lastFormTitle = formTitle;
+    const prompt = stripRepeatedQuestionTitles(question.prompt, formTitle, question.groupTitle);
+    const markScope = `listening-question-${question.number}`;
     return {
       number: question.number,
-      prompt: stripRepeatedQuestionTitles(question.prompt, formTitle, question.groupTitle),
+      prompt,
+      markScope,
+      promptTokens: tokenizeScopedText(prompt, markScope),
       questionType: question.questionType || 'blank',
       sectionKey: section.key,
       sectionTitle: section.title,
@@ -69,6 +74,13 @@ function buildQuestions(item) {
       correct: false
     };
   });
+}
+
+function getListeningQuestionMarkSources(questions) {
+  return (questions || []).reduce((map, question) => {
+    if (question.markScope && question.prompt) map[question.markScope] = question.prompt;
+    return map;
+  }, {});
 }
 
 function studyDoneKey(item) {
@@ -196,6 +208,9 @@ Page({
     audioEnded: false,
     submitted: false,
     correctCount: 0,
+    questionTokenMarks: {},
+    questionSentenceMarks: {},
+    questionMarkCount: 0,
     studyPack: null,
     studyLoading: false,
     studyError: '',
@@ -553,7 +568,32 @@ Page({
     ));
     this.setData({ questions });
   },
-  submit() {
+  handleQuestionMarkToken(event) {
+    if (this.data.submitted) return;
+    const dataset = event.currentTarget.dataset || {};
+    if (!dataset.word || !dataset.markScope) return;
+    const questionTokenMarks = toggleScopedTokenMark(this.data.questionTokenMarks, dataset.markScope, Number(dataset.wordIndex));
+    this.setData({
+      questionTokenMarks,
+      questionMarkCount: countScopedMarks(questionTokenMarks, this.data.questionSentenceMarks)
+    });
+  },
+  handleQuestionSentenceMark(event) {
+    if (this.data.submitted) return;
+    const scope = String((event.currentTarget.dataset || {}).markScope || '');
+    if (!scope) return;
+    const questionSentenceMarks = toggleScopedSentenceMark(this.data.questionSentenceMarks, scope);
+    this.setData({
+      questionSentenceMarks,
+      questionMarkCount: countScopedMarks(this.data.questionTokenMarks, questionSentenceMarks)
+    });
+  },
+  clearQuestionMarks() {
+    if (this.data.submitted) return;
+    this.setData({ questionTokenMarks: {}, questionSentenceMarks: {}, questionMarkCount: 0 });
+  },
+  async submit() {
+    if (this.data.submitted) return;
     let correctCount = 0;
     const questions = (this.data.questions || []).map((question) => {
       const userAnswer = String(question.selectedAnswer || question.inputValue || '').trim();
@@ -564,6 +604,60 @@ Page({
       return Object.assign({}, question, { checked: true, correct });
     });
     this.setData({ questions, submitted: true, correctCount, transcriptVisible: false, studyError: '' });
+    const item = this.data.item || {};
+    const targetId = getListeningItemId(item);
+    if (!targetId) return;
+    const manualMarks = buildManualMarks(
+      getListeningQuestionMarkSources(questions),
+      this.data.questionTokenMarks,
+      this.data.questionSentenceMarks
+    );
+    const latestAttempt = {
+      correctCount,
+      totalCount: questions.length,
+      answeredCount: questions.length,
+      questions: questions.map((question) => ({
+        number: question.number,
+        prompt: question.prompt,
+        options: (question.optionsList || []).reduce((options, option) => {
+          options[option.key] = option.text;
+          return options;
+        }, {}),
+        selectedAnswer: question.selectedAnswer || question.inputValue || '',
+        answer: question.answer || '',
+        isCorrect: !!question.correct
+      })),
+      manualMarks
+    };
+    try {
+      const result = await store.recordStudyCompletion({
+        id: `listening-questions:${targetId}`,
+        type: 'listening',
+        section: 'questions',
+        targetId,
+        title: item.title || text('title', '听力练习'),
+        meta: [item.year, item.district, item.examType].filter(Boolean).join(' · '),
+        progressText: `${correctCount}/${questions.length}`,
+        latestAttempt
+      });
+      if (result && result.syncMode === 'cloud-error') {
+        const cloudError = result.cloudError || {};
+        const syncDebug = result.syncDebug || {};
+        const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+        this.setData({
+          debugLines: [
+            `DEBUG: pages/material/detail.submit -> store.recordStudyCompletion -> cloud.recordStudyCompletion -> saved=${result.saved === true ? 'true' : 'false'}, cloudError.message=${cloudError.message || 'missing'}, syncDebug.reason=${syncDebug.reason || 'missing'}, syncDebug.envId=${syncDebug.envId || 'missing'}, targetChildId=${target.targetChildId || 'self'}`
+          ]
+        });
+      }
+    } catch (error) {
+      const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+      this.setData({
+        debugLines: [
+          `DEBUG: pages/material/detail.submit -> store.recordStudyCompletion -> cloud.recordStudyCompletion -> exception=${error && error.message ? error.message : String(error)}, targetChildId=${target.targetChildId || 'self'}`
+        ]
+      });
+    }
   },
   completeStudy() {
     const item = this.data.item;
