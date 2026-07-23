@@ -53,3 +53,15 @@ test('写作批改失败展示完整调用链路而不是通用提示', () => {
   assert.match(page, /syncDebug\.envId=/);
   assert.match(page, /targetChildId=/);
 });
+
+test('写作评分固定温度并按题目与作文复用评分', () => {
+  const service = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/writing.service.js'), 'utf8');
+  const gradeWriting = service.match(/async function gradeWriting[\s\S]*?\n}\n\nasync function generateBandSample/);
+  assert.ok(gradeWriting);
+  assert.doesNotMatch(gradeWriting[0], /temperature:\s*0\.[12]/);
+  assert.equal((gradeWriting[0].match(/temperature:\s*0/g) || []).length, 2);
+  assert.match(service, /buildWritingScoreFingerprint/);
+  assert.match(service, /findCachedWritingReview/);
+  assert.match(service, /scoreSource:\s*'identical-cache'/);
+  assert.match(service, /task1FactCheck/);
+});

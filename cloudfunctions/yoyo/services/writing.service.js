@@ -1,4 +1,5 @@
 const https = require('https');
+const crypto = require('crypto');
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
@@ -7,6 +8,9 @@ const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
 
 const COLLECTION = 'writingAttempts';
 const IELTS_WRITING_RUBRIC_VERSION = 'IELTS public Writing band descriptors · May 2023';
+const WRITING_SCORING_VERSION = 'writing-score-v3-20260723';
+const WRITING_REVIEW_MEMORY_CACHE_LIMIT = 100;
+const writingReviewMemoryCache = new Map();
 const IELTS_WRITING_RUBRIC_GUIDE = [
   '按 IELTS 公开 Writing Band Descriptors（2023-05）逐项匹配，不得只凭整体印象给分。',
   'Task Achievement/Response：9=完整深入且几乎无遗漏；8=充分、清晰发展且仅偶有遗漏；7=主要要求均回应，立场清楚，支持总体充分但偶有泛化或不够聚焦；6=主要要求已回应，但发展不均、论据可能不足或重复；5=回应不完整且发展有限；4及以下=仅最低限度回应、明显偏题或信息严重不足。Task 1 还必须核对 overview、主要特征、比较和数据准确性。',
@@ -35,6 +39,10 @@ function normalizeLongText(value) {
     .replace(/[ \t]+/g, ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+function cloneJson(value) {
+  return JSON.parse(JSON.stringify(value));
 }
 
 function postJson(url, headers, body) {
@@ -178,6 +186,35 @@ function readDimensionScore(dimensions, keys) {
 
 function normalizeSchemaKey(value) {
   return String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+function normalizeFactIssueList(value, limit = 8) {
+  return (Array.isArray(value) ? value : []).map((item) => {
+    if (typeof item === 'string') {
+      return { detail: normalizeText(item), severity: 'minor' };
+    }
+    const severity = String(item && item.severity || '').toLowerCase() === 'major' ? 'major' : 'minor';
+    return {
+      detail: normalizeText(item && (item.detail || item.issue || item.feature || item.error)),
+      severity
+    };
+  }).filter((item) => item.detail).slice(0, limit);
+}
+
+function normalizeTask1FactCheck(data) {
+  const source = data && (data.task1FactCheck || data.task1_fact_check || data.factAudit) || {};
+  const majorMissingFeatures = normalizeTextList(source.majorMissingFeatures || source.major_missing_features, 8);
+  const minorMissingDetails = normalizeTextList(source.minorMissingDetails || source.minor_missing_details, 8);
+  const dataErrors = normalizeFactIssueList(source.dataErrors || source.data_errors, 8);
+  return {
+    chartFacts: normalizeTextList(source.chartFacts || source.chart_facts, 12),
+    overviewCoverage: normalizeText(source.overviewCoverage || source.overview_coverage),
+    crossSeriesComparisons: normalizeTextList(source.crossSeriesComparisons || source.cross_series_comparisons, 8),
+    majorMissingFeatures,
+    minorMissingDetails,
+    dataErrors,
+    hasMajorIssue: majorMissingFeatures.length > 0 || dataErrors.some((item) => item.severity === 'major')
+  };
 }
 
 function formatBandLabel(label, score) {
@@ -346,8 +383,13 @@ function normalizeReview(data, prompt) {
     ? data.dimensionScores
     : dimensions;
   if (taskType === 'ielts-task-1' || taskType === 'ielts-task-2') {
+    const task1FactCheck = taskType === 'ielts-task-1' ? normalizeTask1FactCheck(data) : null;
+    const rawTaskScore = readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']);
+    const taskScore = task1FactCheck && task1FactCheck.hasMajorIssue && rawTaskScore !== null
+      ? Math.min(rawTaskScore, 7)
+      : rawTaskScore;
     const dimensionScores = {
-      task: readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']),
+      task: taskScore,
       coherenceCohesion: readDimensionScore(rawDimensionScores, ['coherenceCohesion', 'coherence_and_cohesion', 'Coherence and Cohesion']),
       lexicalResource: readDimensionScore(rawDimensionScores, ['lexicalResource', 'lexical_resource', 'Lexical Resource']),
       grammaticalRangeAccuracy: readDimensionScore(rawDimensionScores, ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy', 'Grammatical Range and Accuracy'])
@@ -377,6 +419,9 @@ function normalizeReview(data, prompt) {
       dimensionScores,
       criterionDetails,
       taskType,
+      task1FactCheck,
+      taskAchievementCapApplied: !!(task1FactCheck && task1FactCheck.hasMajorIssue && rawTaskScore !== null && rawTaskScore > taskScore),
+      gradingVersion: WRITING_SCORING_VERSION,
       strengths: Array.isArray(data.strengths) ? data.strengths.map(normalizeText).filter(Boolean).slice(0, 3) : [],
       problems: Array.isArray(data.problems) ? data.problems.map(normalizeText).filter(Boolean).slice(0, 6) : [],
       suggestions: Array.isArray(data.suggestions) ? data.suggestions.map(normalizeText).filter(Boolean).slice(0, 6) : [],
@@ -443,6 +488,31 @@ function sanitizePromptForGrading(prompt) {
   };
 }
 
+function buildWritingScoreFingerprint(prompt, essay) {
+  return crypto.createHash('sha256').update(JSON.stringify({
+    gradingVersion: WRITING_SCORING_VERSION,
+    prompt: sanitizePromptForGrading(prompt),
+    promptId: normalizeText(prompt && (prompt._id || prompt.id)),
+    contentRevision: Number(prompt && prompt.contentRevision || 0),
+    essay: normalizeLongText(essay)
+  })).digest('hex');
+}
+
+function getMemoryCachedWritingReview(fingerprint) {
+  const cached = writingReviewMemoryCache.get(String(fingerprint || ''));
+  return cached ? cloneJson(cached) : null;
+}
+
+function setMemoryCachedWritingReview(fingerprint, review) {
+  const key = String(fingerprint || '');
+  if (!key || !review) return;
+  if (writingReviewMemoryCache.has(key)) writingReviewMemoryCache.delete(key);
+  writingReviewMemoryCache.set(key, cloneJson(review));
+  while (writingReviewMemoryCache.size > WRITING_REVIEW_MEMORY_CACHE_LIMIT) {
+    writingReviewMemoryCache.delete(writingReviewMemoryCache.keys().next().value);
+  }
+}
+
 function buildGradingPrompt(prompt, essay) {
   const taskType = getWritingTaskType(prompt);
   const original = sanitizePromptForGrading(prompt);
@@ -461,9 +531,15 @@ function buildGradingPrompt(prompt, essay) {
       `评分依据版本：${IELTS_WRITING_RUBRIC_VERSION}。`,
       IELTS_WRITING_RUBRIC_GUIDE,
       taskType === 'ielts-task-1'
-        ? '必须对照附带的原题图片、visualData、题干和要求评判主要特征、数据准确性、overview和比较；少于150词必须在 Task Achievement 中明确处理。polishedVersion必须是独立生成的原题参考范文，不是学生文章的改写；不得编造原图中没有的数据。'
+        ? [
+          '必须以附带的原题图片为最终事实来源，同时核对 visualData、题干和要求；visualData 可能只有标题、坐标和图例，不得把它当作完整数值表。',
+          '先在 task1FactCheck 中独立列出图表关键事实，再评判学生是否准确覆盖主要特征、数据、overview和跨系列比较。',
+          'Task Achievement 固定门槛：overview 若遗漏最终排名、重要交叉、共同最高/最低、峰值或主导趋势等重大特征，该项最高7分；只遗漏一个中间年份数值但主要趋势完整，不自动降档。',
+          '数据错误必须标 major 或 minor；重大遗漏写入 majorMissingFeatures，次要细节写入 minorMissingDetails。少于150词必须在 Task Achievement 中明确处理。',
+          'polishedVersion必须是独立生成的原题参考范文，不是学生文章的改写；不得编造原图中没有的数据。'
+        ].join('')
         : '必须完整回应原题的所有问题，立场明确，论证充分；少于250词必须在 Task Response 中明确处理。',
-      `criterionFeedback 的四个对象都必须给出：2–4条学生原文证据、对应本档描述、1–4条卡分原因、1–4条升到下一档的具体动作。返回格式：{"score":number,"totalScore":9,"level":"IELTS Band x.x","dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文评语","evidence":["原文证据"],"descriptorMatch":"匹配本档原因","limiters":["卡分原因"],"nextBandActions":["升档动作"]},"coherenceCohesion":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"lexicalResource":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"grammaticalRangeAccuracy":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]}},"summary":"中文总评","content":"${taskCriterion}中文评语","structure":"Coherence and Cohesion中文评语","language":"Lexical Resource中文评语","spelling":"Grammatical Range and Accuracy中文评语","strengths":["优点"],"problems":["问题"],"suggestions":["建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedVersion":"英文参考范文"}`,
+      `criterionFeedback 的四个对象都必须给出：2–4条学生原文证据、对应本档描述、1–4条卡分原因、1–4条升到下一档的具体动作。返回格式：{"score":number,"totalScore":9,"level":"IELTS Band x.x"${taskType === 'ielts-task-1' ? ',"task1FactCheck":{"chartFacts":["从原图读取的关键事实"],"overviewCoverage":"学生overview覆盖情况","crossSeriesComparisons":["学生已写出的跨系列比较"],"majorMissingFeatures":["遗漏的重大特征"],"minorMissingDetails":["遗漏的次要数值"],"dataErrors":[{"detail":"数据错误","severity":"major|minor"}]}' : ''},"dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文评语","evidence":["原文证据"],"descriptorMatch":"匹配本档原因","limiters":["卡分原因"],"nextBandActions":["升档动作"]},"coherenceCohesion":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"lexicalResource":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"grammaticalRangeAccuracy":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]}},"summary":"中文总评","content":"${taskCriterion}中文评语","structure":"Coherence and Cohesion中文评语","language":"Lexical Resource中文评语","spelling":"Grammatical Range and Accuracy中文评语","strengths":["优点"],"problems":["问题"],"suggestions":["建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedVersion":"英文参考范文"}`,
       ...common
     ].join('\n');
   }
@@ -658,6 +734,15 @@ async function gradeWriting(prompt, essay) {
   if (!config.endpoint || !config.apiKey) {
     throw new Error('writing-model-not-configured');
   }
+  const scoreFingerprint = buildWritingScoreFingerprint(prompt, essay);
+  const memoryCached = getMemoryCachedWritingReview(scoreFingerprint);
+  if (memoryCached) {
+    return Object.assign(memoryCached, {
+      scoreFingerprint,
+      gradingVersion: WRITING_SCORING_VERSION,
+      scoreCached: true
+    });
+  }
   const taskType = getWritingTaskType(prompt);
   const gradingPrompt = buildGradingPrompt(prompt, essay);
   const imageUrl = await resolvePromptImageUrl(prompt, taskType);
@@ -671,7 +756,7 @@ async function gradeWriting(prompt, essay) {
     authorization: `Bearer ${config.apiKey}`
   }, {
     model: config.model,
-    temperature: 0.2,
+    temperature: 0,
     messages: [{
       role: 'user',
       content
@@ -692,7 +777,7 @@ async function gradeWriting(prompt, essay) {
       authorization: `Bearer ${config.apiKey}`
     }, {
       model: config.model,
-      temperature: 0.1,
+      temperature: 0,
       messages: [{ role: 'user', content: repairContent }]
     });
     parsed = parseJsonText(extractMessageText(data));
@@ -701,6 +786,12 @@ async function gradeWriting(prompt, essay) {
       throw new Error('writing-ielts-review-invalid');
     }
   }
+  review = Object.assign({}, review, {
+    scoreFingerprint,
+    gradingVersion: WRITING_SCORING_VERSION,
+    scoreCached: false
+  });
+  setMemoryCachedWritingReview(scoreFingerprint, review);
   return review;
 }
 
@@ -811,6 +902,27 @@ async function generateWritingBandSample(event) {
   return { sample, bandSamples, cached: false };
 }
 
+async function findCachedWritingReview(ctx, promptId, scoreFingerprint) {
+  if (!ctx || !promptId || !scoreFingerprint) return null;
+  try {
+    const result = await dbAdapter.collection(COLLECTION).where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      promptId
+    }).limit(20).get();
+    const matched = (result.data || [])
+      .filter((item) => item
+        && item.status === 'graded'
+        && item.review
+        && item.scoreFingerprint === scoreFingerprint
+        && item.gradingVersion === WRITING_SCORING_VERSION)
+      .sort((a, b) => Date.parse(b.gradedAt || b.updatedAt || 0) - Date.parse(a.gradedAt || a.updatedAt || 0))[0];
+    return matched ? cloneJson(matched.review) : null;
+  } catch (error) {
+    return null;
+  }
+}
+
 async function submitWritingAttempt(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
@@ -825,6 +937,7 @@ async function submitWritingAttempt(event) {
   const now = new Date().toISOString();
   const taskType = getWritingTaskType(prompt);
   const totalScore = resolveTotalScore(prompt, taskType);
+  const scoreFingerprint = buildWritingScoreFingerprint(prompt, essay);
   const attempt = {
     promptId,
     title: prompt.title || '',
@@ -862,6 +975,9 @@ async function submitWritingAttempt(event) {
     wordCount: (essay.match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length,
     score: 0,
     totalScore,
+    scoreFingerprint,
+    gradingVersion: WRITING_SCORING_VERSION,
+    scoreSource: 'model',
     review: null,
     status: 'grading-pending',
     createdAt: now,
@@ -884,6 +1000,56 @@ async function submitWritingAttempt(event) {
       }),
       review,
       pending: false
+    };
+  }
+  const storedReview = await findCachedWritingReview(ctx, promptId, scoreFingerprint);
+  if (storedReview) {
+    let review = Object.assign({}, normalizeReview(storedReview, prompt), {
+      scoreFingerprint,
+      gradingVersion: WRITING_SCORING_VERSION,
+      scoreCached: true
+    });
+    try {
+      const testEstimateResult = await resolveIeltsWritingTestEstimate(ctx, promptId, review);
+      if (testEstimateResult) {
+        review = Object.assign({}, review, { writingTestEstimate: testEstimateResult.estimate });
+      }
+    } catch (error) {}
+    const cachedAttempt = Object.assign({}, attempt, {
+      score: review.score,
+      totalScore: review.totalScore,
+      review,
+      status: 'graded',
+      scoreSource: 'identical-cache',
+      gradedAt: now
+    });
+    const created = await dbAdapter.collection(COLLECTION).add({
+      data: Object.assign({}, cachedAttempt, {
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId,
+        userId: ctx.user.userId,
+        memberId: ctx.member.memberId
+      })
+    });
+    const attemptId = created && created._id ? created._id : '';
+    const savedAttempt = Object.assign({}, cachedAttempt, { attemptId, _id: attemptId });
+    await saveWritingCompletion(
+      ctx,
+      today,
+      Object.assign({}, prompt, { _id: promptId }),
+      savedAttempt,
+      `${review.score}/${review.totalScore} 分`
+    );
+    return {
+      prompt: {
+        _id: promptId,
+        title: prompt.title || '',
+        prompt: prompt.prompt || ''
+      },
+      attempt: savedAttempt,
+      review,
+      pending: false,
+      cached: true
     };
   }
   const created = await dbAdapter.collection(COLLECTION).add({
@@ -966,6 +1132,7 @@ async function gradeWritingAttempt(event) {
     ...(attempt.promptMeta || {}),
     score: attempt.totalScore || (attempt.promptMeta && attempt.promptMeta.score) || 20
   };
+  const scoreFingerprint = attempt.scoreFingerprint || buildWritingScoreFingerprint(prompt, attempt.essay || '');
   if (attempt.status === 'graded' && attempt.review) {
     const formatted = formatAttempt(Object.assign({}, attempt, { _id: attemptId }));
     await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${formatted.score}/${formatted.totalScore} 分`);
@@ -979,7 +1146,14 @@ async function gradeWritingAttempt(event) {
         updatedAt: now
       }
     });
-    let review = await gradeWriting(prompt, attempt.essay || '');
+    const storedReview = await findCachedWritingReview(ctx, attempt.promptId, scoreFingerprint);
+    let review = storedReview
+      ? Object.assign({}, normalizeReview(storedReview, prompt), {
+        scoreFingerprint,
+        gradingVersion: WRITING_SCORING_VERSION,
+        scoreCached: true
+      })
+      : await gradeWriting(prompt, attempt.essay || '');
     let testEstimateResult = null;
     try {
       testEstimateResult = await resolveIeltsWritingTestEstimate(ctx, attempt.promptId, review);
@@ -992,6 +1166,9 @@ async function gradeWritingAttempt(event) {
       score: review.score,
       totalScore: review.totalScore,
       review: command.set(review),
+      scoreFingerprint,
+      gradingVersion: WRITING_SCORING_VERSION,
+      scoreSource: storedReview ? 'identical-cache' : 'model',
       status: 'graded',
       gradedAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
@@ -1052,6 +1229,9 @@ function formatAttempt(record) {
     wordCount: Number(item.wordCount || 0),
     score: Number(item.score || review.score || 0),
     totalScore: Number(item.totalScore || review.totalScore || 20),
+    scoreFingerprint: item.scoreFingerprint || review.scoreFingerprint || '',
+    gradingVersion: item.gradingVersion || review.gradingVersion || '',
+    scoreSource: item.scoreSource || '',
     review,
     manualMarks: item.manualMarks || null,
     translationQuestions: Array.isArray(item.translationQuestions) ? item.translationQuestions : [],
@@ -1150,12 +1330,17 @@ module.exports = {
     normalizeBandScore,
     calculateIeltsWritingTestEstimate,
     normalizeBandSample,
+    normalizeTask1FactCheck,
     hasCompleteIeltsCriterionDetails,
     hasUsableIeltsReview,
     normalizeReview,
     sanitizePromptForGrading,
+    buildWritingScoreFingerprint,
+    getMemoryCachedWritingReview,
+    setMemoryCachedWritingReview,
     buildGradingPrompt,
     buildBandSamplePrompt,
-    IELTS_WRITING_RUBRIC_VERSION
+    IELTS_WRITING_RUBRIC_VERSION,
+    WRITING_SCORING_VERSION
   }
 };

@@ -29,6 +29,9 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /public Writing band descriptors · May 2023/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原文证据/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题图片为最终事实来源/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /task1FactCheck/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /重大特征，该项最高7分/);
   assert.match(writing.buildGradingPrompt(task2, 'Essay'), /Task Response/);
   assert.doesNotMatch(writing.buildGradingPrompt(task1, 'Essay'), /"totalScore":20/);
 });
@@ -137,6 +140,59 @@ test('雅思四项分有效时保留评分，不因部分讲解缺失判整次�
   assert.equal(writing.hasCompleteIeltsCriterionDetails(review), false);
   assert.equal(review.criterionDetailsComplete, false);
   assert.match(review.feedbackNotice, /四项 Band 分已保留/);
+});
+
+test('Task 1 重大图表遗漏限制 Task Achievement，次要中间值遗漏不机械降档', () => {
+  const prompt = { _id: 'ielts-task-1', contentType: 'ielts-writing-task-1', score: 9 };
+  const base = {
+    dimensionScores: {
+      taskAchievement: 8,
+      coherenceCohesion: 8,
+      lexicalResource: 8,
+      grammaticalRangeAccuracy: 8
+    },
+    summary: '评分。',
+    criterionFeedback: {}
+  };
+  const major = writing.normalizeReview(Object.assign({}, base, {
+    task1FactCheck: {
+      chartFacts: ['Retail and healthcare are joint highest in 2020.'],
+      majorMissingFeatures: ['The overview omits the final joint-highest ranking.'],
+      minorMissingDetails: [],
+      dataErrors: []
+    }
+  }), prompt);
+  const minor = writing.normalizeReview(Object.assign({}, base, {
+    task1FactCheck: {
+      chartFacts: ['Retail reaches about 15 million in 2000.'],
+      majorMissingFeatures: [],
+      minorMissingDetails: ['The 2000 retail value is not reported.'],
+      dataErrors: []
+    }
+  }), prompt);
+
+  assert.equal(major.dimensionScores.task, 7);
+  assert.equal(major.score, 8);
+  assert.equal(major.taskAchievementCapApplied, true);
+  assert.equal(minor.dimensionScores.task, 8);
+  assert.equal(minor.taskAchievementCapApplied, false);
+});
+
+test('同一题目和作文生成稳定评分指纹并复用内存结果', () => {
+  const prompt = {
+    _id: 'ielts-academic-21-test-1-writing-task-1',
+    contentType: 'ielts-writing-task-1',
+    contentRevision: 3,
+    prompt: 'The graph below gives information about jobs.'
+  };
+  const first = writing.buildWritingScoreFingerprint(prompt, 'First paragraph.\n\nSecond paragraph.');
+  const same = writing.buildWritingScoreFingerprint(prompt, 'First paragraph.\n\nSecond paragraph.');
+  const changed = writing.buildWritingScoreFingerprint(prompt, 'A different essay.');
+  assert.equal(first, same);
+  assert.notEqual(first, changed);
+
+  writing.setMemoryCachedWritingReview(first, { score: 7.5, summary: '稳定结果' });
+  assert.deepEqual(writing.getMemoryCachedWritingReview(first), { score: 7.5, summary: '稳定结果' });
 });
 
 test('雅思按需生成高 1 与高 2 Band 教学范文协议', () => {
