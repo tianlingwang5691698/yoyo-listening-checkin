@@ -382,6 +382,15 @@
 4. 不变项：语音转写、TTS、腾讯 SOE、历史离线题库审核结果。
 5. 是否需要发版：需部署 `yoyo` 云函数；前端无新增接口，但本次同时发布既有写作轮询修复。
 
+### 2026-07-23 写作记录详情读取触发 65 秒超时
+
+1. 现象：练习记录展开 IELTS 写作时，`getWritingAttemptDetail` 每 3 秒轮询后在约 65 秒返回 `-501002 / ESOCKETTIMEDOUT`，页面显示整段 DEBUG。
+2. 结论：详情接口对 pending/failed 任务同步执行长评分，记录页本应只读的请求占用到微信资源连接超时。
+3. 修复：详情接口永久改为纯读取并返回 `resumable`；记录页单次触发独立 `gradeWritingAttempt` 后只轮询详情。330 秒内已有 `grading` 任务直接返回 pending，不重复调用模型。
+4. 竞态：本次 7.5 分已先写入 `gradedAt`，后到的超时调用又把状态覆盖为 `grading-failed`；失败分支现改为先重读，已存在成功结果时禁止覆盖。
+5. 展示：写作详情读取失败不再覆盖整个记录页显示长 DEBUG，保留原记录并短时重试。
+6. 是否需要发版：需部署 `yoyo` 云函数，并发布小程序前端。
+
 ### 2026-07-09 词汇书入口 request fail url not in domain list
 
 1. 现象：线上真实词汇入口点击初中词汇书后只显示演示 3 词，并出现 `request:fail url not in domain list` debug。

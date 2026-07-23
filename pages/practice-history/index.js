@@ -240,7 +240,7 @@ function normalizeWriting(attempt, index) {
 }
 
 function isWritingGradingPending(attempt) {
-  return ['grading-pending', 'grading'].includes(String(attempt && attempt.status || ''));
+  return ['grading-pending', 'grading', 'grading-failed'].includes(String(attempt && attempt.status || ''));
 }
 
 function buildDebugLines(result, action) {
@@ -323,6 +323,7 @@ Page({
     Object.keys(this.writingResumeTimers || {}).forEach((key) => clearTimeout(this.writingResumeTimers[key]));
     this.writingResumeTimers = {};
     this.writingResumeInFlight = {};
+    this.writingGradeResumeStartedAt = {};
   },
   async loadHistory() {
     this.setData({ loading: true, debugLines: [] });
@@ -375,11 +376,28 @@ Page({
       .filter((record) => isWritingGradingPending(record.attempt))
       .forEach((record) => this.resumeWritingAttempt(record));
   },
+  startWritingGradeOnce(recordId) {
+    const id = String(recordId || '');
+    if (!id) return;
+    this.writingGradeResumeStartedAt = this.writingGradeResumeStartedAt || {};
+    const activeAgeMs = Date.now() - Number(this.writingGradeResumeStartedAt[id] || 0);
+    if (activeAgeMs < 330000) return;
+    this.writingGradeResumeStartedAt[id] = Date.now();
+    store.gradeWritingAttempt(id).then(() => {
+      if (!this.historyPageActive) return;
+      const latest = (this.data.records || []).find((item) => item.id === id);
+      if (latest) this.resumeWritingAttempt(latest);
+    }).catch(() => {});
+  },
   async resumeWritingAttempt(record) {
     const recordId = String(record && record.id || '');
     if (!recordId) return;
     this.writingResumeInFlight = this.writingResumeInFlight || {};
     if (this.writingResumeInFlight[recordId]) return;
+    const currentStatus = String(record && record.attempt && record.attempt.status || '');
+    if (['grading-pending', 'grading-failed'].includes(currentStatus)) {
+      this.startWritingGradeOnce(recordId);
+    }
     this.writingResumeInFlight[recordId] = true;
     const result = await store.getWritingAttemptDetail(recordId);
     delete this.writingResumeInFlight[recordId];
@@ -395,6 +413,7 @@ Page({
       return;
     }
     const normalized = normalizeWriting(result.attempt, 0);
+    if (result.resumable) this.startWritingGradeOnce(recordId);
     const current = (this.data.records || []).find((item) => item.id === recordId);
     if (!current) return;
     this.updateRecord(recordId, {
@@ -699,7 +718,13 @@ Page({
     const result = await store.getWritingAttemptDetail(record.id);
     if (result && result.syncMode === 'cloud-error') {
       this.updateRecord(record.id, { detailLoading: false });
-      this.setData({ debugLines: buildDebugLines(result, 'getWritingAttemptDetail') });
+      this.writingResumeTimers = this.writingResumeTimers || {};
+      clearTimeout(this.writingResumeTimers[record.id]);
+      this.writingResumeTimers[record.id] = setTimeout(() => {
+        const latest = (this.data.records || []).find((item) => item.id === record.id);
+        if (!latest || this.data.expandedId !== record.id) return;
+        this.loadWritingDetail(Object.assign({}, latest, { detailLoading: false }));
+      }, 5000);
       return;
     }
     if (!result || !result.attempt) {
@@ -707,12 +732,14 @@ Page({
       return;
     }
     const normalized = normalizeWriting(result.attempt, 0);
+    if (result.resumable) this.startWritingGradeOnce(record.id);
     this.updateRecord(record.id, {
       detailLoading: false,
       detailReady: true,
       attempt: normalized.attempt,
       manualMarkItems: normalized.manualMarkItems
     });
+    this.setData({ debugLines: [] });
     if (['grading-pending', 'grading', 'grading-failed'].includes(normalized.attempt.status)) {
       this.writingResumeTimers = this.writingResumeTimers || {};
       clearTimeout(this.writingResumeTimers[record.id]);

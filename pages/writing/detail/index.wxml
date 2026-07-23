@@ -100,9 +100,9 @@
       <view class="library-letter-paper {{editorFocused ? 'is-focused' : ''}}">
         <view class="library-paper-margin"></view>
         <view class="library-paragraph-rule"></view>
-        <textarea class="library-essay-input" value="{{essayText}}" maxlength="5000" cursor-spacing="180" cursor-color="#B89562" show-confirm-bar="{{true}}" placeholder="{{texts.placeholder}}" bindinput="onEssayInput" bindfocus="onEditorFocus" bindblur="onEditorBlur"></textarea>
+        <textarea class="library-essay-input" value="{{essayText}}" disabled="{{restoringAttempt || grading || submitting}}" maxlength="5000" cursor-spacing="180" cursor-color="#B89562" show-confirm-bar="{{true}}" placeholder="{{texts.placeholder}}" bindinput="onEssayInput" bindfocus="onEditorFocus" bindblur="onEditorBlur"></textarea>
       </view>
-      <button class="library-submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">{{texts.submit}}</button>
+      <button class="library-submit-button" loading="{{submitting}}" disabled="{{restoringAttempt || submitting || submitLocked}}" bindtap="submitEssay">{{grading ? texts.grading : texts.submit}}</button>
       <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
     </view>
 
@@ -339,9 +339,9 @@
         <view></view>
         <view></view>
       </view>
-      <textarea class="essay-input" value="{{essayText}}" maxlength="5000" cursor-spacing="180" cursor-color="#DF7F68" show-confirm-bar="{{true}}" placeholder="{{texts.placeholder}}" bindinput="onEssayInput" bindfocus="onEditorFocus" bindblur="onEditorBlur"></textarea>
+      <textarea class="essay-input" value="{{essayText}}" disabled="{{restoringAttempt || grading || submitting}}" maxlength="5000" cursor-spacing="180" cursor-color="#DF7F68" show-confirm-bar="{{true}}" placeholder="{{texts.placeholder}}" bindinput="onEssayInput" bindfocus="onEditorFocus" bindblur="onEditorBlur"></textarea>
     </view>
-    <button class="submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">{{texts.submit}}</button>
+    <button class="submit-button" loading="{{submitting}}" disabled="{{restoringAttempt || submitting || submitLocked}}" bindtap="submitEssay">{{grading ? texts.grading : texts.submit}}</button>
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
   </view>
 

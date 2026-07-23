@@ -10,6 +10,40 @@ const { tokenizeScopedText, splitScopedSentences, toggleScopedTokenMark, toggleS
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV4';
+const WRITING_SESSION_STORAGE_PREFIX = 'writingDetailSessionV1';
+const WRITING_PENDING_STATUSES = ['grading-pending', 'grading'];
+
+function getWritingSessionStorageKey(promptId) {
+  const target = typeof store.getSelectedStudentTarget === 'function' ? store.getSelectedStudentTarget() : {};
+  const role = typeof store.getDeviceStudyRole === 'function' ? store.getDeviceStudyRole() : 'student';
+  return [
+    WRITING_SESSION_STORAGE_PREFIX,
+    role,
+    target.targetFamilyId || 'self',
+    target.targetChildId || 'self',
+    String(promptId || '')
+  ].map((item) => encodeURIComponent(String(item))).join(':');
+}
+
+function readWritingSession(promptId) {
+  if (!promptId) return null;
+  try {
+    const session = wx.getStorageSync(getWritingSessionStorageKey(promptId));
+    return session && session.promptId === promptId ? session : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function writeWritingSession(promptId, session) {
+  if (!promptId) return;
+  try {
+    wx.setStorageSync(getWritingSessionStorageKey(promptId), Object.assign({}, session || {}, {
+      promptId,
+      updatedAt: Date.now()
+    }));
+  } catch (error) {}
+}
 
 function buildPromptDisplay(prompt) {
   return promptDisplay.buildPromptDisplay(prompt, {
@@ -137,7 +171,7 @@ function buildWritingSubmitError(error, fallbackAction) {
   const target = typeof store.getSelectedStudentTarget === 'function' ? store.getSelectedStudentTarget() : {};
   const message = String(error && error.message || 'unknown-error');
   return [
-    text('gradingFailed', '批改失败，可以再点一次提交。'),
+    text('gradingFailed', '批改未完成，系统会续查原任务，请勿重复提交。'),
     `DEBUG: pages/writing/detail.submitEssay -> store.${action} -> cloud.${action} -> cloudError.message=${message}, syncDebug.reason=${debug.reason || 'missing'}, syncDebug.envId=${debug.envId || 'missing'}, targetChildId=${target.targetChildId || 'self'}`
   ].join('\n');
 }
@@ -197,6 +231,9 @@ Page({
     grading: false,
     review: null,
     currentAttemptId: '',
+    essayDirty: false,
+    submitLocked: false,
+    restoringAttempt: false,
     bandSampleGeneratingDelta: 0,
     bandSampleError: '',
     reviewCelebrating: false,
@@ -266,6 +303,7 @@ Page({
       translationAnalysisSummary: ''
     });
     if (!isTranslation) await this.resolvePromptImages(prompt);
+    if (!isTranslation && prompt) await this.restoreLatestWritingAttempt(prompt);
     this.writingPerf.mark('cloudRefresh', {
       source,
       cacheHit: source === 'snapshot' || source === 'storage' || source === 'cache',
@@ -282,6 +320,106 @@ Page({
     const attemptId = String(this.data.currentAttemptId || '');
     if (attemptId && this.data.grading && this.data.prompt) {
       this.scheduleWritingResultPoll(attemptId, this.data.prompt, null, 1000);
+    }
+  },
+  saveWritingSession(status, patch) {
+    const promptId = String(this.data.prompt && this.data.prompt._id || '');
+    if (!promptId) return;
+    writeWritingSession(promptId, Object.assign({
+      attemptId: this.data.currentAttemptId || '',
+      essayText: this.data.essayText || '',
+      submittedEssayText: this.data.submittedEssayText || '',
+      essayDirty: !!this.data.essayDirty,
+      status: status || (this.data.grading ? 'grading' : (this.data.review ? 'graded' : 'draft'))
+    }, patch || {}));
+  },
+  scheduleWritingDraftSave() {
+    if (this.writingDraftSaveTimer) clearTimeout(this.writingDraftSaveTimer);
+    this.writingDraftSaveTimer = setTimeout(() => {
+      this.writingDraftSaveTimer = null;
+      this.saveWritingSession(this.data.grading ? 'grading' : 'draft');
+    }, 250);
+  },
+  applyRestoredWritingAttempt(attempt, prompt, session) {
+    if (!attempt || !prompt) return false;
+    const attemptId = String(attempt.attemptId || attempt._id || '');
+    const status = String(attempt.status || '');
+    const pending = WRITING_PENDING_STATUSES.includes(status);
+    const failed = status === 'grading-failed';
+    const preserveDraft = !!(session && session.essayDirty && session.essayText);
+    const submittedEssayText = String(attempt.essay || session && session.submittedEssayText || '');
+    const essayText = preserveDraft ? String(session.essayText || '') : submittedEssayText;
+    const review = status === 'graded' && attempt.review ? normalizeReview(attempt.review, prompt) : null;
+    const essayDirty = preserveDraft && essayText.trim() !== submittedEssayText.trim();
+    this.setData({
+      essayText,
+      submittedEssayText,
+      wordCount: countWords(essayText),
+      currentAttemptId: attemptId,
+      essayDirty,
+      submitLocked: pending || failed || !essayDirty,
+      grading: pending,
+      review,
+      errorText: pending
+        ? text('gradingStatus', '作文已提交，正在批改。')
+        : failed
+          ? text('gradingResumeStatus', '上次批改未完成，正在恢复原任务。')
+          : ''
+    });
+    this.saveWritingSession(status || (review ? 'graded' : 'draft'));
+    if (pending || failed) {
+      if (status !== 'grading') {
+        this.startWritingGradeAttemptOnce(attemptId, prompt, attempt);
+      }
+      this.scheduleWritingResultPoll(attemptId, prompt, attempt, 500);
+    }
+    return true;
+  },
+  async restoreLatestWritingAttempt(prompt) {
+    const promptId = String(prompt && prompt._id || '');
+    if (!promptId || this.restoredWritingPromptId === promptId) return;
+    this.restoredWritingPromptId = promptId;
+    const session = readWritingSession(promptId);
+    if (session && session.essayText) {
+      const essayText = String(session.essayText || '');
+      this.setData({
+        essayText,
+        submittedEssayText: String(session.submittedEssayText || ''),
+        wordCount: countWords(essayText),
+        currentAttemptId: String(session.attemptId || ''),
+        essayDirty: !!session.essayDirty,
+        submitLocked: WRITING_PENDING_STATUSES.includes(session.status)
+          || session.status === 'grading-failed'
+          || (!!session.attemptId && !session.essayDirty),
+        grading: WRITING_PENDING_STATUSES.includes(session.status),
+        restoringAttempt: true
+      });
+    } else {
+      this.setData({ restoringAttempt: true });
+    }
+    try {
+      const result = await store.getWritingAttempts({
+        promptId,
+        limit: 10,
+        summaryOnly: false,
+        forceRefresh: true
+      });
+      const role = typeof store.getDeviceStudyRole === 'function' ? store.getDeviceStudyRole() : 'student';
+      const attempts = Array.isArray(result && result.attempts) ? result.attempts : [];
+      const latest = attempts.find((attempt) => (
+        role === 'parent' ? attempt && attempt.isPreview : attempt && !attempt.isPreview
+      )) || null;
+      if (latest) {
+        this.applyRestoredWritingAttempt(latest, prompt, session);
+      } else if (session && session.attemptId) {
+        this.scheduleWritingResultPoll(session.attemptId, prompt, null, 500);
+      }
+    } catch (error) {
+      if (session && session.attemptId) {
+        this.scheduleWritingResultPoll(session.attemptId, prompt, null, 1000);
+      }
+    } finally {
+      this.setData({ restoringAttempt: false });
     }
   },
   async resolvePromptImages(prompt) {
@@ -308,11 +446,18 @@ Page({
   },
   onEssayInput(event) {
     const essayText = event.detail.value || '';
+    const submittedEssayText = String(this.data.submittedEssayText || '');
+    const essayDirty = !!this.data.currentAttemptId
+      ? essayText.trim() !== submittedEssayText.trim()
+      : !!essayText.trim();
     this.setData({
       essayText,
       wordCount: countWords(essayText),
+      essayDirty,
+      submitLocked: !!this.data.grading || (!!this.data.currentAttemptId && !essayDirty),
       errorText: ''
     });
+    this.scheduleWritingDraftSave();
   },
   onEditorFocus() {
     this.setData({ editorFocused: true });
@@ -405,7 +550,25 @@ Page({
     }
     const review = normalizeReview(reviewSource, prompt);
     const attemptId = gradedAttempt.attemptId || gradedAttempt._id || this.data.currentAttemptId || '';
-    this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
+    const submittedEssayText = String(gradedAttempt.essay || this.data.submittedEssayText || this.data.essayText || '');
+    const essayDirty = !!this.data.essayDirty
+      && String(this.data.essayText || '').trim() !== submittedEssayText.trim();
+    this.writingGradeResumeAttemptId = '';
+    this.writingGradeResumeStartedAt = 0;
+    this.setData({
+      review,
+      currentAttemptId: attemptId,
+      submittedEssayText,
+      grading: false,
+      essayDirty,
+      submitLocked: !essayDirty,
+      errorText: ''
+    });
+    this.saveWritingSession('graded', {
+      attemptId,
+      submittedEssayText,
+      essayDirty
+    });
     this.playWritingReviewEffect();
     if (!gradedAttempt.isPreview) {
       completed.addCompletedItem({
@@ -420,6 +583,27 @@ Page({
       });
     }
   },
+  startWritingGradeAttemptOnce(attemptId, prompt, fallbackAttempt) {
+    const id = String(attemptId || '');
+    const activeAgeMs = Date.now() - Number(this.writingGradeResumeStartedAt || 0);
+    if (!id || (this.writingGradeResumeAttemptId === id && activeAgeMs < 330000)) return;
+    this.writingGradeResumeAttemptId = id;
+    this.writingGradeResumeStartedAt = Date.now();
+    store.gradeWritingAttempt(id).then((graded) => {
+      if (!this.writingPageActive) return;
+      if (graded && graded.syncMode === 'cloud-error') {
+        throw createWritingCloudError(graded, 'gradeWritingAttempt');
+      }
+      if (graded && graded.attempt && graded.attempt.status === 'graded' && (graded.review || graded.attempt.review)) {
+        this.finishWritingGrade(graded, prompt, fallbackAttempt);
+        return;
+      }
+      this.scheduleWritingResultPoll(id, prompt, graded && graded.attempt || fallbackAttempt, 3000);
+    }).catch((error) => {
+      if (!this.writingPageActive) return;
+      this.continueWritingResultPolling(id, prompt, fallbackAttempt, error);
+    });
+  },
   scheduleWritingResultPoll(attemptId, prompt, fallbackAttempt, delayMs = 10000) {
     if (this.writingResultPollTimer) clearTimeout(this.writingResultPollTimer);
     this.writingResultPollTimer = setTimeout(async () => {
@@ -432,11 +616,19 @@ Page({
           this.finishWritingGrade(result, prompt, fallbackAttempt);
           return;
         }
+        if (result.resumable) {
+          this.setData({ grading: true, submitLocked: true });
+          this.saveWritingSession('grading', { attemptId });
+          this.startWritingGradeAttemptOnce(attemptId, prompt, result.attempt || fallbackAttempt);
+          this.scheduleWritingResultPoll(attemptId, prompt, result.attempt || fallbackAttempt, 3000);
+          return;
+        }
         if (result.attempt.status === 'grading-failed') {
           const error = new Error(result.attempt.gradeError || 'writing-grading-failed');
           const errorText = buildWritingSubmitError(error, 'getWritingAttemptDetail');
           console.error(errorText);
-          this.setData({ grading: false, errorText });
+          this.setData({ grading: false, submitLocked: true, errorText });
+          this.saveWritingSession('grading-failed', { attemptId });
           return;
         }
       }
@@ -447,13 +639,28 @@ Page({
     console.error(buildWritingSubmitError(error, 'gradeWritingAttempt'));
     this.setData({
       grading: true,
+      submitLocked: true,
       errorText: text('gradingResumeStatus', '云端仍在批改。可以返回，完成后会出现在写作记录中。')
     });
+    this.saveWritingSession('grading', { attemptId });
     this.scheduleWritingResultPoll(attemptId, prompt, fallbackAttempt, 5000);
   },
   async submitEssay() {
     const prompt = this.data.prompt;
     const essay = String(this.data.essayText || '').trim();
+    if (this.writingSubmitInFlight || this.data.submitting) return;
+    if (this.data.restoringAttempt) {
+      wx.showToast({ title: text('restoringAttempt', '正在恢复上次批改'), icon: 'none' });
+      return;
+    }
+    if (this.data.grading) {
+      wx.showToast({ title: text('grading', '正在批改'), icon: 'none' });
+      return;
+    }
+    if (this.data.currentAttemptId && essay === String(this.data.submittedEssayText || '').trim()) {
+      wx.showToast({ title: text('editBeforeResubmit', '请修改作文后再提交'), icon: 'none' });
+      return;
+    }
     if (!prompt) {
       this.setData({ errorText: text('loadFailed', '作文题加载失败。') });
       wx.showToast({ title: text('loadFailed', '作文题加载失败'), icon: 'none' });
@@ -465,16 +672,26 @@ Page({
       return;
     }
     const wordCount = countWords(essay);
+    this.writingSubmitInFlight = true;
     this.reviewEffectPlayed = false;
     this.setData({
       submitting: true,
       submittedEssayText: essay,
       wordCount,
+      essayDirty: false,
+      submitLocked: true,
       errorText: '',
+      review: null,
       reviewCelebrating: false,
       currentAttemptId: '',
       bandSampleGeneratingDelta: 0,
       bandSampleError: ''
+    });
+    this.saveWritingSession('submitting', {
+      attemptId: '',
+      essayText: essay,
+      submittedEssayText: essay,
+      essayDirty: false
     });
     try {
       const result = await store.submitWritingAttempt({
@@ -489,23 +706,25 @@ Page({
       const attempt = result.attempt || null;
       const attemptId = (attempt && (attempt.attemptId || attempt._id)) || '';
       if (result.review && !result.pending) {
-        const review = normalizeReview(result.review, prompt);
-        this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
-        this.playWritingReviewEffect();
+        this.finishWritingGrade(result, prompt, attempt);
         return;
       }
-      this.setData({ currentAttemptId: attemptId, grading: true, errorText: text('gradingStatus', '作文已提交，正在批改。') });
+      this.setData({
+        currentAttemptId: attemptId,
+        grading: true,
+        submitLocked: true,
+        errorText: text('gradingStatus', '作文已提交，正在批改。')
+      });
+      this.saveWritingSession('grading', {
+        attemptId,
+        essayText: essay,
+        submittedEssayText: essay,
+        essayDirty: false
+      });
       if (!attemptId) {
         throw new Error('missing-writing-attempt-id');
       }
-      store.gradeWritingAttempt(attemptId).then((graded) => {
-        if (graded && graded.syncMode === 'cloud-error') {
-          throw createWritingCloudError(graded, 'gradeWritingAttempt');
-        }
-        this.finishWritingGrade(graded, prompt, attempt);
-      }).catch((error) => {
-        this.continueWritingResultPolling(attemptId, prompt, attempt, error);
-      });
+      this.startWritingGradeAttemptOnce(attemptId, prompt, attempt);
       if (!attempt.isPreview) {
         completed.addCompletedItem({
           id: `${completed.todayString()}:writing:${prompt._id}`,
@@ -522,10 +741,12 @@ Page({
       const errorText = buildWritingSubmitError(error, 'submitWritingAttempt');
       console.error(errorText);
       this.setData({
+        submitLocked: !!this.data.currentAttemptId,
         errorText
       });
-      wx.showToast({ title: text('retryFailed', '批改失败，可重试'), icon: 'none' });
+      wx.showToast({ title: text('gradingSaved', '批改任务已保留'), icon: 'none' });
     } finally {
+      this.writingSubmitInFlight = false;
       this.setData({ submitting: false });
     }
   },
@@ -580,6 +801,11 @@ Page({
   },
   onUnload() {
     this.writingPageActive = false;
+    if (this.writingDraftSaveTimer) {
+      clearTimeout(this.writingDraftSaveTimer);
+      this.writingDraftSaveTimer = null;
+    }
+    if (!this.data.isTranslation) this.saveWritingSession();
     if (this.writingResultPollTimer) {
       clearTimeout(this.writingResultPollTimer);
       this.writingResultPollTimer = null;

@@ -16,8 +16,12 @@ test('写作提交先快速落库，再由独立长时调用完成批改', () =>
   assert.match(submitBlock, /attempt: savedAttempt,[\s\S]*?pending: true,[\s\S]*?resumable: true/);
   assert.match(service, /async function gradeWritingAttempt[\s\S]*?review: command\.set\(review\)[\s\S]*?saveWritingCompletion/);
   assert.match(service, /const WRITING_GRADING_STALE_MS = 330000/);
-  assert.match(service, /const shouldResume = \['grading-pending', 'grading-failed'\][\s\S]*?gradingAgeMs > WRITING_GRADING_STALE_MS/);
+  assert.match(service, /attempt\.status === 'grading'[\s\S]*?gradingAgeMs <= WRITING_GRADING_STALE_MS[\s\S]*?pending: true/);
+  const detailBlock = service.match(/async function getWritingAttemptDetail[\s\S]*?\n}\n\nmodule\.exports/)[0];
+  assert.match(detailBlock, /resumable: shouldResume/);
+  assert.doesNotMatch(detailBlock, /gradeWritingAttempt\(/);
   assert.match(service, /gradeError: command\.remove\(\)/);
+  assert.match(service, /latest\.status === 'graded' && latest\.review[\s\S]*?recoveredAfterConcurrentGrade: true/);
   assert.match(completion, /const documentId = current && current\._id[\s\S]*?\.doc\(documentId\)\.set/);
   assert.match(service, /saveWritingCompletion[\s\S]*?upsertStudyCompletion[\s\S]*?upsertDailyReport/);
   assert.match(service, /writing-completion-sync-failed/);
@@ -63,6 +67,7 @@ test('语法和写作完成记录会自动补齐云端结果', () => {
   assert.match(history, /getWritingAttempts\(\{ limit: 50, summaryOnly: true, forceRefresh: true \}\)/);
   assert.match(history, /resumePendingWritingAttempts\(records\)/);
   assert.match(history, /filter\(\(record\) => isWritingGradingPending\(record\.attempt\)\)[\s\S]*?resumeWritingAttempt/);
+  assert.match(history, /startWritingGradeOnce[\s\S]*?store\.gradeWritingAttempt/);
   assert.match(history, /syncMode === 'cloud-error'[\s\S]*?writingResumeTimers[\s\S]*?resumeWritingAttempt/);
   assert.match(history, /writingResumeTimers[\s\S]*?this\.loadWritingDetail/);
   assert.match(parent, /store\.explainGrammarQuestion\(question, \{ cacheOnly: false \}\)/);

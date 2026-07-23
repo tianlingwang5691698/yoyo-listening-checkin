@@ -1219,6 +1219,30 @@ async function findCachedWritingReview(ctx, promptId, scoreFingerprint) {
   }
 }
 
+function selectReusableWritingAttempt(records, scoreFingerprint) {
+  return (Array.isArray(records) ? records : [])
+    .filter((item) => item
+      && item.scoreFingerprint === scoreFingerprint
+      && item.gradingVersion === WRITING_SCORING_VERSION
+      && ['grading-pending', 'grading', 'grading-failed', 'graded'].includes(item.status)
+      && (item.status !== 'graded' || item.review))
+    .sort((a, b) => Date.parse(b.updatedAt || b.createdAt || 0) - Date.parse(a.updatedAt || a.createdAt || 0))[0] || null;
+}
+
+async function findReusableWritingAttempt(ctx, promptId, scoreFingerprint) {
+  if (!ctx || !promptId || !scoreFingerprint) return null;
+  try {
+    const result = await dbAdapter.collection(COLLECTION).where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      promptId
+    }).limit(20).get();
+    return selectReusableWritingAttempt(result.data, scoreFingerprint);
+  } catch (error) {
+    return null;
+  }
+}
+
 async function submitWritingAttempt(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
@@ -1350,6 +1374,24 @@ async function submitWritingAttempt(event) {
       pending: true,
       resumable: true,
       preview: true
+    };
+  }
+  const reusableAttempt = await findReusableWritingAttempt(ctx, promptId, scoreFingerprint);
+  if (reusableAttempt) {
+    const formatted = formatAttempt(reusableAttempt);
+    const isGraded = formatted.status === 'graded' && formatted.review;
+    return {
+      prompt: {
+        _id: promptId,
+        title: prompt.title || '',
+        prompt: prompt.prompt || ''
+      },
+      attempt: formatted,
+      review: isGraded ? formatted.review : null,
+      pending: !isGraded,
+      resumable: !isGraded,
+      cached: true,
+      reusedAttempt: true
     };
   }
   const storedReview = await findCachedWritingReview(ctx, promptId, scoreFingerprint);
@@ -1489,6 +1531,20 @@ async function gradeWritingAttempt(event) {
     }
     return { attempt: formatted, review: attempt.review, pending: false };
   }
+  const gradingAgeMs = Date.now() - Date.parse(attempt.updatedAt || attempt.createdAt || 0);
+  if (attempt.status === 'grading'
+    && Number.isFinite(gradingAgeMs)
+    && gradingAgeMs <= WRITING_GRADING_STALE_MS) {
+    return {
+      attempt: formatAttempt(Object.assign({}, attempt, {
+        _id: attemptRef.documentId,
+        isPreview
+      })),
+      review: null,
+      pending: true,
+      resumable: false
+    };
+  }
   const now = new Date().toISOString();
   try {
     await dbAdapter.collection(attemptRef.collectionName).doc(attemptRef.documentId).update({
@@ -1558,6 +1614,25 @@ async function gradeWritingAttempt(event) {
       pending: false
     };
   } catch (error) {
+    try {
+      const latestResult = await dbAdapter.collection(attemptRef.collectionName).doc(attemptRef.documentId).get();
+      const latest = latestResult && latestResult.data;
+      if (latest && latest.status === 'graded' && latest.review) {
+        const formatted = formatAttempt(Object.assign({}, latest, {
+          _id: attemptRef.documentId,
+          isPreview
+        }));
+        if (!isPreview) {
+          await saveWritingCompletion(ctx, latest.date || attempt.date || today, prompt, formatted, `${formatted.score}/${formatted.totalScore} 分`);
+        }
+        return {
+          attempt: formatted,
+          review: latest.review,
+          pending: false,
+          recoveredAfterConcurrentGrade: true
+        };
+      }
+    } catch (readError) {}
     const failedAttempt = formatAttempt(Object.assign({}, attempt, {
       _id: attemptRef.documentId,
       isPreview,
@@ -1689,28 +1764,15 @@ async function getWritingAttemptDetail(event) {
   const gradingAgeMs = Date.now() - Date.parse(attempt.updatedAt || attempt.createdAt || 0);
   const shouldResume = ['grading-pending', 'grading-failed'].includes(attempt.status)
     || (attempt.status === 'grading' && (!Number.isFinite(gradingAgeMs) || gradingAgeMs > WRITING_GRADING_STALE_MS));
-  if (shouldResume) {
-    try {
-      return await gradeWritingAttempt(Object.assign({}, event, {
-        payload: Object.assign({}, payload, { attemptId })
-      }));
-    } catch (error) {
-      return {
-        attempt: formatAttempt(Object.assign({}, attempt, {
-          _id: attemptRef.documentId,
-          isPreview: attemptRef.isPreview
-        })),
-        pending: true,
-        resumable: true,
-        gradeError: String(error && error.message || error || '')
-      };
-    }
-  }
+  const formatted = formatAttempt(Object.assign({}, attempt, {
+    _id: attemptRef.documentId,
+    isPreview: attemptRef.isPreview
+  }));
   return {
-    attempt: formatAttempt(Object.assign({}, attempt, {
-      _id: attemptRef.documentId,
-      isPreview: attemptRef.isPreview
-    }))
+    attempt: formatted,
+    review: formatted.review || null,
+    pending: formatted.status !== 'graded',
+    resumable: shouldResume
   };
 }
 
@@ -1741,6 +1803,7 @@ module.exports = {
     applyOfficialMinimumResponseRule,
     sanitizePromptForGrading,
     buildWritingScoreFingerprint,
+    selectReusableWritingAttempt,
     resolveWritingAttemptRef,
     formatWritingAttemptId,
     buildPreviewAttemptDocumentId,

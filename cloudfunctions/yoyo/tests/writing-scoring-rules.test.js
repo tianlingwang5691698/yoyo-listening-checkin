@@ -399,6 +399,23 @@ test('同一题目和作文生成稳定评分指纹并复用内存结果', () =>
   assert.deepEqual(writing.getMemoryCachedWritingReview(first), { score: 7.5, summary: '稳定结果' });
 });
 
+test('同题同文优先复用当前版本原批改任务', () => {
+  const fingerprint = 'same-writing';
+  const base = {
+    scoreFingerprint: fingerprint,
+    gradingVersion: writing.WRITING_SCORING_VERSION
+  };
+  const selected = writing.selectReusableWritingAttempt([
+    Object.assign({}, base, { _id: 'older', status: 'graded', review: { score: 7 }, updatedAt: '2026-07-23T10:00:00.000Z' }),
+    Object.assign({}, base, { _id: 'latest', status: 'grading', updatedAt: '2026-07-23T10:01:00.000Z' }),
+    Object.assign({}, base, { _id: 'wrong-version', status: 'grading', gradingVersion: 'old', updatedAt: '2026-07-23T10:02:00.000Z' })
+  ], fingerprint);
+  assert.equal(selected._id, 'latest');
+  assert.equal(writing.selectReusableWritingAttempt([
+    Object.assign({}, base, { status: 'graded', review: null })
+  ], fingerprint), null);
+});
+
 test('家长写作预览使用独立且受归属保护的任务引用', () => {
   const ctx = {
     user: { userId: 'user-parent' },
