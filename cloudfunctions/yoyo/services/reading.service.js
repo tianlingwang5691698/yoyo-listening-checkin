@@ -1016,6 +1016,75 @@ function isValidQuestionStudyPack(studyPack, passage) {
   }
 }
 
+function isCompleteQuestionAnalysis(item) {
+  return !!(item && normalizeText(item.answerSentence) && normalizeText(item.analysis));
+}
+
+function mergeQuestionAnalyses(passage, current, repairs) {
+  const questions = passage.questions || [];
+  const questionByNumber = questions.reduce((map, question) => {
+    map[String(question.number)] = question;
+    return map;
+  }, {});
+  const analysisByNumber = {};
+  [...(current || []), ...(repairs || [])].forEach((item) => {
+    const numberKey = String(item && item.number);
+    const question = questionByNumber[numberKey];
+    if (!question || !isCompleteQuestionAnalysis(item)) return;
+    analysisByNumber[numberKey] = Object.assign({}, item, {
+      number: question.number,
+      answer: question.answer || item.answer || ''
+    });
+  });
+  return questions.map((question) => analysisByNumber[String(question.number)]).filter(Boolean);
+}
+
+function getMissingAnalysisQuestions(studyPack, passage) {
+  const analysisByNumber = (studyPack.questionAnalyses || []).reduce((map, item) => {
+    map[String(item.number)] = item;
+    return map;
+  }, {});
+  return (passage.questions || []).filter((question) => (
+    question.answer && !isCompleteQuestionAnalysis(analysisByNumber[String(question.number)])
+  ));
+}
+
+function buildQuestionAnalysisPrompt(passage, questions, repair) {
+  return [
+    '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
+    repair ? '这是漏题补全请求，只返回下面列出的真实题号，不要返回其他题目。' : '只做逐题解析：必须按真实题号返回每题答案、原文直接答案句、答案句中文翻译、中文解析。',
+    '题目自带 answer 时按标准答案讲，不得修改标准答案；answer 为空时，请根据文章和题干生成最可能答案。',
+    'answerSentence 必须是原文中的直接依据，不要改写，不要只写泛泛依据。',
+    'analysis 用中文说明为什么选该答案，并点出排除干扰项的关键。',
+    'JSON 格式：{"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
+    `标题：${passage.title}`,
+    `题目：${JSON.stringify((questions || []).map((item) => ({ number: item.number, prompt: item.prompt, options: item.options, answer: item.answer })))}`,
+    `文章：${passage.passage}`
+  ].join('\n');
+}
+
+async function buildQuestionStudyPackWithRequester(passage, model, requestJson) {
+  const parsed = await requestJson(model, buildQuestionAnalysisPrompt(passage, passage.questions || [], false));
+  const studyPack = normalizeStudyPack(Object.assign({}, parsed || {}, {
+    source: `model:${model}`
+  }), passage);
+  studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, []);
+  const missingQuestions = getMissingAnalysisQuestions(studyPack, passage);
+  if (missingQuestions.length) {
+    const repairGroups = [];
+    for (let index = 0; index < missingQuestions.length; index += 4) {
+      repairGroups.push(missingQuestions.slice(index, index + 4));
+    }
+    const repairResults = await Promise.all(repairGroups.map(async (questions) => {
+      const repaired = await requestJson(model, buildQuestionAnalysisPrompt(passage, questions, true));
+      return Array.isArray(repaired && repaired.questionAnalyses) ? repaired.questionAnalyses : [];
+    }));
+    studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, repairResults.flat());
+  }
+  validateQuestionStudyPack(studyPack, passage);
+  return studyPack;
+}
+
 function validateLearningStudyPack(studyPack, section, passage) {
   if (!isModelStudyPack(studyPack)) {
     throw new Error('reading-study-pack-not-model');
@@ -1083,17 +1152,6 @@ async function buildStudyPackWithModel(passage) {
   if (!config.endpoint || !config.apiKey) {
     throw new Error('reading-study-model-not-configured');
   }
-  const questionPrompt = [
-    '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
-    '只做逐题解析：必须按真实题号返回每题答案、原文直接答案句、答案句中文翻译、中文解析。',
-    '题目自带 answer 时按标准答案讲；answer 为空时，请根据文章和题干生成最可能答案。',
-    'answerSentence 必须是原文中的直接依据，不要改写，不要只写泛泛依据。',
-    'analysis 用中文说明为什么选该答案，并点出排除干扰项的关键。',
-    'JSON 格式：{"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
-    `标题：${passage.title}`,
-    `题目：${JSON.stringify((passage.questions || []).map((item) => ({ number: item.number, prompt: item.prompt, options: item.options, answer: item.answer })))} `,
-    `文章：${passage.passage}`
-  ].join('\n');
   async function requestJson(model, prompt) {
     const response = await postJson(config.endpoint, config.apiKey, {
       model,
@@ -1106,12 +1164,7 @@ async function buildStudyPackWithModel(passage) {
     return parseJsonText(extractMessageText(response)) || {};
   }
   async function requestModel(model) {
-    const parsed = await requestJson(model, questionPrompt);
-    const studyPack = normalizeStudyPack(Object.assign({}, parsed || {}, {
-      source: `model:${model}`
-    }), passage);
-    validateQuestionStudyPack(studyPack, passage);
-    return studyPack;
+    return buildQuestionStudyPackWithRequester(passage, model, requestJson);
   }
   try {
     return await requestModel(config.model);
@@ -2049,6 +2102,7 @@ module.exports = {
   lookupWord,
   _test: {
     isValidQuestionStudyPack,
+    buildQuestionStudyPackWithRequester,
     READING_STUDY_MODEL_TIMEOUT_MS
   }
 };
