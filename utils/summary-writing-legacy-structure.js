@@ -1,0 +1,169 @@
+module.exports = {
+  "sh-spring-2017-summary-writing": {
+    "articleTitle": "Shyness",
+    "paragraphAnchors": [
+      "If you suffer from shyness you are not",
+      "The first environmental cause of shyness may be",
+      "A second environmental cause of shyness in an",
+      "Technology may also play a role In the",
+      "It appears that most people have experienced shyness"
+    ]
+  },
+  "sh-spring-2018-summary-writing": {
+    "articleTitle": "To Laugh Is Human",
+    "paragraphAnchors": [
+      "Most of us don’t know why we laugh",
+      "Scientists believe humans laugh with others primarily because",
+      "Since laughter is seen as a social signal",
+      "Humans have not always laughed just so they"
+    ]
+  },
+  "sh-spring-2019-summary-writing": {
+    "articleTitle": "Where are the bees?",
+    "paragraphAnchors": [
+      "Bees are essential to the production of food",
+      "In 2006 bee keepers started reporting about something",
+      "There were many theories for the disappearance of",
+      "The exact reason for the disappearance of bees"
+    ]
+  },
+  "sh-spring-2020-summary-writing": {
+    "articleTitle": "Global Cooperation",
+    "paragraphAnchors": [
+      "In the 21st century we've seen a new",
+      "There are now over 8 000 scientific journals",
+      "It appears that the days of brilliant individuals"
+    ]
+  },
+  "sh-spring-2021-summary-writing": {
+    "articleTitle": "",
+    "paragraphAnchors": [
+      "Fluido a Texas based analytics company recently released",
+      "Fluido Plus has received a lot of criticism",
+      "Emily Carrless a senior director at the NO"
+    ]
+  },
+  "sh-spring-2022-summary-writing": {
+    "articleTitle": "",
+    "paragraphAnchors": [
+      "Neuroscientists usually define a singular memory as an",
+      "Now scientists are even able to track how",
+      "In their current work Ramirez and his colleagues",
+      "They are finding that activating positive memories while"
+    ]
+  },
+  "sh-spring-2023-summary-writing": {
+    "articleTitle": "Fiction Reading",
+    "paragraphAnchors": [
+      "For many people nothing is more enjoyable than",
+      "One of the joys of fiction is that",
+      "Fiction can also introduce us to a whole"
+    ]
+  },
+  "sh-spring-2024-summary-writing": {
+    "articleTitle": "How to Stay Healthy in Autumn",
+    "paragraphAnchors": [
+      "In recent days the weather in most regions",
+      "Do eat watery food According to traditional Chinese",
+      "Do have easily digested food People’s spleen and",
+      "Be sure to take vitamin supplements Vitamins play",
+      "Sleep is an important means for people to"
+    ]
+  },
+  "sh-spring-2025-summary-writing": {
+    "articleTitle": "Obstacles to the correct decision",
+    "paragraphAnchors": [
+      "Life is full of choices some inconsequential some",
+      "Some of us just find it hard to",
+      "Susan Krauss in Psychology Today reminds us that",
+      "David Robson tells us that intelligence can sometimes",
+      "So maybe rather than indecision it might be"
+    ]
+  },
+  "sh-spring-2026-summary-writing": {
+    "articleTitle": "I Want to Be a Content Creator",
+    "paragraphAnchors": [
+      "In 2021 1 000 children in the US",
+      "These findings are not surprising Successful creators earn",
+      "However the reality may not match the fantasy",
+      "Like sports and music social media will remain"
+    ]
+  },
+  "sh-autumn-2017-summary-writing": {
+    "articleTitle": "Learning by Rote in the Digital Age",
+    "paragraphAnchors": [
+      "Rote learning has become seen as an outdated",
+      "The decline of rote learning has been quickened",
+      "In fact memorizing key data is essential to",
+      "While the Internet and computers have weakened the",
+      "Drilling yourself with flashcards or by repetition is",
+      "Once you've acquired the essentials of a subject"
+    ]
+  },
+  "sh-autumn-2018-summary-writing": {
+    "articleTitle": "Becoming an attractive employee",
+    "paragraphAnchors": [
+      "The 2008 financial crisis created an unstable job",
+      "For young people information technology skills will play",
+      "Another attractive quality is experience It is important",
+      "Finally an attractive quality when job hunting is",
+      "In today’s tough job market young job seekers"
+    ]
+  },
+  "sh-autumn-2019-summary-writing": {
+    "articleTitle": "",
+    "paragraphAnchors": [
+      "It's undeniable Being among the first to try",
+      "To put it frankly early adoption is a",
+      "Speaking of becoming obsolete those who are first"
+    ]
+  },
+  "sh-autumn-2020-summary-writing": {
+    "articleTitle": "Scientists Discover Animal Language",
+    "paragraphAnchors": [
+      "It is human beings pride that we are",
+      "Zuberbuhler a psychologist at St Andrews University and",
+      "The researchers found that the same calls would",
+      "What is also surprising is that signs of",
+      "Last year that was topped by Alex Kacelnik",
+      "All this is powerful evidence against the idea"
+    ]
+  },
+  "sh-autumn-2022-summary-writing": {
+    "articleTitle": "",
+    "paragraphAnchors": [
+      "Is there a correlation between high IQ and",
+      "As ones IQ increases there is an increased",
+      "There are few exceptionally creative people out there",
+      "However not all geniuses from our subjective intelligence"
+    ]
+  },
+  "sh-autumn-2023-summary-writing": {
+    "articleTitle": "Teenagers should be pulled of the sofa",
+    "paragraphAnchors": [
+      "For many years scientists thought that the human",
+      "The brain's functionally different sections communicate with each",
+      "The good news is that teenagers do have",
+      "What is important is that learning how synapses"
+    ]
+  },
+  "sh-autumn-2024-summary-writing": {
+    "articleTitle": "Obstacles to the correct decision",
+    "paragraphAnchors": [
+      "Life is full of choices some inconsequential some",
+      "Some of us just find it hard to",
+      "Susan Krauss in Psychology Today reminds us that",
+      "David Robson tells us that intelligence can sometimes",
+      "So maybe rather than indecision it might be"
+    ]
+  },
+  "sh-autumn-2025-summary-writing": {
+    "articleTitle": "Art Gallery Visits",
+    "paragraphAnchors": [
+      "The lasting rainy winter is a season that",
+      "When viewing things we find beautiful activity in",
+      "And did you know that even on the",
+      "Often I visit galleries alone to gather my"
+    ]
+  }
+};

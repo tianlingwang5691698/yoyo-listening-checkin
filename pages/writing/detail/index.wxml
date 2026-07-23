@@ -58,12 +58,17 @@
           <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
         </block>
         <block wx:else>
-          <view class="writing-article-title" wx:if="{{promptDisplay.articleTitle}}">{{promptDisplay.articleTitle}}</view>
           <view class="writing-mark-lines">
-            <view class="writing-mark-line {{line.isParagraphStart ? 'is-paragraph-start' : ''}} {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" wx:for="{{writingMarkLines}}" wx:key="scope" wx:for-item="line" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
-              <view class="library-prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
-              <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
-            </view>
+            <block wx:for="{{writingMarkLines}}" wx:key="key" wx:for-item="line">
+              <view wx:if="{{line.isArticleTitle}}">
+                <view class="library-prompt-section-title">{{line.label}}</view>
+                <view class="writing-article-title">{{line.text}}</view>
+              </view>
+              <view wx:else class="writing-mark-line {{line.isParagraphStart ? 'is-paragraph-start' : ''}} {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
+                <view class="library-prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
+                <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
+              </view>
+            </block>
           </view>
           <view class="library-prompt-table" wx:if="{{promptDisplay.promptTable}}">
             <view class="library-prompt-table-row library-prompt-table-head">
@@ -287,12 +292,17 @@
         <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
       </block>
       <block wx:else>
-        <view class="writing-article-title" wx:if="{{promptDisplay.articleTitle}}">{{promptDisplay.articleTitle}}</view>
         <view class="writing-mark-lines">
-          <view class="writing-mark-line {{line.isParagraphStart ? 'is-paragraph-start' : ''}} {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" wx:for="{{writingMarkLines}}" wx:key="scope" wx:for-item="line" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
-            <view class="prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
-            <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
-          </view>
+          <block wx:for="{{writingMarkLines}}" wx:key="key" wx:for-item="line">
+            <view wx:if="{{line.isArticleTitle}}">
+              <view class="prompt-section-title">{{line.label}}</view>
+              <view class="writing-article-title">{{line.text}}</view>
+            </view>
+            <view wx:else class="writing-mark-line {{line.isParagraphStart ? 'is-paragraph-start' : ''}} {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
+              <view class="prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
+              <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
+            </view>
+          </block>
         </view>
         <view class="prompt-table" wx:if="{{promptDisplay.promptTable}}">
           <view class="prompt-table-row prompt-table-head">

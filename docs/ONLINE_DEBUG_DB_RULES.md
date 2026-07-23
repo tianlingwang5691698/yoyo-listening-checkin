@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-23 作文详情页白屏
+
+1. 现象：初中、高中和 IELTS 作文从资料目录点击后进入白屏。
+2. 查询：`pages/material.openItem -> pages/writing/detail/index -> utils/writing-prompt-display`。
+3. 结论：真实运行时异常为 `module 'utils/summary-writing-legacy-structure.json.js' is not defined`；微信小程序未把该 JSON 注册为可 `require` 的运行时模块。
+4. 修复：兼容元数据改为 `utils/summary-writing-legacy-structure.js`，生成器同步输出 JS，回归禁止运行时代码直接引用 `.json` 或被打包排除的 `data/`。
+5. 是否需要发版：纯前端改动，需要重新编译并发布小程序；无需部署云函数或修改数据库。
+
 ### 2026-07-23 IELTS Part 1 内容评分 12 秒超时
 
 1. 现象：家长试做 IELTS 10 Test 1 Part 1 后显示评分失败。

@@ -57,6 +57,7 @@ function buildWritingMarkLines(display) {
     splitScopedSentences(value).forEach((sentence, sentenceIndex) => {
       const scope = `writing-prompt-${entries.length}`;
       entries.push({
+        key: scope,
         scope,
         label: sentenceIndex === 0 ? (label || '') : '',
         isParagraphStart: !!(options && options.isParagraphStart && sentenceIndex === 0),
@@ -66,12 +67,23 @@ function buildWritingMarkLines(display) {
     });
   };
   add(source.directions, '');
+  if (source.articleTitle) {
+    entries.push({
+      key: 'writing-article-title',
+      scope: '',
+      label: source.scenarioTitle,
+      isArticleTitle: true,
+      isParagraphStart: false,
+      text: source.articleTitle,
+      tokens: []
+    });
+  }
   const articleParagraphs = Array.isArray(source.articleParagraphs) && source.articleParagraphs.length
     ? source.articleParagraphs
     : [source.scenario];
   articleParagraphs.forEach((paragraph, index) => add(
     paragraph,
-    index === 0 ? source.scenarioTitle : '',
+    index === 0 && !source.articleTitle ? source.scenarioTitle : '',
     { isParagraphStart: index > 0 }
   ));
   (source.requirements || []).forEach((item, index) => add(item, index === 0 ? source.requirementsTitle : ''));

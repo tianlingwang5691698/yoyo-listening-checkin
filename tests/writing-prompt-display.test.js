@@ -8,6 +8,16 @@ const em1Prompts = require('../data/writing-em1/writing-prompts.json');
 const em2Prompts = require('../data/writing-em2/writing-prompts.json');
 const prompts = em2Prompts;
 
+test('写作详情运行时结构文件位于小程序可打包目录', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'utils', 'writing-prompt-display.js'), 'utf8');
+  const runtime = require('../utils/summary-writing-legacy-structure');
+  const sourceStructure = require('../data/summary-writing-legacy-structure.json');
+
+  assert.doesNotMatch(source, /require\(['"]\.\.\/data\//);
+  assert.doesNotMatch(source, /require\([^)]*\.json/);
+  assert.deepEqual(runtime, sourceStructure);
+});
+
 test('初中写作题干、参考问题和注意事项分区展示', () => {
   const display = buildPromptDisplay(prompts.find((item) => item._id === 'sh-em2-2012-宝山-writing'));
 

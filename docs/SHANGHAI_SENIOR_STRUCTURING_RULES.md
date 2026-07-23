@@ -16,9 +16,11 @@
 - 第 II 卷含翻译时，写作入口按原卷顺序展示 `I. Translation` 和 `II. Guided Writing`。翻译每题使用独立输入区，括号提示词必须保留；参考译文只能在学生完成全部题目并提交后显示。
 - 现代卷含 `Summary Writing` 时，同一年写作入口按原卷 `Summary Writing → Translation → Guided Writing` 排序；概要写作保留原文、原题号和“不超过 N 词”，不得混入参考答案或范文。
 - Summary Writing 固定为 `contentRevision: 2`、`articleTitle`、`articleParagraphs[]`：原卷存在独立标题才写入 `articleTitle`，无标题保持空字符串；`scenario` 只含正文并等于 `articleParagraphs.join('\\n\\n')`。
+- Summary Writing 页面固定按 `Directions → 写作任务 → 标题 → 正文` 展示；Directions、标题、正文保持独立字段，标题不进入标记作用域。
 - Summary Writing 的来源 URL、页码、题号、分值、答题横线和单独的续页符号必须清零；标题不得进入正文、句子标记或评分输入。
 - 当前全量基线为春考 10 题、秋考 8 题：14 个独立标题、4 篇无标题原文、77 个真实正文段落。重建后这些数量变化必须由新增原卷或审计报告解释。
 - 结构修复必须同步更新生成器和清洗报告；正式云端旧 `items-v1` 不覆盖，新客户端用稳定 ID 的段落起点元数据兼容旧单行数据，新发布走新版本路径。
+- Summary Writing 旧结构恢复元数据同时生成本地审计 JSON 与 `utils/` 下的运行时 JS 模块；发布门禁必须验证运行时代码不引用被打包排除的 `data/` 或 `.json` 模块。
 - 语法只收录题干、完整选项和可验证答案；按真正考点归类，细分考点题目按 `sha1(topicId).json` 拆分。
 - 语法分类发布前必须由 `gpt-5.6-sol` 逐题复核，并保留模型、分类版本、逐题主考点和依据的审计文件。分类以正确答案和唯一核心考点为准，禁止因干扰项中的情态动词、非谓语或从句关键词误分。
 - 听力题号必须连续，选择题和填空题分型；并列可接受答案用 `/` 保留。

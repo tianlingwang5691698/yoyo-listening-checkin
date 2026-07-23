@@ -1,4 +1,4 @@
-const SUMMARY_WRITING_STRUCTURE = require('../data/summary-writing-legacy-structure.json');
+const SUMMARY_WRITING_STRUCTURE = require('./summary-writing-legacy-structure');
 
 function cleanPromptText(value) {
   return String(value || '')

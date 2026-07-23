@@ -15,6 +15,7 @@ test('跨模块清洗规则包含当前结构与最终标记口径', () => {
   assert.match(rules, /articleTitle/);
   assert.match(rules, /articleParagraphs\[\]/);
   assert.match(rules, /77 个真实正文段落/);
+  assert.match(rules, /Directions → 写作任务 → 标题 → 正文/);
   assert.match(rules, /只在提交\/完成时保存最终状态/);
   assert.match(rules, /不新建集合/);
 });
@@ -39,6 +40,7 @@ test('上海真题和音频专项规则使用最新门禁', () => {
   assert.match(junior, /badPrompt=0/);
   assert.match(senior, /14 个独立标题、4 篇无标题原文、77 个真实正文段落/);
   assert.match(senior, /contentRevision: 2/);
+  assert.match(senior, /Directions → 写作任务 → 标题 → 正文/);
   assert.match(audio, /16kHz、64kbps/);
   assert.match(audio, /评分成功\/失败均保留本地录音/);
 });

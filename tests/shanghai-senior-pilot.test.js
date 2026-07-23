@@ -433,14 +433,13 @@ test('2009 听力音频与阅读标题匹配符合运行时规格', () => {
 
 test('2009 写作原卷三个要点独立分行展示', () => {
   const source = fs.readFileSync(path.join(root, 'pages/writing/detail/index.js'), 'utf8');
+  const promptDisplay = fs.readFileSync(path.join(root, 'utils/writing-prompt-display.js'), 'utf8');
   const template = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxml'), 'utf8');
   const styles = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxss'), 'utf8');
-  assert.match(source, /'sh-autumn-2009-writing'[\s\S]*?你感兴趣的课程[\s\S]*?你期望从这门课程中学到什么[\s\S]*?为什么想学这些内容/);
-  assert.match(template, /wx:for="\{\{promptDisplay\.requirements\}\}"/);
-  assert.match(template, /class="requirement-dot"/);
-  assert.match(template, /class="library-requirement-dot"/);
-  assert.match(styles, /\.requirements-list[\s\S]*?gap:\s*16rpx/);
-  assert.match(styles, /\.library-requirements-list[\s\S]*?gap:\s*16rpx/);
+  assert.match(promptDisplay, /'sh-autumn-2009-writing'[\s\S]*?你感兴趣的课程[\s\S]*?你期望从这门课程中学到什么[\s\S]*?为什么想学这些内容/);
+  assert.match(source, /\(source\.requirements \|\| \[\]\)\.forEach/);
+  assert.equal((template.match(/wx:for="\{\{writingMarkLines\}\}"/g) || []).length, 2);
+  assert.match(styles, /\.writing-mark-lines\s*\{[^}]*gap:\s*4rpx/);
   assert.match(source, /resolvePromptImages[\s\S]*?store\.getTempFileURL/);
   assert.match(template, /class="library-prompt-image"/);
   assert.match(template, /class="prompt-image"/);

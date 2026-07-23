@@ -18,6 +18,7 @@ DATA_PATHS = {
     'autumn': ROOT / 'data' / 'writing-senior-autumn' / 'writing-prompts.json',
 }
 STRUCTURE_PATH = ROOT / 'data' / 'summary-writing-legacy-structure.json'
+RUNTIME_STRUCTURE_PATH = ROOT / 'utils' / 'summary-writing-legacy-structure.js'
 REPORT_PATH = ROOT / 'docs' / 'data-audits' / 'shanghai-senior-summary-writing-clean-report.json'
 
 
@@ -28,6 +29,14 @@ def sha256(value: bytes) -> str:
 def dump(path: Path, value) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
+def dump_js(path: Path, value) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        'module.exports = ' + json.dumps(value, ensure_ascii=False, indent=2) + ';\n',
+        encoding='utf-8',
+    )
 
 
 def source_files(source_root: Path) -> dict[str, list[Path]]:
@@ -119,6 +128,7 @@ def main() -> None:
         for path, items in outputs.items():
             dump(path, items)
         dump(STRUCTURE_PATH, structure)
+        dump_js(RUNTIME_STRUCTURE_PATH, structure)
         dump(REPORT_PATH, report)
     print(json.dumps({
         'mode': 'apply' if args.apply else 'dry-run',
