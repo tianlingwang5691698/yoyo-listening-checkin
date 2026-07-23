@@ -75,6 +75,8 @@
 - A/B 每题必须有 A-D 四个选项，答案为 A/B/C/D
 - C/D 不要求选项；能稳定识别答案时写入，不能稳定匹配时先留空，避免错配
 - 剔除解析语句、考点说明、`故选` 等非题干内容
+- 标题、题型说明、副标题和正文段落必须分开；正文开头残留的 `answer（根据短文/文章/对话内容……）`、页码、版权和 OCR 题型说明全部剔除。
+- 保留原卷自然段；没有可靠空行时只按完整句群切段，不截断句子，也不把题号、选项或下一篇标题当正文段落。
 - 剔除无法完整还原的组合题：题干里混入下一题题号（如 `71... 72...`）且选项仅为 `①②③` 这类编号组合时，不入库；如果剔除后该篇少于 5 题，整篇不进入最终阅读库。
 - 阅读提交后的逐题解析和答案句不靠本地兜底文案，必须调用阅读模型生成；答案句必须是原文直接依据，并带中文翻译。
 
@@ -83,6 +85,7 @@
 - 有年份和区县
 - 正好 15 题
 - 每题有 A-D 四个选项和答案
+- `prompt` 只保留题干，A-D 只能存在于 `options`；必须覆盖 `A)works / A) works / A. works / A、works` 等格式并保证 `badPrompt=0`。
 
 ## 语法选择题分类规则
 
@@ -136,13 +139,13 @@ GPT 初分考点后，使用 `scripts/regroup_grammar_categories.py` 重建大�
 - 语音画线题不作为语法考点，归入 `other`
 - 词组、动词短语、词义辨析：词义与短语辨析
 
-GPT-5.5 分类规则：
+`gpt-5.6-sol` 分类规则：
 
 - 脚本：`scripts/classify_grammar_with_gpt.py`
 - 批量读取 `data/grammar/shanghai-em2-grammar-questions.json`
 - 每批按固定 `topicId` 分类，不允许自创考点
 - 按“真正考查点”分类，不按选项表面词乱分
-- GPT 输出覆盖本地粗分类，并重建 by-topic 和 topic-types
+- GPT 输出覆盖本地粗分类，并重建 by-topic 和 topic-types；模型只分类，不改写题干、选项和答案
 - 跑完后重新上传 3 个语法 JSON 到 CloudBase
 
 ## 语法数据上传与读取规则
@@ -186,7 +189,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 云函数 `reading.service.js` 会同时读取两份文件，小程序按 `examType: 一模/二模` 分组显示。
 
-一模阅读清洗优先规则抽取，不用 GPT 改题干、选项、答案；GPT-5.5 只用于用户提交后生成逐题解析、原文答案句和中文翻译。
+一模阅读清洗优先规则抽取，不用 GPT 改题干、选项、答案；`gpt-5.6-sol` 只用于用户提交后生成逐题解析、原文答案句和中文翻译。
 
 ## 一模写作上传规则
 
@@ -198,7 +201,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 - `_content/writing-em1/writing-prompts.json`
 
-写作题归入 `stage: 初中`、`category: 初中作文`。清洗只保留作文题干、情景、字数要求和注意事项；剔除参考答案、范文、评分标准、听力文本。
+写作题归入 `stage: 初中`、`category: 初中作文`。清洗拆为 `directions / scenario / requirements[] / notices[]`，只保留作文题干、情景、字数要求和注意事项；参考问题按编号或问号独立保存，剔除题号、OCR 答题线、试卷来源、参考答案、范文、评分标准、阅读选词和听力文本。
 
 二模写作本地生成到：
 
@@ -235,6 +238,8 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 图片清洗从 A 部分 `Listen and choose the right picture` 开始，到 Part 2 之前结束；A 部分图片必须保留，B/C/D 部分若原卷有听力配图也必须保留。不得把整份 docx 的学科网 logo、阅读图片、网页页眉、二维码或其他素材当作听力图片。只保留小程序可直接显示的 PNG/JPG/GIF；WMF 等不可显示格式必须过滤，不能占用 A/B/C 选项位置。A 部分图片抽取不稳定时，该套不进入正式练习入口。
 
 听力文本只收真实听力原文或听力文字稿，可来自答案、听力文本、听力文稿、录音文字稿等文件。仅有答案、解析、题干或“原文略”的文件不能当作 `transcript`；缺真实原文时 `hasTranscript: false`，不人工补写、不跨年借用。
+
+听力 Section、Questions 范围、作答说明、题组标题和表格静态字段必须独立保存；公共标题只在题组首次显示，不能重复拼入后续题干。听力题干允许轻量标记，但只在学生提交答案时把最终标记写入既有完成记录，家长只读。
 
 ## 一模听力上传规则
 
@@ -283,6 +288,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 - 阅读 A/B/C/D 分开成独立 item
 - 题号保持原卷题号，不重排
 - 不把中文解析写入题干、选项或 passage
+- 阅读、听力题干、语法和写作题纸统一使用最终标记口径：练习中仅存页面状态，提交/答完时写入既有记录；不震动、不新增集合、不参与评分。
 - 不补写题目解释、词汇、定位句，除非后续单独要求
 - 项目词典不只限阅读板块；语法等其他板块在学生做完题后，也可对题目和选项调用词典。
 - 词典发音只保留单词和短语级别；句子、句型、例句不提供发音功能。发音统一使用按钮内轻反馈：点击后按钮显示 `…` 并轻微呼吸，播放完成恢复“发音”，不弹大块“生成发音中”提示。
@@ -301,3 +307,4 @@ python3 -m json.tool data/imports/<batch>/formal/clean-report.json >/dev/null
 - 各年份正式阅读数量
 - 空答案数量必须为 0
 - 剩余 rejected reason
+- `badPrompt=0`、正文污染 `=0`、标题进入正文 `=0`、空段落 `=0`

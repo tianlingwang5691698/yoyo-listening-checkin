@@ -45,7 +45,7 @@ def api_key():
 
 
 def model():
-    return env('GRAMMAR_EXPLAIN_MODEL') or env('READING_STUDY_MODEL') or 'gpt-5.5'
+    return env('GRAMMAR_EXPLAIN_MODEL') or env('READING_STUDY_MODEL') or 'gpt-5.6-sol'
 
 
 def parse_json_text(text):

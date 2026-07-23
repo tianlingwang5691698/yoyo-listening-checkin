@@ -57,6 +57,35 @@ test('高中写作与翻译全部保持独立结构', () => {
   }
 });
 
+test('高中 Summary Writing 标题、正文段落和污染全部清洗', () => {
+  const items = [
+    ...require('../data/writing-senior-spring/writing-prompts.json'),
+    ...require('../data/writing-senior-autumn/writing-prompts.json')
+  ].filter((item) => item.contentType === 'summary-writing');
+
+  assert.equal(items.length, 18);
+  assert.equal(items.filter((item) => item.articleTitle).length, 14);
+  assert.equal(items.filter((item) => !item.articleTitle).length, 4);
+  assert.equal(items.reduce((sum, item) => sum + item.articleParagraphs.length, 0), 77);
+  for (const item of items) {
+    assert.equal(item.contentRevision, 2, item._id);
+    assert.ok(item.articleParagraphs.length >= 3, item._id);
+    assert.equal(item.scenario, item.articleParagraphs.join('\n\n'), item._id);
+    assert.doesNotMatch(item.scenario, /https?:\/\/|_{3,}|第\s*\d+\s*页/, item._id);
+    if (item.articleTitle) assert.ok(!item.scenario.startsWith(item.articleTitle), item._id);
+
+    const legacy = {
+      ...item,
+      articleTitle: undefined,
+      articleParagraphs: undefined,
+      scenario: `${item.articleTitle ? `${item.articleTitle} ` : ''}${item.articleParagraphs.join(' ')} 71.________`
+    };
+    const display = buildPromptDisplay(legacy);
+    assert.equal(display.articleTitle, item.articleTitle, item._id);
+    assert.deepEqual(display.articleParagraphs, item.articleParagraphs, item._id);
+  }
+});
+
 test('IELTS 96 道写作全部为 v3 结构化数据', () => {
   const items = [];
   for (let book = 10; book <= 21; book += 1) {

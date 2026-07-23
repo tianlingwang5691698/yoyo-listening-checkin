@@ -5,9 +5,11 @@
 - UI/交互改动前先读 `docs/UI_DESIGN_LANGUAGE_LOG.md`，并按模块追加改动记录。
 - 各板块调试时遵循 `docs/ONLINE_DEBUG_DB_RULES.md`：测试阶段前端写出链路上不通的代码点位置，不能只弹提示，修复确认后撤掉调试信息。
 - 处理任何本地数据清洗、题库整理、内容结构化任务前，先读 `docs/DATA_CLEANING_RULES.md`。
+- 修改语法、阅读、写作、听力或口语的清洗、结构恢复、兼容逻辑、准入门禁时，必须在同一次改动中更新 `docs/DATA_CLEANING_RULES.md` 及对应专项规则，并补充回归门禁；禁止代码与规则文档分开漂移。
 - 处理任何音频转码、分片、上传或播放性能任务前，先读并严格执行 `docs/AUDIO_UPLOAD_STANDARD.md`。
 - 修改音频导航、系列列表、计划设置、课程页、公共缓存或相关接口前，先读并严格执行 `docs/AUDIO_PAGE_RULES.md`；公共资源、学生计划和学习进度必须分层。
 - 处理上海中考英语一模/二模同类结构化任务前，先读 `docs/SHANGHAI_EM2_STRUCTURING_RULES.md`。
 - 处理上海高中春考/秋考真题结构化、上传或页面接入前，先读 `docs/SHANGHAI_SENIOR_STRUCTURING_RULES.md`。
 - 设计、整理或开发语法课堂前，先读 `docs/GRAMMAR_CLASSROOM_RULES.md`。
+- 处理分级跟读、IELTS 口语、录音、题目音频、口语评分、学生记录或家长预览前，先读 `docs/SPEAKING_PRACTICE_RULES.md`。
 - 所有线上内容上传（听力、阅读、语法、写作、词汇、transcript 等）必须增量上传：只能让线上用户看到内容增加；不得覆盖、删除、重命名已有线上可用内容；最终上传必须和线上存储结构兼容，不要求改云函数或前端，不影响线上上一个版本用户。

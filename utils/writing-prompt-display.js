@@ -1,3 +1,5 @@
+const SUMMARY_WRITING_STRUCTURE = require('../data/summary-writing-legacy-structure.json');
+
 function cleanPromptText(value) {
   return String(value || '')
     .replace(/\u00a0/g, ' ')
@@ -5,6 +7,75 @@ function cleanPromptText(value) {
     .replace(/．{2,}/g, '')
     .replace(/[ \t]+/g, ' ')
     .trim();
+}
+
+function summaryWords(value) {
+  const words = [];
+  const pattern = /[A-Za-z0-9]+(?:['’][A-Za-z0-9]+)?/g;
+  let match = pattern.exec(String(value || ''));
+  while (match) {
+    words.push({
+      value: match[0].toLowerCase().replace(/’/g, "'"),
+      index: match.index
+    });
+    match = pattern.exec(String(value || ''));
+  }
+  return words;
+}
+
+function findSummaryAnchor(words, anchor, fromIndex) {
+  const target = summaryWords(anchor).map((item) => item.value);
+  for (let index = fromIndex; index <= words.length - target.length; index += 1) {
+    if (target.every((value, offset) => words[index + offset].value === value)) return index;
+  }
+  return -1;
+}
+
+function cleanLegacySummaryScenario(value, articleTitle) {
+  let scenario = String(value || '')
+    .replace(/[（(]?\s*https?:\/\/\S+/gi, ' ')
+    .replace(/第\s*\d+\s*页\s*[（(]?\s*共\s*\d+\s*页\s*[）)]?/g, ' ')
+    .replace(/\s+\d{1,3}\s*[.．]\s*(?:[_＿-]+\s*)*$/g, ' ')
+    .replace(/\s*(?:\d{1,3}\s*[.．]\s*)?(?:[_＿-]{2,}\s*)+$/g, ' ');
+  scenario = cleanPromptText(scenario);
+  if (articleTitle && scenario.startsWith(articleTitle)) {
+    scenario = cleanPromptText(scenario.slice(articleTitle.length));
+  }
+  return scenario;
+}
+
+function restoreSummaryStructure(prompt, scenario) {
+  const directParagraphs = Array.isArray(prompt && prompt.articleParagraphs)
+    ? prompt.articleParagraphs.map(cleanPromptText).filter(Boolean)
+    : [];
+  if (directParagraphs.length) {
+    return {
+      articleTitle: cleanPromptText(prompt.articleTitle),
+      articleParagraphs: directParagraphs,
+      scenario: directParagraphs.join('\n\n')
+    };
+  }
+  const structure = SUMMARY_WRITING_STRUCTURE[String(prompt && prompt._id || '')];
+  if (!structure) return { articleTitle: '', articleParagraphs: [], scenario };
+  const articleTitle = cleanPromptText(structure.articleTitle);
+  const cleaned = cleanLegacySummaryScenario(scenario, articleTitle);
+  const words = summaryWords(cleaned);
+  const starts = [];
+  let wordIndex = 0;
+  for (const anchor of structure.paragraphAnchors || []) {
+    const nextIndex = findSummaryAnchor(words, anchor, wordIndex);
+    if (nextIndex < 0) return { articleTitle, articleParagraphs: [cleaned], scenario: cleaned };
+    starts.push(words[nextIndex].index);
+    wordIndex = nextIndex + summaryWords(anchor).length;
+  }
+  const articleParagraphs = starts.map((start, index) => cleanPromptText(
+    cleaned.slice(start, index + 1 < starts.length ? starts[index + 1] : cleaned.length)
+  )).filter(Boolean);
+  return {
+    articleTitle,
+    articleParagraphs,
+    scenario: articleParagraphs.join('\n\n')
+  };
 }
 
 function splitExplicitRequirements(value) {
@@ -101,7 +172,7 @@ function stripPromptHeading(value) {
 function buildPromptDisplay(prompt, labels) {
   const copy = labels || {};
   const raw = stripJuniorSource(prompt && prompt.prompt);
-  if (!raw) return { directions: '', scenario: '', scenarioTitle: '', requirementsTitle: '', requirements: [], notices: [], noticeTitle: '', promptTable: null, promptStarter: '' };
+  if (!raw) return { directions: '', scenario: '', articleTitle: '', articleParagraphs: [], scenarioTitle: '', requirementsTitle: '', requirements: [], notices: [], noticeTitle: '', promptTable: null, promptStarter: '' };
   const headingCleaned = stripPromptHeading(raw);
   const directionsMatch = headingCleaned.match(/^Directions\s*:\s*[^\u3400-\u9fff]*(?=[\u3400-\u9fff])/i);
   const directions = cleanPromptText((prompt && prompt.directions) || (directionsMatch && directionsMatch[0]));
@@ -134,9 +205,15 @@ function buildPromptDisplay(prompt, labels) {
     .replace(/(?:信息)?提示\s*[:：]\s*/g, '')
     .replace(/[，,]?\s*(?:内容包括|内容必须包括)\s*[:：]\s*$/i, '')
     .trim();
+  const summary = String(prompt && prompt.contentType || '') === 'summary-writing'
+    ? restoreSummaryStructure(prompt, scenario)
+    : { articleTitle: '', articleParagraphs: [], scenario };
+  scenario = summary.scenario;
   return {
     directions,
     scenario,
+    articleTitle: summary.articleTitle,
+    articleParagraphs: summary.articleParagraphs,
     scenarioTitle: scenario ? (copy.taskTitle || '写作任务') : '',
     requirementsTitle: requirements.length ? (requirementsTitle || copy.requirementsTitle || '写作要点') : '',
     requirements: requirements.map((item) => cleanPromptText(item)

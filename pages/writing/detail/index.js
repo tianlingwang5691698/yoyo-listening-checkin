@@ -51,7 +51,7 @@ function buildTranslationQuestions(prompt) {
 function buildWritingMarkLines(display) {
   const source = display || {};
   const entries = [];
-  const add = (textValue, label) => {
+  const add = (textValue, label, options) => {
     const value = cleanPromptText(textValue);
     if (!value) return;
     splitScopedSentences(value).forEach((sentence, sentenceIndex) => {
@@ -59,13 +59,21 @@ function buildWritingMarkLines(display) {
       entries.push({
         scope,
         label: sentenceIndex === 0 ? (label || '') : '',
+        isParagraphStart: !!(options && options.isParagraphStart && sentenceIndex === 0),
         text: sentence,
         tokens: tokenizeScopedText(sentence, scope)
       });
     });
   };
   add(source.directions, '');
-  add(source.scenario, source.scenarioTitle);
+  const articleParagraphs = Array.isArray(source.articleParagraphs) && source.articleParagraphs.length
+    ? source.articleParagraphs
+    : [source.scenario];
+  articleParagraphs.forEach((paragraph, index) => add(
+    paragraph,
+    index === 0 ? source.scenarioTitle : '',
+    { isParagraphStart: index > 0 }
+  ));
   (source.requirements || []).forEach((item, index) => add(item, index === 0 ? source.requirementsTitle : ''));
   (source.notices || []).forEach((item, index) => add(item, index === 0 ? source.noticeTitle : ''));
   add(source.promptStarter, '');

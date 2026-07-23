@@ -20,6 +20,8 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
 
+from shanghai_senior_summary_structure import extract_summary_source
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = Path('/Users/wangtianlong/工作/未命名文件夹/3.上海历年英语真题')
@@ -1695,7 +1697,7 @@ def build_writing_item(session: str, year: int, text: str, source_path: Path):
     }, {'promptChars': len(prompt), 'accepted': True, 'imageCount': len(images), 'requirementCount': len(requirements)}
 
 
-def build_summary_writing_item(session: str, year: int, text: str, source_file: str):
+def build_summary_writing_item(session: str, year: int, text: str, source_path: Path):
     headings = list(re.finditer(r'(?m)^\s*(?:(?:[IVX]+|[\u2160-\u2169])\.?\s*)?Summary Writing\b', text, re.I))
     if not headings:
         return None, {'accepted': False, 'reason': 'summary-writing-missing'}
@@ -1725,8 +1727,18 @@ def build_summary_writing_item(session: str, year: int, text: str, source_file: 
         return None, report
     prefix = SESSIONS[session]['prefix']
     label = SESSIONS[session]['label']
+    item_id = f'{prefix}-{year}-summary-writing'
+    structure = extract_summary_source(source_path, item_id)
+    article_title = structure['articleTitle']
+    article_paragraphs = structure['articleParagraphs']
+    passage = '\n\n'.join(article_paragraphs)
+    prompt = '\n\n'.join(value for value in [directions, article_title, *article_paragraphs] if value)
+    report.update({
+        'articleTitle': article_title,
+        'paragraphCount': len(article_paragraphs),
+    })
     return {
-        '_id': f'{prefix}-{year}-summary-writing',
+        '_id': item_id,
         'title': f'{year} 上海高考{label} IV. Summary Writing',
         'year': year,
         'city': '上海',
@@ -1736,15 +1748,17 @@ def build_summary_writing_item(session: str, year: int, text: str, source_file: 
         'section': 'summary-writing',
         'category': '高中概要写作',
         'contentType': 'summary-writing',
-        'contentRevision': 1,
+        'contentRevision': 2,
         'paperId': f'{prefix}-{year}',
         'paperOrder': 1,
         'sourceType': 'shanghai-gaokao',
-        'sourceFile': source_file,
+        'sourceFile': source_path.name,
         'questionNumber': number,
         'prompt': prompt,
         'directions': directions,
         'scenario': passage,
+        'articleTitle': article_title,
+        'articleParagraphs': article_paragraphs,
         'requirementsTitle': '',
         'requirements': [],
         'promptStarter': '',
@@ -2813,7 +2827,7 @@ def main():
             readings.insert(0, vocabulary_cloze)
         if grammar_cloze:
             readings.insert(0, grammar_cloze)
-        summary_writing, summary_writing_report = build_summary_writing_item(session, year, primary, source_path.name)
+        summary_writing, summary_writing_report = build_summary_writing_item(session, year, primary, source_path)
         translation, translation_report = build_translation_item(session, year, primary, source_path.name, supporting_text)
         writing, writing_report = build_writing_item(session, year, primary, source_path)
         grammar, grammar_report = build_grammar_questions(session, year, primary, source_path.name, answers)
