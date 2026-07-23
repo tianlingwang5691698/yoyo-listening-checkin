@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "scope": "data/grammar",
+  "baseline": "HEAD",
+  "sourcePayloadHash": "861be74e8fd6c394ae5b6a647472b8c88d091d8db9d4517ac29a5a40604aad46",
+  "cleanedPayloadHash": "7eaf0e2fe9748f3c2f9db6d23e36056550e29a8a24f4aecc55a836367950887b",
+  "summary": {
+    "changedQuestionCount": 19,
+    "changedFieldCount": 19,
+    "reason": "grammar_prompt_option_source_watermarks_removed"
+  },
+  "changes": [
+    {
+      "_id": "sh-em2-2012-奉贤-grammar-choice-q35",
+      "sourceFile": "上海市奉贤区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "Of the two pairs of jeans, I chose _____ one because I hadn't enough money on me.[来源:学§科§网]",
+      "newValue": "Of the two pairs of jeans, I chose _____ one because I hadn't enough money on me.",
+      "oldValueHash": "995dd629f3d85267d22987db57e7e9c0e541242ca25f6502ca6f63a6133f3250",
+      "newValueHash": "46b3a9ea719ca2380efb7772de6e8ddabbf1d9a5bdbc2e9769157f0431be18ab"
+    },
+    {
+      "_id": "sh-em2-2012-奉贤-grammar-choice-q50",
+      "sourceFile": "上海市奉贤区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "--- Could I use your bike for a while. Sam?[来源:Z,xx,k.Com] --- ________. I’m not using it. .",
+      "newValue": "--- Could I use your bike for a while. Sam? --- ________. I’m not using it. .",
+      "oldValueHash": "77f5e184fe6706ebd3e05e931c3e1da678142d82b5758f25dfd0aeeb38f434b7",
+      "newValueHash": "42c2596111cf35d00ebbe967aa7d431492ef9e57af43c870c5a1fb9412d50139"
+    },
+    {
+      "_id": "sh-em2-2013-崇明-grammar-choice-q31",
+      "sourceFile": "上海市崇明县2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "at[来源:Z_xx_k.Com]",
+      "newValue": "at",
+      "oldValueHash": "58650231159f46301a52949d5d200299e5ff6a9a83e0afc268eb42ce0998284f",
+      "newValueHash": "b1d6b91b67c2afa5e322988d9462638d354ddf8a1ef79dba987f815c22b4baee"
+    },
+    {
+      "_id": "sh-em2-2013-松江-grammar-choice-q33",
+      "sourceFile": "上海市松江区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "We were asked to check the answers _______ discussing with each other.[来源:学科网ZXXK]",
+      "newValue": "We were asked to check the answers _______ discussing with each other.",
+      "oldValueHash": "d21c9118d0ce2f509ed76abd5c92f5249bcda7fed951b15ee6e4dd442d204208",
+      "newValueHash": "d069dc9c831c2763d9ccbcdf94dc627b3ffffb904a0ac484741b0f1e310af1d9"
+    },
+    {
+      "_id": "sh-em2-2013-金山-grammar-choice-q32",
+      "sourceFile": "上海市金山区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "yourself[来源:Zxxk.Com]",
+      "newValue": "yourself",
+      "oldValueHash": "1b904411a3897dad7cadd71ac8a0d465dea6f94b2db1f2482b673ac859ba8672",
+      "newValueHash": "d00d825bba6ba94de153ffc5fa1e9bbd5b9e1afcc1e6aa161c9e8e954f378fdf"
+    },
+    {
+      "_id": "sh-em2-2013-金山-grammar-choice-q41",
+      "sourceFile": "上海市金山区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "How far[来源:学科网ZXXK]",
+      "newValue": "How far",
+      "oldValueHash": "e511d3271fd6b1e271c967dabdfff725b0357f12a756a57af50066133c89e617",
+      "newValueHash": "e03bfa8b89669bc754dd0375e9f90983710c13c9be33b1fd375c10517c117227"
+    },
+    {
+      "_id": "sh-em2-2013-金山-grammar-choice-q46",
+      "sourceFile": "上海市金山区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "The air in some of the cities in China is not very good. All of us _________ try our best to keep the environment clean. [来源:Z§xx§k.Com]",
+      "newValue": "The air in some of the cities in China is not very good. All of us _________ try our best to keep the environment clean.",
+      "oldValueHash": "46d5c0044ac13870723d6e417c3e80fd37964b2962aa1938b9da2bc22ca62ae2",
+      "newValueHash": "dbb94acf2aff7744e8f8462085f6cb4ce461effaf4a0f2bea1424847e77c5130"
+    },
+    {
+      "_id": "sh-em2-2013-长宁-grammar-choice-q41",
+      "sourceFile": "上海市长宁区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.B",
+      "oldValue": "terribly [来源:Zxxk.Com]",
+      "newValue": "terribly",
+      "oldValueHash": "59046de1a25e32873ea329f03a8786c09d74350727bc3be73c4e410d625da880",
+      "newValueHash": "a6513a114ac02daf5d6afb1309438b4bce62fd8078d8ff5ede75e3b4bb74ffdd"
+    },
+    {
+      "_id": "sh-em2-2014-虹口-grammar-choice-q28",
+      "sourceFile": "上海市虹口区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "Some naughty boys like to play ________ trick on their classmates on April Fool’s Day.[来源:Zxxk.Com]",
+      "newValue": "Some naughty boys like to play ________ trick on their classmates on April Fool’s Day.",
+      "oldValueHash": "82cf2e2c493a9bfb030c3714a56d8be14116b1193b5bb670d8aac2648067bc2e",
+      "newValueHash": "e69b9d54a2815eec92ee3d8f10d41d6c685261b080bcd50f442ba16c9ef8ba38"
+    },
+    {
+      "_id": "sh-em2-2014-虹口-grammar-choice-q43",
+      "sourceFile": "上海市虹口区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "will be finished[来源:学科网ZXXK]",
+      "newValue": "will be finished",
+      "oldValueHash": "fad48ea4c2f2c860905a7968f0b42d139a7f652c72099660b43330dbcfad2678",
+      "newValueHash": "d25e0681d4d45c0989b234c4753f658b09036d3e4824cb6307f1974947293919"
+    },
+    {
+      "_id": "sh-em2-2015-闸北-grammar-choice-q44",
+      "sourceFile": "上海市闸北区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "– Help yourself to some fruit, Victor. [来源:Z&xx&k.Com] – ______",
+      "newValue": "– Help yourself to some fruit, Victor. – ______",
+      "oldValueHash": "8032a367f0912c3e573e8e5e8ebedce8a240586ffb0a237fbd3c316aebbe5a95",
+      "newValueHash": "1cd99f36dd4d40db48a1af9fbbaf2172be8cdb0c321744578ef128e10ff4bf77"
+    },
+    {
+      "_id": "sh-em2-2016-徐汇-grammar-choice-q36",
+      "sourceFile": "上海市徐汇区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "reported[来源:Zxxk.Com]",
+      "newValue": "reported",
+      "oldValueHash": "e89154f7cb616438ccd0308186c9b3c75c88660824feefdf01e542783e6fcf6a",
+      "newValueHash": "8e752bb9817c063245abbe06c58903236866f4ef3934a3d68ce059e06345e67c"
+    },
+    {
+      "_id": "sh-em2-2016-松江-grammar-choice-q34",
+      "sourceFile": "上海市松江区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "the fattest[来源:学科网]",
+      "newValue": "the fattest",
+      "oldValueHash": "ea00ebc0c140b3c369d1727cf05bb22ff7c7b6c406aa4e2379031f1b7963f423",
+      "newValueHash": "6d5f4aa89c60b54c69549e1ef65813d6ee116457fd8d5eaf4ab8e28adfba5e81"
+    },
+    {
+      "_id": "sh-em2-2016-松江-grammar-choice-q35",
+      "sourceFile": "上海市松江区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "________ was able to escape from the building when the earthquake hit the area.[来源:Zxxk.Com]",
+      "newValue": "________ was able to escape from the building when the earthquake hit the area.",
+      "oldValueHash": "6c02186ef17ec734ccbf17430092783befa0798e39a76c87fdd2f8f04c1a6bea",
+      "newValueHash": "10a720e0343832578a5e180cf4d87d32cfbe84392565823c9d523bfc7336e8d6"
+    },
+    {
+      "_id": "sh-em2-2016-松江-grammar-choice-q43",
+      "sourceFile": "上海市松江区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "---________ do you think of the film “Kung Fu Panda” you’ve just seen?[来源:学+科+网Z+X+X+K] --- It is funny.",
+      "newValue": "---________ do you think of the film “Kung Fu Panda” you’ve just seen? --- It is funny.",
+      "oldValueHash": "716b4138451b2c7aa7037152cbf19681030bdf0498df546bfef5c846a146a796",
+      "newValueHash": "24aadb7bc9d9bee7a4f82ce84b543e9224ee3aac8b689f1e3ae7fb8d445beaa3"
+    },
+    {
+      "_id": "sh-em2-2016-浦东-grammar-choice-q27",
+      "sourceFile": "上海市浦东新区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "Which is _____ favorite monkey character, Abu or Monchhichi? [来源:学,科,网]",
+      "newValue": "Which is _____ favorite monkey character, Abu or Monchhichi?",
+      "oldValueHash": "4541186c3f5d4c98a234f5dfa436ef2da5c90f9257f80a85cdba60e13f887323",
+      "newValueHash": "5e6954ff81f10cb4d86661065959d04094505cc66b59ea9b2066cbd81f5c76fe"
+    },
+    {
+      "_id": "sh-em2-2016-浦东-grammar-choice-q38",
+      "sourceFile": "上海市浦东新区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "gain[来源:学科网]",
+      "newValue": "gain",
+      "oldValueHash": "3e109d32a7f4144b3bad5d17d7f15305328d3309b666df1f054d80a71b6abdc0",
+      "newValueHash": "66dd231befc8120d323edb448b16f7151ac1cd8d1048b4f89a0b2f00f82ac0a8"
+    },
+    {
+      "_id": "sh-em2-2016-浦东-grammar-choice-q42",
+      "sourceFile": "上海市浦东新区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "How a[来源:学*科*网]",
+      "newValue": "How a",
+      "oldValueHash": "e2db39a7b04f7fa01a5aa9a46865aea996facbf47776ab9c58a7da5ed839efb1",
+      "newValueHash": "6dd5986b6c432173fb9abdc978e293b088de8a44f2f40ba6838e0636a7de6391"
+    },
+    {
+      "_id": "sh-em2-2017-松江-grammar-choice-q37",
+      "sourceFile": "上海市松江区2017届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "Mum, you ________ pick me up at school this afternoon. I will take the bus home myself.[来源:Z_xx_k.Com]",
+      "newValue": "Mum, you ________ pick me up at school this afternoon. I will take the bus home myself.",
+      "oldValueHash": "f81500abdc48987de00ba5fbd33e0bcafe7e01befa02c2f2e6d24540ce35ba3c",
+      "newValueHash": "7f3b195d1fb5e7cce1e3104eb495dee005ba95bc3b405e0e1ef5aa89ed167fca"
+    }
+  ]
+}

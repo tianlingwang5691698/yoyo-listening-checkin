@@ -55,6 +55,8 @@ page,
   --font-body-family: "PingFang SC", "Helvetica Neue", sans-serif;
   --font-title-family: "PingFang SC", "Helvetica Neue", sans-serif;
   --font-number-family: "DIN Alternate", "Helvetica Neue", sans-serif;
+  --font-english-serif-family: Georgia, "Times New Roman", serif;
+  --font-english-sans-family: "Helvetica Neue", Arial, sans-serif;
   --font-brand-size: 38rpx;
   --font-page-title-size: 38rpx;
   --font-card-title-size: 34rpx;
@@ -66,6 +68,14 @@ page,
   --font-product-copy-size: 25rpx;
   --font-code-size: 68rpx;
   --font-display-size: 104rpx;
+  --result-score-size: 48rpx;
+  --result-title-size: 32rpx;
+  --result-section-size: 28rpx;
+  --result-body-size: 26rpx;
+  --result-support-size: 23rpx;
+  --result-meta-size: 21rpx;
+  --result-line-body: 1.72;
+  --result-line-support: 1.58;
   --font-brand-weight: 700;
   --font-title-weight: 700;
   --font-section-weight: 600;

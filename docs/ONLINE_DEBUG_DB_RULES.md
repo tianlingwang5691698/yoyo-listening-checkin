@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-24 Cambridge IELTS 19 Test 1 Task 1 批改超时后页面锁死
+
+1. 现象：家长预览提交 173 词作文后一直显示“正在批改”，删除文本框内容也无法退出。
+2. 查询：`writingPreviewAttempts/4af9f197c07ce9cf5bbcd604eaa5294a` 为 `grading-failed / writing-timeout`；云函数请求 `dd6335eb-1cf5-4515-b80e-56b2c2eea0db` 运行 91597ms 后在 `writing.service.postJson` 的 90 秒 HTTP 上限失败。
+3. 结论：模型首轮响应超过 90 秒；详情轮询先处理 `resumable`、后处理 `grading-failed`，导致失败任务被持续显示为批改中并锁定编辑器。
+4. 修复：写作模型单次等待提高到 180 秒，首次与校准共用 280 秒总预算；失败状态优先解除锁定，不再自动循环续批，允许原文手动重试。
+5. 是否需要发版：需部署 `yoyo` 云函数，并重新编译发布小程序前端。
+
 ### 2026-07-24 Luna 主模型与 Terra 兜底路由
 
 1. 范围：阅读逐题解析、阅读/听力学习包、阅读单句翻译、语法讲解。

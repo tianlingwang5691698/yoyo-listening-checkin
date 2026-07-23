@@ -15,6 +15,7 @@
 - 语法与词汇的语篇选词填空可使用阅读式页面建模，但标题必须保留 `Grammar and Vocabulary Section B`，不得误标为阅读 Section B。
 - 当年原卷没有独立语法选择题时，`Grammar and Vocabulary Section A` 放入阅读区，位于 Section B 之前；空格必须嵌入原文原位置，保留原题号和括号提示词，不得拆成文章外的独立题卡。
 - 写作只保留情境、任务、字数和注意事项；删除范文、解析、评分标准。原卷用圆点或编号列出的写作要点必须保留为 `requirements[]`，每点独立展示，不得压成连续段落。
+- Guided Writing 页面按实际字段固定展示为 `Directions → 写作任务/情境 → 原卷表格 → 写作要点 → 注意事项 → 开头提示`；各区使用独立标题、字号、行距和分隔，`requirements[]` 逐项编号，不得与情境粘连。
 - 写作题中的原卷表格必须保留表头、行标题和单元格顺序，使用 `promptTable` 独立展示，不得粘连到写作要点。
 - 第 II 卷含翻译时，写作入口按原卷顺序展示 `I. Translation` 和 `II. Guided Writing`。翻译每题使用独立输入区，括号提示词必须保留；参考译文只能在学生完成全部题目并提交后显示。
 - 现代卷含 `Summary Writing` 时，同一年写作入口按原卷 `Summary Writing → Translation → Guided Writing` 排序；概要写作保留原文、原题号和“不超过 N 词”，不得混入参考答案或范文。

@@ -19,10 +19,9 @@ test('写作详情使用拆分后的独立句子作用域', () => {
   const script = fs.readFileSync(path.join(root, 'pages/writing/detail/index.js'), 'utf8');
   const template = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxml'), 'utf8');
   const styles = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxss'), 'utf8');
-  assert.match(script, /splitScopedSentences\(value\)\.forEach/);
-  assert.match(script, /add\(source\.directions, ''\);[\s\S]*?isArticleTitle: true[\s\S]*?const articleParagraphs/);
-  assert.match(script, /scope: '',[\s\S]*?isArticleTitle: true/);
-  assert.equal((template.match(/wx:if="\{\{line\.isArticleTitle\}\}"/g) || []).length, 2);
-  assert.equal((template.match(/wx:else class="writing-mark-line/g) || []).length, 2);
-  assert.match(styles, /\.writing-mark-lines\s*\{\s*display:\s*grid;\s*gap:\s*4rpx;/);
+  assert.match(script, /splitScopedSentences\(item\.text\)\.forEach/);
+  assert.match(script, /section\.articleTitle[\s\S]*?scope: '',[\s\S]*?isArticleTitle: true/);
+  assert.equal((template.match(/wx:for="\{\{writingPromptSections\}\}"/g) || []).length, 2);
+  assert.equal((template.match(/wx:for="\{\{section\.lines\}\}"/g) || []).length, 2);
+  assert.match(styles, /\.writing-prompt-lines\s*\{[\s\S]*?display:\s*grid;/);
 });

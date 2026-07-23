@@ -1193,6 +1193,103 @@
   overflow-wrap: anywhere;
 }
 
+.theme-warm.reading-detail .reading-result-card,
+.theme-warm.reading-detail .cloze-review-card {
+  padding: 30rpx 28rpx;
+  border-color: rgba(141, 183, 212, 0.28);
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16rpx 40rpx rgba(78, 112, 139, 0.08);
+}
+
+.theme-warm.reading-detail .review-kicker {
+  color: #607087;
+  font-size: var(--result-meta-size);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.theme-warm.reading-detail .review-score {
+  margin-top: 8rpx;
+  font-size: var(--result-score-size);
+  line-height: 1.08;
+  font-weight: 750;
+}
+
+.theme-warm.reading-detail .review-copy {
+  margin-top: 14rpx;
+  color: #405b73;
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-warm.reading-detail .review-title {
+  color: #17314f;
+  font-size: var(--result-title-size);
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.theme-warm.reading-detail .cloze-review-item {
+  padding: 24rpx 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.theme-warm.reading-detail .cloze-review-item + .cloze-review-item {
+  border-top: 1rpx solid rgba(141, 183, 212, 0.22);
+}
+
+.theme-warm.reading-detail .cloze-review-number,
+.theme-warm.reading-detail .analysis-head {
+  font-size: var(--result-section-size);
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.theme-warm.reading-detail .cloze-review-state,
+.theme-warm.reading-detail .analysis-state,
+.theme-warm.reading-detail .cloze-answer-label,
+.theme-warm.reading-detail .cloze-evidence-label,
+.theme-warm.reading-detail .answer-sentence-label {
+  font-size: var(--result-meta-size);
+}
+
+.theme-warm.reading-detail .cloze-analysis-text,
+.theme-warm.reading-detail .analysis-text.is-primary {
+  color: #344f68;
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-warm.reading-detail .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid rgba(141, 183, 212, 0.24);
+  border-radius: 0;
+  background: transparent;
+}
+
+.theme-warm.reading-detail .answer-sentence,
+.theme-warm.reading-detail .cloze-evidence {
+  padding: 16rpx 0 0 18rpx;
+  border-top: 0;
+  border-left-color: rgba(141, 183, 212, 0.62);
+  color: #526a80;
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.theme-warm.reading-detail .answer-sentence-text,
+.theme-warm.reading-detail .answer-sentence-translation,
+.theme-warm.reading-detail .cloze-evidence-text,
+.theme-warm.reading-detail .cloze-evidence-translation {
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
 .study-pack-panel {
   background: rgba(255, 255, 255, 0.58);
   box-shadow: none;
@@ -2676,4 +2773,225 @@
   width: 100%;
   background: #fff;
   border: 1rpx solid rgba(38, 48, 58, 0.14);
+}
+
+/* Four-theme review hierarchy. */
+.library-reading-detail .receipt-label,
+.theme-voyage.reading-detail .review-kicker,
+.theme-dragon.reading-detail .review-kicker {
+  font-size: var(--result-meta-size);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.library-reading-detail .review-score,
+.theme-voyage.reading-detail .review-score,
+.theme-dragon.reading-detail .review-score {
+  margin-top: 8rpx;
+  font-size: var(--result-score-size);
+  line-height: 1.08;
+}
+
+.library-reading-detail .review-copy,
+.theme-voyage.reading-detail .review-copy,
+.theme-dragon.reading-detail .review-copy {
+  margin-top: 14rpx;
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.library-reading-detail .review-title,
+.theme-voyage.reading-detail .review-title,
+.theme-dragon.reading-detail .review-title {
+  font-size: var(--result-title-size);
+  line-height: 1.3;
+}
+
+.library-reading-detail .cloze-review-item,
+.theme-voyage.reading-detail .cloze-review-item,
+.theme-dragon.reading-detail .cloze-review-item {
+  padding: 24rpx 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.library-reading-detail .cloze-review-item + .cloze-review-item {
+  border-top: 1rpx solid rgba(184, 149, 98, 0.24);
+}
+
+.theme-voyage.reading-detail .cloze-review-item + .cloze-review-item {
+  border-top: 1rpx solid rgba(141, 92, 39, 0.30);
+}
+
+.theme-dragon.reading-detail .cloze-review-item + .cloze-review-item {
+  border-top: 2rpx solid rgba(16, 46, 98, 0.22);
+}
+
+.library-reading-detail .cloze-review-number,
+.library-reading-detail .analysis-head,
+.theme-voyage.reading-detail .cloze-review-number,
+.theme-voyage.reading-detail .analysis-head,
+.theme-dragon.reading-detail .cloze-review-number,
+.theme-dragon.reading-detail .analysis-head {
+  font-size: var(--result-section-size);
+  line-height: 1.4;
+}
+
+.library-reading-detail .cloze-review-state,
+.library-reading-detail .analysis-state,
+.library-reading-detail .cloze-answer-label,
+.library-reading-detail .cloze-evidence-label,
+.library-reading-detail .answer-sentence-label,
+.theme-voyage.reading-detail .cloze-review-state,
+.theme-voyage.reading-detail .analysis-state,
+.theme-voyage.reading-detail .cloze-answer-label,
+.theme-voyage.reading-detail .cloze-evidence-label,
+.theme-voyage.reading-detail .answer-sentence-label,
+.theme-dragon.reading-detail .cloze-review-state,
+.theme-dragon.reading-detail .analysis-state,
+.theme-dragon.reading-detail .cloze-answer-label,
+.theme-dragon.reading-detail .cloze-evidence-label,
+.theme-dragon.reading-detail .answer-sentence-label {
+  font-size: var(--result-meta-size);
+}
+
+.library-reading-detail .cloze-analysis-text,
+.library-reading-detail .analysis-text.is-primary,
+.theme-voyage.reading-detail .cloze-analysis-text,
+.theme-voyage.reading-detail .analysis-text.is-primary,
+.theme-dragon.reading-detail .cloze-analysis-text,
+.theme-dragon.reading-detail .analysis-text.is-primary {
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.library-reading-detail .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid rgba(184, 149, 98, 0.28);
+  border-radius: 0;
+  background: transparent;
+}
+
+.theme-voyage.reading-detail .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid rgba(141, 92, 39, 0.34);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-dragon.reading-detail .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 2rpx solid rgba(16, 46, 98, 0.28);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.library-reading-detail .answer-sentence,
+.library-reading-detail .cloze-evidence,
+.theme-voyage.reading-detail .answer-sentence,
+.theme-voyage.reading-detail .cloze-evidence,
+.theme-dragon.reading-detail .answer-sentence,
+.theme-dragon.reading-detail .cloze-evidence {
+  padding: 16rpx 0 0 18rpx;
+  border-top: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.library-reading-detail .answer-sentence,
+.library-reading-detail .cloze-evidence {
+  border-left: 4rpx solid rgba(127, 140, 120, 0.68);
+}
+
+.theme-voyage.reading-detail .answer-sentence,
+.theme-voyage.reading-detail .cloze-evidence {
+  border-left: 4rpx solid rgba(23, 106, 153, 0.68);
+}
+
+.theme-dragon.reading-detail .answer-sentence,
+.theme-dragon.reading-detail .cloze-evidence {
+  border-left: 4rpx solid rgba(244, 90, 22, 0.72);
+}
+
+.library-reading-detail .answer-sentence-text,
+.library-reading-detail .answer-sentence-translation,
+.library-reading-detail .cloze-evidence-text,
+.library-reading-detail .cloze-evidence-translation,
+.theme-voyage.reading-detail .answer-sentence-text,
+.theme-voyage.reading-detail .answer-sentence-translation,
+.theme-voyage.reading-detail .cloze-evidence-text,
+.theme-voyage.reading-detail .cloze-evidence-translation,
+.theme-dragon.reading-detail .answer-sentence-text,
+.theme-dragon.reading-detail .answer-sentence-translation,
+.theme-dragon.reading-detail .cloze-evidence-text,
+.theme-dragon.reading-detail .cloze-evidence-translation {
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+/* Reading font roles: English source, Chinese analysis, numeric scores. */
+.reading-detail .passage-text,
+.reading-detail .cloze-passage-text,
+.library-reading-detail .passage-text,
+.library-reading-detail .cloze-passage-text,
+.reading-detail .reading-article-title,
+.reading-detail .reading-article-subtitle,
+.library-reading-detail .reading-article-title,
+.library-reading-detail .reading-article-subtitle,
+.reading-detail .answer-sentence-text,
+.reading-detail .cloze-evidence-text,
+.library-reading-detail .answer-sentence-text,
+.library-reading-detail .cloze-evidence-text {
+  font-family: var(--font-english-serif-family);
+}
+
+.reading-detail .question-title,
+.library-reading-detail .question-title,
+.reading-detail .review-copy,
+.library-reading-detail .review-copy,
+.reading-detail .cloze-analysis-text,
+.library-reading-detail .cloze-analysis-text,
+.reading-detail .inline-analysis .analysis-text,
+.library-reading-detail .inline-analysis .analysis-text,
+.reading-detail .answer-sentence-translation,
+.reading-detail .cloze-evidence-translation,
+.library-reading-detail .answer-sentence-translation,
+.library-reading-detail .cloze-evidence-translation {
+  font-family: var(--font-body-family);
+}
+
+.theme-warm.reading-detail .review-title,
+.theme-warm.reading-detail .analysis-head,
+.theme-dragon.reading-detail .review-title,
+.theme-dragon.reading-detail .analysis-head {
+  font-family: var(--font-body-family);
+}
+
+.library-reading-detail .review-title,
+.library-reading-detail .analysis-head,
+.theme-voyage.reading-detail .review-title,
+.theme-voyage.reading-detail .analysis-head {
+  font-family: var(--font-title-family);
+}
+
+.reading-detail .review-score,
+.library-reading-detail .review-score,
+.reading-detail .cloze-review-number,
+.library-reading-detail .cloze-review-number,
+.reading-detail .analysis-state,
+.library-reading-detail .analysis-state,
+.reading-detail .cloze-review-state,
+.library-reading-detail .cloze-review-state {
+  font-family: var(--font-number-family);
 }

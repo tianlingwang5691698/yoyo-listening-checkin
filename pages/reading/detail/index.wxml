@@ -220,7 +220,7 @@
                 <text>{{texts.analysis}}</text>
                 <text class="{{item.reviewAnalysis.correct ? 'analysis-state is-correct' : 'analysis-state is-wrong'}}">{{item.reviewAnalysis.correct ? texts.correct : texts.correction}}</text>
               </view>
-              <view class="analysis-text">{{item.reviewAnalysis.text}}</view>
+              <view class="analysis-text is-primary">{{item.reviewAnalysis.text}}</view>
               <view wx:if="{{item.reviewAnalysis.answerSentence}}" class="answer-sentence">
                 <view class="answer-sentence-label">{{texts.evidence}}</view>
                 <view class="answer-sentence-text">{{item.reviewAnalysis.answerSentence.text}}</view>
@@ -483,6 +483,7 @@
           <view class="reading-effect-dot dot-one"></view>
           <view class="reading-effect-dot dot-two"></view>
         </view>
+        <view class="review-kicker">{{texts.review}}</view>
         <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
         <view class="review-score" wx:else>{{texts.completed}}</view>
         <view class="review-copy">{{reviewSummary || texts.resultReady}}</view>
@@ -561,7 +562,7 @@
                 <text>{{texts.analysis}}</text>
                 <text class="{{item.reviewAnalysis.correct ? 'analysis-state is-correct' : 'analysis-state is-wrong'}}">{{item.reviewAnalysis.correct ? texts.correct : texts.correction}}</text>
               </view>
-              <view class="analysis-text">{{item.reviewAnalysis.text}}</view>
+              <view class="analysis-text is-primary">{{item.reviewAnalysis.text}}</view>
               <view wx:if="{{item.reviewAnalysis.answerSentence}}" class="answer-sentence">
                 <view class="answer-sentence-label">{{texts.evidence}}</view>
                 <view class="answer-sentence-text">{{item.reviewAnalysis.answerSentence.text}}</view>

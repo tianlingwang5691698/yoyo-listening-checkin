@@ -7,6 +7,11 @@ import json
 import subprocess
 from pathlib import Path
 
+from grammar_content_cleaning import (
+    clean_question_source_watermarks,
+    strip_source_watermarks,
+)
+
 
 ROOT = Path(__file__).resolve().parent.parent
 TAXONOMY_PATH = ROOT / 'data/grammar/grammar-topic-taxonomy.json'
@@ -186,12 +191,16 @@ def write_prompt_clean_report(out_dir, current, frozen, head_ref):
         new = current_by_id.get(old['_id'])
         if not new or old.get('prompt') == new.get('prompt'):
             continue
+        if strip_source_watermarks(old.get('prompt')) == new.get('prompt'):
+            continue
         changes.append({
             '_id': old['_id'],
             'oldPrompt': old.get('prompt', ''),
             'newPrompt': new.get('prompt', ''),
             'reason': 'remove duplicated A-D option text from prompt; options remain in options field',
         })
+    if not changes:
+        return 0
     report = {
         'schemaVersion': 1,
         'scope': out_dir.relative_to(ROOT).as_posix(),
@@ -206,12 +215,55 @@ def write_prompt_clean_report(out_dir, current, frozen, head_ref):
     return len(changes)
 
 
+def clean_source_watermarks(items):
+    changes = []
+    for item in items:
+        for change in clean_question_source_watermarks(item):
+            changes.append({
+                '_id': item['_id'],
+                'sourceFile': item.get('sourceFile', ''),
+                **change,
+                'oldValueHash': hashlib.sha256(
+                    str(change['oldValue']).encode('utf-8')
+                ).hexdigest(),
+                'newValueHash': hashlib.sha256(
+                    str(change['newValue']).encode('utf-8')
+                ).hexdigest(),
+            })
+    return changes
+
+
+def write_source_watermark_clean_report(
+    out_dir,
+    changes,
+    head_ref,
+    source_payload_hash,
+    cleaned_payload_hash,
+):
+    report = {
+        'schemaVersion': 1,
+        'scope': out_dir.relative_to(ROOT).as_posix(),
+        'baseline': head_ref,
+        'sourcePayloadHash': source_payload_hash,
+        'cleanedPayloadHash': cleaned_payload_hash,
+        'summary': {
+            'changedQuestionCount': len({item['_id'] for item in changes}),
+            'changedFieldCount': len(changes),
+            'reason': 'grammar_prompt_option_source_watermarks_removed',
+        },
+        'changes': changes,
+    }
+    write_payload(out_dir / 'source-watermark-clean-report.json', report)
+
+
 def rebuild(relative_dir, head_ref):
     out_dir = ROOT / relative_dir
     questions_path = out_dir / f'{STEMS[0]}.json'
+    source_payload_hash = hashlib.sha256(questions_path.read_bytes()).hexdigest()
     current = load_json(questions_path)
     frozen = head_json(questions_path.relative_to(ROOT), head_ref)
     merged, restored = merge_frozen_ids(current, frozen)
+    source_watermark_changes = clean_source_watermarks(merged)
     restored_ids = {item['_id'] for item in restored}
     remapped = normalize_top_categories(merged, restored_ids)
     groups, topic_types = build_outputs(merged)
@@ -221,12 +273,24 @@ def rebuild(relative_dir, head_ref):
     write_payload(out_dir / f'{STEMS[2]}.json', topic_types, write_js=(out_dir.name == 'grammar'))
     write_topics(out_dir, groups)
     clean_count = write_prompt_clean_report(out_dir, merged, frozen, head_ref)
+    cleaned_payload_hash = hashlib.sha256(questions_path.read_bytes()).hexdigest()
+    write_source_watermark_clean_report(
+        out_dir,
+        source_watermark_changes,
+        head_ref,
+        source_payload_hash,
+        cleaned_payload_hash,
+    )
     return {
         'dataset': relative_dir.as_posix(),
         'questions': len(merged),
         'restored': len(restored),
         'remapped': remapped,
         'promptCleanChanges': clean_count,
+        'sourceWatermarkQuestions': len({
+            item['_id'] for item in source_watermark_changes
+        }),
+        'sourceWatermarkFields': len(source_watermark_changes),
         'categories': len(topic_types),
         'topics': len(groups),
     }

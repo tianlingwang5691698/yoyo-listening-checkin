@@ -3726,3 +3726,41 @@
   .voyage-speaking-stage,
   .dragon-speaking-stage { right: 16rpx; width: 116rpx; transform: translateY(-50%) scale(0.9); transform-origin: right center; }
 }
+
+/* Speaking font roles: English prompts, Chinese feedback, numeric scores. */
+.page-shell .prompt-text,
+.page-shell .prompt-replay,
+.page-shell .library-prompt-text,
+.page-shell .repeat-sentence-list .repeat-sentence-text,
+.page-shell .ielts-intro-script,
+.page-shell .ielts-focus-question,
+.page-shell .ielts-cue-task,
+.page-shell .ielts-cue-label,
+.page-shell .ielts-cue-point,
+.page-shell .ielts-cue-closing,
+.page-shell .ielts-exam-sheet .ielts-intro-script,
+.page-shell .ielts-exam-sheet .ielts-focus-question,
+.page-shell .ielts-exam-sheet .ielts-cue-task,
+.page-shell .ielts-exam-sheet .ielts-cue-label,
+.page-shell .ielts-exam-sheet .ielts-cue-point,
+.page-shell .ielts-exam-sheet .ielts-cue-closing {
+  font-family: var(--font-english-sans-family);
+}
+
+.ielts-band-feedback,
+.repeat-inline-feedback,
+.ielts-inline-state,
+.score-label {
+  font-family: var(--font-body-family);
+}
+
+.score-value,
+.library-score-value,
+.repeat-sentence-number,
+.repeat-sentence-score,
+.repeat-inline-result-total,
+.ielts-band-overall,
+.ielts-band-value,
+.ielts-focus-count {
+  font-family: var(--font-number-family);
+}

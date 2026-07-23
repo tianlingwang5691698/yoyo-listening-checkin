@@ -3,6 +3,7 @@ import json
 import re
 from pathlib import Path
 
+from grammar_content_cleaning import strip_source_watermarks
 
 SOURCES = [
     Path('data/imports/shanghai-em2-2012-2021/formal/grammar-choice.formal.json'),
@@ -30,7 +31,7 @@ TOPICS = [
 
 
 def norm(text):
-    return re.sub(r'\s+', ' ', str(text or '')).strip()
+    return re.sub(r'\s+', ' ', strip_source_watermarks(text)).strip()
 
 
 def option_text(q):
@@ -93,7 +94,10 @@ def load_items():
                     'sourceFile': paper.get('sourceFile'),
                     'number': q.get('number'),
                     'prompt': norm(q.get('prompt')),
-                    'options': q.get('options') or {},
+                    'options': {
+                        key: norm((q.get('options') or {}).get(key))
+                        for key in ['A', 'B', 'C', 'D']
+                    },
                     'answer': q.get('answer'),
                     'topicId': topic,
                     'topic': topic_label(topic),

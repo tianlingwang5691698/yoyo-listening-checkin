@@ -848,6 +848,107 @@
   word-break: break-word;
 }
 
+.theme-warm.writing-page .review-card {
+  padding: 32rpx 30rpx 34rpx 42rpx;
+  border-color: rgba(141, 183, 212, 0.28);
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16rpx 40rpx rgba(78, 112, 139, 0.09);
+}
+
+.theme-warm.writing-page .review-top {
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid rgba(141, 183, 212, 0.24);
+}
+
+.theme-warm.writing-page .review-top .section-title {
+  font-size: var(--result-title-size);
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.theme-warm.writing-page .score {
+  margin-top: 12rpx;
+  font-size: var(--result-score-size);
+  line-height: 1.08;
+  font-weight: 750;
+}
+
+.theme-warm.writing-page .level,
+.theme-warm.writing-page .writing-estimate-label,
+.theme-warm.writing-page .writing-test-estimate-parts,
+.theme-warm.writing-page .writing-test-estimate-formula {
+  font-size: var(--result-meta-size);
+}
+
+.theme-warm.writing-page .review-block {
+  margin-top: 26rpx;
+  padding: 4rpx 0 4rpx 20rpx;
+  border: 0;
+  border-left: 4rpx solid rgba(134, 170, 161, 0.72);
+  border-radius: 0;
+  background: transparent;
+  color: #29445f;
+  font-size: var(--result-section-size);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.theme-warm.writing-page .review-list {
+  margin-top: 30rpx;
+  padding: 26rpx 0 0;
+  border-top: 1rpx solid rgba(141, 183, 212, 0.24);
+  border-left: 0;
+  color: #344f68;
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-warm.writing-page .list-title {
+  margin-bottom: 12rpx;
+  color: #17314f;
+  font-size: var(--result-section-size);
+  line-height: 1.38;
+  font-weight: 650;
+}
+
+.theme-warm.writing-page .criterion-comment {
+  color: #405b73;
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-warm.writing-page .criterion-evidence,
+.theme-warm.writing-page .criterion-descriptor,
+.theme-warm.writing-page .criterion-limiters,
+.theme-warm.writing-page .criterion-actions,
+.theme-warm.writing-page .band-sample-notes,
+.theme-warm.writing-page .band-sample-target {
+  padding: 16rpx 18rpx;
+  border-radius: 8rpx;
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.theme-warm.writing-page .criterion-subtitle {
+  margin-bottom: 8rpx;
+  font-size: var(--result-meta-size);
+  line-height: 1.4;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.theme-warm.writing-page .correction-item {
+  border-radius: 8rpx;
+  background: rgba(246, 251, 253, 0.88);
+}
+
+.theme-warm.writing-page .polished,
+.theme-warm.writing-page .band-sample-essay {
+  font-size: var(--result-body-size);
+  line-height: 1.82;
+}
+
 .review-card.is-celebrating {
   animation: writingReviewLift 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -1940,4 +2041,503 @@
   border: 2rpx solid rgba(16, 46, 98, 0.28);
   border-radius: 6rpx;
   background: #fff3c4;
+}
+
+/* 作文题纸：初中、高中和 IELTS 共用语义层级，主题只替换材质与强调色。 */
+.writing-prompt-structure {
+  display: block;
+  width: 100%;
+}
+
+.writing-prompt-section {
+  padding: 28rpx 10rpx;
+  border-top: 1rpx solid rgba(141, 183, 212, 0.30);
+}
+
+.writing-prompt-section:first-child {
+  border-top: 0;
+}
+
+.writing-prompt-section-title {
+  margin-bottom: 14rpx;
+  color: #587087;
+  font-size: 24rpx;
+  line-height: 1.4;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.writing-prompt-lines {
+  display: grid;
+  gap: 6rpx;
+}
+
+.writing-prompt-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.writing-prompt-line.has-marker {
+  grid-template-columns: 42rpx minmax(0, 1fr);
+  gap: 16rpx;
+}
+
+.writing-prompt-line.is-paragraph-start {
+  margin-top: 20rpx;
+}
+
+.writing-prompt-marker {
+  width: 42rpx;
+  height: 42rpx;
+  margin-top: 8rpx;
+  border: 2rpx solid rgba(82, 112, 135, 0.42);
+  border-radius: 50%;
+  color: #35546d;
+  font-size: 21rpx;
+  line-height: 38rpx;
+  font-weight: 800;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.writing-prompt-line-copy.writing-mark-line {
+  min-width: 0;
+  padding: 6rpx 0;
+  border-radius: 6rpx;
+  color: #17314f;
+  font-size: 28rpx;
+  line-height: 1.78;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.writing-prompt-section.type-directions {
+  margin: 8rpx 0 10rpx;
+  padding: 20rpx 22rpx;
+  border-top: 0;
+  border-left: 6rpx solid #8db7d4;
+  background: rgba(141, 183, 212, 0.10);
+}
+
+.writing-prompt-section.type-directions .writing-prompt-section-title {
+  margin-bottom: 8rpx;
+  color: #668095;
+  font-size: 21rpx;
+}
+
+.writing-prompt-section.type-directions .writing-prompt-line-copy {
+  color: #4c6378;
+  font-size: 25rpx;
+  line-height: 1.68;
+  font-style: italic;
+}
+
+.writing-prompt-section.type-task .writing-prompt-section-title {
+  color: #17314f;
+  font-size: 29rpx;
+  line-height: 1.35;
+}
+
+.writing-prompt-section.type-task .writing-article-title {
+  margin: 26rpx 0 22rpx;
+  font-size: 35rpx;
+  line-height: 1.42;
+  letter-spacing: 0;
+}
+
+.writing-prompt-section.type-requirements .writing-prompt-section-title {
+  color: #355e56;
+  font-size: 27rpx;
+}
+
+.writing-prompt-section.type-requirements .writing-prompt-marker {
+  border-color: rgba(79, 126, 115, 0.50);
+  background: rgba(134, 170, 161, 0.14);
+  color: #355e56;
+}
+
+.writing-prompt-section.type-notice {
+  margin-top: 8rpx;
+  padding: 22rpx 20rpx;
+  border-top-color: rgba(223, 127, 104, 0.22);
+  border-left: 5rpx solid rgba(223, 127, 104, 0.72);
+  background: rgba(223, 127, 104, 0.06);
+}
+
+.writing-prompt-section.type-notice .writing-prompt-section-title,
+.writing-prompt-section.type-starter .writing-prompt-section-title {
+  color: #9a604f;
+  font-size: 23rpx;
+}
+
+.writing-prompt-section.type-notice .writing-prompt-line-copy,
+.writing-prompt-section.type-starter .writing-prompt-line-copy {
+  color: #665b58;
+  font-size: 24rpx;
+  line-height: 1.66;
+}
+
+.writing-prompt-section.type-notice .writing-prompt-marker {
+  width: 34rpx;
+  height: 34rpx;
+  margin-top: 10rpx;
+  border-color: rgba(190, 102, 79, 0.44);
+  color: #a85e49;
+  font-size: 19rpx;
+  line-height: 30rpx;
+}
+
+.writing-prompt-section.type-notice .writing-prompt-line.has-marker {
+  grid-template-columns: 34rpx minmax(0, 1fr);
+  gap: 14rpx;
+}
+
+.writing-prompt-section.type-starter {
+  padding-bottom: 10rpx;
+}
+
+.writing-prompt-section .prompt-table,
+.writing-prompt-section .library-prompt-table,
+.writing-prompt-section .prompt-images,
+.writing-prompt-section .library-prompt-images {
+  margin-top: 24rpx;
+}
+
+.writing-library-page .writing-prompt-section {
+  border-top-color: rgba(184, 149, 98, 0.26);
+}
+
+.writing-library-page .writing-prompt-section-title {
+  color: #725a3d;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.writing-library-page .writing-prompt-line-copy.writing-mark-line {
+  color: var(--library-writing-ink);
+}
+
+.writing-library-page .writing-prompt-section.type-directions {
+  border-left-color: #b89562;
+  background: rgba(243, 232, 212, 0.52);
+}
+
+.writing-library-page .writing-prompt-section.type-directions .writing-prompt-line-copy {
+  color: #655642;
+}
+
+.writing-library-page .writing-prompt-section.type-requirements .writing-prompt-marker {
+  border-color: rgba(92, 111, 81, 0.54);
+  background: rgba(127, 140, 120, 0.15);
+  color: #4f6748;
+}
+
+.writing-library-page .writing-prompt-section.type-notice {
+  border-left-color: #9b6846;
+  background: rgba(184, 149, 98, 0.10);
+}
+
+.theme-voyage .writing-prompt-section {
+  border-top-color: rgba(141, 92, 39, 0.28);
+}
+
+.theme-voyage .writing-prompt-section-title {
+  color: #75532f;
+}
+
+.theme-voyage .writing-prompt-line-copy.writing-mark-line {
+  color: #47331f;
+}
+
+.theme-voyage .writing-prompt-section.type-directions {
+  border-left-color: #1d5b78;
+  background: rgba(29, 91, 120, 0.08);
+}
+
+.theme-voyage .writing-prompt-section.type-directions .writing-prompt-line-copy {
+  color: #53616a;
+}
+
+.theme-voyage .writing-prompt-section.type-task .writing-prompt-section-title {
+  color: #1d5b78;
+}
+
+.theme-voyage .writing-prompt-section.type-requirements .writing-prompt-marker {
+  border-color: rgba(29, 91, 120, 0.50);
+  background: rgba(29, 91, 120, 0.10);
+  color: #1d5b78;
+}
+
+.theme-voyage .writing-prompt-section.type-notice {
+  border-left-color: #c96b45;
+  background: rgba(201, 107, 69, 0.07);
+}
+
+.theme-dragon .writing-prompt-section {
+  border-top: 2rpx solid rgba(16, 46, 98, 0.22);
+}
+
+.theme-dragon .writing-prompt-section-title,
+.theme-dragon .writing-prompt-line-copy.writing-mark-line {
+  color: #102e62;
+}
+
+.theme-dragon .writing-prompt-section.type-directions {
+  border-top: 0;
+  border-left: 7rpx solid #f45a16;
+  background: #fff3c4;
+}
+
+.theme-dragon .writing-prompt-section.type-task .writing-prompt-section-title {
+  color: #102e62;
+  font-weight: 850;
+}
+
+.theme-dragon .writing-prompt-section.type-requirements .writing-prompt-marker {
+  border-color: #102e62;
+  border-radius: 5rpx;
+  background: #ffd83d;
+  color: #102e62;
+}
+
+.theme-dragon .writing-prompt-section.type-notice {
+  border-left: 7rpx solid #f45a16;
+  background: rgba(255, 216, 61, 0.16);
+}
+
+/* Four-theme grading hierarchy: identical type scale, theme-specific paper and ink. */
+.writing-library-page .library-review-letter {
+  padding: 32rpx 28rpx 34rpx 50rpx;
+}
+
+.writing-library-page .library-review-top {
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid rgba(184, 149, 98, 0.28);
+}
+
+.writing-library-page .library-review-top .library-section-title {
+  font-size: var(--result-title-size);
+  line-height: 1.3;
+}
+
+.writing-library-page .library-score {
+  font-size: var(--result-score-size);
+  line-height: 1.08;
+}
+
+.writing-library-page .library-level,
+.writing-library-page .writing-estimate-label,
+.writing-library-page .writing-test-estimate-parts,
+.writing-library-page .writing-test-estimate-formula {
+  font-size: var(--result-meta-size);
+}
+
+.writing-library-page .library-review-summary {
+  padding: 4rpx 0 4rpx 20rpx;
+  border: 0;
+  border-left: 4rpx solid rgba(127, 140, 120, 0.72);
+  border-radius: 0;
+  background: transparent;
+  font-size: var(--result-section-size);
+  line-height: 1.65;
+}
+
+.writing-library-page .library-review-section {
+  color: var(--library-writing-ink);
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.writing-library-page .library-review-label {
+  color: var(--library-writing-ink);
+  font-family: Songti SC, STSong, serif;
+  font-size: var(--result-section-size);
+  line-height: 1.38;
+}
+
+.writing-library-page .criterion-comment {
+  color: var(--library-writing-muted);
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.writing-library-page .criterion-evidence,
+.writing-library-page .criterion-descriptor,
+.writing-library-page .criterion-limiters,
+.writing-library-page .criterion-actions,
+.writing-library-page .band-sample-notes,
+.writing-library-page .band-sample-target {
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.writing-library-page .criterion-subtitle {
+  font-size: var(--result-meta-size);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.writing-library-page .library-polished-paper,
+.writing-library-page .band-sample-essay {
+  font-size: var(--result-body-size);
+  line-height: 1.82;
+}
+
+.theme-voyage.writing-page .review-top,
+.theme-dragon.writing-page .review-top {
+  padding-bottom: 24rpx;
+}
+
+.theme-voyage.writing-page .review-top .section-title,
+.theme-dragon.writing-page .review-top .section-title {
+  font-size: var(--result-title-size);
+  line-height: 1.3;
+}
+
+.theme-voyage.writing-page .score,
+.theme-dragon.writing-page .score {
+  margin-top: 12rpx;
+  font-size: var(--result-score-size);
+  line-height: 1.08;
+}
+
+.theme-voyage.writing-page .level,
+.theme-voyage.writing-page .writing-estimate-label,
+.theme-voyage.writing-page .writing-test-estimate-parts,
+.theme-voyage.writing-page .writing-test-estimate-formula,
+.theme-dragon.writing-page .level,
+.theme-dragon.writing-page .writing-estimate-label,
+.theme-dragon.writing-page .writing-test-estimate-parts,
+.theme-dragon.writing-page .writing-test-estimate-formula {
+  font-size: var(--result-meta-size);
+}
+
+.theme-voyage.writing-page .review-block,
+.theme-dragon.writing-page .review-block {
+  margin-top: 26rpx;
+  padding: 4rpx 0 4rpx 20rpx;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: var(--result-section-size);
+  line-height: 1.65;
+}
+
+.theme-voyage.writing-page .review-block {
+  border-left: 4rpx solid rgba(23, 106, 153, 0.68);
+  color: #294a57;
+}
+
+.theme-dragon.writing-page .review-block {
+  border-left: 4rpx solid rgba(244, 90, 22, 0.72);
+  color: #17355f;
+}
+
+.theme-voyage.writing-page .review-list,
+.theme-dragon.writing-page .review-list {
+  margin-top: 30rpx;
+  padding: 26rpx 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-voyage.writing-page .review-list {
+  border-top: 1rpx solid rgba(141, 92, 39, 0.32);
+  color: #4d4334;
+}
+
+.theme-dragon.writing-page .review-list {
+  border-top: 2rpx solid rgba(16, 46, 98, 0.24);
+  color: #314e69;
+}
+
+.theme-voyage.writing-page .list-title,
+.theme-dragon.writing-page .list-title {
+  margin-bottom: 12rpx;
+  font-size: var(--result-section-size);
+  line-height: 1.38;
+}
+
+.theme-voyage.writing-page .criterion-comment,
+.theme-dragon.writing-page .criterion-comment {
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-voyage.writing-page .criterion-evidence,
+.theme-voyage.writing-page .criterion-descriptor,
+.theme-voyage.writing-page .criterion-limiters,
+.theme-voyage.writing-page .criterion-actions,
+.theme-voyage.writing-page .band-sample-notes,
+.theme-voyage.writing-page .band-sample-target,
+.theme-dragon.writing-page .criterion-evidence,
+.theme-dragon.writing-page .criterion-descriptor,
+.theme-dragon.writing-page .criterion-limiters,
+.theme-dragon.writing-page .criterion-actions,
+.theme-dragon.writing-page .band-sample-notes,
+.theme-dragon.writing-page .band-sample-target {
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.theme-voyage.writing-page .criterion-subtitle,
+.theme-dragon.writing-page .criterion-subtitle {
+  font-size: var(--result-meta-size);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.theme-voyage.writing-page .polished,
+.theme-voyage.writing-page .band-sample-essay,
+.theme-dragon.writing-page .polished,
+.theme-dragon.writing-page .band-sample-essay {
+  font-size: var(--result-body-size);
+  line-height: 1.82;
+}
+
+/* Writing font roles: English manuscript, Chinese review, numeric scores. */
+.writing-page .essay-input,
+.writing-library-page .library-essay-input,
+.writing-page .polished,
+.writing-library-page .library-polished-paper,
+.writing-page .band-sample-essay {
+  font-family: var(--font-english-serif-family);
+}
+
+.review-block,
+.review-list,
+.criterion-comment,
+.criterion-evidence,
+.criterion-descriptor,
+.criterion-limiters,
+.criterion-actions,
+.writing-library-page .library-review-summary,
+.writing-library-page .library-review-section {
+  font-family: var(--font-body-family);
+}
+
+.theme-warm.writing-page .review-top .section-title,
+.theme-warm.writing-page .list-title,
+.theme-dragon.writing-page .review-top .section-title,
+.theme-dragon.writing-page .list-title {
+  font-family: var(--font-body-family);
+}
+
+.writing-library-page .library-review-top .library-section-title,
+.writing-library-page .library-review-label,
+.theme-voyage.writing-page .review-top .section-title,
+.theme-voyage.writing-page .list-title {
+  font-family: var(--font-title-family);
+}
+
+.score,
+.writing-library-page .library-score,
+.writing-test-estimate-score,
+.band-sample-score {
+  font-family: var(--font-number-family);
 }

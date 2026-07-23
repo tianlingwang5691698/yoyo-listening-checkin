@@ -19,6 +19,8 @@ const PREVIEW_COLLECTION = 'writingPreviewAttempts';
 const PREVIEW_ATTEMPT_PREFIX = 'preview-';
 const WRITING_SCORING_VERSION = 'writing-score-v8-terra-trial-20260723';
 const WRITING_GRADING_STALE_MS = 330000;
+const WRITING_MODEL_REQUEST_TIMEOUT_MS = 180000;
+const WRITING_MODEL_TOTAL_BUDGET_MS = 280000;
 const WRITING_REVIEW_MEMORY_CACHE_LIMIT = 100;
 const writingReviewMemoryCache = new Map();
 
@@ -99,7 +101,7 @@ async function loadWritingAttempt(ctx, attemptId) {
   return { ref, attempt };
 }
 
-function postJson(url, headers, body) {
+function postJson(url, headers, body, timeoutMs = WRITING_MODEL_REQUEST_TIMEOUT_MS) {
   return new Promise((resolve, reject) => {
     const target = new URL(url);
     const payload = JSON.stringify(body);
@@ -111,7 +113,7 @@ function postJson(url, headers, body) {
         'content-type': 'application/json',
         'content-length': Buffer.byteLength(payload)
       }),
-      timeout: 90000
+      timeout: timeoutMs
     }, (response) => {
       let text = '';
       response.setEncoding('utf8');
@@ -133,6 +135,12 @@ function postJson(url, headers, body) {
     request.write(payload);
     request.end();
   });
+}
+
+function resolveWritingModelRequestTimeout(startedAt) {
+  const remainingMs = WRITING_MODEL_TOTAL_BUDGET_MS - (Date.now() - Number(startedAt || Date.now()));
+  if (remainingMs <= 1000) throw new Error('writing-total-budget-exhausted');
+  return Math.min(WRITING_MODEL_REQUEST_TIMEOUT_MS, remainingMs);
 }
 
 function parseJsonText(text) {
@@ -1049,6 +1057,7 @@ async function gradeWriting(prompt, essay) {
     });
   }
   const taskType = getWritingTaskType(prompt);
+  const gradingStartedAt = Date.now();
   const gradingPrompt = buildGradingPrompt(prompt, essay);
   const imageUrl = await resolvePromptImageUrl(prompt, taskType);
   const content = imageUrl
@@ -1066,7 +1075,7 @@ async function gradeWriting(prompt, essay) {
       role: 'user',
       content
     }]
-  });
+  }, resolveWritingModelRequestTimeout(gradingStartedAt));
   let parsed = parseJsonText(extractMessageText(data));
   let review = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
   const isIelts = taskType === 'ielts-task-1' || taskType === 'ielts-task-2';
@@ -1086,7 +1095,7 @@ async function gradeWriting(prompt, essay) {
       model: config.model,
       temperature: 0,
       messages: [{ role: 'user', content: repairContent }]
-    });
+    }, resolveWritingModelRequestTimeout(gradingStartedAt));
     parsed = parseJsonText(extractMessageText(data));
     const repairedReview = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
     if (hasUsableIeltsReview(repairedReview) && hasCompleteOfficialBandDecisions(repairedReview)) {
@@ -1889,6 +1898,8 @@ module.exports = {
     IELTS_WRITING_RUBRIC_VERSION,
     WRITING_SCORING_VERSION,
     WRITING_GRADING_STALE_MS,
+    WRITING_MODEL_REQUEST_TIMEOUT_MS,
+    WRITING_MODEL_TOTAL_BUDGET_MS,
     PREVIEW_COLLECTION
   }
 };

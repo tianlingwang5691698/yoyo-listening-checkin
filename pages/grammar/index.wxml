@@ -312,8 +312,8 @@
                 <text>{{item.explanation.topic}}</text>
                 <text class="library-analysis-answer">{{texts.answer}}{{item.explanation.answer}}</text>
               </view>
-              <view class="library-analysis-text">{{item.explanation.explanation}}</view>
-              <view class="library-analysis-text" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
+              <view class="library-analysis-text is-primary">{{item.explanation.explanation}}</view>
+              <view class="library-analysis-text is-support" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
               <view class="library-explain-actions">
                 <view class="library-explain-action is-secondary" data-question-id="{{item._id}}" bindtap="regenerateExplanation">{{texts.explainAgain}}</view>
               </view>
@@ -632,8 +632,8 @@
             <text>{{item.explanation.topic}}</text>
             <text class="analysis-state is-correct">{{texts.answer}}{{item.explanation.answer}}</text>
           </view>
-          <view class="analysis-text">{{item.explanation.explanation}}</view>
-          <view class="analysis-text" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
+          <view class="analysis-text is-primary">{{item.explanation.explanation}}</view>
+          <view class="analysis-text is-support" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
           <view class="grammar-explain-actions">
             <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="regenerateExplanation">{{texts.explainAgain}}</view>
           </view>

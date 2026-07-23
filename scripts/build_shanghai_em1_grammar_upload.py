@@ -7,6 +7,7 @@ import tempfile
 from pathlib import Path
 
 from docx import Document
+from grammar_content_cleaning import strip_source_watermarks
 
 
 ROOTS = [
@@ -143,7 +144,7 @@ def split_options(text):
 def clean_option(text):
     text = norm(text)
     text = re.split(r'\s*(?:【|\[)\s*(?:答案|解析)|\s*故选[A-D][\s\S]*$', text, maxsplit=1)[0]
-    return norm(text)
+    return norm(strip_source_watermarks(text))
 
 
 def grammar_window(text):
@@ -181,7 +182,7 @@ def parse_questions(text, answers):
         opts = split_options(block)
         if not all(opts.get(k) for k in ['A', 'B', 'C', 'D']):
             continue
-        prompt = norm(re.split(r'\s+A[\.．、]\s*', block)[0])
+        prompt = norm(strip_source_watermarks(re.split(r'\s+A[\.．、]\s*', block)[0]))
         ans = answers.get(num)
         if not ans:
             dm = re.search(r'【答案】\s*([A-D])\b|故选([A-D])', block)

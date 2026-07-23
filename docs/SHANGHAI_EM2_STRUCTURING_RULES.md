@@ -94,6 +94,7 @@
 - 正好 15 题
 - 每题有 A-D 四个选项和答案
 - `prompt` 只保留题干，A-D 只能存在于 `options`；必须覆盖 `A)works / A) works / A. works / A、works` 等格式并保证 `badPrompt=0`。
+- `prompt` 和 `options.A-D` 必须清除所有 `[来源:...]` 水印，包括学科网、Zxxk 及使用 `_ / + / * / § / , / | / 。 / &` 拆分字符的变体；`sourceFile` 保持不变，门禁固定为 `sourceWatermark=0`。
 
 ## 语法选择题分类规则
 
@@ -180,6 +181,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 - `getGrammarTopic` 通过 `payload.topicId` 读取 `_content/grammar/topics/<sha1(topicId)>.json`。
 - `safeDownloadJson` 必须保留对象格式；`topics/*.json` 是 `{ topicId, topic, questions }`，不能只接受数组或 `{items,data}`。
 - 改完语法读取逻辑后必须重新上传 `cloudfunctions/yoyo`，只上传云存储不会生效。
+- 已上线语法水印属于错误数据修复例外：更新前必须下载云端原 JSON 备份，逐文件记录旧/新哈希和受影响 `_id`；只允许修改 `prompt/options` 的水印片段，题量、旧 `_id`、答案、分类和云路径必须保持不变，上传后逐文件重新下载验哈希。
 
 ## 一模阅读上传与读取规则
 
@@ -209,7 +211,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 - `_content/writing-em1/writing-prompts.json`
 
-写作题归入 `stage: 初中`、`category: 初中作文`。清洗拆为 `directions / scenario / requirements[] / notices[]`，只保留作文题干、情景、字数要求和注意事项；参考问题按编号或问号独立保存，剔除题号、OCR 答题线、试卷来源、参考答案、范文、评分标准、阅读选词和听力文本。
+写作题归入 `stage: 初中`、`category: 初中作文`。清洗拆为 `directions / scenario / requirements[] / notices[]`，只保留作文题干、情景、字数要求和注意事项；参考问题按编号或问号独立保存，剔除题号、OCR 答题线、试卷来源、参考答案、范文、评分标准、阅读选词和听力文本。页面按实际字段固定展示为 `作答说明 → 写作任务 → 表格 → 参考问题/写作要点 → 注意事项 → 开头提示`，各区使用独立标题和字体层级，参考问题逐项编号，不得压成连续段落。
 
 二模写作本地生成到：
 
@@ -315,4 +317,4 @@ python3 -m json.tool data/imports/<batch>/formal/clean-report.json >/dev/null
 - 各年份正式阅读数量
 - 空答案数量必须为 0
 - 剩余 rejected reason
-- `badPrompt=0`、正文污染 `=0`、标题进入正文 `=0`、空段落 `=0`
+- `badPrompt=0`、`sourceWatermark=0`、正文污染 `=0`、标题进入正文 `=0`、空段落 `=0`

@@ -58,31 +58,35 @@
           <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
         </block>
         <block wx:else>
-          <view class="writing-mark-lines">
-            <block wx:for="{{writingMarkLines}}" wx:key="key" wx:for-item="line">
-              <view wx:if="{{line.isArticleTitle}}">
-                <view class="library-prompt-section-title">{{line.label}}</view>
-                <view class="writing-article-title">{{line.text}}</view>
+          <view class="writing-prompt-structure">
+            <view class="writing-prompt-section type-{{section.type}}" wx:for="{{writingPromptSections}}" wx:key="key" wx:for-item="section">
+              <view class="writing-prompt-section-title">{{section.title}}</view>
+              <view class="writing-article-title" wx:if="{{section.articleTitle}}">{{section.articleTitle}}</view>
+              <view class="writing-prompt-lines">
+                <view class="writing-prompt-line {{line.marker ? 'has-marker' : ''}} {{line.isParagraphStart ? 'is-paragraph-start' : ''}}" wx:for="{{section.lines}}" wx:key="key" wx:for-item="line">
+                  <view class="writing-prompt-marker" wx:if="{{line.marker}}">{{line.marker}}</view>
+                  <view class="writing-prompt-line-copy writing-mark-line {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
+                    <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
+                  </view>
+                </view>
               </view>
-              <view wx:else class="writing-mark-line {{line.isParagraphStart ? 'is-paragraph-start' : ''}} {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
-                <view class="library-prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
-                <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
-              </view>
-            </block>
-          </view>
-          <view class="library-prompt-table" wx:if="{{promptDisplay.promptTable}}">
-            <view class="library-prompt-table-row library-prompt-table-head">
-              <view class="library-prompt-table-cell" wx:for="{{promptDisplay.promptTable.headers}}" wx:key="*this">{{item}}</view>
-            </view>
-            <view class="library-prompt-table-row" wx:for="{{promptDisplay.promptTable.rows}}" wx:for-item="row" wx:key="label">
-              <view class="library-prompt-table-cell library-prompt-table-label">{{row.label}}</view>
-              <view class="library-prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
-            </view>
-          </view>
-          <view class="library-prompt-images" wx:if="{{promptImages.length}}">
-            <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" data-src="{{item.src}}" bindtap="previewPromptImage">
-              <image class="library-prompt-image" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
-              <view class="prompt-image-zoom" aria-label="{{texts.zoomChart}}"></view>
+              <block wx:if="{{section.type === 'task'}}">
+                <view class="library-prompt-table" wx:if="{{promptDisplay.promptTable}}">
+                  <view class="library-prompt-table-row library-prompt-table-head">
+                    <view class="library-prompt-table-cell" wx:for="{{promptDisplay.promptTable.headers}}" wx:key="*this">{{item}}</view>
+                  </view>
+                  <view class="library-prompt-table-row" wx:for="{{promptDisplay.promptTable.rows}}" wx:for-item="row" wx:key="label">
+                    <view class="library-prompt-table-cell library-prompt-table-label">{{row.label}}</view>
+                    <view class="library-prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
+                  </view>
+                </view>
+                <view class="library-prompt-images" wx:if="{{promptImages.length}}">
+                  <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" wx:for-item="promptImage" data-src="{{promptImage.src}}" bindtap="previewPromptImage">
+                    <image class="library-prompt-image" src="{{promptImage.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{promptImage.alt}}"></image>
+                    <view class="prompt-image-zoom" aria-label="{{texts.zoomChart}}"></view>
+                  </view>
+                </view>
+              </block>
             </view>
           </view>
         </block>
@@ -143,7 +147,7 @@
       <view class="library-review-grid" wx:if="{{review.criterionDetails.length}}">
         <view class="library-review-section criterion-detail" wx:for="{{review.criterionDetails}}" wx:key="key" wx:for-item="criterion">
           <view class="library-review-label">{{criterion.label}}</view>
-          <view wx:if="{{criterion.comment}}">{{criterion.comment}}</view>
+          <view class="criterion-comment" wx:if="{{criterion.comment}}">{{criterion.comment}}</view>
           <view class="criterion-evidence" wx:if="{{criterion.evidence.length}}">
             <view class="criterion-subtitle">原文证据</view>
             <view wx:for="{{criterion.evidence}}" wx:key="*this" wx:for-item="evidence">· {{evidence}}</view>
@@ -293,31 +297,35 @@
         <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
       </block>
       <block wx:else>
-        <view class="writing-mark-lines">
-          <block wx:for="{{writingMarkLines}}" wx:key="key" wx:for-item="line">
-            <view wx:if="{{line.isArticleTitle}}">
-              <view class="prompt-section-title">{{line.label}}</view>
-              <view class="writing-article-title">{{line.text}}</view>
+        <view class="writing-prompt-structure">
+          <view class="writing-prompt-section type-{{section.type}}" wx:for="{{writingPromptSections}}" wx:key="key" wx:for-item="section">
+            <view class="writing-prompt-section-title">{{section.title}}</view>
+            <view class="writing-article-title" wx:if="{{section.articleTitle}}">{{section.articleTitle}}</view>
+            <view class="writing-prompt-lines">
+              <view class="writing-prompt-line {{line.marker ? 'has-marker' : ''}} {{line.isParagraphStart ? 'is-paragraph-start' : ''}}" wx:for="{{section.lines}}" wx:key="key" wx:for-item="line">
+                <view class="writing-prompt-marker" wx:if="{{line.marker}}">{{line.marker}}</view>
+                <view class="writing-prompt-line-copy writing-mark-line {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
+                  <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
+                </view>
+              </view>
             </view>
-            <view wx:else class="writing-mark-line {{line.isParagraphStart ? 'is-paragraph-start' : ''}} {{writingSentenceMarks[line.scope] ? 'manual-mark-sentence' : ''}}" data-mark-scope="{{line.scope}}" bindlongpress="handleWritingSentenceMark">
-              <view class="prompt-section-title" wx:if="{{line.label}}">{{line.label}}</view>
-              <text wx:for="{{line.tokens}}" wx:key="id" wx:for-item="token" class="{{writingTokenMarks[token.markKey] ? 'manual-mark-' + writingTokenMarks[token.markKey] : ''}}" data-word="{{token.word}}" data-word-index="{{token.wordIndex}}" data-mark-scope="{{line.scope}}" catchtap="handleWritingTokenTap">{{token.text}}</text>
-            </view>
-          </block>
-        </view>
-        <view class="prompt-table" wx:if="{{promptDisplay.promptTable}}">
-          <view class="prompt-table-row prompt-table-head">
-            <view class="prompt-table-cell" wx:for="{{promptDisplay.promptTable.headers}}" wx:key="*this">{{item}}</view>
-          </view>
-          <view class="prompt-table-row" wx:for="{{promptDisplay.promptTable.rows}}" wx:for-item="row" wx:key="label">
-            <view class="prompt-table-cell prompt-table-label">{{row.label}}</view>
-            <view class="prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
-          </view>
-        </view>
-        <view class="prompt-images" wx:if="{{promptImages.length}}">
-          <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" data-src="{{item.src}}" bindtap="previewPromptImage">
-            <image class="prompt-image" src="{{item.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{item.alt}}"></image>
-            <view class="prompt-image-zoom" aria-label="{{texts.zoomChart}}"></view>
+            <block wx:if="{{section.type === 'task'}}">
+              <view class="prompt-table" wx:if="{{promptDisplay.promptTable}}">
+                <view class="prompt-table-row prompt-table-head">
+                  <view class="prompt-table-cell" wx:for="{{promptDisplay.promptTable.headers}}" wx:key="*this">{{item}}</view>
+                </view>
+                <view class="prompt-table-row" wx:for="{{promptDisplay.promptTable.rows}}" wx:for-item="row" wx:key="label">
+                  <view class="prompt-table-cell prompt-table-label">{{row.label}}</view>
+                  <view class="prompt-table-cell" wx:for="{{row.values}}" wx:for-item="value" wx:key="*this">{{value}}</view>
+                </view>
+              </view>
+              <view class="prompt-images" wx:if="{{promptImages.length}}">
+                <view class="prompt-image-frame" wx:for="{{promptImages}}" wx:key="cloudPath" wx:for-item="promptImage" data-src="{{promptImage.src}}" bindtap="previewPromptImage">
+                  <image class="prompt-image" src="{{promptImage.src}}" mode="widthFix" show-menu-by-longpress="{{true}}" aria-label="{{promptImage.alt}}"></image>
+                  <view class="prompt-image-zoom" aria-label="{{texts.zoomChart}}"></view>
+                </view>
+              </view>
+            </block>
           </view>
         </view>
       </block>
@@ -381,7 +389,7 @@
     <block wx:if="{{review.criterionDetails.length}}">
       <view class="review-list criterion-detail" wx:for="{{review.criterionDetails}}" wx:key="key" wx:for-item="criterion">
         <view class="list-title">{{criterion.label}}</view>
-        <view wx:if="{{criterion.comment}}">{{criterion.comment}}</view>
+        <view class="criterion-comment" wx:if="{{criterion.comment}}">{{criterion.comment}}</view>
         <view class="criterion-evidence" wx:if="{{criterion.evidence.length}}">
           <view class="criterion-subtitle">原文证据</view>
           <view wx:for="{{criterion.evidence}}" wx:key="*this" wx:for-item="evidence">· {{evidence}}</view>

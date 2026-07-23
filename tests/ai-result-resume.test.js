@@ -16,6 +16,10 @@ test('写作提交先快速落库，再由独立长时调用完成批改', () =>
   assert.match(submitBlock, /attempt: savedAttempt,[\s\S]*?pending: true,[\s\S]*?resumable: true/);
   assert.match(service, /async function gradeWritingAttempt[\s\S]*?review: command\.set\(review\)[\s\S]*?saveWritingCompletion/);
   assert.match(service, /const WRITING_GRADING_STALE_MS = 330000/);
+  assert.match(service, /const WRITING_MODEL_REQUEST_TIMEOUT_MS = 180000/);
+  assert.match(service, /const WRITING_MODEL_TOTAL_BUDGET_MS = 280000/);
+  assert.match(service, /timeout: timeoutMs/);
+  assert.match(service, /resolveWritingModelRequestTimeout\(gradingStartedAt\)/);
   assert.match(service, /attempt\.status === 'grading'[\s\S]*?gradingAgeMs <= WRITING_GRADING_STALE_MS[\s\S]*?pending: true/);
   const detailBlock = service.match(/async function getWritingAttemptDetail[\s\S]*?\n}\n\nmodule\.exports/)[0];
   assert.match(detailBlock, /resumable: shouldResume/);

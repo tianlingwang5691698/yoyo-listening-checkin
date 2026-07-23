@@ -81,6 +81,7 @@
 - 选择题必须有 A-D 选项和答案。
 - `prompt` 只保留题干，不能残留 `A) ... B) ... C) ... D) ...`、`A. ...`、`A、...` 等选项文本；选项只能出现在 `options` 字段。
 - 清洗后必须检查题干选项重复，尤其覆盖 `A)works`、`A) works`、`A. works`、`A、works` 等无空格/有空格格式。
+- `prompt` 和 `options.A-D` 禁止保留 `[来源:Zxxk.Com]`、`[来源:学科网]` 及其中插入 `_ / + / * / § / , / | / 。 / &` 的变体；来源只保留在 `sourceFile` 或清洗报告中，生成脚本与重建脚本必须使用同一清洗规则。
 - 分类只能使用固定 topic，不自创分类。
 - 细分 topic 文件必须拆分，避免单接口超过 1MB。
 - 题型说明、语篇正文、空格题和独立选择题不得互相粘连；当年无独立选择题时不能为了填目录而补造。
@@ -94,6 +95,8 @@
 - 一模、二模分 JSON，不混入同一入口。
 - 高考卷含翻译题时，翻译与作文必须建为同一年卷下的独立任务，按原卷 `Translation → Guided Writing` 排序；每句翻译独立建模，保留题号、中文原文、括号提示词和可追溯参考译文，不得拼成一段。
 - 初中写作必须拆为 `directions / scenario / requirements[] / notices[]`；参考问题按编号或问号分项，原卷表格使用 `promptTable`，不得把 OCR 答题线、试卷来源、阅读选词或答案串混入题纸。
+- 初中、高中和 IELTS 作文题纸统一按 `作答说明 → 写作任务/情景或原文 → 图表/表格 → 写作要点 → 注意事项 → 开头提示` 的实际存在字段展示；各层级必须使用独立标题、字号、行距和分隔，不得重新压成同字号连续句流。
+- `requirements[]` 必须逐项编号展示；Summary Writing 的 `articleTitle / articleParagraphs[]` 必须保持标题和自然段层级；IELTS Task 1 原图必须位于写作任务区、要求之前。
 - 高中 Summary Writing 固定使用 `articleTitle` 和 `articleParagraphs[]`：原卷有标题才填写标题，无标题保持空字符串；`scenario` 等于正文段落以空行连接，标题不得重复进入正文。
 - Summary Writing 显示顺序固定为 `Directions → 写作任务 → 标题 → 正文`；Directions、标题和正文必须分字段保存，标题不得参与单词、短语或句子标记。
 - Summary Writing 的来源 URL、页码、题号、分值和答题横线全部剔除；标题不参与单词、短语或句子标记，正文长按只覆盖当前真实句子。
@@ -141,7 +144,7 @@
 ## 验证
 
 - JSON 必须可解析。
-- 选择题题干不得重复展示选项；语法题上传前必须抽查页面展示或用脚本统计 `badPrompt=0`。
+- 选择题题干不得重复展示选项；语法题上传前必须抽查页面展示或用脚本统计 `badPrompt=0`、`sourceWatermark=0`。
 - 正式库数量不得因本次清洗下降。
 - rejected/clean-report 必须说明剔除原因。
 - 上传前按 `docs/CLOUDBASE_SETUP.md` 的增量上传铁律合并。

@@ -229,4 +229,53 @@ function buildPromptDisplay(prompt, labels) {
   };
 }
 
-module.exports = { buildPromptDisplay, cleanPromptText };
+function buildPromptSections(display, labels) {
+  const source = display || {};
+  const copy = labels || {};
+  const sections = [];
+  const addSection = (key, type, title, items, options) => {
+    const normalizedItems = (items || []).map((item, index) => ({
+      key: `${key}-${index}`,
+      text: cleanPromptText(item),
+      marker: options && options.numbered ? String(index + 1) : (options && options.marker || '')
+    })).filter((item) => item.text);
+    const articleTitle = cleanPromptText(options && options.articleTitle);
+    if (!normalizedItems.length && !articleTitle) return;
+    sections.push({
+      key,
+      type,
+      title: cleanPromptText(title),
+      articleTitle,
+      items: normalizedItems
+    });
+  };
+
+  addSection('directions', 'directions', copy.directionsTitle || 'Directions', [source.directions]);
+  addSection(
+    'task',
+    'task',
+    source.scenarioTitle || copy.taskTitle || '写作任务',
+    Array.isArray(source.articleParagraphs) && source.articleParagraphs.length
+      ? source.articleParagraphs
+      : [source.scenario],
+    { articleTitle: source.articleTitle }
+  );
+  addSection(
+    'requirements',
+    'requirements',
+    source.requirementsTitle || copy.requirementsTitle || '写作要点',
+    source.requirements,
+    { numbered: true }
+  );
+  addSection(
+    'notices',
+    'notice',
+    source.noticeTitle || copy.noticeTitle || '注意事项',
+    source.notices,
+    { marker: '!' }
+  );
+  addSection('starter', 'starter', copy.starterTitle || '开头提示', [source.promptStarter]);
+  return sections;
+}
+
+module.exports = { buildPromptDisplay, buildPromptSections, cleanPromptText };

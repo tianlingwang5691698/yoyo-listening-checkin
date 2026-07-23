@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "scope": "data/grammar-em1-upload",
+  "baseline": "HEAD",
+  "sourcePayloadHash": "014a0ea63eeb8005d6f4a3b7383a7ca914f38ad34b8ca8a58a171db9817643ca",
+  "cleanedPayloadHash": "e5fe099510674be7875012c46583e1fa38e32dcca3724a5ace4eafc5758575cc",
+  "summary": {
+    "changedQuestionCount": 5,
+    "changedFieldCount": 5,
+    "reason": "grammar_prompt_option_source_watermarks_removed"
+  },
+  "changes": [
+    {
+      "_id": "sh-em1-2015-徐汇-grammar-choice-q30",
+      "sourceFile": "上海市徐汇区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "Quite a few people like to take photos of _____ and share them through WeChat.[来源:Zxxk.Com]",
+      "newValue": "Quite a few people like to take photos of _____ and share them through WeChat.",
+      "oldValueHash": "a528597e1b0784d48eefb73b49eb8947d7b2d0773715a62284754a14d37b0c31",
+      "newValueHash": "640256f5e863027c5450f001609c65f53e6d342998b1ed529ef43835ed49679c"
+    },
+    {
+      "_id": "sh-em1-2015-徐汇-grammar-choice-q31",
+      "sourceFile": "上海市徐汇区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "After the earthquake, some decided to leave and _____ chose to stay to rebuild their hometown.[来源:学|科|网]",
+      "newValue": "After the earthquake, some decided to leave and _____ chose to stay to rebuild their hometown.",
+      "oldValueHash": "800f7d788df53a510e1489779b6f0a041dee64b79b0910c28bbefbe85dd4a805",
+      "newValueHash": "b65b47e561f162f638a5c68b778bc1ecc8ff66d404b26adbce82bb9689b119fc"
+    },
+    {
+      "_id": "sh-em1-2015-长宁-grammar-choice-q28",
+      "sourceFile": "上海市长宁区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "Cormorant fishing is important traditional skill in ancient China.[来源:学科网]",
+      "newValue": "Cormorant fishing is important traditional skill in ancient China.",
+      "oldValueHash": "5ab6fb4331ee8c8de0ecdffd4d888d23e8612f4a115afac5a9b416e48f2abd04",
+      "newValueHash": "6c5ecd8b9a1552e4fa7a1eb9729f1e8517c4695316d17d9c20d744172d088635"
+    },
+    {
+      "_id": "sh-em1-2015-长宁-grammar-choice-q34",
+      "sourceFile": "上海市长宁区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "field": "prompt",
+      "oldValue": "I like my mother's way of cooking fish because it tastes .[来源:学。科。网]",
+      "newValue": "I like my mother's way of cooking fish because it tastes .",
+      "oldValueHash": "386e66b26ed253f3ccc57f5997740b4bf9dcee153d81c75dc412848a12589069",
+      "newValueHash": "335d9be56de55f98ae2bc0308eb69caec413bb803a9aa5af581f61b9f7d02886"
+    },
+    {
+      "_id": "sh-em1-2017-长宁-grammar-choice-q45",
+      "sourceFile": "上海市长宁（金山）区2017届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "field": "options.D",
+      "oldValue": "No problem [来源:学+科+网]",
+      "newValue": "No problem",
+      "oldValueHash": "884d6ad26e2a2cc0e31dee362f14adb656bddcb7221cbb987003f609d8f90ea7",
+      "newValueHash": "d029849f0f2aabc6df1d10eb6e075ebcb2f93b9f9ce9321b30fe54f219626cdd"
+    }
+  ]
+}

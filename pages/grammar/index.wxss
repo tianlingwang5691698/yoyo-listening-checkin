@@ -852,6 +852,60 @@
   line-height: 1.7;
 }
 
+.theme-warm.grammar-page .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid rgba(141, 183, 212, 0.26);
+  border-radius: 0;
+  background: transparent;
+}
+
+.theme-warm.grammar-page .analysis-head {
+  color: #17314f;
+  font-family: var(--font-body-family);
+  font-size: var(--result-section-size);
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.theme-warm.grammar-page .analysis-state {
+  padding: 7rpx 12rpx;
+  font-family: var(--font-number-family);
+  font-size: var(--result-meta-size);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.theme-warm.grammar-page .analysis-text.is-primary {
+  margin-top: 16rpx;
+  color: #344f68;
+  font-family: var(--font-body-family);
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-warm.grammar-page .analysis-text.is-support {
+  margin-top: 16rpx;
+  padding-left: 18rpx;
+  border-left: 4rpx solid rgba(141, 183, 212, 0.48);
+  color: #607087;
+  font-family: var(--font-body-family);
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.theme-warm.grammar-page .grammar-explain-actions {
+  margin-top: 18rpx;
+}
+
+.theme-warm.grammar-page .grammar-explain-action {
+  padding: 10rpx 0;
+  background: transparent;
+  color: #527fa1;
+  font-size: var(--result-meta-size);
+}
+
 .token-line {
   word-break: normal;
   overflow-wrap: break-word;
@@ -2357,3 +2411,132 @@
 
 .theme-dragon .inline-analysis .analysis-head { color: #12356b; }
 .theme-dragon .inline-analysis .analysis-text { color: #526783; }
+
+/* Four-theme explanation hierarchy. */
+.library-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid rgba(184, 149, 98, 0.30);
+  border-radius: 0;
+  background: transparent;
+}
+
+.library-analysis-head {
+  font-family: var(--font-title-family);
+  font-size: var(--result-section-size);
+  line-height: 1.4;
+}
+
+.library-analysis-answer {
+  font-family: var(--font-number-family);
+  font-size: var(--result-meta-size);
+  line-height: 1.25;
+}
+
+.library-analysis-text.is-primary {
+  margin-top: 16rpx;
+  color: var(--library-grammar-ink);
+  font-family: var(--font-body-family);
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.library-analysis-text.is-support {
+  margin-top: 16rpx;
+  padding-left: 18rpx;
+  border-left: 4rpx solid rgba(184, 149, 98, 0.58);
+  color: var(--library-grammar-muted);
+  font-family: var(--font-body-family);
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.library-explain-action.is-secondary {
+  font-size: var(--result-meta-size);
+}
+
+.theme-voyage.grammar-page .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid rgba(141, 92, 39, 0.34);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-dragon.grammar-page .inline-analysis {
+  margin-top: 22rpx;
+  padding: 22rpx 0 0;
+  border: 0;
+  border-top: 2rpx solid rgba(18, 53, 107, 0.30);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-voyage.grammar-page .analysis-head,
+.theme-dragon.grammar-page .analysis-head {
+  font-size: var(--result-section-size);
+  line-height: 1.4;
+}
+
+.theme-voyage.grammar-page .analysis-head {
+  font-family: var(--font-title-family);
+}
+
+.theme-dragon.grammar-page .analysis-head {
+  font-family: var(--font-body-family);
+}
+
+.theme-voyage.grammar-page .analysis-state,
+.theme-dragon.grammar-page .analysis-state {
+  font-family: var(--font-number-family);
+  font-size: var(--result-meta-size);
+  line-height: 1.25;
+}
+
+.theme-voyage.grammar-page .analysis-text.is-primary,
+.theme-dragon.grammar-page .analysis-text.is-primary {
+  margin-top: 16rpx;
+  font-family: var(--font-body-family);
+  font-size: var(--result-body-size);
+  line-height: var(--result-line-body);
+}
+
+.theme-voyage.grammar-page .analysis-text.is-support,
+.theme-dragon.grammar-page .analysis-text.is-support {
+  margin-top: 16rpx;
+  padding-left: 18rpx;
+  font-family: var(--font-body-family);
+  font-size: var(--result-support-size);
+  line-height: var(--result-line-support);
+}
+
+.theme-voyage.grammar-page .analysis-text.is-support {
+  border-left: 4rpx solid rgba(23, 106, 153, 0.68);
+  color: #705a40;
+}
+
+.theme-dragon.grammar-page .analysis-text.is-support {
+  border-left: 4rpx solid rgba(244, 81, 30, 0.72);
+  color: #526783;
+}
+
+.theme-voyage.grammar-page .grammar-explain-action,
+.theme-dragon.grammar-page .grammar-explain-action {
+  padding: 10rpx 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--result-meta-size);
+}
+
+.theme-voyage.grammar-page .grammar-explain-action {
+  color: #1d607f;
+}
+
+.theme-dragon.grammar-page .grammar-explain-action {
+  color: #f4511e;
+}

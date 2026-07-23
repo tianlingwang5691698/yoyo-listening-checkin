@@ -10,7 +10,7 @@ test('跨模块清洗规则包含当前结构与最终标记口径', () => {
   const agents = read('AGENTS.md');
   const rules = read('docs/DATA_CLEANING_RULES.md');
   assert.match(agents, /禁止代码与规则文档分开漂移/);
-  assert.match(rules, /当前基线（2026-07-23）/);
+  assert.match(rules, /当前基线（2026-07-24）/);
   assert.match(rules, /同一次提交中更新本文件和对应专项规则/);
   assert.match(rules, /articleTitle/);
   assert.match(rules, /articleParagraphs\[\]/);
@@ -26,7 +26,7 @@ test('口语专项规则已接入项目并固定正式评分链路', () => {
   assert.match(agents, /SPEAKING_PRACTICE_RULES\.md/);
   assert.match(rules, /级别 → 系列 → 音频 → 段落 → 句子/);
   assert.match(rules, /腾讯 SOE/);
-  assert.match(rules, /gpt-5\.6-sol/);
+  assert.match(rules, /gpt-5\.6-terra/);
   assert.match(rules, /240000ms/);
   assert.match(rules, /planRunType: normal/);
   assert.match(rules, /planRunType: preview/);
@@ -38,6 +38,7 @@ test('上海真题和音频专项规则使用最新门禁', () => {
   const audio = read('docs/AUDIO_UPLOAD_STANDARD.md');
   assert.doesNotMatch(junior, /GPT-5\.5/);
   assert.match(junior, /badPrompt=0/);
+  assert.match(junior, /sourceWatermark=0/);
   assert.match(senior, /14 个独立标题、4 篇无标题原文、77 个真实正文段落/);
   assert.match(senior, /contentRevision: 2/);
   assert.match(senior, /Directions → 写作任务 → 标题 → 正文/);

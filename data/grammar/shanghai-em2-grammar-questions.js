@@ -116,7 +116,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市奉贤区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 35,
-    "prompt": "Of the two pairs of jeans, I chose _____ one because I hadn't enough money on me.[来源:学§科§网]",
+    "prompt": "Of the two pairs of jeans, I chose _____ one because I hadn't enough money on me.",
     "options": {
       "A": "expensive",
       "B": "more expensive",
@@ -521,7 +521,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市奉贤区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 50,
-    "prompt": "--- Could I use your bike for a while. Sam?[来源:Z,xx,k.Com] --- ________. I’m not using it. .",
+    "prompt": "--- Could I use your bike for a while. Sam? --- ________. I’m not using it. .",
     "options": {
       "A": "I have no idea",
       "B": "Sure, go ahead",
@@ -5818,7 +5818,7 @@ module.exports = [
       "A": "on",
       "B": "in",
       "C": "to",
-      "D": "at[来源:Z_xx_k.Com]"
+      "D": "at"
     },
     "answer": "A",
     "topicId": "lexical:preposition-time-place",
@@ -6407,7 +6407,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市松江区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 33,
-    "prompt": "We were asked to check the answers _______ discussing with each other.[来源:学科网ZXXK]",
+    "prompt": "We were asked to check the answers _______ discussing with each other.",
     "options": {
       "A": "by",
       "B": "in",
@@ -7330,7 +7330,7 @@ module.exports = [
       "A": "you",
       "B": "yours",
       "C": "your",
-      "D": "yourself[来源:Zxxk.Com]"
+      "D": "yourself"
     },
     "answer": "B",
     "topicId": "lexical:pronoun-personal-possessive-reflexive",
@@ -7573,7 +7573,7 @@ module.exports = [
       "A": "How many",
       "B": "How soon",
       "C": "How much",
-      "D": "How far[来源:学科网ZXXK]"
+      "D": "How far"
     },
     "answer": "D",
     "topicId": "sentence:question",
@@ -7703,7 +7703,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市金山区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 46,
-    "prompt": "The air in some of the cities in China is not very good. All of us _________ try our best to keep the environment clean. [来源:Z§xx§k.Com]",
+    "prompt": "The air in some of the cities in China is not very good. All of us _________ try our best to keep the environment clean.",
     "options": {
       "A": "can",
       "B": "may",
@@ -8111,7 +8111,7 @@ module.exports = [
     "prompt": "Many people think the pop song Gangnam Style sounds _______, but others don’t like it at all.",
     "options": {
       "A": "wonderfully",
-      "B": "terribly [来源:Zxxk.Com]",
+      "B": "terribly",
       "C": "wonderful",
       "D": "terrible"
     },
@@ -9970,7 +9970,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市虹口区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 28,
-    "prompt": "Some naughty boys like to play ________ trick on their classmates on April Fool’s Day.[来源:Zxxk.Com]",
+    "prompt": "Some naughty boys like to play ________ trick on their classmates on April Fool’s Day.",
     "options": {
       "A": "a",
       "B": "an",
@@ -10380,7 +10380,7 @@ module.exports = [
       "A": "is finished",
       "B": "had been finished",
       "C": "was finished",
-      "D": "will be finished[来源:学科网ZXXK]"
+      "D": "will be finished"
     },
     "answer": "A",
     "topicId": "verb:passive-voice",
@@ -13964,7 +13964,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市闸北区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 44,
-    "prompt": "– Help yourself to some fruit, Victor. [来源:Z&xx&k.Com] – ______",
+    "prompt": "– Help yourself to some fruit, Victor. – ______",
     "options": {
       "A": "Yes, please.",
       "B": "No, thanks. I’ve had enough.",
@@ -15859,7 +15859,7 @@ module.exports = [
       "A": "will report",
       "B": "reports",
       "C": "is reporting",
-      "D": "reported[来源:Zxxk.Com]"
+      "D": "reported"
     },
     "answer": "B",
     "topicId": "verb:present-simple",
@@ -16317,7 +16317,7 @@ module.exports = [
       "A": "fat",
       "B": "fatter",
       "C": "fattest",
-      "D": "the fattest[来源:学科网]"
+      "D": "the fattest"
     },
     "answer": "D",
     "topicId": "lexical:adj-adv-comparative-superlative",
@@ -16339,7 +16339,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市松江区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 35,
-    "prompt": "________ was able to escape from the building when the earthquake hit the area.[来源:Zxxk.Com]",
+    "prompt": "________ was able to escape from the building when the earthquake hit the area.",
     "options": {
       "A": "Nobody",
       "B": "Everybody",
@@ -16555,7 +16555,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市松江区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 43,
-    "prompt": "---________ do you think of the film “Kung Fu Panda” you’ve just seen?[来源:学+科+网Z+X+X+K] --- It is funny.",
+    "prompt": "---________ do you think of the film “Kung Fu Panda” you’ve just seen? --- It is funny.",
     "options": {
       "A": "How",
       "B": "What",
@@ -16663,7 +16663,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市浦东新区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 27,
-    "prompt": "Which is _____ favorite monkey character, Abu or Monchhichi? [来源:学,科,网]",
+    "prompt": "Which is _____ favorite monkey character, Abu or Monchhichi?",
     "options": {
       "A": "she",
       "B": "her",
@@ -16965,7 +16965,7 @@ module.exports = [
       "A": "share",
       "B": "to share",
       "C": "shared",
-      "D": "gain[来源:学科网]"
+      "D": "gain"
     },
     "answer": "B",
     "topicId": "verb:nonfinite-to-do",
@@ -17073,7 +17073,7 @@ module.exports = [
       "A": "What",
       "B": "What a",
       "C": "How",
-      "D": "How a[来源:学*科*网]"
+      "D": "How a"
     },
     "answer": "B",
     "topicId": "sentence:exclamation",
@@ -20686,7 +20686,7 @@ module.exports = [
     "examType": "二模",
     "sourceFile": "上海市松江区2017届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "number": 37,
-    "prompt": "Mum, you ________ pick me up at school this afternoon. I will take the bus home myself.[来源:Z_xx_k.Com]",
+    "prompt": "Mum, you ________ pick me up at school this afternoon. I will take the bus home myself.",
     "options": {
       "A": "mustn’t",
       "B": "shouldn’t",

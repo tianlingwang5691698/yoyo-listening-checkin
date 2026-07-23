@@ -50,7 +50,9 @@ function buildPromptDisplay(prompt) {
     taskTitle: text('taskTitle', '写作任务'),
     referenceTitle: text('referenceTitle', '参考问题'),
     requirementsTitle: text('requirementsTitle', '写作要点'),
-    noticeTitle: text('noticeTitle', '注意事项')
+    noticeTitle: text('noticeTitle', '注意事项'),
+    directionsTitle: text('directionsTitle', '作答说明'),
+    starterTitle: text('starterTitle', '开头提示')
   });
 }
 
@@ -82,48 +84,50 @@ function buildTranslationQuestions(prompt) {
   });
 }
 
-function buildWritingMarkLines(display) {
-  const source = display || {};
+function buildWritingPromptStructure(display) {
+  const sourceSections = promptDisplay.buildPromptSections(display, {
+    taskTitle: text('taskTitle', '写作任务'),
+    requirementsTitle: text('requirementsTitle', '写作要点'),
+    noticeTitle: text('noticeTitle', '注意事项'),
+    directionsTitle: text('directionsTitle', '作答说明'),
+    starterTitle: text('starterTitle', '开头提示')
+  });
   const entries = [];
-  const add = (textValue, label, options) => {
-    const value = cleanPromptText(textValue);
-    if (!value) return;
-    splitScopedSentences(value).forEach((sentence, sentenceIndex) => {
-      const scope = `writing-prompt-${entries.length}`;
+  const sections = sourceSections.map((section) => {
+    if (section.articleTitle) {
       entries.push({
-        key: scope,
-        scope,
-        label: sentenceIndex === 0 ? (label || '') : '',
-        isParagraphStart: !!(options && options.isParagraphStart && sentenceIndex === 0),
-        text: sentence,
-        tokens: tokenizeScopedText(sentence, scope)
+        key: 'writing-article-title',
+        scope: '',
+        sectionKey: section.key,
+        isArticleTitle: true,
+        text: section.articleTitle,
+        tokens: []
+      });
+    }
+    const lines = [];
+    section.items.forEach((item, itemIndex) => {
+      splitScopedSentences(item.text).forEach((sentence, sentenceIndex) => {
+        const scope = `writing-prompt-${entries.length}`;
+        const line = {
+          key: scope,
+          scope,
+          sectionKey: section.key,
+          marker: sentenceIndex === 0 ? item.marker : '',
+          isParagraphStart: section.type === 'task' && itemIndex > 0 && sentenceIndex === 0,
+          text: sentence,
+          tokens: tokenizeScopedText(sentence, scope)
+        };
+        entries.push(line);
+        lines.push(line);
       });
     });
-  };
-  add(source.directions, '');
-  if (source.articleTitle) {
-    entries.push({
-      key: 'writing-article-title',
-      scope: '',
-      label: source.scenarioTitle,
-      isArticleTitle: true,
-      isParagraphStart: false,
-      text: source.articleTitle,
-      tokens: []
-    });
-  }
-  const articleParagraphs = Array.isArray(source.articleParagraphs) && source.articleParagraphs.length
-    ? source.articleParagraphs
-    : [source.scenario];
-  articleParagraphs.forEach((paragraph, index) => add(
-    paragraph,
-    index === 0 && !source.articleTitle ? source.scenarioTitle : '',
-    { isParagraphStart: index > 0 }
-  ));
-  (source.requirements || []).forEach((item, index) => add(item, index === 0 ? source.requirementsTitle : ''));
-  (source.notices || []).forEach((item, index) => add(item, index === 0 ? source.noticeTitle : ''));
-  add(source.promptStarter, '');
-  return entries;
+    return Object.assign({}, section, { lines });
+  });
+  return { sections, lines: entries };
+}
+
+function buildWritingMarkLines(display) {
+  return buildWritingPromptStructure(display).lines;
 }
 
 function getWritingMarkSources(state) {
@@ -221,6 +225,7 @@ Page({
   data: page.createCloudPageData({
     prompt: null,
     promptDisplay: null,
+    writingPromptSections: [],
     promptImages: [],
     isTranslation: false,
     translationQuestions: [],
@@ -237,6 +242,7 @@ Page({
     editorFocused: false,
     submitting: false,
     grading: false,
+    gradingFailed: false,
     review: null,
     currentAttemptId: '',
     essayDirty: false,
@@ -269,10 +275,12 @@ Page({
     const initialPromptReady = !!(prompt && (!promptId || prompt._id === promptId) && isWritingTaskReady(prompt));
     const initialTranslation = initialPromptReady && isTranslationTask(prompt);
     const initialDisplay = initialPromptReady && !initialTranslation ? buildPromptDisplay(prompt) : null;
+    const initialPromptStructure = buildWritingPromptStructure(initialDisplay);
     this.setData({
       prompt: initialPromptReady ? prompt : null,
       promptDisplay: initialDisplay,
-      writingMarkLines: buildWritingMarkLines(initialDisplay),
+      writingPromptSections: initialPromptStructure.sections,
+      writingMarkLines: initialPromptStructure.lines,
       promptImages: initialPromptReady && !initialTranslation ? buildPromptImages(prompt) : [],
       isTranslation: initialTranslation,
       translationQuestions: initialTranslation ? buildTranslationQuestions(prompt) : [],
@@ -299,10 +307,12 @@ Page({
     }
     const isTranslation = isTranslationTask(prompt);
     const nextPromptDisplay = isTranslation ? null : buildPromptDisplay(prompt);
+    const nextPromptStructure = buildWritingPromptStructure(nextPromptDisplay);
     this.setData({
       prompt,
       promptDisplay: nextPromptDisplay,
-      writingMarkLines: buildWritingMarkLines(nextPromptDisplay),
+      writingPromptSections: nextPromptStructure.sections,
+      writingMarkLines: nextPromptStructure.lines,
       promptImages: isTranslation ? [] : buildPromptImages(prompt),
       isTranslation,
       translationQuestions: isTranslation ? buildTranslationQuestions(prompt) : [],
@@ -368,17 +378,18 @@ Page({
       wordCount: countWords(essayText),
       currentAttemptId: attemptId,
       essayDirty,
-      submitLocked: pending || failed || !essayDirty,
+      submitLocked: pending || (!failed && !essayDirty),
       grading: pending,
+      gradingFailed: failed,
       review,
       errorText: pending
         ? text('gradingStatus', '作文已提交，正在批改。')
         : failed
-          ? text('gradingResumeStatus', '上次批改未完成，正在恢复原任务。')
+          ? text('gradingFailedRetry', '上次批改超时，可直接重新提交原文。')
           : ''
     });
     this.saveWritingSession(status || (review ? 'graded' : 'draft'));
-    if (pending || failed) {
+    if (pending) {
       if (status !== 'grading') {
         this.startWritingGradeAttemptOnce(attemptId, prompt, attempt);
       }
@@ -400,9 +411,9 @@ Page({
         currentAttemptId: String(session.attemptId || ''),
         essayDirty: !!session.essayDirty,
         submitLocked: WRITING_PENDING_STATUSES.includes(session.status)
-          || session.status === 'grading-failed'
-          || (!!session.attemptId && !session.essayDirty),
+          || (session.status !== 'grading-failed' && !!session.attemptId && !session.essayDirty),
         grading: WRITING_PENDING_STATUSES.includes(session.status),
+        gradingFailed: session.status === 'grading-failed',
         restoringAttempt: true
       });
     } else {
@@ -465,7 +476,9 @@ Page({
       essayText,
       wordCount: countWords(essayText),
       essayDirty,
-      submitLocked: !!this.data.grading || (!!this.data.currentAttemptId && !essayDirty),
+      submitLocked: !!this.data.grading
+        || (!!this.data.currentAttemptId && !this.data.gradingFailed && !essayDirty),
+      gradingFailed: !!this.data.gradingFailed,
       errorText: essayDirty && this.data.currentAttemptId
         ? text('essayChanged', '内容已修改，需重新批改。')
         : ''
@@ -573,6 +586,7 @@ Page({
       currentAttemptId: attemptId,
       submittedEssayText,
       grading: false,
+      gradingFailed: false,
       essayDirty,
       submitLocked: !essayDirty,
       errorText: ''
@@ -629,19 +643,26 @@ Page({
           this.finishWritingGrade(result, prompt, fallbackAttempt);
           return;
         }
-        if (result.resumable) {
-          this.setData({ grading: true, submitLocked: true });
-          this.saveWritingSession('grading', { attemptId });
-          this.startWritingGradeAttemptOnce(attemptId, prompt, result.attempt || fallbackAttempt);
-          this.scheduleWritingResultPoll(attemptId, prompt, result.attempt || fallbackAttempt, 3000);
-          return;
-        }
         if (result.attempt.status === 'grading-failed') {
           const error = new Error(result.attempt.gradeError || 'writing-grading-failed');
           const errorText = buildWritingSubmitError(error, 'getWritingAttemptDetail');
           console.error(errorText);
-          this.setData({ grading: false, submitLocked: true, errorText });
+          this.writingGradeResumeAttemptId = '';
+          this.writingGradeResumeStartedAt = 0;
+          this.setData({
+            grading: false,
+            gradingFailed: true,
+            submitLocked: false,
+            errorText: text('gradingFailedRetry', '上次批改超时，可直接重新提交原文。')
+          });
           this.saveWritingSession('grading-failed', { attemptId });
+          return;
+        }
+        if (result.resumable) {
+          this.setData({ grading: true, gradingFailed: false, submitLocked: true });
+          this.saveWritingSession('grading', { attemptId });
+          this.startWritingGradeAttemptOnce(attemptId, prompt, result.attempt || fallbackAttempt);
+          this.scheduleWritingResultPoll(attemptId, prompt, result.attempt || fallbackAttempt, 3000);
           return;
         }
       }
@@ -652,6 +673,7 @@ Page({
     console.error(buildWritingSubmitError(error, 'gradeWritingAttempt'));
     this.setData({
       grading: true,
+      gradingFailed: false,
       submitLocked: true,
       errorText: text('gradingResumeStatus', '云端仍在批改。可以返回，完成后会出现在写作记录中。')
     });
@@ -670,7 +692,9 @@ Page({
       wx.showToast({ title: text('grading', '正在批改'), icon: 'none' });
       return;
     }
-    if (this.data.currentAttemptId && !hasEssayContentChanged(essay, this.data.submittedEssayText)) {
+    if (this.data.currentAttemptId
+      && !this.data.gradingFailed
+      && !hasEssayContentChanged(essay, this.data.submittedEssayText)) {
       wx.showToast({ title: text('sameEssayResult', '内容未变化，保留上次结果'), icon: 'none' });
       return;
     }
@@ -693,6 +717,7 @@ Page({
       wordCount,
       essayDirty: false,
       submitLocked: true,
+      gradingFailed: false,
       errorText: '',
       review: null,
       reviewCelebrating: false,
@@ -725,6 +750,7 @@ Page({
       this.setData({
         currentAttemptId: attemptId,
         grading: true,
+        gradingFailed: false,
         submitLocked: true,
         errorText: text('gradingStatus', '作文已提交，正在批改。')
       });
