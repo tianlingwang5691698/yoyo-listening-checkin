@@ -29,7 +29,7 @@ test('同一篇作文批改中或未修改时禁止再次提交', () => {
   assert.equal((template.match(/disabled="\{\{restoringAttempt \|\| grading \|\| submitting\}\}"/g) || []).length, 2);
 });
 
-test('写作超时后停止自动续批并允许原文手动重试', () => {
+test('写作失败后停止自动续批、区分原因并允许原任务手动重试', () => {
   const page = read('pages/writing/detail/index.js');
   assert.match(page, /if \(result\.attempt\.status === 'grading-failed'\)[\s\S]*?grading: false,[\s\S]*?gradingFailed: true,[\s\S]*?submitLocked: false/);
   assert.match(page, /submitLocked: pending \|\| \(!failed && !essayDirty\)/);
@@ -40,7 +40,9 @@ test('写作超时后停止自动续批并允许原文手动重试', () => {
     /if \(pending \|\| failed\)/
   );
   assert.match(page, /this\.data\.currentAttemptId[\s\S]*?!this\.data\.gradingFailed[\s\S]*?!hasEssayContentChanged/);
-  assert.match(page, /上次批改超时，可直接重新提交原文/);
+  assert.match(page, /批改请求超时，可直接重试原任务/);
+  assert.match(page, /批改结果结构未完整返回，可直接重试原任务/);
+  assert.match(page, /批改未完成，可直接重试原任务/);
 });
 
 test('云端复用当前评分版本的同题同文任务', () => {

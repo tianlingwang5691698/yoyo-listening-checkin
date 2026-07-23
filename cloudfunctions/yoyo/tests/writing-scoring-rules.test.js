@@ -46,7 +46,7 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /awardedBandFeatureChecks/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /仅有常规图表词、准确但重复的趋势词不能自动满足/);
-  assert.match(require('node:fs').readFileSync(require.resolve('../services/writing.service'), 'utf8'), /writing-ielts-official-decision-invalid/);
+  assert.match(require('node:fs').readFileSync(require.resolve('../services/writing.service'), 'utf8'), /selectIeltsReviewAfterRepair/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原文证据/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题图片为最终事实来源/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /task1FactCheck/);
@@ -302,6 +302,50 @@ test('雅思四项分有效时保留评分，不因部分讲解缺失判整次�
   assert.equal(writing.hasCompleteIeltsCriterionDetails(review), false);
   assert.equal(review.criterionDetailsComplete, false);
   assert.match(review.feedbackNotice, /四项 Band 分已保留/);
+});
+
+test('雅思校准超时或逐档证据不完整时保留有效四项评分', () => {
+  const prompt = { contentType: 'ielts-writing-task-1', score: 9 };
+  const firstReview = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 7,
+      coherenceCohesion: 8,
+      lexicalResource: 7,
+      grammaticalRangeAccuracy: 7
+    },
+    summary: '首次评分有效。'
+  }, prompt);
+  const repairedReview = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 7,
+      coherenceCohesion: 7,
+      lexicalResource: 7,
+      grammaticalRangeAccuracy: 7
+    },
+    summary: '校准评分有效，但逐档证据不完整。'
+  }, prompt);
+
+  const repairedFallback = writing.selectIeltsReviewAfterRepair(firstReview, repairedReview, null);
+  assert.equal(repairedFallback.score, 7);
+  assert.equal(repairedFallback.summary, '校准评分有效，但逐档证据不完整。');
+  assert.equal(repairedFallback.gradingDegraded, true);
+  assert.match(repairedFallback.feedbackNotice, /分数和有效反馈已保留/);
+
+  const timeoutFallback = writing.selectIeltsReviewAfterRepair(firstReview, null, new Error('writing-timeout'));
+  assert.equal(timeoutFallback.score, 7.5);
+  assert.equal(timeoutFallback.gradingDegradedReason, 'writing-timeout');
+  assert.match(timeoutFallback.feedbackNotice, /分数和有效反馈已保留/);
+});
+
+test('雅思四项评分均不可恢复时才判定失败', () => {
+  const invalidReview = writing.normalizeReview({
+    dimensionScores: { taskAchievement: 7 }
+  }, { contentType: 'ielts-writing-task-1', score: 9 });
+
+  assert.throws(
+    () => writing.selectIeltsReviewAfterRepair(invalidReview, null, null),
+    /writing-ielts-score-invalid/
+  );
 });
 
 test('Task 1 事实核对只提供证据，不机械改写官方维度分', () => {

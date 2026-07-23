@@ -225,12 +225,14 @@ function getIeltsWritingPair(promptId, prompt) {
 }
 
 function normalizeBandScore(value) {
+  if (value === undefined || value === null || String(value).trim() === '') return null;
   const score = Number(value);
   if (!Number.isFinite(score)) return null;
   return Math.max(0, Math.min(9, Math.round(score * 2) / 2));
 }
 
 function normalizeCriterionBandScore(value) {
+  if (value === undefined || value === null || String(value).trim() === '') return null;
   const score = Number(value);
   if (!Number.isFinite(score)) return null;
   return Math.max(0, Math.min(9, Math.round(score)));
@@ -580,6 +582,26 @@ function hasUsableIeltsReview(review) {
   return !!(review && review.isIelts && scores
     && ['task', 'coherenceCohesion', 'lexicalResource', 'grammaticalRangeAccuracy']
       .every((key) => normalizeBandScore(scores[key]) !== null));
+}
+
+function selectIeltsReviewAfterRepair(firstReview, repairedReview, repairError) {
+  if (hasUsableIeltsReview(repairedReview) && hasCompleteOfficialBandDecisions(repairedReview)) {
+    return repairedReview;
+  }
+  const usableReview = hasUsableIeltsReview(repairedReview)
+    ? repairedReview
+    : (hasUsableIeltsReview(firstReview) ? firstReview : null);
+  if (usableReview) {
+    return Object.assign({}, usableReview, {
+      feedbackNotice: '模型已完成四项评分；部分官方逐档证据未完整返回，分数和有效反馈已保留。',
+      gradingDegraded: true,
+      gradingDegradedReason: repairError
+        ? String(repairError && repairError.message || repairError || '')
+        : 'writing-ielts-official-decision-incomplete'
+    });
+  }
+  if (repairError) throw repairError;
+  throw new Error('writing-ielts-score-invalid');
 }
 
 function normalizeReview(data, prompt) {
@@ -1089,20 +1111,22 @@ async function gradeWriting(prompt, essay) {
     const repairContent = imageUrl
       ? [{ type: 'text', text: repairPrompt }, { type: 'image_url', image_url: { url: imageUrl } }]
       : repairPrompt;
-    data = await postJson(config.endpoint, {
-      authorization: `Bearer ${config.apiKey}`
-    }, {
-      model: config.model,
-      temperature: 0,
-      messages: [{ role: 'user', content: repairContent }]
-    }, resolveWritingModelRequestTimeout(gradingStartedAt));
-    parsed = parseJsonText(extractMessageText(data));
-    const repairedReview = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
-    if (hasUsableIeltsReview(repairedReview) && hasCompleteOfficialBandDecisions(repairedReview)) {
-      review = repairedReview;
-    } else {
-      throw new Error('writing-ielts-official-decision-invalid');
+    let repairedReview = null;
+    let repairError = null;
+    try {
+      data = await postJson(config.endpoint, {
+        authorization: `Bearer ${config.apiKey}`
+      }, {
+        model: config.model,
+        temperature: 0,
+        messages: [{ role: 'user', content: repairContent }]
+      }, resolveWritingModelRequestTimeout(gradingStartedAt));
+      parsed = parseJsonText(extractMessageText(data));
+      repairedReview = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
+    } catch (error) {
+      repairError = error;
     }
+    review = selectIeltsReviewAfterRepair(review, repairedReview, repairError);
   }
   review = Object.assign({}, review, {
     scoreFingerprint,
@@ -1878,6 +1902,7 @@ module.exports = {
     hasCompleteIeltsCriterionDetails,
     hasCompleteOfficialBandDecisions,
     hasUsableIeltsReview,
+    selectIeltsReviewAfterRepair,
     normalizeReview,
     countIeltsWritingWords,
     applyOfficialMinimumResponseRule,

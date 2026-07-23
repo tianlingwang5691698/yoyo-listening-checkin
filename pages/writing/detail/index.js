@@ -221,6 +221,17 @@ function normalizeReview(review, prompt) {
   });
 }
 
+function getWritingGradeFailureText(gradeError) {
+  const errorCode = String(gradeError || '');
+  if (errorCode.includes('writing-timeout') || errorCode.includes('writing-total-budget-exhausted')) {
+    return text('gradingTimeoutRetry', '批改请求超时，可直接重试原任务。');
+  }
+  if (/official-decision|score-invalid|json|parse|structure|invalid/i.test(errorCode)) {
+    return text('gradingStructureRetry', '批改结果结构未完整返回，可直接重试原任务。');
+  }
+  return text('gradingFailedRetry', '批改未完成，可直接重试原任务。');
+}
+
 Page({
   data: page.createCloudPageData({
     prompt: null,
@@ -385,7 +396,7 @@ Page({
       errorText: pending
         ? text('gradingStatus', '作文已提交，正在批改。')
         : failed
-          ? text('gradingFailedRetry', '上次批改超时，可直接重新提交原文。')
+          ? getWritingGradeFailureText(attempt.gradeError)
           : ''
     });
     this.saveWritingSession(status || (review ? 'graded' : 'draft'));
@@ -653,7 +664,7 @@ Page({
             grading: false,
             gradingFailed: true,
             submitLocked: false,
-            errorText: text('gradingFailedRetry', '上次批改超时，可直接重新提交原文。')
+            errorText: getWritingGradeFailureText(result.attempt.gradeError)
           });
           this.saveWritingSession('grading-failed', { attemptId });
           return;
