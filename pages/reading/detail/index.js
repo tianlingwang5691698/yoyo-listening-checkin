@@ -8,6 +8,7 @@ const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../.
 const { createDictionaryVoicePlayer } = require('../../../utils/dictionary-voice-player');
 const { splitReadingNotePrompt, formatReadingQuestionRange } = require('../../../utils/reading-question-display');
 const { buildReadingParagraphRanges, normalizeReadingPassageText } = require('../../../utils/reading-paragraph-display');
+const { structureLegacyReadingContent } = require('../../../utils/reading-content-structure');
 const { toggleWordMark, toggleSentenceMark, countReadingMarks, buildReadingMarkItems } = require('../../../utils/reading-manual-marks');
 const ieltsParagraphMetadata = require('./ielts-paragraph-metadata');
 
@@ -135,14 +136,20 @@ function normalizePassage(passage, answers, submitted, review) {
   if (!passage) {
     return null;
   }
+  const structuredPassage = structureLegacyReadingContent(passage);
+  const structuredParagraphs = (Array.isArray(structuredPassage.passageParagraphs) ? structuredPassage.passageParagraphs : [])
+    .map((paragraph) => String(paragraph || '').trim())
+    .filter(Boolean);
   const cleanPassageText = normalizeReadingPassageText(
-    passage._id || passage.id,
-    stripQuestionBlockFromPassage(passage.passage)
+    structuredPassage._id || structuredPassage.id,
+    stripQuestionBlockFromPassage(structuredParagraphs.length ? structuredParagraphs.join('\n\n') : structuredPassage.passage)
   );
-  const inlineClozeBlanks = findClozeBlanks(passage.passage);
+  const inlineClozeBlanks = findClozeBlanks(cleanPassageText);
   const isClozePassage = inlineClozeBlanks.length > 0
-    && (passage.questions || []).some((question) => question.questionType === 'blank');
-  const sourceQuestions = isClozePassage ? buildClozeQuestions(passage) : (passage.questions || []);
+    && (structuredPassage.questions || []).some((question) => question.questionType === 'blank');
+  const sourceQuestions = isClozePassage
+    ? buildClozeQuestions(Object.assign({}, structuredPassage, { passage: cleanPassageText }))
+    : (structuredPassage.questions || []);
   const analysisByNumber = ((review && review.analysis) || []).reduce((map, item) => {
     if (item && item.number !== undefined && item.number !== null) {
       map[String(item.number)] = item;
@@ -198,12 +205,23 @@ function normalizePassage(passage, answers, submitted, review) {
       }))
     });
   });
-  const passageId = passage._id || passage.id;
+  const passageId = structuredPassage._id || structuredPassage.id;
   const paragraphRanges = buildReadingParagraphRanges(passageId, cleanPassageText, questions, ieltsParagraphMetadata[passageId]);
-  return Object.assign({}, passage, {
+  return Object.assign({}, structuredPassage, {
     passage: cleanPassageText,
-    sectionDisplay: passage.sectionLabel || (passage.section ? `阅读 ${passage.section}` : '阅读'),
-    difficultyDisplay: passage.difficultyLabel || '',
+    directions: String(structuredPassage.directions || '').trim(),
+    sectionHeading: String(structuredPassage.sectionHeading || '').trim(),
+    articleTitle: String(structuredPassage.articleTitle || '').trim(),
+    articleSubtitle: String(structuredPassage.articleSubtitle || '').trim(),
+    passageParagraphs: structuredParagraphs,
+    hasStructuredHeader: !!(
+      structuredPassage.directions
+      || structuredPassage.sectionHeading
+      || structuredPassage.articleTitle
+      || structuredPassage.articleSubtitle
+    ),
+    sectionDisplay: structuredPassage.sectionLabel || (structuredPassage.section ? `阅读 ${structuredPassage.section}` : '阅读'),
+    difficultyDisplay: structuredPassage.difficultyLabel || '',
     isClozePassage,
     questions,
     clozePassageParagraphs: isClozePassage ? paragraphRanges.map((range) => ({

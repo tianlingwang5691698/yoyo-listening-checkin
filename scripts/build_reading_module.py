@@ -3,6 +3,8 @@ import json
 import re
 from pathlib import Path
 
+from reading_content_structure import structure_reading_item
+
 
 SOURCES = [
     Path('data/imports/shanghai-em2-2012-2021/formal/reading-passages.formal.json'),
@@ -65,7 +67,7 @@ def main():
         next_item['questions'] = normalize_questions(next_item)
         if len(next_item['questions']) < 5:
             continue
-        items.append(next_item)
+        items.append(structure_reading_item(next_item)[0])
     items = sorted(items, key=lambda x: (x.get('year') or 0, x.get('district') or '', x.get('section') or ''))
     OUT.mkdir(parents=True, exist_ok=True)
     text = json.dumps(items, ensure_ascii=False, indent=2)

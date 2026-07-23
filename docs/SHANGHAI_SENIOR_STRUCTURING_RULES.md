@@ -5,6 +5,9 @@
 ## 1. 本地清洗
 
 - 每次只生成明确指定的年份和考试类型；不得将未审核年份带入发布目录。
+- 阅读与语法语篇统一拆为 `directions / sectionHeading / articleTitle / articleSubtitle / passageParagraphs[] / passage`，并标记 `dataFormat=reading-structured-v1`。
+- `Reading Comprehension`、`Section C/D`、分值、页码和水印不进入正文；标题和副标题不占用正文第 1 段。没有明确版面证据时标题字段留空。
+- 填空题无可靠原文直接依据时允许 `answerSentence` 为空，中文解析仍必须完整；选择题仍要求可定位的原文答案句。
 - 题干、选项、答案、文章、作文要求必须可追溯到原卷；缺失项只拒收并报告，不补造。
 - 阅读完形、单篇阅读和标题匹配分开建模；正文不得混入题干、选项或答案。
 - 阅读标题、副标题、Section 说明和正文分开保存；原卷自然段必须保留。副标题不是正文第 1 段，A/B/C 等原卷段标只标真实正文段落。

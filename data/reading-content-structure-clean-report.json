@@ -1,0 +1,1831 @@
+{
+  "schema": [
+    "directions",
+    "sectionHeading",
+    "articleTitle",
+    "articleSubtitle",
+    "passageParagraphs",
+    "passage"
+  ],
+  "groups": {
+    "junior-em1": {
+      "total": 312,
+      "affected": 115,
+      "pollutionTypes": {
+        "question-directions": 96,
+        "score-prefix": 19,
+        "section-heading": 1
+      },
+      "ids": [
+        "sh-em1-2014-宝山-reading-a",
+        "sh-em1-2014-普陀-reading-a",
+        "sh-em1-2014-松江-reading-a",
+        "sh-em1-2014-长宁-reading-a",
+        "sh-em1-2014-闵行-reading-a",
+        "sh-em1-2014-静安-reading-a",
+        "sh-em1-2015-嘉定-reading-a",
+        "sh-em1-2015-奉贤-reading-a",
+        "sh-em1-2015-宝山-reading-a",
+        "sh-em1-2015-崇明-reading-a",
+        "sh-em1-2015-普陀-reading-a",
+        "sh-em1-2015-松江-reading-a",
+        "sh-em1-2015-闵行-reading-a",
+        "sh-em1-2015-静安-reading-a",
+        "sh-em1-2016-嘉定-reading-a",
+        "sh-em1-2016-宝山-reading-a",
+        "sh-em1-2016-崇明-reading-a",
+        "sh-em1-2016-杨浦-reading-a",
+        "sh-em1-2016-松江-reading-a",
+        "sh-em1-2016-长宁-reading-a",
+        "sh-em1-2016-闵行-reading-a",
+        "sh-em1-2017-宝山-reading-a",
+        "sh-em1-2018-嘉定-reading-a",
+        "sh-em1-2018-奉贤-reading-a",
+        "sh-em1-2018-崇明-reading-a",
+        "sh-em1-2018-徐汇-reading-a",
+        "sh-em1-2018-普陀-reading-a",
+        "sh-em1-2018-松江-reading-a",
+        "sh-em1-2018-金山-reading-a",
+        "sh-em1-2018-静安-reading-a",
+        "sh-em1-2019-嘉定-reading-a",
+        "sh-em1-2019-奉贤-reading-a",
+        "sh-em1-2019-徐汇-reading-a",
+        "sh-em1-2019-杨浦-reading-a",
+        "sh-em1-2019-浦东-reading-a",
+        "sh-em1-2019-虹口-reading-a",
+        "sh-em1-2019-闵行-reading-a",
+        "sh-em1-2019-黄浦-reading-a",
+        "sh-em1-2020-虹口-reading-a",
+        "sh-em1-2020-静安-reading-a",
+        "sh-em1-2021-嘉定-reading-a",
+        "sh-em1-2021-奉贤-reading-a",
+        "sh-em1-2021-宝山-reading-a",
+        "sh-em1-2021-崇明-reading-a",
+        "sh-em1-2021-徐汇-reading-a",
+        "sh-em1-2021-普陀-reading-a",
+        "sh-em1-2021-杨浦-reading-a",
+        "sh-em1-2021-松江-reading-a",
+        "sh-em1-2021-浦东-reading-a",
+        "sh-em1-2021-虹口-reading-a",
+        "sh-em1-2021-金山-reading-a",
+        "sh-em1-2021-闵行-reading-a",
+        "sh-em1-2021-青浦-reading-a",
+        "sh-em1-2021-静安-reading-a",
+        "sh-em1-2021-黄浦-reading-a",
+        "sh-em1-2023-徐汇-reading-a",
+        "sh-em1-2024-嘉定-reading-a",
+        "sh-em1-2024-浦东-reading-a",
+        "sh-em1-2025-松江-reading-a",
+        "sh-em1-2025-金山-reading-a",
+        "sh-em1-2020-嘉定-reading-a",
+        "sh-em1-2020-奉贤-reading-a",
+        "sh-em1-2020-奉贤-reading-b",
+        "sh-em1-2020-宝山-reading-a",
+        "sh-em1-2020-崇明-reading-a",
+        "sh-em1-2020-崇明-reading-b",
+        "sh-em1-2020-普陀-reading-a",
+        "sh-em1-2020-普陀-reading-b",
+        "sh-em1-2020-杨浦-reading-a",
+        "sh-em1-2020-虹口-reading-b",
+        "sh-em1-2020-青浦-reading-a",
+        "sh-em1-2020-青浦-reading-b",
+        "sh-em1-2020-静安-reading-b",
+        "sh-em1-2020-黄浦-reading-b",
+        "sh-em1-2021-虹口-reading-b",
+        "sh-em1-2021-虹口-reading-c",
+        "sh-em1-2022-金山-reading-a",
+        "sh-em1-2022-青浦-reading-a",
+        "sh-em1-2023-嘉定-reading-a",
+        "sh-em1-2023-嘉定-reading-b",
+        "sh-em1-2023-宝山-reading-a",
+        "sh-em1-2023-宝山-reading-b",
+        "sh-em1-2023-宝山-reading-d",
+        "sh-em1-2023-徐汇-reading-b",
+        "sh-em1-2023-徐汇-reading-c",
+        "sh-em1-2023-徐汇-reading-d",
+        "sh-em1-2023-浦东-reading-b",
+        "sh-em1-2023-虹口-reading-a",
+        "sh-em1-2023-虹口-reading-b",
+        "sh-em1-2023-金山-reading-a",
+        "sh-em1-2023-金山-reading-b",
+        "sh-em1-2023-青浦-reading-a",
+        "sh-em1-2023-青浦-reading-b",
+        "sh-em1-2023-静安-reading-b",
+        "sh-em1-2023-黄浦-reading-a",
+        "sh-em1-2023-黄浦-reading-b",
+        "sh-em1-2023-黄浦-reading-d",
+        "sh-em1-2024-嘉定-reading-b",
+        "sh-em1-2024-浦东-reading-d",
+        "sh-em1-2024-金山-reading-d",
+        "sh-em1-2024-长宁-reading-a",
+        "sh-em1-2024-长宁-reading-d",
+        "sh-em1-2024-静安-reading-d",
+        "sh-em1-2024-黄浦-reading-d",
+        "sh-em1-2025-嘉定-reading-a",
+        "sh-em1-2025-宝山-reading-d",
+        "sh-em1-2025-崇明-reading-d",
+        "sh-em1-2025-徐汇-reading-b",
+        "sh-em1-2025-徐汇-reading-d",
+        "sh-em1-2025-普陀-reading-c",
+        "sh-em1-2025-普陀-reading-d",
+        "sh-em1-2025-长宁-reading-d",
+        "sh-em1-2026-嘉定-reading-a",
+        "sh-em1-2026-嘉定-reading-b",
+        "sh-em1-2026-金山-reading-a"
+      ]
+    },
+    "junior-em2": {
+      "total": 441,
+      "affected": 2,
+      "pollutionTypes": {
+        "article-title": 2,
+        "question-directions": 1
+      },
+      "ids": [
+        "sh-em2-2019-a-10-qingpu",
+        "sh-em2-2024-松江-reading-a"
+      ]
+    },
+    "senior-spring": {
+      "total": 69,
+      "affected": 22,
+      "pollutionTypes": {
+        "article-title": 10,
+        "directions": 12,
+        "page-watermark": 11,
+        "score-prefix": 8,
+        "section-heading": 7
+      },
+      "ids": [
+        "sh-spring-2017-grammar-vocabulary-a",
+        "sh-spring-2018-grammar-vocabulary-a",
+        "sh-spring-2018-reading-c",
+        "sh-spring-2019-grammar-vocabulary-a",
+        "sh-spring-2019-grammar-vocabulary-b",
+        "sh-spring-2019-reading-a",
+        "sh-spring-2019-reading-ba",
+        "sh-spring-2019-reading-bb",
+        "sh-spring-2019-reading-bc",
+        "sh-spring-2019-reading-c",
+        "sh-spring-2020-grammar-vocabulary-a",
+        "sh-spring-2021-grammar-vocabulary-a",
+        "sh-spring-2022-grammar-vocabulary-a",
+        "sh-spring-2023-grammar-vocabulary-a",
+        "sh-spring-2024-grammar-vocabulary-a",
+        "sh-spring-2024-reading-c",
+        "sh-spring-2025-grammar-vocabulary-a",
+        "sh-spring-2026-grammar-vocabulary-a",
+        "sh-spring-2026-reading-a",
+        "sh-spring-2026-reading-ba",
+        "sh-spring-2026-reading-bb",
+        "sh-spring-2026-reading-bc"
+      ]
+    },
+    "senior-autumn": {
+      "total": 112,
+      "affected": 17,
+      "pollutionTypes": {
+        "article-title": 6,
+        "directions": 15,
+        "score-prefix": 5,
+        "section-heading": 10
+      },
+      "ids": [
+        "sh-autumn-2010-reading-d",
+        "sh-autumn-2011-reading-d",
+        "sh-autumn-2012-reading-d",
+        "sh-autumn-2014-grammar-vocabulary-a",
+        "sh-autumn-2015-grammar-vocabulary-a",
+        "sh-autumn-2016-grammar-vocabulary-a",
+        "sh-autumn-2017-grammar-vocabulary-a",
+        "sh-autumn-2018-grammar-vocabulary-a",
+        "sh-autumn-2018-reading-c",
+        "sh-autumn-2019-grammar-vocabulary-a",
+        "sh-autumn-2020-grammar-vocabulary-a",
+        "sh-autumn-2022-grammar-vocabulary-a",
+        "sh-autumn-2023-grammar-vocabulary-a",
+        "sh-autumn-2024-grammar-vocabulary-a",
+        "sh-autumn-2024-reading-c",
+        "sh-autumn-2025-grammar-vocabulary-a",
+        "sh-autumn-2025-reading-c"
+      ]
+    }
+  },
+  "affectedIds": [
+    {
+      "_id": "sh-em1-2014-宝山-reading-a",
+      "sourceFile": "上海市宝山区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "22633e9ab1431a9b4d7ce5993c0282d2736fa2e9f790abc9cd6e3650641ab6b2",
+      "newHash": "c570829bee99b0e06fc78272beb24f2f8dce69922314bab3f64d9dec8a8cdef7",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2014-普陀-reading-a",
+      "sourceFile": "上海市普陀区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "a60183260b088a256560162b1e6891b52301d16f36d4b0c36dbfdbd5869bcd48",
+      "newHash": "d23bdbc477bba0bdf8300010b111da4e7a0501a40950068d179eb74b8abd5b41",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2014-松江-reading-a",
+      "sourceFile": "上海市松江区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "b415911ffd85308850ed4df2edc1110514e1b03aea63d6bc8bb29bd9bc459112",
+      "newHash": "cc10c784abd96ae11aa58e7bed2873ce13814bb6f309d255e332dd660eaf6591",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2014-长宁-reading-a",
+      "sourceFile": "上海市长宁区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8861c56a2d4cdbd8d02b94056807d9df3176e7ccbe3f9cbd1a0367b7a3d29806",
+      "newHash": "4511756fcc6261fe9b80b609c82293caafde833edfb082178beede58a51f993a",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2014-闵行-reading-a",
+      "sourceFile": "上海市闵行区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "b13838e8fac3d9b446771674c08717bcc425478a12193ba7a983780f18aada9e",
+      "newHash": "6e0c0fb04f7188826a2cad2f960346e0f1310a804e286e9213196ca7b2f30ee0",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2014-静安-reading-a",
+      "sourceFile": "上海市静安(青浦)区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8e58125fe1968797c0f2b6c9f069b3a79e8eb474e74c457e2becd081d14aa2b8",
+      "newHash": "d1aa993b9be2cdea0bd5f44e5c5475b107b1416ab8df2c13f3d30d51efba44d1",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2015-嘉定-reading-a",
+      "sourceFile": "上海市嘉定区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "32256dad7d2d4c6e3352b70ba34b58f33ae0069e5ecc4f8974b93d20eee59bf7",
+      "newHash": "abd0a36f782632163785e095e98fb636d310bc09b5d15375458014ec9f3090fc",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2015-奉贤-reading-a",
+      "sourceFile": "上海市奉贤区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "e0d03e1cf3f3456f28846c5855a8156b9c3cdc1b30e28a6cd4fa967d1a4774f9",
+      "newHash": "5a777d55537c6a1d4e643da87f79c539dd010409d06f5a749b40bdf63002fb39",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2015-宝山-reading-a",
+      "sourceFile": "上海市宝山区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "db108ac525660f99a740b9bba0466530e395e57f861d4ac01689004692c21e48",
+      "newHash": "9782630e0e3adccb59d65478c16c44b2196d54d6707bbec7b6be1ad02dd8037a",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2015-崇明-reading-a",
+      "sourceFile": "上海市崇明县2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "78919f379a8264f1e205fe4ec8e82a63e3822df22797d298fe1831b248bcf4d1",
+      "newHash": "f5391af1640fbe075e9ae65397952567ce63d0883eefbe85b9ed33795124c31f",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2015-普陀-reading-a",
+      "sourceFile": "上海市普陀区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "b0a908d802a8ce3c081438817c9648580e8b3ccab599c3a7724a5f85ecd96e6c",
+      "newHash": "de89efd8248bb64b6912c20925f3763908e6245e187792902dcbbd05a447a47b",
+      "paragraphCount": 2
+    },
+    {
+      "_id": "sh-em1-2015-松江-reading-a",
+      "sourceFile": "上海市松江区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "fbd16c788c193557b8fdb66536115fe719d533b6ac0f4b2aa5eef4c44003ecf2",
+      "newHash": "1bedc9fd3ca72874737937c8906e95705dad97be8ba44cdd337558b310203e95",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2015-闵行-reading-a",
+      "sourceFile": "上海市闵行区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "426331e8fc259bc5c1cbbd6c62925f78004f35556b99d18ccdc2f4396ad5b13b",
+      "newHash": "e6a19a904d3860ffae55bb684e5de148c36de6dc90646c739b2f133b0d715d78",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2015-静安-reading-a",
+      "sourceFile": "上海市静安(青浦)区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "16f5eeac475cda30eee9581d023a8d0360ceee7f3b87a9246d3802898283a861",
+      "newHash": "203ff7bdac152b89a24990c85ab1e2c3b774b39d1900c78e620120935ef4c88e",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2016-嘉定-reading-a",
+      "sourceFile": "上海市嘉定区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "be035b96b3cc0506ef25cc37d8de7086ac21a8e4ee4f74c0ea3d602ce65fa994",
+      "newHash": "d714f9126124c28ef6edff1ee1649a8ce583147b7330dd6705d1768bdaa7777b",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2016-宝山-reading-a",
+      "sourceFile": "上海市宝山区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "0e5b3b2464f3b97255af7b498bd69ec09500be3f791bd535752edb192918a2ab",
+      "newHash": "a7eec5a35890451168779cbc0506efe1f520185bdeb3c8f5528b3ea73c695568",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2016-崇明-reading-a",
+      "sourceFile": "上海市崇明区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "1d89e497e75d7f85a58bba1597a8296f626e08153aef63ed0086c702fcb7117a",
+      "newHash": "c2d53b67ac58943792ea71aa1fa99ce1d1c69b699971f9daa08e0d5de5b8d5e0",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2016-杨浦-reading-a",
+      "sourceFile": "上海市杨浦区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "f8b723adedadfcf06a5f3027f4c9ab61e67ef6b5c472e22c54e58d4c18dc561b",
+      "newHash": "ac8219cb7b2b9afc86c272df4fb45212abfae540c85cf4e9d128af9a51d9a7d8",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2016-松江-reading-a",
+      "sourceFile": "上海市松江区 2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "19ab54f002a8abe0769bbedc2191d55ea5bc567ea5024a72284c2b3a518eb337",
+      "newHash": "e368a379a7c2bdd636d98448119da8bef6c63cbcc6c4c24149ccdd3a284a5459",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2016-长宁-reading-a",
+      "sourceFile": "上海市长宁（金山）区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions",
+        "section-heading"
+      ],
+      "oldHash": "d0dc0e76dbb5257ececb271225ba07bd5c8a164480f1eb26c4ffd2daf717e63e",
+      "newHash": "96b98cf5bd3debb826c86726536d6d9086ff8daf3211f1dc5e36b661f4faeab0",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2016-闵行-reading-a",
+      "sourceFile": "上海市闵行区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "319750be147195b4dea4d1a418230ad042215187d4114eec17eb15fe1750a57e",
+      "newHash": "1fbeb3cfa0d921ec615c87567087f02b9c9626c17701f0add78eba8860c7a892",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2017-宝山-reading-a",
+      "sourceFile": "上海市宝山区2017届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "d53b639eaa8d44927c465def8fee0f37b3bbec80a411ea7dfff01fe894d8be70",
+      "newHash": "b1d0ca6c3420f95abe030bcd4c1332efa33c55b7b2c06159b37d60b094cd9c15",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2018-嘉定-reading-a",
+      "sourceFile": "上海市嘉定区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "dc6c7bb531e1498e78390c3727de6e7d71e9886cca635df225d7dee1d35b0b5f",
+      "newHash": "06048998e84e2d03e3d932efa781ba004211381acbad3f719ddda4152c64700e",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2018-奉贤-reading-a",
+      "sourceFile": "上海市奉贤区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "25ca735fa7b755be8df7fccd35396c547158303815bcbd998a87ab677f5fa46b",
+      "newHash": "c1b2d7b637f5abee28ec79d8337f3a927e0b503fc35f90af799f27542050cca2",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2018-崇明-reading-a",
+      "sourceFile": "上海市崇明区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "9713f95d75cc7518f95171d4b46d0a16d3a6d3de9383cec259c5ba5e391c4f65",
+      "newHash": "dc6a75daac9a4466e3dce4fa9f1273640715dd8c9169a54e804e6831b26b6021",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2018-徐汇-reading-a",
+      "sourceFile": "上海市徐汇区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "50bfaad51061e033e05d003732648fdee0cd9c110f7ea192bf8fc75d9ffa6302",
+      "newHash": "338bb9438bd3a7bad24e4d48b1d893ee9384520a9ba214ec6fdf3886d43bfd09",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2018-普陀-reading-a",
+      "sourceFile": "上海市普陀区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "050efaa39bad308e9d1aa64733e9b671670ae9a6b2808c7db7a0240f0c708eae",
+      "newHash": "3fa95873ea2820f07b87923d921c0e51770c1d6a891f27eb19e8f5741f3c0b96",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2018-松江-reading-a",
+      "sourceFile": "上海市松江区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "c04da0b9428dc5605f3515227d1943cd761b5d214749d2766d71e110b3677298",
+      "newHash": "1bad870655f8d96f992aae7e6dc421961afe57a02c1413d7244cf91d4ad46756",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2018-金山-reading-a",
+      "sourceFile": "上海市金山区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "bea251af66841b4e8496bc008b75f30a5e61db01f6e7b1844f39dd4967a6f32d",
+      "newHash": "3003bbde34fbe730e1ce1277283e7fb67edff99c1daee60e737db1440de3b055",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2018-静安-reading-a",
+      "sourceFile": "上海市静安区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "0e2a9086c7783c03796cbe8b9f3192fdcdaed5cc00be60a587b6c20c26b9b7f4",
+      "newHash": "7de3887a56c3b7874d0a4ddb5dd5c5c21c5b5867f79a465c3d2b05b0df888219",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2019-嘉定-reading-a",
+      "sourceFile": "上海市嘉定区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "889fbf62ef3cabde89d378a817f0d6a86b5db416c6e0f8b559f20cf74c32d402",
+      "newHash": "4516d8ddbaea1c41455b6c5812532089af9d55c9606535ed587565988b95c307",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2019-奉贤-reading-a",
+      "sourceFile": "上海市奉贤区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8b2d3c01ddc84ab9a8036a677a944b7c347dc3716e6c01bdeea13be541b0b3fd",
+      "newHash": "9247cab7dee880263c62189847d423ff987df466f0b09d2c1c7a870342f32486",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2019-徐汇-reading-a",
+      "sourceFile": "上海市徐汇区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "4f3db7f2d91f5f1d2348ccbe4533e12033cbfdf9f46026adc8012c313e2cf39e",
+      "newHash": "a28225ab86d3944e9d5bf9441d1da21275c6147d3d3e775ac7b265638d20120c",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2019-杨浦-reading-a",
+      "sourceFile": "上海市杨浦区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "b4688e9a156ef35945085d70dae1fee8c58e348e2a8ff7723d83d30f47516525",
+      "newHash": "66e478973b109489661840219c86f2f4a4fbb863d3df39447b4a2e2c54c7dab4",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2019-浦东-reading-a",
+      "sourceFile": "上海市浦东新区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "cef7b7af76911596faa57da1e12672ea8ddd32cd59f0477aed7d48c145cd2409",
+      "newHash": "75697ab111c1c3e12627c1a5840a5c00d532514e32a6af4c862ce9add74a4f17",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2019-虹口-reading-a",
+      "sourceFile": "上海市虹口区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "ed7f35397ef6cf826676d2d2111906277f496e69cf7856ea3ec2ae4274b5bbb4",
+      "newHash": "f4a93e9f0c15a3b57c211812ca1b6698bd7f5c02f9399b2126162697a0eb6cb3",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2019-闵行-reading-a",
+      "sourceFile": "上海市闵行区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8f5724e80f4a9c2eea1077584d690e575e346fee90e3340df9fdb6fcd5d7ffeb",
+      "newHash": "3c2b7c70eb4c2230b62c674b3a227506eed2ace60c38a61a95368a1a50f2a055",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2019-黄浦-reading-a",
+      "sourceFile": "上海市黄浦区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "82f271f4ebf83a5f48c453d2ec491f190f0b45afdb0ed7414181844ee9237d3d",
+      "newHash": "4c40f45b3ca5b0dbe6cdb7b6b948fe3abe23af66f1b744c050203c0ae3f815c8",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2020-虹口-reading-a",
+      "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "05d429e4b718b46161c23e5c10678c3743e501e7190d9eb7be12da5c46df68ce",
+      "newHash": "cb11445e74642e46d57b63b5885401d19896b4cf007635a4eb36cd300ddca486",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-静安-reading-a",
+      "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "f881140216bf8a9737dc82f677089237ba79450ea3aeff94be67ccefb01b29e6",
+      "newHash": "45ff03eb8d685181f368c1eae49d8efe30f549624a1ba3a3c700b6fe9faf2e83",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-嘉定-reading-a",
+      "sourceFile": "上海市嘉定区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "77ee37f73598d6e55af72d5dd7d43c1e2abc394079a5123e2808c24fc872bd65",
+      "newHash": "b4ef57c16aaa79e3bf288a653365ffd66eda676a038d4048fdff8bbcf777d793",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-奉贤-reading-a",
+      "sourceFile": "上海市奉贤区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "d397b95ba37b60621fae68e4820f6de547306b1cb6a955c9b7c070ee4cbb2a95",
+      "newHash": "1c4e1b7496444884d4d6c5ea0a7081106290337020d0bc9f7c663edf50209f3d",
+      "paragraphCount": 2
+    },
+    {
+      "_id": "sh-em1-2021-宝山-reading-a",
+      "sourceFile": "上海市宝山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "f7c8a51769fe051cc51b442478e28503d71e48775c01f1857e3b66f09d2b319e",
+      "newHash": "09b28eb9e9135fe8216153c5e902df93fa36e8e05237ec4e4bf287543d10fb84",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2021-崇明-reading-a",
+      "sourceFile": "上海市崇明区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "42a035e96409893f689cb4fad12b6db2565b5f6c4e7164d4fb06262638a869f1",
+      "newHash": "0086061d2966d0f53e399aaaef344277b6d3fd1e49738bf062e0ef8d92c4a320",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-徐汇-reading-a",
+      "sourceFile": "上海市徐汇区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "94a191e63ed4979c8d3eb86cc89fc79998a5d1a8f80f0208d09f41d08204d0d9",
+      "newHash": "9ed3c663e3618d8da55c3164ef278b8a446042350bd0727e18564776e09c9ef4",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2021-普陀-reading-a",
+      "sourceFile": "上海市普陀区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "9b528a72d7a2e0eeb7613d629729d4fb742af13d21104d1ab20fa44599c977de",
+      "newHash": "41921043445c64bb37e6e29f974a9dfe419fe6aac60dc830255f1151c026c8c4",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-杨浦-reading-a",
+      "sourceFile": "上海市杨浦区2020-2021学年九年级上学期期末（一模）英语试题（无听力原文）（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "544980dfc2074b8025b8cd5945f66d951d2af0e09b220ea8919d72e977cd3109",
+      "newHash": "58372443fc6724d4c92f9d0648d7de506c0df9ed4229fdb9ab32728c01cf4577",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-松江-reading-a",
+      "sourceFile": "上海市松江区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "de3864a0e939530d971899f8a071b4f184ab83c79a6407385351d5182686b6b0",
+      "newHash": "47ff124e7ae54363c3d3ba47a11815b1b7b29976135650be5bdd9ffa1d400c47",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2021-浦东-reading-a",
+      "sourceFile": "上海市浦东新区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "44285311e9fe4da2e101a02ac7da2c20a91182bd978fc5effcd95ed54770b18c",
+      "newHash": "d9460bbcd29ef844559806ee63da86bc191c4398e95c46a12c87c177589a5780",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2021-虹口-reading-a",
+      "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "89771f9c286076c3b9106f36945b6b04f5a1cbdb3071945121fae0cdb78b438b",
+      "newHash": "203036492025ae683ef957ea46fdc1bf61d831606085a59aa3e216d04c9a14db",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2021-金山-reading-a",
+      "sourceFile": "上海市金山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "1d73f43c53f1d3e419d24c067dd2dd764053a7b2122ea06e2177bb70fffdc657",
+      "newHash": "1377b3b5a15ea0567c90720c6258732e8563ad9d14ebd9d169ecf27219fd75a0",
+      "paragraphCount": 2
+    },
+    {
+      "_id": "sh-em1-2021-闵行-reading-a",
+      "sourceFile": "上海市闵行区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "20cffb473fa08d98eed593e1ded52412bdb03b40394611fc74bd5cbdb5c19e87",
+      "newHash": "6e7e0913bfe3a7d1bb21159e742554df690ee06e286b95223fbfd3f0261fd4dc",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-青浦-reading-a",
+      "sourceFile": "上海市青浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "7c9da88deecc75c610616236009667c6b9e7abbaa87f7bb33e85464d4ad5d3b2",
+      "newHash": "e77c1ced392eec1225f27fbff0a196d522764445c8a4344f91d45c7ee2bf7664",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2021-静安-reading-a",
+      "sourceFile": "上海市静安区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "e64598cdff229342393983bde4facadd734de7be0c2b184de4a9eb0d41e81ba2",
+      "newHash": "9f8534639a8722351808366dae18146502d9b560c49b4606aa5dcfeb4ad45565",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2021-黄浦-reading-a",
+      "sourceFile": "上海市黄浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "1b60a3c8a072fb060b79bb5426809fbca0e993c2dd6bf69d572f88e64d07cff4",
+      "newHash": "423930e8fc0f1cf33e9d13507ab3edfee3998067ef4740f4fb44448dccd9f13b",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-徐汇-reading-a",
+      "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（解析版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "f7ce815347d041a05c51a120a45a810c7036158035f4f377882a167151de239b",
+      "newHash": "b0df9a08cdefe5e91c2c51faeff7d7f06356c12f48f1f6d8531aaed59596694c",
+      "paragraphCount": 2
+    },
+    {
+      "_id": "sh-em1-2024-嘉定-reading-a",
+      "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "4254f35fc01d08dfab5b2183724ed55545af96ad6b8c3ee42eceb6449283c728",
+      "newHash": "f45f2947f8130647b2fc48d0fcaa15542c10ccda05f502c00ef82316b2359a45",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2024-浦东-reading-a",
+      "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（解析版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "2a8d74ede5e90f3511e6905e5dc71430fa759ac11347bb735c306e758309fe67",
+      "newHash": "19a11b1108e07d1a27546bf1bb2b45ef248bc08adf54f940597a79bd70194dea",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-松江-reading-a",
+      "sourceFile": "2025届松江区初三英语一模试卷.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "034bd0f83f99ed33027196bf1364b857ca8b4d971353c1290ca12c8a2b24570f",
+      "newHash": "396d8567f6e6402de9ce09e85a6b4b99a08b011490648b6461588b4e8a317ede",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-金山-reading-a",
+      "sourceFile": "2025届金山区初三英语一模试卷.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "9ac89adb014f1dc53d5733bbe53d9e9adba0dd52cbd7a30f8f4f6447de6e7b7f",
+      "newHash": "4c372b037a0e0486ed4c7b231ff1107a72fd49a1f95c0655ce7148511691ff7c",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-嘉定-reading-a",
+      "sourceFile": "上海市嘉定区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "d094649f499c8b7164a58496dcd72a647ccb249e84e90669ecba83e49ce20e56",
+      "newHash": "042072dc241a79fb81ace8012ef6b17b670d9374619acdae8081115116560791",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-奉贤-reading-a",
+      "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "4c79f850dde97e5794a879c12ca4ae1da6113592a4ab9c39a7a7c838b002eb50",
+      "newHash": "36216c7becc7783d9a89a33cf1c811a8481b8706713bf8a987ce0e0683c4dd4e",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-奉贤-reading-b",
+      "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "6fa6eafabd5daa933d8114672ad31a05d533877d1700044bfa2da2779967b488",
+      "newHash": "1375e99039da170d69a80ab39c3436eaa04841a336aaf38aebb7811100ad66d9",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-宝山-reading-a",
+      "sourceFile": "上海市宝山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "d944fd102d36c4d140e9764863620532d7da4fcbcb3bcbfe0ba739f832838ac9",
+      "newHash": "1d0ad5b7dece1c2f6ae86be34a933bd14e473aa6dc162c3ae074663d8350f7a1",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2020-崇明-reading-a",
+      "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "896da56226757c0269a160ff2b2c5a63f9a12a6858c50b7affbb08adb53c66a6",
+      "newHash": "482f55d7cddc463db717d97070ea96ca3536c83d284701b004921f72a716c920",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-崇明-reading-b",
+      "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8954c562e67e881d0729bee410d317d885b497caafbc34cbc2394bd13b604644",
+      "newHash": "d632a7886a8ce21e9ee40439f6f1a9d4841ff11848fba10bcd58191e9224893d",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-普陀-reading-a",
+      "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "4e78cc9e9f3d272951be9057e3e55ebe3ac96a7af40160d378c43522c7d95b72",
+      "newHash": "723543cb7a744ab754264ccc7c624db393e2225a63f5c98c71756507c9e36fea",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-普陀-reading-b",
+      "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "b8560c5c4d7f33f503ab609d24a704431ff4907312cf0126f6c59977992a65c2",
+      "newHash": "241c75b345af878744ce5205d09d1cc40a3e17336a75cbac21905a0a673a6b51",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-杨浦-reading-a",
+      "sourceFile": "上海市杨浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "33e3edd4f515316f05e89c356c48034269cba66ec138a3441d253ed7db504c3a",
+      "newHash": "3cabacc4a2b5322b520eb4fcc861fb0e9b0ca8017be038edbcc1e02dc8b66a12",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-虹口-reading-b",
+      "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "3118bfccfa5d019964502a8f9d4e446f432e4187d8a969b92027867730ad916f",
+      "newHash": "592c3b64ca414f1a170e7e85e0cfa33d17c73ddd015b69ec834664f60b0cf670",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-青浦-reading-a",
+      "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "e665a6ef68cfd6818e539a18d30947c258318199668b11441eaf0e5b1caf4644",
+      "newHash": "40ebaeb771aca8616c3255585ba036fdecc7039f9e5f285fd89b1fdb56553479",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2020-青浦-reading-b",
+      "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "865b4a0f7298d7eab4f4b63655078e5146fd55d99d9e6b52235450045f4b02bb",
+      "newHash": "0887d4bc4e71e1249d79c73932e53b7ff768b7f2ce42604906ba61e36af814c1",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2020-静安-reading-b",
+      "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "525a08f384eabebafe796faa331aee357b27ee3c5f8f555d06c6d546b08431a4",
+      "newHash": "7ed384073b065be30ddad18de4e7b3fc50c7e3ed41dd5323865fcee7b4d25e76",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2020-黄浦-reading-b",
+      "sourceFile": "上海市黄浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "0266f6acc10c4b2d3b788e53dfb7867b4a2db58915f173c86b959300c901cbb9",
+      "newHash": "093731c4412d79683ad0be44c211d9ef21205d70375309e94dfc56258c0b5155",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2021-虹口-reading-b",
+      "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8946ce9b2de1756fc5d638866d36274fc4878625f02d1793bd2c11b88a0c0921",
+      "newHash": "d8579f407db2c152f76950925c63ade61a812ac9e291b542f70739b2f15460c0",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2021-虹口-reading-c",
+      "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "c06e67a658fc4797db56a263fde5e782e981fdfa6f237dd6f2363be9c75c9018",
+      "newHash": "03ff58039587b316fb3e619b5d341cfbdaff9cbcf19acb6df821b28c1496bfc0",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2022-金山-reading-a",
+      "sourceFile": "上海市金山区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷官方版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "e56eabf6a9a107a25eda21c676b8761943fb4e0bf6ec66b443c42a53b9bcb0d0",
+      "newHash": "ec646862197f8a16f4769139f7005188247ae9eaad0e3500f3bd6f9fb1c8c95f",
+      "paragraphCount": 2
+    },
+    {
+      "_id": "sh-em1-2022-青浦-reading-a",
+      "sourceFile": "上海市青浦区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷官方版 ）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "2dcab0231cc919c87768836d0613029fc6356aa49ee764276d4921f739aed307",
+      "newHash": "aea8710c4c51accb867b7ad765ddb371fbe4ce0fcba59fe9ca39fee9799924cb",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2023-嘉定-reading-a",
+      "sourceFile": "精品解析：2023年上海市嘉定区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "89288d1929ba853586e659cfd48e42b04b5c4388fddd56c27a909265e7a92b38",
+      "newHash": "10ff767062982191aa7190124649924d047045de4135800087f5b875c9f2f9be",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2023-嘉定-reading-b",
+      "sourceFile": "精品解析：2023年上海市嘉定区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "e3a2cf78af60e218a85e76b1bcf7499ef06bef2e137c7de1fe24f282a90f06ae",
+      "newHash": "71dfa8e956a4b3133d0c021617501681aba2a588581b952f84501f4b4d507986",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-宝山-reading-a",
+      "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "23768d3eeb4fb13e24f4d0803862ecc22647e3c005c79b350ca571befc499ce0",
+      "newHash": "a95768fe1f0df9b6f236d3f5c3da4c610373c7b68855693bde29b67b3582f721",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-em1-2023-宝山-reading-b",
+      "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "d6a9784275bca0d2576500b570b61cab7474488562c5eea84c1ee003f4d1e7f5",
+      "newHash": "fed23bc22a42d1b272a1bd1640e9fce98628bf4c165a8368a0e66c5292fc0a68",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2023-宝山-reading-d",
+      "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "6e744c57c908bb324c138eb252b00d7b1877183f5c86ad65b19e98a8e5b005a1",
+      "newHash": "7187334fa7ddb8b0c1a53d658b0b0c6f7c9ba482962fdcaf4a01f15c0cef81d9",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-徐汇-reading-b",
+      "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "8e36913acf160878fad04ae2e2c84b1c6a86483b0375bade8409338121649d8c",
+      "newHash": "d6c78579e1cffe93dd31724e3ff9694b8fc86a3e15a02b6236359a1240110593",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-徐汇-reading-c",
+      "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "71e778d7c59e179ca7277df23ae09f258757ad6c39bd563e3789367ea5f7a97e",
+      "newHash": "b7010af1db18fb3da3b3f66030cdc8ca99d393c0b46c323800992833afa3abea",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2023-徐汇-reading-d",
+      "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "529097bd58d63f3efa35471ab6cce80a5c38cf0a2ce8268c6fa9e9cd07e0f32a",
+      "newHash": "bec2efa950d0cb05cfe8ec175ba0ce1c8943f2bdb0343dc40137c2f3e3028b53",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2023-浦东-reading-b",
+      "sourceFile": "精品解析：2023年上海市浦东新区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "12d6bc2c280e77a3a51c954e6fbc69482707028670847b8b8c2703d6e43a7a24",
+      "newHash": "93c59ebba29eeabba2ddc5ae793f946462fdbc37fda36b6cd3be95bf30201627",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-虹口-reading-a",
+      "sourceFile": "精品解析：2023年上海市虹口区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "aeff6393e9858ae874e57c0de2d66b8f6220100c65f1b4d1118c4b2a781e4e96",
+      "newHash": "f6c1c7e914c34394c5d1d731f99176cd0efc6e804d502f22b2ea46c4a46e6801",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em1-2023-虹口-reading-b",
+      "sourceFile": "精品解析：2023年上海市虹口区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "4a6d264ada1c7e35c40794882837756829225603b6deab34cbc9ca73820cb729",
+      "newHash": "4f0054501484ffec0351da9e7670d7015addf721da54a80944f893b36c72dbe6",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2023-金山-reading-a",
+      "sourceFile": "精品解析：2023年上海市金山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "57c766c0611c2bc127b16b877a4a7ab46bdd0cada92e45c7ca095a540f014583",
+      "newHash": "a93603e1d28c736e846b1af5ca7568037e7d38ba09968345b6969535d0daf4b1",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2023-金山-reading-b",
+      "sourceFile": "精品解析：2023年上海市金山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "17216625f1bfbbf9ec6424ba7a4d534ea3af54e8ad2bffa4feff0d802c3b5895",
+      "newHash": "a6638b58a0281ab1217cec41860b4ea7b0d66a775961c1133e2100159c57945c",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2023-青浦-reading-a",
+      "sourceFile": "精品解析：2023年上海市青浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "944ce6b1c6036597a5d326c3216c32fda62ef003c70dcd0be269c9c7392a5ef0",
+      "newHash": "e14dcd43a10e150b9ab39088d9244f5779f6abb6e4c821a6eba87fa6da5e28c4",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2023-青浦-reading-b",
+      "sourceFile": "精品解析：2023年上海市青浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "4d5387895fb56ba1a969683819db7abb79a03f950f259ca90008ced251b95809",
+      "newHash": "3f9236cc7fad9e697a9a32b72b8d470085f4fce54d7635738c8cbe0b6379a6dc",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-静安-reading-b",
+      "sourceFile": "精品解析：2023年上海市静安区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "c07308ea79de0b832aa86ace0c18fe0e797644afbe5b0c20ceb820f6104bb609",
+      "newHash": "624122802b7a6de1a81f0cf0fa454a931b30dc8da98dec5dcfe265ceabb03800",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2023-黄浦-reading-a",
+      "sourceFile": "精品解析：2023年上海市黄浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "16d35e331b64e7eff0ca8764be250ef4fb5d4652f8b1cbc073c466a7e48c6d4a",
+      "newHash": "af09bda06297193bba3c41589d09a2773301bc7300b3ff7cb292a96e6a2aca11",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-em1-2023-黄浦-reading-b",
+      "sourceFile": "精品解析：2023年上海市黄浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "470cfaac1c92ab69032b714f55fb52fcd1d91ccb0d0d99eb818d300ea10dae70",
+      "newHash": "6959ff1d4463032d7aca5d8761579c590c96ee757d9926f3ccb97579215550b2",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2023-黄浦-reading-d",
+      "sourceFile": "精品解析：2023年上海市黄浦区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "daa6ed120dc93b4f34760c874b31b9ea477177b5bac77b7144268e77be2bf459",
+      "newHash": "2223558f40ac713aebe907820af7200d501c0dd96018d828bc04ccf30bfa3c0a",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2024-嘉定-reading-b",
+      "sourceFile": "2024届上海市嘉定区中考一模英语试卷（学生版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "be6d796c6cd203a6f0399cc6d7b0695a079eaf9669c3e3cbd383fae82c411f4d",
+      "newHash": "42844e81b4b251956558a31d8b0bd9a90b3896908ecfdb9e9464ee0d048c8974",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2024-浦东-reading-d",
+      "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "3c8c4f606b4f90c9ba1a1e7503e41a191aaf48388f8ab24e5558cf64b1a94192",
+      "newHash": "ba41589f1200f3d46db220c1166271de0563650563e6c441486f4a4784fae31c",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2024-金山-reading-d",
+      "sourceFile": "上海市金山区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "653a2b5e52f85ba3cdf834f77acaab4f61b8a9876586a53a43862d1357b3e527",
+      "newHash": "ad11b81b5caa4dcb35fcff77b733860fcd388518e258514ac2fa4b6785144f2a",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2024-长宁-reading-a",
+      "sourceFile": "上海市长宁区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "7e37fb879e00f3147eab0ecb875cb01fb0a8d8e9cd406dbdcd5198da79014b19",
+      "newHash": "b5de8e3d00f6996a4021bc29ed3243c1eaf136a3e4305661fbcbb6bb6f411c1a",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2024-长宁-reading-d",
+      "sourceFile": "上海市长宁区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "24eb84f0a900c368ae52a870fee7f00854c3ac9594cf57ff90014652bec1f594",
+      "newHash": "0d8026d1d097c47236708784cb728e90775290cb26c2fe15a4c2fbcfa6a0d4ab",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-em1-2024-静安-reading-d",
+      "sourceFile": "上海市静安区2023-2024学年九年级上学期（一模）期末英语试卷（word学生版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "874a6d126fb5ed312317406657187c0ead47b77c164ec9a2c9087654d2ea9ecf",
+      "newHash": "dd2206fe4d2258723550da1425be3f7274ede006af821924d72ee9c9c4d2e4bb",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-em1-2024-黄浦-reading-d",
+      "sourceFile": "上海市黄浦区2023-2024学年九年级上学期 一模试题（学生版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "93edfea1b1fc59c38d1bb6e8c94e9d08d55e624ba06d9b8bc0cbe2729c40c86c",
+      "newHash": "f2e9c6cb43b8fa7dd41addedfb6f38d9ca377e82fc46072e863b45c82c5de0eb",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-嘉定-reading-a",
+      "sourceFile": "2025年上海市嘉定区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "e1579a4e5cc47a1e492c03ddcea1a3ac71e66f237f03774ee1a813b954e60f25",
+      "newHash": "f1269ebdc4332409e122333889145e880c617b87c03c3f5d7ca6165c355514bf",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-宝山-reading-d",
+      "sourceFile": "2025年上海市宝山区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "9ef388c5affabd8a6d5c7dece6e7b06aef81999f0b0535682fb9d71020971c7d",
+      "newHash": "c12c8d41d998b0034dae8b8f1ced5c8d11be2172c9e54be01fd165f1ef431601",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-崇明-reading-d",
+      "sourceFile": "2025年上海市崇明区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "106201a17793ade17b993bdc69c7d6c6ee11b341b62f321343d2de559c804f98",
+      "newHash": "1c060a2e7efa1ff56222766e23a484b04fdb4be46d71d6b154055d6b5f007169",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-徐汇-reading-b",
+      "sourceFile": "2025年上海市徐汇区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "832be017904b84c2291c2ef2136e0bb482028d37266c6cc18f2b5659ba0b6477",
+      "newHash": "e9cad9456f27e61e08d0ad7ae6fa07d668df2b00e94884c234bc5a2059be0915",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-徐汇-reading-d",
+      "sourceFile": "2025年上海市徐汇区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "9daf4d01c291efd72c8457000c3f3e1754c914497bf509789c970bc5c05dc547",
+      "newHash": "10fc3396fb80f6d5389e70c44cae07b502f1a3a148d40073b7605b815e1633fb",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-普陀-reading-c",
+      "sourceFile": "2025年上海市普陀区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "8ccd672d4100ec8b7d1ed6acc77be5dbcb296dfd849d60a0ba543c5daab16d49",
+      "newHash": "934de4b563d79e5e6af2ceb0157a703338dd9abe8e5bc931e091af31e32966da",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2025-普陀-reading-d",
+      "sourceFile": "2025年上海市普陀区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "b183ae927d83c45cf82f468c570b5d3cef40ac5d01e7f2f370678505349858fb",
+      "newHash": "f0b0caa7b06de4c4c4a5b0446d360e6fd607c7f86d6aa7f8dc6105d11e5ee2dd",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2025-长宁-reading-d",
+      "sourceFile": "2025年上海市长宁区中考一模英语试题（原卷版）.docx",
+      "pollution": [
+        "score-prefix"
+      ],
+      "oldHash": "8983ba2af2bb768a19a9fa05bb805562fde1ce6316a9bd89fc55310a4e939bf3",
+      "newHash": "77f93d1e16dc7a944ad55052b6b38e50e3723a17f9609a68aad818c7b01abe04",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2026-嘉定-reading-a",
+      "sourceFile": "2026上海嘉定初三一模英语试卷（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "6513196716186b69cea697195647f99f4c382d98e8cd7c6f4f87ee2c7aed6cce",
+      "newHash": "874582d75ef345a192d9e6fae7222b8ddcdc1af2ba0c8d7e1a49fe36f75d0d7b",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-em1-2026-嘉定-reading-b",
+      "sourceFile": "2026上海嘉定初三一模英语试卷（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "c1381851e1b388dab9ab27175f5762a6cf5958d1f66f8f493c6564a0faf7a597",
+      "newHash": "009757d276941c7ce9ae7b23b97a571d4b278c7e3d8118c2589ce98d14bd30ae",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-em1-2026-金山-reading-a",
+      "sourceFile": "2026上海金山初三一模英语试题（原卷版）.docx",
+      "pollution": [
+        "question-directions"
+      ],
+      "oldHash": "997f16affe815b45b0602d259e6d17bac084b3ee6271f8762f71a5f4840fdc42",
+      "newHash": "b04381b197842b9e0bd6789d4447fe725efdade2027aede92e14f3d024a8b564",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-em2-2019-a-10-qingpu",
+      "sourceFile": "上海市青浦区2019届九年级4月质量调研（二模）英语试题及答案（word解析版）---已校对.docx",
+      "pollution": [
+        "article-title"
+      ],
+      "oldHash": "9b6614b3407c11d590eaa13080cbe7f0bfd48fad32ffaac9f3c6ca852174f916",
+      "newHash": "7955f51229fb8803657592171ad1a0b4e98be0474ba89e2787f1ddd4427cde91",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-em2-2024-松江-reading-a",
+      "sourceFile": "精品解析：2024年上海市松江区中考二模英语试题（解析版）.docx",
+      "pollution": [
+        "article-title",
+        "question-directions"
+      ],
+      "oldHash": "f42b36863048f802a301b44ddce70fa98a31de2538353bf0b9f26201122c1407",
+      "newHash": "40d5483b15820f7193d8796c0c7a8910aed8d9c70a404b45dedd71500c1a07cb",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-spring-2017-grammar-vocabulary-a",
+      "sourceFile": "2017年上海春季高考英语真题（原卷版）.docx",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "543b3dee5b13ffaba85c58c97a30d70cc83b15505d2d6c090d76bda447d5079b",
+      "newHash": "528ac149b7e686b4883bdc005ed7b4ac85b358d41e3814b5d74f16510a1512c1",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-spring-2018-grammar-vocabulary-a",
+      "sourceFile": "2018年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "dcf03f34bddadc066ed91a4b0fd51aa71498a8ded66685f51b7f9fdd6925825e",
+      "newHash": "bcc2c55331945e21535fd7fddfb0bf5db5514070afee4e36ac8a7aa56be2f3b7",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-spring-2018-reading-c",
+      "sourceFile": "2018年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "c2072cc9b25dca8da19c4019e8a40865cd40524df3e92d1879dbad129a9bfa44",
+      "newHash": "35fdc0da6fdcea88076461b21fb007e9443df539d84bae95db4a684febb9dd8a",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-spring-2019-grammar-vocabulary-a",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions",
+        "page-watermark",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "c2dc35075325cb6894c27ab1f98127391d24af0bb2e903be6b436bfdb9ad4196",
+      "newHash": "a3f3dde0b473835c223669d03384c6089a1fd0d38e5e6dfb779709597d71efd6",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-spring-2019-grammar-vocabulary-b",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "page-watermark"
+      ],
+      "oldHash": "768d743d279d372a714542548bcee878ac6faa0c60e8fa7fe78d4072800cfa86",
+      "newHash": "44ed1d37e9bd8b946b4106aed36a75a669ae0b0bc248db1d9db4456b82610278",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-spring-2019-reading-a",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "page-watermark"
+      ],
+      "oldHash": "fe7088b7efbd371e743de300fcf66f0cd290484e29e0769e8a1bfab7c5fc89ba",
+      "newHash": "849b80330516ed98e8b7286ce8121937c21842ff23215e56abd4714d6afd2b90",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-spring-2019-reading-ba",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "page-watermark"
+      ],
+      "oldHash": "0b0573e4a3add18e0e451c26cb062f67a690e9dd0cbb50b53d5f076735703545",
+      "newHash": "e03612aa8ac77447d1ceb8ebd4aa5dafa409f960acbd2688dd6c7497ed83bf5b",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-spring-2019-reading-bb",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "page-watermark"
+      ],
+      "oldHash": "9c24ea0fa382ac5bbafc27b2e8cc00205a440c354737b2ee6965193ca4d10810",
+      "newHash": "50cf676a4733e8a8ff66cdd0bca2813ad8a5cd7bb5cecdc5974155d1ccc70a58",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-spring-2019-reading-bc",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "page-watermark"
+      ],
+      "oldHash": "dffecd4844e0559738cd12a85e247c3f3df9739afb4e5fffd3728638195985b8",
+      "newHash": "91e539d8eda3852e2b01ed81f976ce28ea283655cb69dee276fc67689d256fec",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-spring-2019-reading-c",
+      "sourceFile": "2019年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "page-watermark"
+      ],
+      "oldHash": "d05159f9c6c3c7d72db7e6fcffe58ddbeeda52d78ce21927665102ec2efe0805",
+      "newHash": "7d068d180ce31f7bbe66a33ec4c5091e5090de5f6c37c4d7521d360f295badd2",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-spring-2020-grammar-vocabulary-a",
+      "sourceFile": "2020年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "ac1e8543f4e59b6e7554a1ee5a40565fe54b1c40fe72ed693bad5479923f97c3",
+      "newHash": "5864c22f6bcc8aa586d93c08c5eb64b7c964f5d619fa34c4938b4d95c7fd8b8b",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-spring-2021-grammar-vocabulary-a",
+      "sourceFile": "2021年上海春季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "79f567751809bbf90da0c161f1841701f7bcbc77a816675edad39ec4da7ab76c",
+      "newHash": "1cce20e0b2144002dfb34553078bf370435222f5f31723a2bff337dd3087f9d3",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-spring-2022-grammar-vocabulary-a",
+      "sourceFile": "2022年上海春考英语真题及答案.doc",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "a9f6da737bcd76b9f83c3e3bde0d103f847211c337fdc52cb52c0473b8b222f1",
+      "newHash": "261ee1f6a6bba2eff74b075c8bd19fdac1e2a692136518293c046e496c31c360",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-spring-2023-grammar-vocabulary-a",
+      "sourceFile": "2023年上海春季高考英语真题（原卷版）.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "1be2fa07b90ab749040add5aa1d4da82f153db251f5e0d5cfec435cb36bfcd5e",
+      "newHash": "d9aa8270e08ec901c189da01daea5c51f4bf58e65d79cabdfc86f559b1dac5c7",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-spring-2024-grammar-vocabulary-a",
+      "sourceFile": "2024年1月上海市春季高考英语全真试卷（网络搜集回忆版）.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "9b75ac1a0ee28dadd482af46114c92bd8527a6cc15765ec50ca9afa14967589b",
+      "newHash": "4d3bd1d866a42cea0fff860fa0388f69f27f40d8f77975931d9611ddc98f0445",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-spring-2024-reading-c",
+      "sourceFile": "2024年1月上海市春季高考英语全真试卷（网络搜集回忆版）.docx",
+      "pollution": [
+        "article-title",
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "d7589c1f09a4793a223dfcf10435ef6e25e4636b0ec36433d9035d398095d432",
+      "newHash": "ac871ba5e8da0b8e1e69a7348483f7a87e015f41676c7587942af87649e13d56",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-spring-2025-grammar-vocabulary-a",
+      "sourceFile": "2025年1月上海市春季高考英语全真试卷（网络搜集回忆版）.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "8b9740a1452c9afd7b2471e02ee5b4b4e9318bc32d41cc664ad03ee8db61ba2e",
+      "newHash": "cf01512f76eaf53d34e557b1f79e57e4573d166afcc20b4bb783b26fe791527b",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-spring-2026-grammar-vocabulary-a",
+      "sourceFile": "2026年上海市春季高考英语试卷(原卷版).docx",
+      "pollution": [
+        "article-title",
+        "directions",
+        "score-prefix"
+      ],
+      "oldHash": "e9a40d0f94251bfb9e9b93372fea30c6144c79e9a906a44ce700614e58ab1a23",
+      "newHash": "ab16f8246c7924618e4a6b58981ae9cc239a3ee0a0cd525d17a7307e6847e429",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-spring-2026-reading-a",
+      "sourceFile": "2026年上海市春季高考英语试卷(原卷版).docx",
+      "pollution": [
+        "article-title",
+        "page-watermark",
+        "section-heading"
+      ],
+      "oldHash": "c3f7d2a4f02164969d8e038cd18025fde33aec73d1650bac97bbe8d912363322",
+      "newHash": "38f712b419154daad56207cebce0b9dfc03cf328f245f1db7b76b244f439f238",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-spring-2026-reading-ba",
+      "sourceFile": "2026年上海市春季高考英语试卷(原卷版).docx",
+      "pollution": [
+        "page-watermark",
+        "score-prefix"
+      ],
+      "oldHash": "49c967185769b57dd107e2bf3616ed5228e5f74160fe69fe82c386afdec7089c",
+      "newHash": "8a11de0775014f3058826d5d93b77b5ff6ea525b1288f521930bac71d5b80f6a",
+      "paragraphCount": 3
+    },
+    {
+      "_id": "sh-spring-2026-reading-bb",
+      "sourceFile": "2026年上海市春季高考英语试卷(原卷版).docx",
+      "pollution": [
+        "page-watermark",
+        "score-prefix"
+      ],
+      "oldHash": "b631becf77d7ad90052e4b4752a47d540adf035c4cc4147355e1dc11ab923842",
+      "newHash": "5a77615c6027910cea751695618baeb806eb511de359cf1432954e3be34edd44",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-spring-2026-reading-bc",
+      "sourceFile": "2026年上海市春季高考英语试卷(原卷版).docx",
+      "pollution": [
+        "page-watermark",
+        "score-prefix"
+      ],
+      "oldHash": "06d24a063d141a67ff4de7bd7dbf4ff12421dceba7484adfef49c9c79fabb25c",
+      "newHash": "617c15cd2e799148b9ca38f4c43270b2542cecd0b71c5634a6663f807918838b",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-autumn-2010-reading-d",
+      "sourceFile": "2010年上海秋季高考英语真题及答案.doc",
+      "pollution": [
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "8d38afb5b15e811e68df38f3dd11c4efbf812b1023e043ced8bd9b6d8a867446",
+      "newHash": "e304b10ab8afecf5a8971ce289c56f5df46ac60b2bfae8089f0ee856a6fcb95f",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-autumn-2011-reading-d",
+      "sourceFile": "2011年上海秋季高考英语真题及答案.doc",
+      "pollution": [
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "216e9cef21a38763c6a651126b11ca5b64930ceef88a2dceb3f833b254904173",
+      "newHash": "eab32b03472a7df5bf575a5f60f47a76e16d9f735cee7354e70e653fac576899",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-autumn-2012-reading-d",
+      "sourceFile": "2012年上海秋季高考英语真题及答案.doc",
+      "pollution": [
+        "section-heading"
+      ],
+      "oldHash": "ab612260af67461d812f982e59fe79ec66c51836fd1250a502792454a45d6f91",
+      "newHash": "376e65bea17da20dc4b77928dd0ab0d2d5dae218e9f2f97c5ef9f161046717e9",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-autumn-2014-grammar-vocabulary-a",
+      "sourceFile": "2014年上海秋季高考英语真题及答案.doc",
+      "pollution": [
+        "directions"
+      ],
+      "oldHash": "09def7e1e995bdf9031af723afb7a5158382b015c363fbebfafd56c23ea2f99c",
+      "newHash": "1a7440cf21f21a7d105c2ab79bee655a4c006b8bcc8f2e3187dee8fcb778f3fe",
+      "paragraphCount": 8
+    },
+    {
+      "_id": "sh-autumn-2015-grammar-vocabulary-a",
+      "sourceFile": "2015年上海秋季高考英语真题及答案.doc",
+      "pollution": [
+        "directions"
+      ],
+      "oldHash": "5aba477271e02c488fc489ab403efaf0b4c158e59c1cb68a66c97058b8902107",
+      "newHash": "d6c3d88d79205b4fc31b1145846452456c4a99762895880620953d82bdcf56ce",
+      "paragraphCount": 9
+    },
+    {
+      "_id": "sh-autumn-2016-grammar-vocabulary-a",
+      "sourceFile": "2016年上海秋季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "score-prefix"
+      ],
+      "oldHash": "0970d5cc33c81bd9b8f70e851da870507042a3e79bfaa4cc05a592c7945d8600",
+      "newHash": "7dc763e99c1293153c5d7332a1ec825bdc843acafe5fdc0ba70098d46710171f",
+      "paragraphCount": 10
+    },
+    {
+      "_id": "sh-autumn-2017-grammar-vocabulary-a",
+      "sourceFile": "2017年上海秋季高考英语真题（原卷版）.docx",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "0ad4b170dd75e9bbf377de337c6dfd1af34b505e2742b96d151d1779ec88c7e2",
+      "newHash": "4ec25fe2145ceecc055cc01d37176543c147b049ff1183d1fef93337afddce70",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-autumn-2018-grammar-vocabulary-a",
+      "sourceFile": "2018年上海秋季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "06ad3d1b30c3d18d478d930033660443d9460298839a1a79b813cca7d0651f8c",
+      "newHash": "49deaa5ebe61237288261fdf25f68104367aae81675dd708bf437b758fd75dd2",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-autumn-2018-reading-c",
+      "sourceFile": "2018年上海秋季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "a4b10c747b56860b28d7ba37696dd325fb076d00975ef338e11377d45c67bfd4",
+      "newHash": "c0de28677c8f96cf0585374e5e0fa0662a78bd94579325b7d6d40767f3192870",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-autumn-2019-grammar-vocabulary-a",
+      "sourceFile": "2019年上海秋季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "0de53298bb95211c80b57c00f180887b1fd1695baf66844b189974719b2272ba",
+      "newHash": "1e9de1386db3c87b1537c8b7c9e6cfe7176bec8bf1cdb4c17163c6b14e3c2fea",
+      "paragraphCount": 4
+    },
+    {
+      "_id": "sh-autumn-2020-grammar-vocabulary-a",
+      "sourceFile": "2020年上海秋季高考英语真题（空白卷）.docx",
+      "pollution": [
+        "directions"
+      ],
+      "oldHash": "b0db6ffd541cd154156e9a7d21730df6de3287216c5ac19c3e671c386487cfd9",
+      "newHash": "534e4c8a932dfc83e0599587263bf902f070fd77b338b961c99a5c0573116d77",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-autumn-2022-grammar-vocabulary-a",
+      "sourceFile": "2022年上海秋季高考英语真题（空白卷）.doc",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "26b0a8d20ae2ef1d99175306f47d5cf0001f6888ab7111fa35e3d037ecd8b122",
+      "newHash": "f152e71617c3a5f0a824b69864a561f0c77aaf393b5f4fc0ed72eb51d2932d6f",
+      "paragraphCount": 7
+    },
+    {
+      "_id": "sh-autumn-2023-grammar-vocabulary-a",
+      "sourceFile": "2023年上海秋季高考英语真题（原卷版）.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "8f727a4cb8ab3fd16d83017ad75e5ecce25aa49fa6d6a507afc3d1b3ee8923ad",
+      "newHash": "a49a8a78918d27e6c763e9d294beb65982899dd66f94367ca8ceff713c53f0fd",
+      "paragraphCount": 5
+    },
+    {
+      "_id": "sh-autumn-2024-grammar-vocabulary-a",
+      "sourceFile": "2024年6月上海市秋季高考英语全真试卷（网络搜集回忆版））.docx",
+      "pollution": [
+        "directions",
+        "score-prefix",
+        "section-heading"
+      ],
+      "oldHash": "fe9ed8c944a2aff096856fffe1e185a82209fac748a1fe6f5b302bcaba9d6027",
+      "newHash": "88c62084865dbc2bd1c156a1d265b3ad84ebb97080d554db52a4a4a35e373c6b",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-autumn-2024-reading-c",
+      "sourceFile": "2024年6月上海市秋季高考英语全真试卷（网络搜集回忆版））.docx",
+      "pollution": [
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "efa8d180d611b571b2e718200e72eb18342ae6af75477c7b42d53663b4a2e77a",
+      "newHash": "898c86b37c873845a4c3c2c17a76f3c644a14cf91853f1eca3c7817cb2abd6df",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-autumn-2025-grammar-vocabulary-a",
+      "sourceFile": "2025年高考英语试卷（上海）（秋考）（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions"
+      ],
+      "oldHash": "bd635afe7587794c628de28e8ecb2d63e5cc9d3c9e5d5713784aa620a3c5c488",
+      "newHash": "da0f719819d5b3c067a345efc5ff29e9780e7860d59c60c71acdb5a77c3d6db5",
+      "paragraphCount": 6
+    },
+    {
+      "_id": "sh-autumn-2025-reading-c",
+      "sourceFile": "2025年高考英语试卷（上海）（秋考）（空白卷）.docx",
+      "pollution": [
+        "article-title",
+        "directions",
+        "section-heading"
+      ],
+      "oldHash": "3d44e1f0309215809e70cfd665b4afb4a9d5534213af7d6cc03814abd47f4cf0",
+      "newHash": "890b60868b636b374a921d2eff7e2e8b1b56a51d683722babf3c8793e4a270de",
+      "paragraphCount": 5
+    }
+  ],
+  "pollutionTypes": {
+    "article-title": 18,
+    "directions": 27,
+    "page-watermark": 11,
+    "question-directions": 97,
+    "score-prefix": 32,
+    "section-heading": 18
+  }
+}

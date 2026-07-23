@@ -185,6 +185,52 @@
   overflow-wrap: break-word;
 }
 
+.reading-source-structure {
+  margin-bottom: 30rpx;
+  padding-bottom: 26rpx;
+  border-bottom: 1rpx solid rgba(141, 183, 212, 0.34);
+}
+
+.reading-section-heading {
+  margin-bottom: 14rpx;
+  color: #587087;
+  font-size: 24rpx;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.reading-directions {
+  margin-bottom: 22rpx;
+  padding: 16rpx 18rpx;
+  border-left: 6rpx solid #8db7d4;
+  background: rgba(141, 183, 212, 0.10);
+  color: #4b6479;
+  font-size: 26rpx;
+  line-height: 1.65;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+.reading-article-title {
+  color: #17314f;
+  font-size: 38rpx;
+  line-height: 1.38;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.reading-article-subtitle {
+  margin-top: 10rpx;
+  color: #657789;
+  font-size: 27rpx;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0;
+}
+
 .passage-paragraph {
   margin-bottom: 28rpx;
   padding: 18rpx 16rpx;

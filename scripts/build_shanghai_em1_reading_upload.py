@@ -4,6 +4,8 @@ import re
 import subprocess
 from pathlib import Path
 
+from reading_content_structure import structure_reading_item
+
 
 ROOTS = [
     Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）/一模'),
@@ -230,7 +232,7 @@ def section_block(text, section):
 
 def build_item(year, district, source, section, passage, questions):
     meta = SECTION_META[section]
-    return {
+    item = {
         '_id': f'sh-em1-{year}-{district}-reading-{section.lower()}',
         'title': f'{year} 上海{district}一模阅读 {section}',
         'year': year,
@@ -247,6 +249,7 @@ def build_item(year, district, source, section, passage, questions):
         'vocabulary': [],
         **meta,
     }
+    return structure_reading_item(item)[0]
 
 
 def main():

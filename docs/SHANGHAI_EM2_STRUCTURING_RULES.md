@@ -6,6 +6,12 @@
 
 后续处理同类结构化任务前，先读本文件，再看对应年份脚本和已有正式 JSON。
 
+## 阅读正文结构
+
+- 一模、二模阅读统一使用 `reading-structured-v1`，拆分 `directions / sectionHeading / articleTitle / articleSubtitle / passageParagraphs[] / passage`。
+- `answer（根据短文内容……）`、`A. Choose the best answer`、分值、页码不得成为正文第 1 段；明确标题从正文移入 `articleTitle`，不明确时留空。
+- `passageParagraphs[]` 只存真实正文，`passage` 由段落双换行连接；生成器和正式 JSON 必须同时通过正文污染为 0 的回归门禁。
+
 ## 线上增量上传总规则
 
 适用：一模/二模的阅读、听力、语法、写作，以及后续同类 `_content/` 上传。

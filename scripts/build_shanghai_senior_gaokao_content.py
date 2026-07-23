@@ -21,6 +21,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from shanghai_senior_summary_structure import extract_summary_source
+from reading_content_structure import structure_reading_item
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -2827,6 +2828,7 @@ def main():
             readings.insert(0, vocabulary_cloze)
         if grammar_cloze:
             readings.insert(0, grammar_cloze)
+        readings = [structure_reading_item(item)[0] for item in readings]
         summary_writing, summary_writing_report = build_summary_writing_item(session, year, primary, source_path)
         translation, translation_report = build_translation_item(session, year, primary, source_path.name, supporting_text)
         writing, writing_report = build_writing_item(session, year, primary, source_path)

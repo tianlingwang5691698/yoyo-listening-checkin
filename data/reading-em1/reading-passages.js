@@ -9,7 +9,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案） ( 12分) A mother in Australia was told by a doctor that her newborn son was “dead”, but she helped bring him back to life by holding the baby against her body. She used a method known as “kangaroo care”( 袋鼠护理法). The child, named Jamie, was born after only 27 weeks with his twin sister, Emily, at a hospital in Sydney. Her birth went well, but his was a different story. The doctor struggled for 20 minutes to save Jamie before declaring (宣布)him dead. “His little arms and legs were just falling down away from his body,” Kate Ogg said, “I took my coat off and put him on my chest with his head over my arm.” She and her husband, David, spoke to the child as she continued to hold him for nearly two hours. During that time, the two-pound baby showed signs of life. She said, “ I told my mom, who was there, that he was still alive. Then he held out his hand and grabbed(抓住) my finger.” Their tiny baby grew stronger and stronger in his mother’s arms, and their final goodbye turned into a hello. The doctor at first ignored(忽视)the baby’s movements, but when he put the stethoscope(听诊器) to its chest, his mouth was wide open and he said, “It’s my fault. It’s a miracle(奇迹)”. “The ‘kangaroo care’ helps the baby keep body warmth,” Dr Pinchi Srinivasan said. “It also regulates(调节) heartbeat and breathing rates and is believed to help weight gain and improve sleeping habits. Fathers can also use ‘kangaroo care’. The key to the method is skin-to-skin contact.” The practice began in less developed nations. It has become a recognized practice in helping premature(早产的)babies. The technique(技术) is good for babies, and is used in many baby care centres.",
+    "passage": "A mother in Australia was told by a doctor that her newborn son was “dead”, but she helped bring him back to life by holding the baby against her body. She used a method known as “kangaroo care”( 袋鼠护理法). The child, named Jamie, was born after only 27 weeks with his twin sister, Emily, at a hospital in Sydney.\n\nHer birth went well, but his was a different story. The doctor struggled for 20 minutes to save Jamie before declaring (宣布)him dead. “His little arms and legs were just falling down away from his body,” Kate Ogg said, “I took my coat off and put him on my chest with his head over my arm.” She and her husband, David, spoke to the child as she continued to hold him for nearly two hours.\n\nDuring that time, the two-pound baby showed signs of life. She said, “ I told my mom, who was there, that he was still alive. Then he held out his hand and grabbed(抓住) my finger.” Their tiny baby grew stronger and stronger in his mother’s arms, and their final goodbye turned into a hello. The doctor at first ignored(忽视)the baby’s movements, but when he put the stethoscope(听诊器) to its chest, his mouth was wide open and he said, “It’s my fault.\n\nIt’s a miracle(奇迹)”. “The ‘kangaroo care’ helps the baby keep body warmth,” Dr Pinchi Srinivasan said. “It also regulates(调节) heartbeat and breathing rates and is believed to help weight gain and improve sleeping habits. Fathers can also use ‘kangaroo care’. The key to the method is skin-to-skin contact.\n\n” The practice began in less developed nations. It has become a recognized practice in helping premature(早产的)babies. The technique(技术) is good for babies, and is used in many baby care centres.",
     "questions": [
       {
         "number": 69,
@@ -89,7 +89,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A mother in Australia was told by a doctor that her newborn son was “dead”, but she helped bring him back to life by holding the baby against her body. She used a method known as “kangaroo care”( 袋鼠护理法). The child, named Jamie, was born after only 27 weeks with his twin sister, Emily, at a hospital in Sydney.",
+      "Her birth went well, but his was a different story. The doctor struggled for 20 minutes to save Jamie before declaring (宣布)him dead. “His little arms and legs were just falling down away from his body,” Kate Ogg said, “I took my coat off and put him on my chest with his head over my arm.” She and her husband, David, spoke to the child as she continued to hold him for nearly two hours.",
+      "During that time, the two-pound baby showed signs of life. She said, “ I told my mom, who was there, that he was still alive. Then he held out his hand and grabbed(抓住) my finger.” Their tiny baby grew stronger and stronger in his mother’s arms, and their final goodbye turned into a hello. The doctor at first ignored(忽视)the baby’s movements, but when he put the stethoscope(听诊器) to its chest, his mouth was wide open and he said, “It’s my fault.",
+      "It’s a miracle(奇迹)”. “The ‘kangaroo care’ helps the baby keep body warmth,” Dr Pinchi Srinivasan said. “It also regulates(调节) heartbeat and breathing rates and is believed to help weight gain and improve sleeping habits. Fathers can also use ‘kangaroo care’. The key to the method is skin-to-skin contact.",
+      "” The practice began in less developed nations. It has become a recognized practice in helping premature(早产的)babies. The technique(技术) is good for babies, and is used in many baby care centres."
+    ]
   },
   {
     "_id": "sh-em1-2014-普陀-reading-a",
@@ -101,7 +113,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer（根据对话内容，选择最恰当的答案) ( 12分) Jenny: I was reading a science magazine called Nature yesterday. It had some interesting articles about life 100 years from now. They talked of many kinds of medical technologies which would allow people to live to be 110 years old. Janet: Oh, I wouldn’t like that at all. I am quite satisfied to live for 70 or 80 years. I don’t want to live any longer than that. I hate to get so old that I could not look after myself. As long as I keep fit and healthy I am happy, but I don’t want to become old and useless to society. Jenny: Well, the magazine also talked about other things that will happen in the future. For example, most people will not travel to work but will communicate online or through video and telephone. Most industries will be operated by robots and controlled by computers. Many people will spend less time at work, but they will spend time doing other things such as looking after their parents. Janet: That sounds awful as well. I enjoy working and I want to continue to work throughout my life. I suppose this magazine also talked about technology in the home. Jenny: Yes, it did. It said it would be possible in the future for everyone to have a home computer which would do everything for you. For example, it would prepare your food, play music and videos and make videophone calls for you. I would love that! It seems quite certain that wealthy people could have these computers in just a few years’ time. Janet: At the same time, the poor people will not have enough food to eat and there will not be enough medicine to keep them healthy. The wonderful future that new medicine and new technology will bring is only for rich people in the rich countries. What will happen to the rest of the world’s population? I hope 100 years from now we will have got rid of poverty(贫困). That is the biggest problem facing us in the 21st century. Jenny: I suppose you are right, Janet. But I would like to live to see the 22nd century as well.",
+    "passage": "Jenny: I was reading a science magazine called Nature yesterday. It had some interesting articles about life 100 years from now. They talked of many kinds of medical technologies which would allow people to live to be 110 years old. Janet: Oh, I wouldn’t like that at all. I am quite satisfied to live for 70 or 80 years.\n\nI don’t want to live any longer than that. I hate to get so old that I could not look after myself. As long as I keep fit and healthy I am happy, but I don’t want to become old and useless to society. Jenny: Well, the magazine also talked about other things that will happen in the future. For example, most people will not travel to work but will communicate online or through video and telephone.\n\nMost industries will be operated by robots and controlled by computers. Many people will spend less time at work, but they will spend time doing other things such as looking after their parents. Janet: That sounds awful as well. I enjoy working and I want to continue to work throughout my life. I suppose this magazine also talked about technology in the home.\n\nJenny: Yes, it did. It said it would be possible in the future for everyone to have a home computer which would do everything for you. For example, it would prepare your food, play music and videos and make videophone calls for you. I would love that! It seems quite certain that wealthy people could have these computers in just a few years’ time.\n\nJanet: At the same time, the poor people will not have enough food to eat and there will not be enough medicine to keep them healthy. The wonderful future that new medicine and new technology will bring is only for rich people in the rich countries. What will happen to the rest of the world’s population?\n\nI hope 100 years from now we will have got rid of poverty(贫困). That is the biggest problem facing us in the 21st century. Jenny: I suppose you are right, Janet. But I would like to live to see the 22nd century as well.",
     "questions": [
       {
         "number": 69,
@@ -181,7 +193,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据对话内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Jenny: I was reading a science magazine called Nature yesterday. It had some interesting articles about life 100 years from now. They talked of many kinds of medical technologies which would allow people to live to be 110 years old. Janet: Oh, I wouldn’t like that at all. I am quite satisfied to live for 70 or 80 years.",
+      "I don’t want to live any longer than that. I hate to get so old that I could not look after myself. As long as I keep fit and healthy I am happy, but I don’t want to become old and useless to society. Jenny: Well, the magazine also talked about other things that will happen in the future. For example, most people will not travel to work but will communicate online or through video and telephone.",
+      "Most industries will be operated by robots and controlled by computers. Many people will spend less time at work, but they will spend time doing other things such as looking after their parents. Janet: That sounds awful as well. I enjoy working and I want to continue to work throughout my life. I suppose this magazine also talked about technology in the home.",
+      "Jenny: Yes, it did. It said it would be possible in the future for everyone to have a home computer which would do everything for you. For example, it would prepare your food, play music and videos and make videophone calls for you. I would love that! It seems quite certain that wealthy people could have these computers in just a few years’ time.",
+      "Janet: At the same time, the poor people will not have enough food to eat and there will not be enough medicine to keep them healthy. The wonderful future that new medicine and new technology will bring is only for rich people in the rich countries. What will happen to the rest of the world’s population?",
+      "I hope 100 years from now we will have got rid of poverty(贫困). That is the biggest problem facing us in the 21st century. Jenny: I suppose you are right, Janet. But I would like to live to see the 22nd century as well."
+    ]
   },
   {
     "_id": "sh-em1-2014-松江-reading-a",
@@ -193,7 +218,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据短文内容，选择最恰当的答案) (12分) Old George selected his food in the supermarket more carefully than NASA chose its astronauts. When he left the cashier, he was pleased to think that he had saved 80 cents today. At the exit, the cold wind made him think of his gloves. He looked for them in his coat and pants but could not find them anywhere. He had bought the black gloves at a good price, for just $35, years ago. They were soft and very comfortable. He had taken great care looking after them, so they were in good condition. George, calm on the outside but mad on the inside, re-entered the store. He followed the same route he had walked before. Several minutes of searching turned out to be in vain (徒劳). His black gloves were gone. “People have changed,” he said to himself. “Years ago, if somebody picked up something lost, they would give it back. Not any more!” He stared at anybody wearing black gloves to see if they looked like his. On his way to the dairy section, he noticed a lady wearing a pair of black gloves. He sped up and in three seconds was in front of her. But when the surprised woman looked over, his eyes dropped, for her gloves were just far too small to be his. He went over to the cashier to ask if she had received any lost gloves, but she said no. He finally walked out into the street. A few days later, poor George decided to buy another leather pair. Before getting on the subway, he stepped into the supermarket again to see if by any chance his gloves had been returned to the lost and found office. “What color are they?” the woman in the office asked. “Black,” he gave the same answer. She looked into her drawer and drew out a pair of men’s leather gloves. “Are they?” “Yes! Those are mine,” George exclaimed, his eyes full of joy.",
+    "passage": "Old George selected his food in the supermarket more carefully than NASA chose its astronauts. When he left the cashier, he was pleased to think that he had saved 80 cents today. At the exit, the cold wind made him think of his gloves. He looked for them in his coat and pants but could not find them anywhere.\n\nHe had bought the black gloves at a good price, for just $35, years ago. They were soft and very comfortable. He had taken great care looking after them, so they were in good condition. George, calm on the outside but mad on the inside, re-entered the store. He followed the same route he had walked before.\n\nSeveral minutes of searching turned out to be in vain (徒劳). His black gloves were gone. “People have changed,” he said to himself. “Years ago, if somebody picked up something lost, they would give it back. Not any more!” He stared at anybody wearing black gloves to see if they looked like his. On his way to the dairy section, he noticed a lady wearing a pair of black gloves.\n\nHe sped up and in three seconds was in front of her. But when the surprised woman looked over, his eyes dropped, for her gloves were just far too small to be his. He went over to the cashier to ask if she had received any lost gloves, but she said no. He finally walked out into the street. A few days later, poor George decided to buy another leather pair.\n\nBefore getting on the subway, he stepped into the supermarket again to see if by any chance his gloves had been returned to the lost and found office. “What color are they?” the woman in the office asked. “Black,” he gave the same answer. She looked into her drawer and drew out a pair of men’s leather gloves. “Are they?” “Yes! Those are mine,” George exclaimed, his eyes full of joy.",
     "questions": [
       {
         "number": 69,
@@ -273,7 +298,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Old George selected his food in the supermarket more carefully than NASA chose its astronauts. When he left the cashier, he was pleased to think that he had saved 80 cents today. At the exit, the cold wind made him think of his gloves. He looked for them in his coat and pants but could not find them anywhere.",
+      "He had bought the black gloves at a good price, for just $35, years ago. They were soft and very comfortable. He had taken great care looking after them, so they were in good condition. George, calm on the outside but mad on the inside, re-entered the store. He followed the same route he had walked before.",
+      "Several minutes of searching turned out to be in vain (徒劳). His black gloves were gone. “People have changed,” he said to himself. “Years ago, if somebody picked up something lost, they would give it back. Not any more!” He stared at anybody wearing black gloves to see if they looked like his. On his way to the dairy section, he noticed a lady wearing a pair of black gloves.",
+      "He sped up and in three seconds was in front of her. But when the surprised woman looked over, his eyes dropped, for her gloves were just far too small to be his. He went over to the cashier to ask if she had received any lost gloves, but she said no. He finally walked out into the street. A few days later, poor George decided to buy another leather pair.",
+      "Before getting on the subway, he stepped into the supermarket again to see if by any chance his gloves had been returned to the lost and found office. “What color are they?” the woman in the office asked. “Black,” he gave the same answer. She looked into her drawer and drew out a pair of men’s leather gloves. “Are they?” “Yes! Those are mine,” George exclaimed, his eyes full of joy."
+    ]
   },
   {
     "_id": "sh-em1-2014-长宁-reading-a",
@@ -285,7 +322,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据短文内容，选择最恰当的答案) (12分) John Brown has always been a hardworking student. However, he finds that studying English is very difficult. At the beginning of the term, he was struggling (努力)to keep up with his classmates. So I was very pleased that at the end of this term, John came top of his class. All areas have improved greatly. In his writing, his spelling and punctuation are much better. He is able to correct his own work and help correct other students’. In speaking, he is much more confident. He can have English conversations with his friends and with me. He takes part in group work and he is not afraid to speak anymore. He is able to read and understand quite difficult texts much more easily. When I ask him questions in English, he smiles and can answer them quickly. John should feel very positive about the progress he has made this term. If he continues like this, he will do very well indeed. Sam Smith is a popular member of the class. He is also very clever. However, his results this term in English have been very disappointing. In his final written exam, he made a lot of mistakes and came last in the class. He should try and check his writing more and concentrate on his spelling. When he is speaking, he should remember to speak more slowly and clearly. Sometimes, it is very difficult to understand what he is saying. He doesn’t seem to listen carefully either. His knowledge of basic English grammar is poor. He needs to buy a good grammar book and study it every day. I realize that Sam is the youngest member of his class. He is an intelligent student who could do well, if he tries harder.",
+    "passage": "John Brown has always been a hardworking student. However, he finds that studying English is very difficult. At the beginning of the term, he was struggling (努力)to keep up with his classmates. So I was very pleased that at the end of this term, John came top of his class. All areas have improved greatly.\n\nIn his writing, his spelling and punctuation are much better. He is able to correct his own work and help correct other students’. In speaking, he is much more confident. He can have English conversations with his friends and with me. He takes part in group work and he is not afraid to speak anymore.\n\nHe is able to read and understand quite difficult texts much more easily. When I ask him questions in English, he smiles and can answer them quickly. John should feel very positive about the progress he has made this term. If he continues like this, he will do very well indeed. Sam Smith is a popular member of the class.\n\nHe is also very clever. However, his results this term in English have been very disappointing. In his final written exam, he made a lot of mistakes and came last in the class. He should try and check his writing more and concentrate on his spelling. When he is speaking, he should remember to speak more slowly and clearly.\n\nSometimes, it is very difficult to understand what he is saying. He doesn’t seem to listen carefully either. His knowledge of basic English grammar is poor. He needs to buy a good grammar book and study it every day. I realize that Sam is the youngest member of his class. He is an intelligent student who could do well, if he tries harder.",
     "questions": [
       {
         "number": 69,
@@ -365,7 +402,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "John Brown has always been a hardworking student. However, he finds that studying English is very difficult. At the beginning of the term, he was struggling (努力)to keep up with his classmates. So I was very pleased that at the end of this term, John came top of his class. All areas have improved greatly.",
+      "In his writing, his spelling and punctuation are much better. He is able to correct his own work and help correct other students’. In speaking, he is much more confident. He can have English conversations with his friends and with me. He takes part in group work and he is not afraid to speak anymore.",
+      "He is able to read and understand quite difficult texts much more easily. When I ask him questions in English, he smiles and can answer them quickly. John should feel very positive about the progress he has made this term. If he continues like this, he will do very well indeed. Sam Smith is a popular member of the class.",
+      "He is also very clever. However, his results this term in English have been very disappointing. In his final written exam, he made a lot of mistakes and came last in the class. He should try and check his writing more and concentrate on his spelling. When he is speaking, he should remember to speak more slowly and clearly.",
+      "Sometimes, it is very difficult to understand what he is saying. He doesn’t seem to listen carefully either. His knowledge of basic English grammar is poor. He needs to buy a good grammar book and study it every day. I realize that Sam is the youngest member of his class. He is an intelligent student who could do well, if he tries harder."
+    ]
   },
   {
     "_id": "sh-em1-2014-闵行-reading-a",
@@ -377,7 +426,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案) (12分) A subway is not just an important form of transport. It is also a window for other people to learn about local cultures. Beijing, China The Beijing Subway was opened in 1969 and is the oldest subway system in China. It has added some modern technologies. All stations now have touch-screen maps. In some stations, people can also see traditional Chinese cultures. For example, on the walls of a few stations of Line 8, there are some pictures of blue and white porcelain(青花瓷）. Stockholm, Sweden The system of the Stockholm Subway has 100 stations in use, of which 47 are underground and 53 above ground. The first subway line for Stockholm was opened in 1950. The Stockholm Subway is well-known for its decoration of the stations. It is called the longest art gallery in the world. Over 90 percent of its stations are decorated with paintings. A few stations are decorated with red bedrocks（岩床）. This makes you feel as if you are in a cave. London, UK The London Underground or the Tube is the oldest subway in the world. It was opened in 1863. During World War II, it was used to protect people from German plane attacks on London. Now, it is a symbol of the city. There is no air conditioning in the trains, so it is very hot in summer. New York, US The New York City Subway has the most extensive public transportation system in the world, with 468 stations. It is also one of the world’s oldest public transit systems. The New York City Subway runs 24 hours a day. It has an express train on almost every line. You can get to your destination promptly. The trains themselves are full of fun; you will see people doing moonwalk dances like Michael Jackson, playing the guitar and singing.",
+    "passage": "A subway is not just an important form of transport. It is also a window for other people to learn about local cultures. Beijing, China The Beijing Subway was opened in 1969 and is the oldest subway system in China. It has added some modern technologies. All stations now have touch-screen maps. In some stations, people can also see traditional Chinese cultures.\n\nFor example, on the walls of a few stations of Line 8, there are some pictures of blue and white porcelain(青花瓷）. Stockholm, Sweden The system of the Stockholm Subway has 100 stations in use, of which 47 are underground and 53 above ground. The first subway line for Stockholm was opened in 1950. The Stockholm Subway is well-known for its decoration of the stations.\n\nIt is called the longest art gallery in the world. Over 90 percent of its stations are decorated with paintings. A few stations are decorated with red bedrocks（岩床）. This makes you feel as if you are in a cave. London, UK The London Underground or the Tube is the oldest subway in the world. It was opened in 1863.\n\nDuring World War II, it was used to protect people from German plane attacks on London. Now, it is a symbol of the city. There is no air conditioning in the trains, so it is very hot in summer. New York, US The New York City Subway has the most extensive public transportation system in the world, with 468 stations.\n\nIt is also one of the world’s oldest public transit systems. The New York City Subway runs 24 hours a day. It has an express train on almost every line. You can get to your destination promptly. The trains themselves are full of fun; you will see people doing moonwalk dances like Michael Jackson, playing the guitar and singing.",
     "questions": [
       {
         "number": 69,
@@ -457,7 +506,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A subway is not just an important form of transport. It is also a window for other people to learn about local cultures. Beijing, China The Beijing Subway was opened in 1969 and is the oldest subway system in China. It has added some modern technologies. All stations now have touch-screen maps. In some stations, people can also see traditional Chinese cultures.",
+      "For example, on the walls of a few stations of Line 8, there are some pictures of blue and white porcelain(青花瓷）. Stockholm, Sweden The system of the Stockholm Subway has 100 stations in use, of which 47 are underground and 53 above ground. The first subway line for Stockholm was opened in 1950. The Stockholm Subway is well-known for its decoration of the stations.",
+      "It is called the longest art gallery in the world. Over 90 percent of its stations are decorated with paintings. A few stations are decorated with red bedrocks（岩床）. This makes you feel as if you are in a cave. London, UK The London Underground or the Tube is the oldest subway in the world. It was opened in 1863.",
+      "During World War II, it was used to protect people from German plane attacks on London. Now, it is a symbol of the city. There is no air conditioning in the trains, so it is very hot in summer. New York, US The New York City Subway has the most extensive public transportation system in the world, with 468 stations.",
+      "It is also one of the world’s oldest public transit systems. The New York City Subway runs 24 hours a day. It has an express train on almost every line. You can get to your destination promptly. The trains themselves are full of fun; you will see people doing moonwalk dances like Michael Jackson, playing the guitar and singing."
+    ]
   },
   {
     "_id": "sh-em1-2014-静安-reading-a",
@@ -469,7 +530,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安(青浦)区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案) (12分) Join the Roller Coaster Club! You’re sitting in a tiny car. The car is part of a very small train that runs on a narrow track. Slowly, the little train climbs to the top of a huge hill. You’re high above the grounds, so high that you can see for miles. Suddenly, you rush toward the ground at a speed that takes your breath away. You’re on your way up again, and this time you’re upside down! You go up, down, and around. You’re on a roller coaster（过山车）. Some people think riding a roller coaster is really terrifying. One ride is more than enough for them, even in a lifetime. However, other people love riding roller coasters. They ride their favourite roller coaster over and over. They also like to try out new roller coaster. There’s a club for people who are very crazy at riding roller coasters. It’s called ACE. ACE is a short form for American Coaster Enthusiasts (热衷者). Steven Reagan and Kevin Lipnicky belong to ACE, and so do their families. Their family holidays often include trips to amusement parks to ride on new roller coasters. As members of ACE, the boys were among the first to ride a new roller coaster at Sea World in Texas. It’s called the Great White, which is the name of a kind of shark. Sometimes, amusement parks close the roller coaster to everyone except ACE members. “If there’s no one in line,” says Steven, “we keep our seats and ride again!” It’s not all fun for ACE members. They also have a job to do. They tell owners of new amusement parks where the old roller coasters are. The owners buy the old roller coasters and move them to new homes so that they can be fixed instead of being destroyed (毁坏) For ACE members, roller coaster riding is fun, fun, fun! People are thankful to the work they do to save different old roller coasters.",
+    "passage": "Join the Roller Coaster Club! You’re sitting in a tiny car. The car is part of a very small train that runs on a narrow track. Slowly, the little train climbs to the top of a huge hill. You’re high above the grounds, so high that you can see for miles. Suddenly, you rush toward the ground at a speed that takes your breath away.\n\nYou’re on your way up again, and this time you’re upside down! You go up, down, and around. You’re on a roller coaster（过山车）. Some people think riding a roller coaster is really terrifying. One ride is more than enough for them, even in a lifetime. However, other people love riding roller coasters. They ride their favourite roller coaster over and over.\n\nThey also like to try out new roller coaster. There’s a club for people who are very crazy at riding roller coasters. It’s called ACE. ACE is a short form for American Coaster Enthusiasts (热衷者). Steven Reagan and Kevin Lipnicky belong to ACE, and so do their families. Their family holidays often include trips to amusement parks to ride on new roller coasters.\n\nAs members of ACE, the boys were among the first to ride a new roller coaster at Sea World in Texas. It’s called the Great White, which is the name of a kind of shark. Sometimes, amusement parks close the roller coaster to everyone except ACE members. “If there’s no one in line,” says Steven, “we keep our seats and ride again!\n\n” It’s not all fun for ACE members. They also have a job to do. They tell owners of new amusement parks where the old roller coasters are. The owners buy the old roller coasters and move them to new homes so that they can be fixed instead of being destroyed (毁坏) For ACE members, roller coaster riding is fun, fun, fun! People are thankful to the work they do to save different old roller coasters.",
     "questions": [
       {
         "number": 69,
@@ -549,7 +610,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Join the Roller Coaster Club! You’re sitting in a tiny car. The car is part of a very small train that runs on a narrow track. Slowly, the little train climbs to the top of a huge hill. You’re high above the grounds, so high that you can see for miles. Suddenly, you rush toward the ground at a speed that takes your breath away.",
+      "You’re on your way up again, and this time you’re upside down! You go up, down, and around. You’re on a roller coaster（过山车）. Some people think riding a roller coaster is really terrifying. One ride is more than enough for them, even in a lifetime. However, other people love riding roller coasters. They ride their favourite roller coaster over and over.",
+      "They also like to try out new roller coaster. There’s a club for people who are very crazy at riding roller coasters. It’s called ACE. ACE is a short form for American Coaster Enthusiasts (热衷者). Steven Reagan and Kevin Lipnicky belong to ACE, and so do their families. Their family holidays often include trips to amusement parks to ride on new roller coasters.",
+      "As members of ACE, the boys were among the first to ride a new roller coaster at Sea World in Texas. It’s called the Great White, which is the name of a kind of shark. Sometimes, amusement parks close the roller coaster to everyone except ACE members. “If there’s no one in line,” says Steven, “we keep our seats and ride again!",
+      "” It’s not all fun for ACE members. They also have a job to do. They tell owners of new amusement parks where the old roller coasters are. The owners buy the old roller coasters and move them to new homes so that they can be fixed instead of being destroyed (毁坏) For ACE members, roller coaster riding is fun, fun, fun! People are thankful to the work they do to save different old roller coasters."
+    ]
   },
   {
     "_id": "sh-em1-2015-嘉定-reading-a",
@@ -561,7 +634,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) How do you like your school? Have you ever written to your headmaster to express your idea? Here are some letters written by students from different schools. Luke, 14, from Jiangsu: I will give some suggestions about our school uniform. In our school, we students have to wear school uniform every day. But the yellow and green sports kit (服装) looks really dark and old. It can't stand for young and lively spirit. We can add some red or orange colors and make a new type of uniform. I hope our headmaster will think about it. Danny, 14, from Zhejiang: I have two suggestions for my headmaster. First of all, I think we should have more hobby classes in science, such as plane model making class and computer programming class. It is really boring to study basic subjects all the time. And second, I hope we can have more PE lessons or more time for physical exercise. Lots of students now don't have a strong enough body. Sam, 15, from Shanxi: I'd like to say thank you to our headmaster. About one week ago, I got a bad cold after playing basketball. Our headmaster came to me after he knew about it. He took care of me until my parents came. I really want to thank him for that. Helen, 14, from Shandong: In the letter I wrote, I want to talk about the possibility of personal classes. Now many middle schools are trying the \"personal class\" system. Students don't have regular classes. They can choose lessons they want to take. I think it is more effective. And it is also good for exercise. We don't have to stay in one classroom all the time.",
+    "passage": "How do you like your school? Have you ever written to your headmaster to express your idea? Here are some letters written by students from different schools. Luke, 14, from Jiangsu: I will give some suggestions about our school uniform. In our school, we students have to wear school uniform every day.\n\nBut the yellow and green sports kit (服装) looks really dark and old. It can't stand for young and lively spirit. We can add some red or orange colors and make a new type of uniform. I hope our headmaster will think about it. Danny, 14, from Zhejiang: I have two suggestions for my headmaster. First of all, I think we should have more hobby classes in science, such as plane model making class and computer programming class.\n\nIt is really boring to study basic subjects all the time. And second, I hope we can have more PE lessons or more time for physical exercise. Lots of students now don't have a strong enough body. Sam, 15, from Shanxi: I'd like to say thank you to our headmaster. About one week ago, I got a bad cold after playing basketball.\n\nOur headmaster came to me after he knew about it. He took care of me until my parents came. I really want to thank him for that. Helen, 14, from Shandong: In the letter I wrote, I want to talk about the possibility of personal classes. Now many middle schools are trying the \"personal class\" system.\n\nStudents don't have regular classes. They can choose lessons they want to take. I think it is more effective. And it is also good for exercise. We don't have to stay in one classroom all the time.",
     "questions": [
       {
         "number": 69,
@@ -641,7 +714,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "How do you like your school? Have you ever written to your headmaster to express your idea? Here are some letters written by students from different schools. Luke, 14, from Jiangsu: I will give some suggestions about our school uniform. In our school, we students have to wear school uniform every day.",
+      "But the yellow and green sports kit (服装) looks really dark and old. It can't stand for young and lively spirit. We can add some red or orange colors and make a new type of uniform. I hope our headmaster will think about it. Danny, 14, from Zhejiang: I have two suggestions for my headmaster. First of all, I think we should have more hobby classes in science, such as plane model making class and computer programming class.",
+      "It is really boring to study basic subjects all the time. And second, I hope we can have more PE lessons or more time for physical exercise. Lots of students now don't have a strong enough body. Sam, 15, from Shanxi: I'd like to say thank you to our headmaster. About one week ago, I got a bad cold after playing basketball.",
+      "Our headmaster came to me after he knew about it. He took care of me until my parents came. I really want to thank him for that. Helen, 14, from Shandong: In the letter I wrote, I want to talk about the possibility of personal classes. Now many middle schools are trying the \"personal class\" system.",
+      "Students don't have regular classes. They can choose lessons they want to take. I think it is more effective. And it is also good for exercise. We don't have to stay in one classroom all the time."
+    ]
   },
   {
     "_id": "sh-em1-2015-奉贤-reading-a",
@@ -653,7 +738,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Have you ever wanted a friend who can solve problems with magic tricks? Well, a round-headed blue robotic cat is the friend you are looking for. Doraemon (多啦A梦) is a character created in the 1970s by Japanese cartoonist Fujiko E Fujio. Starting form Dec 1, on the birthday of Fujio, Doraemon is returning in a new comic series. This is the first new Doraemon since it ended eight years ago. In the story, Doraemon comes from the 22nd century. He becomes friends with a fourth-grade boy called Nobita (大雄) who is like you and your classmates. He has arguments with his friends, is blamed by his mother, and gets a headache from his homework. But luckily, Doraemon is always there to help. If you ask what makes the Doraemon series so popular, the simple answer may lie in Doraemon's amazing pocket that's full of cool gadgets (小玩意儿). Anywhere Door helps Nobita go anywhere to make his dreams come true. Memory Bread, once eaten, helps him remember textbooks quickly. Xia Xue, 14, from Yangzhou, Jiangsu province, wished she could have one, too. \"With Memory Bread, I can press it on my textbook and eat it,\" Xia said. \"This way, exams would be a piece of cake!\" Doraemon is also like a real person. He has a nice personality. He teaches Nobita courage and friendship. He even has a favourite food. But sometimes, he is lazy and tells small lies. But more than that, Doraemon gives a message: the future can be likable, the present is redeemable (可补救的), and you can be happy even if you're blue, Time magazine once commented. This encourages children that no matter what ups and downs they have, they can always get through them.",
+    "passage": "Have you ever wanted a friend who can solve problems with magic tricks? Well, a round-headed blue robotic cat is the friend you are looking for. Doraemon (多啦A梦) is a character created in the 1970s by Japanese cartoonist Fujiko E Fujio. Starting form Dec 1, on the birthday of Fujio, Doraemon is returning in a new comic series.\n\nThis is the first new Doraemon since it ended eight years ago. In the story, Doraemon comes from the 22nd century. He becomes friends with a fourth-grade boy called Nobita (大雄) who is like you and your classmates. He has arguments with his friends, is blamed by his mother, and gets a headache from his homework.\n\nBut luckily, Doraemon is always there to help. If you ask what makes the Doraemon series so popular, the simple answer may lie in Doraemon's amazing pocket that's full of cool gadgets (小玩意儿). Anywhere Door helps Nobita go anywhere to make his dreams come true. Memory Bread, once eaten, helps him remember textbooks quickly.\n\nXia Xue, 14, from Yangzhou, Jiangsu province, wished she could have one, too. \"With Memory Bread, I can press it on my textbook and eat it,\" Xia said. \"This way, exams would be a piece of cake!\" Doraemon is also like a real person. He has a nice personality. He teaches Nobita courage and friendship.\n\nHe even has a favourite food. But sometimes, he is lazy and tells small lies. But more than that, Doraemon gives a message: the future can be likable, the present is redeemable (可补救的), and you can be happy even if you're blue, Time magazine once commented. This encourages children that no matter what ups and downs they have, they can always get through them.",
     "questions": [
       {
         "number": 69,
@@ -733,7 +818,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Have you ever wanted a friend who can solve problems with magic tricks? Well, a round-headed blue robotic cat is the friend you are looking for. Doraemon (多啦A梦) is a character created in the 1970s by Japanese cartoonist Fujiko E Fujio. Starting form Dec 1, on the birthday of Fujio, Doraemon is returning in a new comic series.",
+      "This is the first new Doraemon since it ended eight years ago. In the story, Doraemon comes from the 22nd century. He becomes friends with a fourth-grade boy called Nobita (大雄) who is like you and your classmates. He has arguments with his friends, is blamed by his mother, and gets a headache from his homework.",
+      "But luckily, Doraemon is always there to help. If you ask what makes the Doraemon series so popular, the simple answer may lie in Doraemon's amazing pocket that's full of cool gadgets (小玩意儿). Anywhere Door helps Nobita go anywhere to make his dreams come true. Memory Bread, once eaten, helps him remember textbooks quickly.",
+      "Xia Xue, 14, from Yangzhou, Jiangsu province, wished she could have one, too. \"With Memory Bread, I can press it on my textbook and eat it,\" Xia said. \"This way, exams would be a piece of cake!\" Doraemon is also like a real person. He has a nice personality. He teaches Nobita courage and friendship.",
+      "He even has a favourite food. But sometimes, he is lazy and tells small lies. But more than that, Doraemon gives a message: the future can be likable, the present is redeemable (可补救的), and you can be happy even if you're blue, Time magazine once commented. This encourages children that no matter what ups and downs they have, they can always get through them."
+    ]
   },
   {
     "_id": "sh-em1-2015-宝山-reading-a",
@@ -745,7 +842,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer( 根据短文内容，选择最恰当的答案) (12分) People usually imagine they are much more likely to win the lottery(彩票) than they really are. The American lottery is promoted(促销)with the phrase(短语) \"It could be you\", which, of course, is technically true. To tell the whole truth it should be read: \"It could be you, but it almost certainly won't be.\" Recently thousands of people began pouring into(涌入) Pennsylvania from other states. They wanted to buy lottery tickets. The tickets cost only $ 0.9 each. But that small spending could bring them a reward of $ 90 million. That was the second largest lottery jackpot (积累奖金) in history. More than 87 million tickets were bought for the Pennsylvania lottery drawing(抽奖). Those who bought tickets had to choose seven numbers from 1 to 80. The chance of winning was one in 9.6 million, but that little chance certainly didn't affect ticket sales. In the last few days before the drawing, tickets were sold at the unbelievable rate of 500 per second. Experts say many people buy lottery tickets because they just want to have a piece of the action. Others say the lottery is a stock market for poor people. It allows them to dream about wealth they'll probably never have. But many people believe lotteries are no better than legalized(合法化的)gambling. Some critics (评论家)note that most people who play are poor and may not be able to afford the tickets. There are also many addicts (入迷的人) who take the game seriously. They may pour their life savings into lottery tickets. Some clubs have been formed to help them get rid of the habit. Politicians (政治家) like lotteries because they provide money that would otherwise have to come from new taxes(税收) .The profits from lotteries are usually used to pay for education or programs for the old people. But critics say this arrangement just allows states to legalize vice (恶习) under the name of social progress. Whether you regard stock lotteries right or not, you cannot refuse to accept their extreme popularity with many Americans.",
+    "passage": "People usually imagine they are much more likely to win the lottery(彩票) than they really are. The American lottery is promoted(促销)with the phrase(短语) \"It could be you\", which, of course, is technically true. To tell the whole truth it should be read: \"It could be you, but it almost certainly won't be.\n\n\" Recently thousands of people began pouring into(涌入) Pennsylvania from other states. They wanted to buy lottery tickets. The tickets cost only $ 0.9 each. But that small spending could bring them a reward of $ 90 million. That was the second largest lottery jackpot (积累奖金) in history. More than 87 million tickets were bought for the Pennsylvania lottery drawing(抽奖).\n\nThose who bought tickets had to choose seven numbers from 1 to 80. The chance of winning was one in 9.6 million, but that little chance certainly didn't affect ticket sales. In the last few days before the drawing, tickets were sold at the unbelievable rate of 500 per second. Experts say many people buy lottery tickets because they just want to have a piece of the action.\n\nOthers say the lottery is a stock market for poor people. It allows them to dream about wealth they'll probably never have. But many people believe lotteries are no better than legalized(合法化的)gambling. Some critics (评论家)note that most people who play are poor and may not be able to afford the tickets.\n\nThere are also many addicts (入迷的人) who take the game seriously. They may pour their life savings into lottery tickets. Some clubs have been formed to help them get rid of the habit. Politicians (政治家) like lotteries because they provide money that would otherwise have to come from new taxes(税收) .The profits from lotteries are usually used to pay for education or programs for the old people.\n\nBut critics say this arrangement just allows states to legalize vice (恶习) under the name of social progress. Whether you regard stock lotteries right or not, you cannot refuse to accept their extreme popularity with many Americans.",
     "questions": [
       {
         "number": 69,
@@ -813,7 +910,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "People usually imagine they are much more likely to win the lottery(彩票) than they really are. The American lottery is promoted(促销)with the phrase(短语) \"It could be you\", which, of course, is technically true. To tell the whole truth it should be read: \"It could be you, but it almost certainly won't be.",
+      "\" Recently thousands of people began pouring into(涌入) Pennsylvania from other states. They wanted to buy lottery tickets. The tickets cost only $ 0.9 each. But that small spending could bring them a reward of $ 90 million. That was the second largest lottery jackpot (积累奖金) in history. More than 87 million tickets were bought for the Pennsylvania lottery drawing(抽奖).",
+      "Those who bought tickets had to choose seven numbers from 1 to 80. The chance of winning was one in 9.6 million, but that little chance certainly didn't affect ticket sales. In the last few days before the drawing, tickets were sold at the unbelievable rate of 500 per second. Experts say many people buy lottery tickets because they just want to have a piece of the action.",
+      "Others say the lottery is a stock market for poor people. It allows them to dream about wealth they'll probably never have. But many people believe lotteries are no better than legalized(合法化的)gambling. Some critics (评论家)note that most people who play are poor and may not be able to afford the tickets.",
+      "There are also many addicts (入迷的人) who take the game seriously. They may pour their life savings into lottery tickets. Some clubs have been formed to help them get rid of the habit. Politicians (政治家) like lotteries because they provide money that would otherwise have to come from new taxes(税收) .The profits from lotteries are usually used to pay for education or programs for the old people.",
+      "But critics say this arrangement just allows states to legalize vice (恶习) under the name of social progress. Whether you regard stock lotteries right or not, you cannot refuse to accept their extreme popularity with many Americans."
+    ]
   },
   {
     "_id": "sh-em1-2015-崇明-reading-a",
@@ -825,7 +935,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明县2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Gary and Gavin were twin brothers who worked in a department store owned by their father. After the father had passed away, they took over the store. Everything went well until the day a twenty-dollar bill disappeared. Gary had left the bill on the cash register. But when he returned, the money was gone. Gary then asked his brother Gavin, \"Did you see that twenty-dollar bill on the cash register?\" Gavin said that he had not. But Gary did not let it go and kept questioning. \"Twenty-dollar bills can't get up and walk away by themselves! Surely you must have seen it.\" Gary was unhappy. Tempers began to rise and resentment(怨恨) grew. \"I said I didn't see it!\" Gavin replied with anger. The quarrel divided the young men and they could no longer work together. Later, a wall was built in the center of the store. For twenty years, hostility(敌意) never ended. One day, a strange man came to the store. He walked in and asked Gary, \"How long have you been here?\" Gary replied that he'd been there all his life. \"Then you are the person I'm looking for, since I must confess(坦白) something to you,\" the stranger said. 'Twenty years ago, I was totally broke(破产了) and hungry. I entered this store from the back door and saw a twenty-dollar bill on the cash register. And I took it. All these years I haven't been able to forget that. I had to come back and ask for your forgiveness.\" The stranger felt surprised when seeing tears well up in the eyes of the middle-aged man in front of him. \"Would you please go next door and tell the same story to the man in the store?\" Gary asked. Then something surprised the stranger even more--after hearing his story, the two middle-aged men hugged each other and cried together in front of the wall of the store. After twenty years, the wall of resentment that set them apart finally came down.",
+    "passage": "Gary and Gavin were twin brothers who worked in a department store owned by their father. After the father had passed away, they took over the store. Everything went well until the day a twenty-dollar bill disappeared. Gary had left the bill on the cash register. But when he returned, the money was gone.\n\nGary then asked his brother Gavin, \"Did you see that twenty-dollar bill on the cash register?\" Gavin said that he had not. But Gary did not let it go and kept questioning. \"Twenty-dollar bills can't get up and walk away by themselves! Surely you must have seen it.\" Gary was unhappy. Tempers began to rise and resentment(怨恨) grew.\n\n\"I said I didn't see it!\" Gavin replied with anger. The quarrel divided the young men and they could no longer work together. Later, a wall was built in the center of the store. For twenty years, hostility(敌意) never ended. One day, a strange man came to the store. He walked in and asked Gary, \"How long have you been here?\n\n\" Gary replied that he'd been there all his life. \"Then you are the person I'm looking for, since I must confess(坦白) something to you,\" the stranger said. 'Twenty years ago, I was totally broke(破产了) and hungry. I entered this store from the back door and saw a twenty-dollar bill on the cash register.\n\nAnd I took it. All these years I haven't been able to forget that. I had to come back and ask for your forgiveness.\" The stranger felt surprised when seeing tears well up in the eyes of the middle-aged man in front of him. \"Would you please go next door and tell the same story to the man in the store?\n\n\" Gary asked. Then something surprised the stranger even more--after hearing his story, the two middle-aged men hugged each other and cried together in front of the wall of the store. After twenty years, the wall of resentment that set them apart finally came down.",
     "questions": [
       {
         "number": 69,
@@ -905,7 +1015,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Gary and Gavin were twin brothers who worked in a department store owned by their father. After the father had passed away, they took over the store. Everything went well until the day a twenty-dollar bill disappeared. Gary had left the bill on the cash register. But when he returned, the money was gone.",
+      "Gary then asked his brother Gavin, \"Did you see that twenty-dollar bill on the cash register?\" Gavin said that he had not. But Gary did not let it go and kept questioning. \"Twenty-dollar bills can't get up and walk away by themselves! Surely you must have seen it.\" Gary was unhappy. Tempers began to rise and resentment(怨恨) grew.",
+      "\"I said I didn't see it!\" Gavin replied with anger. The quarrel divided the young men and they could no longer work together. Later, a wall was built in the center of the store. For twenty years, hostility(敌意) never ended. One day, a strange man came to the store. He walked in and asked Gary, \"How long have you been here?",
+      "\" Gary replied that he'd been there all his life. \"Then you are the person I'm looking for, since I must confess(坦白) something to you,\" the stranger said. 'Twenty years ago, I was totally broke(破产了) and hungry. I entered this store from the back door and saw a twenty-dollar bill on the cash register.",
+      "And I took it. All these years I haven't been able to forget that. I had to come back and ask for your forgiveness.\" The stranger felt surprised when seeing tears well up in the eyes of the middle-aged man in front of him. \"Would you please go next door and tell the same story to the man in the store?",
+      "\" Gary asked. Then something surprised the stranger even more--after hearing his story, the two middle-aged men hugged each other and cried together in front of the wall of the store. After twenty years, the wall of resentment that set them apart finally came down."
+    ]
   },
   {
     "_id": "sh-em1-2015-普陀-reading-a",
@@ -917,7 +1040,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer. ″Share Flat Happy Village big flat, 1 room ready for use immediately, with all necessary furniture and appliances. 3 minutes’ walk to underground station, 2 blocks from shopping center, park view, $2100 including bills, female nonsmoker, no pet. Sara 25720836 or 10077809 ″Moving Sale 2 armchairs, red/brown at $400 each; coffee table, black, wood, $800; oil painting, big, $900; Tianjin carpet, green, 3*7, $600; double bed, $500’ , mirror, big, square, $500, fridge, big double-door, $1000; old pictures, $140 each. Mr. Brown, Tel Weekend, 25216011, Weekday, 25245867 ″Part-time Lab Assistant Wanted Required by busy electronics company to help with development of computer, should have an electronic degree and some experience of working in an electronic lab. Hours 9:00am—1:00pm, Monday – Friday Salary 6,598 – 10,230 dependent on experience Letter of application to Mrs. G Chan NOVA ELECTRONICS, 45 Shanxi RD, Shanghai",
+    "passage": "″Share Flat Happy Village big flat, 1 room ready for use immediately, with all necessary furniture and appliances. 3 minutes’ walk to underground station, 2 blocks from shopping center, park view, $2100 including bills, female nonsmoker, no pet. Sara 25720836 or 10077809 ″Moving Sale 2 armchairs, red/brown at $400 each; coffee table, black, wood, $800; oil painting, big, $900; Tianjin carpet, green, 3*7, $600; double bed, $500’ , mirror, big, square, $500, fridge, big double-door, $1000; old pictures, $140 each.\n\nMr. Brown, Tel Weekend, 25216011, Weekday, 25245867 ″Part-time Lab Assistant Wanted Required by busy electronics company to help with development of computer, should have an electronic degree and some experience of working in an electronic lab. Hours 9:00am—1:00pm, Monday – Friday Salary 6,598 – 10,230 dependent on experience Letter of application to Mrs. G Chan NOVA ELECTRONICS, 45 Shanxi RD, Shanghai",
     "questions": [
       {
         "number": 69,
@@ -985,7 +1108,16 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "″Share Flat Happy Village big flat, 1 room ready for use immediately, with all necessary furniture and appliances. 3 minutes’ walk to underground station, 2 blocks from shopping center, park view, $2100 including bills, female nonsmoker, no pet. Sara 25720836 or 10077809 ″Moving Sale 2 armchairs, red/brown at $400 each; coffee table, black, wood, $800; oil painting, big, $900; Tianjin carpet, green, 3*7, $600; double bed, $500’ , mirror, big, square, $500, fridge, big double-door, $1000; old pictures, $140 each.",
+      "Mr. Brown, Tel Weekend, 25216011, Weekday, 25245867 ″Part-time Lab Assistant Wanted Required by busy electronics company to help with development of computer, should have an electronic degree and some experience of working in an electronic lab. Hours 9:00am—1:00pm, Monday – Friday Salary 6,598 – 10,230 dependent on experience Letter of application to Mrs. G Chan NOVA ELECTRONICS, 45 Shanxi RD, Shanghai"
+    ]
   },
   {
     "_id": "sh-em1-2015-松江-reading-a",
@@ -997,7 +1129,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer(根据短文内容，选择最恰当的答案)(12分) A linguist, who studies languages, is always listening, never off-duty. I invited a group of friends round to my house, telling them that I was going to record their speech. I said I was interested in their regional accents(地方口音), and it would take only a few minutes to record it. Afterwards, one evening, three people came to my house and were shown into my sitting-room. In front of each chair there was a microphone(麦克风) at head height, connected to a recorder in the middle of the floor. They sat down, rather nervously. I explained that all I wanted was for them to count from one to twenty, then we could relax and have a drink. I turned on the recorder and each in turn counted from one to twenty in their best accents. When it was over, I turned the recorder off and brought round the drinks. The rest of the evening was spent in complete relaxation. I talked and joked with them freely by leaving them only for a telephone call which lasted some time. Or at least that is how it would appear. You know, of course, the microphones were not connected to the recorder in the middle of the room at all but to another one in the bedroom. My friends, having seen the recorder before them turned off, paid no more attention to the microphones a few inches from their mouths, thus giving excellent sound quality(质量). It meant that I was able to get a piece of natural talk. I should add, perhaps, that I did tell my friends what had happened to them, after the recording was over, and asked them whether it should be destroyed. None of them wanted to---but for some years after that, it always seemed that when it came to buying drinks, I paid for them. Linguistic research can be a very expensive business.",
+    "passage": "A linguist, who studies languages, is always listening, never off-duty. I invited a group of friends round to my house, telling them that I was going to record their speech. I said I was interested in their regional accents(地方口音), and it would take only a few minutes to record it. Afterwards, one evening, three people came to my house and were shown into my sitting-room.\n\nIn front of each chair there was a microphone(麦克风) at head height, connected to a recorder in the middle of the floor. They sat down, rather nervously. I explained that all I wanted was for them to count from one to twenty, then we could relax and have a drink. I turned on the recorder and each in turn counted from one to twenty in their best accents.\n\nWhen it was over, I turned the recorder off and brought round the drinks. The rest of the evening was spent in complete relaxation. I talked and joked with them freely by leaving them only for a telephone call which lasted some time. Or at least that is how it would appear. You know, of course, the microphones were not connected to the recorder in the middle of the room at all but to another one in the bedroom.\n\nMy friends, having seen the recorder before them turned off, paid no more attention to the microphones a few inches from their mouths, thus giving excellent sound quality(质量). It meant that I was able to get a piece of natural talk. I should add, perhaps, that I did tell my friends what had happened to them, after the recording was over, and asked them whether it should be destroyed.\n\nNone of them wanted to---but for some years after that, it always seemed that when it came to buying drinks, I paid for them. Linguistic research can be a very expensive business.",
     "questions": [
       {
         "number": 69,
@@ -1077,7 +1209,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A linguist, who studies languages, is always listening, never off-duty. I invited a group of friends round to my house, telling them that I was going to record their speech. I said I was interested in their regional accents(地方口音), and it would take only a few minutes to record it. Afterwards, one evening, three people came to my house and were shown into my sitting-room.",
+      "In front of each chair there was a microphone(麦克风) at head height, connected to a recorder in the middle of the floor. They sat down, rather nervously. I explained that all I wanted was for them to count from one to twenty, then we could relax and have a drink. I turned on the recorder and each in turn counted from one to twenty in their best accents.",
+      "When it was over, I turned the recorder off and brought round the drinks. The rest of the evening was spent in complete relaxation. I talked and joked with them freely by leaving them only for a telephone call which lasted some time. Or at least that is how it would appear. You know, of course, the microphones were not connected to the recorder in the middle of the room at all but to another one in the bedroom.",
+      "My friends, having seen the recorder before them turned off, paid no more attention to the microphones a few inches from their mouths, thus giving excellent sound quality(质量). It meant that I was able to get a piece of natural talk. I should add, perhaps, that I did tell my friends what had happened to them, after the recording was over, and asked them whether it should be destroyed.",
+      "None of them wanted to---but for some years after that, it always seemed that when it came to buying drinks, I paid for them. Linguistic research can be a very expensive business."
+    ]
   },
   {
     "_id": "sh-em1-2015-闵行-reading-a",
@@ -1089,7 +1233,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Dmitri is a 12-year-old student in Russia. We asked him about the things he does in a typical day. What time do you usually get up ? I usually get up at 7:30 a.m. for school. In winter, it's still dark and cold. You can see the vapour from your own breath! I am reluctant(勉强得) to get out of bed. My family lives in a small fiat. Every morning, I fold up the bedclothes and mattress (床垫) and store them in the cupboard. What do you have for breakfast? We have substantial breakfast in the school canteen. I like hot milk, bread with jam, or cheese and biscuits to keep me from being cold. And I felt quite satisfied after I have the breakfast. How do you get to school? My brother and I go to the same school. We either go by bicycle or we walk. Why do you walk if you have bicycles? We go by bicycle when there is no snow. When the weather is very bad, it is safer to walk. Where is your school? We go to Secondary School 27 in Izhevsk. It is about 30 minutes' walk from home, or 10 minutes by bike. And cycling is the quickest way to go to school. What time do classes begin? Classes start at 9 a.m. and finish at 2:30 p.m. We have a break at 11:15 a.m. and lunch break at 12:30 a.m. What subjects do you study? We study Russian language and history. And we study English, Maths and Geography. Boys have Manual Work classes while girls have Arts and Crafts. Are you taking part in any after-class activities? I have football practice on Tuesdays after school. The other days, I stay with my classmates and do homework for two hours because my home is in a very small space.",
+    "passage": "Dmitri is a 12-year-old student in Russia. We asked him about the things he does in a typical day. What time do you usually get up ? I usually get up at 7:30 a.m. for school. In winter, it's still dark and cold. You can see the vapour from your own breath! I am reluctant(勉强得) to get out of bed. My family lives in a small fiat.\n\nEvery morning, I fold up the bedclothes and mattress (床垫) and store them in the cupboard. What do you have for breakfast? We have substantial breakfast in the school canteen. I like hot milk, bread with jam, or cheese and biscuits to keep me from being cold. And I felt quite satisfied after I have the breakfast.\n\nHow do you get to school? My brother and I go to the same school. We either go by bicycle or we walk. Why do you walk if you have bicycles? We go by bicycle when there is no snow. When the weather is very bad, it is safer to walk. Where is your school? We go to Secondary School 27 in Izhevsk. It is about 30 minutes' walk from home, or 10 minutes by bike.\n\nAnd cycling is the quickest way to go to school. What time do classes begin? Classes start at 9 a.m. and finish at 2:30 p.m. We have a break at 11:15 a.m. and lunch break at 12:30 a.m. What subjects do you study? We study Russian language and history. And we study English, Maths and Geography. Boys have Manual Work classes while girls have Arts and Crafts.\n\nAre you taking part in any after-class activities? I have football practice on Tuesdays after school. The other days, I stay with my classmates and do homework for two hours because my home is in a very small space.",
     "questions": [
       {
         "number": 69,
@@ -1169,7 +1313,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Dmitri is a 12-year-old student in Russia. We asked him about the things he does in a typical day. What time do you usually get up ? I usually get up at 7:30 a.m. for school. In winter, it's still dark and cold. You can see the vapour from your own breath! I am reluctant(勉强得) to get out of bed. My family lives in a small fiat.",
+      "Every morning, I fold up the bedclothes and mattress (床垫) and store them in the cupboard. What do you have for breakfast? We have substantial breakfast in the school canteen. I like hot milk, bread with jam, or cheese and biscuits to keep me from being cold. And I felt quite satisfied after I have the breakfast.",
+      "How do you get to school? My brother and I go to the same school. We either go by bicycle or we walk. Why do you walk if you have bicycles? We go by bicycle when there is no snow. When the weather is very bad, it is safer to walk. Where is your school? We go to Secondary School 27 in Izhevsk. It is about 30 minutes' walk from home, or 10 minutes by bike.",
+      "And cycling is the quickest way to go to school. What time do classes begin? Classes start at 9 a.m. and finish at 2:30 p.m. We have a break at 11:15 a.m. and lunch break at 12:30 a.m. What subjects do you study? We study Russian language and history. And we study English, Maths and Geography. Boys have Manual Work classes while girls have Arts and Crafts.",
+      "Are you taking part in any after-class activities? I have football practice on Tuesdays after school. The other days, I stay with my classmates and do homework for two hours because my home is in a very small space."
+    ]
   },
   {
     "_id": "sh-em1-2015-静安-reading-a",
@@ -1181,7 +1337,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安(青浦)区2015届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) E-mail messages from Vietnam Message 1: March 24th Hi everybody, Greetings from Vietnam (越南)! We arrived here tired, but excited. This is our first trip to Asia and the friendliness of the people is amazing. All the different sights and smells make us eager to try the food. We are looking forward to eating Vietnamese food for dinner tonight. Our hotel is cheap, but very clean. The owners are friendly and helpful. They have told us about some places that we shouldn't miss. We plan to stay here in Ho Chi Minh City for a few days, and then travel to the north. Message 2: March 27th Hi everybody, Vietnam is fantastic! The different Buddha status (佛像) are wonderful to look at. We visited the market in Cholon. Everything there was so colorful, and we took lots of photographs! Later today we took the train north. We'll stay in Hanoi for two days, and then catch a bus to Sapa. We're going to go hiking in the mountains. Message 3: April 4th Hi everybody, Now we're in the old capital city of Hue. After hiking around the mountains, it's nice to have accommodation with electricity and a shower to have a good rest! Our trip to Sapa was long and tiring. From there, we took a bus to a small village in the mountains, where we met some hill tribe (部落) people who live a simple life - no electricity or telephones. They are the kindest, friendliest people I've ever met. Everyone smiles and says \"hello\". This afternoon, we're taking a walking tour in Hue. We're going to visit the Forbidden Purple City, where the king and queen once lived. Message 4: April 6th Hi everybody, Hue is really a wonderful city with lots to see. I would love to stay longer, but we're both ready for the beach. Tomorrow we'll take the train back to the south, and then we're going to a town called Vung Tan. It has several beaches, and it's famous for seashells. Vietnam is an amazing country, with so much variety - big modern cities and small traditional towns, mountains, forests and the seashore. Three weeks here just isn't enough.",
+    "passage": "E-mail messages from Vietnam Message 1: March 24th Hi everybody, Greetings from Vietnam (越南)! We arrived here tired, but excited. This is our first trip to Asia and the friendliness of the people is amazing. All the different sights and smells make us eager to try the food. We are looking forward to eating Vietnamese food for dinner tonight.\n\nOur hotel is cheap, but very clean. The owners are friendly and helpful. They have told us about some places that we shouldn't miss. We plan to stay here in Ho Chi Minh City for a few days, and then travel to the north. Message 2: March 27th Hi everybody, Vietnam is fantastic! The different Buddha status (佛像) are wonderful to look at.\n\nWe visited the market in Cholon. Everything there was so colorful, and we took lots of photographs! Later today we took the train north. We'll stay in Hanoi for two days, and then catch a bus to Sapa. We're going to go hiking in the mountains. Message 3: April 4th Hi everybody, Now we're in the old capital city of Hue.\n\nAfter hiking around the mountains, it's nice to have accommodation with electricity and a shower to have a good rest! Our trip to Sapa was long and tiring. From there, we took a bus to a small village in the mountains, where we met some hill tribe (部落) people who live a simple life - no electricity or telephones.\n\nThey are the kindest, friendliest people I've ever met. Everyone smiles and says \"hello\". This afternoon, we're taking a walking tour in Hue. We're going to visit the Forbidden Purple City, where the king and queen once lived. Message 4: April 6th Hi everybody, Hue is really a wonderful city with lots to see.\n\nI would love to stay longer, but we're both ready for the beach. Tomorrow we'll take the train back to the south, and then we're going to a town called Vung Tan. It has several beaches, and it's famous for seashells. Vietnam is an amazing country, with so much variety - big modern cities and small traditional towns, mountains, forests and the seashore. Three weeks here just isn't enough.",
     "questions": [
       {
         "number": 69,
@@ -1261,7 +1417,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "E-mail messages from Vietnam Message 1: March 24th Hi everybody, Greetings from Vietnam (越南)! We arrived here tired, but excited. This is our first trip to Asia and the friendliness of the people is amazing. All the different sights and smells make us eager to try the food. We are looking forward to eating Vietnamese food for dinner tonight.",
+      "Our hotel is cheap, but very clean. The owners are friendly and helpful. They have told us about some places that we shouldn't miss. We plan to stay here in Ho Chi Minh City for a few days, and then travel to the north. Message 2: March 27th Hi everybody, Vietnam is fantastic! The different Buddha status (佛像) are wonderful to look at.",
+      "We visited the market in Cholon. Everything there was so colorful, and we took lots of photographs! Later today we took the train north. We'll stay in Hanoi for two days, and then catch a bus to Sapa. We're going to go hiking in the mountains. Message 3: April 4th Hi everybody, Now we're in the old capital city of Hue.",
+      "After hiking around the mountains, it's nice to have accommodation with electricity and a shower to have a good rest! Our trip to Sapa was long and tiring. From there, we took a bus to a small village in the mountains, where we met some hill tribe (部落) people who live a simple life - no electricity or telephones.",
+      "They are the kindest, friendliest people I've ever met. Everyone smiles and says \"hello\". This afternoon, we're taking a walking tour in Hue. We're going to visit the Forbidden Purple City, where the king and queen once lived. Message 4: April 6th Hi everybody, Hue is really a wonderful city with lots to see.",
+      "I would love to stay longer, but we're both ready for the beach. Tomorrow we'll take the train back to the south, and then we're going to a town called Vung Tan. It has several beaches, and it's famous for seashells. Vietnam is an amazing country, with so much variety - big modern cities and small traditional towns, mountains, forests and the seashore. Three weeks here just isn't enough."
+    ]
   },
   {
     "_id": "sh-em1-2016-嘉定-reading-a",
@@ -1273,7 +1442,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) I put my carry-on in the luggage compartment (行李舱架) andsat down in my seat. Just before take-off, a line of soldiers came downthe aisle (过道) and filled all the empty seats. After flying for about an hour, an announcement was made thatsack lunches (午餐袋) were available for $ 5. As I reached for mywallet to buy one, I overheard the soldier ask his buddy if he plannedto buy lunch. \"No, that seems like a lot of money for just a sack lunch.I'll wait till we get to Chicago.\" His friend agreed. I looked around at the other soldiers. None were buying lunch. I walked to the back of the planeand handed the flight attendant(服务人员) a $50 bill. \"Take a lunch to all those soldiers.\" After we finished eating, I went again to the back of the plane heading for the restroom. A manstopped me. \"I saw what you did. I want to be part ofit. Here, take this.\" He handed me $25. Soon after I returned to my seat, I saw the Flight Captain coming down the aisle. When he got tomy row, he stopped and said, \"I want to shake your hand. I was a soldier and I was a military (315A)pilot. Once, someone bought me a lunch. It was an act of kindness I never forgot.\" I was embarrassedwhen applause（掌声）was heard from all ofthe passengers. Later I walked to the front ofthe plane so I could stretch my legs. A man who was seated about sixrows in front of me reached out his hand, wanting to shake mine. He left another $25 in my hand. When we landed in Chicago, I picked up my belongings. Waiting just inside the airplane door wasa man who stopped me and put something in my shirt pocket. Another $25! Upon entering the terminal（航站楼），I saw the soldiers gathering for their trip to their base. Iwalked over to them and handed them $75. \"It will take you some time to reach the base. It will be abouttime for a sandwich. God Bless You!\" I said. These soldiers were giving their all for our country. I could only give them a couple of meals. Itseemed so little.",
+    "passage": "I put my carry-on in the luggage compartment (行李舱架) andsat down in my seat. Just before take-off, a line of soldiers came downthe aisle (过道) and filled all the empty seats. After flying for about an hour, an announcement was made thatsack lunches (午餐袋) were available for $ 5. As I reached for mywallet to buy one, I overheard the soldier ask his buddy if he plannedto buy lunch.\n\n\"No, that seems like a lot of money for just a sack lunch.I'll wait till we get to Chicago.\" His friend agreed. I looked around at the other soldiers. None were buying lunch. I walked to the back of the planeand handed the flight attendant(服务人员) a $50 bill. \"Take a lunch to all those soldiers.\" After we finished eating, I went again to the back of the plane heading for the restroom.\n\nA manstopped me. \"I saw what you did. I want to be part ofit. Here, take this.\" He handed me $25. Soon after I returned to my seat, I saw the Flight Captain coming down the aisle. When he got tomy row, he stopped and said, \"I want to shake your hand. I was a soldier and I was a military (315A)pilot.\n\nOnce, someone bought me a lunch. It was an act of kindness I never forgot.\" I was embarrassedwhen applause（掌声）was heard from all ofthe passengers. Later I walked to the front ofthe plane so I could stretch my legs. A man who was seated about sixrows in front of me reached out his hand, wanting to shake mine.\n\nHe left another $25 in my hand. When we landed in Chicago, I picked up my belongings. Waiting just inside the airplane door wasa man who stopped me and put something in my shirt pocket. Another $25! Upon entering the terminal（航站楼），I saw the soldiers gathering for their trip to their base. Iwalked over to them and handed them $75.\n\n\"It will take you some time to reach the base. It will be abouttime for a sandwich. God Bless You!\" I said. These soldiers were giving their all for our country. I could only give them a couple of meals. Itseemed so little.",
     "questions": [
       {
         "number": 69,
@@ -1353,7 +1522,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "I put my carry-on in the luggage compartment (行李舱架) andsat down in my seat. Just before take-off, a line of soldiers came downthe aisle (过道) and filled all the empty seats. After flying for about an hour, an announcement was made thatsack lunches (午餐袋) were available for $ 5. As I reached for mywallet to buy one, I overheard the soldier ask his buddy if he plannedto buy lunch.",
+      "\"No, that seems like a lot of money for just a sack lunch.I'll wait till we get to Chicago.\" His friend agreed. I looked around at the other soldiers. None were buying lunch. I walked to the back of the planeand handed the flight attendant(服务人员) a $50 bill. \"Take a lunch to all those soldiers.\" After we finished eating, I went again to the back of the plane heading for the restroom.",
+      "A manstopped me. \"I saw what you did. I want to be part ofit. Here, take this.\" He handed me $25. Soon after I returned to my seat, I saw the Flight Captain coming down the aisle. When he got tomy row, he stopped and said, \"I want to shake your hand. I was a soldier and I was a military (315A)pilot.",
+      "Once, someone bought me a lunch. It was an act of kindness I never forgot.\" I was embarrassedwhen applause（掌声）was heard from all ofthe passengers. Later I walked to the front ofthe plane so I could stretch my legs. A man who was seated about sixrows in front of me reached out his hand, wanting to shake mine.",
+      "He left another $25 in my hand. When we landed in Chicago, I picked up my belongings. Waiting just inside the airplane door wasa man who stopped me and put something in my shirt pocket. Another $25! Upon entering the terminal（航站楼），I saw the soldiers gathering for their trip to their base. Iwalked over to them and handed them $75.",
+      "\"It will take you some time to reach the base. It will be abouttime for a sandwich. God Bless You!\" I said. These soldiers were giving their all for our country. I could only give them a couple of meals. Itseemed so little."
+    ]
   },
   {
     "_id": "sh-em1-2016-宝山-reading-a",
@@ -1365,7 +1547,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer The koala is unique (独特的) to Australia and is an important symbol of the country. The koala is found in open eucalypt (桉树) forests in south-east Queensland. Even if it is called koala bear. this animal has nothing to do with the actual bear. Koalas have thick fur and large ears. Their broad ,flat nose makes them look cute, similar to teddy bears. In fact koalas aren't cute. They have sharp teeth and very sharp claws (爪)! Koalas are marsupials (袋类). This means the mother carries her baby in a pocket while it develops similar to a kangaroo. The baby koala lives in its mother's pocket for the first six. months of its life. The name \"koala\" comes from a native Australian word that means \"no drink\". The koala get almost all their water from the eucalyptus leaves they eat. That's where they get their food too. Koalas eat only eucalyptus leaves. The eucalyptus trees are where the koalas live. It's also where they sleep. Koalas sleep about nineteen hours a day! Why do they sleep so much? Some people think it's because they're lazy. But koalas aren’t lazy. They sleep so much because there isn't much nutrition (营养) in eucalyptus leaves. Koalas store hardly any fat, so they must save their energy. One way to do this is to move slowly at sleep a lot. After a day of sleeping they like to move around and eat just after sunset. They live alone most of the time. Koalas are very protective of their trees. If a koala sees another koala eating in its favorite tree, it might tell the other koala to leave by \"barking\" at it. Koalas do \"talk\" to each other. Besides barks, the males make a deep grunting (呼噜的) sound. The mothers and babies talk in soft clicking sounds. If they get scared they may scream like a baby. The koala is also an excellent swimmer. They are able to cross rivers to escape from heavy flooding (泛滥).",
+    "passage": "The koala is unique (独特的) to Australia and is an important symbol of the country. The koala is found in open eucalypt (桉树) forests in south-east Queensland. Even if it is called koala bear. this animal has nothing to do with the actual bear. Koalas have thick fur and large ears. Their broad ,flat nose makes them look cute, similar to teddy bears.\n\nIn fact koalas aren't cute. They have sharp teeth and very sharp claws (爪)! Koalas are marsupials (袋类). This means the mother carries her baby in a pocket while it develops similar to a kangaroo. The baby koala lives in its mother's pocket for the first six. months of its life. The name \"koala\" comes from a native Australian word that means \"no drink\".\n\nThe koala get almost all their water from the eucalyptus leaves they eat. That's where they get their food too. Koalas eat only eucalyptus leaves. The eucalyptus trees are where the koalas live. It's also where they sleep. Koalas sleep about nineteen hours a day! Why do they sleep so much? Some people think it's because they're lazy.\n\nBut koalas aren’t lazy. They sleep so much because there isn't much nutrition (营养) in eucalyptus leaves. Koalas store hardly any fat, so they must save their energy. One way to do this is to move slowly at sleep a lot. After a day of sleeping they like to move around and eat just after sunset. They live alone most of the time.\n\nKoalas are very protective of their trees. If a koala sees another koala eating in its favorite tree, it might tell the other koala to leave by \"barking\" at it. Koalas do \"talk\" to each other. Besides barks, the males make a deep grunting (呼噜的) sound. The mothers and babies talk in soft clicking sounds.\n\nIf they get scared they may scream like a baby. The koala is also an excellent swimmer. They are able to cross rivers to escape from heavy flooding (泛滥).",
     "questions": [
       {
         "number": 69,
@@ -1433,7 +1615,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "The koala is unique (独特的) to Australia and is an important symbol of the country. The koala is found in open eucalypt (桉树) forests in south-east Queensland. Even if it is called koala bear. this animal has nothing to do with the actual bear. Koalas have thick fur and large ears. Their broad ,flat nose makes them look cute, similar to teddy bears.",
+      "In fact koalas aren't cute. They have sharp teeth and very sharp claws (爪)! Koalas are marsupials (袋类). This means the mother carries her baby in a pocket while it develops similar to a kangaroo. The baby koala lives in its mother's pocket for the first six. months of its life. The name \"koala\" comes from a native Australian word that means \"no drink\".",
+      "The koala get almost all their water from the eucalyptus leaves they eat. That's where they get their food too. Koalas eat only eucalyptus leaves. The eucalyptus trees are where the koalas live. It's also where they sleep. Koalas sleep about nineteen hours a day! Why do they sleep so much? Some people think it's because they're lazy.",
+      "But koalas aren’t lazy. They sleep so much because there isn't much nutrition (营养) in eucalyptus leaves. Koalas store hardly any fat, so they must save their energy. One way to do this is to move slowly at sleep a lot. After a day of sleeping they like to move around and eat just after sunset. They live alone most of the time.",
+      "Koalas are very protective of their trees. If a koala sees another koala eating in its favorite tree, it might tell the other koala to leave by \"barking\" at it. Koalas do \"talk\" to each other. Besides barks, the males make a deep grunting (呼噜的) sound. The mothers and babies talk in soft clicking sounds.",
+      "If they get scared they may scream like a baby. The koala is also an excellent swimmer. They are able to cross rivers to escape from heavy flooding (泛滥)."
+    ]
   },
   {
     "_id": "sh-em1-2016-崇明-reading-a",
@@ -1445,7 +1640,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Liu Yaxuan is totally a homebody. Every weekend, this14-year-old student from Tsinghua High School watches popular TV dramas like The Journey of Flower(《花千骨》) and plays with her mobile phone. She hates playing outdoor sports. \"It's too tiring,\" she said. She is not alone. In recent years, more and more Chinese teenagers are becoming homebodies. A 2013 survey of kids aged 2 to 14 showed about half of them spend less than one hour doing outdoor activities every day. To some extent, heavy academic pressure (学业压力) caused this phenomenon(现象). Hu Huilan, 12, from Shenzhen Nanshan Language School, is busy with piles of homework and extra classes on weekends. \"I don't want to get behind,\" she said. Even if this isn't a problem, kids still prefer indoor life. Wang Yidi, 12, from Anhui No. 50 Middle School, often reads Harry Potter: listens to music and-surfs the Internet at home. \"I can do so many things I like at home rather than hang out in smoggy(雾霾的) weather,\" she said. But this causes bad health conditions. Chinese teenagers' physical conditions have been declining (下降) for more than 25 years, reported People's Daily last year. The situation for foreign students is quite different. Zhang Yingke, 15, from Unionville High School in Toronto, Canada, says her peers are not homebodies at all. \"They spend their free time outdoors even if it just means going to the park or reading a book under the tree. Nice weather, little homework and rich outdoor activities enable us to do that,\" she said. After being there for four years, she has fallen in love with running and playing tennis. \"It helps me stay energetic,” she said.",
+    "passage": "Liu Yaxuan is totally a homebody. Every weekend, this14-year-old student from Tsinghua High School watches popular TV dramas like The Journey of Flower(《花千骨》) and plays with her mobile phone. She hates playing outdoor sports. \"It's too tiring,\" she said. She is not alone. In recent years, more and more Chinese teenagers are becoming homebodies.\n\nA 2013 survey of kids aged 2 to 14 showed about half of them spend less than one hour doing outdoor activities every day. To some extent, heavy academic pressure (学业压力) caused this phenomenon(现象). Hu Huilan, 12, from Shenzhen Nanshan Language School, is busy with piles of homework and extra classes on weekends.\n\n\"I don't want to get behind,\" she said. Even if this isn't a problem, kids still prefer indoor life. Wang Yidi, 12, from Anhui No. 50 Middle School, often reads Harry Potter: listens to music and-surfs the Internet at home. \"I can do so many things I like at home rather than hang out in smoggy(雾霾的) weather,\" she said.\n\nBut this causes bad health conditions. Chinese teenagers' physical conditions have been declining (下降) for more than 25 years, reported People's Daily last year. The situation for foreign students is quite different. Zhang Yingke, 15, from Unionville High School in Toronto, Canada, says her peers are not homebodies at all.\n\n\"They spend their free time outdoors even if it just means going to the park or reading a book under the tree. Nice weather, little homework and rich outdoor activities enable us to do that,\" she said. After being there for four years, she has fallen in love with running and playing tennis. \"It helps me stay energetic,” she said.",
     "questions": [
       {
         "number": 69,
@@ -1525,7 +1720,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Liu Yaxuan is totally a homebody. Every weekend, this14-year-old student from Tsinghua High School watches popular TV dramas like The Journey of Flower(《花千骨》) and plays with her mobile phone. She hates playing outdoor sports. \"It's too tiring,\" she said. She is not alone. In recent years, more and more Chinese teenagers are becoming homebodies.",
+      "A 2013 survey of kids aged 2 to 14 showed about half of them spend less than one hour doing outdoor activities every day. To some extent, heavy academic pressure (学业压力) caused this phenomenon(现象). Hu Huilan, 12, from Shenzhen Nanshan Language School, is busy with piles of homework and extra classes on weekends.",
+      "\"I don't want to get behind,\" she said. Even if this isn't a problem, kids still prefer indoor life. Wang Yidi, 12, from Anhui No. 50 Middle School, often reads Harry Potter: listens to music and-surfs the Internet at home. \"I can do so many things I like at home rather than hang out in smoggy(雾霾的) weather,\" she said.",
+      "But this causes bad health conditions. Chinese teenagers' physical conditions have been declining (下降) for more than 25 years, reported People's Daily last year. The situation for foreign students is quite different. Zhang Yingke, 15, from Unionville High School in Toronto, Canada, says her peers are not homebodies at all.",
+      "\"They spend their free time outdoors even if it just means going to the park or reading a book under the tree. Nice weather, little homework and rich outdoor activities enable us to do that,\" she said. After being there for four years, she has fallen in love with running and playing tennis. \"It helps me stay energetic,” she said."
+    ]
   },
   {
     "_id": "sh-em1-2016-杨浦-reading-a",
@@ -1537,7 +1744,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer Once upon a time if we wanted to make a phone call or wait for someone to contact us, we had to sit at home or at our desks. There were public phones in the street of course, but it could be hard to find one that was working and there were often long queues to use them. And of course you had to bring a lot of coins to pay for the calls. So people didn't phone their friends as often. Mobile phones, these small pieces of electronic equipment which allow us to talk with friends and family while we are on the move, have greatly changed the way we live. Before the age of the mobile phone, our loved ones would sit around worried sick if we were late coming home. There were no quick calls to tell mum that there would be additional guests coming for dinner. We would have to depend on notes left on fridges or desks to communicate messages. But mobile phones have also had a negative effect and what people don't seem to realize is that we've lost something very valuable: our privacy. Now our friends and family can contact us wherever and whenever they want to. We can never get away from them. The way people communicate with each other is totally different now. It's difficult to have a conversation face-to-face with a friend without being disturbed every couple of minutes by the ring of their phones, ,most people don't see anything wrong in having a long conversation on their mobile phone while forgetting all about the person sitting opposite. It seems the art of real conversation may be dying. Of course, people could leave their mobile phones at home or even switch them off but no one ever does that. Why not? Because the worrying thing is we can't live without our phones. We've become communication addicts, unable to spend even a few minutes out of contact, in case we miss something 'important'.",
+    "passage": "Once upon a time if we wanted to make a phone call or wait for someone to contact us, we had to sit at home or at our desks. There were public phones in the street of course, but it could be hard to find one that was working and there were often long queues to use them. And of course you had to bring a lot of coins to pay for the calls.\n\nSo people didn't phone their friends as often. Mobile phones, these small pieces of electronic equipment which allow us to talk with friends and family while we are on the move, have greatly changed the way we live. Before the age of the mobile phone, our loved ones would sit around worried sick if we were late coming home.\n\nThere were no quick calls to tell mum that there would be additional guests coming for dinner. We would have to depend on notes left on fridges or desks to communicate messages. But mobile phones have also had a negative effect and what people don't seem to realize is that we've lost something very valuable: our privacy.\n\nNow our friends and family can contact us wherever and whenever they want to. We can never get away from them. The way people communicate with each other is totally different now. It's difficult to have a conversation face-to-face with a friend without being disturbed every couple of minutes by the ring of their phones, ,most people don't see anything wrong in having a long conversation on their mobile phone while forgetting all about the person sitting opposite.\n\nIt seems the art of real conversation may be dying. Of course, people could leave their mobile phones at home or even switch them off but no one ever does that. Why not? Because the worrying thing is we can't live without our phones. We've become communication addicts, unable to spend even a few minutes out of contact, in case we miss something 'important'.",
     "questions": [
       {
         "number": 69,
@@ -1617,7 +1824,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Once upon a time if we wanted to make a phone call or wait for someone to contact us, we had to sit at home or at our desks. There were public phones in the street of course, but it could be hard to find one that was working and there were often long queues to use them. And of course you had to bring a lot of coins to pay for the calls.",
+      "So people didn't phone their friends as often. Mobile phones, these small pieces of electronic equipment which allow us to talk with friends and family while we are on the move, have greatly changed the way we live. Before the age of the mobile phone, our loved ones would sit around worried sick if we were late coming home.",
+      "There were no quick calls to tell mum that there would be additional guests coming for dinner. We would have to depend on notes left on fridges or desks to communicate messages. But mobile phones have also had a negative effect and what people don't seem to realize is that we've lost something very valuable: our privacy.",
+      "Now our friends and family can contact us wherever and whenever they want to. We can never get away from them. The way people communicate with each other is totally different now. It's difficult to have a conversation face-to-face with a friend without being disturbed every couple of minutes by the ring of their phones, ,most people don't see anything wrong in having a long conversation on their mobile phone while forgetting all about the person sitting opposite.",
+      "It seems the art of real conversation may be dying. Of course, people could leave their mobile phones at home or even switch them off but no one ever does that. Why not? Because the worrying thing is we can't live without our phones. We've become communication addicts, unable to spend even a few minutes out of contact, in case we miss something 'important'."
+    ]
   },
   {
     "_id": "sh-em1-2016-松江-reading-a",
@@ -1629,7 +1848,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区 2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) There are a lot of things to do in Shanghai. Live Music - Late Night Jazz(爵士乐) Enjoy real American jazz from Herbie Davis, the famous trumpet (小号) player. Herbie is known to play well into the early hours, so don't expect to get much sleep. This is Herbie's thirdvisit to Shanghai. The first two were sold out, so get your tickets quick. Place: The Jazz Club Dates: 15-23 May Price: ¥80, ¥120 (From Friday to Sunday) Time: 10 p.m. till late! Tel: 6557-6898 Scottish(苏格兰的) dancing Take your partners and get ready to dance till you drop. Scottish dancing is fun and easy tolearn. The teachers, Gordon Stroppie and Weefrees, are excellent. They will also demonstrate the dances. Place: Jack Stein’sDates: every Monday Price: ¥60 including one drink Time: 7-10 p.m. Tel: 6427-3957 Exhibitions - Shanghai Museum There are 120,000 pieces on show here. You can see the whole of Chinese history under oneroof. It's always interesting to visit, but especially at the moment with the Egyptian Tombs (埃及坟墓) exhibitions. Place: Shanghai MuseumDates: Tuesday-Sunday Price: ¥60 (half for students) Tel: 6888-5066 Time: 9 a.m. – 5 p.m. Tuesday to Friday 9 a.m. – 9 a.m. Weedends Dining - Sushi Chef (厨师) in town Sushi is getting really big in Shanghai. In Japan, it's become an art form. The most famoussushi \"artist\" is Yuki Kamura. She's also one of the few female chefs in Japan. She'll be at SushiScene all the month. Place: Sushi Scene in Shanghai Hotel Dates: 1 – 31 May Price: ¥240 Time: lunchtime Tel: 6690-2315",
+    "passage": "There are a lot of things to do in Shanghai. Live Music - Late Night Jazz(爵士乐) Enjoy real American jazz from Herbie Davis, the famous trumpet (小号) player. Herbie is known to play well into the early hours, so don't expect to get much sleep. This is Herbie's thirdvisit to Shanghai. The first two were sold out, so get your tickets quick.\n\nPlace: The Jazz Club Dates: 15-23 May Price: ¥80, ¥120 (From Friday to Sunday) Time: 10 p.m. till late! Tel: 6557-6898 Scottish(苏格兰的) dancing Take your partners and get ready to dance till you drop. Scottish dancing is fun and easy tolearn. The teachers, Gordon Stroppie and Weefrees, are excellent.\n\nThey will also demonstrate the dances. Place: Jack Stein’sDates: every Monday Price: ¥60 including one drink Time: 7-10 p.m. Tel: 6427-3957 Exhibitions - Shanghai Museum There are 120,000 pieces on show here. You can see the whole of Chinese history under oneroof. It's always interesting to visit, but especially at the moment with the Egyptian Tombs (埃及坟墓) exhibitions.\n\nPlace: Shanghai MuseumDates: Tuesday-Sunday Price: ¥60 (half for students) Tel: 6888-5066 Time: 9 a.m. – 5 p.m. Tuesday to Friday 9 a.m. – 9 a.m. Weedends Dining - Sushi Chef (厨师) in town Sushi is getting really big in Shanghai. In Japan, it's become an art form. The most famoussushi \"artist\" is Yuki Kamura.\n\nShe's also one of the few female chefs in Japan. She'll be at SushiScene all the month. Place: Sushi Scene in Shanghai Hotel Dates: 1 – 31 May Price: ¥240 Time: lunchtime Tel: 6690-2315",
     "questions": [
       {
         "number": 69,
@@ -1709,7 +1928,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "There are a lot of things to do in Shanghai. Live Music - Late Night Jazz(爵士乐) Enjoy real American jazz from Herbie Davis, the famous trumpet (小号) player. Herbie is known to play well into the early hours, so don't expect to get much sleep. This is Herbie's thirdvisit to Shanghai. The first two were sold out, so get your tickets quick.",
+      "Place: The Jazz Club Dates: 15-23 May Price: ¥80, ¥120 (From Friday to Sunday) Time: 10 p.m. till late! Tel: 6557-6898 Scottish(苏格兰的) dancing Take your partners and get ready to dance till you drop. Scottish dancing is fun and easy tolearn. The teachers, Gordon Stroppie and Weefrees, are excellent.",
+      "They will also demonstrate the dances. Place: Jack Stein’sDates: every Monday Price: ¥60 including one drink Time: 7-10 p.m. Tel: 6427-3957 Exhibitions - Shanghai Museum There are 120,000 pieces on show here. You can see the whole of Chinese history under oneroof. It's always interesting to visit, but especially at the moment with the Egyptian Tombs (埃及坟墓) exhibitions.",
+      "Place: Shanghai MuseumDates: Tuesday-Sunday Price: ¥60 (half for students) Tel: 6888-5066 Time: 9 a.m. – 5 p.m. Tuesday to Friday 9 a.m. – 9 a.m. Weedends Dining - Sushi Chef (厨师) in town Sushi is getting really big in Shanghai. In Japan, it's become an art form. The most famoussushi \"artist\" is Yuki Kamura.",
+      "She's also one of the few female chefs in Japan. She'll be at SushiScene all the month. Place: Sushi Scene in Shanghai Hotel Dates: 1 – 31 May Price: ¥240 Time: lunchtime Tel: 6690-2315"
+    ]
   },
   {
     "_id": "sh-em1-2016-长宁-reading-a",
@@ -1721,7 +1952,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁（金山）区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "A． Choose the best answer. （根据短文内容，选择最恰当的答案。）（12分） Ping Pong Door---------------------------------------------------- Do you want a ping-pong table in your room? But you may not have enough space. Now this door is here to help you. It can turn into a ping-pong table when you pull it down. After the ping pong game is over, it goes back to being a normal door. It was designed by Tobias Fränzel from Germany. Cool concept! Dog Watch -------------------------------------------------------------- The dog watch is actually a \"clock for keeping time at a rate(比率) other than human time\" and was invented in 1991. With this handy watch, you can be aware of time at your animal’s rate instead of your own. According to the inventor, the watch multiplies every human second, minute and hour by seven, thus giving us \"doggy time\". If a dog lives to be the age of 14, that translates into 98 human years! Earthquake House -------------------------------------------------------- Big earthquakes can damage a house, possibly making the people in it get hurt. But our inventor has a solution, the Earthquake House! His idea is simple, build a round house that has earthquake sensors(传感器) in it. If the sensors signal the big earthquake, the house is automatically released (松开) from its chains. Don't worry. You always remain upright in it. We don't recommend(推荐) this for a hillside home because there aren't any brakes to stop it! Smell this --------------------------------------------------------------------- How do you know if your breath smells nice, or if it smells bad? It’s difficult to know because it’s very hard to smell the air that comes out of your own mouth. Smell This is useful for this situation. You just place the mask (面罩) on your face, then breathe out through your mouth and breathe in through your nose.",
+    "passage": "Ping Pong Door---------------------------------------------------- Do you want a ping-pong table in your room? But you may not have enough space. Now this door is here to help you. It can turn into a ping-pong table when you pull it down. After the ping pong game is over, it goes back to being a normal door.\n\nIt was designed by Tobias Fränzel from Germany. Cool concept! Dog Watch -------------------------------------------------------------- The dog watch is actually a \"clock for keeping time at a rate(比率) other than human time\" and was invented in 1991. With this handy watch, you can be aware of time at your animal’s rate instead of your own.\n\nAccording to the inventor, the watch multiplies every human second, minute and hour by seven, thus giving us \"doggy time\". If a dog lives to be the age of 14, that translates into 98 human years! Earthquake House -------------------------------------------------------- Big earthquakes can damage a house, possibly making the people in it get hurt.\n\nBut our inventor has a solution, the Earthquake House! His idea is simple, build a round house that has earthquake sensors(传感器) in it. If the sensors signal the big earthquake, the house is automatically released (松开) from its chains. Don't worry. You always remain upright in it. We don't recommend(推荐) this for a hillside home because there aren't any brakes to stop it!\n\nSmell this --------------------------------------------------------------------- How do you know if your breath smells nice, or if it smells bad? It’s difficult to know because it’s very hard to smell the air that comes out of your own mouth. Smell This is useful for this situation. You just place the mask (面罩) on your face, then breathe out through your mouth and breathe in through your nose.",
     "questions": [
       {
         "number": 69,
@@ -1801,7 +2032,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "Choose the best answer. （根据短文内容，选择最恰当的答案。）",
+    "sectionHeading": "A",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Ping Pong Door---------------------------------------------------- Do you want a ping-pong table in your room? But you may not have enough space. Now this door is here to help you. It can turn into a ping-pong table when you pull it down. After the ping pong game is over, it goes back to being a normal door.",
+      "It was designed by Tobias Fränzel from Germany. Cool concept! Dog Watch -------------------------------------------------------------- The dog watch is actually a \"clock for keeping time at a rate(比率) other than human time\" and was invented in 1991. With this handy watch, you can be aware of time at your animal’s rate instead of your own.",
+      "According to the inventor, the watch multiplies every human second, minute and hour by seven, thus giving us \"doggy time\". If a dog lives to be the age of 14, that translates into 98 human years! Earthquake House -------------------------------------------------------- Big earthquakes can damage a house, possibly making the people in it get hurt.",
+      "But our inventor has a solution, the Earthquake House! His idea is simple, build a round house that has earthquake sensors(传感器) in it. If the sensors signal the big earthquake, the house is automatically released (松开) from its chains. Don't worry. You always remain upright in it. We don't recommend(推荐) this for a hillside home because there aren't any brakes to stop it!",
+      "Smell this --------------------------------------------------------------------- How do you know if your breath smells nice, or if it smells bad? It’s difficult to know because it’s very hard to smell the air that comes out of your own mouth. Smell This is useful for this situation. You just place the mask (面罩) on your face, then breathe out through your mouth and breathe in through your nose."
+    ]
   },
   {
     "_id": "sh-em1-2016-闵行-reading-a",
@@ -1813,7 +2056,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) As an international city, Shanghai is always full of entertainment and surprise. This March isa nice month in Shanghai. There's a lot to do. Here are the highlights. Live Music - Late Night Jazz Enjoy real American jazz from Herbie Davis, the famous trumpet player. He's coming with his new 7- piece band, Herbie's Heroes.Herbie is known to play well into the early hours, so don't expect to get much sleep. This is Herbie's third visit to Shanghai. The first two were sold out, so get your tickets quickly. PLACE: The Jazz Club DATES: 15 - 21 March PRICE:￥180 TIME: 10: 00 p.m. till late! TEL: 6466-8736 Scottish dancing Take your partners and get ready to dance till you drop. Scottish dancing is fun and easy to learn. Instructors (教员 ) will demonstrate (示范) the dances. The live band, Gordon Stroppie and the Weefrees, are also excellent. PLACE: Jack Stein's DATES: every Monday PRICE: Y60 including one drink TIME: 7: 00 p.m. -12: 00 p.m. TEL: 6402-1877 Exhibitions - Shanghai Museum There are 120,000 pieces on show here. You can see the whole of Chinese history under one roof It's always interesting to visit, but doubly so at the moment with the Egyptian Tombs exhibition. There are lots of mummies(木乃伊) and more gold than you've ever seen before. Let us know if you see a mummy move! PLACE: Shanghai Museum PRICE:￥30(￥15 for students) TEL: 6888-6888 DATES: daily TIME: Monday - Friday 9: 00 a.m. - 5: 00 p.m., Weekends 9: 00 a.m. - 9: 00 p.m. Dining - Sushi chef in town Sushi is getting really big in Shanghai. In Japan, it's become an art form. The most famous Sushi 'artist' is Yuki Kamura. She's also one of the few female chefs in Japan. She'll be at Sushi Scene all of this month. PLACE: Sushi Scene in Shanghai Hotel DATES: all month PRICE:￥200 TIME: lunchtime TEL: 6690-3211",
+    "passage": "As an international city, Shanghai is always full of entertainment and surprise. This March isa nice month in Shanghai. There's a lot to do. Here are the highlights. Live Music - Late Night Jazz Enjoy real American jazz from Herbie Davis, the famous trumpet player. He's coming with his new 7- piece band, Herbie's Heroes.Herbie is known to play well into the early hours, so don't expect to get much sleep.\n\nThis is Herbie's third visit to Shanghai. The first two were sold out, so get your tickets quickly. PLACE: The Jazz Club DATES: 15 - 21 March PRICE:￥180 TIME: 10: 00 p.m. till late! TEL: 6466-8736 Scottish dancing Take your partners and get ready to dance till you drop. Scottish dancing is fun and easy to learn.\n\nInstructors (教员 ) will demonstrate (示范) the dances. The live band, Gordon Stroppie and the Weefrees, are also excellent. PLACE: Jack Stein's DATES: every Monday PRICE: Y60 including one drink TIME: 7: 00 p.m. -12: 00 p.m. TEL: 6402-1877 Exhibitions - Shanghai Museum There are 120,000 pieces on show here.\n\nYou can see the whole of Chinese history under one roof It's always interesting to visit, but doubly so at the moment with the Egyptian Tombs exhibition. There are lots of mummies(木乃伊) and more gold than you've ever seen before. Let us know if you see a mummy move! PLACE: Shanghai Museum PRICE:￥30(￥15 for students) TEL: 6888-6888 DATES: daily TIME: Monday - Friday 9: 00 a.m.\n\n- 5: 00 p.m., Weekends 9: 00 a.m. - 9: 00 p.m. Dining - Sushi chef in town Sushi is getting really big in Shanghai. In Japan, it's become an art form. The most famous Sushi 'artist' is Yuki Kamura. She's also one of the few female chefs in Japan. She'll be at Sushi Scene all of this month. PLACE: Sushi Scene in Shanghai Hotel DATES: all month PRICE:￥200 TIME: lunchtime TEL: 6690-3211",
     "questions": [
       {
         "number": 69,
@@ -1893,7 +2136,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "As an international city, Shanghai is always full of entertainment and surprise. This March isa nice month in Shanghai. There's a lot to do. Here are the highlights. Live Music - Late Night Jazz Enjoy real American jazz from Herbie Davis, the famous trumpet player. He's coming with his new 7- piece band, Herbie's Heroes.Herbie is known to play well into the early hours, so don't expect to get much sleep.",
+      "This is Herbie's third visit to Shanghai. The first two were sold out, so get your tickets quickly. PLACE: The Jazz Club DATES: 15 - 21 March PRICE:￥180 TIME: 10: 00 p.m. till late! TEL: 6466-8736 Scottish dancing Take your partners and get ready to dance till you drop. Scottish dancing is fun and easy to learn.",
+      "Instructors (教员 ) will demonstrate (示范) the dances. The live band, Gordon Stroppie and the Weefrees, are also excellent. PLACE: Jack Stein's DATES: every Monday PRICE: Y60 including one drink TIME: 7: 00 p.m. -12: 00 p.m. TEL: 6402-1877 Exhibitions - Shanghai Museum There are 120,000 pieces on show here.",
+      "You can see the whole of Chinese history under one roof It's always interesting to visit, but doubly so at the moment with the Egyptian Tombs exhibition. There are lots of mummies(木乃伊) and more gold than you've ever seen before. Let us know if you see a mummy move! PLACE: Shanghai Museum PRICE:￥30(￥15 for students) TEL: 6888-6888 DATES: daily TIME: Monday - Friday 9: 00 a.m.",
+      "- 5: 00 p.m., Weekends 9: 00 a.m. - 9: 00 p.m. Dining - Sushi chef in town Sushi is getting really big in Shanghai. In Japan, it's become an art form. The most famous Sushi 'artist' is Yuki Kamura. She's also one of the few female chefs in Japan. She'll be at Sushi Scene all of this month. PLACE: Sushi Scene in Shanghai Hotel DATES: all month PRICE:￥200 TIME: lunchtime TEL: 6690-3211"
+    ]
   },
   {
     "_id": "sh-em1-2017-宝山-reading-a",
@@ -1905,7 +2160,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2017届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer （根据短文内容， 选择最恰当的答案）（共12分） Practice doesn't always make perfect when it comes to becoming the next Mozart, a new study suggests. This may be because some aspects of musical talent are built into the genes（基因），the researchers said. Samuel Osmond is a 19-year-old law student from Cornwall, England. He never studied the piano. However, he can play very difficult musical pieces by musicians such as Chopin and Beethoven just a few minutes after he hears them. He learns a piece of music by listening to it in parts. Then he thinks about the notes（音符） in his head. Two years ago, he played his first piece Moonlight Sonata （奏鸣曲） by Beethoven. He surprised everyone around him. Amazed that he remembered this long and difficult piece of music and played it perfectly, his teachers say Samuel is unbelievable. They say his ability is very rare, but Samuel doesn't even realize that what he can do is special. Samuel wanted to become a lawyer as it was the wish of his parents, but music teachers told him he should study music instead. Now, he studies law and music. Samuel can't understand why everyone is so surprised. \"I grew up with music. My mother played the piano and my father played the guitar. About two years ago. I suddenly decided to start playing the piano, without being able to read music and without having any lessons. It comes easily to me--I hear the notes and can bear them in mind--each and every note. \"says Samuel. Recently. Samuel performed a piece during a special event at his college. The piece had more than a thousand notes. The audience was impressed by his amazing performance. He is now learning a piece that is so difficult that many professional pianists can't play it. Samuel says confidently, \"It's all about super memory--I guess I have that gift.\" However. Samuel's ability to remember things doesn't stop with music. His family says that even when he was a young boy. Samuel heard someone read a story, and then he could retell the story word for word. Samuel is still only a teenager. He doesn't know what he wants to do in the future. For now, he is just happy to play beautiful music and continue his studies.",
+    "passage": "Practice doesn't always make perfect when it comes to becoming the next Mozart, a new study suggests. This may be because some aspects of musical talent are built into the genes（基因），the researchers said. Samuel Osmond is a 19-year-old law student from Cornwall, England. He never studied the piano. However, he can play very difficult musical pieces by musicians such as Chopin and Beethoven just a few minutes after he hears them.\n\nHe learns a piece of music by listening to it in parts. Then he thinks about the notes（音符） in his head. Two years ago, he played his first piece Moonlight Sonata （奏鸣曲） by Beethoven. He surprised everyone around him. Amazed that he remembered this long and difficult piece of music and played it perfectly, his teachers say Samuel is unbelievable.\n\nThey say his ability is very rare, but Samuel doesn't even realize that what he can do is special. Samuel wanted to become a lawyer as it was the wish of his parents, but music teachers told him he should study music instead. Now, he studies law and music. Samuel can't understand why everyone is so surprised.\n\n\"I grew up with music. My mother played the piano and my father played the guitar. About two years ago. I suddenly decided to start playing the piano, without being able to read music and without having any lessons. It comes easily to me--I hear the notes and can bear them in mind--each and every note.\n\n\"says Samuel. Recently. Samuel performed a piece during a special event at his college. The piece had more than a thousand notes. The audience was impressed by his amazing performance. He is now learning a piece that is so difficult that many professional pianists can't play it. Samuel says confidently, \"It's all about super memory--I guess I have that gift.\n\n\" However. Samuel's ability to remember things doesn't stop with music. His family says that even when he was a young boy. Samuel heard someone read a story, and then he could retell the story word for word. Samuel is still only a teenager. He doesn't know what he wants to do in the future. For now, he is just happy to play beautiful music and continue his studies.",
     "questions": [
       {
         "number": 69,
@@ -1985,7 +2240,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容， 选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Practice doesn't always make perfect when it comes to becoming the next Mozart, a new study suggests. This may be because some aspects of musical talent are built into the genes（基因），the researchers said. Samuel Osmond is a 19-year-old law student from Cornwall, England. He never studied the piano. However, he can play very difficult musical pieces by musicians such as Chopin and Beethoven just a few minutes after he hears them.",
+      "He learns a piece of music by listening to it in parts. Then he thinks about the notes（音符） in his head. Two years ago, he played his first piece Moonlight Sonata （奏鸣曲） by Beethoven. He surprised everyone around him. Amazed that he remembered this long and difficult piece of music and played it perfectly, his teachers say Samuel is unbelievable.",
+      "They say his ability is very rare, but Samuel doesn't even realize that what he can do is special. Samuel wanted to become a lawyer as it was the wish of his parents, but music teachers told him he should study music instead. Now, he studies law and music. Samuel can't understand why everyone is so surprised.",
+      "\"I grew up with music. My mother played the piano and my father played the guitar. About two years ago. I suddenly decided to start playing the piano, without being able to read music and without having any lessons. It comes easily to me--I hear the notes and can bear them in mind--each and every note.",
+      "\"says Samuel. Recently. Samuel performed a piece during a special event at his college. The piece had more than a thousand notes. The audience was impressed by his amazing performance. He is now learning a piece that is so difficult that many professional pianists can't play it. Samuel says confidently, \"It's all about super memory--I guess I have that gift.",
+      "\" However. Samuel's ability to remember things doesn't stop with music. His family says that even when he was a young boy. Samuel heard someone read a story, and then he could retell the story word for word. Samuel is still only a teenager. He doesn't know what he wants to do in the future. For now, he is just happy to play beautiful music and continue his studies."
+    ]
   },
   {
     "_id": "sh-em1-2018-嘉定-reading-a",
@@ -1997,7 +2265,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Everyone surfing the web has billions of choices on what they can be viewing. And always we can find many different kinds of ads. Some of them are futile, but some of them are helpful. Here are some ads from the Internet. Maybe they can help you. House For Sale Century Garden, Jiading, Shanghai 2-storey house 509 EMBED Equation.DSMT4 total land area, 428.8 EMBED Equation.DSMT4 build-in, 312.2 EMBED Equation.DSMT4 garden, ￥15.8 million If you are interested in the house, please contact the Housing Center. Phone: 138619731547 Fax: 021-89609728 Job wanted Stella, 24, a shining girl, is good at oral English and Putonghua. Now she is an office lady in a trade company in Shanghai. She is kind-hearted, hard-working and healthy. She would like a part-time weekend job offering Putonghua lessons to foreign friends. E-mail: Stella_6868@126.com Phone: 13032788622 Damingshan Moutain Ski Park Address: Linan, Zhejiang Price: 55 yuan (admission ticket) Ski: 50 yuan/hour on weekday’s and 70 yuan/hour on weekends. 120 yuan/four hours on weekdays and 190 yuan/four hours on weekend Phone: 0211-85191617 QQ: 22380055",
+    "passage": "Everyone surfing the web has billions of choices on what they can be viewing. And always we can find many different kinds of ads. Some of them are futile, but some of them are helpful. Here are some ads from the Internet. Maybe they can help you. House For Sale Century Garden, Jiading, Shanghai 2-storey house 509 EMBED Equation.DSMT4 total land area, 428.\n\n8 EMBED Equation.DSMT4 build-in, 312.2 EMBED Equation.DSMT4 garden, ￥15.8 million If you are interested in the house, please contact the Housing Center. Phone: 138619731547 Fax: 021-89609728 Job wanted Stella, 24, a shining girl, is good at oral English and Putonghua. Now she is an office lady in a trade company in Shanghai.\n\nShe is kind-hearted, hard-working and healthy. She would like a part-time weekend job offering Putonghua lessons to foreign friends. E-mail: Stella_6868@126.com Phone: 13032788622 Damingshan Moutain Ski Park Address: Linan, Zhejiang Price: 55 yuan (admission ticket) Ski: 50 yuan/hour on weekday’s and 70 yuan/hour on weekends. 120 yuan/four hours on weekdays and 190 yuan/four hours on weekend Phone: 0211-85191617 QQ: 22380055",
     "questions": [
       {
         "number": 69,
@@ -2077,7 +2345,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Everyone surfing the web has billions of choices on what they can be viewing. And always we can find many different kinds of ads. Some of them are futile, but some of them are helpful. Here are some ads from the Internet. Maybe they can help you. House For Sale Century Garden, Jiading, Shanghai 2-storey house 509 EMBED Equation.DSMT4 total land area, 428.",
+      "8 EMBED Equation.DSMT4 build-in, 312.2 EMBED Equation.DSMT4 garden, ￥15.8 million If you are interested in the house, please contact the Housing Center. Phone: 138619731547 Fax: 021-89609728 Job wanted Stella, 24, a shining girl, is good at oral English and Putonghua. Now she is an office lady in a trade company in Shanghai.",
+      "She is kind-hearted, hard-working and healthy. She would like a part-time weekend job offering Putonghua lessons to foreign friends. E-mail: Stella_6868@126.com Phone: 13032788622 Damingshan Moutain Ski Park Address: Linan, Zhejiang Price: 55 yuan (admission ticket) Ski: 50 yuan/hour on weekday’s and 70 yuan/hour on weekends. 120 yuan/four hours on weekdays and 190 yuan/four hours on weekend Phone: 0211-85191617 QQ: 22380055"
+    ]
   },
   {
     "_id": "sh-em1-2018-奉贤-reading-a",
@@ -2089,7 +2367,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) I teach economics in a university three times per week. Last Monday, at the beginning of class, I asked my students how their weekend had been. One young man said that his weekend had not been so good. He had his wisdom teeth removed. Then he went on to ask me why I always seemed to be so cheerful. . His question reminded me of something I'd read somewhere before: Every morning when you get up, you have a choice about how you want to live that day. I said, \"I choose to be cheerful.\" \"Let me give you an example,\" I continued. \"Besides teaching here, I. also teach at a college in Henderson, 17 miles down the freeway from where I Live. One day a few weeks ago, I exited the freeway and turned onto College Drive. I only had to drive another quarter mile down the road to the college. But just then my car died. I tried to start it again, but the engine wouldn't work. So I put my flashes on, took my books, and walked down the road to the college. As soon as I got there, I called AAA (汽车协会) and asked for a tow truck to meet me at my car after class. The secretary there asked me what had happened. \"This is my lucky day,\" I replied, smiling. \"Your cat breaks down and today is your lucky day? What do you mean?\" \"My car could have broken down anywhere along the freeway. It didn't,\" I replied. \"Instead, it broke down at the perfect place: off the freeway, within walking distance of here. I'm still able to teach my class; and I've been able to ask for the tow truck to meet me after class! If my car was meant to break down today, it couldn't have been arranged in a more convenient way.\" I ended my story. In spite of (尽管) the early hour, no one in my class seemed to be asleep. Somehow, my story had touched them.",
+    "passage": "I teach economics in a university three times per week. Last Monday, at the beginning of class, I asked my students how their weekend had been. One young man said that his weekend had not been so good. He had his wisdom teeth removed. Then he went on to ask me why I always seemed to be so cheerful.\n\n. His question reminded me of something I'd read somewhere before: Every morning when you get up, you have a choice about how you want to live that day. I said, \"I choose to be cheerful.\" \"Let me give you an example,\" I continued. \"Besides teaching here, I. also teach at a college in Henderson, 17 miles down the freeway from where I Live.\n\nOne day a few weeks ago, I exited the freeway and turned onto College Drive. I only had to drive another quarter mile down the road to the college. But just then my car died. I tried to start it again, but the engine wouldn't work. So I put my flashes on, took my books, and walked down the road to the college.\n\nAs soon as I got there, I called AAA (汽车协会) and asked for a tow truck to meet me at my car after class. The secretary there asked me what had happened. \"This is my lucky day,\" I replied, smiling. \"Your cat breaks down and today is your lucky day? What do you mean?\" \"My car could have broken down anywhere along the freeway.\n\nIt didn't,\" I replied. \"Instead, it broke down at the perfect place: off the freeway, within walking distance of here. I'm still able to teach my class; and I've been able to ask for the tow truck to meet me after class! If my car was meant to break down today, it couldn't have been arranged in a more convenient way. \" I ended my story. In spite of (尽管) the early hour, no one in my class seemed to be asleep. Somehow, my story had touched them.",
     "questions": [
       {
         "number": 69,
@@ -2169,7 +2447,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "I teach economics in a university three times per week. Last Monday, at the beginning of class, I asked my students how their weekend had been. One young man said that his weekend had not been so good. He had his wisdom teeth removed. Then he went on to ask me why I always seemed to be so cheerful.",
+      ". His question reminded me of something I'd read somewhere before: Every morning when you get up, you have a choice about how you want to live that day. I said, \"I choose to be cheerful.\" \"Let me give you an example,\" I continued. \"Besides teaching here, I. also teach at a college in Henderson, 17 miles down the freeway from where I Live.",
+      "One day a few weeks ago, I exited the freeway and turned onto College Drive. I only had to drive another quarter mile down the road to the college. But just then my car died. I tried to start it again, but the engine wouldn't work. So I put my flashes on, took my books, and walked down the road to the college.",
+      "As soon as I got there, I called AAA (汽车协会) and asked for a tow truck to meet me at my car after class. The secretary there asked me what had happened. \"This is my lucky day,\" I replied, smiling. \"Your cat breaks down and today is your lucky day? What do you mean?\" \"My car could have broken down anywhere along the freeway.",
+      "It didn't,\" I replied. \"Instead, it broke down at the perfect place: off the freeway, within walking distance of here. I'm still able to teach my class; and I've been able to ask for the tow truck to meet me after class! If my car was meant to break down today, it couldn't have been arranged in a more convenient way. \" I ended my story. In spite of (尽管) the early hour, no one in my class seemed to be asleep. Somehow, my story had touched them."
+    ]
   },
   {
     "_id": "sh-em1-2018-崇明-reading-a",
@@ -2181,7 +2471,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer（根据以下内容，选择最恰当的答案）（12分） You may have heard of people who are allergic（过敏）to seafood, smoke or pets. But did you know that some people were allergic to Wi-Fi signals? Rachel Hinks, a 44-year-old woman from Britain, first found herself being allergic to Wi-Fi signals in 2015. She suffered from sickness, heart palpitations（心悸）and great pains in her head after she was exposed to Wi-Fi signals sent from wireless routers（无线路由器）and phone mast（信号塔）. Rachel has tried many ways to escape Wi-Fi signals. In the past six months, she either slept in her car or in tent which she had put up in woodland or in the fields. She has even tried sleeping in a shed. Being completely tired, Rachel had no choice but to quit her job and moved 370 kilometers away from her home to escape at least fifteen phone masts near her house. She is now living in a small house in rural（乡下的）Wales. There are far fewer masts. However, the house, which belongs to one of her friends, is up for sale, so she has to move again soon. Rachel is planning to move to a more rural area. She is also planning to buy a camper van（野营车）so that she can drive away from Wi-Fi signals whenever she is feeling uncomfortable. As she has no job and therefore no income, she has to raise money online. She is hoping to raise 15,000 pounds. So far, she has raised over 1,600 pounds. She still has a long way to go.",
+    "passage": "You may have heard of people who are allergic（过敏）to seafood, smoke or pets. But did you know that some people were allergic to Wi-Fi signals? Rachel Hinks, a 44-year-old woman from Britain, first found herself being allergic to Wi-Fi signals in 2015. She suffered from sickness, heart palpitations（心悸）and great pains in her head after she was exposed to Wi-Fi signals sent from wireless routers（无线路由器）and phone mast（信号塔）.\n\nRachel has tried many ways to escape Wi-Fi signals. In the past six months, she either slept in her car or in tent which she had put up in woodland or in the fields. She has even tried sleeping in a shed. Being completely tired, Rachel had no choice but to quit her job and moved 370 kilometers away from her home to escape at least fifteen phone masts near her house.\n\nShe is now living in a small house in rural（乡下的）Wales. There are far fewer masts. However, the house, which belongs to one of her friends, is up for sale, so she has to move again soon. Rachel is planning to move to a more rural area. She is also planning to buy a camper van（野营车）so that she can drive away from Wi-Fi signals whenever she is feeling uncomfortable.\n\nAs she has no job and therefore no income, she has to raise money online. She is hoping to raise 15,000 pounds. So far, she has raised over 1,600 pounds. She still has a long way to go.",
     "questions": [
       {
         "number": 69,
@@ -2261,7 +2551,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "You may have heard of people who are allergic（过敏）to seafood, smoke or pets. But did you know that some people were allergic to Wi-Fi signals? Rachel Hinks, a 44-year-old woman from Britain, first found herself being allergic to Wi-Fi signals in 2015. She suffered from sickness, heart palpitations（心悸）and great pains in her head after she was exposed to Wi-Fi signals sent from wireless routers（无线路由器）and phone mast（信号塔）.",
+      "Rachel has tried many ways to escape Wi-Fi signals. In the past six months, she either slept in her car or in tent which she had put up in woodland or in the fields. She has even tried sleeping in a shed. Being completely tired, Rachel had no choice but to quit her job and moved 370 kilometers away from her home to escape at least fifteen phone masts near her house.",
+      "She is now living in a small house in rural（乡下的）Wales. There are far fewer masts. However, the house, which belongs to one of her friends, is up for sale, so she has to move again soon. Rachel is planning to move to a more rural area. She is also planning to buy a camper van（野营车）so that she can drive away from Wi-Fi signals whenever she is feeling uncomfortable.",
+      "As she has no job and therefore no income, she has to raise money online. She is hoping to raise 15,000 pounds. So far, she has raised over 1,600 pounds. She still has a long way to go."
+    ]
   },
   {
     "_id": "sh-em1-2018-徐汇-reading-a",
@@ -2273,7 +2574,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市徐汇区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Star Cruises offer exciting new choices to escape the winter cold After its Golden Sea Route journey to Japan this summer, Superstar Virago will start brand new winter routes from November 30, 2017 to February 28, 2018 for customers. This is the time to escape from the cold weather in Shanghai. The new routes will have seven popular destinations across the East Pacific Ocean. It provides a variety of winter travel choices. Shanghai Wusonkou International Cruise Terminal will continue to be the homeport.” As a leader in the Asia-Pacific cruise market, Star Cruises has always been developing great experiences for their guests. The four well-designed winter routes will show landmark scenery from Osaka and Okinawa, Japan to Manila and Laoag in the Philippines. To cater to customers’ desires for popular destinations, and their different holiday plans, the four new routes are aimed at helping guests find new and exciting locations and allow them to enjoy an unforgettable holiday. Scan to explore more service information on iDEALShanghai.com",
+    "passage": "Star Cruises offer exciting new choices to escape the winter cold After its Golden Sea Route journey to Japan this summer, Superstar Virago will start brand new winter routes from November 30, 2017 to February 28, 2018 for customers. This is the time to escape from the cold weather in Shanghai. The new routes will have seven popular destinations across the East Pacific Ocean.\n\nIt provides a variety of winter travel choices. Shanghai Wusonkou International Cruise Terminal will continue to be the homeport.” As a leader in the Asia-Pacific cruise market, Star Cruises has always been developing great experiences for their guests. The four well-designed winter routes will show landmark scenery from Osaka and Okinawa, Japan to Manila and Laoag in the Philippines.\n\nTo cater to customers’ desires for popular destinations, and their different holiday plans, the four new routes are aimed at helping guests find new and exciting locations and allow them to enjoy an unforgettable holiday. Scan to explore more service information on iDEALShanghai.com",
     "questions": [
       {
         "number": 69,
@@ -2353,7 +2654,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Star Cruises offer exciting new choices to escape the winter cold After its Golden Sea Route journey to Japan this summer, Superstar Virago will start brand new winter routes from November 30, 2017 to February 28, 2018 for customers. This is the time to escape from the cold weather in Shanghai. The new routes will have seven popular destinations across the East Pacific Ocean.",
+      "It provides a variety of winter travel choices. Shanghai Wusonkou International Cruise Terminal will continue to be the homeport.” As a leader in the Asia-Pacific cruise market, Star Cruises has always been developing great experiences for their guests. The four well-designed winter routes will show landmark scenery from Osaka and Okinawa, Japan to Manila and Laoag in the Philippines.",
+      "To cater to customers’ desires for popular destinations, and their different holiday plans, the four new routes are aimed at helping guests find new and exciting locations and allow them to enjoy an unforgettable holiday. Scan to explore more service information on iDEALShanghai.com"
+    ]
   },
   {
     "_id": "sh-em1-2018-普陀-reading-a",
@@ -2365,7 +2676,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Basic Photography This is an eight-hour course for beginners who want to learn how to use a 35mm camera. Theteacher will cover such areas as kinds of film, light, and lenses (镜头). Bring your own 35mm camera to the class. CourseCharge:$150 Jan. 9, 11, 16, 18, Tues. & Thurs. 6-8 pm Marianne Adams is a professional photographer whose photographs appear in many magazines. __________________ This twelve-hour course is for people who don't know very much about computers, but who need to learn about them. You will learn what computers are, what they can and can't do, and how to usethem. Course Charge:$75 EquipmentCharge:$10 Jan. 6, 13, 20, 27, Sat. 9-12 am Joseph Saimders is a professor of computer science at New Area University. He has over twelve years of experience in the computer field. Stop Smoking Have you already tried to stop smoking and failed? Now it is the time to stop smoking using the latest methods. You can stop smoking without pain or any medicine, and this twelve-hour course willhelp you do it. CourseCharge:$30 Jan. 8, 15, 22, 29, Mon. 4-7 pm John Goode is an experienced doctor who has helped hundreds of people stop smoking. Typing This course on weekdays is for those who want to type as well as those who want to improve their typing. You are tested in the first class and practise at one of eight different skill levels. This allows you to learn at your own speed. Each program lasts 20 hours. Bring your own paper. CourseCharge: $125 Materials Charge:$25 Two hours each evening for two weeks. This course is taught by a number of business education teachers who havesuccessfully taught typing courses before. If you are interested, please call 5647 8833, or contact us at wwW.redstar.cn. You can also fill the form given and mailit to 781 N. Blue Lake Street, Green Island.",
+    "passage": "Basic Photography This is an eight-hour course for beginners who want to learn how to use a 35mm camera. Theteacher will cover such areas as kinds of film, light, and lenses (镜头). Bring your own 35mm camera to the class. CourseCharge:$150 Jan. 9, 11, 16, 18, Tues. & Thurs. 6-8 pm Marianne Adams is a professional photographer whose photographs appear in many magazines.\n\n__________________ This twelve-hour course is for people who don't know very much about computers, but who need to learn about them. You will learn what computers are, what they can and can't do, and how to usethem. Course Charge:$75 EquipmentCharge:$10 Jan. 6, 13, 20, 27, Sat. 9-12 am Joseph Saimders is a professor of computer science at New Area University.\n\nHe has over twelve years of experience in the computer field. Stop Smoking Have you already tried to stop smoking and failed? Now it is the time to stop smoking using the latest methods. You can stop smoking without pain or any medicine, and this twelve-hour course willhelp you do it. CourseCharge:$30 Jan.\n\n8, 15, 22, 29, Mon. 4-7 pm John Goode is an experienced doctor who has helped hundreds of people stop smoking. Typing This course on weekdays is for those who want to type as well as those who want to improve their typing. You are tested in the first class and practise at one of eight different skill levels.\n\nThis allows you to learn at your own speed. Each program lasts 20 hours. Bring your own paper. CourseCharge: $125 Materials Charge:$25 Two hours each evening for two weeks. This course is taught by a number of business education teachers who havesuccessfully taught typing courses before. If you are interested, please call 5647 8833, or contact us at wwW.redstar.cn. You can also fill the form given and mailit to 781 N. Blue Lake Street, Green Island.",
     "questions": [
       {
         "number": 69,
@@ -2445,7 +2756,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Basic Photography This is an eight-hour course for beginners who want to learn how to use a 35mm camera. Theteacher will cover such areas as kinds of film, light, and lenses (镜头). Bring your own 35mm camera to the class. CourseCharge:$150 Jan. 9, 11, 16, 18, Tues. & Thurs. 6-8 pm Marianne Adams is a professional photographer whose photographs appear in many magazines.",
+      "__________________ This twelve-hour course is for people who don't know very much about computers, but who need to learn about them. You will learn what computers are, what they can and can't do, and how to usethem. Course Charge:$75 EquipmentCharge:$10 Jan. 6, 13, 20, 27, Sat. 9-12 am Joseph Saimders is a professor of computer science at New Area University.",
+      "He has over twelve years of experience in the computer field. Stop Smoking Have you already tried to stop smoking and failed? Now it is the time to stop smoking using the latest methods. You can stop smoking without pain or any medicine, and this twelve-hour course willhelp you do it. CourseCharge:$30 Jan.",
+      "8, 15, 22, 29, Mon. 4-7 pm John Goode is an experienced doctor who has helped hundreds of people stop smoking. Typing This course on weekdays is for those who want to type as well as those who want to improve their typing. You are tested in the first class and practise at one of eight different skill levels.",
+      "This allows you to learn at your own speed. Each program lasts 20 hours. Bring your own paper. CourseCharge: $125 Materials Charge:$25 Two hours each evening for two weeks. This course is taught by a number of business education teachers who havesuccessfully taught typing courses before. If you are interested, please call 5647 8833, or contact us at wwW.redstar.cn. You can also fill the form given and mailit to 781 N. Blue Lake Street, Green Island."
+    ]
   },
   {
     "_id": "sh-em1-2018-松江-reading-a",
@@ -2457,7 +2780,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） I’ve loved my mother’s desk since I was just tall enough to see above the top of it as mother sat writing letters. Standing by her chair, looking at the ink bottle, pens, and white paper, I decided that the act of writing must be the most wonderful thing in the world. Years later, during her final illness, Mother kept different things for my sister and brother. \"But the desk\", she said, \"is for Elizabeth\". I never saw her angry, never saw her cry. I knew she loved me; she showed it in action. But as a young girl, I wanted heart-to-heart talks between mother and daughter. They never happened. And a gulf opened between us. I was \"too emotional（易动情感的）\". But she lived \"on the surface\". As years passed, I had my own family. I loved my mother and thanked her for our happy family. I wrote to her in careful words and asked her to let me know in any way she chose that she did forgive（原谅）me. I posted the letter and waited for her answer. None came. My hope turned to disappointment, then little interest and finally, peace---it seemed that nothing happened. I couldn't be sure that the letter had even got to Mother. I only knew that I had written it, and I could stop trying to make her into someone she was not. Now the present of her desk told me, as she'd never been able to, that she was pleased that writing was my chosen work, I cleaned the desk carefully and found some papers inside, a photo of my father and a one-page letter, folded (折叠) and refolded many times. Give me an answer, my letter asks, in any way you choose. Mother, you always chose the act that speaks louder than words.",
+    "passage": "I’ve loved my mother’s desk since I was just tall enough to see above the top of it as mother sat writing letters. Standing by her chair, looking at the ink bottle, pens, and white paper, I decided that the act of writing must be the most wonderful thing in the world. Years later, during her final illness, Mother kept different things for my sister and brother.\n\n\"But the desk\", she said, \"is for Elizabeth\". I never saw her angry, never saw her cry. I knew she loved me; she showed it in action. But as a young girl, I wanted heart-to-heart talks between mother and daughter. They never happened. And a gulf opened between us. I was \"too emotional（易动情感的）\". But she lived \"on the surface\".\n\nAs years passed, I had my own family. I loved my mother and thanked her for our happy family. I wrote to her in careful words and asked her to let me know in any way she chose that she did forgive（原谅）me. I posted the letter and waited for her answer. None came. My hope turned to disappointment, then little interest and finally, peace---it seemed that nothing happened.\n\nI couldn't be sure that the letter had even got to Mother. I only knew that I had written it, and I could stop trying to make her into someone she was not. Now the present of her desk told me, as she'd never been able to, that she was pleased that writing was my chosen work, I cleaned the desk carefully and found some papers inside, a photo of my father and a one-page letter, folded (折叠) and refolded many times. Give me an answer, my letter asks, in any way you choose. Mother, you always chose the act that speaks louder than words.",
     "questions": [
       {
         "number": 69,
@@ -2537,7 +2860,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "I’ve loved my mother’s desk since I was just tall enough to see above the top of it as mother sat writing letters. Standing by her chair, looking at the ink bottle, pens, and white paper, I decided that the act of writing must be the most wonderful thing in the world. Years later, during her final illness, Mother kept different things for my sister and brother.",
+      "\"But the desk\", she said, \"is for Elizabeth\". I never saw her angry, never saw her cry. I knew she loved me; she showed it in action. But as a young girl, I wanted heart-to-heart talks between mother and daughter. They never happened. And a gulf opened between us. I was \"too emotional（易动情感的）\". But she lived \"on the surface\".",
+      "As years passed, I had my own family. I loved my mother and thanked her for our happy family. I wrote to her in careful words and asked her to let me know in any way she chose that she did forgive（原谅）me. I posted the letter and waited for her answer. None came. My hope turned to disappointment, then little interest and finally, peace---it seemed that nothing happened.",
+      "I couldn't be sure that the letter had even got to Mother. I only knew that I had written it, and I could stop trying to make her into someone she was not. Now the present of her desk told me, as she'd never been able to, that she was pleased that writing was my chosen work, I cleaned the desk carefully and found some papers inside, a photo of my father and a one-page letter, folded (折叠) and refolded many times. Give me an answer, my letter asks, in any way you choose. Mother, you always chose the act that speaks louder than words."
+    ]
   },
   {
     "_id": "sh-em1-2018-金山-reading-a",
@@ -2549,7 +2883,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市金山区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) I'm very thankful to the cat and it always makes me think of the time I was with him. Five years ago, when my father was dying, I travelled a thousand miles from home to be with him in his last days. I felt very sad and it was one of the most difficult and painful times in my life. After he passed away, I stayed alone in his flat. There were so many things to deal with. I was lonely and I hated the silence of the flat. But one evening the silence was broken: I heard crying outside. I opened the door to find a little cat on the steps. He was thin and poor. He looked the way I felt. I brought him inside and gave him a can of fish. He ate it and then almost immediately fell asleep. The next morning I checked with neighbors and learned that the cat had been left by his owner. His owner had moved out, so the little cat was there all alone, just like I was. As I walked back to the flat, I tried to work out what to do with him. Having something else to take care of seemed like the very last thing I needed. But as soon as I opened the flat door, he ran to me and jumped into my arms. It was clear from that moment that he didn't want to go anywhere. I started calling him Willis in order to remember my father's best friend. From then on, things grew easier. With Willis in my lap, time seemed to pass much faster. When the time finally came for me to return home, I had to decide what to do about Willis. There was absolutely no way I would leave without him. It's been five years since my father died. Over the years, several people have said how nice it was of me to rescue the cat. But I know that we rescued each other. I may have given him a home but he gave me something greater.",
+    "passage": "I'm very thankful to the cat and it always makes me think of the time I was with him. Five years ago, when my father was dying, I travelled a thousand miles from home to be with him in his last days. I felt very sad and it was one of the most difficult and painful times in my life. After he passed away, I stayed alone in his flat.\n\nThere were so many things to deal with. I was lonely and I hated the silence of the flat. But one evening the silence was broken: I heard crying outside. I opened the door to find a little cat on the steps. He was thin and poor. He looked the way I felt. I brought him inside and gave him a can of fish.\n\nHe ate it and then almost immediately fell asleep. The next morning I checked with neighbors and learned that the cat had been left by his owner. His owner had moved out, so the little cat was there all alone, just like I was. As I walked back to the flat, I tried to work out what to do with him. Having something else to take care of seemed like the very last thing I needed.\n\nBut as soon as I opened the flat door, he ran to me and jumped into my arms. It was clear from that moment that he didn't want to go anywhere. I started calling him Willis in order to remember my father's best friend. From then on, things grew easier. With Willis in my lap, time seemed to pass much faster.\n\nWhen the time finally came for me to return home, I had to decide what to do about Willis. There was absolutely no way I would leave without him. It's been five years since my father died. Over the years, several people have said how nice it was of me to rescue the cat. But I know that we rescued each other. I may have given him a home but he gave me something greater.",
     "questions": [
       {
         "number": 69,
@@ -2629,7 +2963,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "I'm very thankful to the cat and it always makes me think of the time I was with him. Five years ago, when my father was dying, I travelled a thousand miles from home to be with him in his last days. I felt very sad and it was one of the most difficult and painful times in my life. After he passed away, I stayed alone in his flat.",
+      "There were so many things to deal with. I was lonely and I hated the silence of the flat. But one evening the silence was broken: I heard crying outside. I opened the door to find a little cat on the steps. He was thin and poor. He looked the way I felt. I brought him inside and gave him a can of fish.",
+      "He ate it and then almost immediately fell asleep. The next morning I checked with neighbors and learned that the cat had been left by his owner. His owner had moved out, so the little cat was there all alone, just like I was. As I walked back to the flat, I tried to work out what to do with him. Having something else to take care of seemed like the very last thing I needed.",
+      "But as soon as I opened the flat door, he ran to me and jumped into my arms. It was clear from that moment that he didn't want to go anywhere. I started calling him Willis in order to remember my father's best friend. From then on, things grew easier. With Willis in my lap, time seemed to pass much faster.",
+      "When the time finally came for me to return home, I had to decide what to do about Willis. There was absolutely no way I would leave without him. It's been five years since my father died. Over the years, several people have said how nice it was of me to rescue the cat. But I know that we rescued each other. I may have given him a home but he gave me something greater."
+    ]
   },
   {
     "_id": "sh-em1-2018-静安-reading-a",
@@ -2641,7 +2987,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2018届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Spiderman saves the day A comic book fan dressed as Spiderman became a real superhero on Saturday. He tackled a thief who was trying to steal an expensive comic book. Michael Wong 24, was wearing a Spiderman costume to attend theannual Asian Festival of Comics at the Sunny Sports Club. He saw the man putting the $350 comic book into his sports bag. There were about 50 people at the festival wearing superhero costumes that day,' said Maddie Tam, the festival organizer. 'We enjoy seeing people dressed up as their favourite characters while they shop for comics. However, we didn't expect to see any of them actually stop a crime.' The thief did not have a chance to escape. While Spiderman took hold of his sweatshirt, several Star Wars characters blocked the exit. After a short struggle, the embarrassed robber gave the book back. 'At first, I thought it was part of the festival,' said Sharon Luk, a rock climbing instructor dressed as Wonder Woman. 'Reading comics is fun but watching superheroes in action is even better.' 'We were rather surprised when we arrived,' said Police Constable Albert Mak. 'It can be easily seen that Spiderman hates to let criminals get away. Maybe he'll be interested in joining the police.' 'Crime-fighting is easy for Spiderman,' Mr. Wong said laughing. 'The poor man was a bit unlucky as I teach judo(柔道) lessons here at the club.'",
+    "passage": "Spiderman saves the day A comic book fan dressed as Spiderman became a real superhero on Saturday. He tackled a thief who was trying to steal an expensive comic book. Michael Wong 24, was wearing a Spiderman costume to attend theannual Asian Festival of Comics at the Sunny Sports Club. He saw the man putting the $350 comic book into his sports bag.\n\nThere were about 50 people at the festival wearing superhero costumes that day,' said Maddie Tam, the festival organizer. 'We enjoy seeing people dressed up as their favourite characters while they shop for comics. However, we didn't expect to see any of them actually stop a crime.' The thief did not have a chance to escape.\n\nWhile Spiderman took hold of his sweatshirt, several Star Wars characters blocked the exit. After a short struggle, the embarrassed robber gave the book back. 'At first, I thought it was part of the festival,' said Sharon Luk, a rock climbing instructor dressed as Wonder Woman. 'Reading comics is fun but watching superheroes in action is even better.\n\n' 'We were rather surprised when we arrived,' said Police Constable Albert Mak. 'It can be easily seen that Spiderman hates to let criminals get away. Maybe he'll be interested in joining the police.' 'Crime-fighting is easy for Spiderman,' Mr. Wong said laughing. 'The poor man was a bit unlucky as I teach judo(柔道) lessons here at the club. '",
     "questions": [
       {
         "number": 69,
@@ -2721,7 +3067,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Spiderman saves the day A comic book fan dressed as Spiderman became a real superhero on Saturday. He tackled a thief who was trying to steal an expensive comic book. Michael Wong 24, was wearing a Spiderman costume to attend theannual Asian Festival of Comics at the Sunny Sports Club. He saw the man putting the $350 comic book into his sports bag.",
+      "There were about 50 people at the festival wearing superhero costumes that day,' said Maddie Tam, the festival organizer. 'We enjoy seeing people dressed up as their favourite characters while they shop for comics. However, we didn't expect to see any of them actually stop a crime.' The thief did not have a chance to escape.",
+      "While Spiderman took hold of his sweatshirt, several Star Wars characters blocked the exit. After a short struggle, the embarrassed robber gave the book back. 'At first, I thought it was part of the festival,' said Sharon Luk, a rock climbing instructor dressed as Wonder Woman. 'Reading comics is fun but watching superheroes in action is even better.",
+      "' 'We were rather surprised when we arrived,' said Police Constable Albert Mak. 'It can be easily seen that Spiderman hates to let criminals get away. Maybe he'll be interested in joining the police.' 'Crime-fighting is easy for Spiderman,' Mr. Wong said laughing. 'The poor man was a bit unlucky as I teach judo(柔道) lessons here at the club. '"
+    ]
   },
   {
     "_id": "sh-em1-2019-嘉定-reading-a",
@@ -2733,7 +3090,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) You Are Wanted Are you look for something fun and want to help others in your spare time? Then join us to be a volunteer! On January 26, from 9 a.m. to 4 p.m., Clinton Middle School will be holding a music festival in the school gym. The special event will feature a variety of eminent artists and musicians who won lots of international rewards. Task Time Date Make poster 1 p.m. – 4 p.m. January 20 Set up the gym 11 a.m. – 4 p.m. January 23 Help performers 9 a.m. – 4 p.m. January 26 Welcome guests 10 a.m. – 2 p.m. January 26 Clean up the gym 4 p.m. – 7 p.m. January 26 We are looking for Clinton students to help with the jobs. Interested students should send an e-mail to Ms. Braxton (Clinton2018@aol.com), the music teacher. Students who would like to help at the festival must have written permission(同意书) from your parents.",
+    "passage": "You Are Wanted Are you look for something fun and want to help others in your spare time? Then join us to be a volunteer! On January 26, from 9 a.m. to 4 p.m., Clinton Middle School will be holding a music festival in the school gym. The special event will feature a variety of eminent artists and musicians who won lots of international rewards.\n\nTask Time Date Make poster 1 p.m. – 4 p.m. January 20 Set up the gym 11 a.m. – 4 p.m. January 23 Help performers 9 a.m. – 4 p.m. January 26 Welcome guests 10 a.m. – 2 p.m. January 26 Clean up the gym 4 p.m. – 7 p.m. January 26 We are looking for Clinton students to help with the jobs. Interested students should send an e-mail to Ms.\n\nBraxton (Clinton2018@aol.com), the music teacher. Students who would like to help at the festival must have written permission(同意书) from your parents.",
     "questions": [
       {
         "number": 69,
@@ -2813,7 +3170,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "You Are Wanted Are you look for something fun and want to help others in your spare time? Then join us to be a volunteer! On January 26, from 9 a.m. to 4 p.m., Clinton Middle School will be holding a music festival in the school gym. The special event will feature a variety of eminent artists and musicians who won lots of international rewards.",
+      "Task Time Date Make poster 1 p.m. – 4 p.m. January 20 Set up the gym 11 a.m. – 4 p.m. January 23 Help performers 9 a.m. – 4 p.m. January 26 Welcome guests 10 a.m. – 2 p.m. January 26 Clean up the gym 4 p.m. – 7 p.m. January 26 We are looking for Clinton students to help with the jobs. Interested students should send an e-mail to Ms.",
+      "Braxton (Clinton2018@aol.com), the music teacher. Students who would like to help at the festival must have written permission(同意书) from your parents."
+    ]
   },
   {
     "_id": "sh-em1-2019-奉贤-reading-a",
@@ -2825,7 +3192,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) In many countries, pets are well loved. In America, 95 percent of pet owners think of their animals as family members. About half buy them birthday gifts. And it’s a two-way street. People who have pets tend to have lower blood pressure. They also have a lower heart-disease risk. Scientists are finding more and more evidence that animals can also help improve mental health. Some clinics have been using “pit therapy”（宠物疗法） alongside traditional medicine. Here is a look at some of the cures. Rabbits In one study, scientists told a group of stressed-out adults to pat a rabbit and a rabbit toy. The toy had no effect. Touching the living rabbit, however, reduced anxiety（焦虑）. Crickets（蟋蟀） Animals don’t have to be soft and lovely to help. In a 2016 study, elderly people who were given five crickets in a cage felt happier after eight weeks. The act of caring of an animal seemed to make the difference. Horses Horses are among the most-studied therapy animals. In Europe, they have been involved in medical treatment plans since the 1860s. Activities like brushing the fur of a horse have been shown to reduce anxiety in people of all ages. Fish One of the study focused on people who had Alzheimer’s disease（阿尔兹海默氏病）. When they dined in front of a tank of colorful fish, they ate more. Dogs Children who struggle with reading are less anxious when they read aloud to a trained dog. Their attitudes change and their skills improve.",
+    "passage": "In many countries, pets are well loved. In America, 95 percent of pet owners think of their animals as family members. About half buy them birthday gifts. And it’s a two-way street. People who have pets tend to have lower blood pressure. They also have a lower heart-disease risk. Scientists are finding more and more evidence that animals can also help improve mental health.\n\nSome clinics have been using “pit therapy”（宠物疗法） alongside traditional medicine. Here is a look at some of the cures. Rabbits In one study, scientists told a group of stressed-out adults to pat a rabbit and a rabbit toy. The toy had no effect. Touching the living rabbit, however, reduced anxiety（焦虑）.\n\nCrickets（蟋蟀） Animals don’t have to be soft and lovely to help. In a 2016 study, elderly people who were given five crickets in a cage felt happier after eight weeks. The act of caring of an animal seemed to make the difference. Horses Horses are among the most-studied therapy animals. In Europe, they have been involved in medical treatment plans since the 1860s.\n\nActivities like brushing the fur of a horse have been shown to reduce anxiety in people of all ages. Fish One of the study focused on people who had Alzheimer’s disease（阿尔兹海默氏病）. When they dined in front of a tank of colorful fish, they ate more. Dogs Children who struggle with reading are less anxious when they read aloud to a trained dog. Their attitudes change and their skills improve.",
     "questions": [
       {
         "number": 69,
@@ -2905,7 +3272,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "In many countries, pets are well loved. In America, 95 percent of pet owners think of their animals as family members. About half buy them birthday gifts. And it’s a two-way street. People who have pets tend to have lower blood pressure. They also have a lower heart-disease risk. Scientists are finding more and more evidence that animals can also help improve mental health.",
+      "Some clinics have been using “pit therapy”（宠物疗法） alongside traditional medicine. Here is a look at some of the cures. Rabbits In one study, scientists told a group of stressed-out adults to pat a rabbit and a rabbit toy. The toy had no effect. Touching the living rabbit, however, reduced anxiety（焦虑）.",
+      "Crickets（蟋蟀） Animals don’t have to be soft and lovely to help. In a 2016 study, elderly people who were given five crickets in a cage felt happier after eight weeks. The act of caring of an animal seemed to make the difference. Horses Horses are among the most-studied therapy animals. In Europe, they have been involved in medical treatment plans since the 1860s.",
+      "Activities like brushing the fur of a horse have been shown to reduce anxiety in people of all ages. Fish One of the study focused on people who had Alzheimer’s disease（阿尔兹海默氏病）. When they dined in front of a tank of colorful fish, they ate more. Dogs Children who struggle with reading are less anxious when they read aloud to a trained dog. Their attitudes change and their skills improve."
+    ]
   },
   {
     "_id": "sh-em1-2019-徐汇-reading-a",
@@ -2917,7 +3295,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市徐汇区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) It’s a cold, grey Sunday afternoon in March. The light is slowly fading, but all over Britain people are working in their gardens. They’re digging, cutting leaves and planting new weeds. By summer, their gardens will be full of bright colors. The British love their gardens. A British newspaper recently asked people for their opinions about them. Seventy percent of people felt it was important to spend time in the garden, and over half of these described gardening as the most enjoyable thing they ever did. Only one in ten houses in Britain do not have a garden. You can, of course, just grow house plants inside or on your balcony. Once it was only the very wealthy who had a garden. You can still see the huge gardens that surround historic houses such as Chatsworth House or Castle Howard. Ordinary people used their land to produce food to eat or sell, or grew herbs to make medicine. In the nineteenth century, however, gardening became a hobby. About the same time, better transport meant people could buy different kinds of seeds and plants for their gardens. Although roses, sunflowers, onions and tomatoes are often grown in British gardens, they grew wild in other countries before. In many villages and towns there are competitions for the best looked-after gardens. This year the winner was a little village in Northern Ireland. It’s already won four prizes for its beauty. People also take part in competitions to grow the largest vegetables, but don’t expect to win. Britain’s biggest carrot is almost six meters long! A newspaper asked people what they grew in their gardens. Look at the diagram which shows their answers.",
+    "passage": "It’s a cold, grey Sunday afternoon in March. The light is slowly fading, but all over Britain people are working in their gardens. They’re digging, cutting leaves and planting new weeds. By summer, their gardens will be full of bright colors. The British love their gardens. A British newspaper recently asked people for their opinions about them.\n\nSeventy percent of people felt it was important to spend time in the garden, and over half of these described gardening as the most enjoyable thing they ever did. Only one in ten houses in Britain do not have a garden. You can, of course, just grow house plants inside or on your balcony. Once it was only the very wealthy who had a garden.\n\nYou can still see the huge gardens that surround historic houses such as Chatsworth House or Castle Howard. Ordinary people used their land to produce food to eat or sell, or grew herbs to make medicine. In the nineteenth century, however, gardening became a hobby. About the same time, better transport meant people could buy different kinds of seeds and plants for their gardens.\n\nAlthough roses, sunflowers, onions and tomatoes are often grown in British gardens, they grew wild in other countries before. In many villages and towns there are competitions for the best looked-after gardens. This year the winner was a little village in Northern Ireland. It’s already won four prizes for its beauty.\n\nPeople also take part in competitions to grow the largest vegetables, but don’t expect to win. Britain’s biggest carrot is almost six meters long! A newspaper asked people what they grew in their gardens. Look at the diagram which shows their answers.",
     "questions": [
       {
         "number": 69,
@@ -2997,7 +3375,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "It’s a cold, grey Sunday afternoon in March. The light is slowly fading, but all over Britain people are working in their gardens. They’re digging, cutting leaves and planting new weeds. By summer, their gardens will be full of bright colors. The British love their gardens. A British newspaper recently asked people for their opinions about them.",
+      "Seventy percent of people felt it was important to spend time in the garden, and over half of these described gardening as the most enjoyable thing they ever did. Only one in ten houses in Britain do not have a garden. You can, of course, just grow house plants inside or on your balcony. Once it was only the very wealthy who had a garden.",
+      "You can still see the huge gardens that surround historic houses such as Chatsworth House or Castle Howard. Ordinary people used their land to produce food to eat or sell, or grew herbs to make medicine. In the nineteenth century, however, gardening became a hobby. About the same time, better transport meant people could buy different kinds of seeds and plants for their gardens.",
+      "Although roses, sunflowers, onions and tomatoes are often grown in British gardens, they grew wild in other countries before. In many villages and towns there are competitions for the best looked-after gardens. This year the winner was a little village in Northern Ireland. It’s already won four prizes for its beauty.",
+      "People also take part in competitions to grow the largest vegetables, but don’t expect to win. Britain’s biggest carrot is almost six meters long! A newspaper asked people what they grew in their gardens. Look at the diagram which shows their answers."
+    ]
   },
   {
     "_id": "sh-em1-2019-杨浦-reading-a",
@@ -3009,7 +3399,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Did you know that a lot of the technology we use today appeared in books before scientists invented it? E-book readers didn’t appear until 1999, but as long ago as 1961, author Stanislaw Lem wrote about them in his book, Return from the Stars. Cash machines were invented in the 1980s. But Ray Bradbury thought of them first, in his 1953 novel, Fahrenheit 451. Scientists are working on all these ideas from books and films. How far have they got? Back to the Future Part II, Steven Spielberg (1989) When Marty and his friend travel to the future, one of the most amazing machines they find is flying cars. The cars fly along ‘roads’ in the sky which have signs and streetlights. AI, Steven Spielberg (2001) based on Super-Toys Last All Summer Long, Brian Aldiss (1969) When a young child dies, his mother is given an android which looks and behaves exactly like a real boy. The robot loves her like a son. Iron Man Marvel Comics (1963) Marvel films (2008 onward) A rich scientist and engineer is badly hurt. To save his own life, he builds himself a robotic heart and a powerful metal suit which makes him stronger and faster than any other man. He becomes a cyborg – part man, part machine. Minority Report short story by Philip K. Dick (1956) and a film by Steven Spielberg (2002) Tom Cruise plays a detective who can stop crimes before they happen. His team use information from psychics, who can see the future. They know who will break the law and when it will happen, but they don’t know where. Another idea that appeared in Minority Report is personalized advertising. All around the future city there are advertising billboards which use cameras to recognize the people walking by. The billboards speak to people by name and suggest things to buy.",
+    "passage": "Did you know that a lot of the technology we use today appeared in books before scientists invented it? E-book readers didn’t appear until 1999, but as long ago as 1961, author Stanislaw Lem wrote about them in his book, Return from the Stars. Cash machines were invented in the 1980s. But Ray Bradbury thought of them first, in his 1953 novel, Fahrenheit 451.\n\nScientists are working on all these ideas from books and films. How far have they got? Back to the Future Part II, Steven Spielberg (1989) When Marty and his friend travel to the future, one of the most amazing machines they find is flying cars. The cars fly along ‘roads’ in the sky which have signs and streetlights.\n\nAI, Steven Spielberg (2001) based on Super-Toys Last All Summer Long, Brian Aldiss (1969) When a young child dies, his mother is given an android which looks and behaves exactly like a real boy. The robot loves her like a son. Iron Man Marvel Comics (1963) Marvel films (2008 onward) A rich scientist and engineer is badly hurt.\n\nTo save his own life, he builds himself a robotic heart and a powerful metal suit which makes him stronger and faster than any other man. He becomes a cyborg – part man, part machine. Minority Report short story by Philip K. Dick (1956) and a film by Steven Spielberg (2002) Tom Cruise plays a detective who can stop crimes before they happen.\n\nHis team use information from psychics, who can see the future. They know who will break the law and when it will happen, but they don’t know where. Another idea that appeared in Minority Report is personalized advertising. All around the future city there are advertising billboards which use cameras to recognize the people walking by. The billboards speak to people by name and suggest things to buy.",
     "questions": [
       {
         "number": 69,
@@ -3077,7 +3467,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Did you know that a lot of the technology we use today appeared in books before scientists invented it? E-book readers didn’t appear until 1999, but as long ago as 1961, author Stanislaw Lem wrote about them in his book, Return from the Stars. Cash machines were invented in the 1980s. But Ray Bradbury thought of them first, in his 1953 novel, Fahrenheit 451.",
+      "Scientists are working on all these ideas from books and films. How far have they got? Back to the Future Part II, Steven Spielberg (1989) When Marty and his friend travel to the future, one of the most amazing machines they find is flying cars. The cars fly along ‘roads’ in the sky which have signs and streetlights.",
+      "AI, Steven Spielberg (2001) based on Super-Toys Last All Summer Long, Brian Aldiss (1969) When a young child dies, his mother is given an android which looks and behaves exactly like a real boy. The robot loves her like a son. Iron Man Marvel Comics (1963) Marvel films (2008 onward) A rich scientist and engineer is badly hurt.",
+      "To save his own life, he builds himself a robotic heart and a powerful metal suit which makes him stronger and faster than any other man. He becomes a cyborg – part man, part machine. Minority Report short story by Philip K. Dick (1956) and a film by Steven Spielberg (2002) Tom Cruise plays a detective who can stop crimes before they happen.",
+      "His team use information from psychics, who can see the future. They know who will break the law and when it will happen, but they don’t know where. Another idea that appeared in Minority Report is personalized advertising. All around the future city there are advertising billboards which use cameras to recognize the people walking by. The billboards speak to people by name and suggest things to buy."
+    ]
   },
   {
     "_id": "sh-em1-2019-浦东-reading-a",
@@ -3089,7 +3491,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Art Painting by Numbers This is a colorful set which will help you to paint like a real artist. Each color has a number and the numbers are on the picture for you to follow. Painting beautifully has never been easier. Everyone will think you are the next teenage genius. Of course, it’s up to you whether you tell them how you did it so well! Game GYA This game will keep your fingers busy all day. You have to press the lights when the light up. Do you think it sounds easy? Well, think again because it is actually very difficult. If you miss a lot of lights, you’ll lose the game. You will not be able to put this game down. Instead, it will push you beyond your limits and test the use of your fingers. Book Chasing Vermeer If you like who-done-it police stories to get your brain working, then ‘chasing Vermeer’ is your perfect read. It’s a mystery story about math shapes. Two children, called Calder and Petra, try to find out where an expensive Vermeer painting was. Vermeer was a famous artist. This book will make you read all night! Plus, the pictures are wonderful. Look at each picture carefully. There is something hidden in each one. Phone Verballs This might book like a cute toy, but it’s a talking Internet phone. Just plug your Verballs into your USB port on our computer and you can phone all your friends for free, all around the world! Verballs are not only useful, they’re also fun! When your friend speaks, your Verball’s lights flash and his arms wave.",
+    "passage": "Art Painting by Numbers This is a colorful set which will help you to paint like a real artist. Each color has a number and the numbers are on the picture for you to follow. Painting beautifully has never been easier. Everyone will think you are the next teenage genius. Of course, it’s up to you whether you tell them how you did it so well!\n\nGame GYA This game will keep your fingers busy all day. You have to press the lights when the light up. Do you think it sounds easy? Well, think again because it is actually very difficult. If you miss a lot of lights, you’ll lose the game. You will not be able to put this game down. Instead, it will push you beyond your limits and test the use of your fingers.\n\nBook Chasing Vermeer If you like who-done-it police stories to get your brain working, then ‘chasing Vermeer’ is your perfect read. It’s a mystery story about math shapes. Two children, called Calder and Petra, try to find out where an expensive Vermeer painting was. Vermeer was a famous artist. This book will make you read all night!\n\nPlus, the pictures are wonderful. Look at each picture carefully. There is something hidden in each one. Phone Verballs This might book like a cute toy, but it’s a talking Internet phone. Just plug your Verballs into your USB port on our computer and you can phone all your friends for free, all around the world! Verballs are not only useful, they’re also fun! When your friend speaks, your Verball’s lights flash and his arms wave.",
     "questions": [
       {
         "number": 69,
@@ -3169,7 +3571,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Art Painting by Numbers This is a colorful set which will help you to paint like a real artist. Each color has a number and the numbers are on the picture for you to follow. Painting beautifully has never been easier. Everyone will think you are the next teenage genius. Of course, it’s up to you whether you tell them how you did it so well!",
+      "Game GYA This game will keep your fingers busy all day. You have to press the lights when the light up. Do you think it sounds easy? Well, think again because it is actually very difficult. If you miss a lot of lights, you’ll lose the game. You will not be able to put this game down. Instead, it will push you beyond your limits and test the use of your fingers.",
+      "Book Chasing Vermeer If you like who-done-it police stories to get your brain working, then ‘chasing Vermeer’ is your perfect read. It’s a mystery story about math shapes. Two children, called Calder and Petra, try to find out where an expensive Vermeer painting was. Vermeer was a famous artist. This book will make you read all night!",
+      "Plus, the pictures are wonderful. Look at each picture carefully. There is something hidden in each one. Phone Verballs This might book like a cute toy, but it’s a talking Internet phone. Just plug your Verballs into your USB port on our computer and you can phone all your friends for free, all around the world! Verballs are not only useful, they’re also fun! When your friend speaks, your Verball’s lights flash and his arms wave."
+    ]
   },
   {
     "_id": "sh-em1-2019-虹口-reading-a",
@@ -3181,7 +3594,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Who has seen Yeti? This mysterious human-like animal lives in and around Asia’s high Himalayan Mountains. Or does he? For years, stories of the Yeti have attracted the interest of explorers and adventurer from around the world. In the local cultures of the Himalayan people, old stories of the famous Yeti are everywhere. Many stories say the Yeti is not an animal, but perhaps a half-ape（半猿），half human intelligent animal. No one can say for sure. What we do only know is that the Yeti is a powerful mix of fact and fiction. Over 150 years ago, Europeans curious about the Yeti began to enter China. They were looking for something to prove that the Yeti existed. They hoped the photograph, or maybe even catch, a real-life Yeti. Over the years, many explorers saw large unexplained footprints in the snow. Several European climbers even reported seeing a hairy, ape-like animal from a distance. The search for the Yeti didn’t become so popular later. Yeti fur “found” by various climbers was examined by scientists and proved to be unreal. People began to question the existence of the Yeti. In 1998, the Chinese government had to stop some activities of a nature reserve（保护区）which was doing great business by inviting tourists to buy tickets and hunt the Yeti. The reserve even offered large prices for anyone lucky enough to catch a Yeti! Clearly, basic human curiosity（好奇心）keeps the Yeti myth alive today. Plenty of unexplained footprints, bodies and stories continue to feed out curiosity as well. However, nobody can prove exactly whether the Yeti exists or not.",
+    "passage": "Who has seen Yeti? This mysterious human-like animal lives in and around Asia’s high Himalayan Mountains. Or does he? For years, stories of the Yeti have attracted the interest of explorers and adventurer from around the world. In the local cultures of the Himalayan people, old stories of the famous Yeti are everywhere.\n\nMany stories say the Yeti is not an animal, but perhaps a half-ape（半猿），half human intelligent animal. No one can say for sure. What we do only know is that the Yeti is a powerful mix of fact and fiction. Over 150 years ago, Europeans curious about the Yeti began to enter China. They were looking for something to prove that the Yeti existed.\n\nThey hoped the photograph, or maybe even catch, a real-life Yeti. Over the years, many explorers saw large unexplained footprints in the snow. Several European climbers even reported seeing a hairy, ape-like animal from a distance. The search for the Yeti didn’t become so popular later. Yeti fur “found” by various climbers was examined by scientists and proved to be unreal.\n\nPeople began to question the existence of the Yeti. In 1998, the Chinese government had to stop some activities of a nature reserve（保护区）which was doing great business by inviting tourists to buy tickets and hunt the Yeti. The reserve even offered large prices for anyone lucky enough to catch a Yeti!\n\nClearly, basic human curiosity（好奇心）keeps the Yeti myth alive today. Plenty of unexplained footprints, bodies and stories continue to feed out curiosity as well. However, nobody can prove exactly whether the Yeti exists or not.",
     "questions": [
       {
         "number": 70,
@@ -3249,7 +3662,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Who has seen Yeti? This mysterious human-like animal lives in and around Asia’s high Himalayan Mountains. Or does he? For years, stories of the Yeti have attracted the interest of explorers and adventurer from around the world. In the local cultures of the Himalayan people, old stories of the famous Yeti are everywhere.",
+      "Many stories say the Yeti is not an animal, but perhaps a half-ape（半猿），half human intelligent animal. No one can say for sure. What we do only know is that the Yeti is a powerful mix of fact and fiction. Over 150 years ago, Europeans curious about the Yeti began to enter China. They were looking for something to prove that the Yeti existed.",
+      "They hoped the photograph, or maybe even catch, a real-life Yeti. Over the years, many explorers saw large unexplained footprints in the snow. Several European climbers even reported seeing a hairy, ape-like animal from a distance. The search for the Yeti didn’t become so popular later. Yeti fur “found” by various climbers was examined by scientists and proved to be unreal.",
+      "People began to question the existence of the Yeti. In 1998, the Chinese government had to stop some activities of a nature reserve（保护区）which was doing great business by inviting tourists to buy tickets and hunt the Yeti. The reserve even offered large prices for anyone lucky enough to catch a Yeti!",
+      "Clearly, basic human curiosity（好奇心）keeps the Yeti myth alive today. Plenty of unexplained footprints, bodies and stories continue to feed out curiosity as well. However, nobody can prove exactly whether the Yeti exists or not."
+    ]
   },
   {
     "_id": "sh-em1-2019-闵行-reading-a",
@@ -3261,7 +3686,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) www.hungryharry.com.hk Hungry Harry’s Restaurant Guide The Green Shadow – vegetarian food health specialists Address: 40 King’s Road, Hong Kong Tel: 5555 1122 Business hours: 11.30 a.m. to 9.30 p.m. (Monday to Saturday) This vegetarian restaurant is above a popular gym with lots of healthy eaters. You can hear soft music and see lots of green plants near the reception area, plus a fountain trickles(滴) peacefully in a corner. The waiters all know how to recommend dishes that suit a customer’s blood type. Customer reviews I go there often. The helpful waiters always recommend delicious dishes, like pumpkin soup with healthy wheat bread. The atmosphere is cosy, but the food is expensive. The waiters are little arrogant(自大的); they think they know everything about food. Anyway, how many more vegetarian restaurants does this city need? The Enchanted(令人陶醉的) Café – a fantasy theme steakhouse Address: 78 Party Lane, Hong Kong Tel: 5555 1369 Business hours: 11 a.m. to 10 p.m. (Sunday to Saturday) The restaurant looks like the inside of an old castle, with dim lighting and mysterious music. Waitresses serve burgers and steaks in witch(女巫) costumes. They also do magic tricks. Customer reviews The Enchanted Café is such a fun place to visit, and the food is really tasty too! The mushroom burgers are pure magic! Yum! I don’t care how much the food costs; the performing waitresses are worth the visit! You can also eat some amazing cakes there. Rock and Roll Pizza House – traditional pizza served with a smile Address: 55 North Avenue, Hong Kong Tel: 5555 9987 Business hours: 1.30 p.m. to 11.30 p.m. (Sunday to Saturday) An American-style restaurant serves fresh pizza with a variety of toppings. The waiters go from table to table on roller skates in their bright red uniforms. Customers can enjoy some golden oldies(老歌) from the 1950s in a friendly atmosphere. Customer reviews They don’t have any garlic! What kind of place has no garlic? I also asked for some extra cheese on my pizza, but I didn’t get any. The service there was horrible! I can’t tell you how many times a waiter stumbled(绊倒) while serving the pizza. It is dangerous! They don’t sell any good drinks either.",
+    "passage": "www.hungryharry.com.hk Hungry Harry’s Restaurant Guide The Green Shadow – vegetarian food health specialists Address: 40 King’s Road, Hong Kong Tel: 5555 1122 Business hours: 11.30 a.m. to 9.30 p.m. (Monday to Saturday) This vegetarian restaurant is above a popular gym with lots of healthy eaters. You can hear soft music and see lots of green plants near the reception area, plus a fountain trickles(滴) peacefully in a corner.\n\nThe waiters all know how to recommend dishes that suit a customer’s blood type. Customer reviews I go there often. The helpful waiters always recommend delicious dishes, like pumpkin soup with healthy wheat bread. The atmosphere is cosy, but the food is expensive. The waiters are little arrogant(自大的); they think they know everything about food.\n\nAnyway, how many more vegetarian restaurants does this city need? The Enchanted(令人陶醉的) Café – a fantasy theme steakhouse Address: 78 Party Lane, Hong Kong Tel: 5555 1369 Business hours: 11 a.m. to 10 p.m. (Sunday to Saturday) The restaurant looks like the inside of an old castle, with dim lighting and mysterious music.\n\nWaitresses serve burgers and steaks in witch(女巫) costumes. They also do magic tricks. Customer reviews The Enchanted Café is such a fun place to visit, and the food is really tasty too! The mushroom burgers are pure magic! Yum! I don’t care how much the food costs; the performing waitresses are worth the visit!\n\nYou can also eat some amazing cakes there. Rock and Roll Pizza House – traditional pizza served with a smile Address: 55 North Avenue, Hong Kong Tel: 5555 9987 Business hours: 1.30 p.m. to 11.30 p.m. (Sunday to Saturday) An American-style restaurant serves fresh pizza with a variety of toppings. The waiters go from table to table on roller skates in their bright red uniforms.\n\nCustomers can enjoy some golden oldies(老歌) from the 1950s in a friendly atmosphere. Customer reviews They don’t have any garlic! What kind of place has no garlic? I also asked for some extra cheese on my pizza, but I didn’t get any. The service there was horrible! I can’t tell you how many times a waiter stumbled(绊倒) while serving the pizza. It is dangerous! They don’t sell any good drinks either.",
     "questions": [
       {
         "number": 69,
@@ -3341,7 +3766,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "www.hungryharry.com.hk Hungry Harry’s Restaurant Guide The Green Shadow – vegetarian food health specialists Address: 40 King’s Road, Hong Kong Tel: 5555 1122 Business hours: 11.30 a.m. to 9.30 p.m. (Monday to Saturday) This vegetarian restaurant is above a popular gym with lots of healthy eaters. You can hear soft music and see lots of green plants near the reception area, plus a fountain trickles(滴) peacefully in a corner.",
+      "The waiters all know how to recommend dishes that suit a customer’s blood type. Customer reviews I go there often. The helpful waiters always recommend delicious dishes, like pumpkin soup with healthy wheat bread. The atmosphere is cosy, but the food is expensive. The waiters are little arrogant(自大的); they think they know everything about food.",
+      "Anyway, how many more vegetarian restaurants does this city need? The Enchanted(令人陶醉的) Café – a fantasy theme steakhouse Address: 78 Party Lane, Hong Kong Tel: 5555 1369 Business hours: 11 a.m. to 10 p.m. (Sunday to Saturday) The restaurant looks like the inside of an old castle, with dim lighting and mysterious music.",
+      "Waitresses serve burgers and steaks in witch(女巫) costumes. They also do magic tricks. Customer reviews The Enchanted Café is such a fun place to visit, and the food is really tasty too! The mushroom burgers are pure magic! Yum! I don’t care how much the food costs; the performing waitresses are worth the visit!",
+      "You can also eat some amazing cakes there. Rock and Roll Pizza House – traditional pizza served with a smile Address: 55 North Avenue, Hong Kong Tel: 5555 9987 Business hours: 1.30 p.m. to 11.30 p.m. (Sunday to Saturday) An American-style restaurant serves fresh pizza with a variety of toppings. The waiters go from table to table on roller skates in their bright red uniforms.",
+      "Customers can enjoy some golden oldies(老歌) from the 1950s in a friendly atmosphere. Customer reviews They don’t have any garlic! What kind of place has no garlic? I also asked for some extra cheese on my pizza, but I didn’t get any. The service there was horrible! I can’t tell you how many times a waiter stumbled(绊倒) while serving the pizza. It is dangerous! They don’t sell any good drinks either."
+    ]
   },
   {
     "_id": "sh-em1-2019-黄浦-reading-a",
@@ -3353,7 +3791,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) For his eleventh birthday, Lin was given a gift that would shape his life. On that day his father took him to the Children’s Activity Centre and said he could choose any course that interested him. There was just one requirement: Lin would have to promise to study it for at least one year. To that point Lin had had many hobbies, but none kept his interest for more than a week or two. His mum once gave him a bag of stamps to encourage stamp collecting. That hobby lasted a week. Then his father got him some paints hoping that Lin’s artistic side would shine through. Those paints were now under his bed, some still unopened. This time Lin’s parents would let him decide. Lin’s eyes moved down the noticeboard that listed all the courses on offer. He stopped at “Photography”. He liked the idea of taking beautiful pictures but the notice said that each student needed their own camera. Although Lin’s family weren’t poor, they weren’t rich either, and a camera cost a lot of money. He continued looking. The next course to catch his eye was“Language Art”. He didn’t even know what that meant. His father explained that it taught people how to make public speeches. Lin, a shy boy, to him it couldn’t be worse. Then he saw it.“Cooking”sounded like something he’d like to do. It was inexpensive and convenient, it could be done alone and it was also creative. Based on Lin’s hobby history, his dad had doubts（疑惑），but he agreed. Much to his parents’ surprise, Lin kept his promise. He studied cooking at the Centre every Saturday, and practiced at home, making delicious meals for his family. Everyone looked forward to birthdays, when they could eat his cakes. Lin got great satisfaction from the pleasure his food brought to others. The months turned to years but his hobby never became different again. Now Lin is an adult and runs a wonderful restaurant. When customers say they enjoy his meal, he still gets the same pleasure he did as a child, and remembers the special gift he received all those years ago.",
+    "passage": "For his eleventh birthday, Lin was given a gift that would shape his life. On that day his father took him to the Children’s Activity Centre and said he could choose any course that interested him. There was just one requirement: Lin would have to promise to study it for at least one year. To that point Lin had had many hobbies, but none kept his interest for more than a week or two.\n\nHis mum once gave him a bag of stamps to encourage stamp collecting. That hobby lasted a week. Then his father got him some paints hoping that Lin’s artistic side would shine through. Those paints were now under his bed, some still unopened. This time Lin’s parents would let him decide. Lin’s eyes moved down the noticeboard that listed all the courses on offer.\n\nHe stopped at “Photography”. He liked the idea of taking beautiful pictures but the notice said that each student needed their own camera. Although Lin’s family weren’t poor, they weren’t rich either, and a camera cost a lot of money. He continued looking. The next course to catch his eye was“Language Art”.\n\nHe didn’t even know what that meant. His father explained that it taught people how to make public speeches. Lin, a shy boy, to him it couldn’t be worse. Then he saw it.“Cooking”sounded like something he’d like to do. It was inexpensive and convenient, it could be done alone and it was also creative.\n\nBased on Lin’s hobby history, his dad had doubts（疑惑），but he agreed. Much to his parents’ surprise, Lin kept his promise. He studied cooking at the Centre every Saturday, and practiced at home, making delicious meals for his family. Everyone looked forward to birthdays, when they could eat his cakes.\n\nLin got great satisfaction from the pleasure his food brought to others. The months turned to years but his hobby never became different again. Now Lin is an adult and runs a wonderful restaurant. When customers say they enjoy his meal, he still gets the same pleasure he did as a child, and remembers the special gift he received all those years ago.",
     "questions": [
       {
         "number": 69,
@@ -3433,7 +3871,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "For his eleventh birthday, Lin was given a gift that would shape his life. On that day his father took him to the Children’s Activity Centre and said he could choose any course that interested him. There was just one requirement: Lin would have to promise to study it for at least one year. To that point Lin had had many hobbies, but none kept his interest for more than a week or two.",
+      "His mum once gave him a bag of stamps to encourage stamp collecting. That hobby lasted a week. Then his father got him some paints hoping that Lin’s artistic side would shine through. Those paints were now under his bed, some still unopened. This time Lin’s parents would let him decide. Lin’s eyes moved down the noticeboard that listed all the courses on offer.",
+      "He stopped at “Photography”. He liked the idea of taking beautiful pictures but the notice said that each student needed their own camera. Although Lin’s family weren’t poor, they weren’t rich either, and a camera cost a lot of money. He continued looking. The next course to catch his eye was“Language Art”.",
+      "He didn’t even know what that meant. His father explained that it taught people how to make public speeches. Lin, a shy boy, to him it couldn’t be worse. Then he saw it.“Cooking”sounded like something he’d like to do. It was inexpensive and convenient, it could be done alone and it was also creative.",
+      "Based on Lin’s hobby history, his dad had doubts（疑惑），but he agreed. Much to his parents’ surprise, Lin kept his promise. He studied cooking at the Centre every Saturday, and practiced at home, making delicious meals for his family. Everyone looked forward to birthdays, when they could eat his cakes.",
+      "Lin got great satisfaction from the pleasure his food brought to others. The months turned to years but his hobby never became different again. Now Lin is an adult and runs a wonderful restaurant. When customers say they enjoy his meal, he still gets the same pleasure he did as a child, and remembers the special gift he received all those years ago."
+    ]
   },
   {
     "_id": "sh-em1-2020-虹口-reading-a",
@@ -3445,7 +3896,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer （根据以下内容，选择最恰当的答案） Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking. When the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals. The ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change. In 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world. Rising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef.",
+    "passage": "Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking.\n\nWhen the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals.\n\nThe ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change.\n\nIn 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world.\n\nRising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef.",
     "questions": [
       {
         "number": 69,
@@ -3525,7 +3976,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Nina is reading a book which described 37 endangered natural and cultural treasures in the world. The writers want the book to be a hopeful call to action. Let’s visit some of these places. Venice The ancient city of Venice, Italy has long been threatened（威胁）by rising sea levels. The situation is made worse by the fact that its ancient buildings, built on a body of water, are slowly sinking.",
+      "When the city was founded about 1600 years ago, the level of the Adriatic Sea was almost 2 meters lower than it is today. Mount Kilimanjaro Mount Kilimanjaro in northeastern Tanzania, is the highest point in Africa, measuring almost 6,000 meters. The mountain supports 5 plant areas and many kinds of animals.",
+      "The ice glaciers on the mountain are disappearing very quickly. This will have a bad effect on the mountain’s ecosystems（生态系统）and on Tanzania’s travel industry. Also, a valuable record of thousands of years of weather history will also be lost if the ice melts. Glacier National Park In the United States, the icy blocks in Glacier National Park may soon completely disappear because of weather change.",
+      "In 1850, there were about 150 glaciers（冰川）.There are 26 glaciers remaining today. Scientists estimate that the glaciers will be gone by 2030. Warm temperatures are also threatening the many kinds of plants and animals that live in this mountain ecosystem. Great Barrier Reef The Great Barrier Reef in Australia is the largest coral reef（珊瑚礁）system in the world.",
+      "Rising sea temperatures are greatly harming the reef. In some areas, healthy yellow, brown and green reefs have become white. The coral whitens when it is in warmer temperature. Sick or dying coral affects the whole ecosystem of this special underwater area. Water pollution and visits by careless swimmers and divers also threaten the reef."
+    ]
   },
   {
     "_id": "sh-em1-2020-静安-reading-a",
@@ -3537,7 +4000,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer （根据以下内容，选择最恰当的答案） Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park. “I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City. Frederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University. He also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops. There maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?",
+    "passage": "Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park.\n\n“I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City.\n\nFrederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University.\n\nHe also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops.\n\nThere maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?",
     "questions": [
       {
         "number": 69,
@@ -3617,7 +4080,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Creating public spaces Jin Hee Park is a student at Stanford University in California. She studies hard.“Of course, I came here for the academic (学术），”she says.“But the campus is so beautiful. I walk around just to relax.” Alejandro Vega, a banker in New York City, jogs almost every evening after work in Central Park.",
+      "“I never get bored. The park is so big. It’s a public space, yet it can feel completely private.” Niagara Falls was on Ross Howard’s list of places to visit in upstate New York. “There are these wonderful footpaths that make the falls so close to the general public.” In 1857, a design contest was held for a new park in New York City.",
+      "Frederick Law Olmsted and his partner, Calvert Vaux, won the contest. Central Park was the finished product - the first landscaped public park in the United States. Today, no trip to New York is complete without a visit to this beautiful park. Later in his life, Olmsted designed landscapes for college campuses, like Stanford University.",
+      "He also designed footpaths at Niagara Falls to give visitors better views of the falls. In all his work, Olmsted tried to protect the natural beauty of an area. Today there are new pressures on Niagara Falls: some business want to develop the area, On Goat Island, an island in Niagara Falls State Park, there are now souvenir (纪念品）shops.",
+      "There maybe signs that say“No Littering,”but there is still a lot of trash on the island. Most of the animals have disappeared. What would Olmsted think?"
+    ]
   },
   {
     "_id": "sh-em1-2021-嘉定-reading-a",
@@ -3629,7 +4104,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） Most 15-year-old teenagers are worrying about their math homework and trying to fit in with other kids of their age. But Henry Patterson is busy running a successful online business instead. Patterson, a teenager from England, began to have this idea when he was nine. One year later, he started a company called Not Before Tea. He began by selling sweets, but soon turned to household products like wash bags and soft toys. The items he sell feature（以…为特色）characters from a book he wrote called The Adventures of Sherb and Pip. Patterson’s early school years were difficult, as he showed great difference from his peers（同辈人）. He saw the world differently and was rarely invited to parties or play with. He also had a stammer（口吃）, which made him feel even more lonely. But these things didn’t hold him back. To cheer himself up, Patterson gradually immersed（使…沉浸）himself in designing different animals and writing interesting stories about them. His character started to become popular. He tried very hard to express himself clearly and talk to bigger audience. His business has earned him 65,000 pounds and he won big prize at the National Retail Business Awards for Teenagers. On top of this, he does his best to keep his schoolwork as a priority（优选项）. He takes his homework with him to events and does it on the train or after a presentation. Two years ago, he wrote a book called Young and Mighty. It describes his search for success and happiness. “The real point of the book is to help people of my age think about how to make their way in the world.” he wrote.",
+    "passage": "Most 15-year-old teenagers are worrying about their math homework and trying to fit in with other kids of their age. But Henry Patterson is busy running a successful online business instead. Patterson, a teenager from England, began to have this idea when he was nine. One year later, he started a company called Not Before Tea.\n\nHe began by selling sweets, but soon turned to household products like wash bags and soft toys. The items he sell feature（以…为特色）characters from a book he wrote called The Adventures of Sherb and Pip. Patterson’s early school years were difficult, as he showed great difference from his peers（同辈人）. He saw the world differently and was rarely invited to parties or play with.\n\nHe also had a stammer（口吃）, which made him feel even more lonely. But these things didn’t hold him back. To cheer himself up, Patterson gradually immersed（使…沉浸）himself in designing different animals and writing interesting stories about them. His character started to become popular. He tried very hard to express himself clearly and talk to bigger audience.\n\nHis business has earned him 65,000 pounds and he won big prize at the National Retail Business Awards for Teenagers. On top of this, he does his best to keep his schoolwork as a priority（优选项）. He takes his homework with him to events and does it on the train or after a presentation. Two years ago, he wrote a book called Young and Mighty.\n\nIt describes his search for success and happiness. “The real point of the book is to help people of my age think about how to make their way in the world.” he wrote.",
     "questions": [
       {
         "number": 60,
@@ -3697,7 +4172,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Most 15-year-old teenagers are worrying about their math homework and trying to fit in with other kids of their age. But Henry Patterson is busy running a successful online business instead. Patterson, a teenager from England, began to have this idea when he was nine. One year later, he started a company called Not Before Tea.",
+      "He began by selling sweets, but soon turned to household products like wash bags and soft toys. The items he sell feature（以…为特色）characters from a book he wrote called The Adventures of Sherb and Pip. Patterson’s early school years were difficult, as he showed great difference from his peers（同辈人）. He saw the world differently and was rarely invited to parties or play with.",
+      "He also had a stammer（口吃）, which made him feel even more lonely. But these things didn’t hold him back. To cheer himself up, Patterson gradually immersed（使…沉浸）himself in designing different animals and writing interesting stories about them. His character started to become popular. He tried very hard to express himself clearly and talk to bigger audience.",
+      "His business has earned him 65,000 pounds and he won big prize at the National Retail Business Awards for Teenagers. On top of this, he does his best to keep his schoolwork as a priority（优选项）. He takes his homework with him to events and does it on the train or after a presentation. Two years ago, he wrote a book called Young and Mighty.",
+      "It describes his search for success and happiness. “The real point of the book is to help people of my age think about how to make their way in the world.” he wrote."
+    ]
   },
   {
     "_id": "sh-em1-2021-奉贤-reading-a",
@@ -3709,7 +4196,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据以下内容，选择最恰当的答案）（12分） Healthy impact of sunflower seeds Sunflower seeds（葵花籽）are rich in vitamin E. The vitamin is an antioxidant（抗氧化剂）that helps prevent cancer, heart disease, eye problems and possibly aging（衰老）. The strength of seeds One serving of sunflower seeds gives you 14 milligrams（毫克）of vitamin E. Experts say people need 15 milligrams of vitamin E every day! 28g of sunflower seeds: 14 mg of vitamin E Vitamin E needed each day: 15 mg of vitamin E How to serve Eat alone as a snack, on top of salads, in bread, and in vegetable dishes. Sources: World’s Healthiest Foods. Discovery Health, TNS",
+    "passage": "Healthy impact of sunflower seeds Sunflower seeds（葵花籽）are rich in vitamin E. The vitamin is an antioxidant（抗氧化剂）that helps prevent cancer, heart disease, eye problems and possibly aging（衰老）. The strength of seeds One serving of sunflower seeds gives you 14 milligrams（毫克）of vitamin E. Experts say people need 15 milligrams of vitamin E every day!\n\n28g of sunflower seeds: 14 mg of vitamin E Vitamin E needed each day: 15 mg of vitamin E How to serve Eat alone as a snack, on top of salads, in bread, and in vegetable dishes. Sources: World’s Healthiest Foods. Discovery Health, TNS",
     "questions": [
       {
         "number": 60,
@@ -3777,7 +4264,16 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Healthy impact of sunflower seeds Sunflower seeds（葵花籽）are rich in vitamin E. The vitamin is an antioxidant（抗氧化剂）that helps prevent cancer, heart disease, eye problems and possibly aging（衰老）. The strength of seeds One serving of sunflower seeds gives you 14 milligrams（毫克）of vitamin E. Experts say people need 15 milligrams of vitamin E every day!",
+      "28g of sunflower seeds: 14 mg of vitamin E Vitamin E needed each day: 15 mg of vitamin E How to serve Eat alone as a snack, on top of salads, in bread, and in vegetable dishes. Sources: World’s Healthiest Foods. Discovery Health, TNS"
+    ]
   },
   {
     "_id": "sh-em1-2021-宝山-reading-a",
@@ -3789,7 +4285,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） Lead Guitarist Wanted We need a boy or girl who can play lead guitar for our new rock band. You do not have to be good at playing yet—we are all learning at the moment—but you must have your own guitar. You must be free to practice on Tuesdays after school. Contact Scott, Phone: 555-1967 Email: scottrock@musiccom.net Cool Singer Wanted We are up-and-coming hip hop band for boys. We need another singer who can look cool with us onstage. We practice every Saturday at 3 p.m. If you join us, we will practice at your house sometimes. Emall Troy: Lazyguy@hiphopsters.net Phone: 555-1989 Keyboardist for an All-girl R&B/Pop Band Can you play the Keyboard? We are looking for a girl who likes songs by Mariah Carey, Britney Spears and Jessica Simpson. You should be able to play some tunes. You should have long hair and like to dance. You do not need to have your own keyboard, but it will be helpful if you want to practice at home. We are meeting every Sunday afternoon for practice. Call Wendy at 555-1993 or email wendybee@musicgirl.net Music Lovers Needed We are a new group and we play all kinds of music. Join us and play any instrument you like (even if you are not good at playing it yet!). We have permission to use the music room and we are free to use the instruments for practice every Tuesday and Thursday afternoons. There are now four boys and three girls in the group—we are a big band and we welcome new people. Call Gary at 555-1985 Email: Garylovesmusic@newgroup.net",
+    "passage": "Lead Guitarist Wanted We need a boy or girl who can play lead guitar for our new rock band. You do not have to be good at playing yet—we are all learning at the moment—but you must have your own guitar. You must be free to practice on Tuesdays after school. Contact Scott, Phone: 555-1967 Email: scottrock@musiccom.net Cool Singer Wanted We are up-and-coming hip hop band for boys.\n\nWe need another singer who can look cool with us onstage. We practice every Saturday at 3 p.m. If you join us, we will practice at your house sometimes. Emall Troy: Lazyguy@hiphopsters.net Phone: 555-1989 Keyboardist for an All-girl R&B/Pop Band Can you play the Keyboard? We are looking for a girl who likes songs by Mariah Carey, Britney Spears and Jessica Simpson.\n\nYou should be able to play some tunes. You should have long hair and like to dance. You do not need to have your own keyboard, but it will be helpful if you want to practice at home. We are meeting every Sunday afternoon for practice. Call Wendy at 555-1993 or email wendybee@musicgirl.net Music Lovers Needed We are a new group and we play all kinds of music.\n\nJoin us and play any instrument you like (even if you are not good at playing it yet!). We have permission to use the music room and we are free to use the instruments for practice every Tuesday and Thursday afternoons. There are now four boys and three girls in the group—we are a big band and we welcome new people. Call Gary at 555-1985 Email: Garylovesmusic@newgroup.net",
     "questions": [
       {
         "number": 70,
@@ -3857,7 +4353,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Lead Guitarist Wanted We need a boy or girl who can play lead guitar for our new rock band. You do not have to be good at playing yet—we are all learning at the moment—but you must have your own guitar. You must be free to practice on Tuesdays after school. Contact Scott, Phone: 555-1967 Email: scottrock@musiccom.net Cool Singer Wanted We are up-and-coming hip hop band for boys.",
+      "We need another singer who can look cool with us onstage. We practice every Saturday at 3 p.m. If you join us, we will practice at your house sometimes. Emall Troy: Lazyguy@hiphopsters.net Phone: 555-1989 Keyboardist for an All-girl R&B/Pop Band Can you play the Keyboard? We are looking for a girl who likes songs by Mariah Carey, Britney Spears and Jessica Simpson.",
+      "You should be able to play some tunes. You should have long hair and like to dance. You do not need to have your own keyboard, but it will be helpful if you want to practice at home. We are meeting every Sunday afternoon for practice. Call Wendy at 555-1993 or email wendybee@musicgirl.net Music Lovers Needed We are a new group and we play all kinds of music.",
+      "Join us and play any instrument you like (even if you are not good at playing it yet!). We have permission to use the music room and we are free to use the instruments for practice every Tuesday and Thursday afternoons. There are now four boys and three girls in the group—we are a big band and we welcome new people. Call Gary at 555-1985 Email: Garylovesmusic@newgroup.net"
+    ]
   },
   {
     "_id": "sh-em1-2021-崇明-reading-a",
@@ -3869,7 +4376,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet. Each from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children. The teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers. Students are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759. If students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form",
+    "passage": "（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet.\n\nEach from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children.\n\nThe teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers.\n\nStudents are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759.\n\nIf students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form",
     "questions": [
       {
         "number": 60,
@@ -3937,7 +4444,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "（选择最恰当的答案）（12分） Our summer camp program is for students 10 to 16 years of age. It includes a variety of fun activities. The camp is designed to enrich student’s lives and encourage them to gain confidence. For more information, please visit our website: www.tallpinesschool.com How to register（报名） Complete the application form at the end of this booklet.",
+      "Each from must be signed by the child’s parents. The parents will receive an email message once we have dealt with the application. Please make sure that an email address is provided on the application form. Our staff Tall Pines School staff members are chosen for their experience and their ability to relate to children.",
+      "The teaching staff is made up of trained teachers who know children’s problems. The environment Campers are provided with a safe environment. We have a gym, a science lab, a computer lab and a library. They are all air-conditioned. We also have four playgrounds and a soccer field. Expectations for behavior At Tall Pines School, we expect children to show respect for each other and for their teachers.",
+      "Students are not allowed to leave their camps without the agreement of the teacher. The 2021 programs Camps A and C: $360/day Camps B and D: $280/day \u0007Camp A July 3-7 \u0007Camp B July 16-20 \u0007Camp C Aug. 7-11\u0007Camp D Aug 20-24\u0007\u0007Ages 10-12\u00079:00-12:00\u0007Health Training \u0007Creative Writing \u0007Dance 2021\u0007Crazy for Sports \u0007\u0007\u000713:00-16:00\u0007Badminton Camp\u0007Art Explorers \u0007Cooking Time \u0007Musical Theater\u0007\u0007Ages 13-14\u00079:00-12:00\u0007Super Sports \u0007Dance 2021\u0007Mad Science \u0007Reading Club \u0007\u0007\u000713:00-16:00\u0007Art Explorers \u0007Little Picasso \u0007Discovering Robots \u0007Public Speaking \u0007\u0007Ages 15-16\u00079:00-12:00\u0007Science Adventures \u0007Movie Maker\u0007Tennis Camp\u0007Public Speaking \u0007\u0007\u000713:00-16:00\u0007Young Engineering Minds \u0007Dance 2021\u0007Little Picasso\u0007Creative Writing \u0007\u000759.",
+      "If students want to ________, they may sign up for the 2021 summer camp. A. visit the website B. receive an email C. gain confidence D. complete a form"
+    ]
   },
   {
     "_id": "sh-em1-2021-徐汇-reading-a",
@@ -3949,7 +4468,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市徐汇区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） GARDEN CITY COLLEGE GENERAL RULES FOR ONLINE CLASSES It is very important to carefully read the rules and cancellation policies of the online classes before beginning your class. You should enter the virtual（虚构的）classroom at least 2 days before your first class in order to learn how to work within the system. If you need any technical support, you can call our technical staff during their office hours（From 8:30 a.m. to 5:30 p.m. on weekdays）. Make sure to log onto the platform 15 minutes before your class. We will not make up class time due to late arrivals. Check your course schedule. It is strongly recommended that you actively take part in each class. Listen carefully and don’t talk over with someone. You should behave properly and have good manners. Being polite on the Internet should be as common as in real life. Respect other people’s opinions. Besides, online privacy is something you should keep in mind when typing anything. You should stay away from anything considered not suitable and rude. At the beginning of each new course, we will place you with a new teacher. This change will allow you to experience different learning styles with other teachers who are fully trained to teach online courses. If your present teacher is not available to teach（due to sickness or an emergency）, we will not cancel class. Instead, class will be given by a substitute（代替的）teacher. These rules may change over time due to the changing nature of the online space.",
+    "passage": "GARDEN CITY COLLEGE GENERAL RULES FOR ONLINE CLASSES It is very important to carefully read the rules and cancellation policies of the online classes before beginning your class. You should enter the virtual（虚构的）classroom at least 2 days before your first class in order to learn how to work within the system. If you need any technical support, you can call our technical staff during their office hours（From 8:30 a.m.\n\nto 5:30 p.m. on weekdays）. Make sure to log onto the platform 15 minutes before your class. We will not make up class time due to late arrivals. Check your course schedule. It is strongly recommended that you actively take part in each class. Listen carefully and don’t talk over with someone. You should behave properly and have good manners.\n\nBeing polite on the Internet should be as common as in real life. Respect other people’s opinions. Besides, online privacy is something you should keep in mind when typing anything. You should stay away from anything considered not suitable and rude. At the beginning of each new course, we will place you with a new teacher.\n\nThis change will allow you to experience different learning styles with other teachers who are fully trained to teach online courses. If your present teacher is not available to teach（due to sickness or an emergency）, we will not cancel class. Instead, class will be given by a substitute（代替的）teacher. These rules may change over time due to the changing nature of the online space.",
     "questions": [
       {
         "number": 60,
@@ -4017,7 +4536,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "GARDEN CITY COLLEGE GENERAL RULES FOR ONLINE CLASSES It is very important to carefully read the rules and cancellation policies of the online classes before beginning your class. You should enter the virtual（虚构的）classroom at least 2 days before your first class in order to learn how to work within the system. If you need any technical support, you can call our technical staff during their office hours（From 8:30 a.m.",
+      "to 5:30 p.m. on weekdays）. Make sure to log onto the platform 15 minutes before your class. We will not make up class time due to late arrivals. Check your course schedule. It is strongly recommended that you actively take part in each class. Listen carefully and don’t talk over with someone. You should behave properly and have good manners.",
+      "Being polite on the Internet should be as common as in real life. Respect other people’s opinions. Besides, online privacy is something you should keep in mind when typing anything. You should stay away from anything considered not suitable and rude. At the beginning of each new course, we will place you with a new teacher.",
+      "This change will allow you to experience different learning styles with other teachers who are fully trained to teach online courses. If your present teacher is not available to teach（due to sickness or an emergency）, we will not cancel class. Instead, class will be given by a substitute（代替的）teacher. These rules may change over time due to the changing nature of the online space."
+    ]
   },
   {
     "_id": "sh-em1-2021-普陀-reading-a",
@@ -4029,7 +4559,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） What kind of hotel do you look for when you are on holiday? Someone may want a comfortable bed, enjoyable facilities or a convenient place to get close to transportation. The following hotels may offer a stay you won’t soon forget if you want something out of the ordinary. If you are truly brave, you can spend the night in the world’s deepest bedroom in a hotel called Silvermine in Sweden. After a guided tour of the mine(矿井) located 155 metres underground, you’re left alone with a basket of fresh food. In the morning, the guide returns with a delicious breakfast before you return to ground level. If you are fond of the ocean, the Poseidon Undersea Resort in Japan would be your choice. It is close to one of Fiji’s rivers. It boasts the world’s first seafloor rooms 12 meters below the surface of the ocean. By day, people enjoy golf, tennis and all kinds of water sports or learn to pilot a three-passenger submarine (潜水艇) to explore the depth of the ocean. If you love nature, then consider a stay at the Ariau Towers Hotel. It’s in rainforest beside Brazil’s Negro River(内格罗河) and has rooms built in the air 30 meters above the ground. Overhead walkways connect the rooms to one another and a central dining room. From their rooms among the treetops, guests can see beautiful birds and flowers. And after having a delicious meal in the restaurant, they can enjoy sailing on the river. If you would like to experience the coldness of winter, Canada’s Hotel de Glace could be the great favourite. It is built each year by using nearly 7000 kilograms of snow and 300 kilograms of ice. It has over 30 guest rooms. Nearly all of the furniture is made of ice. Inside the hotel, it’s always -3℃ to -5℃. Only the bathrooms are heated. The hotel is only open during the coldest months of the year and accepts booking over the Internet.",
+    "passage": "What kind of hotel do you look for when you are on holiday? Someone may want a comfortable bed, enjoyable facilities or a convenient place to get close to transportation. The following hotels may offer a stay you won’t soon forget if you want something out of the ordinary. If you are truly brave, you can spend the night in the world’s deepest bedroom in a hotel called Silvermine in Sweden.\n\nAfter a guided tour of the mine(矿井) located 155 metres underground, you’re left alone with a basket of fresh food. In the morning, the guide returns with a delicious breakfast before you return to ground level. If you are fond of the ocean, the Poseidon Undersea Resort in Japan would be your choice.\n\nIt is close to one of Fiji’s rivers. It boasts the world’s first seafloor rooms 12 meters below the surface of the ocean. By day, people enjoy golf, tennis and all kinds of water sports or learn to pilot a three-passenger submarine (潜水艇) to explore the depth of the ocean. If you love nature, then consider a stay at the Ariau Towers Hotel.\n\nIt’s in rainforest beside Brazil’s Negro River(内格罗河) and has rooms built in the air 30 meters above the ground. Overhead walkways connect the rooms to one another and a central dining room. From their rooms among the treetops, guests can see beautiful birds and flowers. And after having a delicious meal in the restaurant, they can enjoy sailing on the river.\n\nIf you would like to experience the coldness of winter, Canada’s Hotel de Glace could be the great favourite. It is built each year by using nearly 7000 kilograms of snow and 300 kilograms of ice. It has over 30 guest rooms. Nearly all of the furniture is made of ice. Inside the hotel, it’s always -3℃ to -5℃. Only the bathrooms are heated. The hotel is only open during the coldest months of the year and accepts booking over the Internet.",
     "questions": [
       {
         "number": 60,
@@ -4097,7 +4627,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "What kind of hotel do you look for when you are on holiday? Someone may want a comfortable bed, enjoyable facilities or a convenient place to get close to transportation. The following hotels may offer a stay you won’t soon forget if you want something out of the ordinary. If you are truly brave, you can spend the night in the world’s deepest bedroom in a hotel called Silvermine in Sweden.",
+      "After a guided tour of the mine(矿井) located 155 metres underground, you’re left alone with a basket of fresh food. In the morning, the guide returns with a delicious breakfast before you return to ground level. If you are fond of the ocean, the Poseidon Undersea Resort in Japan would be your choice.",
+      "It is close to one of Fiji’s rivers. It boasts the world’s first seafloor rooms 12 meters below the surface of the ocean. By day, people enjoy golf, tennis and all kinds of water sports or learn to pilot a three-passenger submarine (潜水艇) to explore the depth of the ocean. If you love nature, then consider a stay at the Ariau Towers Hotel.",
+      "It’s in rainforest beside Brazil’s Negro River(内格罗河) and has rooms built in the air 30 meters above the ground. Overhead walkways connect the rooms to one another and a central dining room. From their rooms among the treetops, guests can see beautiful birds and flowers. And after having a delicious meal in the restaurant, they can enjoy sailing on the river.",
+      "If you would like to experience the coldness of winter, Canada’s Hotel de Glace could be the great favourite. It is built each year by using nearly 7000 kilograms of snow and 300 kilograms of ice. It has over 30 guest rooms. Nearly all of the furniture is made of ice. Inside the hotel, it’s always -3℃ to -5℃. Only the bathrooms are heated. The hotel is only open during the coldest months of the year and accepts booking over the Internet."
+    ]
   },
   {
     "_id": "sh-em1-2021-杨浦-reading-a",
@@ -4109,7 +4651,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2020-2021学年九年级上学期期末（一模）英语试题（无听力原文）（解析版）.doc",
-    "passage": "answer（根据对话内容，选择最恰当的答案）（12分） D=Detective Ken, W=Wilson D: So, Wilson. What do you believe happened here? W: It’s simple, isn’t it? A thief climbed in through the window and stole the painting! D: Maybe. Or maybe that’s just what somebody wants us to think. W: What do you mean, Ken? D: Well, let’s look at the evidence. Starting at the window. Now, look outside. What can you see? W: A flower bed with some roses. D: Exactly. A flower bed. And the ground — is it dry or wet? W: It must be quite wet — we’ve had a lot of rain recently. D: But there are no footprints in the flower bed! How is it possible that the thief walks across the flower bed to the window without leaving footprints? W: Er…no. D: It isn’t! It isn’t possible, Wilson! What we’re dealing with here is … a set up! Somebody has arranged the room to look as if a burglary has taken place. Look at the coffee table. What do you notice? W: It’s got a footstool on top. D: Why has it got a footstool on top? W: Because the thief wanted to climb up… D: There was no thief, Wilson! But look how carefully the footstool was put on top of the coffee table. There isn’t a scratch! A thief wouldn’t be so careful. W: No, I see what you mean. D: Who would be so careful, Wilson? Think about it! W: Er…it’s…I suppose… D: The owner of the table! He wouldn’t want to damage it, would he? W: No, no. He wouldn’t want to… D: So the owner of the table — the owner of Riverford Manor — has arranged everything in this room to look like a Burglary. But the burglary didn’t happen. W: So, where’s the oil painting? D: That’s what we need to find out! And I think ____64____.",
+    "passage": "D=Detective Ken, W=Wilson D: So, Wilson. What do you believe happened here? W: It’s simple, isn’t it? A thief climbed in through the window and stole the painting! D: Maybe. Or maybe that’s just what somebody wants us to think. W: What do you mean, Ken? D: Well, let’s look at the evidence. Starting at the window.\n\nNow, look outside. What can you see? W: A flower bed with some roses. D: Exactly. A flower bed. And the ground — is it dry or wet? W: It must be quite wet — we’ve had a lot of rain recently. D: But there are no footprints in the flower bed! How is it possible that the thief walks across the flower bed to the window without leaving footprints?\n\nW: Er…no. D: It isn’t! It isn’t possible, Wilson! What we’re dealing with here is … a set up! Somebody has arranged the room to look as if a burglary has taken place. Look at the coffee table. What do you notice? W: It’s got a footstool on top. D: Why has it got a footstool on top? W: Because the thief wanted to climb up… D: There was no thief, Wilson!\n\nBut look how carefully the footstool was put on top of the coffee table. There isn’t a scratch! A thief wouldn’t be so careful. W: No, I see what you mean. D: Who would be so careful, Wilson? Think about it! W: Er…it’s…I suppose… D: The owner of the table! He wouldn’t want to damage it, would he? W: No, no.\n\nHe wouldn’t want to… D: So the owner of the table — the owner of Riverford Manor — has arranged everything in this room to look like a Burglary. But the burglary didn’t happen. W: So, where’s the oil painting? D: That’s what we need to find out! And I think ____64____.",
     "questions": [
       {
         "number": 60,
@@ -4177,7 +4719,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据对话内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "D=Detective Ken, W=Wilson D: So, Wilson. What do you believe happened here? W: It’s simple, isn’t it? A thief climbed in through the window and stole the painting! D: Maybe. Or maybe that’s just what somebody wants us to think. W: What do you mean, Ken? D: Well, let’s look at the evidence. Starting at the window.",
+      "Now, look outside. What can you see? W: A flower bed with some roses. D: Exactly. A flower bed. And the ground — is it dry or wet? W: It must be quite wet — we’ve had a lot of rain recently. D: But there are no footprints in the flower bed! How is it possible that the thief walks across the flower bed to the window without leaving footprints?",
+      "W: Er…no. D: It isn’t! It isn’t possible, Wilson! What we’re dealing with here is … a set up! Somebody has arranged the room to look as if a burglary has taken place. Look at the coffee table. What do you notice? W: It’s got a footstool on top. D: Why has it got a footstool on top? W: Because the thief wanted to climb up… D: There was no thief, Wilson!",
+      "But look how carefully the footstool was put on top of the coffee table. There isn’t a scratch! A thief wouldn’t be so careful. W: No, I see what you mean. D: Who would be so careful, Wilson? Think about it! W: Er…it’s…I suppose… D: The owner of the table! He wouldn’t want to damage it, would he? W: No, no.",
+      "He wouldn’t want to… D: So the owner of the table — the owner of Riverford Manor — has arranged everything in this room to look like a Burglary. But the burglary didn’t happen. W: So, where’s the oil painting? D: That’s what we need to find out! And I think ____64____."
+    ]
   },
   {
     "_id": "sh-em1-2021-松江-reading-a",
@@ -4189,7 +4743,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） For most owners, the thought of losing their beloved pets is unimaginable. Here are four posters of lost pets. LOST DOG Our beloved pet “Susie” has been missing for about a week from Rose Garden area. Susie is a large girl dog, white in colour, with medium length hair. She was wearing a collar. Please contact: Ron Jones 57644653 or 15047982463 LOST BIRD Bambi Yellow and black parrot Missing since Wednesday, December 23 Likes to sing “Our Beautiful World” song If you see her, please call 47325891 or email DennyHu@123.com. LOST PET SPIDER Just like the picture I drew. Name: Conrad Last Seen: my bedroom, three days ago Conrad is a very friendly little spider. He likes to sit on your shoulder and play hide and seek. If you see him, do not scream. And please be careful not to squish him. If he’s at your place, please contact me at 14607685250. LOST CAT Jerry, black and grey, male MISSING ONE MONTH! Wear a black collar Not very friendly Probably get into your house. If you see him, please feed some food and call Sam Chen. 1335784620 $20 REWARD!",
+    "passage": "For most owners, the thought of losing their beloved pets is unimaginable. Here are four posters of lost pets. LOST DOG Our beloved pet “Susie” has been missing for about a week from Rose Garden area. Susie is a large girl dog, white in colour, with medium length hair. She was wearing a collar. Please contact: Ron Jones 57644653 or 15047982463 LOST BIRD Bambi Yellow and black parrot Missing since Wednesday, December 23 Likes to sing “Our Beautiful World” song If you see her, please call 47325891 or email DennyHu@123.\n\ncom. LOST PET SPIDER Just like the picture I drew. Name: Conrad Last Seen: my bedroom, three days ago Conrad is a very friendly little spider. He likes to sit on your shoulder and play hide and seek. If you see him, do not scream. And please be careful not to squish him. If he’s at your place, please contact me at 14607685250.\n\nLOST CAT Jerry, black and grey, male MISSING ONE MONTH! Wear a black collar Not very friendly Probably get into your house. If you see him, please feed some food and call Sam Chen. 1335784620 $20 REWARD!",
     "questions": [
       {
         "number": 70,
@@ -4257,7 +4811,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "For most owners, the thought of losing their beloved pets is unimaginable. Here are four posters of lost pets. LOST DOG Our beloved pet “Susie” has been missing for about a week from Rose Garden area. Susie is a large girl dog, white in colour, with medium length hair. She was wearing a collar. Please contact: Ron Jones 57644653 or 15047982463 LOST BIRD Bambi Yellow and black parrot Missing since Wednesday, December 23 Likes to sing “Our Beautiful World” song If you see her, please call 47325891 or email DennyHu@123.",
+      "com. LOST PET SPIDER Just like the picture I drew. Name: Conrad Last Seen: my bedroom, three days ago Conrad is a very friendly little spider. He likes to sit on your shoulder and play hide and seek. If you see him, do not scream. And please be careful not to squish him. If he’s at your place, please contact me at 14607685250.",
+      "LOST CAT Jerry, black and grey, male MISSING ONE MONTH! Wear a black collar Not very friendly Probably get into your house. If you see him, please feed some food and call Sam Chen. 1335784620 $20 REWARD!"
+    ]
   },
   {
     "_id": "sh-em1-2021-浦东-reading-a",
@@ -4269,7 +4833,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） UNLOCK SERVICE Please dial 5875-811-718 Professional locksmithing for best prices! Work 24 hours, 7 days Quick response Trustable locksmith 24 hours emergency services We promise to be your standby all the time. We offer 24-hour locksmith services 7 days a week to all neighbourhoods in Calgary. You can talk to any of the locksmiths about your problem at any time of the day or night. Our emergency locksmiths are here 24 hours to solve your problem. Whether it is easy to get you into your house or car or to repair or replace your locks — we’ll be there whether it is 3 in the afternoon or 3 in the morning! You need us when … Lost your home keys — We will unlock your door and cut new keys Locked yourself out — We will let you in again Your home has been broken into — We will repair or change your door or lock Cannot open the door yourself — We can open it in no time Lost our car keys — We can unlock the door and start the car Safety — what we can offer We offer various products and services to provide our customers with complete safety. High Security, Bump-Proof Locks Rekeying Locks Mailbox Locks Patio Locks 63 We do not just serve individuals (个人) or families. Our business covers creating and fixing complex master key systems for companies. We often work with some famous designers to set and fit key systems in new buildings. We can also fix doors and hardware and upgrade master key systems for companies.",
+    "passage": "UNLOCK SERVICE Please dial 5875-811-718 Professional locksmithing for best prices! Work 24 hours, 7 days Quick response Trustable locksmith 24 hours emergency services We promise to be your standby all the time. We offer 24-hour locksmith services 7 days a week to all neighbourhoods in Calgary. You can talk to any of the locksmiths about your problem at any time of the day or night.\n\nOur emergency locksmiths are here 24 hours to solve your problem. Whether it is easy to get you into your house or car or to repair or replace your locks — we’ll be there whether it is 3 in the afternoon or 3 in the morning! You need us when … Lost your home keys — We will unlock your door and cut new keys Locked yourself out — We will let you in again Your home has been broken into — We will repair or change your door or lock Cannot open the door yourself — We can open it in no time Lost our car keys — We can unlock the door and start the car Safety — what we can offer We offer various products and services to provide our customers with complete safety.\n\nHigh Security, Bump-Proof Locks Rekeying Locks Mailbox Locks Patio Locks 63 We do not just serve individuals (个人) or families. Our business covers creating and fixing complex master key systems for companies. We often work with some famous designers to set and fit key systems in new buildings. We can also fix doors and hardware and upgrade master key systems for companies.",
     "questions": [
       {
         "number": 60,
@@ -4337,7 +4901,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "UNLOCK SERVICE Please dial 5875-811-718 Professional locksmithing for best prices! Work 24 hours, 7 days Quick response Trustable locksmith 24 hours emergency services We promise to be your standby all the time. We offer 24-hour locksmith services 7 days a week to all neighbourhoods in Calgary. You can talk to any of the locksmiths about your problem at any time of the day or night.",
+      "Our emergency locksmiths are here 24 hours to solve your problem. Whether it is easy to get you into your house or car or to repair or replace your locks — we’ll be there whether it is 3 in the afternoon or 3 in the morning! You need us when … Lost your home keys — We will unlock your door and cut new keys Locked yourself out — We will let you in again Your home has been broken into — We will repair or change your door or lock Cannot open the door yourself — We can open it in no time Lost our car keys — We can unlock the door and start the car Safety — what we can offer We offer various products and services to provide our customers with complete safety.",
+      "High Security, Bump-Proof Locks Rekeying Locks Mailbox Locks Patio Locks 63 We do not just serve individuals (个人) or families. Our business covers creating and fixing complex master key systems for companies. We often work with some famous designers to set and fit key systems in new buildings. We can also fix doors and hardware and upgrade master key systems for companies."
+    ]
   },
   {
     "_id": "sh-em1-2021-虹口-reading-a",
@@ -4349,7 +4923,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer (根据文章内容，选择最恰当的答案)（共12分） CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months. Can you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion. It is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music. The brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed. In addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited. In one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly.",
+    "passage": "CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months.\n\nCan you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion.\n\nIt is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music.\n\nThe brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed.\n\nIn addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited.\n\nIn one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly.",
     "questions": [
       {
         "number": 60,
@@ -4417,7 +4991,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "CIMON 2 is a floating computer assistant. It was sent to the International Space Station (ISS) on December 5th, 2019. It was designed to work there for three years to help astronauts. Actually, the International Space Station is a science lab in space. Now there are six people there. Usually astronauts stay in the ISS for five or six months.",
+      "Can you imagine how boring it is to live in a tight space with just five other people for six months? So CIMON was created with two jobs in mind. One is helping astronauts with tasks. The other is trying to be “someone” astronauts can talk to. CIMON stands for Crew Interactive Mobile (互动移动) Companion.",
+      "It is a robot with a face which was created by the European airplane company, Airbus. It has no arms or legs, but it can move where it needs to go with motors inside. Helping astronauts is easy for CIMON—it can see, hear, understand, and speak. Its “mouth” is a loudspeaker that can be used to talk or play music.",
+      "The brain behind CIMON were provided by IBM, a computer company famous for training computers to understand human speech. CIMON can understand not just what people say, but what they mean. If astronauts ask it for instructions or information, CIMON can answer the astronauts, or use its screen to display pictures or documents, if needed.",
+      "In addition, CIMON has several cameras, which can take pictures and videos to help astronauts keep records of experiments or other important actions. The more difficult part of CIMON’s job is being a companion for the astronauts. The first CIMON could understand what people were saying and mastered more than 1000 sentences, but it was limited.",
+      "In one video, taken with German astronaut Alexander Gerst, CIMON seemed to become confused as Mr. Gerst spoke with another astronaut. “Don’t be so mean, please,” CIMON said. CIMON 2 has been improved so that it can recognize emotions and find out how people are feeling. The goal for CIMON is to be a calm, trusted friend that astronauts can talk to when they don’t want to talk with others. This could be especially important if tension (紧张气氛) in a group of astronauts causes them to stop thinking clearly."
+    ]
   },
   {
     "_id": "sh-em1-2021-金山-reading-a",
@@ -4429,7 +5016,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市金山区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） To: Grace Yang Date: 6 September Subject: 59 Dear Grace, Thank you for your application for the position of sales manager. We would like to invite you for an interview at 10 a.m. on Monday 21 September at our office at The Shard, 32 London Bridge Street, London. You will meet with our head of sales, Susan Park, and the interview will last for about 45 minutes. During this time, you will have the opportunity to find out more about the position and learn more about our company. Please bring your CV(履历) and references to the interview. You will also need to show a form of ID at reception to receive a visitor’s pass. Please ask for me as soon as you arrive. If you have any questions or if you wish to reschedule, please call me on 555-1234 or email me by 12 September. I look forward to meeting you. Best regards, Anna Green Human Resources Assistant",
+    "passage": "To: Grace Yang Date: 6 September Subject: 59 Dear Grace, Thank you for your application for the position of sales manager. We would like to invite you for an interview at 10 a.m. on Monday 21 September at our office at The Shard, 32 London Bridge Street, London. You will meet with our head of sales, Susan Park, and the interview will last for about 45 minutes.\n\nDuring this time, you will have the opportunity to find out more about the position and learn more about our company. Please bring your CV(履历) and references to the interview. You will also need to show a form of ID at reception to receive a visitor’s pass. Please ask for me as soon as you arrive. If you have any questions or if you wish to reschedule, please call me on 555-1234 or email me by 12 September. I look forward to meeting you. Best regards, Anna Green Human Resources Assistant",
     "questions": [
       {
         "number": 60,
@@ -4497,7 +5084,16 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "To: Grace Yang Date: 6 September Subject: 59 Dear Grace, Thank you for your application for the position of sales manager. We would like to invite you for an interview at 10 a.m. on Monday 21 September at our office at The Shard, 32 London Bridge Street, London. You will meet with our head of sales, Susan Park, and the interview will last for about 45 minutes.",
+      "During this time, you will have the opportunity to find out more about the position and learn more about our company. Please bring your CV(履历) and references to the interview. You will also need to show a form of ID at reception to receive a visitor’s pass. Please ask for me as soon as you arrive. If you have any questions or if you wish to reschedule, please call me on 555-1234 or email me by 12 September. I look forward to meeting you. Best regards, Anna Green Human Resources Assistant"
+    ]
   },
   {
     "_id": "sh-em1-2021-闵行-reading-a",
@@ -4509,7 +5105,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） WELCOME TO SAMESUN BACKPACKERS Venice, CA We work hard and strive to create a clean and safe environment where you can meet other travelers and have a lot of fun while doing so! A few things to make your stay more enjoyable: FREE BREAKFAST is from 7:30-10am in the kitchen (next to reception). Breakfast includes eggs, oatmeal, waffles, bagels and cream cheese, toast with a range of spreads, orange juice, coffee and teas. FREE AND CHEAP ACTIVITIES run daily. See the activity board beside the front desk or speak to a staff member to get more details. RECEPTION & HOUSEKEEPING — For your comfort and safety there’s always a staff member on duty. Please feel free to see the front desk if you have any questions. Our housekeeping team cleans the hostel daily from 11am-4pm. During this time staff will be entering every room. Need a beach or bath towel? Just ask the front desk! LUGGAGE STORAGE — We provide FREE storage for luggage while you’re staying here. We also offer long-term storage for $3/day per bag. CHECK OUT TIME IS 11AM — Please bring the two white sheets and your pillowcase (not the blanket or pillow) to reception with your key-card. If you wish to extend your stay, please see the front desk before 11 am. 62 ● No outside guests in your dormitory, the common room or hostel kitchen. If you have friends visiting, they are welcome in Surfside, our bar downstairs. ● Quiet time is from 12am-7am. Please limit noise and silliness during these hours. ● No outside bedding. All linen is provided — if you need extra blankets, pillows or towels, please see the front desk. ● No smoking inside the building at any time — fines of up to $200 apply. ● Absolutely no drugs in the building at any time. EVERY HOUR IS HAPPY HOUR! Show your room key downstairs at SURFSIDE to receive VIP prices: $6-$8 SELECT EATS $5-$7 SELECT COCKTAILS/BEER/WINE LIVE MUSIC/SPORTS/12TVS/WEEKLY SPECIALS/OPEN LATE",
+    "passage": "WELCOME TO SAMESUN BACKPACKERS Venice, CA We work hard and strive to create a clean and safe environment where you can meet other travelers and have a lot of fun while doing so! A few things to make your stay more enjoyable: FREE BREAKFAST is from 7:30-10am in the kitchen (next to reception). Breakfast includes eggs, oatmeal, waffles, bagels and cream cheese, toast with a range of spreads, orange juice, coffee and teas.\n\nFREE AND CHEAP ACTIVITIES run daily. See the activity board beside the front desk or speak to a staff member to get more details. RECEPTION & HOUSEKEEPING — For your comfort and safety there’s always a staff member on duty. Please feel free to see the front desk if you have any questions. Our housekeeping team cleans the hostel daily from 11am-4pm.\n\nDuring this time staff will be entering every room. Need a beach or bath towel? Just ask the front desk! LUGGAGE STORAGE — We provide FREE storage for luggage while you’re staying here. We also offer long-term storage for $3/day per bag. CHECK OUT TIME IS 11AM — Please bring the two white sheets and your pillowcase (not the blanket or pillow) to reception with your key-card.\n\nIf you wish to extend your stay, please see the front desk before 11 am. 62 ● No outside guests in your dormitory, the common room or hostel kitchen. If you have friends visiting, they are welcome in Surfside, our bar downstairs. ● Quiet time is from 12am-7am. Please limit noise and silliness during these hours.\n\n● No outside bedding. All linen is provided — if you need extra blankets, pillows or towels, please see the front desk. ● No smoking inside the building at any time — fines of up to $200 apply. ● Absolutely no drugs in the building at any time. EVERY HOUR IS HAPPY HOUR! Show your room key downstairs at SURFSIDE to receive VIP prices: $6-$8 SELECT EATS $5-$7 SELECT COCKTAILS/BEER/WINE LIVE MUSIC/SPORTS/12TVS/WEEKLY SPECIALS/OPEN LATE",
     "questions": [
       {
         "number": 60,
@@ -4577,7 +5173,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "WELCOME TO SAMESUN BACKPACKERS Venice, CA We work hard and strive to create a clean and safe environment where you can meet other travelers and have a lot of fun while doing so! A few things to make your stay more enjoyable: FREE BREAKFAST is from 7:30-10am in the kitchen (next to reception). Breakfast includes eggs, oatmeal, waffles, bagels and cream cheese, toast with a range of spreads, orange juice, coffee and teas.",
+      "FREE AND CHEAP ACTIVITIES run daily. See the activity board beside the front desk or speak to a staff member to get more details. RECEPTION & HOUSEKEEPING — For your comfort and safety there’s always a staff member on duty. Please feel free to see the front desk if you have any questions. Our housekeeping team cleans the hostel daily from 11am-4pm.",
+      "During this time staff will be entering every room. Need a beach or bath towel? Just ask the front desk! LUGGAGE STORAGE — We provide FREE storage for luggage while you’re staying here. We also offer long-term storage for $3/day per bag. CHECK OUT TIME IS 11AM — Please bring the two white sheets and your pillowcase (not the blanket or pillow) to reception with your key-card.",
+      "If you wish to extend your stay, please see the front desk before 11 am. 62 ● No outside guests in your dormitory, the common room or hostel kitchen. If you have friends visiting, they are welcome in Surfside, our bar downstairs. ● Quiet time is from 12am-7am. Please limit noise and silliness during these hours.",
+      "● No outside bedding. All linen is provided — if you need extra blankets, pillows or towels, please see the front desk. ● No smoking inside the building at any time — fines of up to $200 apply. ● Absolutely no drugs in the building at any time. EVERY HOUR IS HAPPY HOUR! Show your room key downstairs at SURFSIDE to receive VIP prices: $6-$8 SELECT EATS $5-$7 SELECT COCKTAILS/BEER/WINE LIVE MUSIC/SPORTS/12TVS/WEEKLY SPECIALS/OPEN LATE"
+    ]
   },
   {
     "_id": "sh-em1-2021-青浦-reading-a",
@@ -4589,7 +5197,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） Who you are makes a difference A teacher decided to honour her students by telling them the difference they have made. She presented each of them with a blue ribbon with letters that read, “Who I Am Makes a Difference.” Afterwards, the teacher decided to do a class project to see what kind of influence recognition（赞赏）would have on a community. She gave each of the students three more ribbons and instructed them to spread them and follow up on the results, and report back to the class in a week. One boy in the class went to a manager in a company, and honoured him for helping him with his career planning. He gave him a blue ribbon and put it on his shirt. Then he gave him two extra ribbons, and said, “Would you please find somebody to honour, give them a blue ribbon, then give them the extra so they can find a third person.” Later that day, the manager went to see his boss and gave him the gift of the blue ribbon. He told him that he deeply admired him for being a creative genius. His surprised boss accepted it delightedly. The manager placed the blue ribbon right in his boss’s jacket above his heart and gave him the last extra ribbon to pass on. That night, the boss went home to his 14-year-old son and told him about his day. “One of the managers gave me an extra ribbon and asked me to find somebody else to honour and I thought about you. I want to honour you,” said the boss. “My days are really hectic and when I come home, I don’t pay a lot of attention to you. Sometimes I scream at you for not getting good grades in school and for your bedroom being a mess, but somehow tonight, I just want you to know that you do make a difference to me. You’re a great kid, and I love you!” The astonished boy couldn’t stop crying. He looked up at his father and said through his tears, “I was planning to run away from home tomorrow, Dad, because I didn’t think you loved me. Now I will never do that.”",
+    "passage": "Who you are makes a difference A teacher decided to honour her students by telling them the difference they have made. She presented each of them with a blue ribbon with letters that read, “Who I Am Makes a Difference.” Afterwards, the teacher decided to do a class project to see what kind of influence recognition（赞赏）would have on a community.\n\nShe gave each of the students three more ribbons and instructed them to spread them and follow up on the results, and report back to the class in a week. One boy in the class went to a manager in a company, and honoured him for helping him with his career planning. He gave him a blue ribbon and put it on his shirt.\n\nThen he gave him two extra ribbons, and said, “Would you please find somebody to honour, give them a blue ribbon, then give them the extra so they can find a third person.” Later that day, the manager went to see his boss and gave him the gift of the blue ribbon. He told him that he deeply admired him for being a creative genius.\n\nHis surprised boss accepted it delightedly. The manager placed the blue ribbon right in his boss’s jacket above his heart and gave him the last extra ribbon to pass on. That night, the boss went home to his 14-year-old son and told him about his day. “One of the managers gave me an extra ribbon and asked me to find somebody else to honour and I thought about you.\n\nI want to honour you,” said the boss. “My days are really hectic and when I come home, I don’t pay a lot of attention to you. Sometimes I scream at you for not getting good grades in school and for your bedroom being a mess, but somehow tonight, I just want you to know that you do make a difference to me.\n\nYou’re a great kid, and I love you!” The astonished boy couldn’t stop crying. He looked up at his father and said through his tears, “I was planning to run away from home tomorrow, Dad, because I didn’t think you loved me. Now I will never do that.”",
     "questions": [
       {
         "number": 60,
@@ -4657,7 +5265,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Who you are makes a difference A teacher decided to honour her students by telling them the difference they have made. She presented each of them with a blue ribbon with letters that read, “Who I Am Makes a Difference.” Afterwards, the teacher decided to do a class project to see what kind of influence recognition（赞赏）would have on a community.",
+      "She gave each of the students three more ribbons and instructed them to spread them and follow up on the results, and report back to the class in a week. One boy in the class went to a manager in a company, and honoured him for helping him with his career planning. He gave him a blue ribbon and put it on his shirt.",
+      "Then he gave him two extra ribbons, and said, “Would you please find somebody to honour, give them a blue ribbon, then give them the extra so they can find a third person.” Later that day, the manager went to see his boss and gave him the gift of the blue ribbon. He told him that he deeply admired him for being a creative genius.",
+      "His surprised boss accepted it delightedly. The manager placed the blue ribbon right in his boss’s jacket above his heart and gave him the last extra ribbon to pass on. That night, the boss went home to his 14-year-old son and told him about his day. “One of the managers gave me an extra ribbon and asked me to find somebody else to honour and I thought about you.",
+      "I want to honour you,” said the boss. “My days are really hectic and when I come home, I don’t pay a lot of attention to you. Sometimes I scream at you for not getting good grades in school and for your bedroom being a mess, but somehow tonight, I just want you to know that you do make a difference to me.",
+      "You’re a great kid, and I love you!” The astonished boy couldn’t stop crying. He looked up at his father and said through his tears, “I was planning to run away from home tomorrow, Dad, because I didn’t think you loved me. Now I will never do that.”"
+    ]
   },
   {
     "_id": "sh-em1-2021-静安-reading-a",
@@ -4669,7 +5290,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer（根据短文内容，选择最恰当的答案）（12分） Narrator: Imagine life without light — nothing but darkness. Today, we are going to perform a play in total darkness — you will hear us but not see us. In our play, David is blind while Cassandra is wearing eye patches for a day, to see what life is like. (lights go out; silence) Scene 1 On a busy street (sounds of people and traffic) Cassandra: (nervously) David? David ...? Ump! I’ve stumbled into a rubbish bin. David: Follow my voice ... Cassandra: Oh ... What’s this? Am I touching a person? Sorry ... David: (laughs) It’s me. Take my arm. We’re going to cross the street to the supermarket. (louder traffic noises: honking) Cassandra: (anxiously) There are too many cars! Isn’t it risky? David: Don’t worry. We’re going to listen for the signal. It’s a chirping noise. (chirping) Do you hear it? There’s one at every pedestrian crossing. It tells blind people when it’s safe to cross. Let’s go. (sound of a bus approaching and braking) Cassandra: Oh no ... is that a bus? Is there enough time for us to cross? David: Yes, the chirping signal will tell us when the light’s about to change. Keep walking ... Scene 2 In the supermarket (supermarket sounds; shopping carts and announcement) David: When we’re blind, we mainly rely on three senses: smell, touch and hearing. There become invaluable when you can’t see. Cassandra: I’m starting to notice sounds that I didn’t before. Like, I never noticed how noisy supermarkets are! David: No kidding! OK, today I’m buying some vegetables and some tinned tuna ... I’m right beside the onions ... Cassandra: I can tell I’m very, very close to the onions because I can smell them ... (excitedly) Yeah, onions! David: OK, there are enough onions in this packet. Now let’s go find the tuna. Cassandra: But ... there are too many kinds of tinned food! How will we know which ones are tuna? David: There are always enough sighted people around to help out. Let’s go. (supermarket sounds; fade out)",
+    "passage": "Narrator: Imagine life without light — nothing but darkness. Today, we are going to perform a play in total darkness — you will hear us but not see us. In our play, David is blind while Cassandra is wearing eye patches for a day, to see what life is like. (lights go out; silence) Scene 1 On a busy street (sounds of people and traffic) Cassandra: (nervously) David?\n\nDavid ...? Ump! I’ve stumbled into a rubbish bin. David: Follow my voice ... Cassandra: Oh ... What’s this? Am I touching a person? Sorry ... David: (laughs) It’s me. Take my arm. We’re going to cross the street to the supermarket. (louder traffic noises: honking) Cassandra: (anxiously) There are too many cars!\n\nIsn’t it risky? David: Don’t worry. We’re going to listen for the signal. It’s a chirping noise. (chirping) Do you hear it? There’s one at every pedestrian crossing. It tells blind people when it’s safe to cross. Let’s go. (sound of a bus approaching and braking) Cassandra: Oh no ... is that a bus?\n\nIs there enough time for us to cross? David: Yes, the chirping signal will tell us when the light’s about to change. Keep walking ... Scene 2 In the supermarket (supermarket sounds; shopping carts and announcement) David: When we’re blind, we mainly rely on three senses: smell, touch and hearing. There become invaluable when you can’t see.\n\nCassandra: I’m starting to notice sounds that I didn’t before. Like, I never noticed how noisy supermarkets are! David: No kidding! OK, today I’m buying some vegetables and some tinned tuna ... I’m right beside the onions ... Cassandra: I can tell I’m very, very close to the onions because I can smell them .\n\n.. (excitedly) Yeah, onions! David: OK, there are enough onions in this packet. Now let’s go find the tuna. Cassandra: But ... there are too many kinds of tinned food! How will we know which ones are tuna? David: There are always enough sighted people around to help out. Let’s go. (supermarket sounds; fade out)",
     "questions": [
       {
         "number": 70,
@@ -4737,7 +5358,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Narrator: Imagine life without light — nothing but darkness. Today, we are going to perform a play in total darkness — you will hear us but not see us. In our play, David is blind while Cassandra is wearing eye patches for a day, to see what life is like. (lights go out; silence) Scene 1 On a busy street (sounds of people and traffic) Cassandra: (nervously) David?",
+      "David ...? Ump! I’ve stumbled into a rubbish bin. David: Follow my voice ... Cassandra: Oh ... What’s this? Am I touching a person? Sorry ... David: (laughs) It’s me. Take my arm. We’re going to cross the street to the supermarket. (louder traffic noises: honking) Cassandra: (anxiously) There are too many cars!",
+      "Isn’t it risky? David: Don’t worry. We’re going to listen for the signal. It’s a chirping noise. (chirping) Do you hear it? There’s one at every pedestrian crossing. It tells blind people when it’s safe to cross. Let’s go. (sound of a bus approaching and braking) Cassandra: Oh no ... is that a bus?",
+      "Is there enough time for us to cross? David: Yes, the chirping signal will tell us when the light’s about to change. Keep walking ... Scene 2 In the supermarket (supermarket sounds; shopping carts and announcement) David: When we’re blind, we mainly rely on three senses: smell, touch and hearing. There become invaluable when you can’t see.",
+      "Cassandra: I’m starting to notice sounds that I didn’t before. Like, I never noticed how noisy supermarkets are! David: No kidding! OK, today I’m buying some vegetables and some tinned tuna ... I’m right beside the onions ... Cassandra: I can tell I’m very, very close to the onions because I can smell them .",
+      ".. (excitedly) Yeah, onions! David: OK, there are enough onions in this packet. Now let’s go find the tuna. Cassandra: But ... there are too many kinds of tinned food! How will we know which ones are tuna? David: There are always enough sighted people around to help out. Let’s go. (supermarket sounds; fade out)"
+    ]
   },
   {
     "_id": "sh-em1-2021-黄浦-reading-a",
@@ -4749,7 +5383,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "answer (根据短文内容, 选择最恰当的答案)（12分） The only thing better than reading a good book is reading it with others. In a book club, a group of people choose a book that everyone will read individually and then discuss together. There are no rules to starting a book club, and the plan might well change, depending on the groups. It’s good to think ahead about how you’d like the book club to run. Think of 8 to 12 others (people around your age) who you’d like to be part of your book club. Perhaps encourage your friends to invite people whom they know well but you haven’t met. A book club can help you make friends. Having a topic can make the club feel more focused. Finally make sure you read the book before the meeting, and come prepared with questions to ask and things to talk about. Want to dive into stories with friends and share your thoughts? ● ____71____ A schedule is a good way to make sure everyone gets a chance to choose the book. Alternatively, you could provide a selection of books and ask everyone to vote for what they want to read next. ● What do we talk about? Some questions are especially good for sparking discussion about a book. Try these: if you could give the book a different ending, what would it be? What do you think the main character looked like? What do you think will happen next? ● Where do we meet now? To help ensure social distancing, it’s best to meet up online. With an adult’s help, you can set up a video call between book club members. You can then take part from your cosy reading corner and enjoy yourself. · Get advice by visiting clubs-kids.shcolastic.co.uk. · Try contacting your favourite author on social media to see if they will answer your group’s questions about a book. · The Week Junior’s Book Club has tips on what you could read.",
+    "passage": "(根据短文内容, 选择最恰当的答案)（12分） The only thing better than reading a good book is reading it with others. In a book club, a group of people choose a book that everyone will read individually and then discuss together. There are no rules to starting a book club, and the plan might well change, depending on the groups.\n\nIt’s good to think ahead about how you’d like the book club to run. Think of 8 to 12 others (people around your age) who you’d like to be part of your book club. Perhaps encourage your friends to invite people whom they know well but you haven’t met. A book club can help you make friends. Having a topic can make the club feel more focused.\n\nFinally make sure you read the book before the meeting, and come prepared with questions to ask and things to talk about. Want to dive into stories with friends and share your thoughts? ● ____71____ A schedule is a good way to make sure everyone gets a chance to choose the book. Alternatively, you could provide a selection of books and ask everyone to vote for what they want to read next.\n\n● What do we talk about? Some questions are especially good for sparking discussion about a book. Try these: if you could give the book a different ending, what would it be? What do you think the main character looked like? What do you think will happen next? ● Where do we meet now? To help ensure social distancing, it’s best to meet up online.\n\nWith an adult’s help, you can set up a video call between book club members. You can then take part from your cosy reading corner and enjoy yourself. · Get advice by visiting clubs-kids.shcolastic.co.uk. · Try contacting your favourite author on social media to see if they will answer your group’s questions about a book. · The Week Junior’s Book Club has tips on what you could read.",
     "questions": [
       {
         "number": 70,
@@ -4817,7 +5451,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "(根据短文内容, 选择最恰当的答案)（12分） The only thing better than reading a good book is reading it with others. In a book club, a group of people choose a book that everyone will read individually and then discuss together. There are no rules to starting a book club, and the plan might well change, depending on the groups.",
+      "It’s good to think ahead about how you’d like the book club to run. Think of 8 to 12 others (people around your age) who you’d like to be part of your book club. Perhaps encourage your friends to invite people whom they know well but you haven’t met. A book club can help you make friends. Having a topic can make the club feel more focused.",
+      "Finally make sure you read the book before the meeting, and come prepared with questions to ask and things to talk about. Want to dive into stories with friends and share your thoughts? ● ____71____ A schedule is a good way to make sure everyone gets a chance to choose the book. Alternatively, you could provide a selection of books and ask everyone to vote for what they want to read next.",
+      "● What do we talk about? Some questions are especially good for sparking discussion about a book. Try these: if you could give the book a different ending, what would it be? What do you think the main character looked like? What do you think will happen next? ● Where do we meet now? To help ensure social distancing, it’s best to meet up online.",
+      "With an adult’s help, you can set up a video call between book club members. You can then take part from your cosy reading corner and enjoy yourself. · Get advice by visiting clubs-kids.shcolastic.co.uk. · Try contacting your favourite author on social media to see if they will answer your group’s questions about a book. · The Week Junior’s Book Club has tips on what you could read."
+    ]
   },
   {
     "_id": "sh-em1-2023-徐汇-reading-a",
@@ -4829,7 +5475,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（解析版）.docx",
-    "passage": "answer （根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo. Choose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS",
+    "passage": "（根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo.\n\nChoose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS",
     "questions": [
       {
         "number": 56,
@@ -4897,7 +5543,16 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "（根据内容, 选择最恰当的答案）：（12分） Part 1 Experience the excitement of skydiving in Taupo Taupo Tandem Skydiving is New Zealand’s 1st Rated Skydive on Tripadvisor. For over 25 years, we’ve thrown over 200, 000 crazy people out of our planes! Skydiving in Taupo is truly an unforgettable experience—you’ll see volcanoes(火山), views of the North Island and amazing Lake Taupo.",
+      "Choose from our four heights—9,000 feet, 12,000 feet, 15,000 feet or our new 18,500 feet skydive for up to 75 seconds in free fall. We have the best-priced skydivers in New Zealand and they’re trained and experienced. With years of experience under their belt, our team will make sure that your skydiving experience is the most fun one of your life! Part 2 REVIEWS"
+    ]
   },
   {
     "_id": "sh-em1-2024-嘉定-reading-a",
@@ -4909,7 +5564,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
-    "passage": "answer(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer. He liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer. You also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers. Also, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me? Advice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere.",
+    "passage": "(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer.\n\nHe liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer.\n\nYou also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers.\n\nAlso, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me?\n\nAdvice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere.",
     "questions": [
       {
         "number": 59,
@@ -4989,7 +5644,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "(根据短文内容, 选择最恰当的答案)(共12分) Joel Sartore is a writer, teacher, and photographer. His words and beautiful images show his love of photography and of the natural world. Question 1: How did you become a National Geographic photographer? My first job was for a newspaper. After a few years there, I met a National Geographic photographer.",
+      "He liked my photos and said I should send some to the magazine. So I did. That led to a one-day job. And that led to a nine-day job, and so on. Question 2: __________________________________________ To get into National Geographic, you have to give them something they don't have. It's not enough just to be a great photographer.",
+      "You also have to be a scientist, for example, or be able to dive under sea ice, or spend maybe several days in a tree. Question 3:Is it hard to get a job as a photographer today? It's now harder to work for magazines. Technology makes it easy to take good pictures, which means there are more photos and photographers.",
+      "Also, the Web is filled with photos from all around the world that are free, or cost very little. These photos are often good enough to be put in books and magazines. What the magazines need to do these days is to pay for these photos. Question 4:I want to be a photographer. Do you have any advice for me?",
+      "Advice? Well, work hard. Be passionate (热情的)about every project you work on. Take lots of pictures in different situations. Look at others' photos thoughtfully and learn from them. And be curious about everything. There's something to photograph everywhere."
+    ]
   },
   {
     "_id": "sh-em1-2024-浦东-reading-a",
@@ -5001,7 +5668,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（解析版）.docx",
-    "passage": "answer（根据以下内容，选择最恰当的答案）（12 分） Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities. At night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip. Pack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents. You should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains. The ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals.",
+    "passage": "Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities.\n\nAt night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip.\n\nPack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents.\n\nYou should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains.\n\nThe ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals.",
     "questions": [
       {
         "number": 56,
@@ -5069,7 +5736,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Nowadays many people go camping for fun. Camping can be enjoyed in the backyard or deep in the wilderness. Whether camping for one night or several weeks, being prepared is the key. Endless fun Once the tent, your base, is put up and the fire area is prepared, there is lots to do. Fishing and hiking are just some of the fun activities.",
+      "At night, campers often sit by the fire, talking and telling stories. If the weather turns rainy, campers usually wait it out in their tents, reading, drawing or playing games. Required equipment Shelter, bedclothes, food and water are necessary. Deciding what else you will need depends on the kind of camping trip you are planning and the length of your trip.",
+      "Pack light if you are going to carry equipment any distance. Clothing should be prepared enough to protect against weather and insects. A hat, whistle, bug repellent (驱虫剂) and rope may come in handy. Don’t forget a flashlight, a compass, cookers and a first-aid box. Various tents There are many types and styles of tents.",
+      "You should choose your tent based on your needs. If you are camping alone in the backyard, a simple lean-to or small tent may do. If you are camping with your family, a larger cabin tent or camping trailer may be best. Proper locations Where you decide to set up your campsite is very important. Look for a high and dry location if it rains.",
+      "The ground should be level because hills and rocks are uncomfortable to sleep on. A sunny exposure (接触) in the morning with shade in the afternoon is ideal. 5 Wherever you camp, it is important to respect the environment around you. If you are in a park, make sure to follow its rules. Put your garbage and waste in rubbish bins. If you are in the wilderness, keep noise to a minimum and do not disturb the plants or animals."
+    ]
   },
   {
     "_id": "sh-em1-2025-松江-reading-a",
@@ -5081,7 +5760,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025届松江区初三英语一模试卷.docx",
-    "passage": "answer (根据短文内容，选择最恰当的答案) (12分) CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today! DAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai. Later, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists. DAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple. In the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)",
+    "passage": "CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today!\n\nDAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai.\n\nLater, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists.\n\nDAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple.\n\nIn the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)",
     "questions": [
       {
         "number": 59,
@@ -5161,7 +5840,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "CULTURAL TRIP TO China September 2 – September 11 THE ITINERARY: DAY 1 We arrive in Beijing and check into our beautiful old Hutong hotel in Beijing’s Dongcheng district. DAY 2 We join a tour of the Great Wall of China. Make sure you pack some comfortable shoes for this part of our trip because we’re going to do a lot of hiking today!",
+      "DAY 3 In the morning, we visit the Forbidden City. In the afternoon, we travel to the 2008 Beijing Olympic sites. In the evening, we enjoy some traditional Chinese opera at the Lao She Tea House. DAY 4 We experience China’s amazing public transportation system when we take the high-speed train to Shanghai.",
+      "Later, we check into our hotel in the Pudong area of Shanghai. DAY 5 We travel by boat down the Huangpu River in the morning. In the afternoon, we visit the Shanghai Museum. DAY 6 Today is our chance to buy gifts for our families at the Shanghai Historic District – a very popular shopping area for tourists.",
+      "DAY 7 We travel by bus to Nanjing. We stay with local families and experience traditional Chinese food and friendship! DAY 8 We spend the day at Nanjing No.1 Junior Middle School, attending some classes and playing a basketball game with students there. DAY 9 We visit Xuanwu Lake and Jiming Temple.",
+      "In the evening, we have a goodbye dinner with students from Nanjing No. 1 Junior Middle School. DAY 10 The bus to the airport leaves at 7 a.m., so we have a very early breakfast. It’s time to say goodbye to China and begin our journey home. MOST IMPORTANT THINGS TO PACK: Tickets Passport Comfortable shoes Warm clothes Spending money (no more than $30)"
+    ]
   },
   {
     "_id": "sh-em1-2025-金山-reading-a",
@@ -5173,7 +5864,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025届金山区初三英语一模试卷.docx",
-    "passage": "answer（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”. The “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”. The “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to. Fees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot. Admission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park.",
+    "passage": "（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”.\n\nThe “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”.\n\nThe “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to.\n\nFees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot.\n\nAdmission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park.",
     "questions": [
       {
         "number": 59,
@@ -5253,7 +5944,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "（阅读短文，选择最恰当的答案）（12分） Grand Canyon National Park (大峡谷国家公园) is a super popular park in the United States. Every year, around 5.5 million people go to see the Grand Canyon. It is often regarded as one of the Wonders of the World. The “South Rim”(南缘) Most visitors see the Grand Canyon from the “South Rim”.",
+      "The “South Rim” is open all year long. It includes: Grand Canyon Village. It can be reached by driving and is served by the Grand Canyon Railway. Scenic Hermit Road west of the village. Desert View Drive east of the village. A free bus system operates on the “South Rim”. Make your visit easier by parking your car at the Visitor Centre and using the free buses to travel around the “South Rim”.",
+      "The “North Rim” A much smaller number of people see the canyon from the “North Rim” of the park. The “North Rim” has a short season. It has more limited access due to the snow in winter. During winter months, almost all roads are closed to visitors. Even in good weather, the “North Rim” is harder to get to.",
+      "Fees and passes Admission (门票费) to Grand Canyon National Park is for seven days and includes both the “North Rim” and the “South Rim”. Vehicle Pass: $35 For one single vehicle and all its passengers. Motorcycle Pass: $30 For one single motorcycle and its passenger(s). Individual Pass: $20 For one individual when entering by bicycle, bus, the Grand Canyon Railway or on foot.",
+      "Admission is free for individuals 15 years old and younger. 2024 Annual Pass: $70 Valid (有效的) for 12 months from the date of purchase, for unlimited visits to the park."
+    ]
   },
   {
     "_id": "sh-em1-2020-嘉定-reading-a",
@@ -5265,7 +5968,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市嘉定区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Best Detective Stories for Teenagers Nate the Great (Book 1 of 26) Nate the Great has a new case! His friend Annie has lost an expensive picture. She wants Nate to help her find it. Nate must get all the facts, ask the right questions and narrow the list of suspects. Join the great detective as he solves the mystery, will you? Paperback: $5.39 »Buy it on Amazon Encyclopedia Brown, Boy Detective (Book 1 of 28). Encyclopedia Brown is a ten-year-old boy genius who puts his talents to work fighting crime in the small town of Idaville. He solves mysteries for the neighborhood kids. His dad is the chief of the Idaville Police Department. Every night, Encyclopedia helps him solve his most difficult cases. There are ten cases in each book. Not only does Encyclopedia have a chance to solve them, but the reader is also given all the clues. Paperback: $4.99 » Buy it oil Amazon The 100-Year-Old Secret: The Sherlock Files (Book 1 of 4) Xena and Xander Holmes have just found they’re the great -great-grandchildren of Sherlock Holmes. They are given Sherlock’s unsolved casebook. The two set out to solve the cases. Can two 21st-century kids succeed where Sherlock could not? Paperback: $7.79 » Buy it on Amazon",
+    "passage": "Best Detective Stories for Teenagers Nate the Great (Book 1 of 26) Nate the Great has a new case! His friend Annie has lost an expensive picture. She wants Nate to help her find it. Nate must get all the facts, ask the right questions and narrow the list of suspects. Join the great detective as he solves the mystery, will you?\n\nPaperback: $5.39 »Buy it on Amazon Encyclopedia Brown, Boy Detective (Book 1 of 28). Encyclopedia Brown is a ten-year-old boy genius who puts his talents to work fighting crime in the small town of Idaville. He solves mysteries for the neighborhood kids. His dad is the chief of the Idaville Police Department.\n\nEvery night, Encyclopedia helps him solve his most difficult cases. There are ten cases in each book. Not only does Encyclopedia have a chance to solve them, but the reader is also given all the clues. Paperback: $4.99 » Buy it oil Amazon The 100-Year-Old Secret: The Sherlock Files (Book 1 of 4) Xena and Xander Holmes have just found they’re the great -great-grandchildren of Sherlock Holmes.\n\nThey are given Sherlock’s unsolved casebook. The two set out to solve the cases. Can two 21st-century kids succeed where Sherlock could not? Paperback: $7.79 » Buy it on Amazon",
     "questions": [
       {
         "number": 69,
@@ -5346,7 +6049,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Best Detective Stories for Teenagers Nate the Great (Book 1 of 26) Nate the Great has a new case! His friend Annie has lost an expensive picture. She wants Nate to help her find it. Nate must get all the facts, ask the right questions and narrow the list of suspects. Join the great detective as he solves the mystery, will you?",
+      "Paperback: $5.39 »Buy it on Amazon Encyclopedia Brown, Boy Detective (Book 1 of 28). Encyclopedia Brown is a ten-year-old boy genius who puts his talents to work fighting crime in the small town of Idaville. He solves mysteries for the neighborhood kids. His dad is the chief of the Idaville Police Department.",
+      "Every night, Encyclopedia helps him solve his most difficult cases. There are ten cases in each book. Not only does Encyclopedia have a chance to solve them, but the reader is also given all the clues. Paperback: $4.99 » Buy it oil Amazon The 100-Year-Old Secret: The Sherlock Files (Book 1 of 4) Xena and Xander Holmes have just found they’re the great -great-grandchildren of Sherlock Holmes.",
+      "They are given Sherlock’s unsolved casebook. The two set out to solve the cases. Can two 21st-century kids succeed where Sherlock could not? Paperback: $7.79 » Buy it on Amazon"
+    ]
   },
   {
     "_id": "sh-em1-2020-嘉定-reading-b",
@@ -5451,7 +6165,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer （根据以下内容，选择最恰当的答案） It is always the police officers who catch bad guys in detective stories. But even the smartest police officer needs help from forensic analysts (法医）. To most kids, Clue is just a board game. But for Monica Amy, working out “who did it” is a job. Amy says she loved science and reading detective books as a kid. In the seventh grade, she began thinking about how she could mix her two interests. She decided forensics was the best way to combine them. “I was fascinated by the idea of using science to figure out who did the murder(谋杀）.That is actually what forensics is: using science to piece together what happened,” Amy said. Amy, now 33, is a forensic DNA analyst. She uses science to help police officers solve crimes(犯罪）.The DNA in your cells(细胞）decides how your body works and looks. Since half of your DNA comes from your mom and half comes from your dad, you probably look like both of them. Unless you have a twin, your DNA is not like anyone else’s. “It’s like a fingerprint. From DNA, we can tell who’s been at a crime scene.” Amy said. “If you leave DNA, we know that you have been there because it is special to you.” At a crime scene, police officers collect things that may have DNA on them. Everything that comes from a person’s body, including blood, sweat and hair, has DNA. An analyst can also find DNA in shirts, hats and even on cigarette ends.",
+    "passage": "It is always the police officers who catch bad guys in detective stories. But even the smartest police officer needs help from forensic analysts (法医）. To most kids, Clue is just a board game. But for Monica Amy, working out “who did it” is a job. Amy says she loved science and reading detective books as a kid.\n\nIn the seventh grade, she began thinking about how she could mix her two interests. She decided forensics was the best way to combine them. “I was fascinated by the idea of using science to figure out who did the murder(谋杀）.That is actually what forensics is: using science to piece together what happened,” Amy said.\n\nAmy, now 33, is a forensic DNA analyst. She uses science to help police officers solve crimes(犯罪）.The DNA in your cells(细胞）decides how your body works and looks. Since half of your DNA comes from your mom and half comes from your dad, you probably look like both of them. Unless you have a twin, your DNA is not like anyone else’s.\n\n“It’s like a fingerprint. From DNA, we can tell who’s been at a crime scene.” Amy said. “If you leave DNA, we know that you have been there because it is special to you.” At a crime scene, police officers collect things that may have DNA on them. Everything that comes from a person’s body, including blood, sweat and hair, has DNA. An analyst can also find DNA in shirts, hats and even on cigarette ends.",
     "questions": [
       {
         "number": 69,
@@ -5532,7 +6246,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "It is always the police officers who catch bad guys in detective stories. But even the smartest police officer needs help from forensic analysts (法医）. To most kids, Clue is just a board game. But for Monica Amy, working out “who did it” is a job. Amy says she loved science and reading detective books as a kid.",
+      "In the seventh grade, she began thinking about how she could mix her two interests. She decided forensics was the best way to combine them. “I was fascinated by the idea of using science to figure out who did the murder(谋杀）.That is actually what forensics is: using science to piece together what happened,” Amy said.",
+      "Amy, now 33, is a forensic DNA analyst. She uses science to help police officers solve crimes(犯罪）.The DNA in your cells(细胞）decides how your body works and looks. Since half of your DNA comes from your mom and half comes from your dad, you probably look like both of them. Unless you have a twin, your DNA is not like anyone else’s.",
+      "“It’s like a fingerprint. From DNA, we can tell who’s been at a crime scene.” Amy said. “If you leave DNA, we know that you have been there because it is special to you.” At a crime scene, police officers collect things that may have DNA on them. Everything that comes from a person’s body, including blood, sweat and hair, has DNA. An analyst can also find DNA in shirts, hats and even on cigarette ends."
+    ]
   },
   {
     "_id": "sh-em1-2020-奉贤-reading-b",
@@ -5544,7 +6269,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other. This ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all. You can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be. Cars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors. ____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地). People will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____. They will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other.\n\nThis ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all. You can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be.\n\nCars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors. ____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地).\n\nPeople will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____. They will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs.",
     "questions": [
       {
         "number": 75,
@@ -5625,7 +6350,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） How will we get around cities in the future? What will public transportation systems look like in 2045? Some experts have thought about this. Here are ____75____ of the possibilities they have pictured. Shared shuttles 共享班车 Right now, we have bicycles that we can share with each other.",
+      "This ____76____ will finally extend to (扩展到）vehicles in a “shared shuttle” city, minibuses, Uber-style taxis and electric bikes or hover boards (悬浮滑板）will be shared by all. You can simply ____77____ them and pay for them online. At the same time, new environmental rules will mean that having a car might be more expensive than it used to be.",
+      "Cars might only be used in city suburbs. Connected corridors 连通走廊 It will be more convenient to change between different vehicles and stations thanks to connected corridors. ____78____. people might walk, bike, or take a minibus to a station, then board a train to get across town, and finally take a shared taxi to their destination (目的地).",
+      "People will be guided by travel ambassador” apps on their smart phones. Driver less pods无人驾驶舱 In the future, driver less pods will make travel ____79____. They will offer point-to-point journeys. Passengers can pay less ____80____ they agree to share their pods with others. The pods would also be fully connected to the Internet, allowing them to follow different. routes(路线）based on different passengers’ needs."
+    ]
   },
   {
     "_id": "sh-em1-2020-宝山-reading-a",
@@ -5637,7 +6373,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市宝山区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer (根据短文内容，选择最恰当的答案) (12分) It happens to all of us. It is the end of the semester and your teacher gives you your report card. You look at it and your heart stops because you realize that your parents are going to be very angry. This is the classic case of a bad report card! There is nothing you can do to change the past. So, what do you do now? A disappointing report card is something that almost all students will experience at least once in their lives. Grades are how most schools evaluate（评价）students and they are pretty important. The problem is that we do not always get good grades we (or our parents) want. After a bad report card, it is important to figure out what to do next. The first thing to do is talk to your teacher. Find out how your grades were calculated. Was the problem a bad test, lack of participation（参与）in class, or a failure to complete homework? Next, if the problem is something you can solve on your own (such as not doing your homework), make a promise to change your behaviour! However, if you have been studying hard and still got a bad grade, you probably need some extra help with your classes. Talk to your teacher and explain your situation. He or she will tell you where you can receive the extra help you need. Then, make a detailed plan of how you will improve your grades. Write down the plan and have it ready when you take to your parents. That’s good way to make your parents less angry. While all parents want their children to get good grades, most understand that not every report card will be perfect. The important thing is that you show your parents you have a plan to improve your grades for next time. Always remember, many of the world’s most successful people failed many times before they became successful. They learned from their failures, and you should too!",
+    "passage": "It happens to all of us. It is the end of the semester and your teacher gives you your report card. You look at it and your heart stops because you realize that your parents are going to be very angry. This is the classic case of a bad report card! There is nothing you can do to change the past. So, what do you do now?\n\nA disappointing report card is something that almost all students will experience at least once in their lives. Grades are how most schools evaluate（评价）students and they are pretty important. The problem is that we do not always get good grades we (or our parents) want. After a bad report card, it is important to figure out what to do next.\n\nThe first thing to do is talk to your teacher. Find out how your grades were calculated. Was the problem a bad test, lack of participation（参与）in class, or a failure to complete homework? Next, if the problem is something you can solve on your own (such as not doing your homework), make a promise to change your behaviour!\n\nHowever, if you have been studying hard and still got a bad grade, you probably need some extra help with your classes. Talk to your teacher and explain your situation. He or she will tell you where you can receive the extra help you need. Then, make a detailed plan of how you will improve your grades.\n\nWrite down the plan and have it ready when you take to your parents. That’s good way to make your parents less angry. While all parents want their children to get good grades, most understand that not every report card will be perfect. The important thing is that you show your parents you have a plan to improve your grades for next time.\n\nAlways remember, many of the world’s most successful people failed many times before they became successful. They learned from their failures, and you should too!",
     "questions": [
       {
         "number": 69,
@@ -5718,7 +6454,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "It happens to all of us. It is the end of the semester and your teacher gives you your report card. You look at it and your heart stops because you realize that your parents are going to be very angry. This is the classic case of a bad report card! There is nothing you can do to change the past. So, what do you do now?",
+      "A disappointing report card is something that almost all students will experience at least once in their lives. Grades are how most schools evaluate（评价）students and they are pretty important. The problem is that we do not always get good grades we (or our parents) want. After a bad report card, it is important to figure out what to do next.",
+      "The first thing to do is talk to your teacher. Find out how your grades were calculated. Was the problem a bad test, lack of participation（参与）in class, or a failure to complete homework? Next, if the problem is something you can solve on your own (such as not doing your homework), make a promise to change your behaviour!",
+      "However, if you have been studying hard and still got a bad grade, you probably need some extra help with your classes. Talk to your teacher and explain your situation. He or she will tell you where you can receive the extra help you need. Then, make a detailed plan of how you will improve your grades.",
+      "Write down the plan and have it ready when you take to your parents. That’s good way to make your parents less angry. While all parents want their children to get good grades, most understand that not every report card will be perfect. The important thing is that you show your parents you have a plan to improve your grades for next time.",
+      "Always remember, many of the world’s most successful people failed many times before they became successful. They learned from their failures, and you should too!"
+    ]
   },
   {
     "_id": "sh-em1-2020-宝山-reading-b",
@@ -5823,7 +6572,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer （根据以下内容，选择最恰当的答案） Deborah Sampson was born in Massachusetts, US in 1760. She was the fifth oldest of the seven children in her family. The family was so poor that the mother sent the kids off to live with friends and relatives. At the age of 5, Deborah was taken in by an old woman and was then sent to work as a servant in another home one year later. At the age of 10, she helped with the housework and worked on a farm for about eight years, growing to be about 173 cm tall, almost 30 cm taller than the average woman of her day. Hard physical work helped her develop a strong body. She dreamed of going on some adventures. When the American Revolutionary War broke out in 1775, women were not allowed to serve in the army. But Deborah dressed herself to look like a man and joined the army in 1782. She called herself Robert Shurtliff. One day, during an attack，Deborah was shot (射中）in the back and leg. Another soldier took her to the hospital. A doctor treated the wound on her back and asked if she had any other wounds. Deborah lied and said no. She was afraid that if the doctor examined her leg, he would find out her secret. The bullet was deep in her leg. Using a pocket knife, Deborah took it out. She left the hospital and continued to fight. After the war ended, Deborah got married and had children. But she still longed for adventure. So she put on her soldier’s uniform and traveled around the country telling of her life as Robert Shurtliff, the young and brave soldier.",
+    "passage": "Deborah Sampson was born in Massachusetts, US in 1760. She was the fifth oldest of the seven children in her family. The family was so poor that the mother sent the kids off to live with friends and relatives. At the age of 5, Deborah was taken in by an old woman and was then sent to work as a servant in another home one year later.\n\nAt the age of 10, she helped with the housework and worked on a farm for about eight years, growing to be about 173 cm tall, almost 30 cm taller than the average woman of her day. Hard physical work helped her develop a strong body. She dreamed of going on some adventures. When the American Revolutionary War broke out in 1775, women were not allowed to serve in the army.\n\nBut Deborah dressed herself to look like a man and joined the army in 1782. She called herself Robert Shurtliff. One day, during an attack，Deborah was shot (射中）in the back and leg. Another soldier took her to the hospital. A doctor treated the wound on her back and asked if she had any other wounds.\n\nDeborah lied and said no. She was afraid that if the doctor examined her leg, he would find out her secret. The bullet was deep in her leg. Using a pocket knife, Deborah took it out. She left the hospital and continued to fight. After the war ended, Deborah got married and had children. But she still longed for adventure. So she put on her soldier’s uniform and traveled around the country telling of her life as Robert Shurtliff, the young and brave soldier.",
     "questions": [
       {
         "number": 69,
@@ -5904,7 +6653,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Deborah Sampson was born in Massachusetts, US in 1760. She was the fifth oldest of the seven children in her family. The family was so poor that the mother sent the kids off to live with friends and relatives. At the age of 5, Deborah was taken in by an old woman and was then sent to work as a servant in another home one year later.",
+      "At the age of 10, she helped with the housework and worked on a farm for about eight years, growing to be about 173 cm tall, almost 30 cm taller than the average woman of her day. Hard physical work helped her develop a strong body. She dreamed of going on some adventures. When the American Revolutionary War broke out in 1775, women were not allowed to serve in the army.",
+      "But Deborah dressed herself to look like a man and joined the army in 1782. She called herself Robert Shurtliff. One day, during an attack，Deborah was shot (射中）in the back and leg. Another soldier took her to the hospital. A doctor treated the wound on her back and asked if she had any other wounds.",
+      "Deborah lied and said no. She was afraid that if the doctor examined her leg, he would find out her secret. The bullet was deep in her leg. Using a pocket knife, Deborah took it out. She left the hospital and continued to fight. After the war ended, Deborah got married and had children. But she still longed for adventure. So she put on her soldier’s uniform and traveled around the country telling of her life as Robert Shurtliff, the young and brave soldier."
+    ]
   },
   {
     "_id": "sh-em1-2020-崇明-reading-b",
@@ -5916,7 +6676,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s. The industry witnessed its most successful periods in the early 20th century. With the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news. Afternoon newspapers were the first to suffer. People coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not. But newspapers suffered another, heavier blow (打击）in the 1990s. With the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold? Will newspapers die? Maybe not. Many newspapers are now making ____79____. Some are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s.\n\nThe industry witnessed its most successful periods in the early 20th century. With the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news.\n\nAfternoon newspapers were the first to suffer. People coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not.\n\nBut newspapers suffered another, heavier blow (打击）in the 1990s. With the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold?\n\nWill newspapers die? Maybe not. Many newspapers are now making ____79____. Some are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place.",
     "questions": [
       {
         "number": 75,
@@ -5997,7 +6757,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） Are newspapers dying? For years, it has been said that newspapers are at death’s door. Every year brings more news of closing. But why is the situation so ____75____ for newspapers? Newspapers have a long history. The first newspaper was printed in the 1600s.",
+      "The industry witnessed its most successful periods in the early 20th century. With the appearance of radio and TV, however, newspaper circulation (发行量) began to fall. By the mid-20th century, radio and TV had become so popular that people no longer had to ____76____ newspapers for news. That was especially true of breaking news.",
+      "Afternoon newspapers were the first to suffer. People coming home from work increasingly turned on the TV, instead of opening a newspaper because TV could provide news that happened a short time ago. It’s true that newspapers couldn’t compete with TV on ____77____, but they could provide in-depth reports that TV news could not.",
+      "But newspapers suffered another, heavier blow (打击）in the 1990s. With the appearance of the internet, large amounts of information became____78____. Many newspaper readers realized that they could read news on the Internet. There seemed to be little reason to pay for a newspaper subscription (订阅). So what does the future hold?",
+      "Will newspapers die? Maybe not. Many newspapers are now making ____79____. Some are going digital. Some are going farther and taking the industry to places it has never been to. After all, people still want the news. And many agree that newspapers are still an important source of in-depth news, analysis and opinions. If newspapers ____80____ completely, there will be nothing to take their place."
+    ]
   },
   {
     "_id": "sh-em1-2020-徐汇-reading-a",
@@ -6252,7 +7024,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer （根据以下内容，选择最恰当的答案） After all these experiences, I learned a lot and began to grow up. One autumn night, when my parents and I returned from my uncle’s house, my mother said that we might leave for Australia soon. I was crying on the bus, and some people were turning around to look at me. I could not stop the thought of never hearing the morning radio programmes in school again. I do not remember myself crying for this reason again. In cried very little when I was saying goodbye to my friends and relatives. When we were leaving, I couldn’t wait to think about all the places I was going to see — the strange and magical places I had known only from books and pictures. The country I was leaving was hardly in my head then. The following years taught me to think all was going turn out well, but the idea did not come to me at once. For the first two years, I was really lost—having to study in three schools as a result of family moves. I did not know very clearly what I was or what I should be. Father died and Mother then married again... and things became even more complex (复杂）.More than two years passed，my stepfather and I got used to each other at last. I was often sad, and saw no end to “the hard time.” My responsibilities in the family increased since I knew English better than everyone else at home. I wrote letters, taught my mother to fill out forms, translated at interviews with immigration officers (移民局官员），took my grandparents to the doctor and translated there... I have learned that all common troubles go away at last if we don’t give up. My life will turn out all right, even though it will be so hard.",
+    "passage": "After all these experiences, I learned a lot and began to grow up. One autumn night, when my parents and I returned from my uncle’s house, my mother said that we might leave for Australia soon. I was crying on the bus, and some people were turning around to look at me. I could not stop the thought of never hearing the morning radio programmes in school again.\n\nI do not remember myself crying for this reason again. In cried very little when I was saying goodbye to my friends and relatives. When we were leaving, I couldn’t wait to think about all the places I was going to see — the strange and magical places I had known only from books and pictures. The country I was leaving was hardly in my head then.\n\nThe following years taught me to think all was going turn out well, but the idea did not come to me at once. For the first two years, I was really lost—having to study in three schools as a result of family moves. I did not know very clearly what I was or what I should be. Father died and Mother then married again.\n\n.. and things became even more complex (复杂）.More than two years passed，my stepfather and I got used to each other at last. I was often sad, and saw no end to “the hard time.” My responsibilities in the family increased since I knew English better than everyone else at home. I wrote letters, taught my mother to fill out forms, translated at interviews with immigration officers (移民局官员），took my grandparents to the doctor and translated there.\n\n.. I have learned that all common troubles go away at last if we don’t give up. My life will turn out all right, even though it will be so hard.",
     "questions": [
       {
         "number": 69,
@@ -6333,7 +7105,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "After all these experiences, I learned a lot and began to grow up. One autumn night, when my parents and I returned from my uncle’s house, my mother said that we might leave for Australia soon. I was crying on the bus, and some people were turning around to look at me. I could not stop the thought of never hearing the morning radio programmes in school again.",
+      "I do not remember myself crying for this reason again. In cried very little when I was saying goodbye to my friends and relatives. When we were leaving, I couldn’t wait to think about all the places I was going to see — the strange and magical places I had known only from books and pictures. The country I was leaving was hardly in my head then.",
+      "The following years taught me to think all was going turn out well, but the idea did not come to me at once. For the first two years, I was really lost—having to study in three schools as a result of family moves. I did not know very clearly what I was or what I should be. Father died and Mother then married again.",
+      ".. and things became even more complex (复杂）.More than two years passed，my stepfather and I got used to each other at last. I was often sad, and saw no end to “the hard time.” My responsibilities in the family increased since I knew English better than everyone else at home. I wrote letters, taught my mother to fill out forms, translated at interviews with immigration officers (移民局官员），took my grandparents to the doctor and translated there.",
+      ".. I have learned that all common troubles go away at last if we don’t give up. My life will turn out all right, even though it will be so hard."
+    ]
   },
   {
     "_id": "sh-em1-2020-普陀-reading-b",
@@ -6345,7 +7129,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市普陀区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） FINDING FRIENDS ONLINE What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___. Unlike the real world, however, your knowledge about a person is limited to words__76___. There, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies. In fact, people __78___ what you think about. This makes the Internet a great place for exciting conversation. Where else can so many people come together to chat about their interests? But some Internet users want more than just someone to chat with. They are looking for serious love relationships. Is the Internet a good place to find love? Some of these relationships are actually successful. Others fail painfully. Supporters of online relationships say that the Internet allows couples to get to know each other by exchanging ideas first. Your __79___ isn’t so important as that in the real world. But others of online relationships __80___ that no one can truly know another person in the Internet world. Why? Because the Internet gives users a lot of control over how others view them. The Internet users can carefully choose their words to fit whatever image they want to give. In fact, they’re not really themselves.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） FINDING FRIENDS ONLINE What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___.\n\nUnlike the real world, however, your knowledge about a person is limited to words__76___. There, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies.\n\nIn fact, people __78___ what you think about. This makes the Internet a great place for exciting conversation. Where else can so many people come together to chat about their interests? But some Internet users want more than just someone to chat with. They are looking for serious love relationships.\n\nIs the Internet a good place to find love? Some of these relationships are actually successful. Others fail painfully. Supporters of online relationships say that the Internet allows couples to get to know each other by exchanging ideas first. Your __79___ isn’t so important as that in the real world.\n\nBut others of online relationships __80___ that no one can truly know another person in the Internet world. Why? Because the Internet gives users a lot of control over how others view them. The Internet users can carefully choose their words to fit whatever image they want to give. In fact, they’re not really themselves.",
     "questions": [
       {
         "number": 75,
@@ -6426,7 +7210,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） FINDING FRIENDS ONLINE What are the differences between online and real-life relationships? In many ways, the Internet world mirrors the real world. Some people ask for information, play games, and share hobby tips. Some buy and sell products. Others look for__75___.",
+      "Unlike the real world, however, your knowledge about a person is limited to words__76___. There, a person’s thoughts-or at least the thoughts they type-are what really count (算数). So even the __77___ person can become a chat room star. Usually, this “faceless” communication doesn’t cause trouble. Who you are doesn’t really matter when you are in a chat room, discussing sports or hobbies.",
+      "In fact, people __78___ what you think about. This makes the Internet a great place for exciting conversation. Where else can so many people come together to chat about their interests? But some Internet users want more than just someone to chat with. They are looking for serious love relationships.",
+      "Is the Internet a good place to find love? Some of these relationships are actually successful. Others fail painfully. Supporters of online relationships say that the Internet allows couples to get to know each other by exchanging ideas first. Your __79___ isn’t so important as that in the real world.",
+      "But others of online relationships __80___ that no one can truly know another person in the Internet world. Why? Because the Internet gives users a lot of control over how others view them. The Internet users can carefully choose their words to fit whatever image they want to give. In fact, they’re not really themselves."
+    ]
   },
   {
     "_id": "sh-em1-2020-杨浦-reading-a",
@@ -6438,7 +7234,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer (根据文章内容，选择最恰当的答案)：(12分) Crystal was a reporter for her school’s newspaper, The Real Story. She'd done several different kinds of stories before, but never anything like the story she was about to do. During an interview, the school nurse, Mrs. Jones, had told Crystal that the school had a secret basement. Crystal was eager to find out what was in the basement. It could be just about anything! So Crystal asked the newspaper’s advisor, Mr. Adair, if she could do a feature on the school’s basement. He agreed with her that the basement might be a fascinating story, especially since a lot of people weren’t even aware that it existed. Crystal got permission from the headmaster to go down into the basement as long as some teachers went with her. So Mr. Adair and Mrs. Jones accompanied Crystal when she went to explore the basement. The guard unlocked the basement door, and Crystal and the two teachers slowly descended the narrow staircase. When they reached the bottom of the stairs, Mrs. Jones turned on the light, and she, Mr. Adair, and Crystal began to look around. Crystal soon discovered a large set of bookshelves with a collection of old dusty books on them. “What are those?” she wondered aloud. Neither of the two teachers knew, so Crystal made her way over to look more closely at the books. They turned out to be yearbooks from every year since the school opened. For almost an hour, Crystal, Mr. Adair, and Mrs. Jones paged slowly through the yearbooks. They joked about the old-fashioned clothes and hair in the oldest books, and they commented on some of the people they recognized. All of a sudden, Crystal knew the next feature she wanted to write. These books were the school’s story just waiting to be told.",
+    "passage": "Crystal was a reporter for her school’s newspaper, The Real Story. She'd done several different kinds of stories before, but never anything like the story she was about to do. During an interview, the school nurse, Mrs. Jones, had told Crystal that the school had a secret basement. Crystal was eager to find out what was in the basement.\n\nIt could be just about anything! So Crystal asked the newspaper’s advisor, Mr. Adair, if she could do a feature on the school’s basement. He agreed with her that the basement might be a fascinating story, especially since a lot of people weren’t even aware that it existed. Crystal got permission from the headmaster to go down into the basement as long as some teachers went with her.\n\nSo Mr. Adair and Mrs. Jones accompanied Crystal when she went to explore the basement. The guard unlocked the basement door, and Crystal and the two teachers slowly descended the narrow staircase. When they reached the bottom of the stairs, Mrs. Jones turned on the light, and she, Mr. Adair, and Crystal began to look around.\n\nCrystal soon discovered a large set of bookshelves with a collection of old dusty books on them. “What are those?” she wondered aloud. Neither of the two teachers knew, so Crystal made her way over to look more closely at the books. They turned out to be yearbooks from every year since the school opened.\n\nFor almost an hour, Crystal, Mr. Adair, and Mrs. Jones paged slowly through the yearbooks. They joked about the old-fashioned clothes and hair in the oldest books, and they commented on some of the people they recognized. All of a sudden, Crystal knew the next feature she wanted to write. These books were the school’s story just waiting to be told.",
     "questions": [
       {
         "number": 69,
@@ -6519,7 +7315,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据文章内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Crystal was a reporter for her school’s newspaper, The Real Story. She'd done several different kinds of stories before, but never anything like the story she was about to do. During an interview, the school nurse, Mrs. Jones, had told Crystal that the school had a secret basement. Crystal was eager to find out what was in the basement.",
+      "It could be just about anything! So Crystal asked the newspaper’s advisor, Mr. Adair, if she could do a feature on the school’s basement. He agreed with her that the basement might be a fascinating story, especially since a lot of people weren’t even aware that it existed. Crystal got permission from the headmaster to go down into the basement as long as some teachers went with her.",
+      "So Mr. Adair and Mrs. Jones accompanied Crystal when she went to explore the basement. The guard unlocked the basement door, and Crystal and the two teachers slowly descended the narrow staircase. When they reached the bottom of the stairs, Mrs. Jones turned on the light, and she, Mr. Adair, and Crystal began to look around.",
+      "Crystal soon discovered a large set of bookshelves with a collection of old dusty books on them. “What are those?” she wondered aloud. Neither of the two teachers knew, so Crystal made her way over to look more closely at the books. They turned out to be yearbooks from every year since the school opened.",
+      "For almost an hour, Crystal, Mr. Adair, and Mrs. Jones paged slowly through the yearbooks. They joked about the old-fashioned clothes and hair in the oldest books, and they commented on some of the people they recognized. All of a sudden, Crystal knew the next feature she wanted to write. These books were the school’s story just waiting to be told."
+    ]
   },
   {
     "_id": "sh-em1-2020-杨浦-reading-b",
@@ -6930,7 +7738,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） When is the best time to ... Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like. Eat It’s best to eat your biggest meal early, against a common American day. A chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m., our bodies start to cool down, and we sleep better when we have a low body temperature. But how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running. But muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m. on the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks. So save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） When is the best time to ... Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like.\n\nEat It’s best to eat your biggest meal early, against a common American day. A chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m.\n\n, our bodies start to cool down, and we sleep better when we have a low body temperature. But how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running.\n\nBut muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m. on the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks.\n\nSo save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy.",
     "questions": [
       {
         "number": 75,
@@ -7011,7 +7819,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） When is the best time to ... Drink coffee A recent study shows taking a very small amount of coffee each time is best done early in the day. Drunk later, it can reset your body’s clock and __75__ sleep. You may try not drinking the coffee for a few weeks to see what a night of truly good rest feels like.",
+      "Eat It’s best to eat your biggest meal early, against a common American day. A chemical in your body called insulin reaches the highest point in the first half of the day, then slowly __76__. So your blood sugar is less possible to skyrocket after a big breakfast than after a comparable dinner. Sleep Around 8 or 9 p.m.",
+      ", our bodies start to cool down, and we sleep better when we have a low body temperature. But how much shut-eye is ideal? Studies show that those who get six and a half to eight hours are less possible to die too soon. Eight hours seems to be __77__. Exercise Some people believe in early - morning running.",
+      "But muscle tone（肌肉张力）is highest around 5 p.m.. __78__ professionals get an increase: West Coast NFL teams won more often in matches after 8 p.m. on the East Coast. Still on Pacific time, their bodies were ready to play. Be__79__ Research suggests the development of language starts with late - night talks.",
+      "So save the short story you’ve been meaning to write for a dark and restless night, and many different ideas may come up. Do math Scientists think we reach the closest attention between 10 a.m. and 2 p.m., with a highest point around noon. For the first new hours after we wake, our brains have a(an) __80__ to use some more energy."
+    ]
   },
   {
     "_id": "sh-em1-2020-虹口-reading-c",
@@ -7329,7 +8149,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer （根据以下内容，选择最恰当的答案） Mrs. Li is over seventy years old, and has lived in Shanghai all her life. Jenny, a reporter, asked her a few questions. Ql: Tell me about your parents, brothers and sisters. My parents, my sister and three brothers lived in a tiny house with a toilet we shared with our neighbours. There was no electricity. The house was lit by candles. We weren’t very rich, but we were happy. My sister was the oldest child and she left school when she was only twelve to help my mother at home. Families have changed a lot since I was young. They were much bigger in those days. Today most people only have one child! Q2: Did your parents have jobs? My father was a postman, and he often worked twelve hours a day. My mum was a teacher before she met my father. But looking after us was a full-time job, so she stayed at home. Today the position of women has changed. It’s usual for married women to go out to work, but it was less common in the past. My father had the same job the whole of his working life. These days people change their jobs much more often. Q3: __________73___________ Well, I remember the family meals, three times a day. My mother was always cooking for us. The food was always freshly cooked, with lots of fish my grandfather was a fisherman, and my mother never bought ready-made food as people do today, so it was much better for us. And we didn’t have television, so we played games together a lot after supper. Q4: Where did you meet your husband? I first met him over fifty years ago. My parents liked him because they thought he came from a good family, so we got married when I was only nineteen. These days most couples meet at work, and they just hope their parents will be happy for them if they marry. Our life is better now. One day I’ll be talking to my grandchildren.",
+    "passage": "Mrs. Li is over seventy years old, and has lived in Shanghai all her life. Jenny, a reporter, asked her a few questions. Ql: Tell me about your parents, brothers and sisters. My parents, my sister and three brothers lived in a tiny house with a toilet we shared with our neighbours. There was no electricity.\n\nThe house was lit by candles. We weren’t very rich, but we were happy. My sister was the oldest child and she left school when she was only twelve to help my mother at home. Families have changed a lot since I was young. They were much bigger in those days. Today most people only have one child! Q2: Did your parents have jobs?\n\nMy father was a postman, and he often worked twelve hours a day. My mum was a teacher before she met my father. But looking after us was a full-time job, so she stayed at home. Today the position of women has changed. It’s usual for married women to go out to work, but it was less common in the past.\n\nMy father had the same job the whole of his working life. These days people change their jobs much more often. Q3: __________73___________ Well, I remember the family meals, three times a day. My mother was always cooking for us. The food was always freshly cooked, with lots of fish my grandfather was a fisherman, and my mother never bought ready-made food as people do today, so it was much better for us.\n\nAnd we didn’t have television, so we played games together a lot after supper. Q4: Where did you meet your husband? I first met him over fifty years ago. My parents liked him because they thought he came from a good family, so we got married when I was only nineteen. These days most couples meet at work, and they just hope their parents will be happy for them if they marry. Our life is better now. One day I’ll be talking to my grandchildren.",
     "questions": [
       {
         "number": 69,
@@ -7410,7 +8230,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Mrs. Li is over seventy years old, and has lived in Shanghai all her life. Jenny, a reporter, asked her a few questions. Ql: Tell me about your parents, brothers and sisters. My parents, my sister and three brothers lived in a tiny house with a toilet we shared with our neighbours. There was no electricity.",
+      "The house was lit by candles. We weren’t very rich, but we were happy. My sister was the oldest child and she left school when she was only twelve to help my mother at home. Families have changed a lot since I was young. They were much bigger in those days. Today most people only have one child! Q2: Did your parents have jobs?",
+      "My father was a postman, and he often worked twelve hours a day. My mum was a teacher before she met my father. But looking after us was a full-time job, so she stayed at home. Today the position of women has changed. It’s usual for married women to go out to work, but it was less common in the past.",
+      "My father had the same job the whole of his working life. These days people change their jobs much more often. Q3: __________73___________ Well, I remember the family meals, three times a day. My mother was always cooking for us. The food was always freshly cooked, with lots of fish my grandfather was a fisherman, and my mother never bought ready-made food as people do today, so it was much better for us.",
+      "And we didn’t have television, so we played games together a lot after supper. Q4: Where did you meet your husband? I first met him over fifty years ago. My parents liked him because they thought he came from a good family, so we got married when I was only nineteen. These days most couples meet at work, and they just hope their parents will be happy for them if they marry. Our life is better now. One day I’ll be talking to my grandchildren."
+    ]
   },
   {
     "_id": "sh-em1-2020-青浦-reading-b",
@@ -7422,7 +8254,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports. You will then find taxis waiting at Cambridge bus station which you can hire to reach your host family. However, if you prefer, we can order a taxi straight from the airport to your host family. ____77____ for this are (is) listed on the enclosed sheet. Summer courses — — If you are coming on any summer courses and you arrive at Heathrow or Gatwick airports between 09:00 and 18:00 on Sunday before the beginning of your course, ____78____ from the school will be waiting for you at the airport. They will send you on the transfer coach to Cambridge where a school bus will take you on to the host family. Transport is 79 free of charge to the airport on Saturday after the end of our course. YOUR FIRST DAY AT THE SCHOOL You will need to arrive at the school by 09:15 on your first day. Your host family will be ____80____ your transportation to and from school. Here you will be met by our Director of Studies. He will give you all the information you need and show you round the school.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports.\n\nYou will then find taxis waiting at Cambridge bus station which you can hire to reach your host family. However, if you prefer, we can order a taxi straight from the airport to your host family. ____77____ for this are (is) listed on the enclosed sheet. Summer courses — — If you are coming on any summer courses and you arrive at Heathrow or Gatwick airports between 09:00 and 18:00 on Sunday before the beginning of your course, ____78____ from the school will be waiting for you at the airport.\n\nThey will send you on the transfer coach to Cambridge where a school bus will take you on to the host family. Transport is 79 free of charge to the airport on Saturday after the end of our course. YOUR FIRST DAY AT THE SCHOOL You will need to arrive at the school by 09:15 on your first day. Your host family will be ____80____ your transportation to and from school. Here you will be met by our Director of Studies. He will give you all the information you need and show you round the school.",
     "questions": [
       {
         "number": 75,
@@ -7503,7 +8335,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） A Chinese student has just accepted by a university in the U.S. He is ____75____ going abroad. Here is some information from the school brochure. WHAT HAPPENS WHEN I ARRIVE? Clear instructions sent to you before departure Airport pick-up service ____76____ Guided tour of the school Level placement test FROM THE AIRPORT TO YOUR HOST (寄宿家庭） There is an excellent coach transfer (长途换乘）to Cambridge city centre from each of the three London airports.",
+      "You will then find taxis waiting at Cambridge bus station which you can hire to reach your host family. However, if you prefer, we can order a taxi straight from the airport to your host family. ____77____ for this are (is) listed on the enclosed sheet. Summer courses — — If you are coming on any summer courses and you arrive at Heathrow or Gatwick airports between 09:00 and 18:00 on Sunday before the beginning of your course, ____78____ from the school will be waiting for you at the airport.",
+      "They will send you on the transfer coach to Cambridge where a school bus will take you on to the host family. Transport is 79 free of charge to the airport on Saturday after the end of our course. YOUR FIRST DAY AT THE SCHOOL You will need to arrive at the school by 09:15 on your first day. Your host family will be ____80____ your transportation to and from school. Here you will be met by our Director of Studies. He will give you all the information you need and show you round the school."
+    ]
   },
   {
     "_id": "sh-em1-2020-静安-reading-b",
@@ -7515,7 +8357,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） Thing to know before you go out in the cold Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath. Drink up In the summer, when you feel thirsty, you need to drink water. This isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm. Spend the night in a four-season tent in your backyard when it’s freezing outside. That way, if you ____78____ at 2 a.m. that’s too cold, you can just move inside and try again another time. If you wake up shivering in the middle of the night, add layers of clothing, drink warm liquids and ask for help. Eat right Simple meals that need little preparation are often the most ____79____ choices during winter. But nutrition (营养） is also necessary. Your body needs healthy food to produce ____80____. Choose meals with more protein and fat than what you’d eat during warmer weather. Some good choices are hot cereal with fruit for breakfast, peanut butter on crackers with hot soup for lunch and meat with noodles, rice or potatoes for dinner.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） Thing to know before you go out in the cold Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath.\n\nDrink up In the summer, when you feel thirsty, you need to drink water. This isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm.\n\nSpend the night in a four-season tent in your backyard when it’s freezing outside. That way, if you ____78____ at 2 a.m. that’s too cold, you can just move inside and try again another time. If you wake up shivering in the middle of the night, add layers of clothing, drink warm liquids and ask for help.\n\nEat right Simple meals that need little preparation are often the most ____79____ choices during winter. But nutrition (营养） is also necessary. Your body needs healthy food to produce ____80____. Choose meals with more protein and fat than what you’d eat during warmer weather. Some good choices are hot cereal with fruit for breakfast, peanut butter on crackers with hot soup for lunch and meat with noodles, rice or potatoes for dinner.",
     "questions": [
       {
         "number": 75,
@@ -7596,7 +8438,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） Thing to know before you go out in the cold Keep your ____75____ warm There is a saying,“If your hands and feet get cold, put on hat.”A hat made of wool will keep you warm even if it gets wet. The hood (兜帽）is great for blocking the wind as long as you wear a hat underneath.",
+      "Drink up In the summer, when you feel thirsty, you need to drink water. This isn’t always the case in winter. When you’re wearing heavy winter clothes, you have to work harder to build up a tent, cook dinner or ____76____ the woods. Your body will lose a lot of water. So drink up. Sleeping ____77____ Sleeping bags are rated (评估）that is supposed to tell you how cold it can get while keeping you warm.",
+      "Spend the night in a four-season tent in your backyard when it’s freezing outside. That way, if you ____78____ at 2 a.m. that’s too cold, you can just move inside and try again another time. If you wake up shivering in the middle of the night, add layers of clothing, drink warm liquids and ask for help.",
+      "Eat right Simple meals that need little preparation are often the most ____79____ choices during winter. But nutrition (营养） is also necessary. Your body needs healthy food to produce ____80____. Choose meals with more protein and fat than what you’d eat during warmer weather. Some good choices are hot cereal with fruit for breakfast, peanut butter on crackers with hot soup for lunch and meat with noodles, rice or potatoes for dinner."
+    ]
   },
   {
     "_id": "sh-em1-2020-黄浦-reading-b",
@@ -7608,7 +8461,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2020届九年级上学期期末（一模）质量监控英语试卷（Word原卷版 ）.docx",
-    "passage": "answer and complete the passage （选择最恰当的选项完成短文） There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple. Some scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green. Plants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color. During the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺). But 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors. In 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color. In 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color. This discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes.",
+    "passage": "and complete the passage （选择最恰当的选项完成短文） There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple.\n\nSome scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green. Plants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color.\n\nDuring the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺). But 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors.\n\nIn 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color. In 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color.\n\nThis discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes.",
     "questions": [
       {
         "number": 75,
@@ -7689,7 +8542,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "and complete the passage （选择最恰当的选项完成短文） There are purple clothes, purple handbags, purple bicycles, purple furniture, even purple computers! So purple is one of the most popular colors today. But in the past, purple was a very expensive and unusual color. Let’s take a look at the rich ___75___ of the color purple.",
+      "Some scientists believe that the first plants to appear on Earth over 500 million years ago probably looked purple, not green. Plants today are green because ___76___ use green chlorophyll (叶绿素）to produce energy. But these early plants probably used something called retinal, which is a dark purple color.",
+      "During the time of the Roman Empire (37 BC - 46 AD), it was very difficult to make purple dye (染料). The dye came from sea snails (海螺). But 10,000 dead sea snails got you just one gram (克）of purple dye ... as well as a very bad smell! This ___77___ purple dye was called Tyrian purple, and it was the preferred color of emperors.",
+      "In 16th - century England, purple was ___78___ for the king’s family members. Queen Elizabeth’s clothes were purple, but ordinary people were not allowed to wear the color. In 1856, William Perkin, an 18-year-old ___79___ student, noticed something strange while doing an experiment. The chemicals he used to clean his instruments mixed with the chemicals he used in his experiment and produced a bright purple color.",
+      "This discovery allowed Perkin to start a company using this chemical mixture to make purple dye. The dye was much ___80___ than sea dye. Thanks to Perkin, now anyone can afford to wear purple clothes."
+    ]
   },
   {
     "_id": "sh-em1-2021-嘉定-reading-b",
@@ -9561,7 +10426,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "（共12分） Arrest Report Sheet NAME OF SUSPECT (嫌疑犯): Mr. John A. Berry ___65___ FOR ARREST: ● Use of bad language in a public place. ● Wasting a police officer’s time. ● Damaging property and causing ___66___ to the public. ● There was something I didn’t like about him. DETAILED REPORT OF THE EVENTS LEADING UP TO THE ARREST The suspect came into Mean Street Police Station at 4:37 p.m. on Wednesday, February 15th, claiming (声称) to have lost his car. Of course, this story did not satisfy a police officer like myself, and I ___67___ started to question the suspect. After about 45 minutes, he changed his story, claiming that the car had been stolen. Something about this story, too, ___68___ extremely unlikely and I refused to accept it. The suspect kept telling his story. Luckily, I took a useful and ___69___ training course last weekend. So I used the active questioning skills from the course to get the real truth out of him. When he finally ___70___ under my questioning, he admitted that he had parked his car in a no-parking zone, and then blown it up(爆炸). I have not yet worked out why he did this; my theory is that he is a mentally ill terrorist who sees parking rules as a symbol of everything he hates most in modern society. Signed Detective—Inspector Philip E. Morris",
+    "passage": "Arrest Report Sheet NAME OF SUSPECT (嫌疑犯): Mr. John A. Berry ___65___ FOR ARREST: ● Use of bad language in a public place. ● Wasting a police officer’s time. ● Damaging property and causing ___66___ to the public. ● There was something I didn’t like about him. DETAILED REPORT OF THE EVENTS LEADING UP TO THE ARREST The suspect came into Mean Street Police Station at 4:37 p.m.\n\non Wednesday, February 15th, claiming (声称) to have lost his car. Of course, this story did not satisfy a police officer like myself, and I ___67___ started to question the suspect. After about 45 minutes, he changed his story, claiming that the car had been stolen. Something about this story, too, ___68___ extremely unlikely and I refused to accept it.\n\nThe suspect kept telling his story. Luckily, I took a useful and ___69___ training course last weekend. So I used the active questioning skills from the course to get the real truth out of him. When he finally ___70___ under my questioning, he admitted that he had parked his car in a no-parking zone, and then blown it up(爆炸).\n\nI have not yet worked out why he did this; my theory is that he is a mentally ill terrorist who sees parking rules as a symbol of everything he hates most in modern society. Signed Detective—Inspector Philip E. Morris",
     "questions": [
       {
         "number": 65,
@@ -9642,7 +10507,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Arrest Report Sheet NAME OF SUSPECT (嫌疑犯): Mr. John A. Berry ___65___ FOR ARREST: ● Use of bad language in a public place. ● Wasting a police officer’s time. ● Damaging property and causing ___66___ to the public. ● There was something I didn’t like about him. DETAILED REPORT OF THE EVENTS LEADING UP TO THE ARREST The suspect came into Mean Street Police Station at 4:37 p.m.",
+      "on Wednesday, February 15th, claiming (声称) to have lost his car. Of course, this story did not satisfy a police officer like myself, and I ___67___ started to question the suspect. After about 45 minutes, he changed his story, claiming that the car had been stolen. Something about this story, too, ___68___ extremely unlikely and I refused to accept it.",
+      "The suspect kept telling his story. Luckily, I took a useful and ___69___ training course last weekend. So I used the active questioning skills from the course to get the real truth out of him. When he finally ___70___ under my questioning, he admitted that he had parked his car in a no-parking zone, and then blown it up(爆炸).",
+      "I have not yet worked out why he did this; my theory is that he is a mentally ill terrorist who sees parking rules as a symbol of everything he hates most in modern society. Signed Detective—Inspector Philip E. Morris"
+    ]
   },
   {
     "_id": "sh-em1-2021-虹口-reading-c",
@@ -9654,7 +10530,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
-    "passage": "（共14分） Scientific Ways to Improve Our Memory Exercise r___71___ Research found that sitting for a long time every day can lead to memory loss. So put on your trainers, go o___72___ and start working up a good sweat. It’s healthy for both your mind and your body. Eat your vegetables It’s a well-known f___73___ that eating vegetables can help keep your body healthy, and that includes our brain. Various research p___74___ show that fruits and vegetables can help lower oxidative stress (氧化压力) in your brain as well as help healthy cognitive (认知) functions. R___75___ stress levels Research found stress at high levels have a bad influence on our memory and cognitive skills. So slow down and take a walk from time to time. Play video games Yes, you heard us. Get on that controller and s___76___ a couple of hours playing your favorite video game. It’s good for your mind. According to a r___77___ study which came out last week, these pastimes can help improve the functioning of various memory-associated areas in the brain. But don’t go overboard, too much of a good thing can be bad for you.",
+    "passage": "Scientific Ways to Improve Our Memory Exercise r___71___ Research found that sitting for a long time every day can lead to memory loss. So put on your trainers, go o___72___ and start working up a good sweat. It’s healthy for both your mind and your body. Eat your vegetables It’s a well-known f___73___ that eating vegetables can help keep your body healthy, and that includes our brain.\n\nVarious research p___74___ show that fruits and vegetables can help lower oxidative stress (氧化压力) in your brain as well as help healthy cognitive (认知) functions. R___75___ stress levels Research found stress at high levels have a bad influence on our memory and cognitive skills. So slow down and take a walk from time to time.\n\nPlay video games Yes, you heard us. Get on that controller and s___76___ a couple of hours playing your favorite video game. It’s good for your mind. According to a r___77___ study which came out last week, these pastimes can help improve the functioning of various memory-associated areas in the brain. But don’t go overboard, too much of a good thing can be bad for you.",
     "questions": [
       {
         "number": 71,
@@ -9705,7 +10581,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Scientific Ways to Improve Our Memory Exercise r___71___ Research found that sitting for a long time every day can lead to memory loss. So put on your trainers, go o___72___ and start working up a good sweat. It’s healthy for both your mind and your body. Eat your vegetables It’s a well-known f___73___ that eating vegetables can help keep your body healthy, and that includes our brain.",
+      "Various research p___74___ show that fruits and vegetables can help lower oxidative stress (氧化压力) in your brain as well as help healthy cognitive (认知) functions. R___75___ stress levels Research found stress at high levels have a bad influence on our memory and cognitive skills. So slow down and take a walk from time to time.",
+      "Play video games Yes, you heard us. Get on that controller and s___76___ a couple of hours playing your favorite video game. It’s good for your mind. According to a r___77___ study which came out last week, these pastimes can help improve the functioning of various memory-associated areas in the brain. But don’t go overboard, too much of a good thing can be bad for you."
+    ]
   },
   {
     "_id": "sh-em1-2021-虹口-reading-d",
@@ -12443,7 +13329,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市金山区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷官方版 ）.docx",
-    "passage": "（根据以下内容，选择最恰当的答案。）（12分） Welcome to Sunshine Hotel, New York! We have all kinds of facilities to make your stay comfortable. We also offer breakfast for some types of rooms. If you want to explore around the hotel, there are many interesting places nearby. Here is more information about our hotel. Room types Prices Breakfast One single bed $35 No One double bed $50 Yes Two single beds $69 Yes Two double beds $95 Yes Hotel facilities ★ Elevator ★ Gym ★ Parking lot ★ Meeting rooms ★ Spa rooms ★ Snack Bars ★ Restaurant ★ Swimming-pool Room facilities ★ Free WiFi ★ Towels ★ Bathrobes ★ TV ★ Air conditioner ★ Free newspapers ★ Tea maker ★ Phone ★ Free Bottled Water Nearby places to go ★ Statue of Liberty (自由女神像) ★ Museum of Art ★ Central Park ★ Brooklyn Bridge ★ Shopping Malls ★ Supermarkets ★ Theaters Notes: Breakfast is offered each morning between 7 a.m. and 11 a.m. Parking lot costs $1 every hour and $10 every day. You can bring pets into your room but you need to pay $50 more every day. ( )",
+    "passage": "。）（12分） Welcome to Sunshine Hotel, New York! We have all kinds of facilities to make your stay comfortable. We also offer breakfast for some types of rooms. If you want to explore around the hotel, there are many interesting places nearby. Here is more information about our hotel. Room types Prices Breakfast One single bed $35 No One double bed $50 Yes Two single beds $69 Yes Two double beds $95 Yes Hotel facilities ★ Elevator ★ Gym ★ Parking lot ★ Meeting rooms ★ Spa rooms ★ Snack Bars ★ Restaurant ★ Swimming-pool Room facilities ★ Free WiFi ★ Towels ★ Bathrobes ★ TV ★ Air conditioner ★ Free newspapers ★ Tea maker ★ Phone ★ Free Bottled Water Nearby places to go ★ Statue of Liberty (自由女神像) ★ Museum of Art ★ Central Park ★ Brooklyn Bridge ★ Shopping Malls ★ Supermarkets ★ Theaters Notes: Breakfast is offered each morning between 7 a.m.\n\nand 11 a.m. Parking lot costs $1 every hour and $10 every day. You can bring pets into your room but you need to pay $50 more every day. ( )",
     "questions": [
       {
         "number": 59,
@@ -12523,7 +13409,16 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "。）（12分） Welcome to Sunshine Hotel, New York! We have all kinds of facilities to make your stay comfortable. We also offer breakfast for some types of rooms. If you want to explore around the hotel, there are many interesting places nearby. Here is more information about our hotel. Room types Prices Breakfast One single bed $35 No One double bed $50 Yes Two single beds $69 Yes Two double beds $95 Yes Hotel facilities ★ Elevator ★ Gym ★ Parking lot ★ Meeting rooms ★ Spa rooms ★ Snack Bars ★ Restaurant ★ Swimming-pool Room facilities ★ Free WiFi ★ Towels ★ Bathrobes ★ TV ★ Air conditioner ★ Free newspapers ★ Tea maker ★ Phone ★ Free Bottled Water Nearby places to go ★ Statue of Liberty (自由女神像) ★ Museum of Art ★ Central Park ★ Brooklyn Bridge ★ Shopping Malls ★ Supermarkets ★ Theaters Notes: Breakfast is offered each morning between 7 a.m.",
+      "and 11 a.m. Parking lot costs $1 every hour and $10 every day. You can bring pets into your room but you need to pay $50 more every day. ( )"
+    ]
   },
   {
     "_id": "sh-em1-2022-长宁-reading-b",
@@ -13041,7 +13936,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2022届九年级上学期期末（一模）质量监控英语试卷（Word原卷官方版 ）.docx",
-    "passage": "（根据以下内容，选择最恰当的答案）（12分） Bingling Cave-Temple Tourism Area is located in the northwest of China. It covers an area of 150 square kilometers and it is mainly made up of Bingling Lake, Bingling Stone Forest and Binglingsi Grottoes (炳灵寺石窟). Bingling Lake Bingling Lake is a huge, clean and pollution-free lake that meets the national standard for second-class drinking water. It is famous for being the setting for the opening scene of the film A World without Thieves. You can spend about 1.5 hours taking a speed boat to enjoy its nice view or nearly 5 hours on a cruise ship to peacefully capture its beauty. The whole distance is about 108 kilometers. Opening hours：9:00 -18:00 Price for speed boat / cruise ship：¥150 / ¥70 per person Bingling Stone Forest Bingling Stone Forest covers an area of about 30 square kilometers and is a typical Danxia landform near water. In the park, there are thousands of peaks, hundreds of narrow valleys and zigzags, which, together with various types of stone peaks, constitute a strange world of stone forest. Opening hours：9:00 -18:00 Admission：¥60 per person Binglingsi Grottoes Binglingsi Grottoes, founded more than 1,600 years ago, is entitled one of the six famous grottoes in China. In June 2014, it was included in the UNESCO World Heritage List. Inside Binglingsi Grottoes, you can appreciate 216 caves and niches, 800 odd statues of various types and over 1,000 square meters of frescoes (壁画) with both Tibetan and Han styles. You can also appreciate 56 Buddhist pagodas and 438 pieces in collection. The inscriptions (碑文) inside, which are proved to be the earliest inscriptions in China and can be used to judge a clear date of the statue, provide an important basis for determination of the age of the early grottoes in China. Opening hours：8:30 -17:00 Admission：¥80 per person ( )",
+    "passage": "Bingling Cave-Temple Tourism Area is located in the northwest of China. It covers an area of 150 square kilometers and it is mainly made up of Bingling Lake, Bingling Stone Forest and Binglingsi Grottoes (炳灵寺石窟). Bingling Lake Bingling Lake is a huge, clean and pollution-free lake that meets the national standard for second-class drinking water.\n\nIt is famous for being the setting for the opening scene of the film A World without Thieves. You can spend about 1.5 hours taking a speed boat to enjoy its nice view or nearly 5 hours on a cruise ship to peacefully capture its beauty. The whole distance is about 108 kilometers. Opening hours：9:00 -18:00 Price for speed boat / cruise ship：¥150 / ¥70 per person Bingling Stone Forest Bingling Stone Forest covers an area of about 30 square kilometers and is a typical Danxia landform near water.\n\nIn the park, there are thousands of peaks, hundreds of narrow valleys and zigzags, which, together with various types of stone peaks, constitute a strange world of stone forest. Opening hours：9:00 -18:00 Admission：¥60 per person Binglingsi Grottoes Binglingsi Grottoes, founded more than 1,600 years ago, is entitled one of the six famous grottoes in China. In June 2014, it was included in the UNESCO World Heritage List.\n\nInside Binglingsi Grottoes, you can appreciate 216 caves and niches, 800 odd statues of various types and over 1,000 square meters of frescoes (壁画) with both Tibetan and Han styles. You can also appreciate 56 Buddhist pagodas and 438 pieces in collection. The inscriptions (碑文) inside, which are proved to be the earliest inscriptions in China and can be used to judge a clear date of the statue, provide an important basis for determination of the age of the early grottoes in China. Opening hours：8:30 -17:00 Admission：¥80 per person ( )",
     "questions": [
       {
         "number": 59,
@@ -13121,7 +14016,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Bingling Cave-Temple Tourism Area is located in the northwest of China. It covers an area of 150 square kilometers and it is mainly made up of Bingling Lake, Bingling Stone Forest and Binglingsi Grottoes (炳灵寺石窟). Bingling Lake Bingling Lake is a huge, clean and pollution-free lake that meets the national standard for second-class drinking water.",
+      "It is famous for being the setting for the opening scene of the film A World without Thieves. You can spend about 1.5 hours taking a speed boat to enjoy its nice view or nearly 5 hours on a cruise ship to peacefully capture its beauty. The whole distance is about 108 kilometers. Opening hours：9:00 -18:00 Price for speed boat / cruise ship：¥150 / ¥70 per person Bingling Stone Forest Bingling Stone Forest covers an area of about 30 square kilometers and is a typical Danxia landform near water.",
+      "In the park, there are thousands of peaks, hundreds of narrow valleys and zigzags, which, together with various types of stone peaks, constitute a strange world of stone forest. Opening hours：9:00 -18:00 Admission：¥60 per person Binglingsi Grottoes Binglingsi Grottoes, founded more than 1,600 years ago, is entitled one of the six famous grottoes in China. In June 2014, it was included in the UNESCO World Heritage List.",
+      "Inside Binglingsi Grottoes, you can appreciate 216 caves and niches, 800 odd statues of various types and over 1,000 square meters of frescoes (壁画) with both Tibetan and Han styles. You can also appreciate 56 Buddhist pagodas and 438 pieces in collection. The inscriptions (碑文) inside, which are proved to be the earliest inscriptions in China and can be used to judge a clear date of the statue, provide an important basis for determination of the age of the early grottoes in China. Opening hours：8:30 -17:00 Admission：¥80 per person ( )"
+    ]
   },
   {
     "_id": "sh-em1-2022-黄浦-reading-a",
@@ -13373,7 +14279,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市嘉定区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） http://www.wss.edu.cn/events/inventioncompetition Sign in Join us home About the school Event Contact Invention Competition CALLING ALL INVENTORS! Event details The Invention Competition, one of the biggest events for students organized by the science club, is now waiting for you to attend! All works will be displayed in the Students’ Center. You can go there and vote for your favorites between March 1st and March 5th. We will announce the results on March 15th, the last day of the Science Week. Prizes will be awarded to inventions that: • are the most creative • are the most helpful • are the best use of waste materials How to enter Interested students should fill out an entry form (报名表). You can either put it in the box outside the school office or send it to inventiooomDetitioo@wss.edu.cn before January 15th. Please include the following information: • Your full name • Your class number • A brief introduction of your invention • Your ID number Please submit (提交) your invention on or before February 28th. Rules • Original inventions only You should make sure that you don’t copy inventions that already exist. • You should only be allowed to submit one invention. Select the best idea. • You may enter for the competition as an individual or as a team of no more than four students. • You can make changes before the voting period starts. Once the inventions are displayed for voting, you cannot make any changes.",
+    "passage": "http://www.wss.edu.cn/events/inventioncompetition Sign in Join us home About the school Event Contact Invention Competition CALLING ALL INVENTORS! Event details The Invention Competition, one of the biggest events for students organized by the science club, is now waiting for you to attend! All works will be displayed in the Students’ Center.\n\nYou can go there and vote for your favorites between March 1st and March 5th. We will announce the results on March 15th, the last day of the Science Week. Prizes will be awarded to inventions that: • are the most creative • are the most helpful • are the best use of waste materials How to enter Interested students should fill out an entry form (报名表).\n\nYou can either put it in the box outside the school office or send it to inventiooomDetitioo@wss.edu.cn before January 15th. Please include the following information: • Your full name • Your class number • A brief introduction of your invention • Your ID number Please submit (提交) your invention on or before February 28th. Rules • Original inventions only You should make sure that you don’t copy inventions that already exist.\n\n• You should only be allowed to submit one invention. Select the best idea. • You may enter for the competition as an individual or as a team of no more than four students. • You can make changes before the voting period starts. Once the inventions are displayed for voting, you cannot make any changes.",
     "questions": [
       {
         "number": 59,
@@ -13441,7 +14347,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "http://www.wss.edu.cn/events/inventioncompetition Sign in Join us home About the school Event Contact Invention Competition CALLING ALL INVENTORS! Event details The Invention Competition, one of the biggest events for students organized by the science club, is now waiting for you to attend! All works will be displayed in the Students’ Center.",
+      "You can go there and vote for your favorites between March 1st and March 5th. We will announce the results on March 15th, the last day of the Science Week. Prizes will be awarded to inventions that: • are the most creative • are the most helpful • are the best use of waste materials How to enter Interested students should fill out an entry form (报名表).",
+      "You can either put it in the box outside the school office or send it to inventiooomDetitioo@wss.edu.cn before January 15th. Please include the following information: • Your full name • Your class number • A brief introduction of your invention • Your ID number Please submit (提交) your invention on or before February 28th. Rules • Original inventions only You should make sure that you don’t copy inventions that already exist.",
+      "• You should only be allowed to submit one invention. Select the best idea. • You may enter for the competition as an individual or as a team of no more than four students. • You can make changes before the voting period starts. Once the inventions are displayed for voting, you cannot make any changes."
+    ]
   },
   {
     "_id": "sh-em1-2023-嘉定-reading-b",
@@ -13453,7 +14370,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市嘉定区中考一模英语试题（原卷版）.docx",
-    "passage": "(12 分) One Sunday night, I was sitting in my kitchen half-listening as my 15-year-old son Tommy quarreled with his younger brother Kevin. I didn’t pay attention when Kevin went upstairs with a look of ___45___ on his face. About 30 minutes later, I heard Kevin crying in his room. I knocked on the door immediately and asked, “Kevin, what’s the matter? Why are you crying?” No answer. I tried again. Still ___46___ happened. So, I took a piece of paper from a notebook and wrote, “If you don’t want to talk, we can write down to each other” and slipped(塞) it under the door. An hour later I was still sitting on the floor outside his door with a stack of(一摞) notes in my hands. As I read one of Kevin’s notes, I couldn’t help crying. It said, “Nobody in this family loves me. I am not the youngest nor the oldest, and I am not the ___47___ to get good marks. Tommy thinks I am too weak. Dad thought I should be taller. ___48___, he always wants me to be a basketball player. And you never listen to me even notice me.” He was right about my part. Feeling sorry for him, I wrote back, “Kevin, I do love you, and you are loved in this family?” He didn’t reply for a while, but I could hear him crying ___49___. Kevin ran out of paper, so he wrote “Thanks” on a paper cup. I wrote back “For what?” It was returned to me with the reply “___50___” written on it. Since then I have tried my best to care for my family members. When one of us notices that the other is unhappy, we’ll smile and say, “Write it on a paper cup.”",
+    "passage": "One Sunday night, I was sitting in my kitchen half-listening as my 15-year-old son Tommy quarreled with his younger brother Kevin. I didn’t pay attention when Kevin went upstairs with a look of ___45___ on his face. About 30 minutes later, I heard Kevin crying in his room. I knocked on the door immediately and asked, “Kevin, what’s the matter?\n\nWhy are you crying?” No answer. I tried again. Still ___46___ happened. So, I took a piece of paper from a notebook and wrote, “If you don’t want to talk, we can write down to each other” and slipped(塞) it under the door. An hour later I was still sitting on the floor outside his door with a stack of(一摞) notes in my hands.\n\nAs I read one of Kevin’s notes, I couldn’t help crying. It said, “Nobody in this family loves me. I am not the youngest nor the oldest, and I am not the ___47___ to get good marks. Tommy thinks I am too weak. Dad thought I should be taller. ___48___, he always wants me to be a basketball player. And you never listen to me even notice me.\n\n” He was right about my part. Feeling sorry for him, I wrote back, “Kevin, I do love you, and you are loved in this family?” He didn’t reply for a while, but I could hear him crying ___49___. Kevin ran out of paper, so he wrote “Thanks” on a paper cup. I wrote back “For what?” It was returned to me with the reply “___50___” written on it.\n\nSince then I have tried my best to care for my family members. When one of us notices that the other is unhappy, we’ll smile and say, “Write it on a paper cup.”",
     "questions": [
       {
         "number": 65,
@@ -13533,7 +14450,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "One Sunday night, I was sitting in my kitchen half-listening as my 15-year-old son Tommy quarreled with his younger brother Kevin. I didn’t pay attention when Kevin went upstairs with a look of ___45___ on his face. About 30 minutes later, I heard Kevin crying in his room. I knocked on the door immediately and asked, “Kevin, what’s the matter?",
+      "Why are you crying?” No answer. I tried again. Still ___46___ happened. So, I took a piece of paper from a notebook and wrote, “If you don’t want to talk, we can write down to each other” and slipped(塞) it under the door. An hour later I was still sitting on the floor outside his door with a stack of(一摞) notes in my hands.",
+      "As I read one of Kevin’s notes, I couldn’t help crying. It said, “Nobody in this family loves me. I am not the youngest nor the oldest, and I am not the ___47___ to get good marks. Tommy thinks I am too weak. Dad thought I should be taller. ___48___, he always wants me to be a basketball player. And you never listen to me even notice me.",
+      "” He was right about my part. Feeling sorry for him, I wrote back, “Kevin, I do love you, and you are loved in this family?” He didn’t reply for a while, but I could hear him crying ___49___. Kevin ran out of paper, so he wrote “Thanks” on a paper cup. I wrote back “For what?” It was returned to me with the reply “___50___” written on it.",
+      "Since then I have tried my best to care for my family members. When one of us notices that the other is unhappy, we’ll smile and say, “Write it on a paper cup.”"
+    ]
   },
   {
     "_id": "sh-em1-2023-嘉定-reading-c",
@@ -13737,7 +14666,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） CAMPING ADVENTURE in HONG KONG! Date: 3/10—5/10 Place: Wan Tsai West Campsite Cost: $500 (including all meals) Just bring your own tent! | Can’t get enough of the great outdoor activities? Join Hong Kong Campers’ Society’s fun-filled camping trip! To Join Register(注册) by 15/9. Find out more at www.hkcampers.com. / Day 1 Campers will meet at Wong Shek Pier at 8 a.m. for the 15-minute ferry ride to get to the campsite. In the ice-breaking session at 10:30 a.m., camp guides will make self-introductions to their team members. After a barbecue lunch at noon, camp guides will lead their teams to explore the Tai Tan Country Trail. Campers will be able to take photos of the wildlife and beautiful views along the way. Before evening, campers will return to the campsite to put up their tents. There will be a stargazing session after dinner. | Day 2 In the morning we will have an orienteering competition in the fields following breakfast, so bring a map and a compass(指南针). (Smartphone users can use a compass app.). In the afternoon campers can choose to join one of the following: boating sandeastle competition hike-and-seek treasure hunt(寻宝游戏) Campers will enjoy doing their light painting at the campfire party after dinner. / (High-power telescopes(望远镜) will be provided to campers.) stargazing session | Day 3 Campers will take the 9:30 a.m. ferry back to Wong Shek Pier after breakfast and a group photo. / Camper’s comments: “I really enjoyed myself at camp-all that good food, fresh air, and especially the clear night sky in Wan Tsai. That’s perfect for stargazing!” Janet Lu “We enjoyed ourselves by doing various water sports, and learnt basic knowledge of stars while watching the night sky. The best part was the campfire evening when we shared jokes and danced around a campfire-not something you can do every day!” Thomas Chen | Camper’s comments: “I really enjoyed myself at camp-all that good food, fresh air, and especially the clear night sky in Wan Tsai. That’s perfect for stargazing!” Janet Lu “We enjoyed ourselves by doing various water sports, and learnt basic knowledge of stars while watching the night sky. The best part was the campfire evening when we shared jokes and danced around a campfire-not something you can do every day!” Thomas Chen",
+    "passage": "CAMPING ADVENTURE in HONG KONG! Date: 3/10—5/10 Place: Wan Tsai West Campsite Cost: $500 (including all meals) Just bring your own tent! | Can’t get enough of the great outdoor activities? Join Hong Kong Campers’ Society’s fun-filled camping trip! To Join Register(注册) by 15/9. Find out more at www.hkcampers.com.\n\n/ Day 1 Campers will meet at Wong Shek Pier at 8 a.m. for the 15-minute ferry ride to get to the campsite. In the ice-breaking session at 10:30 a.m., camp guides will make self-introductions to their team members. After a barbecue lunch at noon, camp guides will lead their teams to explore the Tai Tan Country Trail.\n\nCampers will be able to take photos of the wildlife and beautiful views along the way. Before evening, campers will return to the campsite to put up their tents. There will be a stargazing session after dinner. | Day 2 In the morning we will have an orienteering competition in the fields following breakfast, so bring a map and a compass(指南针).\n\n(Smartphone users can use a compass app.). In the afternoon campers can choose to join one of the following: boating sandeastle competition hike-and-seek treasure hunt(寻宝游戏) Campers will enjoy doing their light painting at the campfire party after dinner. / (High-power telescopes(望远镜) will be provided to campers.\n\n) stargazing session | Day 3 Campers will take the 9:30 a.m. ferry back to Wong Shek Pier after breakfast and a group photo. / Camper’s comments: “I really enjoyed myself at camp-all that good food, fresh air, and especially the clear night sky in Wan Tsai. That’s perfect for stargazing!” Janet Lu “We enjoyed ourselves by doing various water sports, and learnt basic knowledge of stars while watching the night sky.\n\nThe best part was the campfire evening when we shared jokes and danced around a campfire-not something you can do every day!” Thomas Chen | Camper’s comments: “I really enjoyed myself at camp-all that good food, fresh air, and especially the clear night sky in Wan Tsai. That’s perfect for stargazing!\n\n” Janet Lu “We enjoyed ourselves by doing various water sports, and learnt basic knowledge of stars while watching the night sky. The best part was the campfire evening when we shared jokes and danced around a campfire-not something you can do every day!” Thomas Chen",
     "questions": [
       {
         "number": 59,
@@ -13805,7 +14734,21 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "CAMPING ADVENTURE in HONG KONG! Date: 3/10—5/10 Place: Wan Tsai West Campsite Cost: $500 (including all meals) Just bring your own tent! | Can’t get enough of the great outdoor activities? Join Hong Kong Campers’ Society’s fun-filled camping trip! To Join Register(注册) by 15/9. Find out more at www.hkcampers.com.",
+      "/ Day 1 Campers will meet at Wong Shek Pier at 8 a.m. for the 15-minute ferry ride to get to the campsite. In the ice-breaking session at 10:30 a.m., camp guides will make self-introductions to their team members. After a barbecue lunch at noon, camp guides will lead their teams to explore the Tai Tan Country Trail.",
+      "Campers will be able to take photos of the wildlife and beautiful views along the way. Before evening, campers will return to the campsite to put up their tents. There will be a stargazing session after dinner. | Day 2 In the morning we will have an orienteering competition in the fields following breakfast, so bring a map and a compass(指南针).",
+      "(Smartphone users can use a compass app.). In the afternoon campers can choose to join one of the following: boating sandeastle competition hike-and-seek treasure hunt(寻宝游戏) Campers will enjoy doing their light painting at the campfire party after dinner. / (High-power telescopes(望远镜) will be provided to campers.",
+      ") stargazing session | Day 3 Campers will take the 9:30 a.m. ferry back to Wong Shek Pier after breakfast and a group photo. / Camper’s comments: “I really enjoyed myself at camp-all that good food, fresh air, and especially the clear night sky in Wan Tsai. That’s perfect for stargazing!” Janet Lu “We enjoyed ourselves by doing various water sports, and learnt basic knowledge of stars while watching the night sky.",
+      "The best part was the campfire evening when we shared jokes and danced around a campfire-not something you can do every day!” Thomas Chen | Camper’s comments: “I really enjoyed myself at camp-all that good food, fresh air, and especially the clear night sky in Wan Tsai. That’s perfect for stargazing!",
+      "” Janet Lu “We enjoyed ourselves by doing various water sports, and learnt basic knowledge of stars while watching the night sky. The best part was the campfire evening when we shared jokes and danced around a campfire-not something you can do every day!” Thomas Chen"
+    ]
   },
   {
     "_id": "sh-em1-2023-宝山-reading-b",
@@ -13817,7 +14760,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） What is bullying（霸凌）? Bullying is when a person or a group of people hurt someone else by frightening him or making him feel bad. Some people think it means making someone fell afraid or hurting someone physically, but it can ____45____ mean repeatedly making fun of someone, telling lies about him or leaving him out of a group. Bullying can happen in person and online. ____46____, lots of people know how it feels. The Youth Protection Organization(YPO) says 30% of children in the UK were bullied last year. The bad results of bullying It doesn’t matter what hair colour you have, what clothes you wear, how you learn, walk or talk. If you’re being bullied, it’s not your mistake. Everybody is different and that’s what makes you ____47____. However, bullying can make you feel alone and afraid, and these feelings may be hard to escape from even after the bullying has stopped. Bullying can also make it difficult to focus on lessons or make new friends. YPO’s Martha Evans says, “That is why it is so important to turn to a trusted adult or friend and take the first step in getting help.” How to stop bullying? If you’re being bullied or you know someone who is, it’s important to tell someone else what’s happening. If you find it hard to ____48____ your feelings, try to say things out loud first or write a letter instead. Helping someone else who is being bullied by showing your care makes a big difference, too. Evans says that being there for other people when they are being bullied sends a message to everyone that bullying is always wrong. The YPO ____49____ the following if you’re experiencing bullying. Tips for dealing with bullying ◆Tell someone you trust. ◆Keep a ____50____. Write down what happened and when because you may need it when you report it to the police. ◆Don’t hurt others because you could get into trouble. ◆Stay with active people who make you feel good. ◆Don’t blame(责怪) yourself Bullying is not your mistake. ◆Be proud of yourself and who you are.",
+    "passage": "What is bullying（霸凌）? Bullying is when a person or a group of people hurt someone else by frightening him or making him feel bad. Some people think it means making someone fell afraid or hurting someone physically, but it can ____45____ mean repeatedly making fun of someone, telling lies about him or leaving him out of a group.\n\nBullying can happen in person and online. ____46____, lots of people know how it feels. The Youth Protection Organization(YPO) says 30% of children in the UK were bullied last year. The bad results of bullying It doesn’t matter what hair colour you have, what clothes you wear, how you learn, walk or talk.\n\nIf you’re being bullied, it’s not your mistake. Everybody is different and that’s what makes you ____47____. However, bullying can make you feel alone and afraid, and these feelings may be hard to escape from even after the bullying has stopped. Bullying can also make it difficult to focus on lessons or make new friends.\n\nYPO’s Martha Evans says, “That is why it is so important to turn to a trusted adult or friend and take the first step in getting help.” How to stop bullying? If you’re being bullied or you know someone who is, it’s important to tell someone else what’s happening. If you find it hard to ____48____ your feelings, try to say things out loud first or write a letter instead.\n\nHelping someone else who is being bullied by showing your care makes a big difference, too. Evans says that being there for other people when they are being bullied sends a message to everyone that bullying is always wrong. The YPO ____49____ the following if you’re experiencing bullying. Tips for dealing with bullying ◆Tell someone you trust.\n\n◆Keep a ____50____. Write down what happened and when because you may need it when you report it to the police. ◆Don’t hurt others because you could get into trouble. ◆Stay with active people who make you feel good. ◆Don’t blame(责怪) yourself Bullying is not your mistake. ◆Be proud of yourself and who you are.",
     "questions": [
       {
         "number": 65,
@@ -13897,7 +14840,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "What is bullying（霸凌）? Bullying is when a person or a group of people hurt someone else by frightening him or making him feel bad. Some people think it means making someone fell afraid or hurting someone physically, but it can ____45____ mean repeatedly making fun of someone, telling lies about him or leaving him out of a group.",
+      "Bullying can happen in person and online. ____46____, lots of people know how it feels. The Youth Protection Organization(YPO) says 30% of children in the UK were bullied last year. The bad results of bullying It doesn’t matter what hair colour you have, what clothes you wear, how you learn, walk or talk.",
+      "If you’re being bullied, it’s not your mistake. Everybody is different and that’s what makes you ____47____. However, bullying can make you feel alone and afraid, and these feelings may be hard to escape from even after the bullying has stopped. Bullying can also make it difficult to focus on lessons or make new friends.",
+      "YPO’s Martha Evans says, “That is why it is so important to turn to a trusted adult or friend and take the first step in getting help.” How to stop bullying? If you’re being bullied or you know someone who is, it’s important to tell someone else what’s happening. If you find it hard to ____48____ your feelings, try to say things out loud first or write a letter instead.",
+      "Helping someone else who is being bullied by showing your care makes a big difference, too. Evans says that being there for other people when they are being bullied sends a message to everyone that bullying is always wrong. The YPO ____49____ the following if you’re experiencing bullying. Tips for dealing with bullying ◆Tell someone you trust.",
+      "◆Keep a ____50____. Write down what happened and when because you may need it when you report it to the police. ◆Don’t hurt others because you could get into trouble. ◆Stay with active people who make you feel good. ◆Don’t blame(责怪) yourself Bullying is not your mistake. ◆Be proud of yourself and who you are."
+    ]
   },
   {
     "_id": "sh-em1-2023-宝山-reading-c",
@@ -13971,7 +14927,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） Jimmy and Li Lei are listening to Mr. Peterson, their P.E. teacher, tell them that they are going to play dodge ball in class. Li Lei, concerned(担心的) she will look silly because she does not know how to play it, looks for help. Jimmy sees her worried look, so he asks, “Li Lei, What’s wrong?” Li Lei answers, “In China, we play dodge ball, but I think it’s different from the American style, so I don’t know how to play it in the American way.” Jimmy is eager to help Li Lei, an exchange student at his school. He says, “It’s not too hard. First, there are five balls. Mr. Peterson puts all of the balls in the middle of the court. The two teams stand at different ends of the court. Then, Mr. Peterson blows his whistle(哨子) to start the game. When you hear the whistle, run and try to take one of the balls. Then, throw the ball at the members of the opposite team.” Li Lei asks, “What about catching the ball? If I catch the ball, am I out?” “Actually, if you catch the ball, then the person who threw the ball is out. Also, one member from your own team can come back and play when you catch the ball.” Li Lei is still worried. “There are so many balls. I’m afraid I won’t see one thrown at me. What if a ball hits me on the head and breaks my glasses?” Jimmy says, “People aren’t supposed to throw at your head. If someone hits you on the head, then that person is out. Also, the balls are soft, so they won’t hurt you. But be careful. Sometimes, one player distracts(使……分心) you while another player tries to hit you. Lastly, when time is up, Mr. Peterson will count the members left in each team. If , the other team wins.” With the help of Jimmy, Li Lei doesn’t feel worried any more and says, “This sounds fun. I can’t wait to play.”",
+    "passage": "Jimmy and Li Lei are listening to Mr. Peterson, their P.E. teacher, tell them that they are going to play dodge ball in class. Li Lei, concerned(担心的) she will look silly because she does not know how to play it, looks for help. Jimmy sees her worried look, so he asks, “Li Lei, What’s wrong?” Li Lei answers, “In China, we play dodge ball, but I think it’s different from the American style, so I don’t know how to play it in the American way.\n\n” Jimmy is eager to help Li Lei, an exchange student at his school. He says, “It’s not too hard. First, there are five balls. Mr. Peterson puts all of the balls in the middle of the court. The two teams stand at different ends of the court. Then, Mr. Peterson blows his whistle(哨子) to start the game.\n\nWhen you hear the whistle, run and try to take one of the balls. Then, throw the ball at the members of the opposite team.” Li Lei asks, “What about catching the ball? If I catch the ball, am I out?” “Actually, if you catch the ball, then the person who threw the ball is out. Also, one member from your own team can come back and play when you catch the ball.\n\n” Li Lei is still worried. “There are so many balls. I’m afraid I won’t see one thrown at me. What if a ball hits me on the head and breaks my glasses?” Jimmy says, “People aren’t supposed to throw at your head. If someone hits you on the head, then that person is out. Also, the balls are soft, so they won’t hurt you.\n\nBut be careful. Sometimes, one player distracts(使……分心) you while another player tries to hit you. Lastly, when time is up, Mr. Peterson will count the members left in each team. If , the other team wins.” With the help of Jimmy, Li Lei doesn’t feel worried any more and says, “This sounds fun. I can’t wait to play. ”",
     "questions": [
       {
         "number": 78,
@@ -14015,7 +14971,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Jimmy and Li Lei are listening to Mr. Peterson, their P.E. teacher, tell them that they are going to play dodge ball in class. Li Lei, concerned(担心的) she will look silly because she does not know how to play it, looks for help. Jimmy sees her worried look, so he asks, “Li Lei, What’s wrong?” Li Lei answers, “In China, we play dodge ball, but I think it’s different from the American style, so I don’t know how to play it in the American way.",
+      "” Jimmy is eager to help Li Lei, an exchange student at his school. He says, “It’s not too hard. First, there are five balls. Mr. Peterson puts all of the balls in the middle of the court. The two teams stand at different ends of the court. Then, Mr. Peterson blows his whistle(哨子) to start the game.",
+      "When you hear the whistle, run and try to take one of the balls. Then, throw the ball at the members of the opposite team.” Li Lei asks, “What about catching the ball? If I catch the ball, am I out?” “Actually, if you catch the ball, then the person who threw the ball is out. Also, one member from your own team can come back and play when you catch the ball.",
+      "” Li Lei is still worried. “There are so many balls. I’m afraid I won’t see one thrown at me. What if a ball hits me on the head and breaks my glasses?” Jimmy says, “People aren’t supposed to throw at your head. If someone hits you on the head, then that person is out. Also, the balls are soft, so they won’t hurt you.",
+      "But be careful. Sometimes, one player distracts(使……分心) you while another player tries to hit you. Lastly, when time is up, Mr. Peterson will count the members left in each team. If , the other team wins.” With the help of Jimmy, Li Lei doesn’t feel worried any more and says, “This sounds fun. I can’t wait to play. ”"
+    ]
   },
   {
     "_id": "sh-em1-2023-崇明-reading-a",
@@ -14175,7 +15143,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
-    "passage": "：（12分） Bees make honey, and honey is one of the most amazing foods that we can find in nature. Did you know that honey never goes ___61___? They have found honey that is 5, 000 years old and that you can still eat. Honey can help us with a lot of our health problems. A bee colony is a group of bees that live together. Each colony has one mother bee. This queen bee can live for three to five years. She produces up to 2, 000 eggs every day. The other bees make honey ___62___ young bees can eat in the winter. How do they do this? Bees visit lots of flowers and take the pollen （花粉）home. But as they do this, some of the pollen falls off the bees onto other flowers. The plants use this pollen to make new plants. Thirty percent of the world’s crops need bees to live. Unfortunately, bees can sting （刺）you if they think you are trying to ___63___ them. The best thing to do if this happens is to take the stinger out carefully with your fingernail and wash the area with soap and water. Put ice on it for the pain. Some bees die after they sting. Poor bees! There are many good reasons to keep bees yourself. Once you have done that, you will need wooden boxes to keep the bees in. Wooden boxes are very ___64___ to the homes that bees make for themselves in trees. You will also need a jacket and a hat with a piece that covers your face to keep you safe while you are working with the bees. ___65___ , you will need a way to make some smoke. When there is smoke near their home, bees can’t “talk” to each other. They start to eat their honey and ___66___ leaving their home, so they will be too busy to sting you. Enjoy your bees, and don’t forget to share your honey with your neighbors!",
+    "passage": "Bees make honey, and honey is one of the most amazing foods that we can find in nature. Did you know that honey never goes ___61___? They have found honey that is 5, 000 years old and that you can still eat. Honey can help us with a lot of our health problems. A bee colony is a group of bees that live together.\n\nEach colony has one mother bee. This queen bee can live for three to five years. She produces up to 2, 000 eggs every day. The other bees make honey ___62___ young bees can eat in the winter. How do they do this? Bees visit lots of flowers and take the pollen （花粉）home. But as they do this, some of the pollen falls off the bees onto other flowers.\n\nThe plants use this pollen to make new plants. Thirty percent of the world’s crops need bees to live. Unfortunately, bees can sting （刺）you if they think you are trying to ___63___ them. The best thing to do if this happens is to take the stinger out carefully with your fingernail and wash the area with soap and water.\n\nPut ice on it for the pain. Some bees die after they sting. Poor bees! There are many good reasons to keep bees yourself. Once you have done that, you will need wooden boxes to keep the bees in. Wooden boxes are very ___64___ to the homes that bees make for themselves in trees. You will also need a jacket and a hat with a piece that covers your face to keep you safe while you are working with the bees.\n\n___65___ , you will need a way to make some smoke. When there is smoke near their home, bees can’t “talk” to each other. They start to eat their honey and ___66___ leaving their home, so they will be too busy to sting you. Enjoy your bees, and don’t forget to share your honey with your neighbors!",
     "questions": [
       {
         "number": 65,
@@ -14255,7 +15223,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Bees make honey, and honey is one of the most amazing foods that we can find in nature. Did you know that honey never goes ___61___? They have found honey that is 5, 000 years old and that you can still eat. Honey can help us with a lot of our health problems. A bee colony is a group of bees that live together.",
+      "Each colony has one mother bee. This queen bee can live for three to five years. She produces up to 2, 000 eggs every day. The other bees make honey ___62___ young bees can eat in the winter. How do they do this? Bees visit lots of flowers and take the pollen （花粉）home. But as they do this, some of the pollen falls off the bees onto other flowers.",
+      "The plants use this pollen to make new plants. Thirty percent of the world’s crops need bees to live. Unfortunately, bees can sting （刺）you if they think you are trying to ___63___ them. The best thing to do if this happens is to take the stinger out carefully with your fingernail and wash the area with soap and water.",
+      "Put ice on it for the pain. Some bees die after they sting. Poor bees! There are many good reasons to keep bees yourself. Once you have done that, you will need wooden boxes to keep the bees in. Wooden boxes are very ___64___ to the homes that bees make for themselves in trees. You will also need a jacket and a hat with a piece that covers your face to keep you safe while you are working with the bees.",
+      "___65___ , you will need a way to make some smoke. When there is smoke near their home, bees can’t “talk” to each other. They start to eat their honey and ___66___ leaving their home, so they will be too busy to sting you. Enjoy your bees, and don’t forget to share your honey with your neighbors!"
+    ]
   },
   {
     "_id": "sh-em1-2023-徐汇-reading-c",
@@ -14267,7 +15247,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
-    "passage": "（14分） 在短文的空格内填入适当的词, 使其内容通顺。每空格限填一词, 首字母已给。 Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant. His class was at a middle school there. The conversation started with teen’s small talk-asking each other about TV shows, music and school life. But as the teens grew more comfortable, the chat turned s___68___ , such as families issues, stories of social problems. Some kids shared how hopeless they felt, for they could do n___69___ about the danger or threat caused by the climate change. After both groups said their goodbyes the brothers had an idea: since the conversation was designed to broaden the students’ views about life outside their h___70___, let’s keep it on. Students could continue to benefit from bridging geographical and cultural differences. They called their organization Break The Divide. The students used social media to spread the word about their task to create eye-opening conversations. Other schools began reaching out, and Break The Divide helped them to start their own stations. They p___71___ different useful resources, such as a list of guiding questions to get the conversation started, and technical tips for video calls. Different stations are encouraged to connect with each other based on big topics, such as mental health and climate change. There are now over two dozen stations located across Canada as well as schools in other countries. Last year, Abhay and Sukhmeet had their first employees, enabling them to d___72___ an app that will act as a social platform to connect Break The Divide stations worldwide. The brothers are happy to find that the organization can play a central role in how youth solve the most d___73___ problems. “I hope that we can be part of creating a world where we are all listening to each other for learning and for change, “says Abhay.",
+    "passage": "在短文的空格内填入适当的词, 使其内容通顺。每空格限填一词, 首字母已给。 Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant.\n\nHis class was at a middle school there. The conversation started with teen’s small talk-asking each other about TV shows, music and school life. But as the teens grew more comfortable, the chat turned s___68___ , such as families issues, stories of social problems. Some kids shared how hopeless they felt, for they could do n___69___ about the danger or threat caused by the climate change.\n\nAfter both groups said their goodbyes the brothers had an idea: since the conversation was designed to broaden the students’ views about life outside their h___70___, let’s keep it on. Students could continue to benefit from bridging geographical and cultural differences. They called their organization Break The Divide.\n\nThe students used social media to spread the word about their task to create eye-opening conversations. Other schools began reaching out, and Break The Divide helped them to start their own stations. They p___71___ different useful resources, such as a list of guiding questions to get the conversation started, and technical tips for video calls.\n\nDifferent stations are encouraged to connect with each other based on big topics, such as mental health and climate change. There are now over two dozen stations located across Canada as well as schools in other countries. Last year, Abhay and Sukhmeet had their first employees, enabling them to d___72___ an app that will act as a social platform to connect Break The Divide stations worldwide.\n\nThe brothers are happy to find that the organization can play a central role in how youth solve the most d___73___ problems. “I hope that we can be part of creating a world where we are all listening to each other for learning and for change, “says Abhay.",
     "questions": [
       {
         "number": 71,
@@ -14317,7 +15297,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "在短文的空格内填入适当的词, 使其内容通顺。每空格限填一词, 首字母已给。 Teens worldwide connect through video calls to have communication emotionally. Five years ago, Abhay and a group of his Grade 10 classmates at a secondary school in Canada made their first video call to the Arctic (北极). On the other end of the l___67___ was Abhay’s, a 23-year-old brother, Sukhmeet, a volunteer teaching assistant.",
+      "His class was at a middle school there. The conversation started with teen’s small talk-asking each other about TV shows, music and school life. But as the teens grew more comfortable, the chat turned s___68___ , such as families issues, stories of social problems. Some kids shared how hopeless they felt, for they could do n___69___ about the danger or threat caused by the climate change.",
+      "After both groups said their goodbyes the brothers had an idea: since the conversation was designed to broaden the students’ views about life outside their h___70___, let’s keep it on. Students could continue to benefit from bridging geographical and cultural differences. They called their organization Break The Divide.",
+      "The students used social media to spread the word about their task to create eye-opening conversations. Other schools began reaching out, and Break The Divide helped them to start their own stations. They p___71___ different useful resources, such as a list of guiding questions to get the conversation started, and technical tips for video calls.",
+      "Different stations are encouraged to connect with each other based on big topics, such as mental health and climate change. There are now over two dozen stations located across Canada as well as schools in other countries. Last year, Abhay and Sukhmeet had their first employees, enabling them to d___72___ an app that will act as a social platform to connect Break The Divide stations worldwide.",
+      "The brothers are happy to find that the organization can play a central role in how youth solve the most d___73___ problems. “I hope that we can be part of creating a world where we are all listening to each other for learning and for change, “says Abhay."
+    ]
   },
   {
     "_id": "sh-em1-2023-徐汇-reading-d",
@@ -14329,7 +15322,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市徐汇区中考一模英语试题（含听力）（原卷版）.docx",
-    "passage": "根据短文内容完整回答下列问题。 A 70-year-old man decided to take part in 70 different sports on his 70th birthday. He did quite a good job. When asked why he said it was simply to have some fun. He had played sport as a youngster and never stopped. Here is what the old man said to a reporter about his doing sports that year. What was the sport you tried first? | What was the sport you tried first? / Shortly after my 70th birthday, I tried paddle-boarding. Family members were greatly entertained watching me first try to get on the board, then stand on the board and finally fall into the water before trying all over again. The lesson I learned was “Perseverance paid off”. Eventually I stood, I balanced and I paddled. It was an early success. Then I started to teach myself the basics of figure skating. They made it look so easy on the screen. But trying a simple spin （快速旋转） left me falling down on the ice, my elbow and knee hurting. I refused to give up. If at first you don’t succeed, try, try again. In this case, I learned the skills of the sport-enough to do a very short program-and performed it for my family and anyone else who happened to be around at the community club. / Besides the fashionable sports, were there any regular sports among your list? | Besides the fashionable sports, were there any regular sports among your list? / There were some individual sports I took turns to do during the day: running, jumping, walking. For track, I built my own high jump and hurdles. / 4 | 4 / Sure. My family’s support was essential. My wife photographed every event for me to check later. My three sons were always ready for a game, like beach volleyball. The game brought the whole family together. / Definitely you had fun. What else kept you doing such a variety of sports? | Definitely you had fun. What else kept you doing such a variety of sports? / There were some health advantages, too. Over the longer term came the realization that dreams are important, regardless of how unbelievable they might seem. As we age, our hopes and dreams may change, but one should never let them disappear.",
+    "passage": "A 70-year-old man decided to take part in 70 different sports on his 70th birthday. He did quite a good job. When asked why he said it was simply to have some fun. He had played sport as a youngster and never stopped. Here is what the old man said to a reporter about his doing sports that year. What was the sport you tried first?\n\n| What was the sport you tried first? / Shortly after my 70th birthday, I tried paddle-boarding. Family members were greatly entertained watching me first try to get on the board, then stand on the board and finally fall into the water before trying all over again. The lesson I learned was “Perseverance paid off”.\n\nEventually I stood, I balanced and I paddled. It was an early success. Then I started to teach myself the basics of figure skating. They made it look so easy on the screen. But trying a simple spin （快速旋转） left me falling down on the ice, my elbow and knee hurting. I refused to give up. If at first you don’t succeed, try, try again.\n\nIn this case, I learned the skills of the sport-enough to do a very short program-and performed it for my family and anyone else who happened to be around at the community club. / Besides the fashionable sports, were there any regular sports among your list? | Besides the fashionable sports, were there any regular sports among your list?\n\n/ There were some individual sports I took turns to do during the day: running, jumping, walking. For track, I built my own high jump and hurdles. / 4 | 4 / Sure. My family’s support was essential. My wife photographed every event for me to check later. My three sons were always ready for a game, like beach volleyball.\n\nThe game brought the whole family together. / Definitely you had fun. What else kept you doing such a variety of sports? | Definitely you had fun. What else kept you doing such a variety of sports? / There were some health advantages, too. Over the longer term came the realization that dreams are important, regardless of how unbelievable they might seem. As we age, our hopes and dreams may change, but one should never let them disappear.",
     "questions": [
       {
         "number": 78,
@@ -14373,7 +15366,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容完整回答下列问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A 70-year-old man decided to take part in 70 different sports on his 70th birthday. He did quite a good job. When asked why he said it was simply to have some fun. He had played sport as a youngster and never stopped. Here is what the old man said to a reporter about his doing sports that year. What was the sport you tried first?",
+      "| What was the sport you tried first? / Shortly after my 70th birthday, I tried paddle-boarding. Family members were greatly entertained watching me first try to get on the board, then stand on the board and finally fall into the water before trying all over again. The lesson I learned was “Perseverance paid off”.",
+      "Eventually I stood, I balanced and I paddled. It was an early success. Then I started to teach myself the basics of figure skating. They made it look so easy on the screen. But trying a simple spin （快速旋转） left me falling down on the ice, my elbow and knee hurting. I refused to give up. If at first you don’t succeed, try, try again.",
+      "In this case, I learned the skills of the sport-enough to do a very short program-and performed it for my family and anyone else who happened to be around at the community club. / Besides the fashionable sports, were there any regular sports among your list? | Besides the fashionable sports, were there any regular sports among your list?",
+      "/ There were some individual sports I took turns to do during the day: running, jumping, walking. For track, I built my own high jump and hurdles. / 4 | 4 / Sure. My family’s support was essential. My wife photographed every event for me to check later. My three sons were always ready for a game, like beach volleyball.",
+      "The game brought the whole family together. / Definitely you had fun. What else kept you doing such a variety of sports? | Definitely you had fun. What else kept you doing such a variety of sports? / There were some health advantages, too. Over the longer term came the realization that dreams are important, regardless of how unbelievable they might seem. As we age, our hopes and dreams may change, but one should never let them disappear."
+    ]
   },
   {
     "_id": "sh-em1-2023-普陀-reading-a",
@@ -15027,7 +16033,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市浦东新区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） The robots are here. They are becoming more common in people’s home. Some people say robots are great but others ____45____ that they could end up having a bad effect on our lives. What do you think? Are home robots a good idea? Yes, they make everything easier. Nobody likes housework. It is boring but is something that has to be done. So why not get a robot to do it? It won't get bored and can keep busy working. ____46____, people can spend time doing things they enjoy, such as going to the park, watching films or spend time with their friends and family. Robots can also make people feel ____47____ in their homes. For example , it can alert(使警觉) the owner if there is a water leak, an oven left on or a broken window. It can keep an eye on pets or people so that the person who is not there knows that they are all right. Robots can be our friends and can stop people from feeling lonely by providing them with company. They can also help us stay in touch and be used to video—call other people. No, we should not ____48____ robots. Robots in the home are a very bad idea. It is tempting to get them to do the housework. Gradually, people will slowly forget how to do things and lose the skills to solve certain problems. If the robot breaks down, people could be left in ____49____ and unable to remember how to clean and cook. Lots of people already rely on phones for directions and can't read maps. Having robots with cameras and microphones in the house means they could ____50____ lots of information about you, including your talks. If robots do everything for people, they will become lazy. Doing housework is good way to stay active and keeps you healthy.",
+    "passage": "The robots are here. They are becoming more common in people’s home. Some people say robots are great but others ____45____ that they could end up having a bad effect on our lives. What do you think? Are home robots a good idea? Yes, they make everything easier. Nobody likes housework. It is boring but is something that has to be done.\n\nSo why not get a robot to do it? It won't get bored and can keep busy working. ____46____, people can spend time doing things they enjoy, such as going to the park, watching films or spend time with their friends and family. Robots can also make people feel ____47____ in their homes. For example , it can alert(使警觉) the owner if there is a water leak, an oven left on or a broken window.\n\nIt can keep an eye on pets or people so that the person who is not there knows that they are all right. Robots can be our friends and can stop people from feeling lonely by providing them with company. They can also help us stay in touch and be used to video—call other people. No, we should not ____48____ robots.\n\nRobots in the home are a very bad idea. It is tempting to get them to do the housework. Gradually, people will slowly forget how to do things and lose the skills to solve certain problems. If the robot breaks down, people could be left in ____49____ and unable to remember how to clean and cook. Lots of people already rely on phones for directions and can't read maps.\n\nHaving robots with cameras and microphones in the house means they could ____50____ lots of information about you, including your talks. If robots do everything for people, they will become lazy. Doing housework is good way to stay active and keeps you healthy.",
     "questions": [
       {
         "number": 65,
@@ -15107,7 +16113,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "The robots are here. They are becoming more common in people’s home. Some people say robots are great but others ____45____ that they could end up having a bad effect on our lives. What do you think? Are home robots a good idea? Yes, they make everything easier. Nobody likes housework. It is boring but is something that has to be done.",
+      "So why not get a robot to do it? It won't get bored and can keep busy working. ____46____, people can spend time doing things they enjoy, such as going to the park, watching films or spend time with their friends and family. Robots can also make people feel ____47____ in their homes. For example , it can alert(使警觉) the owner if there is a water leak, an oven left on or a broken window.",
+      "It can keep an eye on pets or people so that the person who is not there knows that they are all right. Robots can be our friends and can stop people from feeling lonely by providing them with company. They can also help us stay in touch and be used to video—call other people. No, we should not ____48____ robots.",
+      "Robots in the home are a very bad idea. It is tempting to get them to do the housework. Gradually, people will slowly forget how to do things and lose the skills to solve certain problems. If the robot breaks down, people could be left in ____49____ and unable to remember how to clean and cook. Lots of people already rely on phones for directions and can't read maps.",
+      "Having robots with cameras and microphones in the house means they could ____50____ lots of information about you, including your talks. If robots do everything for people, they will become lazy. Doing housework is good way to stay active and keeps you healthy."
+    ]
   },
   {
     "_id": "sh-em1-2023-浦东-reading-c",
@@ -15181,7 +16199,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市虹口区中考一模英语试题（原卷版）.docx",
-    "passage": "（共12分） CHANNEL 1 | CHANNEL 2 | CHANNEL 3 | CHANNEL 4 / 8:00 pm Double Your Money | 8:00 pm 19th-century House | 8:00 pm The News | 8:00 pm The Jordan Baker Show / Jason Oates is the host of the popular show where the players can win 10,000 pounds—and then double it! There are questions on all kinds of topics to test everyone’s general knowledge. Which of tonight’s players will get the chance to double their money? | Our show continues, now with only eight of the twelve players, all living in a house from 200 years ago. It isn’t easy living with no electricity, no heating and no 21st-century technology at all. And it’s even more difficult with cameras on you 24 hours a day. | All the news and sport from around the world. With Michael Webster. | Jordan Baker presents her completely new programme. She talks to great celebrity guests and asks them the questions that everyone wants to know the answers to. Tonight, athletics star Sally Malone.",
+    "passage": "CHANNEL 1 | CHANNEL 2 | CHANNEL 3 | CHANNEL 4 / 8:00 pm Double Your Money | 8:00 pm 19th-century House | 8:00 pm The News | 8:00 pm The Jordan Baker Show / Jason Oates is the host of the popular show where the players can win 10,000 pounds—and then double it! There are questions on all kinds of topics to test everyone’s general knowledge. Which of tonight’s players will get the chance to double their money?\n\n| Our show continues, now with only eight of the twelve players, all living in a house from 200 years ago. It isn’t easy living with no electricity, no heating and no 21st-century technology at all. And it’s even more difficult with cameras on you 24 hours a day. | All the news and sport from around the world.\n\nWith Michael Webster. | Jordan Baker presents her completely new programme. She talks to great celebrity guests and asks them the questions that everyone wants to know the answers to. Tonight, athletics star Sally Malone.",
     "questions": [
       {
         "number": 59,
@@ -15261,7 +16279,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "CHANNEL 1 | CHANNEL 2 | CHANNEL 3 | CHANNEL 4 / 8:00 pm Double Your Money | 8:00 pm 19th-century House | 8:00 pm The News | 8:00 pm The Jordan Baker Show / Jason Oates is the host of the popular show where the players can win 10,000 pounds—and then double it! There are questions on all kinds of topics to test everyone’s general knowledge. Which of tonight’s players will get the chance to double their money?",
+      "| Our show continues, now with only eight of the twelve players, all living in a house from 200 years ago. It isn’t easy living with no electricity, no heating and no 21st-century technology at all. And it’s even more difficult with cameras on you 24 hours a day. | All the news and sport from around the world.",
+      "With Michael Webster. | Jordan Baker presents her completely new programme. She talks to great celebrity guests and asks them the questions that everyone wants to know the answers to. Tonight, athletics star Sally Malone."
+    ]
   },
   {
     "_id": "sh-em1-2023-虹口-reading-b",
@@ -15273,7 +16301,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市虹口区中考一模英语试题（原卷版）.docx",
-    "passage": "（共12分） Do you ever find yourself doing something without thinking about it? We do lots of things automatically, out of habit rather than for any good reason. Learning to create healthy new habits can help you reach your goals. What is a habit? Scientists say habits are formed in the brain and include a cause, action and a reward. ____45____, if you are used to watching TV when you get home from school, the cause would becoming home from school; the action is turning on the TV; and the reward might be the happy, relaxed feeling from watching your favourite program. This good feeling makes you want to do the ____46____ thing after school the next day again, and over time it can become a habit. How are habits good for you? Turning something into a habit means you don’t have to think about it, which is good news when it’s healthy. Good habits can help ____47____ bad ones too, such as worrying. Sadie finds her habit of playing with fidget toys（指尖玩具）reduces ____48____. “They help me relax and stay focused,” she says. Scientists believe nearly half of the things we do every day is out of habit, so forming helpful habits is ____49____ a great way to help you reach your goals. How can you start to build healthy new habits? Dr. Radha Modgil notes it’s important to think about why you want to change. When it’s time to begin, “Try the 1% idea, where every day you improve or change something by 1%. That way you start to see ____50____ and you’re not discouraged（灰心的）by failure,” she says. Remember forming new habits isn’t always easy, but it will be worth it in the end.",
+    "passage": "Do you ever find yourself doing something without thinking about it? We do lots of things automatically, out of habit rather than for any good reason. Learning to create healthy new habits can help you reach your goals. What is a habit? Scientists say habits are formed in the brain and include a cause, action and a reward.\n\n____45____, if you are used to watching TV when you get home from school, the cause would becoming home from school; the action is turning on the TV; and the reward might be the happy, relaxed feeling from watching your favourite program. This good feeling makes you want to do the ____46____ thing after school the next day again, and over time it can become a habit. How are habits good for you?\n\nTurning something into a habit means you don’t have to think about it, which is good news when it’s healthy. Good habits can help ____47____ bad ones too, such as worrying. Sadie finds her habit of playing with fidget toys（指尖玩具）reduces ____48____. “They help me relax and stay focused,” she says. Scientists believe nearly half of the things we do every day is out of habit, so forming helpful habits is ____49____ a great way to help you reach your goals.\n\nHow can you start to build healthy new habits? Dr. Radha Modgil notes it’s important to think about why you want to change. When it’s time to begin, “Try the 1% idea, where every day you improve or change something by 1%. That way you start to see ____50____ and you’re not discouraged（灰心的）by failure,” she says. Remember forming new habits isn’t always easy, but it will be worth it in the end.",
     "questions": [
       {
         "number": 65,
@@ -15353,7 +16381,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Do you ever find yourself doing something without thinking about it? We do lots of things automatically, out of habit rather than for any good reason. Learning to create healthy new habits can help you reach your goals. What is a habit? Scientists say habits are formed in the brain and include a cause, action and a reward.",
+      "____45____, if you are used to watching TV when you get home from school, the cause would becoming home from school; the action is turning on the TV; and the reward might be the happy, relaxed feeling from watching your favourite program. This good feeling makes you want to do the ____46____ thing after school the next day again, and over time it can become a habit. How are habits good for you?",
+      "Turning something into a habit means you don’t have to think about it, which is good news when it’s healthy. Good habits can help ____47____ bad ones too, such as worrying. Sadie finds her habit of playing with fidget toys（指尖玩具）reduces ____48____. “They help me relax and stay focused,” she says. Scientists believe nearly half of the things we do every day is out of habit, so forming helpful habits is ____49____ a great way to help you reach your goals.",
+      "How can you start to build healthy new habits? Dr. Radha Modgil notes it’s important to think about why you want to change. When it’s time to begin, “Try the 1% idea, where every day you improve or change something by 1%. That way you start to see ____50____ and you’re not discouraged（灰心的）by failure,” she says. Remember forming new habits isn’t always easy, but it will be worth it in the end."
+    ]
   },
   {
     "_id": "sh-em1-2023-金山-reading-a",
@@ -15365,7 +16404,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市金山区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） Jacky feels different these days. He isn’t as playful as usual and doesn’t like to talk much. Some of us may feel like Jacky sometimes. When unexpected things happen, we can feel like this. There are also some other things that can put us in bad moods. Here are some examples. We might feel bad if we’re not getting along well with our friends, or if we do poorly on an exam. Having bad moods too often can affect our mental(心理) health. The 4 habits below can harm our mental health. Sleep too little A lack of sleep can make us feel bad. Lack of exercise For the best result, try to do no less than 30 minutes of exercise three to five times a week. Bad diets Studies have shown that eating cakes and bread in large quantities, and low amounts of fruit and vegetable will increase the risk of depression(沮丧) and mood disorders. Being inside all day Spending the most of our day indoors can increase our risk for depression. Don’t be afraid of having bad moods. The tips below can help us overcome them. Accept our moods No one can be happy all the time. Our friends and parents can also have bad moods sometimes. Bad moods are normal. Accept this first and then we can find ways to deal with them. Let our bad feelings out When we feel unhappy or upset, don’t hide our feelings or pretend nothing is wrong. We can find a comfortable way to let them out. We can talk to our parents or friends. We can write about our feelings in our diary. We can read our favourite books. We can play sports or do some other kinds of activities. Set a new goal Messing up(搞砸) something can put us in a bad mood, too. But we can just try harder next time. For example: We didn’t win a soccer game. Try to score a goal next time. We didn’t do well on an exam. Try to get five more points next time. We had an argument with our friend. Next time, try to talk to him or her in a nice way. Remember that bad things will end No matter what makes us feel bad, it will end at last. Remembering this will help us feel better.",
+    "passage": "Jacky feels different these days. He isn’t as playful as usual and doesn’t like to talk much. Some of us may feel like Jacky sometimes. When unexpected things happen, we can feel like this. There are also some other things that can put us in bad moods. Here are some examples. We might feel bad if we’re not getting along well with our friends, or if we do poorly on an exam.\n\nHaving bad moods too often can affect our mental(心理) health. The 4 habits below can harm our mental health. Sleep too little A lack of sleep can make us feel bad. Lack of exercise For the best result, try to do no less than 30 minutes of exercise three to five times a week. Bad diets Studies have shown that eating cakes and bread in large quantities, and low amounts of fruit and vegetable will increase the risk of depression(沮丧) and mood disorders.\n\nBeing inside all day Spending the most of our day indoors can increase our risk for depression. Don’t be afraid of having bad moods. The tips below can help us overcome them. Accept our moods No one can be happy all the time. Our friends and parents can also have bad moods sometimes. Bad moods are normal.\n\nAccept this first and then we can find ways to deal with them. Let our bad feelings out When we feel unhappy or upset, don’t hide our feelings or pretend nothing is wrong. We can find a comfortable way to let them out. We can talk to our parents or friends. We can write about our feelings in our diary.\n\nWe can read our favourite books. We can play sports or do some other kinds of activities. Set a new goal Messing up(搞砸) something can put us in a bad mood, too. But we can just try harder next time. For example: We didn’t win a soccer game. Try to score a goal next time. We didn’t do well on an exam.\n\nTry to get five more points next time. We had an argument with our friend. Next time, try to talk to him or her in a nice way. Remember that bad things will end No matter what makes us feel bad, it will end at last. Remembering this will help us feel better.",
     "questions": [
       {
         "number": 59,
@@ -15433,7 +16472,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Jacky feels different these days. He isn’t as playful as usual and doesn’t like to talk much. Some of us may feel like Jacky sometimes. When unexpected things happen, we can feel like this. There are also some other things that can put us in bad moods. Here are some examples. We might feel bad if we’re not getting along well with our friends, or if we do poorly on an exam.",
+      "Having bad moods too often can affect our mental(心理) health. The 4 habits below can harm our mental health. Sleep too little A lack of sleep can make us feel bad. Lack of exercise For the best result, try to do no less than 30 minutes of exercise three to five times a week. Bad diets Studies have shown that eating cakes and bread in large quantities, and low amounts of fruit and vegetable will increase the risk of depression(沮丧) and mood disorders.",
+      "Being inside all day Spending the most of our day indoors can increase our risk for depression. Don’t be afraid of having bad moods. The tips below can help us overcome them. Accept our moods No one can be happy all the time. Our friends and parents can also have bad moods sometimes. Bad moods are normal.",
+      "Accept this first and then we can find ways to deal with them. Let our bad feelings out When we feel unhappy or upset, don’t hide our feelings or pretend nothing is wrong. We can find a comfortable way to let them out. We can talk to our parents or friends. We can write about our feelings in our diary.",
+      "We can read our favourite books. We can play sports or do some other kinds of activities. Set a new goal Messing up(搞砸) something can put us in a bad mood, too. But we can just try harder next time. For example: We didn’t win a soccer game. Try to score a goal next time. We didn’t do well on an exam.",
+      "Try to get five more points next time. We had an argument with our friend. Next time, try to talk to him or her in a nice way. Remember that bad things will end No matter what makes us feel bad, it will end at last. Remembering this will help us feel better."
+    ]
   },
   {
     "_id": "sh-em1-2023-金山-reading-b",
@@ -15445,7 +16497,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市金山区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） Have you ever read the famous novel Robinson Crusoe(《鲁滨逊漂流记》)? Do you know that it was based on a real life story of a Scottish sailor, Alexander Selkirk？ Selkirk was born in Scotland in 1676. As he grew up, he became a sailor(海员). One day, he was asked to fight around South America, while the ship was damaged by the Spanish. He was ____45____ that the ship would sink, so he tried to land on the next island. The island was Mas a Tierra and it is known as “Robinson Crusoe Island” today. The island in the Pacific was far away with nobody around, but Selkirk ___46___ to live there alone for over 4 years. At first, he didn’t realize it would be more than 4 years. He ___47___ passed the time by reading his Bible(圣经). Though there was nobody else on the island, there were animals, ___48___ rats, cats and goats. The rats were such fierce animals that he had to use wild cats to protect himself during the night. During the days on the island, there were ___49___ two ships coming close. Unluckily, they were not friendly and even opened fire on Selkirk, but he escaped successfully. Finally, on the first of February 1709, when two British ships arrived at the island, Selkirk was rescued. It ___50___ that his choice was right because no long after his landing on the island, the ship sank. The archaeologists(考古学家)today discovered a campsite of a European on this island and it proved the story true.",
+    "passage": "Have you ever read the famous novel Robinson Crusoe(《鲁滨逊漂流记》)? Do you know that it was based on a real life story of a Scottish sailor, Alexander Selkirk？ Selkirk was born in Scotland in 1676. As he grew up, he became a sailor(海员). One day, he was asked to fight around South America, while the ship was damaged by the Spanish.\n\nHe was ____45____ that the ship would sink, so he tried to land on the next island. The island was Mas a Tierra and it is known as “Robinson Crusoe Island” today. The island in the Pacific was far away with nobody around, but Selkirk ___46___ to live there alone for over 4 years. At first, he didn’t realize it would be more than 4 years.\n\nHe ___47___ passed the time by reading his Bible(圣经). Though there was nobody else on the island, there were animals, ___48___ rats, cats and goats. The rats were such fierce animals that he had to use wild cats to protect himself during the night. During the days on the island, there were ___49___ two ships coming close.\n\nUnluckily, they were not friendly and even opened fire on Selkirk, but he escaped successfully. Finally, on the first of February 1709, when two British ships arrived at the island, Selkirk was rescued. It ___50___ that his choice was right because no long after his landing on the island, the ship sank. The archaeologists(考古学家)today discovered a campsite of a European on this island and it proved the story true.",
     "questions": [
       {
         "number": 65,
@@ -15525,7 +16577,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Have you ever read the famous novel Robinson Crusoe(《鲁滨逊漂流记》)? Do you know that it was based on a real life story of a Scottish sailor, Alexander Selkirk？ Selkirk was born in Scotland in 1676. As he grew up, he became a sailor(海员). One day, he was asked to fight around South America, while the ship was damaged by the Spanish.",
+      "He was ____45____ that the ship would sink, so he tried to land on the next island. The island was Mas a Tierra and it is known as “Robinson Crusoe Island” today. The island in the Pacific was far away with nobody around, but Selkirk ___46___ to live there alone for over 4 years. At first, he didn’t realize it would be more than 4 years.",
+      "He ___47___ passed the time by reading his Bible(圣经). Though there was nobody else on the island, there were animals, ___48___ rats, cats and goats. The rats were such fierce animals that he had to use wild cats to protect himself during the night. During the days on the island, there were ___49___ two ships coming close.",
+      "Unluckily, they were not friendly and even opened fire on Selkirk, but he escaped successfully. Finally, on the first of February 1709, when two British ships arrived at the island, Selkirk was rescued. It ___50___ that his choice was right because no long after his landing on the island, the ship sank. The archaeologists(考古学家)today discovered a campsite of a European on this island and it proved the story true."
+    ]
   },
   {
     "_id": "sh-em1-2023-金山-reading-c",
@@ -15851,7 +16914,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市青浦区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） Animal Protection Group Monthly newsletter | Animal Protection Group Monthly newsletter / Campaign to help animals We’re conducting a campaign(活动) to protect animals’ habitats. There are lots of things you can do: ·Organize an event in your school ·Tell your friends and family about the campaign. ·Buy a product from our online campaign shop. Visit our campaign website to find out more! / Events The Fun Race! Raise money for our ‘Animal Habitat Protection’ campaign by joining in our Fun Race! Run 5 km or cycle 7 km. ☆Where: Hampstead Common Park ☆When: Saturday 9 March at 2 pm. Kids and adults welcome / Pet care advice We must look after our pets well and give them the things they need to be healthy and happy. Do you do these things for your pets? 1. Diet Do you give your pets the right food and the right amount of food? 2. Company Were you there for your pets when they needed you? 3. Health Do you protect your pets from injuries and pain? / ________ Do you want to have fun and help animals in need at the same time? Check out our volunteering activities for families! ► Help needed at ‘The Horse Sanctuary’ at weekends and evenings. Activities include feeding horses and cleaning stables. Email us for more information. ► Dog walkers needed at the Dog Adoption Centre. Help walk the dogs and maybe find a friend for life! For more information, phone 0123776655. | ________ Do you want to have fun and help animals in need at the same time? Check out our volunteering activities for families! ► Help needed at ‘The Horse Sanctuary’ at weekends and evenings. Activities include feeding horses and cleaning stables. Email us for more information. ► Dog walkers needed at the Dog Adoption Centre. Help walk the dogs and maybe find a friend for life! For more information, phone 0123776655.",
+    "passage": "Animal Protection Group Monthly newsletter | Animal Protection Group Monthly newsletter / Campaign to help animals We’re conducting a campaign(活动) to protect animals’ habitats. There are lots of things you can do: ·Organize an event in your school ·Tell your friends and family about the campaign. ·Buy a product from our online campaign shop.\n\nVisit our campaign website to find out more! / Events The Fun Race! Raise money for our ‘Animal Habitat Protection’ campaign by joining in our Fun Race! Run 5 km or cycle 7 km. ☆Where: Hampstead Common Park ☆When: Saturday 9 March at 2 pm. Kids and adults welcome / Pet care advice We must look after our pets well and give them the things they need to be healthy and happy.\n\nDo you do these things for your pets? 1. Diet Do you give your pets the right food and the right amount of food? 2. Company Were you there for your pets when they needed you? 3. Health Do you protect your pets from injuries and pain? / ________ Do you want to have fun and help animals in need at the same time?\n\nCheck out our volunteering activities for families! ► Help needed at ‘The Horse Sanctuary’ at weekends and evenings. Activities include feeding horses and cleaning stables. Email us for more information. ► Dog walkers needed at the Dog Adoption Centre. Help walk the dogs and maybe find a friend for life!\n\nFor more information, phone 0123776655. | ________ Do you want to have fun and help animals in need at the same time? Check out our volunteering activities for families! ► Help needed at ‘The Horse Sanctuary’ at weekends and evenings. Activities include feeding horses and cleaning stables. Email us for more information.\n\n► Dog walkers needed at the Dog Adoption Centre. Help walk the dogs and maybe find a friend for life! For more information, phone 0123776655.",
     "questions": [
       {
         "number": 59,
@@ -15919,7 +16982,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Animal Protection Group Monthly newsletter | Animal Protection Group Monthly newsletter / Campaign to help animals We’re conducting a campaign(活动) to protect animals’ habitats. There are lots of things you can do: ·Organize an event in your school ·Tell your friends and family about the campaign. ·Buy a product from our online campaign shop.",
+      "Visit our campaign website to find out more! / Events The Fun Race! Raise money for our ‘Animal Habitat Protection’ campaign by joining in our Fun Race! Run 5 km or cycle 7 km. ☆Where: Hampstead Common Park ☆When: Saturday 9 March at 2 pm. Kids and adults welcome / Pet care advice We must look after our pets well and give them the things they need to be healthy and happy.",
+      "Do you do these things for your pets? 1. Diet Do you give your pets the right food and the right amount of food? 2. Company Were you there for your pets when they needed you? 3. Health Do you protect your pets from injuries and pain? / ________ Do you want to have fun and help animals in need at the same time?",
+      "Check out our volunteering activities for families! ► Help needed at ‘The Horse Sanctuary’ at weekends and evenings. Activities include feeding horses and cleaning stables. Email us for more information. ► Dog walkers needed at the Dog Adoption Centre. Help walk the dogs and maybe find a friend for life!",
+      "For more information, phone 0123776655. | ________ Do you want to have fun and help animals in need at the same time? Check out our volunteering activities for families! ► Help needed at ‘The Horse Sanctuary’ at weekends and evenings. Activities include feeding horses and cleaning stables. Email us for more information.",
+      "► Dog walkers needed at the Dog Adoption Centre. Help walk the dogs and maybe find a friend for life! For more information, phone 0123776655."
+    ]
   },
   {
     "_id": "sh-em1-2023-青浦-reading-b",
@@ -15931,7 +17007,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市青浦区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） All the world was his stage How much do you know about William Shakespeare? He was a poet and a playwright（剧作家）and is ____45____ considered the greatest writer of the English language around the world. His surviving（存世的）work includes 38 plays, 154 sonnets（十四行诗）and some other poems. He is best known for his plays, which have been ____46____ into every major language and are performed more than those of any other playwright in the world. When Shakespeare was 18 years old, he married Anne Hathaway, and they had three children. Shakespeare went to London to ____47____ an actor and a writer. In 1599, the Globe Theatre was built in London, where some of Shakespeare’s plays were first performed. In 1613, the theatre was destroyed by a fire. ____48____, a modern reconstruction of the theater near the original site replaced the broken one in 1997, so even today you can go to the theater to see Shakespeare’s plays. Shakespeare’s work is still popular today. But why do we like these old plays? Perhaps it is because they all include fantastic stories. His characters ____49____ bloody battles, death by poison and huge family fights ... The plays are also full of parties, weddings and funerals. They are quite action-packed. The Merchant of Venice（威尼斯商人）is one of Shakespeare’s best-known plays. It is about the idea that people usually get what they deserve in the end, good or bad. Antonio, a businessman, borrows money from Shylock, a money lender. If he doesn’t pay back this money in time, Shylock will cut off a piece of his body. Antonio loses all his business and must pay this ____50____ price ... but is saved by love.",
+    "passage": "All the world was his stage How much do you know about William Shakespeare? He was a poet and a playwright（剧作家）and is ____45____ considered the greatest writer of the English language around the world. His surviving（存世的）work includes 38 plays, 154 sonnets（十四行诗）and some other poems. He is best known for his plays, which have been ____46____ into every major language and are performed more than those of any other playwright in the world.\n\nWhen Shakespeare was 18 years old, he married Anne Hathaway, and they had three children. Shakespeare went to London to ____47____ an actor and a writer. In 1599, the Globe Theatre was built in London, where some of Shakespeare’s plays were first performed. In 1613, the theatre was destroyed by a fire.\n\n____48____, a modern reconstruction of the theater near the original site replaced the broken one in 1997, so even today you can go to the theater to see Shakespeare’s plays. Shakespeare’s work is still popular today. But why do we like these old plays? Perhaps it is because they all include fantastic stories.\n\nHis characters ____49____ bloody battles, death by poison and huge family fights ... The plays are also full of parties, weddings and funerals. They are quite action-packed. The Merchant of Venice（威尼斯商人）is one of Shakespeare’s best-known plays. It is about the idea that people usually get what they deserve in the end, good or bad.\n\nAntonio, a businessman, borrows money from Shylock, a money lender. If he doesn’t pay back this money in time, Shylock will cut off a piece of his body. Antonio loses all his business and must pay this ____50____ price ... but is saved by love.",
     "questions": [
       {
         "number": 65,
@@ -16011,7 +17087,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "All the world was his stage How much do you know about William Shakespeare? He was a poet and a playwright（剧作家）and is ____45____ considered the greatest writer of the English language around the world. His surviving（存世的）work includes 38 plays, 154 sonnets（十四行诗）and some other poems. He is best known for his plays, which have been ____46____ into every major language and are performed more than those of any other playwright in the world.",
+      "When Shakespeare was 18 years old, he married Anne Hathaway, and they had three children. Shakespeare went to London to ____47____ an actor and a writer. In 1599, the Globe Theatre was built in London, where some of Shakespeare’s plays were first performed. In 1613, the theatre was destroyed by a fire.",
+      "____48____, a modern reconstruction of the theater near the original site replaced the broken one in 1997, so even today you can go to the theater to see Shakespeare’s plays. Shakespeare’s work is still popular today. But why do we like these old plays? Perhaps it is because they all include fantastic stories.",
+      "His characters ____49____ bloody battles, death by poison and huge family fights ... The plays are also full of parties, weddings and funerals. They are quite action-packed. The Merchant of Venice（威尼斯商人）is one of Shakespeare’s best-known plays. It is about the idea that people usually get what they deserve in the end, good or bad.",
+      "Antonio, a businessman, borrows money from Shylock, a money lender. If he doesn’t pay back this money in time, Shylock will cut off a piece of his body. Antonio loses all his business and must pay this ____50____ price ... but is saved by love."
+    ]
   },
   {
     "_id": "sh-em1-2023-静安-reading-b",
@@ -16023,7 +17111,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市静安区中考一模英语试题（原卷版）.docx",
-    "passage": "（12分） Can Animals Predict Earthquakes? Dear Scientist Sam, I noticed my dog acting very nervously only a few minutes before a recent earthquake shook the house. Is it ____50____ that my dog knew the earthquake was going to happen? Janet Sam’s reply: Well, Janet, people have believed for many centuries that animals can predict earthquakes. In fact, we can look ____51____ to what we know from the ancient Greeks. They noticed that animals acted strangely in the hours before earthquakes. Even now, people talk about dogs that won’t stop barking and cats that won’t come out of hiding before an earthquake. Furthermore, strange behavior like this before earthquakes isn’t limited to pets. People have also reported seeing chickens laying no eggs, bees leaving their homes, and big groups of fish ____52____ and floating here and there in the hours before a natural disaster hits. It’s hard to answer your question, since not all seismologists(地震学家) or animal experts agree that animals can predict earthquakes. Those that disagree say that we should think of other things that ____53____ animal behavior, such as hunger. On the other hand, many people who believe that animals can predict earthquakes often have ____54____ of very strange animal behavior right before the ground shakes. To them, this is evidence that animals can certainly predict earthquakes. In short, the truth is that we aren’t sure. Animals might be able to sense earthquakes before they happen, but there is no solid evidence that they can. However, one thing that most seismologists can agree on is that more research is needed. Animals may be the ____55____ to predicting earthquakes before they happen, and could help save many lives.",
+    "passage": "Can Animals Predict Earthquakes? Dear Scientist Sam, I noticed my dog acting very nervously only a few minutes before a recent earthquake shook the house. Is it ____50____ that my dog knew the earthquake was going to happen? Janet Sam’s reply: Well, Janet, people have believed for many centuries that animals can predict earthquakes.\n\nIn fact, we can look ____51____ to what we know from the ancient Greeks. They noticed that animals acted strangely in the hours before earthquakes. Even now, people talk about dogs that won’t stop barking and cats that won’t come out of hiding before an earthquake. Furthermore, strange behavior like this before earthquakes isn’t limited to pets.\n\nPeople have also reported seeing chickens laying no eggs, bees leaving their homes, and big groups of fish ____52____ and floating here and there in the hours before a natural disaster hits. It’s hard to answer your question, since not all seismologists(地震学家) or animal experts agree that animals can predict earthquakes. Those that disagree say that we should think of other things that ____53____ animal behavior, such as hunger.\n\nOn the other hand, many people who believe that animals can predict earthquakes often have ____54____ of very strange animal behavior right before the ground shakes. To them, this is evidence that animals can certainly predict earthquakes. In short, the truth is that we aren’t sure. Animals might be able to sense earthquakes before they happen, but there is no solid evidence that they can.\n\nHowever, one thing that most seismologists can agree on is that more research is needed. Animals may be the ____55____ to predicting earthquakes before they happen, and could help save many lives.",
     "questions": [
       {
         "number": 65,
@@ -16103,7 +17191,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Can Animals Predict Earthquakes? Dear Scientist Sam, I noticed my dog acting very nervously only a few minutes before a recent earthquake shook the house. Is it ____50____ that my dog knew the earthquake was going to happen? Janet Sam’s reply: Well, Janet, people have believed for many centuries that animals can predict earthquakes.",
+      "In fact, we can look ____51____ to what we know from the ancient Greeks. They noticed that animals acted strangely in the hours before earthquakes. Even now, people talk about dogs that won’t stop barking and cats that won’t come out of hiding before an earthquake. Furthermore, strange behavior like this before earthquakes isn’t limited to pets.",
+      "People have also reported seeing chickens laying no eggs, bees leaving their homes, and big groups of fish ____52____ and floating here and there in the hours before a natural disaster hits. It’s hard to answer your question, since not all seismologists(地震学家) or animal experts agree that animals can predict earthquakes. Those that disagree say that we should think of other things that ____53____ animal behavior, such as hunger.",
+      "On the other hand, many people who believe that animals can predict earthquakes often have ____54____ of very strange animal behavior right before the ground shakes. To them, this is evidence that animals can certainly predict earthquakes. In short, the truth is that we aren’t sure. Animals might be able to sense earthquakes before they happen, but there is no solid evidence that they can.",
+      "However, one thing that most seismologists can agree on is that more research is needed. Animals may be the ____55____ to predicting earthquakes before they happen, and could help save many lives."
+    ]
   },
   {
     "_id": "sh-em1-2023-黄浦-reading-a",
@@ -16115,7 +17215,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市黄浦区中考一模英语试题（原卷版）.docx",
-    "passage": "（12 分） Have conversations with relatives Name: Sophia “I like talking to older relatives about what happened when they were younger and the times they lived through. We can learn a lot. Popa(my granda) told me that his great aunt, Mary Whitmore, was the first female Mayor of Ipswich, which was exciting to know.” | Have conversations with relatives Name: Sophia “I like talking to older relatives about what happened when they were younger and the times they lived through. We can learn a lot. Popa(my granda) told me that his great aunt, Mary Whitmore, was the first female Mayor of Ipswich, which was exciting to know.” / What should I ask questions about? Do the relatives and older people you speak to remember when the astronaut Neil Armstrong and Buzz Aldrin landed on the Moon in 1969? | Any interviewing tips? When talking to people about the history they have lived through, try to ask interesting questions, and listen carefully to their answers. Write notes and questions down before you chat so that you will remember what to say. / Oral History Do you talk to older people about what life was like when they were young? Perhaps you enjoy finding out what major events, such as the Second World War, were actually like for the people who lived through them? Oral history means listening to these stories and asking questions of the people who remember them. It is a good idea to make recordings of oral history conversations so that they can be kept and listened to in the future. This can be done with a sound recording device or an app on a smartphone. | As well as historical events that affect a whole country, local events are also important. Examples could include flooding, the construction of new buildings, or a person making a big change or having strong influence on a particular area. Neal Foster, who creates the popular Horrible Histories Live stage shows, thinks oral history is vital. “Nothing competes with hearing history from people who went through the experience. What makes history fascinating is hearing the same event recalled by different people. That knowledge is priceless,” he says. Learn more... Visit the Oral History Society at ohs.org.uk where you’ll find lots of helpful information, news and magazine. Listen to podcast called Stories of War on BBC Sounds, in which stories from the Second World War have been passed down through families.",
+    "passage": "Have conversations with relatives Name: Sophia “I like talking to older relatives about what happened when they were younger and the times they lived through. We can learn a lot. Popa(my granda) told me that his great aunt, Mary Whitmore, was the first female Mayor of Ipswich, which was exciting to know.\n\n” | Have conversations with relatives Name: Sophia “I like talking to older relatives about what happened when they were younger and the times they lived through. We can learn a lot. Popa(my granda) told me that his great aunt, Mary Whitmore, was the first female Mayor of Ipswich, which was exciting to know.\n\n” / What should I ask questions about? Do the relatives and older people you speak to remember when the astronaut Neil Armstrong and Buzz Aldrin landed on the Moon in 1969? | Any interviewing tips? When talking to people about the history they have lived through, try to ask interesting questions, and listen carefully to their answers.\n\nWrite notes and questions down before you chat so that you will remember what to say. / Oral History Do you talk to older people about what life was like when they were young? Perhaps you enjoy finding out what major events, such as the Second World War, were actually like for the people who lived through them?\n\nOral history means listening to these stories and asking questions of the people who remember them. It is a good idea to make recordings of oral history conversations so that they can be kept and listened to in the future. This can be done with a sound recording device or an app on a smartphone. | As well as historical events that affect a whole country, local events are also important.\n\nExamples could include flooding, the construction of new buildings, or a person making a big change or having strong influence on a particular area. Neal Foster, who creates the popular Horrible Histories Live stage shows, thinks oral history is vital. “Nothing competes with hearing history from people who went through the experience.\n\nWhat makes history fascinating is hearing the same event recalled by different people. That knowledge is priceless,” he says. Learn more... Visit the Oral History Society at ohs.org.uk where you’ll find lots of helpful information, news and magazine. Listen to podcast called Stories of War on BBC Sounds, in which stories from the Second World War have been passed down through families.",
     "questions": [
       {
         "number": 59,
@@ -16183,7 +17283,21 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Have conversations with relatives Name: Sophia “I like talking to older relatives about what happened when they were younger and the times they lived through. We can learn a lot. Popa(my granda) told me that his great aunt, Mary Whitmore, was the first female Mayor of Ipswich, which was exciting to know.",
+      "” | Have conversations with relatives Name: Sophia “I like talking to older relatives about what happened when they were younger and the times they lived through. We can learn a lot. Popa(my granda) told me that his great aunt, Mary Whitmore, was the first female Mayor of Ipswich, which was exciting to know.",
+      "” / What should I ask questions about? Do the relatives and older people you speak to remember when the astronaut Neil Armstrong and Buzz Aldrin landed on the Moon in 1969? | Any interviewing tips? When talking to people about the history they have lived through, try to ask interesting questions, and listen carefully to their answers.",
+      "Write notes and questions down before you chat so that you will remember what to say. / Oral History Do you talk to older people about what life was like when they were young? Perhaps you enjoy finding out what major events, such as the Second World War, were actually like for the people who lived through them?",
+      "Oral history means listening to these stories and asking questions of the people who remember them. It is a good idea to make recordings of oral history conversations so that they can be kept and listened to in the future. This can be done with a sound recording device or an app on a smartphone. | As well as historical events that affect a whole country, local events are also important.",
+      "Examples could include flooding, the construction of new buildings, or a person making a big change or having strong influence on a particular area. Neal Foster, who creates the popular Horrible Histories Live stage shows, thinks oral history is vital. “Nothing competes with hearing history from people who went through the experience.",
+      "What makes history fascinating is hearing the same event recalled by different people. That knowledge is priceless,” he says. Learn more... Visit the Oral History Society at ohs.org.uk where you’ll find lots of helpful information, news and magazine. Listen to podcast called Stories of War on BBC Sounds, in which stories from the Second World War have been passed down through families."
+    ]
   },
   {
     "_id": "sh-em1-2023-黄浦-reading-b",
@@ -16195,7 +17309,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市黄浦区中考一模英语试题（原卷版）.docx",
-    "passage": "（12 分） Get set for returning to school Prepare yourself for the year ahead with these simple steps. You may be heading back to school or have already started. It’s normal to feel both excited for a new school year and sad that the summer break is ending. You may also feel a little ____45____ about having new classrooms and teachers to meet. If so, you are not ____46____! Here are some ways to prepare for the year ahead. Look on the bright side There are many good things to going back to school. You may get to see friends more frequently, ____47____. If you didn’t see your classmates much this summer, now you will. If you developed a new interest in comic strips or chess over the summer, you could ____48____ whether there is a club you could join at school. If not, perhaps you could start one. Maybe you want to try out for the school musical or compete in an after-school sport. Try making a list of the ideas you come up with in a notebook so you can review them and feel inspired by them. Gather supplies If you receive your school supplies in advance, start looking around your house for ____49____ you may already have and don’t need to buy. Ask a parent if unused school supplies are stored somewhere at home. ____50____ your desk or room for pencils, pens, sticky notes and folders from last year that you could use again. Then put these items in your backpack so it’s ready for your first day.",
+    "passage": "Get set for returning to school Prepare yourself for the year ahead with these simple steps. You may be heading back to school or have already started. It’s normal to feel both excited for a new school year and sad that the summer break is ending. You may also feel a little ____45____ about having new classrooms and teachers to meet.\n\nIf so, you are not ____46____! Here are some ways to prepare for the year ahead. Look on the bright side There are many good things to going back to school. You may get to see friends more frequently, ____47____. If you didn’t see your classmates much this summer, now you will. If you developed a new interest in comic strips or chess over the summer, you could ____48____ whether there is a club you could join at school.\n\nIf not, perhaps you could start one. Maybe you want to try out for the school musical or compete in an after-school sport. Try making a list of the ideas you come up with in a notebook so you can review them and feel inspired by them. Gather supplies If you receive your school supplies in advance, start looking around your house for ____49____ you may already have and don’t need to buy.\n\nAsk a parent if unused school supplies are stored somewhere at home. ____50____ your desk or room for pencils, pens, sticky notes and folders from last year that you could use again. Then put these items in your backpack so it’s ready for your first day.",
     "questions": [
       {
         "number": 65,
@@ -16275,7 +17389,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Get set for returning to school Prepare yourself for the year ahead with these simple steps. You may be heading back to school or have already started. It’s normal to feel both excited for a new school year and sad that the summer break is ending. You may also feel a little ____45____ about having new classrooms and teachers to meet.",
+      "If so, you are not ____46____! Here are some ways to prepare for the year ahead. Look on the bright side There are many good things to going back to school. You may get to see friends more frequently, ____47____. If you didn’t see your classmates much this summer, now you will. If you developed a new interest in comic strips or chess over the summer, you could ____48____ whether there is a club you could join at school.",
+      "If not, perhaps you could start one. Maybe you want to try out for the school musical or compete in an after-school sport. Try making a list of the ideas you come up with in a notebook so you can review them and feel inspired by them. Gather supplies If you receive your school supplies in advance, start looking around your house for ____49____ you may already have and don’t need to buy.",
+      "Ask a parent if unused school supplies are stored somewhere at home. ____50____ your desk or room for pencils, pens, sticky notes and folders from last year that you could use again. Then put these items in your backpack so it’s ready for your first day."
+    ]
   },
   {
     "_id": "sh-em1-2023-黄浦-reading-c",
@@ -16349,7 +17474,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2023年上海市黄浦区中考一模英语试题（原卷版）.docx",
-    "passage": "（12 分） Philip is 55 and blind. He has been blind since birth. He says he does not feel like he is missing anything, because he cannot imagine what sight is like. He can smell a rose, but he cannot tell if it is red, or blue. It does not matter to him. He enjoys the beauty of the scent（pleasant smell）itself. People sometimes take pity on him, but he never complains. He does not feel cheated by Mother Nature. But his life is not always a bed of roses. It is difficult for him to travel. He cannot drive, of course. He travels by bus. At home, he cannot just look out of the window to see what the weather is like, and then dress appropriately. He can’t look at the clock on the wall to see what time it is. He uses his Braille watch or a special radio for that. Philip can look for and look at, but he cannot see. He says strangers often correct themselves when talking to him. They’ll say, “I see,” meaning “I understand.” But then they think they’ve been rude, so they’ll correct themselves and say, “I mean, I understand.” Philip has never seen a good movie or a bad TV show. He doesn’t know what a sunset or a full moon looks like. He is a musician. He plays the saxophone, but not in a band. Four times a week, he travels to Old Town in Pasadena on the bus in the afternoon. He gets off at the bus stop and then finds his way across the street to The Cap, a hat store. On the side walk in front of The Cap is his “spot”. There, he puts a hat, upside down with change in it. He sits down and starts playing his saxophone. He usually spends about four hours there and earns from $10 to $30.",
+    "passage": "Philip is 55 and blind. He has been blind since birth. He says he does not feel like he is missing anything, because he cannot imagine what sight is like. He can smell a rose, but he cannot tell if it is red, or blue. It does not matter to him. He enjoys the beauty of the scent（pleasant smell）itself.\n\nPeople sometimes take pity on him, but he never complains. He does not feel cheated by Mother Nature. But his life is not always a bed of roses. It is difficult for him to travel. He cannot drive, of course. He travels by bus. At home, he cannot just look out of the window to see what the weather is like, and then dress appropriately.\n\nHe can’t look at the clock on the wall to see what time it is. He uses his Braille watch or a special radio for that. Philip can look for and look at, but he cannot see. He says strangers often correct themselves when talking to him. They’ll say, “I see,” meaning “I understand.” But then they think they’ve been rude, so they’ll correct themselves and say, “I mean, I understand.\n\n” Philip has never seen a good movie or a bad TV show. He doesn’t know what a sunset or a full moon looks like. He is a musician. He plays the saxophone, but not in a band. Four times a week, he travels to Old Town in Pasadena on the bus in the afternoon. He gets off at the bus stop and then finds his way across the street to The Cap, a hat store.\n\nOn the side walk in front of The Cap is his “spot”. There, he puts a hat, upside down with change in it. He sits down and starts playing his saxophone. He usually spends about four hours there and earns from $10 to $30.",
     "questions": [
       {
         "number": 78,
@@ -16393,7 +17518,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Philip is 55 and blind. He has been blind since birth. He says he does not feel like he is missing anything, because he cannot imagine what sight is like. He can smell a rose, but he cannot tell if it is red, or blue. It does not matter to him. He enjoys the beauty of the scent（pleasant smell）itself.",
+      "People sometimes take pity on him, but he never complains. He does not feel cheated by Mother Nature. But his life is not always a bed of roses. It is difficult for him to travel. He cannot drive, of course. He travels by bus. At home, he cannot just look out of the window to see what the weather is like, and then dress appropriately.",
+      "He can’t look at the clock on the wall to see what time it is. He uses his Braille watch or a special radio for that. Philip can look for and look at, but he cannot see. He says strangers often correct themselves when talking to him. They’ll say, “I see,” meaning “I understand.” But then they think they’ve been rude, so they’ll correct themselves and say, “I mean, I understand.",
+      "” Philip has never seen a good movie or a bad TV show. He doesn’t know what a sunset or a full moon looks like. He is a musician. He plays the saxophone, but not in a band. Four times a week, he travels to Old Town in Pasadena on the bus in the afternoon. He gets off at the bus stop and then finds his way across the street to The Cap, a hat store.",
+      "On the side walk in front of The Cap is his “spot”. There, he puts a hat, upside down with change in it. He sits down and starts playing his saxophone. He usually spends about four hours there and earns from $10 to $30."
+    ]
   },
   {
     "_id": "sh-em1-2024-嘉定-reading-b",
@@ -16405,7 +17542,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "2024届上海市嘉定区中考一模英语试卷（学生版）.docx",
-    "passage": "(共12分) Every year, wildfires destroy millions of hectares of forest land. Homes are damaged, and thousands of people die. Smokejumpers help to stop this. Smokejumpers are a special type of firefighter. They jump from planes or are lowered by helicopters into areas that are 65 to reach by car or on foot, such as the middle of a mountain forest. They race to put out fires as fast as they can. At a fire site, smokejumpers first examine the land and decide 66 _to fight the fire. Their main goal is to stop a fire from spreading or to slow its progress 67 ground-based firefighters arrive. Using basic equipment such as shovels (铲子) and axes(斧头), smokejumpers clear land of burnable material, like dry grass and dead trees. They carry water with them, too, but only a limited amount. Most smokejumpers are men. The most important factors are your height and 68 .Smokejumpers employed in the United States must be between 54 and 91 kilograms so they don't get blown away by the strong winds or get 69 when they land. The work is dangerous, and the hours are long. But for these firefighters, smoke jumping isn't just a job. They 70 being able to jump out of planes, fight fires, and live in the forest. As 28-year-old Russian smokejumper Alexi says, “This is the best job for tough guys. ”",
+    "passage": "Every year, wildfires destroy millions of hectares of forest land. Homes are damaged, and thousands of people die. Smokejumpers help to stop this. Smokejumpers are a special type of firefighter. They jump from planes or are lowered by helicopters into areas that are 65 to reach by car or on foot, such as the middle of a mountain forest.\n\nThey race to put out fires as fast as they can. At a fire site, smokejumpers first examine the land and decide 66 _to fight the fire. Their main goal is to stop a fire from spreading or to slow its progress 67 ground-based firefighters arrive. Using basic equipment such as shovels (铲子) and axes(斧头), smokejumpers clear land of burnable material, like dry grass and dead trees.\n\nThey carry water with them, too, but only a limited amount. Most smokejumpers are men. The most important factors are your height and 68 .Smokejumpers employed in the United States must be between 54 and 91 kilograms so they don't get blown away by the strong winds or get 69 when they land. The work is dangerous, and the hours are long.\n\nBut for these firefighters, smoke jumping isn't just a job. They 70 being able to jump out of planes, fight fires, and live in the forest. As 28-year-old Russian smokejumper Alexi says, “This is the best job for tough guys. ”",
     "questions": [
       {
         "number": 65,
@@ -16485,7 +17622,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Every year, wildfires destroy millions of hectares of forest land. Homes are damaged, and thousands of people die. Smokejumpers help to stop this. Smokejumpers are a special type of firefighter. They jump from planes or are lowered by helicopters into areas that are 65 to reach by car or on foot, such as the middle of a mountain forest.",
+      "They race to put out fires as fast as they can. At a fire site, smokejumpers first examine the land and decide 66 _to fight the fire. Their main goal is to stop a fire from spreading or to slow its progress 67 ground-based firefighters arrive. Using basic equipment such as shovels (铲子) and axes(斧头), smokejumpers clear land of burnable material, like dry grass and dead trees.",
+      "They carry water with them, too, but only a limited amount. Most smokejumpers are men. The most important factors are your height and 68 .Smokejumpers employed in the United States must be between 54 and 91 kilograms so they don't get blown away by the strong winds or get 69 when they land. The work is dangerous, and the hours are long.",
+      "But for these firefighters, smoke jumping isn't just a job. They 70 being able to jump out of planes, fight fires, and live in the forest. As 28-year-old Russian smokejumper Alexi says, “This is the best job for tough guys. ”"
+    ]
   },
   {
     "_id": "sh-em1-2024-崇明-reading-a",
@@ -17059,7 +18207,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
-    "passage": "根据短文内容回答问题。 When Cooper arrived home, he looked at his mom in surprise. She was playing his video games with headphones on her head. “Mom? What are you doing?” “Oh, I am busy.” Cooper’s mom answered without moving her eyes away from the screen. This was strange because Cooper knew his mom hated video games. “Daaad!” Cooper tried to call his dad for help. He walked into the kitchen and froze. His dad was also playing video games excitedly. Now, Cooper was quite confused and even scared. The house was quite messy. Neither his mom nor his dad cooked the dinner. Then Cooper’s eyes landed on a bright yellow note on the fridge door. It said: Want to get close to your kids? Tired of losing them to screens? Wish you could enter their world? Cyber-Parent (网络父母) has the answer. Check our website and you will find the solution. Cooper rushed to his computer and typed in the Cyber-Parent website. It said, “Fill in the online form and we will send you a wristband (手环). Cyber-Parent——Bringing you and your child together.” Now he knew why his parents acted so strangely, but he didn’t know how to fix it. Then he returned to the homepage and found these words. “If you make the wristband wet, ________!” Cooper quickly took his water pistol (水枪). He aimed at his mom’s wristband and soon it got wetter and wetter. His mom’s eyes became clear. Cooper did the same to his father. Finally, his dad woke up and said “Why am I wet? Why am I wearing your headphones? Oh, I forgot to cook.” Cooper took the controllers (手柄) and headphones from his parents. “Cooper, are you going to play for a while before dinner?” His dad asked. “No,” Cooper replied without a doubt, “I have something more important to do now.” As he left, he heard his dad say, “Nice surprise!” His mom answered, “I’ll never understand why he loves these video games so much anyway...”",
+    "passage": "When Cooper arrived home, he looked at his mom in surprise. She was playing his video games with headphones on her head. “Mom? What are you doing?” “Oh, I am busy.” Cooper’s mom answered without moving her eyes away from the screen. This was strange because Cooper knew his mom hated video games. “Daaad!\n\n” Cooper tried to call his dad for help. He walked into the kitchen and froze. His dad was also playing video games excitedly. Now, Cooper was quite confused and even scared. The house was quite messy. Neither his mom nor his dad cooked the dinner. Then Cooper’s eyes landed on a bright yellow note on the fridge door.\n\nIt said: Want to get close to your kids? Tired of losing them to screens? Wish you could enter their world? Cyber-Parent (网络父母) has the answer. Check our website and you will find the solution. Cooper rushed to his computer and typed in the Cyber-Parent website. It said, “Fill in the online form and we will send you a wristband (手环).\n\nCyber-Parent——Bringing you and your child together.” Now he knew why his parents acted so strangely, but he didn’t know how to fix it. Then he returned to the homepage and found these words. “If you make the wristband wet, ________!” Cooper quickly took his water pistol (水枪). He aimed at his mom’s wristband and soon it got wetter and wetter.\n\nHis mom’s eyes became clear. Cooper did the same to his father. Finally, his dad woke up and said “Why am I wet? Why am I wearing your headphones? Oh, I forgot to cook.” Cooper took the controllers (手柄) and headphones from his parents. “Cooper, are you going to play for a while before dinner?” His dad asked.\n\n“No,” Cooper replied without a doubt, “I have something more important to do now.” As he left, he heard his dad say, “Nice surprise!” His mom answered, “I’ll never understand why he loves these video games so much anyway...”",
     "questions": [
       {
         "number": 78,
@@ -17103,7 +18251,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容回答问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "When Cooper arrived home, he looked at his mom in surprise. She was playing his video games with headphones on her head. “Mom? What are you doing?” “Oh, I am busy.” Cooper’s mom answered without moving her eyes away from the screen. This was strange because Cooper knew his mom hated video games. “Daaad!",
+      "” Cooper tried to call his dad for help. He walked into the kitchen and froze. His dad was also playing video games excitedly. Now, Cooper was quite confused and even scared. The house was quite messy. Neither his mom nor his dad cooked the dinner. Then Cooper’s eyes landed on a bright yellow note on the fridge door.",
+      "It said: Want to get close to your kids? Tired of losing them to screens? Wish you could enter their world? Cyber-Parent (网络父母) has the answer. Check our website and you will find the solution. Cooper rushed to his computer and typed in the Cyber-Parent website. It said, “Fill in the online form and we will send you a wristband (手环).",
+      "Cyber-Parent——Bringing you and your child together.” Now he knew why his parents acted so strangely, but he didn’t know how to fix it. Then he returned to the homepage and found these words. “If you make the wristband wet, ________!” Cooper quickly took his water pistol (水枪). He aimed at his mom’s wristband and soon it got wetter and wetter.",
+      "His mom’s eyes became clear. Cooper did the same to his father. Finally, his dad woke up and said “Why am I wet? Why am I wearing your headphones? Oh, I forgot to cook.” Cooper took the controllers (手柄) and headphones from his parents. “Cooper, are you going to play for a while before dinner?” His dad asked.",
+      "“No,” Cooper replied without a doubt, “I have something more important to do now.” As he left, he heard his dad say, “Nice surprise!” His mom answered, “I’ll never understand why he loves these video games so much anyway...”"
+    ]
   },
   {
     "_id": "sh-em1-2024-虹口-reading-a",
@@ -17553,7 +18714,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市金山区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
-    "passage": "根据以下内容回答问题。 Do you know about storm photographers? They get up close to storms to take photos, and have been called “storm chasers”. Liu Yijing is such a person. Few people in China enjoy storms more than him. Other people may close their windows to block out sounds of the storm. Liu, however, jumps excitedly for each and every storm. More than that, he will then drive into the heart of them. Liu Yijing was born and raised in Jiangxi Province. He has been keen about weather since childhood. While he was in primary school, his favorite TV program was the weather forecast. Since 2020, chasing storms has become a part of Liu’s life. The 23-year-old has traveled over 70, 000 kilometers across China. He takes photos of storms and shares them online. The young man has become more and more popular. He has been invited to give lectures at universities. CCTV has even begun to use his works. Not long ago, one of his photos was chosen as the cover for Advances in Atmospheric Sciences (《大气科学进展》). As the first storm-chasing photographer, Liu is quite young and exceptional (非凡的) . However, there are other things that make him even more special. One day, Liu came across a farmer and was deeply touched by his words. The man told him that a storm had damaged his harvest. He realized that the things he loved could also bring disasters to others. So, he decided to start making short videos about extreme weather to ___58___. Nowadays, hundreds of thousands of people are learning about meteorology (气象学) from him on short-video platforms. “I hope my efforts can help people better understand nature,” said the storm chaser.",
+    "passage": "Do you know about storm photographers? They get up close to storms to take photos, and have been called “storm chasers”. Liu Yijing is such a person. Few people in China enjoy storms more than him. Other people may close their windows to block out sounds of the storm. Liu, however, jumps excitedly for each and every storm.\n\nMore than that, he will then drive into the heart of them. Liu Yijing was born and raised in Jiangxi Province. He has been keen about weather since childhood. While he was in primary school, his favorite TV program was the weather forecast. Since 2020, chasing storms has become a part of Liu’s life.\n\nThe 23-year-old has traveled over 70, 000 kilometers across China. He takes photos of storms and shares them online. The young man has become more and more popular. He has been invited to give lectures at universities. CCTV has even begun to use his works. Not long ago, one of his photos was chosen as the cover for Advances in Atmospheric Sciences (《大气科学进展》).\n\nAs the first storm-chasing photographer, Liu is quite young and exceptional (非凡的) . However, there are other things that make him even more special. One day, Liu came across a farmer and was deeply touched by his words. The man told him that a storm had damaged his harvest. He realized that the things he loved could also bring disasters to others.\n\nSo, he decided to start making short videos about extreme weather to ___58___. Nowadays, hundreds of thousands of people are learning about meteorology (气象学) from him on short-video platforms. “I hope my efforts can help people better understand nature,” said the storm chaser.",
     "questions": [
       {
         "number": 78,
@@ -17597,7 +18758,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容回答问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Do you know about storm photographers? They get up close to storms to take photos, and have been called “storm chasers”. Liu Yijing is such a person. Few people in China enjoy storms more than him. Other people may close their windows to block out sounds of the storm. Liu, however, jumps excitedly for each and every storm.",
+      "More than that, he will then drive into the heart of them. Liu Yijing was born and raised in Jiangxi Province. He has been keen about weather since childhood. While he was in primary school, his favorite TV program was the weather forecast. Since 2020, chasing storms has become a part of Liu’s life.",
+      "The 23-year-old has traveled over 70, 000 kilometers across China. He takes photos of storms and shares them online. The young man has become more and more popular. He has been invited to give lectures at universities. CCTV has even begun to use his works. Not long ago, one of his photos was chosen as the cover for Advances in Atmospheric Sciences (《大气科学进展》).",
+      "As the first storm-chasing photographer, Liu is quite young and exceptional (非凡的) . However, there are other things that make him even more special. One day, Liu came across a farmer and was deeply touched by his words. The man told him that a storm had damaged his harvest. He realized that the things he loved could also bring disasters to others.",
+      "So, he decided to start making short videos about extreme weather to ___58___. Nowadays, hundreds of thousands of people are learning about meteorology (气象学) from him on short-video platforms. “I hope my efforts can help people better understand nature,” said the storm chaser."
+    ]
   },
   {
     "_id": "sh-em1-2024-长宁-reading-a",
@@ -17609,7 +18782,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
-    "passage": "(12 分) Welcome to the American Museum of Natural History, a place filled with amazing things to discover. The following will help you make the most of your visit. Location: Address: 200 Central Park West, New York, NY 10024. Nearest Subway Stations: 81st Street-Museum of Natural History (B and C lines) and 86th Street (l line). Tickets and Hours: Museum hours are typically from 10: 00 A.M. to 5: 45 P.M. daily. You can decide how much to pay for your ticket, but it’s good to pay the suggested amount. It’s a good idea to buy your tickets online to avoid long lines. Must-See Exhibits: Dinosaurs: Feel amazed at the huge dinosaur skeletons in the Hall of Saurischian Dinosaurs. The Blue Whale: See the life-sized model of a blue whale in the Milstein Hall of Ocean Life. The Rose Center for Earth and Space: Explore the universe in the Hayden Planetarium and visit the famous “Dark Universe” show. Fossils: Discover the wonders of ancient life in the Fossil Halls, where you’ll find prehistoric creatures and even a T-Rex! 4 : The museum is vast, so plan to spend at least half a day exploring the exhibits. Check the daily schedule for special exhibitions, guided tours, and different shows. Take a museum map at the entrance to help you navigate the massive building. Photography: Photography is allowed in most areas, but be mindful of the “No Photography” signs in certain exhibition halls. Nearby Attractions: After your museum visit, take a walk in Central Park, or explore other cool places nearby like the Metropolitan Museum of Art. Visiting the American Museum of Natural History is like going on a big adventure! Whether you’re a science history lover or traveling with family this museum offers something for everyone. Enjoy your visit!",
+    "passage": "Welcome to the American Museum of Natural History, a place filled with amazing things to discover. The following will help you make the most of your visit. Location: Address: 200 Central Park West, New York, NY 10024. Nearest Subway Stations: 81st Street-Museum of Natural History (B and C lines) and 86th Street (l line).\n\nTickets and Hours: Museum hours are typically from 10: 00 A.M. to 5: 45 P.M. daily. You can decide how much to pay for your ticket, but it’s good to pay the suggested amount. It’s a good idea to buy your tickets online to avoid long lines. Must-See Exhibits: Dinosaurs: Feel amazed at the huge dinosaur skeletons in the Hall of Saurischian Dinosaurs.\n\nThe Blue Whale: See the life-sized model of a blue whale in the Milstein Hall of Ocean Life. The Rose Center for Earth and Space: Explore the universe in the Hayden Planetarium and visit the famous “Dark Universe” show. Fossils: Discover the wonders of ancient life in the Fossil Halls, where you’ll find prehistoric creatures and even a T-Rex!\n\n4 : The museum is vast, so plan to spend at least half a day exploring the exhibits. Check the daily schedule for special exhibitions, guided tours, and different shows. Take a museum map at the entrance to help you navigate the massive building. Photography: Photography is allowed in most areas, but be mindful of the “No Photography” signs in certain exhibition halls.\n\nNearby Attractions: After your museum visit, take a walk in Central Park, or explore other cool places nearby like the Metropolitan Museum of Art. Visiting the American Museum of Natural History is like going on a big adventure! Whether you’re a science history lover or traveling with family this museum offers something for everyone. Enjoy your visit!",
     "questions": [
       {
         "number": 59,
@@ -17689,7 +18862,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Welcome to the American Museum of Natural History, a place filled with amazing things to discover. The following will help you make the most of your visit. Location: Address: 200 Central Park West, New York, NY 10024. Nearest Subway Stations: 81st Street-Museum of Natural History (B and C lines) and 86th Street (l line).",
+      "Tickets and Hours: Museum hours are typically from 10: 00 A.M. to 5: 45 P.M. daily. You can decide how much to pay for your ticket, but it’s good to pay the suggested amount. It’s a good idea to buy your tickets online to avoid long lines. Must-See Exhibits: Dinosaurs: Feel amazed at the huge dinosaur skeletons in the Hall of Saurischian Dinosaurs.",
+      "The Blue Whale: See the life-sized model of a blue whale in the Milstein Hall of Ocean Life. The Rose Center for Earth and Space: Explore the universe in the Hayden Planetarium and visit the famous “Dark Universe” show. Fossils: Discover the wonders of ancient life in the Fossil Halls, where you’ll find prehistoric creatures and even a T-Rex!",
+      "4 : The museum is vast, so plan to spend at least half a day exploring the exhibits. Check the daily schedule for special exhibitions, guided tours, and different shows. Take a museum map at the entrance to help you navigate the massive building. Photography: Photography is allowed in most areas, but be mindful of the “No Photography” signs in certain exhibition halls.",
+      "Nearby Attractions: After your museum visit, take a walk in Central Park, or explore other cool places nearby like the Metropolitan Museum of Art. Visiting the American Museum of Natural History is like going on a big adventure! Whether you’re a science history lover or traveling with family this museum offers something for everyone. Enjoy your visit!"
+    ]
   },
   {
     "_id": "sh-em1-2024-长宁-reading-c",
@@ -17763,7 +18948,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁区2023-2024学年九年级上学期（一模）期末英语试题（学生版）.docx",
-    "passage": "根据以下内容回答问题。 A lot of students from different countries are talking about how schools and parents connect now. Here is a part of their talks. In my school, parent-school communication is mostly done through emails. This lets parents know what is happening at their child’s school. To improve parent-teacher communication, Parent Breakfasts are organized at the beginning of the school year, and it enables parents to meet the head teacher and subject teachers of their child this year. Parent Evenings also take place each term to let parents know their child’s progress in school. There is not a parent committee ( 委员会) at my school but parents can be part of the Friends group. They can help organize school events. Peter from America | At my school, parents and teachers keep in touch in many ways. One of them is the Parent-Teacher Association (PTA). The PTA is a voluntary organization that brings parents and teachers together to discuss and deal with problems with school education. The PTA usually meets once or twice a term and lets parents know their children’s teachers better. Another way of communication is through parent-teacher meetings. They let parents and teachers meet face-to-face to discuss a student’s progress and performance. Lily from China / Communications go both ways here, allowing both the school and parents to discuss concerns or ask questions. These meetings are planned one-on-one for privacy. They serve to avoid making students or parents feel uncomfortable if the school needs to talk about certain problems, such as a student’s performance. While meetings can be planned at any time, the most common are the end-of-term reports. Each term has 8-10 weeks for students to attend school. Their teachers use the information collected to provide feedback to families in about 10-15 minutes. Students often attend these meetings, too. Jack from Australia | Communications go both ways here, allowing both the school and parents to discuss concerns or ask questions. These meetings are planned one-on-one for privacy. They serve to avoid making students or parents feel uncomfortable if the school needs to talk about certain problems, such as a student’s performance. While meetings can be planned at any time, the most common are the end-of-term reports. Each term has 8-10 weeks for students to attend school. Their teachers use the information collected to provide feedback to families in about 10-15 minutes. Students often attend these meetings, too. Jack from Australia",
+    "passage": "A lot of students from different countries are talking about how schools and parents connect now. Here is a part of their talks. In my school, parent-school communication is mostly done through emails. This lets parents know what is happening at their child’s school. To improve parent-teacher communication, Parent Breakfasts are organized at the beginning of the school year, and it enables parents to meet the head teacher and subject teachers of their child this year.\n\nParent Evenings also take place each term to let parents know their child’s progress in school. There is not a parent committee ( 委员会) at my school but parents can be part of the Friends group. They can help organize school events. Peter from America | At my school, parents and teachers keep in touch in many ways.\n\nOne of them is the Parent-Teacher Association (PTA). The PTA is a voluntary organization that brings parents and teachers together to discuss and deal with problems with school education. The PTA usually meets once or twice a term and lets parents know their children’s teachers better. Another way of communication is through parent-teacher meetings.\n\nThey let parents and teachers meet face-to-face to discuss a student’s progress and performance. Lily from China / Communications go both ways here, allowing both the school and parents to discuss concerns or ask questions. These meetings are planned one-on-one for privacy. They serve to avoid making students or parents feel uncomfortable if the school needs to talk about certain problems, such as a student’s performance.\n\nWhile meetings can be planned at any time, the most common are the end-of-term reports. Each term has 8-10 weeks for students to attend school. Their teachers use the information collected to provide feedback to families in about 10-15 minutes. Students often attend these meetings, too. Jack from Australia | Communications go both ways here, allowing both the school and parents to discuss concerns or ask questions.\n\nThese meetings are planned one-on-one for privacy. They serve to avoid making students or parents feel uncomfortable if the school needs to talk about certain problems, such as a student’s performance. While meetings can be planned at any time, the most common are the end-of-term reports. Each term has 8-10 weeks for students to attend school.\n\nTheir teachers use the information collected to provide feedback to families in about 10-15 minutes. Students often attend these meetings, too. Jack from Australia",
     "questions": [
       {
         "number": 78,
@@ -17807,7 +18992,21 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容回答问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "A lot of students from different countries are talking about how schools and parents connect now. Here is a part of their talks. In my school, parent-school communication is mostly done through emails. This lets parents know what is happening at their child’s school. To improve parent-teacher communication, Parent Breakfasts are organized at the beginning of the school year, and it enables parents to meet the head teacher and subject teachers of their child this year.",
+      "Parent Evenings also take place each term to let parents know their child’s progress in school. There is not a parent committee ( 委员会) at my school but parents can be part of the Friends group. They can help organize school events. Peter from America | At my school, parents and teachers keep in touch in many ways.",
+      "One of them is the Parent-Teacher Association (PTA). The PTA is a voluntary organization that brings parents and teachers together to discuss and deal with problems with school education. The PTA usually meets once or twice a term and lets parents know their children’s teachers better. Another way of communication is through parent-teacher meetings.",
+      "They let parents and teachers meet face-to-face to discuss a student’s progress and performance. Lily from China / Communications go both ways here, allowing both the school and parents to discuss concerns or ask questions. These meetings are planned one-on-one for privacy. They serve to avoid making students or parents feel uncomfortable if the school needs to talk about certain problems, such as a student’s performance.",
+      "While meetings can be planned at any time, the most common are the end-of-term reports. Each term has 8-10 weeks for students to attend school. Their teachers use the information collected to provide feedback to families in about 10-15 minutes. Students often attend these meetings, too. Jack from Australia | Communications go both ways here, allowing both the school and parents to discuss concerns or ask questions.",
+      "These meetings are planned one-on-one for privacy. They serve to avoid making students or parents feel uncomfortable if the school needs to talk about certain problems, such as a student’s performance. While meetings can be planned at any time, the most common are the end-of-term reports. Each term has 8-10 weeks for students to attend school.",
+      "Their teachers use the information collected to provide feedback to families in about 10-15 minutes. Students often attend these meetings, too. Jack from Australia"
+    ]
   },
   {
     "_id": "sh-em1-2024-闵行-reading-a",
@@ -18399,7 +19598,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2023-2024学年九年级上学期（一模）期末英语试卷（word学生版）.docx",
-    "passage": "(12 分) MATH MONSTER! Math Monster is the best computer game! I have to solve math problems and riddles to win. Right now, the math monster kidnapped Roland! I have to solve a math riddle to rescue him! The monster says, “I am thirsty. I want to drink exactly four gallons of water!” I must give him four gallons of water. If I don't, he will eat Roland! I have to hurry up. <Riddle> There are two kinds of bottles in the room: a small bottle and a big bottle. Altogether, there are two small bottles and two big bottles. ·The small bottles are three-gallon bottles. ·The big bottles are five-gallon bottles. Figure out how to make four gallons with these! Use math to solve the riddle! Let's think about these numbers. I have the numbers five and three. Well, five minus three equals two. And two plus two equals four! There is the answer! Now, I will have to solve the math problem with the water bottles. First, I take a five-gallon bottle and fill it with water. Then I pour the water from that bottle into a three-gallon bottle. I have two gallons left in the big bottle. I do this again with another big and small bottle. Now, I have two big bottles with two gallons of water! I take one and pour the water into the other. Finally. I have four gallons of water in a five-gallon bottle! The monster drinks the water. Now Roland is safe and I win the game!",
+    "passage": "MATH MONSTER! Math Monster is the best computer game! I have to solve math problems and riddles to win. Right now, the math monster kidnapped Roland! I have to solve a math riddle to rescue him! The monster says, “I am thirsty. I want to drink exactly four gallons of water!” I must give him four gallons of water.\n\nIf I don't, he will eat Roland! I have to hurry up. <Riddle> There are two kinds of bottles in the room: a small bottle and a big bottle. Altogether, there are two small bottles and two big bottles. ·The small bottles are three-gallon bottles. ·The big bottles are five-gallon bottles. Figure out how to make four gallons with these!\n\nUse math to solve the riddle! Let's think about these numbers. I have the numbers five and three. Well, five minus three equals two. And two plus two equals four! There is the answer! Now, I will have to solve the math problem with the water bottles. First, I take a five-gallon bottle and fill it with water.\n\nThen I pour the water from that bottle into a three-gallon bottle. I have two gallons left in the big bottle. I do this again with another big and small bottle. Now, I have two big bottles with two gallons of water! I take one and pour the water into the other. Finally. I have four gallons of water in a five-gallon bottle! The monster drinks the water. Now Roland is safe and I win the game!",
     "questions": [
       {
         "number": 78,
@@ -18437,7 +19636,18 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "MATH MONSTER! Math Monster is the best computer game! I have to solve math problems and riddles to win. Right now, the math monster kidnapped Roland! I have to solve a math riddle to rescue him! The monster says, “I am thirsty. I want to drink exactly four gallons of water!” I must give him four gallons of water.",
+      "If I don't, he will eat Roland! I have to hurry up. <Riddle> There are two kinds of bottles in the room: a small bottle and a big bottle. Altogether, there are two small bottles and two big bottles. ·The small bottles are three-gallon bottles. ·The big bottles are five-gallon bottles. Figure out how to make four gallons with these!",
+      "Use math to solve the riddle! Let's think about these numbers. I have the numbers five and three. Well, five minus three equals two. And two plus two equals four! There is the answer! Now, I will have to solve the math problem with the water bottles. First, I take a five-gallon bottle and fill it with water.",
+      "Then I pour the water from that bottle into a three-gallon bottle. I have two gallons left in the big bottle. I do this again with another big and small bottle. Now, I have two big bottles with two gallons of water! I take one and pour the water into the other. Finally. I have four gallons of water in a five-gallon bottle! The monster drinks the water. Now Roland is safe and I win the game!"
+    ]
   },
   {
     "_id": "sh-em1-2024-黄浦-reading-a",
@@ -18683,7 +19893,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2023-2024学年九年级上学期 一模试题（学生版）.docx",
-    "passage": "根据对话内容回答下列问题。 Finally, under a cloudy, moonless sky, the train pulled into the train station. “Hold hands and stay together,” Kassie’s mom waned as they got off the train and made their way out of the station. During their short ride to their new home, Kassie noticed how whites and blacks kept their distance. Even on the bus, they were forced to sit at the back; meanwhile, the whites took the front seats. Kassie couldn’t stop thinking of this strange behavior. She hoped it would be slightly different at school. Two days later, Kassie got her answer. She entered her classroom and was surprised to find so many white children already seated. She looked for a black child, but saw none, so she decided to find a seat. “What are you doing?” a red-haired girl asked. Kassie looked at her puzzled, not sure how to reply. “Blacks sit on the back of the room,” the girl said, pointing a finger towards the broken desks at the back of the classroom. Kassie looked at the collection of desks and frowned. Most were broken, and their surfaces were covered with dust and pencil drawings. Kassie hoped that there would be other black children in the class, but as the bell rang, no other children showed up. When the teacher introduced Kassie to the class, everyone looked at her as if she was an alien. The rest of the week wasn’t any better. Kassie considered asking her parents more than once to let her move back home with her grandparents. But again, the idea of being respectful and grateful kept her quiet. Boston was a gray city with tall buildings and few trees. There were a few sunny days, and the air was cold. Kassie missed the open countryside, the tall trees, colourful flowers and blue skies. Most of all, she missed her friends and grandparents.",
+    "passage": "Finally, under a cloudy, moonless sky, the train pulled into the train station. “Hold hands and stay together,” Kassie’s mom waned as they got off the train and made their way out of the station. During their short ride to their new home, Kassie noticed how whites and blacks kept their distance. Even on the bus, they were forced to sit at the back; meanwhile, the whites took the front seats.\n\nKassie couldn’t stop thinking of this strange behavior. She hoped it would be slightly different at school. Two days later, Kassie got her answer. She entered her classroom and was surprised to find so many white children already seated. She looked for a black child, but saw none, so she decided to find a seat.\n\n“What are you doing?” a red-haired girl asked. Kassie looked at her puzzled, not sure how to reply. “Blacks sit on the back of the room,” the girl said, pointing a finger towards the broken desks at the back of the classroom. Kassie looked at the collection of desks and frowned. Most were broken, and their surfaces were covered with dust and pencil drawings.\n\nKassie hoped that there would be other black children in the class, but as the bell rang, no other children showed up. When the teacher introduced Kassie to the class, everyone looked at her as if she was an alien. The rest of the week wasn’t any better. Kassie considered asking her parents more than once to let her move back home with her grandparents.\n\nBut again, the idea of being respectful and grateful kept her quiet. Boston was a gray city with tall buildings and few trees. There were a few sunny days, and the air was cold. Kassie missed the open countryside, the tall trees, colourful flowers and blue skies. Most of all, she missed her friends and grandparents.",
     "questions": [
       {
         "number": 78,
@@ -18727,7 +19937,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据对话内容回答下列问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Finally, under a cloudy, moonless sky, the train pulled into the train station. “Hold hands and stay together,” Kassie’s mom waned as they got off the train and made their way out of the station. During their short ride to their new home, Kassie noticed how whites and blacks kept their distance. Even on the bus, they were forced to sit at the back; meanwhile, the whites took the front seats.",
+      "Kassie couldn’t stop thinking of this strange behavior. She hoped it would be slightly different at school. Two days later, Kassie got her answer. She entered her classroom and was surprised to find so many white children already seated. She looked for a black child, but saw none, so she decided to find a seat.",
+      "“What are you doing?” a red-haired girl asked. Kassie looked at her puzzled, not sure how to reply. “Blacks sit on the back of the room,” the girl said, pointing a finger towards the broken desks at the back of the classroom. Kassie looked at the collection of desks and frowned. Most were broken, and their surfaces were covered with dust and pencil drawings.",
+      "Kassie hoped that there would be other black children in the class, but as the bell rang, no other children showed up. When the teacher introduced Kassie to the class, everyone looked at her as if she was an alien. The rest of the week wasn’t any better. Kassie considered asking her parents more than once to let her move back home with her grandparents.",
+      "But again, the idea of being respectful and grateful kept her quiet. Boston was a gray city with tall buildings and few trees. There were a few sunny days, and the air was cold. Kassie missed the open countryside, the tall trees, colourful flowers and blue skies. Most of all, she missed her friends and grandparents."
+    ]
   },
   {
     "_id": "sh-em1-2025-嘉定-reading-a",
@@ -18739,7 +19961,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市嘉定区中考一模英语试题（原卷版）.docx",
-    "passage": "(根据短文内容，选择最恰当的答案。) Taylor: Have you guys thought about joining a gym? I’m really serious about getting in shape and want to find a place with classes every weekday to work on my stamina (耐力) and overall fitness. Jacob: Yeah, I’ve been thinking about it too. I want to get fitter, but I usually find exercising a bit boring. I need something exciting to keep me motivated, and it’d be great if I could bring some friends along. Plus, tracking progress weekly would be wonderful. Rachael: I’m training for a triathlon (铁人三项赛) right now, so I’ve been focused on running and swimming. Now, I need something to help with my cycling endurance. Twice a week would be perfect for me. Taylor: Sounds like we’re all trying to improve in different ways. Rachael: Maybe we can each find a gym that suits our goals best. Jacob: That makes sense. We can still check in with each other and share how it’s going. Here are some options for gyms and fitness programs that might match each of their needs. Box-Fit Step into the city’s top boxing club! Get fit, have fun, and train with expert coaches. Track your progress every week with personalized tests, and bring your friends along for free! Perfect for beginners, with gloves provided. / HIIT Goals! Ready to improve your fitness? Our HIIT classes are full of energy and help build stamina and endurance. With new and exciting workouts every time, classes are available 7 days a week! / Reach Higher! Achieve your goals faster with our beginner-friendly personal training! Work one-to-one with professional coaches to get fit quickly. Classes are held once a week, with a joining fee of £50. / Full Speed! Take your cycling to the next level! These spinning classes, led by biking professionals, are perfect for anyone training for a triathlon or bike race. Track your time and speed weekly while having fun. Join us every Tuesday and Thursday evening for the ride of your life!",
+    "passage": "。) Taylor: Have you guys thought about joining a gym? I’m really serious about getting in shape and want to find a place with classes every weekday to work on my stamina (耐力) and overall fitness. Jacob: Yeah, I’ve been thinking about it too. I want to get fitter, but I usually find exercising a bit boring.\n\nI need something exciting to keep me motivated, and it’d be great if I could bring some friends along. Plus, tracking progress weekly would be wonderful. Rachael: I’m training for a triathlon (铁人三项赛) right now, so I’ve been focused on running and swimming. Now, I need something to help with my cycling endurance.\n\nTwice a week would be perfect for me. Taylor: Sounds like we’re all trying to improve in different ways. Rachael: Maybe we can each find a gym that suits our goals best. Jacob: That makes sense. We can still check in with each other and share how it’s going. Here are some options for gyms and fitness programs that might match each of their needs.\n\nBox-Fit Step into the city’s top boxing club! Get fit, have fun, and train with expert coaches. Track your progress every week with personalized tests, and bring your friends along for free! Perfect for beginners, with gloves provided. / HIIT Goals! Ready to improve your fitness? Our HIIT classes are full of energy and help build stamina and endurance.\n\nWith new and exciting workouts every time, classes are available 7 days a week! / Reach Higher! Achieve your goals faster with our beginner-friendly personal training! Work one-to-one with professional coaches to get fit quickly. Classes are held once a week, with a joining fee of £50. / Full Speed!\n\nTake your cycling to the next level! These spinning classes, led by biking professionals, are perfect for anyone training for a triathlon or bike race. Track your time and speed weekly while having fun. Join us every Tuesday and Thursday evening for the ride of your life!",
     "questions": [
       {
         "number": 59,
@@ -18819,7 +20041,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "。) Taylor: Have you guys thought about joining a gym? I’m really serious about getting in shape and want to find a place with classes every weekday to work on my stamina (耐力) and overall fitness. Jacob: Yeah, I’ve been thinking about it too. I want to get fitter, but I usually find exercising a bit boring.",
+      "I need something exciting to keep me motivated, and it’d be great if I could bring some friends along. Plus, tracking progress weekly would be wonderful. Rachael: I’m training for a triathlon (铁人三项赛) right now, so I’ve been focused on running and swimming. Now, I need something to help with my cycling endurance.",
+      "Twice a week would be perfect for me. Taylor: Sounds like we’re all trying to improve in different ways. Rachael: Maybe we can each find a gym that suits our goals best. Jacob: That makes sense. We can still check in with each other and share how it’s going. Here are some options for gyms and fitness programs that might match each of their needs.",
+      "Box-Fit Step into the city’s top boxing club! Get fit, have fun, and train with expert coaches. Track your progress every week with personalized tests, and bring your friends along for free! Perfect for beginners, with gloves provided. / HIIT Goals! Ready to improve your fitness? Our HIIT classes are full of energy and help build stamina and endurance.",
+      "With new and exciting workouts every time, classes are available 7 days a week! / Reach Higher! Achieve your goals faster with our beginner-friendly personal training! Work one-to-one with professional coaches to get fit quickly. Classes are held once a week, with a joining fee of £50. / Full Speed!",
+      "Take your cycling to the next level! These spinning classes, led by biking professionals, are perfect for anyone training for a triathlon or bike race. Track your time and speed weekly while having fun. Join us every Tuesday and Thursday evening for the ride of your life!"
+    ]
   },
   {
     "_id": "sh-em1-2025-嘉定-reading-b",
@@ -19435,7 +20670,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市宝山区中考一模英语试题（原卷版）.docx",
-    "passage": "根据短文内容回答下列问题。 “I like photography because it captures amazing things that you might not see again,” Timmy Watter says. He takes pictures of flowers, sunsets, road signs and ancient buildings. But those photos don’t usually end up in a photo album or on his bedroom walls. Timmy sells them and donates the money to help fight lung cancer (肺癌). When Timmy was five, he found out that his aunt Bella had lung cancer. He wanted to do something to help her. His first plan was to sell his photos from a vendor’s stand (小贩摊位) in front of his house. “My mum said it wouldn’t work because we were not on a busy street.” Timmy explains. His next idea was to have an art show. Timmy decorated his home with candles, flowers and white lights. Then he arranged his photos. Timmy’s mum, Sara, remembers: “Everything was filled with photos, including our dining-room table and the living room.” Timmy’s friends, family, and teachers came to the show. He raised more than $300 for cancer research that night. “Aunt Bella was very happy and excited,” Timmy says. After a local newspaper wrote a story about Timmy’s photos, a volunteer offered to help him set up a website called Camera for a Cure. As more and more people learned about his cause, Timmy began receiving invitations to sell his pictures at art galleries and charity events. Since then, his work has appeared in more than 20 shows. To prepare, he takes lots of photographs. His mum helps him print and frame (给……镶框) them. Then he gives each one a price and decides where it will be displayed. When Timmy is at a show, he greets each customer and talks about what he was thinking when he took his photos. And he always shares facts about lung cancer. Sometimes donations and sales are slow, but Timmy isn’t worried. “It doesn’t matter how much money we made because ________,” he says. Timmy knows that finding a cure for lung cancer will take time and effort. So, Timmy will keep doing his part by taking and selling photos of the things he sees.",
+    "passage": "“I like photography because it captures amazing things that you might not see again,” Timmy Watter says. He takes pictures of flowers, sunsets, road signs and ancient buildings. But those photos don’t usually end up in a photo album or on his bedroom walls. Timmy sells them and donates the money to help fight lung cancer (肺癌).\n\nWhen Timmy was five, he found out that his aunt Bella had lung cancer. He wanted to do something to help her. His first plan was to sell his photos from a vendor’s stand (小贩摊位) in front of his house. “My mum said it wouldn’t work because we were not on a busy street.” Timmy explains. His next idea was to have an art show.\n\nTimmy decorated his home with candles, flowers and white lights. Then he arranged his photos. Timmy’s mum, Sara, remembers: “Everything was filled with photos, including our dining-room table and the living room.” Timmy’s friends, family, and teachers came to the show. He raised more than $300 for cancer research that night.\n\n“Aunt Bella was very happy and excited,” Timmy says. After a local newspaper wrote a story about Timmy’s photos, a volunteer offered to help him set up a website called Camera for a Cure. As more and more people learned about his cause, Timmy began receiving invitations to sell his pictures at art galleries and charity events.\n\nSince then, his work has appeared in more than 20 shows. To prepare, he takes lots of photographs. His mum helps him print and frame (给……镶框) them. Then he gives each one a price and decides where it will be displayed. When Timmy is at a show, he greets each customer and talks about what he was thinking when he took his photos.\n\nAnd he always shares facts about lung cancer. Sometimes donations and sales are slow, but Timmy isn’t worried. “It doesn’t matter how much money we made because ________,” he says. Timmy knows that finding a cure for lung cancer will take time and effort. So, Timmy will keep doing his part by taking and selling photos of the things he sees.",
     "questions": [
       {
         "number": 78,
@@ -19473,7 +20708,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容回答下列问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "“I like photography because it captures amazing things that you might not see again,” Timmy Watter says. He takes pictures of flowers, sunsets, road signs and ancient buildings. But those photos don’t usually end up in a photo album or on his bedroom walls. Timmy sells them and donates the money to help fight lung cancer (肺癌).",
+      "When Timmy was five, he found out that his aunt Bella had lung cancer. He wanted to do something to help her. His first plan was to sell his photos from a vendor’s stand (小贩摊位) in front of his house. “My mum said it wouldn’t work because we were not on a busy street.” Timmy explains. His next idea was to have an art show.",
+      "Timmy decorated his home with candles, flowers and white lights. Then he arranged his photos. Timmy’s mum, Sara, remembers: “Everything was filled with photos, including our dining-room table and the living room.” Timmy’s friends, family, and teachers came to the show. He raised more than $300 for cancer research that night.",
+      "“Aunt Bella was very happy and excited,” Timmy says. After a local newspaper wrote a story about Timmy’s photos, a volunteer offered to help him set up a website called Camera for a Cure. As more and more people learned about his cause, Timmy began receiving invitations to sell his pictures at art galleries and charity events.",
+      "Since then, his work has appeared in more than 20 shows. To prepare, he takes lots of photographs. His mum helps him print and frame (给……镶框) them. Then he gives each one a price and decides where it will be displayed. When Timmy is at a show, he greets each customer and talks about what he was thinking when he took his photos.",
+      "And he always shares facts about lung cancer. Sometimes donations and sales are slow, but Timmy isn’t worried. “It doesn’t matter how much money we made because ________,” he says. Timmy knows that finding a cure for lung cancer will take time and effort. So, Timmy will keep doing his part by taking and selling photos of the things he sees."
+    ]
   },
   {
     "_id": "sh-em1-2025-崇明-reading-a",
@@ -19657,7 +20905,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市崇明区中考一模英语试题（原卷版）.docx",
-    "passage": "根据短文内容回答下列问题。 Brooke has just become the 12-ranked rock climbers in the world. One of her coaches explains that she’s so good because she has really strong fingers and the amazing flexibility (柔韧性) of a child. That helps her a lot and means she can do things older climbers have never thought of doing. Brooke comes from a climbing family. Both her parents are past climbing champions (冠军). Her father stopped climbing some years ago, but her mother, Robyn, who won four world cup titles one after another for four years, is still climbing. She runs a club for young climbers in Colorado, USA and coaches Brooke and her teammates. Sometimes it’s difficult for mother and daughter to work together so closely, but they really respect and trust each other and Brooke says her mum is a great coach. Brooke says that her mother gives her a lot of good advice and is a very important part of her climbing life. Robyn can be strict, but she really loves climbing mountains, and she passes this passion on to her students. Robyn says “Brooke is very determined (坚决的) and is very good at encouraging herself. This helps her when she’s facing the challenges of this difficult sport. She is also very hardworking.” Success in rock climbing is something you have to work at. To be a world-class sportswoman of any kind, you have to push yourself and train hard and that’s what Brooke does, every day, at the club and at home. Brooke says that climbing is always a part of her everyday life. They even have a climbing wall in their house! But climbing isn’t only hard work. It’s fun too. Brooke loves climbing and when she’s on a high rock, she feels happy. Strangely, she says that when she looks down, she isn’t scared. All she does is think about how cool it is to be so small compared to the rock.",
+    "passage": "Brooke has just become the 12-ranked rock climbers in the world. One of her coaches explains that she’s so good because she has really strong fingers and the amazing flexibility (柔韧性) of a child. That helps her a lot and means she can do things older climbers have never thought of doing. Brooke comes from a climbing family.\n\nBoth her parents are past climbing champions (冠军). Her father stopped climbing some years ago, but her mother, Robyn, who won four world cup titles one after another for four years, is still climbing. She runs a club for young climbers in Colorado, USA and coaches Brooke and her teammates. Sometimes it’s difficult for mother and daughter to work together so closely, but they really respect and trust each other and Brooke says her mum is a great coach.\n\nBrooke says that her mother gives her a lot of good advice and is a very important part of her climbing life. Robyn can be strict, but she really loves climbing mountains, and she passes this passion on to her students. Robyn says “Brooke is very determined (坚决的) and is very good at encouraging herself.\n\nThis helps her when she’s facing the challenges of this difficult sport. She is also very hardworking.” Success in rock climbing is something you have to work at. To be a world-class sportswoman of any kind, you have to push yourself and train hard and that’s what Brooke does, every day, at the club and at home.\n\nBrooke says that climbing is always a part of her everyday life. They even have a climbing wall in their house! But climbing isn’t only hard work. It’s fun too. Brooke loves climbing and when she’s on a high rock, she feels happy. Strangely, she says that when she looks down, she isn’t scared. All she does is think about how cool it is to be so small compared to the rock.",
     "questions": [
       {
         "number": 78,
@@ -19701,7 +20949,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容回答下列问题。",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Brooke has just become the 12-ranked rock climbers in the world. One of her coaches explains that she’s so good because she has really strong fingers and the amazing flexibility (柔韧性) of a child. That helps her a lot and means she can do things older climbers have never thought of doing. Brooke comes from a climbing family.",
+      "Both her parents are past climbing champions (冠军). Her father stopped climbing some years ago, but her mother, Robyn, who won four world cup titles one after another for four years, is still climbing. She runs a club for young climbers in Colorado, USA and coaches Brooke and her teammates. Sometimes it’s difficult for mother and daughter to work together so closely, but they really respect and trust each other and Brooke says her mum is a great coach.",
+      "Brooke says that her mother gives her a lot of good advice and is a very important part of her climbing life. Robyn can be strict, but she really loves climbing mountains, and she passes this passion on to her students. Robyn says “Brooke is very determined (坚决的) and is very good at encouraging herself.",
+      "This helps her when she’s facing the challenges of this difficult sport. She is also very hardworking.” Success in rock climbing is something you have to work at. To be a world-class sportswoman of any kind, you have to push yourself and train hard and that’s what Brooke does, every day, at the club and at home.",
+      "Brooke says that climbing is always a part of her everyday life. They even have a climbing wall in their house! But climbing isn’t only hard work. It’s fun too. Brooke loves climbing and when she’s on a high rock, she feels happy. Strangely, she says that when she looks down, she isn’t scared. All she does is think about how cool it is to be so small compared to the rock."
+    ]
   },
   {
     "_id": "sh-em1-2025-徐汇-reading-b",
@@ -19713,7 +20973,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市徐汇区中考一模英语试题（原卷版）.docx",
-    "passage": "：（12分） From the moment you wake up in the morning until you go to sleep our lives are filled with noise. Whether it’s the radio at breakfast or chatting with friends at school, sounds surround us. Without quiet times—meaning no music or noise—our brains can ___45___ when they receive too much information at once. This can lead to increased anxiety and stress levels. A regular habit Many people have a habit of filling silence with noise. We might listen to our favorite music on the way to school or have the TV on while doing homework. However, by ___46___ these habits and introducing short periods of silence into our day, we can lower our stress levels. Silence is a superpower Silence offers lots of ___47___. Scientific studies show that silence can help produce brain cells and improve mental health. The ancient Chinese philosopher Lao Tzu said, “Silence is a source of great strength.” Learning to be comfortable with silence can feel like having a special power. It is highly valued in many cultures, helping to truly rest a busy mind. Welcome the break Embracing silence is important. Communication is a big part of being human, and we often want to fill quiet moments in ___48___ to avoid feeling awkward. However, learning to sit quietly can give us time to think about what we hear and process our thoughts more deeply. Silence helps your brain Just like our bodies, our brains need rest. Non-stop noise doesn’t let our brains relax fully. Quiet times give us the chance to think and daydream. ___49___ you find it hard to focus or be creative, getting rid of background noise can help you work better and give your brain space to solve problems. You don’t need to spend hours in silence. Setting aside just five minutes a day for complete quiet can make a difference. Finding a peaceful comer or simply ___50___ can be a good start. Are you ready to give it a try?",
+    "passage": "From the moment you wake up in the morning until you go to sleep our lives are filled with noise. Whether it’s the radio at breakfast or chatting with friends at school, sounds surround us. Without quiet times—meaning no music or noise—our brains can ___45___ when they receive too much information at once.\n\nThis can lead to increased anxiety and stress levels. A regular habit Many people have a habit of filling silence with noise. We might listen to our favorite music on the way to school or have the TV on while doing homework. However, by ___46___ these habits and introducing short periods of silence into our day, we can lower our stress levels.\n\nSilence is a superpower Silence offers lots of ___47___. Scientific studies show that silence can help produce brain cells and improve mental health. The ancient Chinese philosopher Lao Tzu said, “Silence is a source of great strength.” Learning to be comfortable with silence can feel like having a special power.\n\nIt is highly valued in many cultures, helping to truly rest a busy mind. Welcome the break Embracing silence is important. Communication is a big part of being human, and we often want to fill quiet moments in ___48___ to avoid feeling awkward. However, learning to sit quietly can give us time to think about what we hear and process our thoughts more deeply.\n\nSilence helps your brain Just like our bodies, our brains need rest. Non-stop noise doesn’t let our brains relax fully. Quiet times give us the chance to think and daydream. ___49___ you find it hard to focus or be creative, getting rid of background noise can help you work better and give your brain space to solve problems.\n\nYou don’t need to spend hours in silence. Setting aside just five minutes a day for complete quiet can make a difference. Finding a peaceful comer or simply ___50___ can be a good start. Are you ready to give it a try?",
     "questions": [
       {
         "number": 65,
@@ -19793,7 +21053,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "From the moment you wake up in the morning until you go to sleep our lives are filled with noise. Whether it’s the radio at breakfast or chatting with friends at school, sounds surround us. Without quiet times—meaning no music or noise—our brains can ___45___ when they receive too much information at once.",
+      "This can lead to increased anxiety and stress levels. A regular habit Many people have a habit of filling silence with noise. We might listen to our favorite music on the way to school or have the TV on while doing homework. However, by ___46___ these habits and introducing short periods of silence into our day, we can lower our stress levels.",
+      "Silence is a superpower Silence offers lots of ___47___. Scientific studies show that silence can help produce brain cells and improve mental health. The ancient Chinese philosopher Lao Tzu said, “Silence is a source of great strength.” Learning to be comfortable with silence can feel like having a special power.",
+      "It is highly valued in many cultures, helping to truly rest a busy mind. Welcome the break Embracing silence is important. Communication is a big part of being human, and we often want to fill quiet moments in ___48___ to avoid feeling awkward. However, learning to sit quietly can give us time to think about what we hear and process our thoughts more deeply.",
+      "Silence helps your brain Just like our bodies, our brains need rest. Non-stop noise doesn’t let our brains relax fully. Quiet times give us the chance to think and daydream. ___49___ you find it hard to focus or be creative, getting rid of background noise can help you work better and give your brain space to solve problems.",
+      "You don’t need to spend hours in silence. Setting aside just five minutes a day for complete quiet can make a difference. Finding a peaceful comer or simply ___50___ can be a good start. Are you ready to give it a try?"
+    ]
   },
   {
     "_id": "sh-em1-2025-徐汇-reading-d",
@@ -19805,7 +21078,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市徐汇区中考一模英语试题（原卷版）.docx",
-    "passage": "：（12分） Charlie attended regular school in Lincolnshire and was the only visually impaired (VI) student there. Growing up was tough for him, especially since he faced unfriendly comments from others. This experience taught Charlie the importance of good communication with both teachers and peers. He explains, “I can’t see much when reading. Paperwork needs to be much larger, often in size 72 font. It’s not impossible to see, but I need changes in everyday life.” To help with his education, Charlie used a laptop for schoolwork and had models and graphs to feel and understand during lessons. He also worked closely with teachers to ensure he got the needed help from them in class, like receiving PowerPoint presentations before lessons began. Despite the help he received, Charlie faced a lot of bullying, especially in secondary school. At the start of Year 10, things got so bad that he didn’t want to go to school. The school even held an assembly to explain his vision problem to other students. For example, his eyes don’t always look where he’s actually focusing, which sometimes led to misunderstandings with classmates. One particularly difficult situation happened in his science class. Some students thought he was staring at them, even though they were across the room and he couldn’t see them. Because of this, Charlie was required to switch classes but decided against it. He had already established good communication with his science teacher about his needs and thought, “Why should I be the one to move?” Charlie considered leaving school completely but chose to stay after weighing the advantages and disadvantages. A teacher advised him to pay no attention to the bullies saying that in the future, he would realize it was the best choice. Although it was hard at the time, Charlie now understands that things are getting easier and easier in the long run. Charlie’s advice to others facing similar challenges is ________",
+    "passage": "Charlie attended regular school in Lincolnshire and was the only visually impaired (VI) student there. Growing up was tough for him, especially since he faced unfriendly comments from others. This experience taught Charlie the importance of good communication with both teachers and peers. He explains, “I can’t see much when reading.\n\nPaperwork needs to be much larger, often in size 72 font. It’s not impossible to see, but I need changes in everyday life.” To help with his education, Charlie used a laptop for schoolwork and had models and graphs to feel and understand during lessons. He also worked closely with teachers to ensure he got the needed help from them in class, like receiving PowerPoint presentations before lessons began.\n\nDespite the help he received, Charlie faced a lot of bullying, especially in secondary school. At the start of Year 10, things got so bad that he didn’t want to go to school. The school even held an assembly to explain his vision problem to other students. For example, his eyes don’t always look where he’s actually focusing, which sometimes led to misunderstandings with classmates.\n\nOne particularly difficult situation happened in his science class. Some students thought he was staring at them, even though they were across the room and he couldn’t see them. Because of this, Charlie was required to switch classes but decided against it. He had already established good communication with his science teacher about his needs and thought, “Why should I be the one to move?\n\n” Charlie considered leaving school completely but chose to stay after weighing the advantages and disadvantages. A teacher advised him to pay no attention to the bullies saying that in the future, he would realize it was the best choice. Although it was hard at the time, Charlie now understands that things are getting easier and easier in the long run. Charlie’s advice to others facing similar challenges is ________",
     "questions": [
       {
         "number": 78,
@@ -19843,7 +21116,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Charlie attended regular school in Lincolnshire and was the only visually impaired (VI) student there. Growing up was tough for him, especially since he faced unfriendly comments from others. This experience taught Charlie the importance of good communication with both teachers and peers. He explains, “I can’t see much when reading.",
+      "Paperwork needs to be much larger, often in size 72 font. It’s not impossible to see, but I need changes in everyday life.” To help with his education, Charlie used a laptop for schoolwork and had models and graphs to feel and understand during lessons. He also worked closely with teachers to ensure he got the needed help from them in class, like receiving PowerPoint presentations before lessons began.",
+      "Despite the help he received, Charlie faced a lot of bullying, especially in secondary school. At the start of Year 10, things got so bad that he didn’t want to go to school. The school even held an assembly to explain his vision problem to other students. For example, his eyes don’t always look where he’s actually focusing, which sometimes led to misunderstandings with classmates.",
+      "One particularly difficult situation happened in his science class. Some students thought he was staring at them, even though they were across the room and he couldn’t see them. Because of this, Charlie was required to switch classes but decided against it. He had already established good communication with his science teacher about his needs and thought, “Why should I be the one to move?",
+      "” Charlie considered leaving school completely but chose to stay after weighing the advantages and disadvantages. A teacher advised him to pay no attention to the bullies saying that in the future, he would realize it was the best choice. Although it was hard at the time, Charlie now understands that things are getting easier and easier in the long run. Charlie’s advice to others facing similar challenges is ________"
+    ]
   },
   {
     "_id": "sh-em1-2025-普陀-reading-a",
@@ -20015,7 +21300,7 @@ module.exports = [
     "section": "C",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市普陀区中考一模英语试题（原卷版）.docx",
-    "passage": "（14分） 在短文的空格内填入适当的词，使其内容通顺，每空格限填一词，首字母已给。 They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body. They have two sets of wings. The front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length. Imagine if you could do that! Have you ever tried to catch a grasshopper? You won’t even have a chance. It’s because they have five eyes in total, which help them see in almost every direction. This means they can r____53____ miss noticing any danger coming. Music Makers If you hear a pleasant chirp (唧唧声) on a summer night, it could be a male grasshopper trying to attract a female one, or ask other males to stay away. It p____54____ the sound by rubbing the back leg against its forewing, just like playing the violin. Next time you hear the chirping sound in summer, remember it’s a grasshopper’s l____55____ song or a warning call. Friend or enemy? Some grasshoppers like the taste of wheat, corn and cotton—all things we use and farmers hate to l____56____. In fact, a large group of grasshoppers called locusts can quickly and easily eat up a farmer’s crops in just a few minutes. However, not all grasshoppers are monsters. A type of grasshoppers called Turnbull helps c____57____ the growth of weeds (野草) by eating them. The Two-Striped grasshoppers eat plants that are harmful to cows.",
+    "passage": "在短文的空格内填入适当的词，使其内容通顺，每空格限填一词，首字母已给。 They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body.\n\nThey have two sets of wings. The front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length.\n\nImagine if you could do that! Have you ever tried to catch a grasshopper? You won’t even have a chance. It’s because they have five eyes in total, which help them see in almost every direction. This means they can r____53____ miss noticing any danger coming. Music Makers If you hear a pleasant chirp (唧唧声) on a summer night, it could be a male grasshopper trying to attract a female one, or ask other males to stay away.\n\nIt p____54____ the sound by rubbing the back leg against its forewing, just like playing the violin. Next time you hear the chirping sound in summer, remember it’s a grasshopper’s l____55____ song or a warning call. Friend or enemy? Some grasshoppers like the taste of wheat, corn and cotton—all things we use and farmers hate to l____56____.\n\nIn fact, a large group of grasshoppers called locusts can quickly and easily eat up a farmer’s crops in just a few minutes. However, not all grasshoppers are monsters. A type of grasshoppers called Turnbull helps c____57____ the growth of weeds (野草) by eating them. The Two-Striped grasshoppers eat plants that are harmful to cows.",
     "questions": [
       {
         "number": 71,
@@ -20065,7 +21350,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "首字母填空",
     "difficultyLevel": 3,
-    "difficultyLabel": "综合运用"
+    "difficultyLabel": "综合运用",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "在短文的空格内填入适当的词，使其内容通顺，每空格限填一词，首字母已给。 They are summer-time singers. They’re found everywhere except in the North and South Poles. And even though they’re common, they’re also quite fascinating. Who are they? Grasshoppers! A____51____ Body Grasshoppers have an exoskeleton which means the skeleton is on the outside of their body.",
+      "They have two sets of wings. The front pair is hard and strong, like a shell. The back pair is soft and flexible, which allows the grasshopper to change directions quickly and smoothly during f____52____. The grasshopper also has three pairs of very strong legs. They use these to walk and to jump 20 times their own body length.",
+      "Imagine if you could do that! Have you ever tried to catch a grasshopper? You won’t even have a chance. It’s because they have five eyes in total, which help them see in almost every direction. This means they can r____53____ miss noticing any danger coming. Music Makers If you hear a pleasant chirp (唧唧声) on a summer night, it could be a male grasshopper trying to attract a female one, or ask other males to stay away.",
+      "It p____54____ the sound by rubbing the back leg against its forewing, just like playing the violin. Next time you hear the chirping sound in summer, remember it’s a grasshopper’s l____55____ song or a warning call. Friend or enemy? Some grasshoppers like the taste of wheat, corn and cotton—all things we use and farmers hate to l____56____.",
+      "In fact, a large group of grasshoppers called locusts can quickly and easily eat up a farmer’s crops in just a few minutes. However, not all grasshoppers are monsters. A type of grasshoppers called Turnbull helps c____57____ the growth of weeds (野草) by eating them. The Two-Striped grasshoppers eat plants that are harmful to cows."
+    ]
   },
   {
     "_id": "sh-em1-2025-普陀-reading-d",
@@ -20077,7 +21374,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市普陀区中考一模英语试题（原卷版）.docx",
-    "passage": "根据短文内容回答下列问题 Ordinary I know I’m not an ordinary ten-year-old kid though I do ordinary things. And I feel ordinary inside. But I know ordinary kids don’t make other ordinary kids run away screaming in playgrounds. I know ordinary kids don’t get stared at wherever they go. It’s all because of my face. But I’m kind of used to how I look by now. I know how to pretend I don’t see the faces people make. We’ve all got pretty good at that kind of thing: me Mom and Dad, Via. Actually, I take that back: Via’s not so good at it. For instance, one time in the playground some older kids made some noises about me. I didn’t hear them myself, but Via heard and she just started yelling at them. Via doesn’t see me as ordinary. And Mom and Dad don’t see me as ordinary, either. They see me as extraordinary (不凡的). I think the only person in the world who realizes how ordinary I am is me. My name is August, by the way. I won’t describe what I look like. Whatever you’re thinking, it’s probably worse. Next week I will start fifth grade. Since I’ve never been to a real school before, I have a lot on my mind. Does that mean I can run freely in the football field with other kids? I can nearly smell the freedom in the air! But… will the teachers and kids be nice to me? Will I have lots of friends?… I feel both ________ and ________. People think I haven’t gone to school because of the way I look, but it’s not that. Do you know how many surgeries (手术) I’ve had? Twenty-seven since I was born. The bigger ones happened before I was even four years old, so I don’t remember those. But I’ve had two or three surgeries every year since then. I’m also small for my age, and I have some other health problems that even doctors couldn’t explain, so I used to get sick a lot. That’s why my parents decided it was better if I didn’t go to school. I’m much stronger now, though. —Adapted (改编) from Wonder by R. J. Palacio",
+    "passage": "Ordinary I know I’m not an ordinary ten-year-old kid though I do ordinary things. And I feel ordinary inside. But I know ordinary kids don’t make other ordinary kids run away screaming in playgrounds. I know ordinary kids don’t get stared at wherever they go. It’s all because of my face. But I’m kind of used to how I look by now.\n\nI know how to pretend I don’t see the faces people make. We’ve all got pretty good at that kind of thing: me Mom and Dad, Via. Actually, I take that back: Via’s not so good at it. For instance, one time in the playground some older kids made some noises about me. I didn’t hear them myself, but Via heard and she just started yelling at them.\n\nVia doesn’t see me as ordinary. And Mom and Dad don’t see me as ordinary, either. They see me as extraordinary (不凡的). I think the only person in the world who realizes how ordinary I am is me. My name is August, by the way. I won’t describe what I look like. Whatever you’re thinking, it’s probably worse.\n\nNext week I will start fifth grade. Since I’ve never been to a real school before, I have a lot on my mind. Does that mean I can run freely in the football field with other kids? I can nearly smell the freedom in the air! But… will the teachers and kids be nice to me? Will I have lots of friends?… I feel both ________ and ________.\n\nPeople think I haven’t gone to school because of the way I look, but it’s not that. Do you know how many surgeries (手术) I’ve had? Twenty-seven since I was born. The bigger ones happened before I was even four years old, so I don’t remember those. But I’ve had two or three surgeries every year since then.\n\nI’m also small for my age, and I have some other health problems that even doctors couldn’t explain, so I used to get sick a lot. That’s why my parents decided it was better if I didn’t go to school. I’m much stronger now, though. —Adapted (改编) from Wonder by R. J. Palacio",
     "questions": [
       {
         "number": 78,
@@ -20121,7 +21418,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据短文内容回答下列问题",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Ordinary I know I’m not an ordinary ten-year-old kid though I do ordinary things. And I feel ordinary inside. But I know ordinary kids don’t make other ordinary kids run away screaming in playgrounds. I know ordinary kids don’t get stared at wherever they go. It’s all because of my face. But I’m kind of used to how I look by now.",
+      "I know how to pretend I don’t see the faces people make. We’ve all got pretty good at that kind of thing: me Mom and Dad, Via. Actually, I take that back: Via’s not so good at it. For instance, one time in the playground some older kids made some noises about me. I didn’t hear them myself, but Via heard and she just started yelling at them.",
+      "Via doesn’t see me as ordinary. And Mom and Dad don’t see me as ordinary, either. They see me as extraordinary (不凡的). I think the only person in the world who realizes how ordinary I am is me. My name is August, by the way. I won’t describe what I look like. Whatever you’re thinking, it’s probably worse.",
+      "Next week I will start fifth grade. Since I’ve never been to a real school before, I have a lot on my mind. Does that mean I can run freely in the football field with other kids? I can nearly smell the freedom in the air! But… will the teachers and kids be nice to me? Will I have lots of friends?… I feel both ________ and ________.",
+      "People think I haven’t gone to school because of the way I look, but it’s not that. Do you know how many surgeries (手术) I’ve had? Twenty-seven since I was born. The bigger ones happened before I was even four years old, so I don’t remember those. But I’ve had two or three surgeries every year since then.",
+      "I’m also small for my age, and I have some other health problems that even doctors couldn’t explain, so I used to get sick a lot. That’s why my parents decided it was better if I didn’t go to school. I’m much stronger now, though. —Adapted (改编) from Wonder by R. J. Palacio"
+    ]
   },
   {
     "_id": "sh-em1-2025-杨浦-reading-a",
@@ -21237,7 +22547,7 @@ module.exports = [
     "section": "D",
     "sourceType": "shanghai-mock",
     "sourceFile": "2025年上海市长宁区中考一模英语试题（原卷版）.docx",
-    "passage": "（12 分） Did you know that sign language also has “dialects (方言)”? Sign language is the main way deaf people communicate. Since they can’t hear, talking to hearing people can be hard. Luckily, sign language interpreters (翻译) are there to help. Hao Shuxin, 24, sees sign language as her mother tongue, as her parents are deaf. “I picked up sign language before I could even talk,” she recalled. In 2018, she became a sign language interpreter at a law firm in Chongqing. Her work takes her to places like courts, where she interprets for deaf people in legal cases. Since sign language has fewer words, Hao often meets difficult legal terms (法律条款) that have no direct match. In such situations, she carefully breaks down the meaning for deaf people. There are also grammatical differences between Chinese and sign language. “For example, the words ‘put out a fire’ are signed as ‘a fire put out’ in sign language, as deaf people describe what they see first,’’ Hao explained. Hao feels ________ at work because accuracy is important in legal interpretations. Her anxiety also comes from the fact that sign language has “dialects”. The same word can be expressed with different hand gestures depending on where a deaf person is from. “For example, people in Inner Mongolia and Chongqing use different gestures for the word ‘true’,” Hao explained. Having travelled to over 30 cities in China, she has learned about the unique (独特的) ways deaf people across the country use sign language. In her spare time, Hao reads many law books and talks with lawyers and her deaf coworkers to improve her professional skills. “My parents are deaf, so I understand the difficulties faced by the deaf community. I want to do everything I can to help them,” Hao said. 58 Is Hao Shuxin a deaf person? ________________________________",
+    "passage": "Did you know that sign language also has “dialects (方言)”? Sign language is the main way deaf people communicate. Since they can’t hear, talking to hearing people can be hard. Luckily, sign language interpreters (翻译) are there to help. Hao Shuxin, 24, sees sign language as her mother tongue, as her parents are deaf.\n\n“I picked up sign language before I could even talk,” she recalled. In 2018, she became a sign language interpreter at a law firm in Chongqing. Her work takes her to places like courts, where she interprets for deaf people in legal cases. Since sign language has fewer words, Hao often meets difficult legal terms (法律条款) that have no direct match.\n\nIn such situations, she carefully breaks down the meaning for deaf people. There are also grammatical differences between Chinese and sign language. “For example, the words ‘put out a fire’ are signed as ‘a fire put out’ in sign language, as deaf people describe what they see first,’’ Hao explained.\n\nHao feels ________ at work because accuracy is important in legal interpretations. Her anxiety also comes from the fact that sign language has “dialects”. The same word can be expressed with different hand gestures depending on where a deaf person is from. “For example, people in Inner Mongolia and Chongqing use different gestures for the word ‘true’,” Hao explained.\n\nHaving travelled to over 30 cities in China, she has learned about the unique (独特的) ways deaf people across the country use sign language. In her spare time, Hao reads many law books and talks with lawyers and her deaf coworkers to improve her professional skills. “My parents are deaf, so I understand the difficulties faced by the deaf community. I want to do everything I can to help them,” Hao said. 58 Is Hao Shuxin a deaf person? ________________________________",
     "questions": [
       {
         "number": 78,
@@ -21275,7 +22585,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
-    "difficultyLabel": "表达输出"
+    "difficultyLabel": "表达输出",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Did you know that sign language also has “dialects (方言)”? Sign language is the main way deaf people communicate. Since they can’t hear, talking to hearing people can be hard. Luckily, sign language interpreters (翻译) are there to help. Hao Shuxin, 24, sees sign language as her mother tongue, as her parents are deaf.",
+      "“I picked up sign language before I could even talk,” she recalled. In 2018, she became a sign language interpreter at a law firm in Chongqing. Her work takes her to places like courts, where she interprets for deaf people in legal cases. Since sign language has fewer words, Hao often meets difficult legal terms (法律条款) that have no direct match.",
+      "In such situations, she carefully breaks down the meaning for deaf people. There are also grammatical differences between Chinese and sign language. “For example, the words ‘put out a fire’ are signed as ‘a fire put out’ in sign language, as deaf people describe what they see first,’’ Hao explained.",
+      "Hao feels ________ at work because accuracy is important in legal interpretations. Her anxiety also comes from the fact that sign language has “dialects”. The same word can be expressed with different hand gestures depending on where a deaf person is from. “For example, people in Inner Mongolia and Chongqing use different gestures for the word ‘true’,” Hao explained.",
+      "Having travelled to over 30 cities in China, she has learned about the unique (独特的) ways deaf people across the country use sign language. In her spare time, Hao reads many law books and talks with lawyers and her deaf coworkers to improve her professional skills. “My parents are deaf, so I understand the difficulties faced by the deaf community. I want to do everything I can to help them,” Hao said. 58 Is Hao Shuxin a deaf person? ________________________________"
+    ]
   },
   {
     "_id": "sh-em1-2025-闵行-reading-b",
@@ -22077,7 +23399,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "2026上海嘉定初三一模英语试卷（原卷版）.docx",
-    "passage": "(共12分) JUST ASK How many movies have you seen about space? It looks fun, right? But is it? A lot of readers ask questions about the International Space Station (ISS 国际空间站). Today, we’ve answered four of the best ones. Editor: Lily Bailey Q1: What do astronauts do on the International Space Station every day? / Answer: They do a lot! They go on space walks, repair things, do experiments and communicate with Earth. But too much work isn’t good for anyone and we all need a little fun! Astronauts play games, watch movies and listen to music on it. If they get stressed, they relax by enjoying the views of our beautiful planet from space. / Q2: How much exercise do astronauts do? / Answer: Well, quite a lot. Take the astronaut Koichi Wakata for example. He lived on the ISS for188 days and worked out for at least two hours every day. Some astronauts go jogging! Alan Shepard played moon golf in space. British astronaut Tim Peake even ran a marathon in space in2016 and set a Guinness World Record. / Q3: Does the body change in space? / Answer: Yes, it does. Everything in space floats. Imagine sneezing (打喷嚏) in space! This means it’s easy to lift things. Astronauts train a lot on Earth, but their bodies get weak if they don’t do enough exercise. And this can happen in just a few weeks! These are only a few examples of the problems astronauts can have. Their muscles and hearts lose strength and their bones get weaker. Sometimes, when they get back to Earth, they’re not strong enough to walk! The answer is exercise and not just a little exercise but a lot! / Q4: When and how do astronauts sleep? / Answer: Good question. We all need to get enough sleep, but in space, with 16 sunrises and 16 sunsets every 24 hours, that’s not easy. Too many changes from day to night make it difficult to know when to sleep. So astronauts have very strict routines and wear special blindfolds to keep from light.",
+    "passage": "JUST ASK How many movies have you seen about space? It looks fun, right? But is it? A lot of readers ask questions about the International Space Station (ISS 国际空间站). Today, we’ve answered four of the best ones. Editor: Lily Bailey Q1: What do astronauts do on the International Space Station every day?\n\n/ Answer: They do a lot! They go on space walks, repair things, do experiments and communicate with Earth. But too much work isn’t good for anyone and we all need a little fun! Astronauts play games, watch movies and listen to music on it. If they get stressed, they relax by enjoying the views of our beautiful planet from space.\n\n/ Q2: How much exercise do astronauts do? / Answer: Well, quite a lot. Take the astronaut Koichi Wakata for example. He lived on the ISS for188 days and worked out for at least two hours every day. Some astronauts go jogging! Alan Shepard played moon golf in space. British astronaut Tim Peake even ran a marathon in space in2016 and set a Guinness World Record.\n\n/ Q3: Does the body change in space? / Answer: Yes, it does. Everything in space floats. Imagine sneezing (打喷嚏) in space! This means it’s easy to lift things. Astronauts train a lot on Earth, but their bodies get weak if they don’t do enough exercise. And this can happen in just a few weeks! These are only a few examples of the problems astronauts can have.\n\nTheir muscles and hearts lose strength and their bones get weaker. Sometimes, when they get back to Earth, they’re not strong enough to walk! The answer is exercise and not just a little exercise but a lot! / Q4: When and how do astronauts sleep? / Answer: Good question. We all need to get enough sleep, but in space, with 16 sunrises and 16 sunsets every 24 hours, that’s not easy.\n\nToo many changes from day to night make it difficult to know when to sleep. So astronauts have very strict routines and wear special blindfolds to keep from light.",
     "questions": [
       {
         "number": 59,
@@ -22145,7 +23467,20 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "JUST ASK How many movies have you seen about space? It looks fun, right? But is it? A lot of readers ask questions about the International Space Station (ISS 国际空间站). Today, we’ve answered four of the best ones. Editor: Lily Bailey Q1: What do astronauts do on the International Space Station every day?",
+      "/ Answer: They do a lot! They go on space walks, repair things, do experiments and communicate with Earth. But too much work isn’t good for anyone and we all need a little fun! Astronauts play games, watch movies and listen to music on it. If they get stressed, they relax by enjoying the views of our beautiful planet from space.",
+      "/ Q2: How much exercise do astronauts do? / Answer: Well, quite a lot. Take the astronaut Koichi Wakata for example. He lived on the ISS for188 days and worked out for at least two hours every day. Some astronauts go jogging! Alan Shepard played moon golf in space. British astronaut Tim Peake even ran a marathon in space in2016 and set a Guinness World Record.",
+      "/ Q3: Does the body change in space? / Answer: Yes, it does. Everything in space floats. Imagine sneezing (打喷嚏) in space! This means it’s easy to lift things. Astronauts train a lot on Earth, but their bodies get weak if they don’t do enough exercise. And this can happen in just a few weeks! These are only a few examples of the problems astronauts can have.",
+      "Their muscles and hearts lose strength and their bones get weaker. Sometimes, when they get back to Earth, they’re not strong enough to walk! The answer is exercise and not just a little exercise but a lot! / Q4: When and how do astronauts sleep? / Answer: Good question. We all need to get enough sleep, but in space, with 16 sunrises and 16 sunsets every 24 hours, that’s not easy.",
+      "Too many changes from day to night make it difficult to know when to sleep. So astronauts have very strict routines and wear special blindfolds to keep from light."
+    ]
   },
   {
     "_id": "sh-em1-2026-嘉定-reading-b",
@@ -22157,7 +23492,7 @@ module.exports = [
     "section": "B",
     "sourceType": "shanghai-mock",
     "sourceFile": "2026上海嘉定初三一模英语试卷（原卷版）.docx",
-    "passage": "(共12分) Brooke Raboutou is one of the best rock climbers in the world. By the age of 12, she had already held seven world records. One of her teachers explains that she’s so good because she has really strong fingers and the ___61___ body of a child, which allows her to bend her body easily and smoothly move between rocks. That helps her a lot and means she can do things ___62___ climbers have never dreamed of doing. Brooke comes from a climbing family. Both her parents are past climbing champions. Her father stopped climbing some years ago, but her mother, Robyn, who won four world cup titles four years in a row, is still climbing. She ___63___ a club for young climbers in Colorado, USA ten years ago and coaches Brooke and her teammates. ___64___ it’s sometimes difficult for mother and daughter to work so closely, they really respect and trust each other. Brooke says that her mother gives her good advice and is a very important part of her climbing life. Robyn can be strict, but she also shows the ___65___ of a professional climber. She passes the spirit of courage on to Brooke. Robyn says Brooke is very determined and good at encouraging herself. This helps her when she’s facing the challenges of this difficult sport. To be a world-class athlete of any kind, you have to push yourself and train hard and that’s what Brooke does, every day, at the club and at home. But climbing isn’t only hard work. It’s fun too. Brooke loves climbing and when she’s on a high rock, she feels happy. ___66___, for Brooke, climbing is a perfect mix of challenge and joy. She says that when she looks down, she isn’t scared. All she does is to think how cool it is to be so small compared to the rock.",
+    "passage": "Brooke Raboutou is one of the best rock climbers in the world. By the age of 12, she had already held seven world records. One of her teachers explains that she’s so good because she has really strong fingers and the ___61___ body of a child, which allows her to bend her body easily and smoothly move between rocks.\n\nThat helps her a lot and means she can do things ___62___ climbers have never dreamed of doing. Brooke comes from a climbing family. Both her parents are past climbing champions. Her father stopped climbing some years ago, but her mother, Robyn, who won four world cup titles four years in a row, is still climbing.\n\nShe ___63___ a club for young climbers in Colorado, USA ten years ago and coaches Brooke and her teammates. ___64___ it’s sometimes difficult for mother and daughter to work so closely, they really respect and trust each other. Brooke says that her mother gives her good advice and is a very important part of her climbing life.\n\nRobyn can be strict, but she also shows the ___65___ of a professional climber. She passes the spirit of courage on to Brooke. Robyn says Brooke is very determined and good at encouraging herself. This helps her when she’s facing the challenges of this difficult sport. To be a world-class athlete of any kind, you have to push yourself and train hard and that’s what Brooke does, every day, at the club and at home.\n\nBut climbing isn’t only hard work. It’s fun too. Brooke loves climbing and when she’s on a high rock, she feels happy. ___66___, for Brooke, climbing is a perfect mix of challenge and joy. She says that when she looks down, she isn’t scared. All she does is to think how cool it is to be so small compared to the rock.",
     "questions": [
       {
         "number": 65,
@@ -22237,7 +23572,19 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "完形填空",
     "difficultyLevel": 2,
-    "difficultyLabel": "语境词汇"
+    "difficultyLabel": "语境词汇",
+    "dataFormat": "reading-structured-v1",
+    "directions": "",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "Brooke Raboutou is one of the best rock climbers in the world. By the age of 12, she had already held seven world records. One of her teachers explains that she’s so good because she has really strong fingers and the ___61___ body of a child, which allows her to bend her body easily and smoothly move between rocks.",
+      "That helps her a lot and means she can do things ___62___ climbers have never dreamed of doing. Brooke comes from a climbing family. Both her parents are past climbing champions. Her father stopped climbing some years ago, but her mother, Robyn, who won four world cup titles four years in a row, is still climbing.",
+      "She ___63___ a club for young climbers in Colorado, USA ten years ago and coaches Brooke and her teammates. ___64___ it’s sometimes difficult for mother and daughter to work so closely, they really respect and trust each other. Brooke says that her mother gives her good advice and is a very important part of her climbing life.",
+      "Robyn can be strict, but she also shows the ___65___ of a professional climber. She passes the spirit of courage on to Brooke. Robyn says Brooke is very determined and good at encouraging herself. This helps her when she’s facing the challenges of this difficult sport. To be a world-class athlete of any kind, you have to push yourself and train hard and that’s what Brooke does, every day, at the club and at home.",
+      "But climbing isn’t only hard work. It’s fun too. Brooke loves climbing and when she’s on a high rock, she feels happy. ___66___, for Brooke, climbing is a perfect mix of challenge and joy. She says that when she looks down, she isn’t scared. All she does is to think how cool it is to be so small compared to the rock."
+    ]
   },
   {
     "_id": "sh-em1-2026-奉贤-reading-b",
@@ -23465,7 +24812,7 @@ module.exports = [
     "section": "A",
     "sourceType": "shanghai-mock",
     "sourceFile": "2026上海金山初三一模英语试题（原卷版）.docx",
-    "passage": "(根据以下内容，选择最恰当的答案。) (12分) Chitu (赤兔) is also called “Red Hare,” because it had a red coat and ran very fast like a hare. At first, Chitu’s owner was Lü Bu, a warlord of the Three Kingdoms period. After Lü Bu’s defeat, it was passed to a heroic general called Guan Yu. Legend says Chitu could run “a thousand li” (about 400 km) in one day! What super speed! / Dilu (的卢) was special with a white spot on its forehead. In legends, it saved its owner, Liu Bei, by running fast and jumping across a wide river during an escape. Dilu’s story later became an allusion and was widely used by writers and poets. / Wuzhui (乌骓) was a strong and brave horse of Xiang Yu, the “Hegemon-King of Western Chu.” Its body was pure black and smooth like a bolt of silk, while its four hooves were as white as snow. After his owner died at the Wu River, this loyal (忠诚的) horse jumped into the same river, following its owner even in death.",
+    "passage": "。) (12分) Chitu (赤兔) is also called “Red Hare,” because it had a red coat and ran very fast like a hare. At first, Chitu’s owner was Lü Bu, a warlord of the Three Kingdoms period. After Lü Bu’s defeat, it was passed to a heroic general called Guan Yu. Legend says Chitu could run “a thousand li” (about 400 km) in one day!\n\nWhat super speed! / Dilu (的卢) was special with a white spot on its forehead. In legends, it saved its owner, Liu Bei, by running fast and jumping across a wide river during an escape. Dilu’s story later became an allusion and was widely used by writers and poets. / Wuzhui (乌骓) was a strong and brave horse of Xiang Yu, the “Hegemon-King of Western Chu.\n\n” Its body was pure black and smooth like a bolt of silk, while its four hooves were as white as snow. After his owner died at the Wu River, this loyal (忠诚的) horse jumped into the same river, following its owner even in death.",
     "questions": [
       {
         "number": 59,
@@ -23533,7 +24880,17 @@ module.exports = [
     "vocabulary": [],
     "sectionLabel": "阅读选择",
     "difficultyLevel": 1,
-    "difficultyLabel": "基础理解"
+    "difficultyLabel": "基础理解",
+    "dataFormat": "reading-structured-v1",
+    "directions": "根据以下内容，选择最恰当的答案",
+    "sectionHeading": "",
+    "articleTitle": "",
+    "articleSubtitle": "",
+    "passageParagraphs": [
+      "。) (12分) Chitu (赤兔) is also called “Red Hare,” because it had a red coat and ran very fast like a hare. At first, Chitu’s owner was Lü Bu, a warlord of the Three Kingdoms period. After Lü Bu’s defeat, it was passed to a heroic general called Guan Yu. Legend says Chitu could run “a thousand li” (about 400 km) in one day!",
+      "What super speed! / Dilu (的卢) was special with a white spot on its forehead. In legends, it saved its owner, Liu Bei, by running fast and jumping across a wide river during an escape. Dilu’s story later became an allusion and was widely used by writers and poets. / Wuzhui (乌骓) was a strong and brave horse of Xiang Yu, the “Hegemon-King of Western Chu.",
+      "” Its body was pure black and smooth like a bolt of silk, while its four hooves were as white as snow. After his owner died at the Wu River, this loyal (忠诚的) horse jumped into the same river, following its owner even in death."
+    ]
   },
   {
     "_id": "sh-em1-2026-金山-reading-b",

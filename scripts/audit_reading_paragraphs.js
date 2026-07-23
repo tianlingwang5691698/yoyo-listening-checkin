@@ -31,17 +31,47 @@ function assertCoverage(item, ranges) {
   });
 }
 
+const POLLUTION_PATTERNS = {
+  directions: /^\s*Directions\b/i,
+  sectionHeading: /^\s*(?:(?:[IVX]+|[Ⅰ-Ⅹ])\.?\s*)?(?:Reading Comprehension|Grammar and Vocabulary|Section\s+[A-D])\b/i,
+  questionDirections: /^\s*(?:answer\b|根据(?:短文|文章|对话|以下)内容|[A-D][.、)]\s*(?:Choose|Read|Answer)\b)/i,
+  scorePrefix: /^\s*(?:\d+\s*[.．、]\s*)?[（(][^）)]*分[^）)]*[）)]/,
+  pageWatermark: /(?:\bsmart\s*)?第\s*\d+\s*页\s*(?:[（(]?\s*共\s*\d+\s*页\s*[）)]?)?/i
+};
+
 const report = { passed: true, groups: {}, ielts: { total: 0, naturalParagraphs: 0, originalLetterLabels: 0, questionDeclaredLabels: 0, questionDeclaredRestored: 0, flattenedRestored: 0, byBook: {} } };
 
 GROUPS.forEach((group) => {
   const items = readJson(group.file);
+  const pollution = Object.fromEntries(Object.keys(POLLUTION_PATTERNS).map((key) => [key, []]));
+  let structured = 0;
   const counts = items.map((item) => {
+    Object.entries(POLLUTION_PATTERNS).forEach(([key, regex]) => {
+      if (regex.test(String(item.passage || ''))) pollution[key].push(item._id);
+    });
+    if (item.dataFormat === 'reading-structured-v1') {
+      structured += 1;
+      if (!Array.isArray(item.passageParagraphs) || !item.passageParagraphs.length) {
+        throw new Error(`structured-paragraphs:${item._id}`);
+      }
+      if (item.passageParagraphs.join('\n\n') !== item.passage) {
+        throw new Error(`structured-passage-mismatch:${item._id}`);
+      }
+      ['directions', 'sectionHeading', 'articleTitle', 'articleSubtitle'].forEach((key) => {
+        if (typeof item[key] !== 'string') throw new Error(`structured-field:${item._id}:${key}`);
+      });
+    }
     const ranges = buildReadingParagraphRanges(item._id, item.passage, item.questions);
     assertCoverage(item, ranges);
     return ranges.length;
   });
+  Object.entries(pollution).forEach(([key, ids]) => {
+    if (ids.length) throw new Error(`reading-pollution:${group.key}:${key}:${ids.join(',')}`);
+  });
   report.groups[group.key] = {
     passages: items.length,
+    structured,
+    pollution: Object.fromEntries(Object.keys(pollution).map((key) => [key, 0])),
     minParagraphs: Math.min(...counts),
     maxParagraphs: Math.max(...counts),
     averageParagraphs: Number((counts.reduce((sum, count) => sum + count, 0) / counts.length).toFixed(2))

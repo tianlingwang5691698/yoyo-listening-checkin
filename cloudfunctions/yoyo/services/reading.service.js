@@ -98,6 +98,11 @@ function normalizePassage(item) {
     sourceType: item.sourceType || '',
     contentRevision: Number(item.contentRevision || 0),
     dataFormat: item.dataFormat || '',
+    directions: item.directions || '',
+    sectionHeading: item.sectionHeading || '',
+    articleTitle: item.articleTitle || '',
+    articleSubtitle: item.articleSubtitle || '',
+    passageParagraphs: Array.isArray(item.passageParagraphs) ? item.passageParagraphs.filter((paragraph) => typeof paragraph === 'string' && paragraph.trim()) : [],
     passage: item.passage || '',
     images: (Array.isArray(item.images) ? item.images : []).map(normalizeImage).filter((image) => image.src),
     translation: item.translation || item.fullTranslation || '',
@@ -977,7 +982,7 @@ function validateModelStudyPack(studyPack, passage) {
   }, {});
   questions.forEach((question) => {
     const analysis = analysisByNumber[String(question.number)];
-    if (!analysis || !analysis.answerSentence || !analysis.analysis) {
+    if (!isCompleteQuestionAnalysis(analysis, question)) {
       throw new Error(`reading-study-pack-missing-question-${question.number}`);
     }
   });
@@ -1003,7 +1008,7 @@ function validateQuestionStudyPack(studyPack, passage) {
   }, {});
   questions.forEach((question) => {
     const analysis = analysisByNumber[String(question.number)];
-    if (!analysis || !analysis.answerSentence || !analysis.analysis) {
+    if (!isCompleteQuestionAnalysis(analysis, question)) {
       throw new Error(`reading-study-pack-missing-question-${question.number}`);
     }
   });
@@ -1018,8 +1023,16 @@ function isValidQuestionStudyPack(studyPack, passage) {
   }
 }
 
-function isCompleteQuestionAnalysis(item) {
-  return !!(item && normalizeText(item.answerSentence) && normalizeText(item.analysis));
+function questionRequiresAnswerSentence(question) {
+  if (!question) return false;
+  const isDirectBlank = question.questionType === 'blank'
+    && (/^Blank\s+\d+$/i.test(normalizeText(question.prompt)) || (question.acceptedAnswers || []).length);
+  return !isDirectBlank;
+}
+
+function isCompleteQuestionAnalysis(item, question) {
+  if (!item || !normalizeText(item.analysis)) return false;
+  return !questionRequiresAnswerSentence(question) || !!normalizeText(item.answerSentence);
 }
 
 function modelField(item, names) {
@@ -1096,7 +1109,7 @@ function mergeQuestionAnalyses(passage, current, repairs) {
   [...(current || []), ...(repairs || [])].forEach((item) => {
     const numberKey = String(item && item.number);
     const question = questionByNumber[numberKey];
-    if (!question || !isCompleteQuestionAnalysis(item)) return;
+    if (!question || !isCompleteQuestionAnalysis(item, question)) return;
     analysisByNumber[numberKey] = Object.assign({}, item, {
       number: question.number,
       answer: question.answer || item.answer || ''
@@ -1111,7 +1124,7 @@ function getMissingAnalysisQuestions(studyPack, passage) {
     return map;
   }, {});
   return (passage.questions || []).filter((question) => (
-    question.answer && !isCompleteQuestionAnalysis(analysisByNumber[String(question.number)])
+    question.answer && !isCompleteQuestionAnalysis(analysisByNumber[String(question.number)], question)
   ));
 }
 
@@ -1120,7 +1133,8 @@ function buildQuestionAnalysisPrompt(passage, questions, repair) {
     '你是英语阅读老师，覆盖中高考和 IELTS Academic。请只返回 JSON，不要 Markdown。',
     repair ? '这是漏题补全请求，只返回下面列出的真实题号，不要返回其他题目。' : '只做逐题解析：必须按真实题号返回每题答案、原文直接答案句、答案句中文翻译、中文解析。',
     '题目自带 answer 时按标准答案讲，不得修改标准答案；answer 为空时，请根据文章和题干生成最可能答案。',
-    'answerSentence 必须是原文中的直接依据，不要改写，不要只写泛泛依据。',
+    '选择题的 answerSentence 必须是原文中的直接依据，不要改写。',
+    '填空题只有在原文存在可直接引用的完整依据句时才返回 answerSentence；无法可靠定位时返回空字符串，禁止编造或拼接答案句，analysis 仍需讲清答案依据。',
     '若答案为 NOT GIVEN，answerSentence 返回与题干最相关的原文句子，并在 analysis 明确说明原文没有给出判断所需信息。',
     'analysis 用中文说明为什么选该答案，并点出排除干扰项的关键。',
     'JSON 格式：{"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',

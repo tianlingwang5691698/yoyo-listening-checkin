@@ -35,6 +35,9 @@
 ## 阅读
 
 - A/B/C/D 分篇入库，不合并成一篇。
+- 阅读污染清洗统一使用 `dataFormat=reading-structured-v1`，字段固定为 `directions / sectionHeading / articleTitle / articleSubtitle / passageParagraphs[] / passage`；`passage` 只能由真实正文段落以双换行连接。
+- Directions、中文题型说明、Section 标题、分值、页码、水印、主标题和副标题不得进入 `passageParagraphs`，也不得占用正文第 1 段段标。
+- 标题或副标题只有原卷存在明确版面证据时才填写；无法可靠判断时保持空字符串，不从正文首句猜标题。
 - passage 不完整、题数不足、选项缺失、答案不稳的不入正式库。
 - 不把中文解析、考点说明、`故选` 写进题干、选项或正文。
 - 逐题解析、答案句、翻译由学习包生成，不在清洗时硬写。
@@ -140,6 +143,7 @@
 - rejected/clean-report 必须说明剔除原因。
 - 上传前按 `docs/CLOUDBASE_SETUP.md` 的增量上传铁律合并。
 - 全量门禁至少检查：重复 `_id=0`、结构字段缺失 `=0`、正文污染 `=0`、题干选项重复 `=0`、标题进入正文 `=0`、空段落/空锚点 `=0`。
+- 结构化阅读还必须检查 `passageParagraphs.join("\n\n") === passage`，并确保 Directions、Section、分值、页码和题型说明在正文中的命中数均为 0。
 - 旧云端兼容必须用正式云端旧详情逐条回归，验证恢复后的标题数、段落数、正文归一化内容和污染数与本地正式数据一致。
 - 小程序运行时结构恢复元数据必须生成到未被 `project.config.json` 排除的 JS 模块；禁止从运行时代码直接 `require` 被排除的 `data/` 文件或 JSON 文件。
 

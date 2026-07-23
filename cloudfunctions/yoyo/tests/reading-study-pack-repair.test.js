@@ -103,3 +103,30 @@ test('parses fenced top-level JSON arrays', () => {
   const parsed = readingService._test.parseJsonText('结果如下：```json\n[{"number":1}]\n```');
   assert.deepEqual(parsed, [{ number: 1 }]);
 });
+
+test('allows blank questions to omit an unreliable answer sentence', async () => {
+  const passage = {
+    title: 'Grammar cloze',
+    passage: 'The student _____21_____ (read) every day.',
+    questions: [
+      { number: 21, prompt: 'Blank 21', answer: 'reads', questionType: 'blank' }
+    ]
+  };
+  const result = await readingService._test.buildQuestionStudyPackWithRequester(
+    passage,
+    'gpt-5.6-luna',
+    async () => ({
+      questionAnalyses: [{
+        number: 21,
+        answer: 'reads',
+        answerSentence: '',
+        answerSentenceTranslation: '',
+        analysis: '主语为第三人称单数，描述日常习惯，使用一般现在时 reads。'
+      }]
+    })
+  );
+
+  assert.equal(result.questionAnalyses.length, 1);
+  assert.equal(result.questionAnalyses[0].answerSentence, '');
+  assert.match(result.questionAnalyses[0].analysis, /一般现在时/);
+});

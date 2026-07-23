@@ -31,6 +31,12 @@
           <text class="reading-mark-clear" wx:if="{{readingMarkCount}}" bindtap="clearReadingMarks">{{clearReadingMarksText}}</text>
         </view>
         <view class="paper-body library-article-body">
+          <view class="reading-source-structure" wx:if="{{passage.hasStructuredHeader}}">
+            <view class="reading-section-heading" wx:if="{{passage.sectionHeading}}">{{passage.sectionHeading}}</view>
+            <view class="reading-directions" wx:if="{{passage.directions}}">{{passage.directions}}</view>
+            <view class="reading-article-title" wx:if="{{passage.articleTitle}}">{{passage.articleTitle}}</view>
+            <view class="reading-article-subtitle" wx:if="{{passage.articleSubtitle}}">{{passage.articleSubtitle}}</view>
+          </view>
           <block wx:if="{{passage.isClozePassage}}">
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
               <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
@@ -365,6 +371,12 @@
           <text class="reading-mark-clear" wx:if="{{readingMarkCount}}" bindtap="clearReadingMarks">{{clearReadingMarksText}}</text>
         </view>
         <view class="paper-body">
+          <view class="reading-source-structure" wx:if="{{passage.hasStructuredHeader}}">
+            <view class="reading-section-heading" wx:if="{{passage.sectionHeading}}">{{passage.sectionHeading}}</view>
+            <view class="reading-directions" wx:if="{{passage.directions}}">{{passage.directions}}</view>
+            <view class="reading-article-title" wx:if="{{passage.articleTitle}}">{{passage.articleTitle}}</view>
+            <view class="reading-article-subtitle" wx:if="{{passage.articleSubtitle}}">{{passage.articleSubtitle}}</view>
+          </view>
           <block wx:if="{{passage.isClozePassage}}">
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
               <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
