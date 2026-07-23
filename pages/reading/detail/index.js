@@ -10,6 +10,7 @@ const { splitReadingNotePrompt, formatReadingQuestionRange } = require('../../..
 const { buildReadingParagraphRanges, normalizeReadingPassageText } = require('../../../utils/reading-paragraph-display');
 const { structureLegacyReadingContent } = require('../../../utils/reading-content-structure');
 const { toggleWordMark, toggleSentenceMark, countReadingMarks, buildReadingMarkItems } = require('../../../utils/reading-manual-marks');
+const { canHighlightReadingAnswers, resolveReadingHighlightMode } = require('../../../utils/reading-highlight-mode');
 const ieltsParagraphMetadata = require('./ielts-paragraph-metadata');
 
 const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
@@ -503,14 +504,14 @@ function attachChunkTokens(segments) {
   }));
 }
 
-function buildPassageSegments(text, review, mode) {
+function buildPassageSegments(text, review, mode, includeAnswerHighlight) {
   const source = String(text || '');
   if (!source) {
     return [];
   }
   const ranges = [];
   const activeMode = mode || 'none';
-  if (review && (activeMode === 'answer' || activeMode === 'all')) {
+  if (includeAnswerHighlight !== false && review && (activeMode === 'answer' || activeMode === 'all')) {
     pushTermRanges(source, termEntries(review.answerSentences, ['text', 'sentence'], { answer: true }), 'answer', false, ranges);
   }
   if (review && (activeMode === 'phrase' || activeMode === 'all')) {
@@ -538,11 +539,18 @@ function buildPassageParagraphs(passage, review, mode) {
   if (!passage) return [];
   const source = String(passage.passage || '');
   const passageId = passage._id || passage.id;
+  const activeMode = resolveReadingHighlightMode(passage, mode);
+  const includeAnswerHighlight = canHighlightReadingAnswers(passage);
   const ranges = buildReadingParagraphRanges(passageId, source, passage.questions, ieltsParagraphMetadata[passageId]);
   if (!ranges.length) return [];
   return ranges.map((range) => {
     const contentStart = range.contentStart || range.start;
-    const segments = decorateReadingSegments(buildPassageSegments(source.slice(contentStart, range.end), review, mode).map((segment) => Object.assign({}, segment, {
+    const segments = decorateReadingSegments(buildPassageSegments(
+      source.slice(contentStart, range.end),
+      review,
+      activeMode,
+      includeAnswerHighlight
+    ).map((segment) => Object.assign({}, segment, {
       start: segment.start + contentStart,
       end: segment.end + contentStart
     })));
@@ -562,7 +570,12 @@ function buildStandalonePassageSegments(passage, review, mode) {
   const source = String(passage.passage || '');
   const passageId = passage._id || passage.id;
   if (buildReadingParagraphRanges(passageId, source, passage.questions, ieltsParagraphMetadata[passageId]).length) return [];
-  return decorateReadingSegments(buildPassageSegments(source, review, mode));
+  return decorateReadingSegments(buildPassageSegments(
+    source,
+    review,
+    resolveReadingHighlightMode(passage, mode),
+    canHighlightReadingAnswers(passage)
+  ));
 }
 
 function pickSentenceAt(text, start, end) {
@@ -1173,7 +1186,10 @@ Page({
       ? mergeStudyPackIntoReview(review, cachedPack.studyPack)
       : review;
     const passage = normalizePassage(data.passage, answers, submitted, mergedReview);
-    const activeHighlight = submitted ? (this.data.activeHighlight === 'none' ? 'answer' : this.data.activeHighlight) : this.data.activeHighlight;
+    const requestedHighlight = submitted && this.data.activeHighlight === 'none'
+      ? 'answer'
+      : this.data.activeHighlight;
+    const activeHighlight = resolveReadingHighlightMode(passage, requestedHighlight);
     const questionAnalysisReady = isModelReview(mergedReview)
       || !!(cachedPack && cachedPack.studyPack && isQuestionStudyPack(cachedPack.studyPack));
     this.setData(page.buildCloudPageData(this.data, {
@@ -1238,11 +1254,13 @@ Page({
   applyReview(review) {
     const normalized = normalizeReview(review);
     const passage = normalizePassage(this.data.passage, this.data.answers, this.data.submitted, normalized);
+    const activeHighlight = resolveReadingHighlightMode(passage, this.data.activeHighlight);
     this.setData({
       review: normalized,
       passage,
-      passageSegments: buildStandalonePassageSegments(passage, normalized, this.data.activeHighlight),
-      passageParagraphs: buildPassageParagraphs(passage, normalized, this.data.activeHighlight),
+      activeHighlight,
+      passageSegments: buildStandalonePassageSegments(passage, normalized, activeHighlight),
+      passageParagraphs: buildPassageParagraphs(passage, normalized, activeHighlight),
       wordCards: normalized ? normalized.vocabularyCards : [],
       phraseCards: normalized ? normalized.phraseCards : [],
       sentencePatternCards: normalized ? normalized.sentencePatternCards : [],
@@ -1412,7 +1430,8 @@ Page({
   },
   selectHighlight(event) {
     const mode = String(event.currentTarget.dataset.mode || 'none');
-    const activeHighlight = this.data.activeHighlight === mode ? 'none' : mode;
+    const requestedHighlight = this.data.activeHighlight === mode ? 'none' : mode;
+    const activeHighlight = resolveReadingHighlightMode(this.data.passage, requestedHighlight);
     this.setData({
       activeHighlight,
       passageSegments: buildStandalonePassageSegments(this.data.passage, this.data.review, activeHighlight),
@@ -1726,14 +1745,17 @@ Page({
       if (!result || result.syncMode === 'cloud-error' || !result.attempt || !result.review || !(result.review.analysis || []).length) {
         throw new Error((result && result.cloudError && result.cloudError.message) || text('analysisFailed', '解析生成失败'));
       }
+      const submittedReview = normalizeReview(result.review);
+      const submittedPassage = normalizePassage(this.data.passage, this.data.answers, true, submittedReview);
+      const activeHighlight = resolveReadingHighlightMode(submittedPassage, 'answer');
       this.setData({
         submitting: false,
         attempt: result.attempt || null,
-        passage: normalizePassage(this.data.passage, this.data.answers, true, normalizeReview(result.review)),
-        activeHighlight: 'answer',
+        passage: submittedPassage,
+        activeHighlight,
         showReviewDetails: true,
-        passageSegments: buildStandalonePassageSegments(this.data.passage, normalizeReview(result.review), 'answer'),
-        passageParagraphs: buildPassageParagraphs(this.data.passage, normalizeReview(result.review), 'answer'),
+        passageSegments: buildStandalonePassageSegments(submittedPassage, submittedReview, activeHighlight),
+        passageParagraphs: buildPassageParagraphs(submittedPassage, submittedReview, activeHighlight),
         scoreText: buildScoreText(result.attempt),
         reviewSummary: buildReviewSummary(result.attempt),
         submitted: true,
