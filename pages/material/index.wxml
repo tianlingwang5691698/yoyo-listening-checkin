@@ -35,21 +35,21 @@
     </view>
     <view class="library-book-head" wx:elif="{{selectedStageId && !selectedExamId}}">
       <view>
-        <view class="library-back" bindtap="backToStages">{{texts.backStage}}</view>
+        <view class="library-back hierarchy-back" bindtap="backToStages">{{texts.backStage}}</view>
         <view class="library-book-title">{{selectedStage.stage}}</view>
       </view>
       <view class="library-book-count">{{exams.length}}{{texts.itemUnit}}</view>
     </view>
     <view class="library-book-head" wx:elif="{{selectedExamId && !selectedDistrict}}">
       <view>
-        <view class="library-back" bindtap="backToExams">{{texts.backExam}}</view>
+        <view class="library-back hierarchy-back" bindtap="backToExams">{{texts.backExam}}</view>
         <view class="library-book-title">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
       </view>
       <view class="library-book-count">{{districts.length}}{{texts.districtUnit}}</view>
     </view>
     <view class="library-book-head" wx:else>
       <view>
-        <view class="library-back" bindtap="backToDistricts">{{texts.backDistrict}}</view>
+        <view class="library-back hierarchy-back" bindtap="backToDistricts">{{texts.backDistrict}}</view>
         <view class="library-book-title">{{selectedExam.exam}} · {{selectedDistrict}}</view>
       </view>
       <view class="library-book-count">{{items.length}}{{texts.setUnit}}</view>
@@ -158,7 +158,7 @@
   <view class="library-cabinet library-open-drawer" wx:elif="{{selectedStageId && !selectedExamId}}">
     <view class="library-cabinet-label">
       <text>{{selectedStage.stage}}</text>
-      <view class="library-back-tab" bindtap="backToStages">{{texts.backStage}}</view>
+      <view class="library-back-tab hierarchy-back" bindtap="backToStages">{{texts.backStage}}</view>
     </view>
     <view class="library-folder-row">
       <view class="library-exam-folder" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
@@ -172,7 +172,7 @@
   <view class="library-cabinet library-open-drawer" wx:elif="{{selectedExamId && !selectedDistrict}}">
     <view class="library-cabinet-label">
       <text>{{selectedStage.stage}} · {{selectedExam.exam}}</text>
-      <view class="library-back-tab" bindtap="backToExams">{{texts.backExam}}</view>
+      <view class="library-back-tab hierarchy-back" bindtap="backToExams">{{texts.backExam}}</view>
     </view>
     <view class="library-district-tabs">
       <view class="library-district-tab" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
@@ -186,7 +186,7 @@
   <view class="library-cabinet library-folder-case" wx:else>
     <view class="library-cabinet-label">
       <text>{{selectedExam.exam}} · {{selectedDistrict}}</text>
-      <view class="library-back-tab" bindtap="backToDistricts">{{texts.backDistrict}}</view>
+      <view class="library-back-tab hierarchy-back" bindtap="backToDistricts">{{texts.backDistrict}}</view>
     </view>
     <view class="library-manuscript-list">
       <view class="library-manuscript-row" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
@@ -275,7 +275,7 @@
   <view class="material-card drawer-card card" wx:elif="{{selectedStageId && !selectedExamId}}">
     <view class="material-card-top">
       <view class="material-card-label">{{selectedStage.stage}}</view>
-      <view class="directory-back-icon" bindtap="backToStages">{{texts.backStage}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToStages">{{texts.backStage}}</view>
     </view>
     <view class="drawer-stack">
       <view class="directory-row drawer-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
@@ -293,7 +293,7 @@
   <view class="material-card drawer-card card" wx:elif="{{selectedExamId && !selectedDistrict}}">
     <view class="material-card-top">
       <view class="material-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
-      <view class="directory-back-icon" bindtap="backToExams">{{texts.backExam}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToExams">{{texts.backExam}}</view>
     </view>
     <view class="drawer-stack">
       <view class="directory-row drawer-row" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
@@ -311,7 +311,7 @@
   <view class="material-card program-card card" wx:else>
     <view class="material-card-top">
       <view class="material-card-label">{{selectedExam.exam}} · {{selectedDistrict}}</view>
-      <view class="directory-back-icon" bindtap="backToDistricts">{{texts.backDistrict}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToDistricts">{{texts.backDistrict}}</view>
     </view>
     <view class="program-stack">
       <view class="task-row program-drawer" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">

@@ -46,7 +46,7 @@
           </view>
         </block>
         <block wx:elif="{{!selectedClassroomTopic}}">
-          <view class="classroom-back" bindtap="backToClassroomCategories">{{classroom.back}}</view>
+          <view class="classroom-back hierarchy-back" bindtap="backToClassroomCategories">{{classroom.back}}</view>
           <view class="classroom-step">{{classroom.wordTitle}}</view>
           <view class="classroom-title">{{classroom.wordCopy}}</view>
           <view class="classroom-topic-grid">
@@ -63,7 +63,7 @@
         </block>
         <block wx:else>
         <block wx:if="{{!selectedVerbLesson}}">
-          <view class="classroom-back" bindtap="backToClassroomTopics">{{classroom.subBack}}</view>
+          <view class="classroom-back hierarchy-back" bindtap="backToClassroomTopics">{{classroom.subBack}}</view>
           <view class="classroom-step">{{classroom.verbMapTitle}}</view>
           <view class="classroom-title">{{classroom.verbMapCopy}}</view>
           <view class="verb-map-group" wx:for="{{classroom.verbGroups}}" wx:key="id">
@@ -79,7 +79,7 @@
         </block>
         <block wx:else>
         <block wx:if="{{!selectedThirdPersonLesson}}">
-          <view class="classroom-back" bindtap="backToActiveCourseParent">{{classroom.returnCourse}}</view>
+          <view class="classroom-back hierarchy-back" bindtap="backToActiveCourseParent">{{classroom.returnCourse}}</view>
           <view class="classroom-step">{{activeClassroomCourseTitle}}</view>
           <view class="classroom-title">{{activeClassroomCourseCopy}}</view>
           <view class="micro-course-list">
@@ -98,7 +98,7 @@
           </view>
         </block>
         <block wx:else>
-          <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
+          <view class="classroom-back hierarchy-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
           <view class="classroom-step">{{activeClassroomLesson.no}} / {{activeClassroomCourse.length}}</view>
           <view class="classroom-title">{{activeClassroomLesson.title}}</view>
           <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
@@ -180,7 +180,7 @@
 
       <view class="library-directory-page" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
-          <view class="library-back-text" bindtap="backToTopics">{{texts.backDifficulty}}</view>
+          <view class="library-back-text hierarchy-back" bindtap="backToTopics">{{texts.backDifficulty}}</view>
           <view>
             <view class="library-page-kicker">{{selectedStage.stage}}</view>
             <view class="library-page-title">{{texts.mock}}</view>
@@ -205,7 +205,7 @@
 
       <view class="library-directory-page" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
-          <view class="library-back-text" bindtap="backToStageCategories">{{texts.backMock}}</view>
+          <view class="library-back-text hierarchy-back" bindtap="backToStageCategories">{{texts.backMock}}</view>
           <view>
             <view class="library-page-kicker">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
             <view class="library-page-title">{{texts.category}}</view>
@@ -230,7 +230,7 @@
 
       <view class="library-directory-page library-drawer-page" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
-          <view class="library-back-text" bindtap="backToExamCategories">{{texts.backCategory}}</view>
+          <view class="library-back-text hierarchy-back" bindtap="backToExamCategories">{{texts.backCategory}}</view>
           <view>
             <view class="library-page-kicker">{{selectedCategory.topic}}</view>
             <view class="library-page-title">{{texts.subtopic}}</view>
@@ -255,7 +255,7 @@
 
       <view class="library-practice-page" wx:else>
         <view class="library-practice-head">
-          <view class="library-back-text" bindtap="backToCategory">{{texts.backSubtopic}}</view>
+          <view class="library-back-text hierarchy-back" bindtap="backToCategory">{{texts.backSubtopic}}</view>
           <view class="library-practice-title-wrap">
             <view class="library-page-kicker">{{selectedTopic.topic}}</view>
             <view class="library-practice-progress">{{answeredCount}} / {{selectedQuestions.length}}</view>
@@ -397,7 +397,7 @@
       </view>
     </block>
     <block wx:elif="{{!selectedClassroomTopic}}">
-      <view class="classroom-back" bindtap="backToClassroomCategories">{{classroom.back}}</view>
+      <view class="classroom-back hierarchy-back" bindtap="backToClassroomCategories">{{classroom.back}}</view>
       <view class="classroom-step">{{classroom.wordTitle}}</view>
       <view class="classroom-title">{{classroom.wordCopy}}</view>
       <view class="classroom-topic-grid">
@@ -414,7 +414,7 @@
     </block>
     <block wx:else>
     <block wx:if="{{!selectedVerbLesson}}">
-      <view class="classroom-back" bindtap="backToClassroomTopics">{{classroom.subBack}}</view>
+      <view class="classroom-back hierarchy-back" bindtap="backToClassroomTopics">{{classroom.subBack}}</view>
       <view class="classroom-step">{{classroom.verbMapTitle}}</view>
       <view class="classroom-title">{{classroom.verbMapCopy}}</view>
       <view class="verb-map-group" wx:for="{{classroom.verbGroups}}" wx:key="id">
@@ -430,7 +430,7 @@
     </block>
     <block wx:else>
     <block wx:if="{{!selectedThirdPersonLesson}}">
-      <view class="classroom-back" bindtap="backToActiveCourseParent">{{classroom.returnCourse}}</view>
+      <view class="classroom-back hierarchy-back" bindtap="backToActiveCourseParent">{{classroom.returnCourse}}</view>
       <view class="classroom-step">{{activeClassroomCourseTitle}}</view>
       <view class="classroom-title">{{activeClassroomCourseCopy}}</view>
       <view class="micro-course-list">
@@ -449,7 +449,7 @@
       </view>
     </block>
     <block wx:else>
-      <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
+      <view class="classroom-back hierarchy-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
       <view class="classroom-step">{{activeClassroomLesson.no}} / {{activeClassroomCourse.length}}</view>
       <view class="classroom-title">{{activeClassroomLesson.title}}</view>
       <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
@@ -523,7 +523,7 @@
   <view class="grammar-card directory-card" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedStage.stage}}</view>
-      <view class="directory-back-icon" bindtap="backToTopics">{{texts.backDifficulty}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToTopics">{{texts.backDifficulty}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
@@ -543,7 +543,7 @@
   <view class="grammar-card directory-card" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
-      <view class="directory-back-icon" bindtap="backToStageCategories">{{texts.backMock}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToStageCategories">{{texts.backMock}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{topics}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
@@ -563,7 +563,7 @@
   <view class="grammar-card directory-card" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedCategory.topic}}</view>
-      <view class="directory-back-icon" bindtap="backToExamCategories">{{texts.backCategory}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToExamCategories">{{texts.backCategory}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{selectedCategory.children}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
@@ -586,7 +586,7 @@
         <view class="grammar-card-label">{{selectedTopic.topic}}</view>
         <view class="practice-progress">{{answeredCount}} / {{selectedQuestions.length}}</view>
       </view>
-      <view class="directory-back-icon" bindtap="backToCategory">{{texts.backSubtopic}}</view>
+      <view class="directory-back-icon hierarchy-back" bindtap="backToCategory">{{texts.backSubtopic}}</view>
     </view>
     <view class="directory-meta" wx:if="{{selectedTopicOffset > 0}}">{{texts.resumePrefix}}{{selectedTopicOffset + 1}}{{texts.resumeSuffix}}</view>
     <view class="manual-mark-toolbar" wx:if="{{selectedQuestions.length}}">

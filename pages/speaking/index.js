@@ -11,6 +11,7 @@ const SPEAKING_LEVELS = ['Pre A1', 'A1', 'A2', 'B1', 'B2'].map((level) => ({
   id: level,
   label: level
 }));
+const IELTS_BOOK_NUMBERS = Array.from({ length: 12 }, (_, index) => index + 10);
 
 const SPEAKING_SERIES = {
   'Pre A1': [
@@ -53,6 +54,30 @@ const SPEAKING_SERIES = {
 
 function getSpeakingSeries(level) {
   return SPEAKING_SERIES[level] || SPEAKING_SERIES.A2;
+}
+
+function buildIeltsTests() {
+  return IELTS_BOOK_NUMBERS.flatMap((bookNumber) => [1, 2, 3, 4].map((testNumber) => ({
+    id: `ielts-academic-${bookNumber}-test-${testNumber}-speaking`,
+    title: `Test ${testNumber}`,
+    bookNumber,
+    testNumber,
+    meta: 'Part 1 · Part 2 · Part 3'
+  })));
+}
+
+function buildIeltsBooks(tests) {
+  const counts = (tests || []).reduce((result, item) => {
+    result[item.bookNumber] = Number(result[item.bookNumber] || 0) + 1;
+    return result;
+  }, {});
+  return Object.keys(counts).map(Number).sort((left, right) => left - right).map((bookNumber) => ({
+    id: `ielts-${bookNumber}`,
+    bookNumber,
+    title: `IELTS ${bookNumber}`,
+    meta: `Cambridge IELTS ${bookNumber}`,
+    testCount: counts[bookNumber]
+  }));
 }
 
 function encodeUrlPathSegment(segment) {
@@ -324,8 +349,11 @@ Page({
     resultCelebrating: false,
     errorText: '',
     ieltsTests: [],
+    ieltsBooks: [],
+    selectedIeltsBookNumber: 0,
+    selectedIeltsBook: null,
+    selectedIeltsTests: [],
     ieltsLoading: false,
-    ieltsExpanded: false,
     ieltsMode: false,
     ieltsItemId: '',
     ieltsPromptReady: false,
@@ -337,9 +365,7 @@ Page({
     ieltsIntroText: '',
     ieltsIntroPlaying: false,
     ieltsIntroLoading: false,
-    ieltsParts: [],
-    ieltsSourceImages: [],
-    ieltsSourceExpanded: false
+    ieltsParts: []
   }),
 
   onLoad(options = {}) {
@@ -554,9 +580,7 @@ Page({
       ieltsItemId: '',
       ieltsPromptReady: false,
       ieltsQuestionRevealed: false,
-      ieltsParts: [],
-      ieltsSourceImages: [],
-      ieltsSourceExpanded: false
+      ieltsParts: []
     });
     if (!this.data.repeatSeries.length) await this.loadRepeatLevel(this.data.selectedLevel);
   },
@@ -950,9 +974,7 @@ Page({
       ieltsItemId: '',
       ieltsPromptReady: false,
       ieltsQuestionRevealed: false,
-      ieltsParts: [],
-      ieltsSourceImages: [],
-      ieltsSourceExpanded: false
+      ieltsParts: []
     });
     this.queueQuestionAutoPlay();
   },
@@ -983,12 +1005,29 @@ Page({
       clearTimeout(this.ieltsIntroAutoPlayTimer);
       this.ieltsIntroAutoPlayTimer = null;
     }
-    const returnToSelector = this.data.viewMode === 'practice' && !this.data.ieltsMode;
+    const currentView = this.data.viewMode;
+    const returnToSelector = currentView === 'practice' && !this.data.ieltsMode;
+    const returnToIeltsTests = currentView === 'practice' && this.data.ieltsMode;
+    const returnToIeltsBooks = currentView === 'ielts-tests';
+    const targetView = returnToSelector
+      ? 'repeat-select'
+      : (returnToIeltsTests ? 'ielts-tests' : (returnToIeltsBooks ? 'ielts-books' : 'home'));
+    const returningHome = targetView === 'home';
+    const targetTitle = targetView === 'repeat-select'
+      ? text('selectContentTitle', '选择跟读内容')
+      : (targetView === 'ielts-books'
+        ? text('ieltsSpeaking', '雅思口语')
+        : (targetView === 'ielts-tests' ? `IELTS ${this.data.selectedIeltsBookNumber}` : text('homeTitle', '口语练习')));
+    const targetCopy = targetView === 'repeat-select'
+      ? text('selectContentCopy', '按级别选择音频和段落。')
+      : (targetView === 'ielts-books'
+        ? ''
+        : (targetView === 'ielts-tests' ? '' : text('homeCopy', '选择练习方式，开始今天的开口训练。')));
     this.setData({
-      viewMode: returnToSelector ? 'repeat-select' : 'home',
-      pageTitle: returnToSelector ? text('selectContentTitle', '选择跟读内容') : text('homeTitle', '口语练习'),
-      pageCopy: returnToSelector ? text('selectContentCopy', '按级别选择音频和段落。') : text('homeCopy', '选择练习方式，开始今天的开口训练。'),
-      selectedLevel: this.previousSpeakingLevel || this.data.selectedLevel,
+      viewMode: targetView,
+      pageTitle: targetTitle,
+      pageCopy: targetCopy,
+      selectedLevel: returningHome || returnToSelector ? (this.previousSpeakingLevel || this.data.selectedLevel) : this.data.selectedLevel,
       questionPlaying: false,
       questionLoading: false,
       repeatPromptReady: false,
@@ -1006,46 +1045,42 @@ Page({
       ieltsIntroText: '',
       ieltsIntroPlaying: false,
       ieltsIntroLoading: false,
-      ieltsParts: [],
-      ieltsSourceImages: [],
-      ieltsSourceExpanded: false
+      ieltsParts: []
     });
-    this.previousSpeakingLevel = '';
+    if (returningHome || returnToSelector) this.previousSpeakingLevel = '';
   },
 
-  async openIeltsSpeaking() {
-    if (this.data.ieltsExpanded) {
-      this.setData({ ieltsExpanded: false });
-      return;
-    }
-    if (this.data.ieltsTests.length) {
-      this.setData({ ieltsExpanded: true });
-      return;
-    }
-    this.setData({ ieltsLoading: true, errorText: '' });
-    try {
-      const result = await store.getMaterialIndex({ moduleId: 'speaking' });
-      const tests = (result.speakingIelts || []).map((item) => {
-        const id = String(item._id || item.id || '');
-        const match = id.match(/^ielts-academic-(1[0-9]|20|21)-test-(\d+)-/i);
-        return {
-          id,
-          title: item.title || 'IELTS Speaking',
-          bookNumber: Number(item.bookNumber || (match && match[1]) || 21),
-          testNumber: Number(item.testNumber || (match && match[2]) || 0),
-          meta: item.district || `Test ${Number(item.testNumber || (match && match[2]) || 0)}`
-        };
-      }).filter((item) => item.id).sort((left, right) => right.bookNumber - left.bookNumber || left.testNumber - right.testNumber)
-        .map((item, index, rows) => Object.assign({}, item, {
-          bookLabel: `Cambridge IELTS ${item.bookNumber}`,
-          showBookHeader: !index || rows[index - 1].bookNumber !== item.bookNumber
-        }));
-      this.setData({ ieltsTests: tests, ieltsExpanded: true });
-    } catch (error) {
-      this.setData({ errorText: text('ieltsLoadFailed', '雅思口语加载失败') });
-    } finally {
-      this.setData({ ieltsLoading: false });
-    }
+  openIeltsSpeaking() {
+    const tests = this.data.ieltsTests.length ? this.data.ieltsTests : buildIeltsTests();
+    const books = this.data.ieltsBooks.length ? this.data.ieltsBooks : buildIeltsBooks(tests);
+    this.setData({
+      viewMode: 'ielts-books',
+      pageTitle: text('ieltsSpeaking', '雅思口语'),
+      pageCopy: '',
+      ieltsTests: tests,
+      ieltsBooks: books,
+      selectedIeltsBookNumber: 0,
+      selectedIeltsBook: null,
+      selectedIeltsTests: [],
+      ieltsLoading: false,
+      ieltsMode: false,
+      errorText: ''
+    });
+  },
+
+  selectIeltsBook(event) {
+    const bookNumber = Number(event && event.currentTarget && event.currentTarget.dataset && event.currentTarget.dataset.bookNumber || 0);
+    const selectedIeltsBook = (this.data.ieltsBooks || []).find((item) => item.bookNumber === bookNumber);
+    if (!selectedIeltsBook) return;
+    this.setData({
+      viewMode: 'ielts-tests',
+      pageTitle: `IELTS ${bookNumber}`,
+      pageCopy: '',
+      selectedIeltsBookNumber: bookNumber,
+      selectedIeltsBook,
+      selectedIeltsTests: (this.data.ieltsTests || []).filter((item) => item.bookNumber === bookNumber),
+      errorText: ''
+    });
   },
 
   loadIeltsItem(itemId) {
@@ -1110,8 +1145,6 @@ Page({
         ieltsIntroPlaying: false,
         ieltsIntroLoading: false,
         ieltsParts,
-        ieltsSourceImages: item.images || [],
-        ieltsSourceExpanded: false,
         tempFilePath: '',
         recordDurationMs: 0,
         recordDurationText: '',
@@ -1307,16 +1340,6 @@ Page({
     if (!this.data.recording && !this.data.submitting && this.data.tempFilePath) {
       this.submitIeltsSpeaking();
     }
-  },
-
-  toggleIeltsSource() {
-    this.setData({ ieltsSourceExpanded: !this.data.ieltsSourceExpanded });
-  },
-
-  previewIeltsSource(event) {
-    const urls = (this.data.ieltsSourceImages || []).map((item) => item.src).filter(Boolean);
-    if (!urls.length) return;
-    wx.previewImage({ current: String(event.currentTarget.dataset.src || urls[0]), urls });
   },
 
   selectExercise(event) {

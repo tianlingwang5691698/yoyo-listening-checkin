@@ -453,7 +453,41 @@ test('分级跟读评分后可以回放或停止自己的录音', () => {
   assert.equal(stopCount, 1);
 });
 
-test('雅思口语按 Part 和 topic 展示结构化题目，原卷图片默认折叠', async () => {
+test('雅思口语按分册和 Test 逐层进入且只渲染当前层', async () => {
+  let indexRequests = 0;
+  let detailRequests = 0;
+  const page = createPageInstance(loadSpeakingPage({
+    async getMaterialIndex() { indexRequests += 1; return { speakingIelts: [] }; },
+    async getMaterialItem() { detailRequests += 1; return { item: null }; }
+  }));
+
+  await page.openIeltsSpeaking();
+
+  assert.equal(page.data.viewMode, 'ielts-books');
+  assert.equal(page.data.ieltsBooks.length, 12);
+  assert.deepEqual(Array.from(page.data.ieltsBooks, (item) => item.bookNumber), [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]);
+  assert.equal(page.data.selectedIeltsTests.length, 0);
+  assert.equal(indexRequests, 0);
+  assert.equal(detailRequests, 0);
+
+  page.selectIeltsBook({ currentTarget: { dataset: { bookNumber: 10 } } });
+  assert.equal(page.data.viewMode, 'ielts-tests');
+  assert.deepEqual(Array.from(page.data.selectedIeltsTests, (item) => item.testNumber), [1, 2, 3, 4]);
+  assert.equal(indexRequests, 0);
+  assert.equal(detailRequests, 0);
+
+  page.backToSpeakingHome();
+  assert.equal(page.data.viewMode, 'ielts-books');
+  page.backToSpeakingHome();
+  assert.equal(page.data.viewMode, 'home');
+
+  const wxml = fs.readFileSync(path.join(root, 'pages/speaking/index.wxml'), 'utf8');
+  assert.doesNotMatch(wxml, /ieltsExpanded/);
+  assert.match(wxml, /viewMode === 'ielts-books'/);
+  assert.match(wxml, /viewMode === 'ielts-tests'/);
+});
+
+test('雅思口语按 Part 和 topic 展示结构化题目且不显示原图入口', async () => {
   const itemId = 'ielts-academic-20-test-4-speaking';
   const exercises = [
     { id: `${itemId}-part-1-1`, part: 1, title: 'Part 1 · 1', meta: '45 秒', prompt: 'Collapsed Part 1 prompt.' },
@@ -495,7 +529,7 @@ test('雅思口语按 Part 和 topic 展示结构化题目，原卷图片默认�
   assert.equal(page.data.ieltsQuestionSequence.length, 4);
   assert.equal(page.data.activeIeltsQuestion.topicTitle, 'Personal qualities');
   assert.match(page.data.ieltsIntroText, /Let's talk about Personal qualities/);
-  assert.equal(page.data.ieltsSourceExpanded, false);
+  assert.equal(page.data.ieltsSourceExpanded, undefined);
 
   page.startIeltsSession();
   assert.equal(page.data.ieltsSessionStarted, true);
@@ -511,7 +545,7 @@ test('雅思口语按 Part 和 topic 展示结构化题目，原卷图片默认�
   const wxml = fs.readFileSync(path.join(root, 'pages/speaking/index.wxml'), 'utf8');
   const libraryTemplate = wxml.split('<view class="theme-{{theme}} language-{{language}} page-shell speaking-page"')[0];
   assert.match(libraryTemplate, /class="ielts-cue-point /);
-  assert.match(wxml, /ieltsSourceExpanded/);
+  assert.doesNotMatch(wxml, /ieltsSource|查看原题图片|previewIeltsSource/);
   assert.match(libraryTemplate, /class="ielts-session-intro"/);
   assert.match(libraryTemplate, /ielts-intro-script[^>]+bindtap="playIeltsIntro"/);
   assert.doesNotMatch(libraryTemplate, /ielts-intro-audio/);

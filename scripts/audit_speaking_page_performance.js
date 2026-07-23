@@ -137,8 +137,14 @@ async function measureThemeShells(miniProgram) {
 async function measureIelts(page) {
   const catalogStartedAt = Date.now();
   await callPageMethod(page, 'openIeltsSpeaking');
-  const catalog = await waitForData(page, (data) => data.ieltsExpanded && data.ieltsTests.length === 48, 20000);
+  const catalog = await waitForData(page, (data) => data.viewMode === 'ielts-books' && data.ieltsBooks.length === 12 && data.ieltsTests.length === 48, 20000);
   const catalogMs = Date.now() - catalogStartedAt;
+  const renderedBooks = await page.$$('.ielts-book-card');
+  const bookStartedAt = Date.now();
+  await callPageMethod(page, 'selectIeltsBook', { currentTarget: { dataset: { bookNumber: 20 } } });
+  const book = await waitForData(page, (data) => data.viewMode === 'ielts-tests' && data.selectedIeltsTests.length === 4, 1000);
+  const bookSelectMs = Date.now() - bookStartedAt;
+  const renderedTests = await page.$$('.ielts-test-list.is-catalog .ielts-test-row');
   const itemId = 'ielts-academic-20-test-4-speaking';
   const prefetchStartedAt = Date.now();
   await callPageMethod(page, 'prefetchIeltsTest', { currentTarget: { dataset: { itemId } } });
@@ -150,12 +156,15 @@ async function measureIelts(page) {
   await page.setData({ ieltsSessionStarted: true, ieltsIntroLoading: false, ieltsIntroPlaying: false });
   return {
     catalogMs,
+    bookSelectMs,
     detailMs,
     prefetchToDetailMs: Date.now() - prefetchStartedAt,
     prefetchDwellMs: IELTS_PREFETCH_DWELL_MS,
     tests: catalog.data.ieltsTests.length,
+    renderedBooks: renderedBooks.length,
+    renderedTests: renderedTests.length,
     exercises: detail.data.exercises.length,
-    passed: catalogMs <= COLD_TARGET_MS && detailMs <= COLD_TARGET_MS
+    passed: catalogMs <= COLD_TARGET_MS && detailMs <= COLD_TARGET_MS && book.ms <= 1000 && renderedBooks.length === 12 && renderedTests.length === 4
   };
 }
 

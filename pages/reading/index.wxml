@@ -40,7 +40,7 @@
           </view>
         </view>
         <view class="library-index-count" wx:if="{{isRootLevel && categoryRoot}}">{{categoryRoot.count}}{{texts.articleUnit}}</view>
-        <view class="library-index-back" wx:elif="{{!isRootLevel}}" bindtap="backOneLevel">{{texts.back}}</view>
+        <view class="library-index-back hierarchy-back" wx:elif="{{!isRootLevel}}" bindtap="backOneLevel">{{texts.back}}</view>
       </view>
 
       <view class="library-skeleton" wx:if="{{loading && !categoryRoot}}">
@@ -140,7 +140,7 @@
             <text>{{selectedHeader}}</text>
           </view>
           <view class="reading-card-state" wx:if="{{isRootLevel}}">{{categoryRoot.count}}{{texts.articleUnit}}</view>
-          <view class="directory-back-icon" wx:else bindtap="backOneLevel">{{texts.back}}</view>
+          <view class="directory-back-icon hierarchy-back" wx:else bindtap="backOneLevel">{{texts.back}}</view>
         </view>
 
         <view class="reading-breadcrumb" wx:if="{{!isRootLevel}}">

@@ -107,7 +107,7 @@
               <view class="vocab-data-skeleton" wx:else></view>
               <view class="library-vocab-phonetic" wx:if="{{phoneticPreview}}">{{phoneticPreview}}</view>
             </view>
-            <view class="library-vocab-return" bindtap="backToBookshelf">{{texts.library}}</view>
+            <view class="library-vocab-return hierarchy-back" bindtap="backToBookshelf">{{texts.library}}</view>
           </view>
           <view class="library-vocab-ruler">
             <view class="library-vocab-ruler-fill {{planSummary.learnedPercent === 0 ? 'is-zero' : ''}}" style="width: {{planSummary.learnedPercent}}%;"></view>
@@ -388,7 +388,7 @@
             <view class="vocab-data-skeleton" wx:else></view>
             <view class="phonetic-preview" wx:if="{{phoneticPreview}}">{{phoneticPreview}}</view>
           </view>
-          <view class="source-back" bindtap="backToBookshelf">{{texts.library}}</view>
+          <view class="source-back hierarchy-back" bindtap="backToBookshelf">{{texts.library}}</view>
         </view>
         <view class="hero-card-stack">
           <text></text><text></text><text></text>

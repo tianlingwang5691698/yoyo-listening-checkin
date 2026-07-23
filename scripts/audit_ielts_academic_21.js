@@ -139,9 +139,11 @@ async function auditSpeaking(miniProgram) {
   const launched = await relaunch(miniProgram, '/pages/speaking/index');
   await waitForData(launched.page, (data) => data.viewMode === 'home');
   await launched.page.callMethod('openIeltsSpeaking');
-  const indexReady = await waitForData(launched.page, (data) => data.ieltsTests.length === 4 && data.ieltsExpanded);
+  const indexReady = await waitForData(launched.page, (data) => data.ieltsTests.length === 48 && data.ieltsBooks.length === 12 && data.viewMode === 'ielts-books');
+  await launched.page.callMethod('selectIeltsBook', { currentTarget: { dataset: { bookNumber: 21 } } });
+  await waitForData(launched.page, (data) => data.viewMode === 'ielts-tests' && data.selectedIeltsTests.length === 4);
   await launched.page.callMethod('selectIeltsTest', { currentTarget: { dataset: { itemId: 'ielts-academic-21-test-1-speaking' } } });
-  const detailReady = await waitForData(launched.page, (data) => data.ieltsMode && data.exercises.length === 11 && data.ieltsSourceImages.length === 1);
+  const detailReady = await waitForData(launched.page, (data) => data.ieltsMode && data.exercises.length === 11 && data.ieltsSourceImages === undefined);
   assert(new Set(detailReady.data.exercises.map((item) => item.part)).size === 3, 'speaking-parts');
   return { shellMs: launched.shellMs, indexReadyMs: indexReady.ms, detailReadyMs: detailReady.ms, screenshot: await screenshot(miniProgram, 'speaking-test-1') };
 }

@@ -3,7 +3,7 @@
     <view>
       <view class="library-speaking-kicker">{{texts.corner}}</view>
       <view class="library-speaking-title">{{pageTitle}}</view>
-      <view class="library-speaking-copy">{{pageCopy}}</view>
+      <view class="library-speaking-copy" wx:if="{{pageCopy}}">{{pageCopy}}</view>
     </view>
     <view class="library-speaking-seal"><view>VOICE</view><text>ROOM</text></view>
   </view>
@@ -27,23 +27,38 @@
           <view class="speaking-mode-meta">Part 1 · Part 2 · Part 3</view>
           <view class="speaking-mode-detail">Cambridge IELTS 10–21</view>
         </view>
-        <view class="speaking-mode-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : '')}}</view>
-        <view class="speaking-mode-arrow">{{ieltsExpanded ? '⌃' : '›'}}</view>
+        <view class="speaking-mode-state">{{ieltsLoading ? texts.loading : ''}}</view>
+        <view class="speaking-mode-arrow">›</view>
       </view>
     </view>
-    <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
-      <block wx:for="{{ieltsTests}}" wx:key="id">
-        <view class="ielts-book-header" wx:if="{{item.showBookHeader}}">{{item.bookLabel}}</view>
-        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtouchstart="prefetchIeltsTest" bindtap="selectIeltsTest">
-          <view><view class="ielts-test-title">{{item.title}}</view><view class="ielts-test-meta">{{item.meta}} · Part 1-3</view></view>
+  </block>
+
+  <block wx:elif="{{viewMode === 'ielts-books'}}">
+    <view class="library-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ 返回口语</view>
+    <view class="ielts-catalog is-library">
+      <view class="ielts-book-grid">
+        <view class="ielts-book-card" hover-class="is-pressed" wx:for="{{ieltsBooks}}" wx:key="id" data-book-number="{{item.bookNumber}}" bindtap="selectIeltsBook">
+          <view class="ielts-book-copy"><view>{{item.title}}</view></view>
+          <view class="ielts-catalog-arrow">›</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:elif="{{viewMode === 'ielts-tests'}}">
+    <view class="library-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ 返回分册</view>
+    <view class="ielts-catalog is-library">
+      <view class="ielts-test-list is-catalog">
+        <view class="ielts-test-row" hover-class="is-pressed" wx:for="{{selectedIeltsTests}}" wx:key="id" data-item-id="{{item.id}}" bindtouchstart="prefetchIeltsTest" bindtap="selectIeltsTest">
+          <view class="ielts-test-copy"><view class="ielts-test-title">{{item.title}}</view></view>
           <view class="ielts-test-arrow">›</view>
         </view>
-      </block>
+      </view>
     </view>
   </block>
 
   <block wx:elif="{{viewMode === 'repeat-select'}}">
-    <view class="library-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
+    <view class="library-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
     <view class="repeat-selector is-library">
       <view class="repeat-step-track">
         <view class="repeat-step is-done"><text>1</text><view>{{texts.selectLevel}}</view></view>
@@ -95,7 +110,7 @@
   </block>
 
   <block wx:else>
-    <view class="library-practice-nav" bindtap="backToSpeakingHome">‹ {{ieltsMode ? texts.backSpeaking : texts.backSelection}}</view>
+    <view class="library-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ {{ieltsMode ? '返回 Test' : texts.backSelection}}</view>
 
     <block wx:if="{{activeExercise && exercises.length}}">
       <view class="library-prompt-sheet" wx:if="{{ieltsMode}}">
@@ -159,13 +174,6 @@
             <button class="is-next {{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1 ? 'is-disabled' : ''}}" disabled="{{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1}}" bindtap="nextIeltsQuestion">{{texts.nextQuestion}} ›</button>
           </view>
         </view>
-        <view class="ielts-source-toggle" wx:if="{{ieltsMode && ieltsSourceImages.length}}" bindtap="toggleIeltsSource">
-          <view><view class="ielts-source-title">{{texts.originalPage}}</view><view class="ielts-source-meta">{{ieltsSourceImages.length}} {{texts.pageUnit}}</view></view>
-          <view class="ielts-source-arrow">{{ieltsSourceExpanded ? '⌃' : '⌄'}}</view>
-        </view>
-        <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceExpanded && ieltsSourceImages.length}}">
-          <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" data-src="{{item.src}}" bindtap="previewIeltsSource" mode="widthFix" show-menu-by-longpress="{{true}}" />
-        </view>
       </view>
 
       <view class="repeat-sentence-list is-library" wx:if="{{!ieltsMode}}">
@@ -211,7 +219,7 @@
 <view class="theme-{{theme}} language-{{language}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
     <view class="speaking-title">{{pageTitle}}</view>
-    <view class="speaking-copy">{{pageCopy}}</view>
+    <view class="speaking-copy" wx:if="{{pageCopy}}">{{pageCopy}}</view>
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
@@ -233,23 +241,38 @@
           <view class="speaking-mode-meta">Part 1 · Part 2 · Part 3</view>
           <view class="speaking-mode-detail">Cambridge IELTS 10–21</view>
         </view>
-        <view class="speaking-mode-state">{{ieltsLoading ? texts.loading : (ieltsTests.length ? ieltsTests.length + texts.setUnit : '')}}</view>
-        <view class="speaking-mode-arrow">{{ieltsExpanded ? '⌃' : '›'}}</view>
+        <view class="speaking-mode-state">{{ieltsLoading ? texts.loading : ''}}</view>
+        <view class="speaking-mode-arrow">›</view>
       </view>
     </view>
-    <view class="ielts-test-list" wx:if="{{ieltsExpanded}}">
-      <block wx:for="{{ieltsTests}}" wx:key="id">
-        <view class="ielts-book-header" wx:if="{{item.showBookHeader}}">{{item.bookLabel}}</view>
-        <view class="ielts-test-row" data-item-id="{{item.id}}" bindtouchstart="prefetchIeltsTest" bindtap="selectIeltsTest">
-          <view><view class="ielts-test-title">{{item.title}}</view><view class="ielts-test-meta">{{item.meta}} · Part 1-3</view></view>
+  </block>
+
+  <block wx:elif="{{viewMode === 'ielts-books'}}">
+    <view class="speaking-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ 返回口语</view>
+    <view class="ielts-catalog">
+      <view class="ielts-book-grid">
+        <view class="ielts-book-card" hover-class="is-pressed" wx:for="{{ieltsBooks}}" wx:key="id" data-book-number="{{item.bookNumber}}" bindtap="selectIeltsBook">
+          <view class="ielts-book-copy"><view>{{item.title}}</view></view>
+          <view class="ielts-catalog-arrow">›</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:elif="{{viewMode === 'ielts-tests'}}">
+    <view class="speaking-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ 返回分册</view>
+    <view class="ielts-catalog">
+      <view class="ielts-test-list is-catalog">
+        <view class="ielts-test-row" hover-class="is-pressed" wx:for="{{selectedIeltsTests}}" wx:key="id" data-item-id="{{item.id}}" bindtouchstart="prefetchIeltsTest" bindtap="selectIeltsTest">
+          <view class="ielts-test-copy"><view class="ielts-test-title">{{item.title}}</view></view>
           <view class="ielts-test-arrow">›</view>
         </view>
-      </block>
+      </view>
     </view>
   </block>
 
   <block wx:elif="{{viewMode === 'repeat-select'}}">
-    <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
+    <view class="speaking-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ {{texts.backSpeaking}}</view>
     <view class="repeat-selector">
       <view class="repeat-step-track">
         <view class="repeat-step is-done"><text>1</text><view>{{texts.selectLevel}}</view></view>
@@ -301,7 +324,7 @@
   </block>
 
   <block wx:else>
-    <view class="speaking-practice-nav" bindtap="backToSpeakingHome">‹ {{ieltsMode ? texts.backSpeaking : texts.backSelection}}</view>
+    <view class="speaking-practice-nav hierarchy-back" bindtap="backToSpeakingHome">‹ {{ieltsMode ? '返回 Test' : texts.backSelection}}</view>
 
       <view class="voice-cabin {{ieltsMode ? 'card' : 'is-repeat-cabin'}}">
       <view class="cabin-glow"></view>
@@ -366,13 +389,6 @@
                 <button class="is-next {{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1 ? 'is-disabled' : ''}}" disabled="{{ieltsQuestionIndex >= ieltsQuestionSequence.length - 1}}" bindtap="nextIeltsQuestion">{{texts.nextQuestion}} ›</button>
               </view>
             </view>
-          </view>
-          <view class="ielts-source-toggle" wx:if="{{ieltsMode && ieltsSourceImages.length}}" bindtap="toggleIeltsSource">
-            <view><view class="ielts-source-title">{{texts.originalPage}}</view><view class="ielts-source-meta">{{ieltsSourceImages.length}} {{texts.pageUnit}}</view></view>
-            <view class="ielts-source-arrow">{{ieltsSourceExpanded ? '⌃' : '⌄'}}</view>
-          </view>
-          <view class="ielts-source-pages" wx:if="{{ieltsMode && ieltsSourceExpanded && ieltsSourceImages.length}}">
-            <image class="ielts-source-page" wx:for="{{ieltsSourceImages}}" wx:key="cloudPath" src="{{item.src}}" data-src="{{item.src}}" bindtap="previewIeltsSource" mode="widthFix" show-menu-by-longpress="{{true}}" />
           </view>
         </view>
 

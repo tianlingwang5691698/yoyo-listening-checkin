@@ -128,7 +128,10 @@ async function main() {
     await waitForData(page, (data) => data.viewMode === 'home' && data.theme === 'library');
     console.log('[ielts-speaking-v2] home-ready');
     await callPageMethod(page, 'openIeltsSpeaking');
-    const catalog = await waitForData(page, (data) => data.ieltsExpanded && data.ieltsTests.length === 48, 40000);
+    const catalog = await waitForData(page, (data) => data.viewMode === 'ielts-books' && data.ieltsBooks.length === 12 && data.ieltsTests.length === 48, 40000);
+    assert(catalog.data.ieltsBooks.map((item) => item.bookNumber).join(',') === '10,11,12,13,14,15,16,17,18,19,20,21', 'speaking-book-order');
+    await callPageMethod(page, 'selectIeltsBook', { currentTarget: { dataset: { bookNumber: 20 } } });
+    await waitForData(page, (data) => data.viewMode === 'ielts-tests' && data.selectedIeltsTests.length === 4, 1000);
     console.log('[ielts-speaking-v2] catalog-ready');
 
     const test20 = await selectTest(page, 'ielts-academic-20-test-4-speaking');
@@ -137,7 +140,7 @@ async function main() {
     assert(part(test20.data, 2).tasks[0].cuePoints.length === 3, 'cambridge-20-part2-cues');
     assert(part(test20.data, 3).topics.length === 2, 'cambridge-20-part3-topics');
     assert(part(test20.data, 3).topics.reduce((sum, topic) => sum + topic.questions.length, 0) === 6, 'cambridge-20-part3-split');
-    assert(test20.data.ieltsSourceExpanded === false, 'source-image-default-collapsed');
+    assert(test20.data.ieltsSourceExpanded === undefined && test20.data.ieltsSourceImages === undefined, 'source-image-ui-removed');
     assert(test20.data.ieltsSessionStarted === false, 'library-intro-first');
     assert(test20.data.ieltsQuestionSequence.length === 11, 'single-question-sequence');
     const introScripts = await page.$$('.ielts-intro-script');
@@ -188,15 +191,8 @@ async function main() {
     await miniProgram.screenshot({ path: path.join(SCREENSHOT_DIR, 'cambridge-20-test-4-part2-line-highlight.png') });
     await page.setData({ questionPlaying: false, ieltsCueLineIndex: -1 });
     console.log('[ielts-speaking-v2] part2-line-highlight-ready');
-    await callPageMethod(page, 'toggleIeltsSource');
-    const expanded = await waitForData(page, (data) => data.ieltsSourceExpanded === true);
-    assert(expanded.data.ieltsSourceImages.length === 1 && expanded.data.ieltsSourceImages[0].src, 'source-image-expand');
-    await callPageMethod(page, 'toggleIeltsSource');
-    await waitForData(page, (data) => data.ieltsSourceExpanded === false);
-    console.log('[ielts-speaking-v2] source-toggle-ready');
-
     await callPageMethod(page, 'backToSpeakingHome');
-    await waitForData(page, (data) => data.viewMode === 'home');
+    await waitForData(page, (data) => data.viewMode === 'ielts-tests');
     const test18 = await selectTest(page, 'ielts-academic-18-test-1-speaking');
     console.log('[ielts-speaking-v2] test-18-ready');
     assert(part(test18.data, 1).topics[0].questions.length === 4, 'cambridge-18-part1-split');

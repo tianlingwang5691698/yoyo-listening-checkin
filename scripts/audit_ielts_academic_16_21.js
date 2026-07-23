@@ -145,20 +145,22 @@ async function auditSpeaking(miniProgram) {
   const launched = await relaunch(miniProgram, '/pages/speaking/index');
   await waitForData(launched.page, (data) => data.viewMode === 'home');
   await launched.page.callMethod('openIeltsSpeaking');
-  const ready = await waitForData(launched.page, (data) => data.ieltsExpanded && data.ieltsTests.length === 48);
-  const headers = ready.data.ieltsTests.filter((item) => item.showBookHeader);
-  assertBookOrder(headers, (item) => item.bookNumber);
-  assert(headers.every((item) => item.bookLabel === `Cambridge IELTS ${item.bookNumber}`), 'speaking-book-labels');
+  const ready = await waitForData(launched.page, (data) => data.viewMode === 'ielts-books' && data.ieltsBooks.length === 12 && data.ieltsTests.length === 48);
+  assert(ready.data.ieltsBooks.map((item) => item.bookNumber).join(',') === BOOKS.slice().reverse().join(','), 'speaking-book-order');
   const details = [];
   for (const book of NEW_BOOKS) {
     const test = firstTestNumber(book);
     const itemId = `ielts-academic-${book}-test-${test}-speaking`;
+    await launched.page.callMethod('selectIeltsBook', { currentTarget: { dataset: { bookNumber: book } } });
+    await waitForData(launched.page, (data) => data.viewMode === 'ielts-tests' && data.selectedIeltsTests.length === 4);
     await launched.page.callMethod('selectIeltsTest', { currentTarget: { dataset: { itemId } } });
     const detailReady = await waitForData(launched.page, (data) => data.ieltsMode && !data.ieltsLoading && data.exercises.some((item) => String(item.id).includes(`academic-${book}-`)));
     assert([1, 2, 3].every((part) => detailReady.data.exercises.some((item) => item.part === part)), `speaking-parts-${book}`);
     details.push({ book, detailReadyMs: detailReady.ms, exerciseCount: detailReady.data.exercises.length });
     await launched.page.callMethod('backToSpeakingHome');
-    await waitForData(launched.page, (data) => data.ieltsExpanded && data.ieltsTests.length === 48);
+    await waitForData(launched.page, (data) => data.viewMode === 'ielts-tests');
+    await launched.page.callMethod('backToSpeakingHome');
+    await waitForData(launched.page, (data) => data.viewMode === 'ielts-books' && data.ieltsTests.length === 48);
   }
   await screenshot(miniProgram, 'speaking-books-21-10');
   return { shellMs: launched.shellMs, indexReadyMs: ready.ms, details };
