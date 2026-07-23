@@ -60,6 +60,47 @@ module.exports = {
   }
 };
 
+const writingReportZh = {
+  rubricLabel: '评分依据：',
+  evidenceLabel: '原文证据',
+  descriptorLabel: '本档依据：',
+  limitersLabel: '卡分原因',
+  nextBandLabel: '升到下一档',
+  strengthsLabel: '做得好的地方',
+  bandSampleTitle: '分级升档范文',
+  bandSampleCopy: '按需生成比当前预估高 1 Band 和高 2 Band 的可学习版本。',
+  bandOneButton: '高 1 Band',
+  bandTwoButton: '高 2 Band',
+  upgradesLabel: '相对原文的提升',
+  pdfGenerating: '正在生成 PDF',
+  pdfDownload: '下载完整 PDF',
+  pdfFailedToast: 'PDF 生成失败，请重试',
+  bandSampleFailedToast: '生成失败，可重试',
+  promptImageAlt: '作文题原图'
+};
+const writingReportEn = {
+  rubricLabel: 'Rubric: ',
+  evidenceLabel: 'Evidence',
+  descriptorLabel: 'Band match: ',
+  limitersLabel: 'Score limiters',
+  nextBandLabel: 'Next-band actions',
+  strengthsLabel: 'Strengths',
+  bandSampleTitle: 'Band Upgrade Samples',
+  bandSampleCopy: 'Generate learnable versions one or two bands above the current estimate.',
+  bandOneButton: '+1 Band',
+  bandTwoButton: '+2 Bands',
+  upgradesLabel: 'Upgrades from the original',
+  pdfGenerating: 'Generating PDF',
+  pdfDownload: 'Download Full PDF',
+  pdfFailedToast: 'Could not generate PDF',
+  bandSampleFailedToast: 'Could not generate sample',
+  promptImageAlt: 'Original writing prompt image'
+};
+Object.assign(module.exports.writing['zh-CN'], writingReportZh);
+Object.assign(module.exports.writing.en, writingReportEn);
+Object.assign(module.exports.practiceHistory['zh-CN'], writingReportZh);
+Object.assign(module.exports.practiceHistory.en, writingReportEn);
+
 Object.assign(module.exports.flashcards['zh-CN'], {
   all: '全部', word: '生词', phrase: '短语', pattern: '句型', juniorBook: '初中英语词汇 乱序', seniorBook: '高中英语词汇 乱序', juniorMark: '初', seniorMark: '高', wordBook: '词汇书', reviewProgress: '复习', cardUnit: ' 张', unfamiliarProgress: '不熟', unlockBook: 'Unlock 词汇书', unlockMeta: 'Level 1–4 · Unit 1–8', selectLevel: '选择 Level', selectUnit: '选择 Unit', selectList: '选择词汇表', levelLists: 'Unit 1–8', unitLists: 'LS / RW 词汇表', lsList: 'LS 听说词汇表', rwList: 'RW 阅写词汇表', dictation: '听音写词', dictationHistory: '听写记录', reviewMode: '背诵', dictationMode: '听写', startDictation: '开始听写', dictationShelf: '听音拼写', dictationShelfMeta: '仅听写学生已背单词', practice: '练习', dictationPromptTitle: '要趁热听写吗？', dictationPromptPlanCopy: '今天的词汇计划已完成，可以立即听音拼写已背单词。', dictationPromptRepeatCopy: '已完成当天词汇复习，现在可以用听写检查拼写。', notNow: '暂不', goDictation: '去听音拼写', openingDictation: '正在打开…'
 });

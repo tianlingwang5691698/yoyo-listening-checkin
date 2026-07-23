@@ -6,12 +6,15 @@ const test = require('node:test');
 const root = path.resolve(__dirname, '..');
 
 test('雅思写作报告展示证据、卡分原因和升档动作', () => {
-  const template = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxml'), 'utf8');
+  const pageTemplate = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxml'), 'utf8');
+  const template = fs.readFileSync(path.join(root, 'templates/writing-report.wxml'), 'utf8');
+  assert.match(pageTemplate, /import src="\.\.\/\.\.\/\.\.\/templates\/writing-report\.wxml"/);
+  assert.equal((pageTemplate.match(/template is="writing-report"/g) || []).length, 2);
   assert.match(template, /review\.criterionDetails/);
-  assert.match(template, /原文证据/);
-  assert.match(template, /本档依据/);
-  assert.match(template, /卡分原因/);
-  assert.match(template, /升到下一档/);
+  assert.match(template, /texts\.evidenceLabel/);
+  assert.match(template, /texts\.descriptorLabel/);
+  assert.match(template, /texts\.limitersLabel/);
+  assert.match(template, /texts\.nextBandLabel/);
   assert.match(template, /review\.strengths/);
   assert.match(template, /AI 练习预估|review\.estimateLabel/);
   assert.match(template, /review\.writingTestEstimate/);
@@ -20,18 +23,18 @@ test('雅思写作报告展示证据、卡分原因和升档动作', () => {
 });
 
 test('高 1 与高 2 Band 范文按需生成并覆盖四主题对比色', () => {
-  const template = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxml'), 'utf8');
-  const style = fs.readFileSync(path.join(root, 'pages/writing/detail/index.wxss'), 'utf8');
+  const template = fs.readFileSync(path.join(root, 'templates/writing-report.wxml'), 'utf8');
+  const style = fs.readFileSync(path.join(root, 'styles/writing-report.wxss'), 'utf8');
   const page = fs.readFileSync(path.join(root, 'pages/writing/detail/index.js'), 'utf8');
   assert.match(template, /data-delta="1"/);
   assert.match(template, /data-delta="2"/);
   assert.match(template, /bindtap="generateBandSample"/);
   assert.match(template, /review\.bandSamples/);
   assert.match(page, /store\.generateWritingBandSample/);
-  assert.match(style, /\.writing-library-page \.band-sample-button/);
-  assert.match(style, /\.theme-voyage \.band-sample-button/);
-  assert.match(style, /\.theme-dragon \.band-sample-button/);
-  assert.match(style, /\.band-sample-button\.is-strong/);
+  assert.match(style, /\.shared-writing-band-buttons button/);
+  assert.match(style, /\.theme-voyage \.shared-writing-download/);
+  assert.match(style, /\.theme-dragon \.shared-writing-report-score/);
+  assert.match(style, /\.shared-writing-band-buttons button\.is-strong/);
 });
 
 test('升档范文云端动作完整接线', () => {
@@ -43,6 +46,7 @@ test('升档范文云端动作完整接线', () => {
   assert.match(cloud, /generateWritingBandSample: serviceAction\('writing', 'generateWritingBandSample'\)/);
   assert.match(cloudClient, /gradeWritingAttempt'.*generateWritingBandSample'.*getWritingAttemptDetail/);
   assert.match(requestContext, /generateWritingBandSample/);
+  assert.match(requestContext, /generateWritingReportPdf/);
 });
 
 test('写作批改失败展示完整调用链路而不是通用提示', () => {

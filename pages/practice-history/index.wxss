@@ -1,3 +1,5 @@
+@import "../../styles/writing-report.wxss";
+
 .practice-history-page {
   min-height: 100vh;
   padding-top: 52rpx;
@@ -198,6 +200,20 @@
 .history-writing-text {
   margin-top: 16rpx;
   white-space: pre-wrap;
+}
+
+.history-writing-images {
+  margin-top: 22rpx;
+}
+
+.history-writing-image {
+  display: block;
+  width: 100%;
+  margin-top: 14rpx;
+  border: 2rpx solid rgba(32, 58, 95, 0.2);
+  border-radius: 6rpx;
+  background: #fff;
+  box-sizing: border-box;
 }
 
 .history-question-prompt {

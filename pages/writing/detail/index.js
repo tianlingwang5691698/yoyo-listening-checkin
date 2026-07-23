@@ -5,6 +5,8 @@ const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const promptDisplay = require('../../../utils/writing-prompt-display');
+const { normalizeWritingReview } = require('../../../utils/writing-report');
+const { openWritingReportPdf } = require('../../../utils/writing-report-download');
 const { tokenizeScopedText, splitScopedSentences, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../../utils/scoped-manual-marks');
 
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
@@ -189,36 +191,7 @@ function buildWritingSubmitError(error, fallbackAction) {
 }
 
 function normalizeReview(review, prompt) {
-  const totalScore = Number(review && review.totalScore) || Number(prompt && prompt.score) || 20;
-  return Object.assign({
-    score: 0,
-    totalScore,
-    level: '',
-    summary: '',
-    content: '',
-    structure: '',
-    language: '',
-    spelling: '',
-    strengths: [],
-    problems: [],
-    suggestions: [],
-    grammarCorrections: [],
-    polishedVersion: '',
-    criterionDetails: [],
-    bandSamples: [],
-    isIelts: false,
-    estimateLabel: '',
-    weightingNote: '',
-    rubricVersion: ''
-  }, review || {}, {
-    totalScore,
-    strengths: Array.isArray(review && review.strengths) ? review.strengths : [],
-    problems: Array.isArray(review && review.problems) ? review.problems : [],
-    suggestions: Array.isArray(review && review.suggestions) ? review.suggestions : [],
-    grammarCorrections: Array.isArray(review && review.grammarCorrections) ? review.grammarCorrections : [],
-    criterionDetails: Array.isArray(review && review.criterionDetails) ? review.criterionDetails : [],
-    bandSamples: Array.isArray(review && review.bandSamples) ? review.bandSamples : []
-  });
+  return normalizeWritingReview(review, Number(prompt && prompt.score) || 20);
 }
 
 function getWritingGradeFailureText(gradeError) {
@@ -261,6 +234,7 @@ Page({
     restoringAttempt: false,
     bandSampleGeneratingDelta: 0,
     bandSampleError: '',
+    pdfGenerating: false,
     reviewCelebrating: false,
     errorText: ''
   }),
@@ -745,6 +719,7 @@ Page({
     try {
       const result = await store.submitWritingAttempt({
         prompt,
+        promptDisplay: this.data.promptDisplay,
         promptId: prompt._id,
         essay,
         manualMarks: buildManualMarks(getWritingMarkSources(this.data), this.data.writingTokenMarks, this.data.writingSentenceMarks)
@@ -827,9 +802,30 @@ Page({
       });
     } catch (error) {
       this.setData({ bandSampleError: '升档范文生成失败，可以再试一次。' });
-      wx.showToast({ title: '生成失败，可重试', icon: 'none' });
+      wx.showToast({ title: text('bandSampleFailedToast', '生成失败，可重试'), icon: 'none' });
     } finally {
       this.setData({ bandSampleGeneratingDelta: 0 });
+    }
+  },
+  async downloadWritingReportPdf(event) {
+    const attemptId = String(
+      event && event.currentTarget && event.currentTarget.dataset.attemptId
+      || this.data.currentAttemptId
+      || ''
+    );
+    if (!attemptId || this.data.pdfGenerating) return;
+    this.setData({ pdfGenerating: true });
+    try {
+      const result = await store.generateWritingReportPdf(attemptId);
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error(result.cloudError && result.cloudError.message || 'writing-report-generate-failed');
+      }
+      await openWritingReportPdf(result);
+    } catch (error) {
+      console.error('writing-report-pdf-failed', String(error && error.message || error || ''));
+      wx.showToast({ title: text('pdfFailedToast', 'PDF 生成失败，请重试'), icon: 'none' });
+    } finally {
+      this.setData({ pdfGenerating: false });
     }
   },
   playWritingReviewEffect() {

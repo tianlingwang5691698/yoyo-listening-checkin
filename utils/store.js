@@ -37,6 +37,7 @@ const MUTATION_ACTIONS = {
   submitWritingAttempt: true,
   gradeWritingAttempt: true,
   generateWritingBandSample: true,
+  generateWritingReportPdf: true,
   addDictionaryWord: true,
   recordGrammarWrong: true,
   addPracticeWrongQuestion: true,
@@ -1060,6 +1061,14 @@ async function generateWritingBandSample(options) {
   }, { useCache: false });
 }
 
+async function generateWritingReportPdf(attemptId) {
+  return callCloud('generateWritingReportPdf', withSelectedStudent({ attemptId }), {
+    fileId: '',
+    tempUrl: '',
+    fileName: ''
+  }, { useCache: false });
+}
+
 async function getWritingAttempts(options, onRefresh) {
   const payload = Object.assign({}, options || {});
   const forceRefresh = payload.forceRefresh === true;
@@ -1461,6 +1470,7 @@ module.exports = {
   submitWritingAttempt,
   gradeWritingAttempt,
   generateWritingBandSample,
+  generateWritingReportPdf,
   getWritingAttempts,
   getWritingAttemptDetail,
   getGrammarHome,

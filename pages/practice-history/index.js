@@ -1,6 +1,8 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
 const i18n = require('../../utils/i18n');
+const { normalizeWritingReview } = require('../../utils/writing-report');
+const { openWritingReportPdf } = require('../../utils/writing-report-download');
 
 const text = (key, fallback) => i18n.getPageText('practiceHistory', key, undefined, fallback);
 
@@ -217,6 +219,15 @@ function normalizeWriting(attempt, index) {
   const totalScore = Number(attempt.totalScore || review.totalScore || 20);
   const pending = ['grading-pending', 'grading'].includes(attempt.status);
   const sourceMeta = [attempt.promptMeta && attempt.promptMeta.year, attempt.promptMeta && attempt.promptMeta.district, attempt.promptMeta && attempt.promptMeta.examType].filter(Boolean).join(' · ');
+  const promptImages = attempt.promptMeta && Array.isArray(attempt.promptMeta.images)
+    ? attempt.promptMeta.images.map((image, imageIndex) => ({
+      key: String(image && (image.cloudPath || image.fileId || image.fileID) || `prompt-image-${imageIndex}`),
+      fileId: String(image && (image.fileId || image.fileID) || ''),
+      cloudPath: String(image && image.cloudPath || ''),
+      alt: String(image && image.alt || ''),
+      src: String(image && (image.src || image.url) || '')
+    })).filter((image) => image.fileId || image.cloudPath || image.src)
+    : [];
   return {
     id: String(attempt.attemptId || `writing-${index}`),
     targetId: String(attempt.promptId || ''),
@@ -227,16 +238,30 @@ function normalizeWriting(attempt, index) {
     dateLabel: cleanDate(attempt.date, attempt.createdAt),
     summary: pending ? text('grading', '批改中') : `${Number(attempt.score || review.score || 0)}/${totalScore}`,
     attempt: Object.assign({}, attempt, {
-      review: Object.assign({
-        problems: [],
-        suggestions: [],
-        grammarCorrections: []
-      }, review)
+      review: normalizeWritingReview(review, totalScore),
+      promptImages
     }),
     detailReady: false,
     detailLoading: false,
+    pdfGenerating: false,
     manualMarkItems: (attempt.manualMarks && attempt.manualMarks.items) || []
   };
+}
+
+async function resolveWritingPromptImages(attempt) {
+  const source = attempt || {};
+  const images = Array.isArray(source.promptImages) ? source.promptImages : [];
+  if (!images.some((image) => !image.src && (image.fileId || image.cloudPath))) return source;
+  const promptImages = await Promise.all(images.map(async (image) => {
+    if (image.src) return image;
+    try {
+      const src = await store.getTempFileURL(image.fileId || image.cloudPath);
+      return Object.assign({}, image, { src });
+    } catch (error) {
+      return image;
+    }
+  }));
+  return Object.assign({}, source, { promptImages });
 }
 
 function isWritingGradingPending(attempt) {
@@ -732,11 +757,13 @@ Page({
       return;
     }
     const normalized = normalizeWriting(result.attempt, 0);
+    const attempt = await resolveWritingPromptImages(normalized.attempt);
+    if (!this.historyPageActive) return;
     if (result.resumable) this.startWritingGradeOnce(record.id);
     this.updateRecord(record.id, {
       detailLoading: false,
       detailReady: true,
-      attempt: normalized.attempt,
+      attempt,
       manualMarkItems: normalized.manualMarkItems
     });
     this.setData({ debugLines: [] });
@@ -748,6 +775,34 @@ Page({
         if (!latest || this.data.expandedId !== record.id) return;
         this.loadWritingDetail(Object.assign({}, latest, { detailLoading: false }));
       }, 3000);
+    }
+  },
+  previewWritingPromptImage(event) {
+    const recordId = String(event.currentTarget.dataset.recordId || '');
+    const current = String(event.currentTarget.dataset.src || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const urls = record && record.attempt && Array.isArray(record.attempt.promptImages)
+      ? record.attempt.promptImages.map((image) => image.src).filter(Boolean)
+      : [];
+    if (!current || !urls.length) return;
+    wx.previewImage({ current, urls });
+  },
+  async downloadWritingReportPdf(event) {
+    const recordId = String(event.currentTarget.dataset.attemptId || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    if (!record || record.pdfGenerating) return;
+    this.updateRecord(recordId, { pdfGenerating: true });
+    try {
+      const result = await store.generateWritingReportPdf(recordId);
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error(result.cloudError && result.cloudError.message || 'writing-report-generate-failed');
+      }
+      await openWritingReportPdf(result);
+    } catch (error) {
+      console.error('writing-history-report-pdf-failed', String(error && error.message || error || ''));
+      wx.showToast({ title: text('pdfFailedToast', 'PDF 生成失败，请重试'), icon: 'none' });
+    } finally {
+      this.updateRecord(recordId, { pdfGenerating: false });
     }
   },
   async loadGrammarExplanation(event) {

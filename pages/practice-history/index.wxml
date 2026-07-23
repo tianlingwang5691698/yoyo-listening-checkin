@@ -1,3 +1,5 @@
+<import src="../../templates/writing-report.wxml"/>
+
 <view class="theme-{{theme}} language-{{language}} page-shell practice-history-page history-{{type}}">
   <view class="history-hero">
     <view class="history-eyebrow">{{config.eyebrow}}</view>
@@ -100,38 +102,29 @@
           <view class="history-section">
             <view class="history-section-title">{{texts.prompt}}</view>
             <view class="history-writing-text">{{item.attempt.prompt || item.title}}</view>
+            <view class="history-writing-images" wx:if="{{item.attempt.promptImages.length}}">
+              <image
+                class="history-writing-image"
+                wx:for="{{item.attempt.promptImages}}"
+                wx:key="key"
+                wx:for-item="promptImage"
+                wx:if="{{promptImage.src}}"
+                src="{{promptImage.src}}"
+                mode="widthFix"
+                show-menu-by-longpress="{{true}}"
+                data-record-id="{{item.id}}"
+                data-src="{{promptImage.src}}"
+                bindtap="previewWritingPromptImage"
+                aria-label="{{promptImage.alt || texts.promptImageAlt}}"
+              ></image>
+            </view>
           </view>
           <view class="history-section">
             <view class="history-section-title">{{texts.essay}}</view>
             <view class="history-writing-text">{{item.attempt.essay}}</view>
           </view>
-          <view class="history-section" wx:if="{{item.attempt.review.summary}}">
-            <view class="history-section-title">{{texts.report}}</view>
-            <view class="history-analysis">{{item.attempt.review.summary}}</view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.content}}"><text>{{item.attempt.review.contentLabel || texts.content}}</text><view>{{item.attempt.review.content}}</view></view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.structure}}"><text>{{item.attempt.review.structureLabel || texts.structure}}</text><view>{{item.attempt.review.structure}}</view></view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.language}}"><text>{{item.attempt.review.languageLabel || texts.language}}</text><view>{{item.attempt.review.language}}</view></view>
-            <view class="history-review-row" wx:if="{{item.attempt.review.spelling}}"><text>{{item.attempt.review.spellingLabel || texts.spelling}}</text><view>{{item.attempt.review.spelling}}</view></view>
-          </view>
-          <view class="history-section" wx:if="{{item.attempt.review.problems.length}}">
-            <view class="history-section-title">{{texts.improvements}}</view>
-            <view class="history-list-line" wx:for="{{item.attempt.review.problems}}" wx:key="*this">· {{item}}</view>
-          </view>
-          <view class="history-section" wx:if="{{item.attempt.review.suggestions.length}}">
-            <view class="history-section-title">{{texts.advice}}</view>
-            <view class="history-list-line" wx:for="{{item.attempt.review.suggestions}}" wx:key="*this">· {{item}}</view>
-          </view>
-          <view class="history-section" wx:if="{{item.attempt.review.grammarCorrections.length}}">
-            <view class="history-section-title">{{texts.polish}}</view>
-            <view class="history-correction" wx:for="{{item.attempt.review.grammarCorrections}}" wx:key="original">
-              <view>{{texts.originalSentence}}{{item.original}}</view>
-              <view>{{texts.revisedSentence}}{{item.corrected}}</view>
-              <view>{{texts.reason}}{{item.reason}}</view>
-            </view>
-          </view>
-          <view class="history-section" wx:if="{{item.attempt.review.polishedVersion}}">
-            <view class="history-section-title">{{item.attempt.review.polishedTitle || texts.rewrite}}</view>
-            <view class="history-writing-text">{{item.attempt.review.polishedVersion}}</view>
+          <view class="history-section history-writing-report">
+            <template is="writing-report" data="{{review: item.attempt.review, totalScore: item.attempt.totalScore, texts: texts, attemptId: item.id, pdfGenerating: item.pdfGenerating, showBandSampleActions: false, reportTitle: texts.report}}"/>
           </view>
         </block>
         <block wx:if="{{type === 'vocabulary' && item.detailReady}}">

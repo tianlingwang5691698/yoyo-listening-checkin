@@ -5,6 +5,7 @@ const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
 const completion = require('./completion.service');
 const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
+const { buildWritingReportPdf } = require('../lib/writing-report-pdf');
 const {
   SOURCE_URL: IELTS_WRITING_RUBRIC_SOURCE,
   KEY_ASSESSMENT_CRITERIA_URL: IELTS_WRITING_KEY_CRITERIA_SOURCE,
@@ -1410,6 +1411,9 @@ async function submitWritingAttempt(event) {
   const scoreFingerprint = buildWritingScoreFingerprint(prompt, essay);
   const legacyScoreFingerprint = buildLegacyWritingScoreFingerprint(prompt, essay);
   const reusableScoreFingerprints = Array.from(new Set([scoreFingerprint, legacyScoreFingerprint]));
+  const display = payload.promptDisplay && typeof payload.promptDisplay === 'object'
+    ? payload.promptDisplay
+    : {};
   const attempt = {
     promptId,
     title: prompt.title || '',
@@ -1427,8 +1431,17 @@ async function submitWritingAttempt(event) {
       bookNumber: Number(prompt.bookNumber || 0),
       testNumber: Number(prompt.testNumber || 0),
       directions: prompt.directions || '',
-      scenario: prompt.scenario || '',
-      requirements: Array.isArray(prompt.requirements) ? prompt.requirements.slice(0, 12) : [],
+      scenario: display.scenario || prompt.scenario || '',
+      articleTitle: display.articleTitle || prompt.articleTitle || '',
+      articleParagraphs: Array.isArray(display.articleParagraphs)
+        ? display.articleParagraphs.slice(0, 20)
+        : (Array.isArray(prompt.articleParagraphs) ? prompt.articleParagraphs.slice(0, 20) : []),
+      requirementsTitle: display.requirementsTitle || prompt.requirementsTitle || '',
+      requirements: Array.isArray(display.requirements)
+        ? display.requirements.slice(0, 12)
+        : (Array.isArray(prompt.requirements) ? prompt.requirements.slice(0, 12) : []),
+      notices: Array.isArray(display.notices) ? display.notices.slice(0, 8) : [],
+      promptStarter: display.promptStarter || prompt.promptStarter || '',
       promptTable: prompt.promptTable || null,
       visualData: prompt.visualData || null,
       images: Array.isArray(prompt.images) ? prompt.images.slice(0, 2).map((image) => ({
@@ -1953,11 +1966,70 @@ async function getWritingAttemptDetail(event) {
   };
 }
 
+async function generateWritingReportPdf(event) {
+  const payload = (event && event.payload) || {};
+  const attemptId = String(payload.attemptId || '').trim();
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'generateWritingReportPdf'
+  }));
+  if (!attemptId) throw new Error('writing-report-attempt-required');
+  const loaded = await loadWritingAttempt(ctx, attemptId);
+  const attempt = loaded.attempt;
+  if (!attempt || attempt.status !== 'graded' || !attempt.review) {
+    throw new Error('writing-report-not-ready');
+  }
+  const promptImages = attempt.promptMeta && Array.isArray(attempt.promptMeta.images)
+    ? attempt.promptMeta.images
+    : [];
+  const requiredPromptImages = promptImages.slice(0, 2).filter((image) => (
+    image && (image.fileId || image.fileID || image.cloudPath)
+  ));
+  const imageBuffers = [];
+  for (const image of requiredPromptImages) {
+    try {
+      const buffer = await storageAdapter.downloadCloudFileBuffer(
+        image && (image.fileId || image.fileID),
+        image && image.cloudPath
+      );
+      if (buffer && buffer.length) imageBuffers.push(buffer);
+    } catch (error) {
+      throw new Error('writing-report-prompt-image-unavailable');
+    }
+  }
+  if (imageBuffers.length !== requiredPromptImages.length) {
+    throw new Error('writing-report-prompt-image-unavailable');
+  }
+  const pdfBuffer = await buildWritingReportPdf({
+    attempt: Object.assign({}, attempt, {
+      attemptId: formatWritingAttemptId(loaded.ref.documentId, loaded.ref.isPreview)
+    }),
+    imageBuffers
+  });
+  const safeAttemptId = loaded.ref.documentId.replace(/[^a-zA-Z0-9_-]/g, '');
+  const safeVersion = String(attempt.gradingVersion || 'graded').replace(/[^a-zA-Z0-9_-]/g, '');
+  const cloudPath = [
+    '_exports',
+    'writing-reports',
+    ctx.family.familyId,
+    ctx.child.childId,
+    `${safeAttemptId}-${safeVersion}.pdf`
+  ].join('/');
+  const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
+  const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);
+  return {
+    fileId: uploaded.fileId,
+    cloudPath: uploaded.cloudPath,
+    tempUrl,
+    fileName: `${String(attempt.title || 'writing-report').replace(/[\\/:*?"<>|]/g, ' ')}.pdf`
+  };
+}
+
 module.exports = {
   analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,
   generateWritingBandSample,
+  generateWritingReportPdf,
   getWritingAttempts,
   getWritingAttemptDetail,
   _test: {
