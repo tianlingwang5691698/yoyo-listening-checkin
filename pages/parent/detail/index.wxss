@@ -536,6 +536,67 @@
   gap: 18rpx;
 }
 
+.vocabulary-record-head {
+  display: block;
+}
+
+.vocabulary-record-head > view:first-child {
+  width: 100%;
+  min-width: 0;
+}
+
+.vocabulary-metrics {
+  min-height: 92rpx;
+  margin-top: 20rpx;
+  padding-top: 18rpx;
+  display: flex;
+  align-items: stretch;
+  border-top: 2rpx solid rgba(23, 49, 79, 0.14);
+  box-sizing: border-box;
+}
+
+.vocabulary-metric {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: 0 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.vocabulary-metric + .vocabulary-metric::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8rpx;
+  bottom: 8rpx;
+  width: 2rpx;
+  background: rgba(23, 49, 79, 0.12);
+}
+
+.vocabulary-metric-value {
+  max-width: 100%;
+  color: #17314f;
+  font-size: 30rpx;
+  line-height: 1.25;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.vocabulary-metric-label {
+  max-width: 100%;
+  margin-top: 6rpx;
+  color: #69728a;
+  font-size: 22rpx;
+  line-height: 1.3;
+  font-weight: 600;
+  word-break: break-word;
+}
+
 .study-dossier.tone-reading,
 .study-dossier.tone-reading-study {
   background:
@@ -969,6 +1030,22 @@
   margin-top: 18rpx;
 }
 
+.theme-library .vocabulary-metrics {
+  border-top-color: rgba(184, 149, 98, 0.28);
+}
+
+.theme-library .vocabulary-metric + .vocabulary-metric::before {
+  background: rgba(184, 149, 98, 0.24);
+}
+
+.theme-library .vocabulary-metric-value {
+  color: #14283a;
+}
+
+.theme-library .vocabulary-metric-label {
+  color: #7b6c58;
+}
+
 .theme-library .library-detail-toggle {
   border-radius: 8px;
   background: #14283a;
@@ -1380,6 +1457,22 @@
 .theme-dragon .voice-quote,
 .theme-dragon .answer-chip {
   max-width: 100%;
+}
+
+.theme-dragon .vocabulary-metrics {
+  border-top-color: rgba(16, 46, 98, 0.28);
+}
+
+.theme-dragon .vocabulary-metric + .vocabulary-metric::before {
+  background: rgba(16, 46, 98, 0.22);
+}
+
+.theme-dragon .vocabulary-metric-value {
+  color: #102e62;
+}
+
+.theme-dragon .vocabulary-metric-label {
+  color: #69728a;
 }
 
 .theme-dragon .analysis-grid,

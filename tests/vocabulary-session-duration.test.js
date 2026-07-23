@@ -49,6 +49,9 @@ test('背诵和三种练习共用有效计时并暂停后台时间', () => {
   assert.match(recognition, /practiceMode: this\.data\.practiceMode[\s\S]*?durationSec/);
   assert.match(dictation, /practiceMode: this\.practiceMode[\s\S]*?durationSec/);
   assert.match(flashcards, /latestAttempt:[\s\S]*?durationSec: this\.getVocabularySessionDuration\(\)/);
+  assert.match(flashcards, /dailyPlanDurationBaseSec[\s\S]*?\+ sessionDurationSec/);
+  assert.match(flashcards, /onHide\(\)[\s\S]*?syncJuniorVocabularyPlanDuration\(true\)/);
+  assert.match(flashcards, /stats\.reviewed % 5 === 0[\s\S]*?syncJuniorVocabularyPlanDuration\(true\)/);
 });
 
 test('选义练习进云端记录和日报，不改写拼写错词本', () => {
@@ -62,4 +65,19 @@ test('选义练习进云端记录和日报，不改写拼写错词本', () => {
   assert.match(history, /durationText: formatDuration\(item\.durationSec\)/);
   assert.match(report, /durationSec/);
   assert.match(report, /durationLabel/);
+});
+
+test('初中词汇计划用时增量续存到云端并写入最终完成记录', () => {
+  const flashcards = read('pages/reading/flashcards/index.js');
+  const store = read('utils/store.js');
+  const cloudIndex = read('cloudfunctions/yoyo/index.js');
+  const requestContext = read('cloudfunctions/yoyo/lib/request-context-engine.js');
+  const service = read('cloudfunctions/yoyo/services/flashcard.service.js');
+  assert.match(store, /saveJuniorVocabularyPlanDuration/);
+  assert.match(cloudIndex, /saveJuniorVocabularyPlanDuration: serviceAction\('flashcard', 'saveJuniorVocabularyPlanDuration'\)/);
+  assert.match(requestContext, /saveJuniorVocabularyPlanDuration/);
+  assert.match(service, /activeDurationSec/);
+  assert.match(service, /lastDurationSec: durationSec/);
+  assert.match(service, /durationMode: payload\.durationMode === 'daily-effective-total-v1'/);
+  assert.match(flashcards, /durationMode: 'daily-effective-total-v1'/);
 });

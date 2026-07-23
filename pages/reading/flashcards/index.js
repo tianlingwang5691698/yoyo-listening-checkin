@@ -871,6 +871,10 @@ Page({
     previewMode: store.getDeviceStudyRole() !== 'student'
   }),
   onLoad(options) {
+    this.dailyPlanDurationBaseSec = 0;
+    this.lastJuniorDurationSyncedSec = 0;
+    this.juniorDurationSyncTargetSec = 0;
+    this.juniorDurationSyncPromise = null;
     if (String((options && options.dailyPlan) || '') !== 'junior-list') return;
     this.dailyPlanMode = true;
     this.setData({
@@ -883,6 +887,7 @@ Page({
   },
   onUnload() {
     if (this.vocabularySessionTimer) this.vocabularySessionTimer.pause();
+    this.syncJuniorVocabularyPlanDuration(true);
     this.flushReviewQueue(true);
     if (!this.dailyPlanMode) this.syncVocabularyCompletion(true);
     if (this.autoSpeakTimer) {
@@ -945,6 +950,7 @@ Page({
   },
   onHide() {
     if (this.vocabularySessionTimer) this.vocabularySessionTimer.pause();
+    this.syncJuniorVocabularyPlanDuration(true);
   },
   getFlashcardLibrary() {
     return this.flashcardLibrary || [];
@@ -968,13 +974,19 @@ Page({
       let data = await store.getJuniorVocabularyPlan();
       if (!data.active) throw new Error('junior-list-plan-inactive');
       if (!data.completedToday && !(data.cards || []).length && !this.data.previewMode) {
-        const completed = await store.completeJuniorVocabularyPlan();
+        const completed = await store.completeJuniorVocabularyPlan({
+          durationSec: Number(data.durationSec || 0),
+          durationMode: 'daily-effective-total-v1'
+        });
         if (completed && completed.saved) data = Object.assign({}, data, completed, { cards: [], completedToday: true });
       }
       const library = (data.library || []).map(normalizeCard);
       const cards = (data.cards || []).map(normalizeCard);
       const reviewLists = data.reviewLists || [];
       const completedToday = !!data.completedToday;
+      const durationSec = Math.max(0, Number(data.durationSec || 0));
+      this.dailyPlanDurationBaseSec = durationSec;
+      this.lastJuniorDurationSyncedSec = durationSec;
       this.dailyPlanCards = cards.slice();
       this.setFlashcardLibrary(library);
       this.setData({
@@ -997,6 +1009,8 @@ Page({
         total: cards.length,
         empty: !cards.length && !completedToday,
         reviewCompleted: completedToday,
+        studyDurationSec: durationSec,
+        studyDurationText: durationSec ? formatDuration(durationSec, this.data.language) : '',
         reviewDone: completedToday ? Number((data.mainWords || 0) + (data.reviewWords || 0)) : 0,
         reviewSessionTotal: completedToday ? Number((data.mainWords || 0) + (data.reviewWords || 0)) : cards.length,
         dueCount: cards.length,
@@ -1872,7 +1886,40 @@ Page({
     this.vocabularySessionStats = stats;
     if (stats.reviewed % 5 === 0) {
       this.syncVocabularyCompletion(false);
+      this.syncJuniorVocabularyPlanDuration(true);
     }
+  },
+  syncJuniorVocabularyPlanDuration(force) {
+    if (!this.dailyPlanMode || this.data.previewMode || !this.vocabularySessionTimer || this.data.reviewCompleted) {
+      return Promise.resolve(null);
+    }
+    const durationSec = this.getVocabularySessionDuration();
+    if (durationSec <= Number(this.lastJuniorDurationSyncedSec || 0)) return Promise.resolve(null);
+    if (!force && durationSec - Number(this.lastJuniorDurationSyncedSec || 0) < 30) return Promise.resolve(null);
+    this.juniorDurationSyncTargetSec = Math.max(Number(this.juniorDurationSyncTargetSec || 0), durationSec);
+    if (this.juniorDurationSyncPromise) return this.juniorDurationSyncPromise;
+    const flush = () => {
+      const submittedDurationSec = Number(this.juniorDurationSyncTargetSec || 0);
+      this.juniorDurationSyncPromise = store.saveJuniorVocabularyPlanDuration({
+        durationSec: submittedDurationSec
+      }).then((result) => {
+        if (result && result.saved) {
+          this.lastJuniorDurationSyncedSec = Math.max(
+            Number(this.lastJuniorDurationSyncedSec || 0),
+            Number(result.durationSec || submittedDurationSec)
+          );
+        }
+        return result;
+      }).catch(() => null).then((result) => {
+        this.juniorDurationSyncPromise = null;
+        if (result && result.saved && Number(this.juniorDurationSyncTargetSec || 0) > submittedDurationSec) {
+          return flush();
+        }
+        return result;
+      });
+      return this.juniorDurationSyncPromise;
+    };
+    return flush();
   },
   syncVocabularyCompletion(force) {
     if (this.data.previewMode || this.dailyPlanMode) return;
@@ -1960,13 +2007,18 @@ Page({
     this.setData({ dictationPromptPending: true });
     await this.waitForReviewSync();
     try {
-      const result = await store.completeJuniorVocabularyPlan({ durationSec: this.getVocabularySessionDuration() });
+      const result = await store.completeJuniorVocabularyPlan({
+        durationSec: this.getVocabularySessionDuration(),
+        durationMode: 'daily-effective-total-v1'
+      });
       if (!result || !result.saved) throw new Error((result && result.reason) || 'plan-completion-failed');
       this.setData({
         completionEncouragement: result.encouragement || this.data.completionEncouragement,
         newDueCount: Number(result.mainWords || this.data.newDueCount || 0),
         reviewDueCount: Number(result.reviewWords || this.data.reviewDueCount || 0),
         dailyPlanReviewLists: result.reviewLists || this.data.dailyPlanReviewLists,
+        studyDurationSec: Number(result.durationSec || this.data.studyDurationSec || 0),
+        studyDurationText: formatDuration(Number(result.durationSec || this.data.studyDurationSec || 0), this.data.language),
         dictationPromptPending: false,
         flashcardDebugLines: []
       });
@@ -2049,6 +2101,7 @@ Page({
         dictionaryBooks: (this.data.dictionaryBooks || []).map((item) => Object.assign({}, item))
       };
     }
+    const startingDurationSec = this.dailyPlanMode ? Number(this.dailyPlanDurationBaseSec || 0) : 0;
     this.setData({
       sourceMode: 'library',
       mode: 'review',
@@ -2058,8 +2111,8 @@ Page({
       reviewDone: 0,
       reviewSessionTotal: cards.length,
       reviewCompleted: false,
-      studyDurationSec: 0,
-      studyDurationText: formatDuration(0, this.data.language),
+      studyDurationSec: startingDurationSec,
+      studyDurationText: formatDuration(startingDurationSec, this.data.language),
       repeatMode: false,
       total: cards.length,
       dueCount: cards.length,
@@ -2088,6 +2141,7 @@ Page({
       this.syncVocabularyCompletion(true);
       this.flushReviewQueue(true);
     }
+    this.syncJuniorVocabularyPlanDuration(true);
     if (this.vocabularySessionTimer) this.vocabularySessionTimer.reset();
     if (this.dailyPlanMode && !this.data.previewMode) {
       wx.navigateBack({ delta: 1 });
@@ -2156,9 +2210,13 @@ Page({
   },
   startVocabularySessionTimer() {
     if (!this.vocabularySessionTimer) {
-      this.vocabularySessionTimer = createVocabularySessionTimer((durationSec) => {
+      this.vocabularySessionTimer = createVocabularySessionTimer((sessionDurationSec) => {
         if (this.data.mode === 'review' && !this.data.reviewCompleted) {
+          const durationSec = this.dailyPlanMode
+            ? Number(this.dailyPlanDurationBaseSec || 0) + sessionDurationSec
+            : sessionDurationSec;
           this.setData({ studyDurationSec: durationSec, studyDurationText: formatDuration(durationSec, this.data.language) });
+          this.syncJuniorVocabularyPlanDuration(false);
         }
       });
     }
@@ -2167,10 +2225,19 @@ Page({
   },
   getVocabularySessionDuration() {
     if (this.vocabularySessionDurationSec != null) return Number(this.vocabularySessionDurationSec || 0);
-    return this.vocabularySessionTimer ? this.vocabularySessionTimer.getElapsedSec() : Number(this.data.studyDurationSec || 0);
+    if (!this.vocabularySessionTimer) return Number(this.data.studyDurationSec || 0);
+    const sessionDurationSec = this.vocabularySessionTimer.getElapsedSec();
+    return this.dailyPlanMode
+      ? Number(this.dailyPlanDurationBaseSec || 0) + sessionDurationSec
+      : sessionDurationSec;
   },
   stopVocabularySessionTimer() {
-    const durationSec = this.vocabularySessionTimer ? this.vocabularySessionTimer.stop() : Number(this.data.studyDurationSec || 0);
+    const sessionDurationSec = this.vocabularySessionTimer
+      ? this.vocabularySessionTimer.stop()
+      : Number(this.data.studyDurationSec || 0);
+    const durationSec = this.dailyPlanMode && this.vocabularySessionTimer
+      ? Number(this.dailyPlanDurationBaseSec || 0) + sessionDurationSec
+      : sessionDurationSec;
     this.vocabularySessionDurationSec = durationSec;
     return durationSec;
   },

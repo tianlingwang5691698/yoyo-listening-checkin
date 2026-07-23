@@ -19,7 +19,7 @@ test('日报内容档案按模块加载听力、口语和词汇明细', () => {
   assert.match(source, /recordLabel,[\s\S]*?isVocabulary,/);
   assert.equal((template.match(/bindtap="loadArchiveModule"/g) || []).length, 2);
   assert.equal((template.match(/activeArchiveModule === 'speaking'/g) || []).length, 2);
-  assert.equal((template.match(/wx:if="\{\{!item\.isVocabulary\}\}"/g) || []).length, 2);
+  assert.equal((template.match(/wx:if="\{\{!item\.isVocabulary\}\}"/g) || []).length, 4);
   assert.match(source, /current && current\.isGrammarMicroLesson[\s\S]*?buildGrammarClassroomUrl\(current, \{ review: true \}\)/);
   assert.doesNotMatch(template, /\{\{item\.typeLabel\}\}/);
   assert.equal((template.match(/\{\{item\.recordLabel\}\}/g) || []).length, 4);
@@ -29,7 +29,11 @@ test('日报内容档案按模块加载听力、口语和词汇明细', () => {
   assert.equal(catalog['zh-CN'].memorizationProgress, '复习 {reviewed} 词 · 不熟 {unfamiliar} 词');
   assert.equal(catalog['zh-CN'].vocabularyPlanProgress, '主学 {main} 词 · 到期复习 {review} 词 · 不熟 {unfamiliar} 词');
   assert.equal(catalog['zh-CN'].dictationProgress, '正确 {correct}/{total} · 错词 {wrong}');
+  assert.equal(catalog['zh-CN'].totalDurationLabel, '累计用时');
   assert.equal(catalog.en.vocabulary, 'Vocabulary');
+  assert.match(source, /vocabularyMetrics: isVocabulary \? getVocabularyMetrics/);
+  assert.match(source, /attempt\.durationMode === 'daily-effective-total-v1'/);
+  assert.equal((template.match(/class="vocabulary-metrics"/g) || []).length, 2);
 });
 
 test('云端完成记录支持按模块类型过滤', () => {

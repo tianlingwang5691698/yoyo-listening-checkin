@@ -105,6 +105,45 @@ test('初中词汇 List 计划同一天保持已完成轮次与 List', () => {
   assert.equal(descriptor.practiceLevel, 'junior-list-1');
 });
 
+test('初中词汇 List 计划累计当天多次进入的有效用时', () => {
+  const helpers = flashcardService._test;
+  const today = '2026-08-21';
+  const state = helpers.mergeJuniorListPlanDuration({
+    round: 2,
+    currentList: 3,
+    activeDurationDate: today,
+    activeDurationRound: 2,
+    activeDurationList: 3,
+    activeDurationSec: 75
+  }, {
+    round: 2,
+    currentList: 3
+  }, today, 128);
+  assert.equal(state.activeDurationSec, 128);
+  assert.equal(helpers.getJuniorListPlanDescriptor(state, today).durationSec, 128);
+
+  const stale = helpers.mergeJuniorListPlanDuration(state, {
+    round: 2,
+    currentList: 4
+  }, '2026-08-22', 16);
+  assert.equal(stale.activeDurationSec, 16);
+});
+
+test('初中词汇 List 完成后保留当天累计用时并清空进行中计时', () => {
+  const helpers = flashcardService._test;
+  const completed = helpers.advanceJuniorListPlanState({
+    round: 1,
+    currentList: 4,
+    activeDurationDate: '2026-08-21',
+    activeDurationRound: 1,
+    activeDurationList: 4,
+    activeDurationSec: 320,
+    lastDurationSec: 320
+  }, '2026-08-21');
+  assert.equal(completed.activeDurationSec, 0);
+  assert.equal(completed.activeDurationDate, '');
+});
+
 test('初中词汇第 2 轮从 List 1 开始完整重背当前 List', () => {
   const helpers = flashcardService._test;
   const today = '2026-08-21';

@@ -726,6 +726,10 @@ async function getJuniorVocabularyPlan(onRefresh) {
   }, { onRefresh, useCache: false });
 }
 
+async function saveJuniorVocabularyPlanDuration(options) {
+  return callCloud('saveJuniorVocabularyPlanDuration', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
+}
+
 async function completeJuniorVocabularyPlan(options) {
   return callCloud('completeJuniorVocabularyPlan', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
 }
@@ -1423,6 +1427,7 @@ module.exports = {
   getFlashcardReview,
   getFlashcardDue,
   getJuniorVocabularyPlan,
+  saveJuniorVocabularyPlanDuration,
   completeJuniorVocabularyPlan,
   updateFlashcardReview,
   saveFlashcardSettings,

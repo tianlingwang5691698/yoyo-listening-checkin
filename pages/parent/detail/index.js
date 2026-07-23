@@ -388,13 +388,47 @@ function getVocabularyProgressText(item, latestAttempt) {
       review: Number(attempt.reviewWords || 0),
       unfamiliar: Number(attempt.unfamiliar || 0)
     });
-    return durationText ? `${progress} · ${tr('durationLabel')} ${durationText}` : progress;
+    return attempt.durationMode === 'daily-effective-total-v1' && durationText
+      ? `${progress} · ${tr('totalDurationLabel')} ${durationText}`
+      : progress;
   }
   progress = formatText(tr('memorizationProgress'), {
     reviewed: Number(attempt.reviewed || 0),
     unfamiliar: Number(attempt.unfamiliar || 0)
   });
   return durationText ? `${progress} · ${tr('durationLabel')} ${durationText}` : progress;
+}
+
+function getVocabularyMetrics(item, latestAttempt) {
+  const safeItem = item || {};
+  const attempt = latestAttempt || {};
+  const durationText = formatStudyDuration(attempt.durationSec);
+  const wordValue = (count) => formatText(tr('wordCount'), { count: Number(count || 0) });
+  if (safeItem.section === 'dictation' || String(safeItem.section || '').indexOf('practice-') === 0) {
+    const total = Number(attempt.totalCount || attempt.answeredCount || 0);
+    const correct = Number(attempt.correctCount || 0);
+    const wrong = Number(attempt.wrongCount || Math.max(0, total - correct));
+    return [
+      { key: 'correct', label: tr('correctLabel'), value: `${correct}/${total}` },
+      { key: 'wrong', label: tr('wrongLabel'), value: wordValue(wrong) },
+      durationText ? { key: 'duration', label: tr('durationLabel'), value: durationText } : null
+    ].filter(Boolean);
+  }
+  if (attempt.newLearned != null || attempt.reviewWords != null) {
+    return [
+      { key: 'main', label: tr('mainStudyLabel'), value: wordValue(attempt.mainWords || attempt.newLearned || 0) },
+      { key: 'review', label: tr('dueReviewLabel'), value: wordValue(attempt.reviewWords || 0) },
+      { key: 'unfamiliar', label: tr('unfamiliarLabel'), value: wordValue(attempt.unfamiliar || 0) },
+      attempt.durationMode === 'daily-effective-total-v1' && durationText
+        ? { key: 'duration', label: tr('totalDurationLabel'), value: durationText }
+        : null
+    ].filter(Boolean);
+  }
+  return [
+    { key: 'reviewed', label: tr('reviewedLabel'), value: wordValue(attempt.reviewed || 0) },
+    { key: 'unfamiliar', label: tr('unfamiliarLabel'), value: wordValue(attempt.unfamiliar || 0) },
+    durationText ? { key: 'duration', label: tr('durationLabel'), value: durationText } : null
+  ].filter(Boolean);
 }
 
 function isPlaceholderAnalysis(value) {
@@ -521,6 +555,7 @@ function normalizeCompletionItem(item, index) {
     progressText: isVocabulary
       ? getVocabularyProgressText(safeItem, latestAttempt)
       : (safeItem.progressText || (totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : tr('complete'))),
+    vocabularyMetrics: isVocabulary ? getVocabularyMetrics(safeItem, latestAttempt) : [],
     detailActionText: isListeningStudyPack ? tr('viewStudyPack') : tr('viewOriginalAnalysis'),
     scoreText: totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : '',
     correctText: !isVocabulary && !isGrammarMicroLesson && totalCount

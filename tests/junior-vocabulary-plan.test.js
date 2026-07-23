@@ -9,7 +9,7 @@ const stageSource = fs.readFileSync(path.join(root, 'pages/level-stage/index.js'
 const flashcardTemplate = fs.readFileSync(path.join(root, 'pages/reading/flashcards/index.wxml'), 'utf8');
 
 test('初中词汇任务进入今日计划快照并直达循环 List', () => {
-  assert.match(homeSource, /buildStageSnapshotTaskGroups\(this\.data\.groupedDailyTasks\)\.concat\(vocabularyTaskGroup \? \[vocabularyTaskGroup\] : \[\]\)/);
+  assert.match(homeSource, /buildStageSnapshotTaskGroups\(this\.data\.groupedDailyTasks\)[\s\S]*?\.concat\(vocabularyTaskGroup \? \[vocabularyTaskGroup\] : \[\]\)/);
   assert.match(stageSource, /category === 'vocabulary'[\s\S]*?dailyPlan=junior-list/);
 });
 

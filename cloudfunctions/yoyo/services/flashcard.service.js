@@ -167,7 +167,12 @@ function normalizeJuniorListPlanState(value) {
     lastMainWords: Math.max(0, Number(source.lastMainWords || 0)),
     lastReviewWords: Math.max(0, Number(source.lastReviewWords || 0)),
     lastReviewLists: (Array.isArray(source.lastReviewLists) ? source.lastReviewLists : []).map(Number).filter(Boolean),
-    lastEncouragement: normalizeText(source.lastEncouragement)
+    lastEncouragement: normalizeText(source.lastEncouragement),
+    lastDurationSec: Math.max(0, Math.min(86400, Math.round(Number(source.lastDurationSec || 0)))),
+    activeDurationDate: normalizeText(source.activeDurationDate),
+    activeDurationRound: Math.max(0, Number(source.activeDurationRound || 0)),
+    activeDurationList: Math.max(0, Math.min(JUNIOR_LIST_COUNT, Number(source.activeDurationList || 0))),
+    activeDurationSec: Math.max(0, Math.min(86400, Math.round(Number(source.activeDurationSec || 0))))
   };
 }
 
@@ -176,17 +181,37 @@ function getJuniorListPlanDescriptor(state, today) {
   const completedToday = normalized.lastCompletedDate === today;
   const round = completedToday && normalized.lastCompletedRound ? normalized.lastCompletedRound : normalized.round;
   const currentList = completedToday && normalized.lastCompletedList ? normalized.lastCompletedList : normalized.currentList;
+  const hasActiveDuration = normalized.activeDurationDate === today
+    && normalized.activeDurationRound === round
+    && normalized.activeDurationList === currentList;
   return {
     planId: JUNIOR_LIST_PLAN_ID,
     active: normalized.active,
     round,
     currentList,
     completedToday,
+    durationSec: completedToday
+      ? normalized.lastDurationSec
+      : (hasActiveDuration ? normalized.activeDurationSec : 0),
     currentSourceId: `dictionary-book-junior-list-${currentList}`,
     practiceLevel: `junior-list-${currentList}`,
     title: `初中词汇第${round}轮 · List ${currentList}`,
     summary: `${round === 1 ? '新学' : '重背'} List ${currentList} · 复习不熟词`
   };
+}
+
+function mergeJuniorListPlanDuration(state, descriptor, today, durationSec) {
+  const normalized = normalizeJuniorListPlanState(state);
+  const incoming = Math.max(0, Math.min(86400, Math.round(Number(durationSec || 0))));
+  const sameSession = normalized.activeDurationDate === today
+    && normalized.activeDurationRound === descriptor.round
+    && normalized.activeDurationList === descriptor.currentList;
+  return Object.assign({}, normalized, {
+    activeDurationDate: today,
+    activeDurationRound: descriptor.round,
+    activeDurationList: descriptor.currentList,
+    activeDurationSec: Math.max(sameSession ? normalized.activeDurationSec : 0, incoming)
+  });
 }
 
 function advanceJuniorListPlanState(state, today) {
@@ -198,7 +223,11 @@ function advanceJuniorListPlanState(state, today) {
     currentList: completedList >= JUNIOR_LIST_COUNT ? 1 : completedList + 1,
     lastCompletedDate: today,
     lastCompletedRound: completedRound,
-    lastCompletedList: completedList
+    lastCompletedList: completedList,
+    activeDurationDate: '',
+    activeDurationRound: 0,
+    activeDurationList: 0,
+    activeDurationSec: 0
   });
 }
 
@@ -470,6 +499,10 @@ async function completeJuniorVocabularyPlan(event) {
   if (!study.isYoyoChild(ctx.child) || descriptor.completedToday) {
     return Object.assign({ saved: !!descriptor.completedToday }, descriptor);
   }
+  const durationSec = Math.max(
+    Number(descriptor.durationSec || 0),
+    Math.max(0, Math.min(86400, Math.round(Number(payload.durationSec || 0))))
+  );
   const command = dbAdapter.getCommand();
   const rows = [];
   for (let skip = 0; skip < 5000; skip += 100) {
@@ -522,7 +555,10 @@ async function completeJuniorVocabularyPlan(event) {
       sourceId: descriptor.currentSourceId,
       sourceTitle: descriptor.title,
       date: today,
-      durationSec: Math.max(0, Math.min(86400, Math.round(Number(payload.durationSec || 0))))
+      durationSec,
+      durationMode: payload.durationMode === 'daily-effective-total-v1'
+        ? 'daily-effective-total-v1'
+        : 'session-effective-v1'
     }
   });
   const encouragement = reviewLists.length
@@ -532,21 +568,41 @@ async function completeJuniorVocabularyPlan(event) {
     lastMainWords: descriptor.round === 1 ? newLearned : reviewedCurrent,
     lastReviewWords: reviewedDueRows.length,
     lastReviewLists: reviewLists,
-    lastEncouragement: encouragement
+    lastEncouragement: encouragement,
+    lastDurationSec: durationSec
   });
   await saveJuniorListPlanState(ctx, nextState);
-  return Object.assign({
+  return Object.assign({}, descriptor, {
     saved: true,
     reviewed,
     newLearned,
     mainWords: descriptor.round === 1 ? newLearned : reviewedCurrent,
     reviewWords: reviewedDueRows.length,
     unfamiliar,
+    durationSec,
     reviewLists,
     encouragement,
     nextRound: nextState.round,
-    nextList: nextState.currentList
-  }, descriptor, { completedToday: true });
+    nextList: nextState.currentList,
+    completedToday: true
+  });
+}
+
+async function saveJuniorVocabularyPlanDuration(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'saveJuniorVocabularyPlanDuration' }));
+  if (!study.isStudyWriteAllowed(ctx)) return { saved: false, reason: 'preview-role' };
+  const settings = await getSettings(ctx);
+  const state = normalizeJuniorListPlanState(settings.juniorListPlan);
+  const descriptor = getJuniorListPlanDescriptor(state, today);
+  if (!study.isYoyoChild(ctx.child) || descriptor.completedToday) {
+    return Object.assign({ saved: !!descriptor.completedToday }, descriptor);
+  }
+  const nextState = mergeJuniorListPlanDuration(state, descriptor, today, payload.durationSec);
+  await saveJuniorListPlanState(ctx, nextState);
+  return Object.assign({ saved: true }, descriptor, {
+    durationSec: nextState.activeDurationSec
+  });
 }
 
 async function saveSettings(event) {
@@ -1239,6 +1295,7 @@ module.exports = {
   getFlashcardReview,
   getFlashcardDue,
   getJuniorVocabularyPlan,
+  saveJuniorVocabularyPlanDuration,
   completeJuniorVocabularyPlan,
   getJuniorListPlanSummary,
   updateFlashcardReview,
@@ -1266,6 +1323,7 @@ module.exports = {
     isLearnedFlashcard,
     normalizeJuniorListPlanState,
     getJuniorListPlanDescriptor,
+    mergeJuniorListPlanDuration,
     advanceJuniorListPlanState,
     selectJuniorCurrentCards,
     isJuniorCurrentListComplete,

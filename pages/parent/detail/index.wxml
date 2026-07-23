@@ -132,12 +132,18 @@
       <view class="library-empty" wx:if="{{archiveModuleLoading}}">{{texts.loadingDetail}}</view>
       <block wx:elif="{{report.completionItems.length}}">
         <view class="study-dossier library-study-dossier tone-{{item.type}}" wx:for="{{report.completionItems}}" wx:key="key">
-          <view class="library-card-head">
+          <view class="library-card-head {{item.isVocabulary ? 'vocabulary-record-head' : ''}}">
             <view>
               <view class="library-kicker" wx:if="{{item.recordLabel}}">{{item.recordLabel}}</view>
               <view class="entry-title">{{item.title}}</view>
             </view>
-            <view class="library-stamp">{{item.scoreText || item.progressText}}</view>
+            <view class="library-stamp" wx:if="{{!item.isVocabulary}}">{{item.scoreText || item.progressText}}</view>
+          </view>
+          <view class="vocabulary-metrics" wx:if="{{item.isVocabulary && item.vocabularyMetrics.length}}">
+            <view class="vocabulary-metric" wx:for="{{item.vocabularyMetrics}}" wx:key="key" wx:for-item="metric">
+              <view class="vocabulary-metric-value">{{metric.value}}</view>
+              <view class="vocabulary-metric-label">{{metric.label}}</view>
+            </view>
           </view>
           <view class="entry-copy" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
@@ -396,12 +402,18 @@
     <block wx:elif="{{report.completionItems.length}}">
       <view class="dossier-grid">
         <view class="study-dossier tone-{{item.type}}" wx:for="{{report.completionItems}}" wx:key="key">
-          <view class="dossier-head">
+          <view class="dossier-head {{item.isVocabulary ? 'vocabulary-record-head' : ''}}">
             <view>
               <view class="node-label" wx:if="{{item.recordLabel}}">{{item.recordLabel}}</view>
               <view class="node-title">{{item.title}}</view>
             </view>
-            <view class="voice-badge">{{item.scoreText || item.progressText}}</view>
+            <view class="voice-badge" wx:if="{{!item.isVocabulary}}">{{item.scoreText || item.progressText}}</view>
+          </view>
+          <view class="vocabulary-metrics" wx:if="{{item.isVocabulary && item.vocabularyMetrics.length}}">
+            <view class="vocabulary-metric" wx:for="{{item.vocabularyMetrics}}" wx:key="key" wx:for-item="metric">
+              <view class="vocabulary-metric-value">{{metric.value}}</view>
+              <view class="vocabulary-metric-label">{{metric.label}}</view>
+            </view>
           </view>
           <view class="quiet-note" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
