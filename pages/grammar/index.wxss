@@ -735,6 +735,32 @@
   font-weight: 600;
 }
 
+.answer-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.answer-explain-toggle {
+  flex: none;
+  margin-left: auto;
+  padding: 10rpx 14rpx;
+  border: 1rpx solid rgba(73, 105, 130, 0.24);
+  border-radius: 12rpx;
+  background: rgba(255, 255, 255, 0.58);
+  color: #496982;
+  font-size: 22rpx;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.answer-explain-toggle.is-active {
+  border-color: rgba(65, 106, 99, 0.30);
+  background: var(--grammar-sage-soft);
+  color: #416a63;
+}
+
 .answer-line.is-correct {
   background: transparent;
   color: #416a63;
@@ -1590,6 +1616,24 @@
   color: var(--library-grammar-error);
 }
 
+.library-answer-explain-toggle {
+  flex: none;
+  margin-left: auto;
+  padding: 10rpx 14rpx;
+  border: 1rpx solid rgba(131, 91, 39, 0.36);
+  border-radius: 6rpx;
+  background: var(--library-grammar-paper-light);
+  color: var(--library-grammar-brass);
+  font-size: 22rpx;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.library-answer-explain-toggle.is-active {
+  background: rgba(197, 168, 100, 0.24);
+  color: var(--library-grammar-ink);
+}
+
 .library-answer-line .answer-result,
 .library-answer-line .standard-answer {
   padding: 12rpx 16rpx;
@@ -2022,6 +2066,28 @@
 .theme-voyage .sentence-analysis,
 .theme-voyage .classroom-examples { border-radius: 5rpx; background: rgba(255,244,210,.75); border-color: #b3874d; }
 .theme-voyage .classroom-notice { border-left-color: #2f7767; }
+.theme-voyage .answer-explain-toggle {
+  border: 2rpx solid #9e6a35;
+  border-radius: 4rpx;
+  background: #f4ddad;
+  color: #654422;
+}
+.theme-voyage .answer-explain-toggle.is-active {
+  border-color: #1d607f;
+  background: #d9e7e4;
+  color: #173f57;
+}
+.theme-voyage .inline-analysis {
+  border: 3rpx solid #9b6836;
+  border-left: 10rpx solid #1d607f;
+  border-radius: 5rpx;
+  background:
+    repeating-linear-gradient(14deg, rgba(102, 67, 30, 0.035) 0 2rpx, transparent 2rpx 20rpx),
+    #f5dfad;
+  box-shadow: inset 0 0 20rpx rgba(103, 63, 25, 0.10);
+}
+.theme-voyage .inline-analysis .analysis-head { color: #173f57; }
+.theme-voyage .inline-analysis .analysis-text { color: #654f36; }
 .theme-voyage .dictionary-sheet { border: 5rpx solid #8c572c; border-radius: 8rpx 8rpx 0 0; background: #f7e8c3; }
 .manual-mark-toolbar {
   display: flex;
@@ -2265,3 +2331,29 @@
   background: #ffd83d;
   color: #12356b;
 }
+
+.theme-dragon .answer-explain-toggle {
+  border: 2rpx solid #12356b;
+  border-radius: 5rpx;
+  background: #ffe06b;
+  color: #12356b;
+}
+
+.theme-dragon .answer-explain-toggle.is-active {
+  background: #12356b;
+  color: #fff6cc;
+  box-shadow: inset 0 -4rpx 0 #f4511e;
+}
+
+.theme-dragon .inline-analysis {
+  border: 3rpx solid #12356b;
+  border-left: 10rpx solid #f4511e;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(135deg, rgba(18, 53, 107, 0.04) 0 2rpx, transparent 2rpx 24rpx),
+    #fff0b5;
+  box-shadow: 0 6rpx 0 rgba(18, 53, 107, 0.18);
+}
+
+.theme-dragon .inline-analysis .analysis-head { color: #12356b; }
+.theme-dragon .inline-analysis .analysis-text { color: #526783; }

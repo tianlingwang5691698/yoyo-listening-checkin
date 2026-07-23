@@ -9,16 +9,22 @@ const template = fs.readFileSync(path.join(root, 'pages/grammar/index.wxml'), 'u
 const storeSource = fs.readFileSync(path.join(root, 'utils/store.js'), 'utf8');
 const serviceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/grammar.service.js'), 'utf8');
 
-test('语法答题后自动加载缓存优先的 AI 讲解', () => {
-  assert.match(source, /recordGrammarCompleted\(this\.data, answeredCount\);\s*this\.loadExplanationById\(questionId\);/);
+test('语法答题后默认收起，学生主动查看时才加载讲解', () => {
+  const selectOptionBlock = source.match(/async selectOption\(event\) \{[\s\S]*?\n  \}\n  ,\n  toggleExplanation/);
+  assert.ok(selectOptionBlock);
+  assert.doesNotMatch(selectOptionBlock[0], /loadExplanationById\(questionId\)/);
+  assert.match(source, /explanationExpanded: false/);
+  assert.match(source, /toggleExplanation\(event\)[\s\S]*?if \(explanationExpanded && !question\.explanation && !question\.explaining\)[\s\S]*?loadExplanationById\(questionId\)/);
   assert.match(source, /store\.explainGrammarQuestion\(question, \{[\s\S]*?force,[\s\S]*?personalOnly:/);
   assert.match(source, /regenerateExplanation[\s\S]*?loadExplanationById\(questionId, \{ force: true, personalOnly: true \}\)/);
+  assert.equal((template.match(/bindtap="toggleExplanation"/g) || []).length, 2);
+  assert.equal((template.match(/wx:if="\{\{item\.explanationExpanded && item\.explanation\}\}"/g) || []).length, 2);
 });
 
 test('语法失败兜底不冒充完整 AI 讲解', () => {
   assert.match(source, /source === 'fallback'/);
   assert.match(source, /explanationError:[\s\S]*?explainUnavailable/);
-  assert.equal((template.match(/wx:if="\{\{item\.explanationError\}\}"/g) || []).length, 2);
+  assert.equal((template.match(/item\.explanationExpanded && item\.explanationError/g) || []).length, 2);
 });
 
 test('语法重新讲只写当前学生进度，不覆盖公共解析', () => {
@@ -43,4 +49,10 @@ test('语法标准答案始终使用正确项绿色背景', () => {
   assert.equal((template.match(/class="standard-answer"/g) || []).length, 2);
   assert.match(wxss, /\.answer-line \.standard-answer \{[\s\S]*?background: rgba\(78, 169, 147, 0\.34\);[\s\S]*?color: #195f52/);
   assert.match(wxss, /\.library-answer-line \.standard-answer \{[\s\S]*?background: rgba\(104, 148, 92, 0\.34\);[\s\S]*?color: #2f5d2b/);
+});
+
+test('语法讲解背景匹配航海与龙珠主题', () => {
+  const wxss = fs.readFileSync(path.join(root, 'pages/grammar/index.wxss'), 'utf8');
+  assert.match(wxss, /\.theme-voyage \.inline-analysis \{[\s\S]*?#f5dfad/);
+  assert.match(wxss, /\.theme-dragon \.inline-analysis \{[\s\S]*?#fff0b5/);
 });

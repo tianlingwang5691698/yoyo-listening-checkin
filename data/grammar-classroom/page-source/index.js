@@ -582,6 +582,7 @@ function buildQuestion(item, index) {
     isAnswered: false,
     isCorrect: false,
     explaining: false,
+    explanationExpanded: false,
     explanationError: '',
     explanation: null,
     optionsList
@@ -623,6 +624,7 @@ function restoreAnsweredQuestions(questions, savedQuestions) {
       answer,
       isAnswered: true,
       isCorrect: saved.isCorrect === true || (!!selectedAnswer && selectedAnswer === answer),
+      explanationExpanded: false,
       explanation: saved.explanation || null,
       optionsList: (question.optionsList || []).map((entry) => Object.assign({}, entry, {
         selected: entry.key === selectedAnswer,
@@ -1362,6 +1364,7 @@ Page({
       isAnswered: item._id === questionId ? true : item.isAnswered,
       isCorrect: item._id === questionId && item.answer ? option === item.answer : item.isCorrect,
       explaining: item._id === questionId ? false : item.explaining,
+      explanationExpanded: item._id === questionId ? false : item.explanationExpanded,
       optionsList: (item.optionsList || []).map((entry) => Object.assign({}, entry, {
         selected: item._id === questionId ? entry.key === option : entry.selected,
         correct: item._id === questionId ? entry.key === item.answer : entry.correct,
@@ -1374,7 +1377,6 @@ Page({
     }, () => {
       this.setData({ answeredCount });
       recordGrammarCompleted(this.data, answeredCount);
-      this.loadExplanationById(questionId);
     });
     try {
       const questionIndex = nextQuestions.findIndex((item) => item._id === questionId);
@@ -1404,9 +1406,20 @@ Page({
     }
   }
   ,
-  loadExplanation(event) {
+  toggleExplanation(event) {
     const questionId = event && event.currentTarget ? event.currentTarget.dataset.questionId : '';
-    return this.loadExplanationById(questionId);
+    const question = (this.data.selectedQuestions || []).find((item) => item._id === questionId);
+    if (!question || !question.isAnswered) return;
+    const explanationExpanded = !question.explanationExpanded;
+    this.setData({
+      selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
+        explanationExpanded: item._id === questionId ? explanationExpanded : item.explanationExpanded
+      }))
+    }, () => {
+      if (explanationExpanded && !question.explanation && !question.explaining) {
+        this.loadExplanationById(questionId);
+      }
+    });
   },
   async loadExplanationById(questionId, options = {}) {
     const force = !!options.force;
@@ -1451,6 +1464,11 @@ Page({
   },
   regenerateExplanation(event) {
     const questionId = event && event.currentTarget ? event.currentTarget.dataset.questionId : '';
+    this.setData({
+      selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
+        explanationExpanded: item._id === questionId ? true : item.explanationExpanded
+      }))
+    });
     return this.loadExplanationById(questionId, { force: true, personalOnly: true });
   },
   async openDictionaryWord(event) {

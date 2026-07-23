@@ -292,22 +292,22 @@
               </view>
             </view>
             <view class="library-answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
-              <block wx:if="{{item.answer}}">
-                <text class="answer-result">{{item.isCorrect ? texts.correct : texts.wrong}}</text>
-                <text class="standard-answer">{{texts.standardAnswer}}{{item.answer}}</text>
-              </block>
-              <text wx:else>{{texts.noAnswer}}</text>
+              <view class="answer-summary">
+                <block wx:if="{{item.answer}}">
+                  <text class="answer-result">{{item.isCorrect ? texts.correct : texts.wrong}}</text>
+                  <text class="standard-answer">{{texts.standardAnswer}}{{item.answer}}</text>
+                </block>
+                <text wx:else>{{texts.noAnswer}}</text>
+              </view>
+              <view class="library-answer-explain-toggle {{item.explanationExpanded ? 'is-active' : ''}}" data-question-id="{{item._id}}" bindtap="toggleExplanation">{{item.explanationExpanded ? texts.collapseExplain : texts.explain}}</view>
             </view>
-            <view class="library-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
-              <view class="library-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">{{texts.explain}}</view>
-            </view>
-            <view class="library-analysis-loading" wx:if="{{item.explaining}}">
+            <view class="library-analysis-loading" wx:if="{{item.explanationExpanded && item.explaining}}">
               <view></view>
               <view></view>
               <view></view>
             </view>
-            <view class="library-explain-error" wx:if="{{item.explanationError}}">{{item.explanationError}}</view>
-            <view class="library-analysis" wx:if="{{item.explanation}}">
+            <view class="library-explain-error" wx:if="{{item.explanationExpanded && item.explanationError}}">{{item.explanationError}}</view>
+            <view class="library-analysis" wx:if="{{item.explanationExpanded && item.explanation}}">
               <view class="library-analysis-head">
                 <text>{{item.explanation.topic}}</text>
                 <text class="library-analysis-answer">{{texts.answer}}{{item.explanation.answer}}</text>
@@ -617,17 +617,17 @@
           </view>
         </view>
         <view class="answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
-          <block wx:if="{{item.answer}}">
-            <text class="answer-result">{{item.isCorrect ? texts.correct : texts.wrong}}</text>
-            <text class="standard-answer">{{texts.standardAnswer}}{{item.answer}}</text>
-          </block>
-          <text wx:else>{{texts.noAnswer}}</text>
+          <view class="answer-summary">
+            <block wx:if="{{item.answer}}">
+              <text class="answer-result">{{item.isCorrect ? texts.correct : texts.wrong}}</text>
+              <text class="standard-answer">{{texts.standardAnswer}}{{item.answer}}</text>
+            </block>
+            <text wx:else>{{texts.noAnswer}}</text>
+          </view>
+          <view class="answer-explain-toggle {{item.explanationExpanded ? 'is-active' : ''}}" data-question-id="{{item._id}}" bindtap="toggleExplanation">{{item.explanationExpanded ? texts.collapseExplain : texts.explain}}</view>
         </view>
-        <view class="grammar-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
-          <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">{{texts.explain}}</view>
-        </view>
-        <view class="grammar-explain-error" wx:if="{{item.explanationError}}">{{item.explanationError}}</view>
-        <view class="analysis-item inline-analysis" wx:if="{{item.explanation}}">
+        <view class="grammar-explain-error" wx:if="{{item.explanationExpanded && item.explanationError}}">{{item.explanationError}}</view>
+        <view class="analysis-item inline-analysis" wx:if="{{item.explanationExpanded && item.explanation}}">
           <view class="analysis-head">
             <text>{{item.explanation.topic}}</text>
             <text class="analysis-state is-correct">{{texts.answer}}{{item.explanation.answer}}</text>

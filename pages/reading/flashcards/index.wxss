@@ -2938,6 +2938,319 @@
   color: var(--voyage-ink);
 }
 
+.theme-voyage .vocab-practice-head {
+  position: relative;
+  overflow: hidden;
+  min-height: 206rpx;
+  padding: 36rpx 190rpx 38rpx 34rpx;
+  border: 5rpx solid #8c562b;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(99, 64, 29, 0.03) 0 2rpx, transparent 2rpx 18rpx),
+    linear-gradient(100deg, #e7c989, #fff0c4 10%, #f5e1b2 92%, #d9b36e);
+  box-shadow:
+    0 9rpx 0 #693d20,
+    0 20rpx 34rpx rgba(4, 66, 89, 0.22),
+    inset 0 0 24rpx rgba(104, 63, 25, 0.12);
+  backdrop-filter: none;
+}
+
+.theme-voyage .vocab-practice-head::before {
+  content: "";
+  position: absolute;
+  right: 38rpx;
+  top: 34rpx;
+  width: 116rpx;
+  height: 116rpx;
+  border: 7rpx double #b47a31;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 45deg, #1d6381 0 12.5%, #f1db9b 0 25%, #a83b31 0 37.5%, #f1db9b 0 50%, #1d6381 0 62.5%, #f1db9b 0 75%, #a83b31 0 87.5%, #f1db9b 0);
+  box-shadow: inset 0 0 0 18rpx #f5e4b7, 0 5rpx 0 rgba(104, 63, 25, 0.34);
+}
+
+.theme-voyage .vocab-practice-head::after {
+  content: "";
+  position: absolute;
+  left: 34rpx;
+  right: 188rpx;
+  bottom: 28rpx;
+  height: 6rpx;
+  background:
+    linear-gradient(90deg, #a83b31 0 25%, transparent 25% 32%, #1d6381 32% 64%, transparent 64% 71%, #b47a31 71%);
+}
+
+.theme-voyage .vocab-practice-kicker {
+  color: #a56428;
+  font-size: 19rpx;
+  font-weight: 800;
+  letter-spacing: 2.6rpx;
+}
+
+.theme-voyage .vocab-practice-title {
+  color: #173f57;
+  font-family: "Songti SC", STSong, serif;
+  font-size: 44rpx;
+  font-weight: 800;
+}
+
+.theme-voyage .vocab-practice-copy {
+  color: #705639;
+}
+
+.theme-voyage .vocab-practice-list {
+  gap: 26rpx;
+  margin-top: 34rpx;
+}
+
+.theme-voyage .vocab-practice-card {
+  position: relative;
+  min-height: 182rpx;
+  padding: 26rpx 26rpx 26rpx 30rpx;
+  overflow: hidden;
+  border: 4rpx solid #95602f;
+  border-radius: 6rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(94, 61, 27, 0.025) 0 2rpx, transparent 2rpx 18rpx),
+    #f7e6b8;
+  box-shadow: 0 8rpx 0 #5a341d, 0 16rpx 28rpx rgba(55, 45, 27, 0.14);
+  backdrop-filter: none;
+}
+
+.theme-voyage .vocab-practice-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10rpx;
+  background: #1d6381;
+}
+
+.theme-voyage .vocab-practice-card::after {
+  content: "";
+  position: absolute;
+  left: 148rpx;
+  right: 88rpx;
+  bottom: 22rpx;
+  border-bottom: 2rpx dashed rgba(142, 91, 39, 0.32);
+}
+
+.theme-voyage .word-practice-hub::before {
+  background: #a83b31;
+}
+
+.theme-voyage .vocab-practice-main {
+  position: relative;
+  z-index: 1;
+  margin-left: 24rpx;
+}
+
+.theme-voyage .vocab-practice-card-title {
+  color: #173f57;
+  font-family: "Songti SC", STSong, serif;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.theme-voyage .vocab-practice-card-copy {
+  color: #735b3e;
+}
+
+.theme-voyage .vocab-practice-icon {
+  z-index: 1;
+  width: 108rpx;
+  height: 108rpx;
+  border: 4rpx solid #d2a653;
+  border-radius: 5rpx;
+  box-shadow: 0 6rpx 0 #4b2b18;
+}
+
+.theme-voyage .folder-symbol {
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 231, 169, 0.08) 0 2rpx, transparent 2rpx 18rpx),
+    #684020;
+}
+
+.theme-voyage .folder-tab {
+  left: 15rpx;
+  top: 14rpx;
+  width: 48rpx;
+  height: 16rpx;
+  border-radius: 2rpx 2rpx 0 0;
+  background: #d2a653;
+}
+
+.theme-voyage .folder-body {
+  left: 12rpx;
+  right: 12rpx;
+  top: 28rpx;
+  bottom: 12rpx;
+  border: 2rpx solid rgba(255, 235, 181, 0.38);
+  border-radius: 3rpx;
+  background: #1d6381;
+  box-shadow: inset 0 0 0 5rpx rgba(255, 235, 181, 0.08);
+}
+
+.theme-voyage .folder-body text {
+  border-color: rgba(255, 235, 181, 0.72);
+  border-radius: 2rpx;
+}
+
+.theme-voyage .practice-hub-symbol {
+  gap: 5rpx;
+  padding: 12rpx 8rpx;
+  background: #654020;
+}
+
+.theme-voyage .practice-hub-symbol text {
+  height: 66rpx;
+  border: 2rpx solid #d2a653;
+  border-radius: 3rpx;
+  background: #1d6381;
+  color: #fff1c8;
+  font-family: Georgia, serif;
+  font-size: 18rpx;
+  box-shadow: 0 3rpx 0 rgba(42, 24, 14, 0.48);
+}
+
+.theme-voyage .practice-hub-symbol text:nth-child(2) {
+  background: #a83b31;
+}
+
+.theme-voyage .practice-hub-symbol text:nth-child(3) {
+  background: #3f7d70;
+}
+
+.theme-voyage .vocab-practice-arrow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58rpx;
+  height: 58rpx;
+  margin-left: 18rpx;
+  border: 2rpx solid #d2a653;
+  border-radius: 4rpx;
+  background: #a83b31;
+  color: #fff1c8;
+  font-size: 42rpx;
+  line-height: 1;
+  box-shadow: 0 4rpx 0 #61331d;
+}
+
+.theme-voyage .bookshelf-head {
+  position: relative;
+  min-height: 190rpx;
+  padding: 36rpx 244rpx 38rpx 34rpx;
+  border: 5rpx solid #8c562b;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(99, 64, 29, 0.03) 0 2rpx, transparent 2rpx 18rpx),
+    linear-gradient(100deg, #e7c989, #fff0c4 10%, #f5e1b2 92%, #d9b36e);
+  box-shadow:
+    0 9rpx 0 #693d20,
+    0 20rpx 34rpx rgba(4, 66, 89, 0.22),
+    inset 0 0 24rpx rgba(104, 63, 25, 0.12);
+  backdrop-filter: none;
+}
+
+.theme-voyage .bookshelf-head::before {
+  content: "";
+  position: absolute;
+  right: 190rpx;
+  top: 35rpx;
+  bottom: 35rpx;
+  width: 3rpx;
+  background: repeating-linear-gradient(180deg, #a96f2e 0 12rpx, transparent 12rpx 22rpx);
+  opacity: 0.7;
+}
+
+.theme-voyage .bookshelf-head::after {
+  left: 34rpx;
+  right: 218rpx;
+  bottom: 30rpx;
+  height: 6rpx;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, #a83b31 0 24%, transparent 24% 31%, #1d6381 31% 62%, transparent 62% 69%, #b47a31 69%);
+}
+
+.theme-voyage .bookshelf-head .progress-title {
+  color: #173f57;
+  font-family: "Songti SC", STSong, serif;
+  font-size: 43rpx;
+  font-weight: 800;
+}
+
+.theme-voyage .bookshelf-head .progress-copy {
+  color: #705639;
+}
+
+.theme-voyage .bookshelf-scene {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 170rpx;
+  height: 126rpx;
+  border: 4rpx solid #855026;
+  border-radius: 5rpx;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(255, 235, 181, 0.14) 49% 51%, transparent 52%),
+    repeating-linear-gradient(0deg, rgba(255, 235, 181, 0.07) 0 2rpx, transparent 2rpx 18rpx),
+    #5e371e;
+  box-shadow: 0 6rpx 0 #4b2b18, inset 0 0 0 5rpx rgba(211, 170, 88, 0.18);
+}
+
+.theme-voyage .shelf-book,
+.theme-voyage .shelf-card {
+  bottom: 14rpx;
+  border: 2rpx solid #d5aa52;
+  border-radius: 3rpx;
+  box-shadow: 0 4rpx 0 rgba(50, 29, 16, 0.62);
+  backdrop-filter: none;
+}
+
+.theme-voyage .shelf-book::before {
+  background: rgba(255, 233, 174, 0.46);
+}
+
+.theme-voyage .spine-a { background: #1d6381; }
+.theme-voyage .spine-b { background: #a83b31; }
+.theme-voyage .spine-c { background: #3f7d70; }
+
+.theme-voyage .shelf-card {
+  right: 9rpx;
+  width: 55rpx;
+  height: 78rpx;
+  transform: rotate(-7deg);
+  background:
+    linear-gradient(135deg, transparent 0 48%, #a83b31 49% 55%, transparent 56%),
+    #f3dfaa;
+}
+
+.theme-voyage .shelf-board {
+  margin-top: 30rpx;
+  padding: 30rpx 20rpx 32rpx;
+  border: 5rpx solid #6d4021;
+  border-radius: 7rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 222, 157, 0.06) 0 3rpx, transparent 3rpx 30rpx),
+    repeating-linear-gradient(90deg, #7c4a28 0 116rpx, #754323 117rpx 232rpx);
+  box-shadow: 0 10rpx 0 #4f2d19, 0 18rpx 34rpx rgba(47, 38, 24, 0.2);
+}
+
+.theme-voyage .shelf-board::before,
+.theme-voyage .shelf-board::after {
+  left: 12rpx;
+  right: 12rpx;
+  height: 8rpx;
+  border-radius: 2rpx;
+  background:
+    repeating-linear-gradient(90deg, #d2a54f 0 20rpx, #9f6b2c 20rpx 38rpx);
+}
+
 .theme-voyage .library-hero {
   position: relative;
   padding: 38rpx 210rpx 36rpx 36rpx;
@@ -2984,17 +3297,105 @@
 
 .theme-voyage .book-card,
 .theme-voyage .vocab-practice-card {
-  border: 3rpx solid #aa763c;
+  border: 3rpx solid #ad7437;
   border-radius: 5rpx;
-  background: linear-gradient(90deg, #ecd09b, #fff0c7 18%, #f2dcb0);
-  box-shadow: 0 6rpx 0 #7d4b27;
+  background:
+    linear-gradient(90deg, rgba(168, 59, 49, 0.12), transparent 82rpx),
+    repeating-linear-gradient(0deg, rgba(94, 61, 27, 0.025) 0 2rpx, transparent 2rpx 18rpx),
+    #f7e6b8;
+  box-shadow: 0 6rpx 0 #4e2d19, inset 0 0 18rpx rgba(114, 69, 28, 0.09);
+  backdrop-filter: none;
 }
-.theme-voyage .book-cover { border: 4rpx solid #d3aa58; border-radius: 5rpx; box-shadow: 0 5rpx 0 #704321; }
+
+.theme-voyage .book-card::before {
+  content: "";
+  position: absolute;
+  left: 122rpx;
+  top: 18rpx;
+  bottom: 18rpx;
+  border-left: 2rpx dashed rgba(142, 91, 39, 0.3);
+}
+
+.theme-voyage .book-card::after {
+  content: "";
+  position: absolute;
+  right: 12rpx;
+  top: 12rpx;
+  width: 8rpx;
+  height: 8rpx;
+  border: 2rpx solid #8b5728;
+  border-radius: 50%;
+  background: #d3aa58;
+}
+
+.theme-voyage .book-depth {
+  left: 28rpx;
+  top: 26rpx;
+  border-radius: 4rpx;
+  background: #4c2b19;
+  transform: translate(8rpx, 7rpx);
+}
+
+.theme-voyage .book-cover {
+  border: 4rpx solid #d3aa58;
+  border-radius: 5rpx;
+  background: #1d6381;
+  box-shadow: 0 5rpx 0 #3f2818, inset 8rpx 0 0 rgba(255, 238, 188, 0.12);
+}
+
+.theme-voyage .book-library .book-cover { background: #2f7d70; }
+.theme-voyage .book-unlock .book-cover { background: #173f57; }
+.theme-voyage .book-junior .book-cover { background: #2e789b; }
+.theme-voyage .book-senior .book-cover { background: #94483a; }
+.theme-voyage .book-cet4 .book-cover { background: #4c7765; }
+.theme-voyage .book-ielts .book-cover { background: #6d547d; }
+
+.theme-voyage .book-spine {
+  width: 15rpx;
+  background: rgba(71, 38, 20, 0.48);
+  box-shadow: inset -2rpx 0 0 rgba(240, 207, 125, 0.32);
+}
+
+.theme-voyage .book-symbol {
+  border: 2rpx solid rgba(255, 241, 198, 0.66);
+  background: #d4ad5a;
+  color: #173f57;
+  box-shadow: 0 4rpx 0 rgba(44, 28, 17, 0.44);
+}
+
+.theme-voyage .book-lines text {
+  background: rgba(255, 235, 181, 0.68);
+}
+
 .theme-voyage .book-title,
 .theme-voyage .vocab-practice-card-title { color: #2a3b3d; font-family: "Songti SC", STSong, serif; font-weight: 800; }
 .theme-voyage .book-meta,
 .theme-voyage .vocab-practice-card-copy { color: #796448; }
-.theme-voyage .book-action,
+
+.theme-voyage .book-main {
+  padding-left: 8rpx;
+}
+
+.theme-voyage .book-tag {
+  padding: 8rpx 10rpx;
+  border: 2rpx solid #b17a3c;
+  border-radius: 4rpx;
+  background: #ecd39a;
+  color: #795025;
+  font-size: 19rpx;
+  font-weight: 700;
+}
+
+.theme-voyage .book-action {
+  padding: 12rpx 16rpx;
+  border: 2rpx solid #d1a64c;
+  border-radius: 4rpx;
+  background: #a83b31;
+  color: #fff1c8;
+  box-shadow: 0 4rpx 0 #68351e;
+  font-weight: 800;
+}
+
 .theme-voyage .vocab-practice-arrow { color: #a66e2e; font-weight: 800; }
 
 .theme-voyage .progress-bar {
