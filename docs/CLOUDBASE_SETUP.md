@@ -135,14 +135,14 @@ TENCENT_SECRET_KEY=<Tencent Secret Key>
 
 小程序跟读录音固定为 MP3、16kHz、单声道、64kbps。IELTS 回答由腾讯 SOE 评估发音与流利度，`gpt-5.6-terra` 评估内容、语法和反馈；学生写入 `taskAttempts` 并刷新日报，家长仅返回预览评分、不写数据库。
 
-Terra 试用期间，内容模型变量统一为：
+当前正式内容模型路由为：
 
 ```text
 WRITING_SCORE_MODEL=gpt-5.6-terra
 WRITING_SCORE_FALLBACK_MODEL=gpt-5.6-terra
-READING_STUDY_MODEL=gpt-5.6-terra
+READING_STUDY_MODEL=gpt-5.6-luna
 READING_STUDY_FALLBACK_MODEL=gpt-5.6-terra
-GRAMMAR_EXPLAIN_MODEL=gpt-5.6-terra
+GRAMMAR_EXPLAIN_MODEL=gpt-5.6-luna
 GRAMMAR_EXPLAIN_FALLBACK_MODEL=gpt-5.6-terra
 SPEAKING_CONTENT_SCORE_MODEL=gpt-5.6-terra
 SPEAKING_CONTENT_SCORE_FALLBACK_MODEL=gpt-5.6-terra

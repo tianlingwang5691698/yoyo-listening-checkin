@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-24 Luna 主模型与 Terra 兜底路由
+
+1. 范围：阅读逐题解析、阅读/听力学习包、阅读单句翻译、语法讲解。
+2. 云环境：`READING_STUDY_MODEL`、`GRAMMAR_EXPLAIN_MODEL` 使用 `gpt-5.6-luna`，对应 fallback 使用 `gpt-5.6-terra`。
+3. 保留 Terra：写作评分与 IELTS 口语内容评分继续使用 `gpt-5.6-terra`，口语禁止备用回退。
+4. 缓存：已有共享缓存不重算；仅新内容或缓存未命中时按 Luna → Terra 路由调用。
+5. 是否需要发版：云环境变量已生效，无需部署云函数或发布前端。
+
 ### 2026-07-24 IELTS 阅读补漏后仍报 missing-question-analyses
 
 1. 现象：已部署漏题补请求后，IELTS 阅读仍报 `reading-study-pack-missing-question-analyses`。
