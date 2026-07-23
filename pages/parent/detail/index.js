@@ -804,35 +804,9 @@ Page({
     language: i18n.getLanguage()
   }),
   onLoad(options) {
-    this.audioContext = wx.createInnerAudioContext();
-    this.audioContext.obeyMuteSwitch = false;
-    this.audioContext.onPlay(() => {
-      this.setData({ loadingAttemptKey: '', pausedAttemptKey: '' });
-    });
-    this.audioContext.onCanplay(() => {
-      this.setData({ loadingAttemptKey: '' });
-    });
-    this.audioContext.onWaiting(() => {
-      if (this.data.playingAttemptKey) {
-        this.setData({ loadingAttemptKey: this.data.playingAttemptKey });
-      }
-    });
-    this.audioContext.onPause(() => {
-      this.setData({
-        pausedAttemptKey: this.data.playingAttemptKey,
-        loadingAttemptKey: ''
-      });
-    });
-    this.audioContext.onEnded(() => {
-      this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
-    });
-    this.audioContext.onStop(() => {
-      this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
-    });
-    this.audioContext.onError(() => {
-      this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
-      wx.showToast({ title: this.data.texts.recordingPlaybackFailed, icon: 'none' });
-    });
+    this.audioContext = null;
+    this.speakingPlaybackRequestId = 0;
+    this.speakingPlaybackErrorTimer = null;
     const date = String((options && options.date) || '').slice(0, 10) || getTodayKey();
     this.setData({ date });
     wx.setNavigationBarTitle({
@@ -840,10 +814,9 @@ Page({
     });
   },
   onUnload() {
-    if (this.audioContext) {
-      this.audioContext.destroy();
-      this.audioContext = null;
-    }
+    this.speakingPlaybackRequestId += 1;
+    this.clearSpeakingPlaybackErrorTimer();
+    this.destroySpeakingAudioContext();
   },
   applyReportData(reportData) {
     const report = normalizeReport(reportData && reportData.report);
@@ -1058,13 +1031,73 @@ Page({
       })}`
     });
   },
+  clearSpeakingPlaybackErrorTimer() {
+    if (this.speakingPlaybackErrorTimer) {
+      clearTimeout(this.speakingPlaybackErrorTimer);
+      this.speakingPlaybackErrorTimer = null;
+    }
+  },
+  destroySpeakingAudioContext() {
+    const audioContext = this.audioContext;
+    this.audioContext = null;
+    if (audioContext) {
+      audioContext.destroy();
+    }
+  },
+  createSpeakingAudioContext(requestId, attemptKey) {
+    const audioContext = wx.createInnerAudioContext();
+    const isCurrentRequest = () => (
+      this.audioContext === audioContext
+      && this.speakingPlaybackRequestId === requestId
+    );
+    audioContext.obeyMuteSwitch = false;
+    audioContext.onPlay(() => {
+      if (!isCurrentRequest()) return;
+      this.clearSpeakingPlaybackErrorTimer();
+      this.setData({ loadingAttemptKey: '', pausedAttemptKey: '' });
+    });
+    audioContext.onCanplay(() => {
+      if (!isCurrentRequest()) return;
+      this.setData({ loadingAttemptKey: '' });
+    });
+    audioContext.onWaiting(() => {
+      if (!isCurrentRequest()) return;
+      this.setData({ loadingAttemptKey: attemptKey });
+    });
+    audioContext.onPause(() => {
+      if (!isCurrentRequest()) return;
+      this.setData({ pausedAttemptKey: attemptKey, loadingAttemptKey: '' });
+    });
+    audioContext.onEnded(() => {
+      if (!isCurrentRequest()) return;
+      this.clearSpeakingPlaybackErrorTimer();
+      this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
+    });
+    audioContext.onStop(() => {
+      if (!isCurrentRequest()) return;
+      this.clearSpeakingPlaybackErrorTimer();
+      this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
+    });
+    audioContext.onError(() => {
+      if (!isCurrentRequest()) return;
+      this.clearSpeakingPlaybackErrorTimer();
+      this.speakingPlaybackErrorTimer = setTimeout(() => {
+        if (!isCurrentRequest()) return;
+        this.speakingPlaybackErrorTimer = null;
+        this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
+        wx.showToast({ title: this.data.texts.recordingPlaybackFailed, icon: 'none' });
+      }, 400);
+    });
+    this.audioContext = audioContext;
+    return audioContext;
+  },
   async playSpeakingAttempt(event) {
     const index = Number(event.currentTarget.dataset.index || 0);
     const attempt = (this.data.report.speakingAttempts || [])[index] || null;
-    if (!attempt || !this.audioContext) {
+    if (!attempt) {
       return;
     }
-    if (this.data.playingAttemptKey === attempt.key) {
+    if (this.data.playingAttemptKey === attempt.key && this.audioContext) {
       if (this.data.pausedAttemptKey === attempt.key) {
         this.setData({ loadingAttemptKey: attempt.key });
         this.audioContext.play();
@@ -1079,17 +1112,30 @@ Page({
       wx.showToast({ title: this.data.texts.recordingUnavailable, icon: 'none' });
       return;
     }
-    this.setData({ loadingAttemptKey: attempt.key, pausedAttemptKey: '' });
+    const requestId = this.speakingPlaybackRequestId + 1;
+    this.speakingPlaybackRequestId = requestId;
+    this.clearSpeakingPlaybackErrorTimer();
+    this.destroySpeakingAudioContext();
+    this.setData({
+      playingAttemptKey: '',
+      loadingAttemptKey: attempt.key,
+      pausedAttemptKey: ''
+    });
     try {
       const src = await store.getTempFileURL(fileId);
+      if (this.speakingPlaybackRequestId !== requestId) return;
       if (!src) {
         throw new Error('empty-temp-url');
       }
-      this.audioContext.stop();
-      this.audioContext.src = src;
+      const audioContext = this.createSpeakingAudioContext(requestId, attempt.key);
+      audioContext.src = src;
       this.setData({ playingAttemptKey: attempt.key, loadingAttemptKey: attempt.key });
-      this.audioContext.play();
+      audioContext.play();
     } catch (error) {
+      if (this.speakingPlaybackRequestId !== requestId) return;
+      this.speakingPlaybackRequestId += 1;
+      this.clearSpeakingPlaybackErrorTimer();
+      this.destroySpeakingAudioContext();
       this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
       wx.showToast({ title: this.data.texts.recordingLoadFailed, icon: 'none' });
     }

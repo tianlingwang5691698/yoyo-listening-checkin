@@ -112,7 +112,7 @@
           </view>
           <view class="library-quote" wx:if="{{item.studentTranscript}}">{{item.studentTranscript}}</view>
           <view class="entry-copy" wx:if="{{item.feedback}}">{{item.feedback}}</view>
-          <button class="attempt-play library-play {{playingAttemptKey === item.key ? 'is-playing' : ''}} {{pausedAttemptKey === item.key ? 'is-paused' : ''}} {{loadingAttemptKey === item.key ? 'is-loading' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
+          <button class="attempt-play library-play {{playingAttemptKey === item.key ? 'is-playing' : ''}} {{pausedAttemptKey === item.key ? 'is-paused' : ''}} {{loadingAttemptKey === item.key ? 'is-loading' : ''}}" hover-class="attempt-play-pressed" hover-start-time="0" hover-stay-time="120" data-index="{{index}}" bindtap="playSpeakingAttempt">
             <view class="attempt-play-icon"></view>
             <text>{{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? texts.resumePlaying : texts.pauseRecording) : texts.playRecording}}</text>
           </button>
@@ -374,7 +374,7 @@
           </view>
           <view class="voice-quote" wx:if="{{item.studentTranscript}}">{{item.studentTranscript}}</view>
           <view class="voice-advice" wx:if="{{item.feedback}}">{{item.feedback}}</view>
-          <button class="attempt-play {{playingAttemptKey === item.key ? 'is-playing' : ''}} {{pausedAttemptKey === item.key ? 'is-paused' : ''}} {{loadingAttemptKey === item.key ? 'is-loading' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
+          <button class="attempt-play {{playingAttemptKey === item.key ? 'is-playing' : ''}} {{pausedAttemptKey === item.key ? 'is-paused' : ''}} {{loadingAttemptKey === item.key ? 'is-loading' : ''}}" hover-class="attempt-play-pressed" hover-start-time="0" hover-stay-time="120" data-index="{{index}}" bindtap="playSpeakingAttempt">
             <view class="attempt-play-icon"></view>
             <text>{{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? texts.resumePlaying : texts.pauseRecording) : texts.playRecording}}</text>
           </button>
