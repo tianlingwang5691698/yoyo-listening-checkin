@@ -119,6 +119,29 @@ function countWords(text) {
   return matches ? matches.length : 0;
 }
 
+function createWritingCloudError(result, action) {
+  const cloudError = result && result.cloudError || {};
+  const syncDebug = result && result.syncDebug || {};
+  const error = new Error(cloudError.message || `${action}-failed`);
+  error.writingDebug = {
+    action,
+    reason: syncDebug.reason || '',
+    envId: syncDebug.envId || ''
+  };
+  return error;
+}
+
+function buildWritingSubmitError(error, fallbackAction) {
+  const debug = error && error.writingDebug || {};
+  const action = debug.action || fallbackAction || 'submitWritingAttempt';
+  const target = typeof store.getSelectedStudentTarget === 'function' ? store.getSelectedStudentTarget() : {};
+  const message = String(error && error.message || 'unknown-error');
+  return [
+    text('gradingFailed', '批改失败，可以再点一次提交。'),
+    `DEBUG: pages/writing/detail.submitEssay -> store.${action} -> cloud.${action} -> cloudError.message=${message}, syncDebug.reason=${debug.reason || 'missing'}, syncDebug.envId=${debug.envId || 'missing'}, targetChildId=${target.targetChildId || 'self'}`
+  ].join('\n');
+}
+
 function normalizeReview(review, prompt) {
   const totalScore = Number(review && review.totalScore) || Number(prompt && prompt.score) || 20;
   return Object.assign({
@@ -401,7 +424,7 @@ Page({
         manualMarks: buildManualMarks(getWritingMarkSources(this.data), this.data.writingTokenMarks, this.data.writingSentenceMarks)
       });
       if (result && result.syncMode === 'cloud-error') {
-        throw new Error((result.cloudError && result.cloudError.message) || text('retryFailed', '批改失败'));
+        throw createWritingCloudError(result, 'submitWritingAttempt');
       }
       const attempt = result.attempt || null;
       const attemptId = (attempt && (attempt.attemptId || attempt._id)) || '';
@@ -417,7 +440,7 @@ Page({
       }
       store.gradeWritingAttempt(attemptId).then((graded) => {
         if (graded && graded.syncMode === 'cloud-error') {
-          throw new Error((graded.cloudError && graded.cloudError.message) || text('retryFailed', '批改失败'));
+          throw createWritingCloudError(graded, 'gradeWritingAttempt');
         }
         const review = normalizeReview(graded.review, prompt);
         this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
@@ -434,9 +457,11 @@ Page({
         };
         completed.addCompletedItem(item);
       }).catch((error) => {
+        const errorText = buildWritingSubmitError(error, 'gradeWritingAttempt');
+        console.error(errorText);
         this.setData({
           grading: false,
-          errorText: text('gradingFailed', '批改失败，可以再点一次提交。')
+          errorText
         });
       });
       const item = {
@@ -451,8 +476,10 @@ Page({
       };
       completed.addCompletedItem(item);
     } catch (error) {
+      const errorText = buildWritingSubmitError(error, 'submitWritingAttempt');
+      console.error(errorText);
       this.setData({
-        errorText: text('gradingFailed', '批改失败，可以再点一次提交。')
+        errorText
       });
       wx.showToast({ title: text('retryFailed', '批改失败，可重试'), icon: 'none' });
     } finally {

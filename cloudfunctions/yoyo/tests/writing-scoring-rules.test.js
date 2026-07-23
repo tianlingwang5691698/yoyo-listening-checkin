@@ -93,6 +93,52 @@ test('雅思证据化评分必须四项字段完整', () => {
   assert.equal(writing.hasCompleteIeltsCriterionDetails(complete), false);
 });
 
+test('雅思评分兼容官方维度名称与常见讲解字段变体', () => {
+  const prompt = { contentType: 'ielts-writing-task-1', score: 9 };
+  const review = writing.normalizeReview({
+    dimensionScores: {
+      'Task Achievement': 6,
+      'Coherence and Cohesion': 6.5,
+      'Lexical Resource': 7,
+      'Grammatical Range and Accuracy': 6.5
+    },
+    summary: '评分有效。',
+    criterionDetails: [
+      { label: 'Task Achievement', feedback: '任务完成评语', quotes: 'The chart rose steadily.', bandDescriptor: '符合 Band 6', weaknesses: '比较不足', nextSteps: '补充关键比较' },
+      { label: 'Coherence and Cohesion', analysis: '衔接评语', examples: ['Overall, ...'], descriptor: '符合 Band 6.5', limitations: ['衔接略机械'], improvements: ['使用自然指代'] },
+      { label: 'Lexical Resource', commentary: '词汇评语', studentEvidence: ['a significant increase'], match: '符合 Band 7', scoreLimiters: ['搭配偶有错误'], recommendations: ['提高搭配准确度'] },
+      { label: 'Grammatical Range and Accuracy', comment: '语法评语', evidence: ['while sales increased'], bandReason: '符合 Band 6.5', limiters: ['复杂句错误'], actions: ['检查从句结构'] }
+    ]
+  }, prompt);
+
+  assert.equal(review.score, 6.5);
+  assert.equal(review.criterionDetailsComplete, true);
+  assert.equal(review.feedbackNotice, '');
+  assert.equal(writing.hasUsableIeltsReview(review), true);
+  assert.deepEqual(review.criterionDetails[0].evidence, ['The chart rose steadily.']);
+  assert.deepEqual(review.criterionDetails[0].nextBandActions, ['补充关键比较']);
+});
+
+test('雅思四项分有效时保留评分，不因部分讲解缺失判整次失败', () => {
+  const review = writing.normalizeReview({
+    dimensionScores: {
+      taskResponse: 6,
+      coherenceCohesion: 6,
+      lexicalResource: 6,
+      grammaticalRangeAccuracy: 6
+    },
+    summary: '有效评分。',
+    criterionFeedback: {
+      taskResponse: { comment: '回应了题目。' }
+    }
+  }, { contentType: 'ielts-writing-task-2', score: 9 });
+
+  assert.equal(writing.hasUsableIeltsReview(review), true);
+  assert.equal(writing.hasCompleteIeltsCriterionDetails(review), false);
+  assert.equal(review.criterionDetailsComplete, false);
+  assert.match(review.feedbackNotice, /四项 Band 分已保留/);
+});
+
 test('雅思按需生成高 1 与高 2 Band 教学范文协议', () => {
   const prompt = {
     title: 'Cambridge IELTS 21 Test 1 Writing Task 2',

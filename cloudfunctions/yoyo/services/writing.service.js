@@ -22,7 +22,8 @@ function normalizeText(value) {
 }
 
 function normalizeTextList(value, limit = 4) {
-  return (Array.isArray(value) ? value : [])
+  const values = Array.isArray(value) ? value : (value === undefined || value === null ? [] : [value]);
+  return values
     .map(normalizeText)
     .filter(Boolean)
     .slice(0, limit);
@@ -164,7 +165,19 @@ function readDimensionScore(dimensions, keys) {
     const score = normalizeBandScore(dimensions && dimensions[key]);
     if (score !== null) return score;
   }
+  const normalizedEntries = Object.entries(dimensions || {}).reduce((map, [key, value]) => {
+    map[normalizeSchemaKey(key)] = value;
+    return map;
+  }, {});
+  for (const key of keys) {
+    const score = normalizeBandScore(normalizedEntries[normalizeSchemaKey(key)]);
+    if (score !== null) return score;
+  }
   return null;
+}
+
+function normalizeSchemaKey(value) {
+  return String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
 function formatBandLabel(label, score) {
@@ -210,50 +223,57 @@ function buildReviewLabels(taskType, dimensionScores) {
 
 function normalizeCriterionDetails(data, taskType, dimensionScores) {
   if (taskType !== 'ielts-task-1' && taskType !== 'ielts-task-2') return [];
-  const feedback = data.criterionFeedback && typeof data.criterionFeedback === 'object'
-    ? data.criterionFeedback
-    : {};
+  const feedback = data.criterionFeedback || data.criterionDetails || data.criteria || data.criterion_details || {};
+  const feedbackItems = Array.isArray(feedback)
+    ? feedback
+    : Object.entries(feedback && typeof feedback === 'object' ? feedback : {}).map(([key, value]) => (
+      Object.assign({ key }, value && typeof value === 'object' ? value : { comment: value })
+    ));
   const specs = [
     {
       key: 'task',
-      sourceKeys: ['task', 'taskAchievement', 'taskResponse'],
+      sourceKeys: ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response'],
       label: taskType === 'ielts-task-1' ? 'Task Achievement' : 'Task Response',
       score: dimensionScores.task,
       comment: data.content
     },
     {
       key: 'coherenceCohesion',
-      sourceKeys: ['coherenceCohesion', 'coherence_and_cohesion'],
+      sourceKeys: ['coherenceCohesion', 'coherence_and_cohesion', 'Coherence and Cohesion'],
       label: 'Coherence and Cohesion',
       score: dimensionScores.coherenceCohesion,
       comment: data.structure
     },
     {
       key: 'lexicalResource',
-      sourceKeys: ['lexicalResource', 'lexical_resource'],
+      sourceKeys: ['lexicalResource', 'lexical_resource', 'Lexical Resource'],
       label: 'Lexical Resource',
       score: dimensionScores.lexicalResource,
       comment: data.language
     },
     {
       key: 'grammaticalRangeAccuracy',
-      sourceKeys: ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy'],
+      sourceKeys: ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy', 'Grammatical Range and Accuracy'],
       label: 'Grammatical Range and Accuracy',
       score: dimensionScores.grammaticalRangeAccuracy,
       comment: data.spelling
     }
   ];
   return specs.map((spec) => {
-    const raw = spec.sourceKeys.reduce((found, key) => found || feedback[key], null) || {};
+    const acceptedKeys = spec.sourceKeys.map(normalizeSchemaKey);
+    const raw = feedbackItems.find((item) => {
+      const identity = item && (item.key || item.label || item.criterion || item.name || item.title);
+      return acceptedKeys.includes(normalizeSchemaKey(identity));
+    }) || {};
     return {
       key: spec.key,
       label: formatBandLabel(spec.label, spec.score),
       score: spec.score,
-      comment: normalizeText(raw.comment || spec.comment || ''),
-      evidence: normalizeTextList(raw.evidence, 4),
-      descriptorMatch: normalizeText(raw.descriptorMatch || raw.bandReason || ''),
-      limiters: normalizeTextList(raw.limiters || raw.scoreLimiters, 4),
-      nextBandActions: normalizeTextList(raw.nextBandActions || raw.actions, 4)
+      comment: normalizeText(raw.comment || raw.feedback || raw.analysis || raw.commentary || spec.comment || ''),
+      evidence: normalizeTextList(raw.evidence || raw.evidences || raw.examples || raw.quotes || raw.studentEvidence, 4),
+      descriptorMatch: normalizeText(raw.descriptorMatch || raw.bandReason || raw.descriptor || raw.bandDescriptor || raw.match || ''),
+      limiters: normalizeTextList(raw.limiters || raw.scoreLimiters || raw.limitations || raw.weaknesses, 4),
+      nextBandActions: normalizeTextList(raw.nextBandActions || raw.actions || raw.nextSteps || raw.improvements || raw.recommendations, 4)
     };
   });
 }
@@ -263,11 +283,11 @@ function normalizeStoredCriterionDetails(value) {
     key: normalizeText(item && item.key),
     label: normalizeText(item && item.label),
     score: normalizeBandScore(item && item.score),
-    comment: normalizeText(item && item.comment),
-    evidence: normalizeTextList(item && item.evidence, 4),
-    descriptorMatch: normalizeText(item && item.descriptorMatch),
-    limiters: normalizeTextList(item && item.limiters, 4),
-    nextBandActions: normalizeTextList(item && item.nextBandActions, 4)
+    comment: normalizeText(item && (item.comment || item.feedback || item.analysis || item.commentary)),
+    evidence: normalizeTextList(item && (item.evidence || item.evidences || item.examples || item.quotes || item.studentEvidence), 4),
+    descriptorMatch: normalizeText(item && (item.descriptorMatch || item.bandReason || item.descriptor || item.bandDescriptor || item.match)),
+    limiters: normalizeTextList(item && (item.limiters || item.scoreLimiters || item.limitations || item.weaknesses), 4),
+    nextBandActions: normalizeTextList(item && (item.nextBandActions || item.actions || item.nextSteps || item.improvements || item.recommendations), 4)
   })).filter((item) => item.key || item.label).slice(0, 4);
 }
 
@@ -312,6 +332,13 @@ function hasCompleteIeltsCriterionDetails(review) {
     )));
 }
 
+function hasUsableIeltsReview(review) {
+  const scores = review && review.dimensionScores;
+  return !!(review && review.isIelts && scores
+    && ['task', 'coherenceCohesion', 'lexicalResource', 'grammaticalRangeAccuracy']
+      .every((key) => normalizeBandScore(scores[key]) !== null));
+}
+
 function normalizeReview(data, prompt) {
   const taskType = getWritingTaskType(prompt);
   const dimensions = data.dimensions && typeof data.dimensions === 'object' ? data.dimensions : {};
@@ -320,10 +347,10 @@ function normalizeReview(data, prompt) {
     : dimensions;
   if (taskType === 'ielts-task-1' || taskType === 'ielts-task-2') {
     const dimensionScores = {
-      task: readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse']),
-      coherenceCohesion: readDimensionScore(rawDimensionScores, ['coherenceCohesion', 'coherence_and_cohesion']),
-      lexicalResource: readDimensionScore(rawDimensionScores, ['lexicalResource', 'lexical_resource']),
-      grammaticalRangeAccuracy: readDimensionScore(rawDimensionScores, ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy'])
+      task: readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']),
+      coherenceCohesion: readDimensionScore(rawDimensionScores, ['coherenceCohesion', 'coherence_and_cohesion', 'Coherence and Cohesion']),
+      lexicalResource: readDimensionScore(rawDimensionScores, ['lexicalResource', 'lexical_resource', 'Lexical Resource']),
+      grammaticalRangeAccuracy: readDimensionScore(rawDimensionScores, ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy', 'Grammatical Range and Accuracy'])
     };
     const scores = Object.values(dimensionScores).filter((score) => score !== null);
     const calculatedBand = scores.length === 4
@@ -334,7 +361,7 @@ function normalizeReview(data, prompt) {
     const criterionDetails = storedCriterionDetails.length === 4
       ? storedCriterionDetails
       : normalizeCriterionDetails(data, taskType, dimensionScores);
-    return Object.assign({
+    const normalized = Object.assign({
       score,
       totalScore: 9,
       level: `IELTS Band ${score.toFixed(1)}`,
@@ -363,6 +390,11 @@ function normalizeReview(data, prompt) {
       polishedVersion: normalizeLongText(data.polishedVersion || data.modelAnswer || data.polished || '').slice(0, 5000),
       bandSamples: normalizeBandSamples(data.bandSamples, score)
     }, buildReviewLabels(taskType, dimensionScores));
+    normalized.criterionDetailsComplete = hasCompleteIeltsCriterionDetails(normalized);
+    normalized.feedbackNotice = normalized.criterionDetailsComplete
+      ? ''
+      : '四项 Band 分已保留；部分逐项证据或升档讲解未完整生成，可稍后重新批改补全。';
+    return normalized;
   }
   const totalScore = resolveTotalScore(prompt, taskType);
   const score = Math.max(0, Math.min(totalScore, Number(data.score || 0)));
@@ -647,10 +679,10 @@ async function gradeWriting(prompt, essay) {
   });
   let parsed = parseJsonText(extractMessageText(data));
   let review = normalizeReview(parsed, prompt);
-  if ((taskType === 'ielts-task-1' || taskType === 'ielts-task-2') && !hasCompleteIeltsCriterionDetails(review)) {
+  if ((taskType === 'ielts-task-1' || taskType === 'ielts-task-2') && !hasUsableIeltsReview(review)) {
     const repairPrompt = [
       gradingPrompt,
-      '上一次 JSON 缺少必填的逐项证据字段。请重新完整评分，四项 criterionFeedback 均必须包含 comment、至少1条 evidence、descriptorMatch、至少1条 limiters 和至少1条 nextBandActions。',
+      '上一次 JSON 未返回可用的四项 Band 分。请重新完整评分，必须返回四项 dimensionScores；criterionFeedback 同时尽量完整返回 comment、evidence、descriptorMatch、limiters 和 nextBandActions。',
       `上一次输出：${JSON.stringify(parsed)}`
     ].join('\n');
     const repairContent = imageUrl
@@ -665,8 +697,8 @@ async function gradeWriting(prompt, essay) {
     });
     parsed = parseJsonText(extractMessageText(data));
     review = normalizeReview(parsed, prompt);
-    if (!hasCompleteIeltsCriterionDetails(review)) {
-      throw new Error('writing-ielts-criterion-evidence-incomplete');
+    if (!hasUsableIeltsReview(review)) {
+      throw new Error('writing-ielts-review-invalid');
     }
   }
   return review;
@@ -1119,6 +1151,7 @@ module.exports = {
     calculateIeltsWritingTestEstimate,
     normalizeBandSample,
     hasCompleteIeltsCriterionDetails,
+    hasUsableIeltsReview,
     normalizeReview,
     sanitizePromptForGrading,
     buildGradingPrompt,

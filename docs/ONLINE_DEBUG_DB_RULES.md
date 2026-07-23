@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-23 IELTS Writing Task 1 模型成功但页面显示批改失败
+
+1. 现象：IELTS 小作文提交后页面显示批改失败，模型平台显示 `gpt-5.6-sol` 已在 72 秒完成调用。
+2. 查询：`pages/writing/detail.submitEssay -> store.submitWritingAttempt -> cloud.submitWritingAttempt -> writing.gradeWriting -> normalizeReview`。
+3. 结论：不是首轮模型超时；四项 Band 分已返回，但逐项证据字段名称或结构未完全命中严格解析器，程序将有效评分误判为 `writing-ielts-criterion-evidence-incomplete`。家长预览不写 `writingAttempts`，因此库中没有本次记录。
+4. 修复：兼容官方英文维度名、camelCase、snake_case、对象/数组式逐项反馈及常见字段别名；四项 Band 分有效时保留评分，讲解不完整只提示补全；仅四项分无效时重试。失败区增加完整调用链路。
+5. 是否需要发版：需部署 `yoyo` 云函数；前端失败诊断和部分反馈提示需重新编译发布小程序。
+
 ### 2026-07-23 作文详情页白屏
 
 1. 现象：初中、高中和 IELTS 作文从资料目录点击后进入白屏。

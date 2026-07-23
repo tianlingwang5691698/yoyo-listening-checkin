@@ -696,6 +696,17 @@
   background: rgba(109, 145, 136, 0.09);
 }
 
+.writing-feedback-notice {
+  margin-top: 12rpx;
+  padding: 14rpx 18rpx;
+  border: 2rpx solid rgba(181, 137, 66, 0.34);
+  border-radius: 8rpx;
+  background: rgba(255, 243, 207, 0.78);
+  color: #6e5224;
+  font-size: 22rpx;
+  line-height: 1.55;
+}
+
 .writing-test-estimate {
   display: flex;
   flex-wrap: wrap;
@@ -1428,6 +1439,11 @@
   background: rgba(184, 149, 98, 0.12);
   color: #644b30;
 }
+.writing-library-page .writing-feedback-notice {
+  border-color: rgba(138, 103, 56, 0.38);
+  background: rgba(247, 235, 202, 0.82);
+  color: #644b30;
+}
 .writing-library-page .writing-test-estimate {
   border-color: rgba(127, 140, 120, 0.5);
   border-radius: 6rpx;
@@ -1676,6 +1692,7 @@
 
 .theme-voyage .writing-weighting-note,
 .theme-voyage .writing-rubric-version,
+.theme-voyage .writing-feedback-notice,
 .theme-voyage .criterion-evidence,
 .theme-voyage .criterion-descriptor,
 .theme-voyage .criterion-limiters,
@@ -1715,6 +1732,7 @@
 
 .theme-dragon .writing-weighting-note,
 .theme-dragon .writing-rubric-version,
+.theme-dragon .writing-feedback-notice,
 .theme-dragon .criterion-evidence,
 .theme-dragon .criterion-descriptor,
 .theme-dragon .criterion-limiters,

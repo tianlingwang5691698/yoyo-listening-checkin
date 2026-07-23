@@ -139,6 +139,7 @@
       </view>
       <view class="writing-rubric-version" wx:if="{{review.rubricVersion}}">评分依据：{{review.rubricVersion}}</view>
       <view class="library-review-summary" wx:if="{{review.summary}}">{{review.summary}}</view>
+      <view class="writing-feedback-notice" wx:if="{{review.feedbackNotice}}">{{review.feedbackNotice}}</view>
       <view class="library-review-grid" wx:if="{{review.criterionDetails.length}}">
         <view class="library-review-section criterion-detail" wx:for="{{review.criterionDetails}}" wx:key="key" wx:for-item="criterion">
           <view class="library-review-label">{{criterion.label}}</view>
@@ -376,6 +377,7 @@
     </view>
     <view class="writing-rubric-version" wx:if="{{review.rubricVersion}}">评分依据：{{review.rubricVersion}}</view>
     <view class="review-block" wx:if="{{review.summary}}">{{review.summary}}</view>
+    <view class="writing-feedback-notice" wx:if="{{review.feedbackNotice}}">{{review.feedbackNotice}}</view>
     <block wx:if="{{review.criterionDetails.length}}">
       <view class="review-list criterion-detail" wx:for="{{review.criterionDetails}}" wx:key="key" wx:for-item="criterion">
         <view class="list-title">{{criterion.label}}</view>

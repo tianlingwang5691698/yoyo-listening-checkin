@@ -15,6 +15,7 @@ test('雅思写作报告展示证据、卡分原因和升档动作', () => {
   assert.match(template, /review\.strengths/);
   assert.match(template, /AI 练习预估|review\.estimateLabel/);
   assert.match(template, /review\.writingTestEstimate/);
+  assert.match(template, /review\.feedbackNotice/);
   assert.match(template, /Task 1.*Task 2/);
 });
 
@@ -42,4 +43,13 @@ test('升档范文云端动作完整接线', () => {
   assert.match(cloud, /generateWritingBandSample: serviceAction\('writing', 'generateWritingBandSample'\)/);
   assert.match(cloudClient, /gradeWritingAttempt'.*generateWritingBandSample'.*getWritingAttemptDetail/);
   assert.match(requestContext, /generateWritingBandSample/);
+});
+
+test('写作批改失败展示完整调用链路而不是通用提示', () => {
+  const page = fs.readFileSync(path.join(root, 'pages/writing/detail/index.js'), 'utf8');
+  assert.match(page, /DEBUG: pages\/writing\/detail\.submitEssay/);
+  assert.match(page, /cloudError\.message=/);
+  assert.match(page, /syncDebug\.reason=/);
+  assert.match(page, /syncDebug\.envId=/);
+  assert.match(page, /targetChildId=/);
 });
