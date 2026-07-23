@@ -11,6 +11,7 @@ const { buildReadingParagraphRanges, normalizeReadingPassageText } = require('..
 const { structureLegacyReadingContent } = require('../../../utils/reading-content-structure');
 const { toggleWordMark, toggleSentenceMark, countReadingMarks, buildReadingMarkItems } = require('../../../utils/reading-manual-marks');
 const { canHighlightReadingAnswers, resolveReadingHighlightMode } = require('../../../utils/reading-highlight-mode');
+const { openReadingReportPdf } = require('../../../utils/reading-report-download');
 const ieltsParagraphMetadata = require('./ielts-paragraph-metadata');
 
 const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
@@ -1042,6 +1043,7 @@ Page({
   data: page.createCloudPageData({
     loading: true,
     submitting: false,
+    pdfGenerating: false,
     passageId: '',
     attemptId: '',
     passage: null,
@@ -1829,6 +1831,30 @@ Page({
   },
   retrySubmit() {
     this.submit();
+  },
+  async downloadReadingReportPdf() {
+    const attemptId = String(this.data.attempt && this.data.attempt._id || '');
+    const passageId = String(this.data.passage && this.data.passage._id || '');
+    if (!attemptId || !passageId || this.data.pdfGenerating) return;
+    this.setData({ pdfGenerating: true });
+    try {
+      const result = await store.generateReadingReportPdf({ attemptId, passageId });
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error(result.cloudError && result.cloudError.message || 'reading-report-generate-failed');
+      }
+      await openReadingReportPdf(result);
+    } catch (error) {
+      const message = String(error && error.message || error || '');
+      console.error('reading-detail-report-pdf-failed', message);
+      wx.showToast({
+        title: message.includes('study-pack-generating')
+          ? text('readingPdfPreparing', '正在补齐学习包，请稍后重试')
+          : text('readingPdfFailed', 'PDF 生成失败，请重试'),
+        icon: 'none'
+      });
+    } finally {
+      this.setData({ pdfGenerating: false });
+    }
   },
   playReadingCompleteEffect(rewardAllowed) {
     if (!rewardAllowed || this.readingEffectPlayed) return;

@@ -170,11 +170,31 @@ Object.assign(module.exports.vocabularyPractice['zh-CN'], { durationLabel: '用�
 Object.assign(module.exports.vocabularyPractice.en, { durationLabel: 'Time', thisDuration: 'Time spent', saveFailed: 'Could not save the record' });
 Object.assign(module.exports.readingDetail['zh-CN'], {
   manualMarkHint: '点词标黄，连续点标蓝；长按整句标绿',
-  clearManualMarks: '清除标记'
+  clearManualMarks: '清除标记',
+  readingPdfDownload: '下载完整阅读 PDF',
+  readingPdfGenerating: '正在生成 PDF',
+  readingPdfFailed: 'PDF 生成失败，请重试',
+  readingPdfPreparing: '正在补齐学习包，请稍后重试'
 });
 Object.assign(module.exports.readingDetail.en, {
   manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press a sentence for green.',
-  clearManualMarks: 'Clear marks'
+  clearManualMarks: 'Clear marks',
+  readingPdfDownload: 'Download Full Reading PDF',
+  readingPdfGenerating: 'Generating PDF',
+  readingPdfFailed: 'Could not generate PDF',
+  readingPdfPreparing: 'Preparing the study pack. Try again shortly.'
+});
+Object.assign(module.exports.practiceHistory['zh-CN'], {
+  readingPdfDownload: '下载完整阅读 PDF',
+  readingPdfGenerating: '正在生成 PDF',
+  readingPdfFailed: 'PDF 生成失败，请重试',
+  readingPdfPreparing: '正在补齐学习包，请稍后重试'
+});
+Object.assign(module.exports.practiceHistory.en, {
+  readingPdfDownload: 'Download Full Reading PDF',
+  readingPdfGenerating: 'Generating PDF',
+  readingPdfFailed: 'Could not generate PDF',
+  readingPdfPreparing: 'Preparing the study pack. Try again shortly.'
 });
 Object.assign(module.exports.grammar['zh-CN'], { manualMarkHint: '点词标黄，连续点标蓝；长按题干标绿', clearManualMarks: '清除标记' });
 Object.assign(module.exports.grammar.en, { manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press the question for green.', clearManualMarks: 'Clear marks' });

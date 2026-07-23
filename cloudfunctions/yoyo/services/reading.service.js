@@ -5,6 +5,7 @@ const completion = require('./completion.service');
 const crypto = require('crypto');
 const https = require('https');
 const { CLOUD_ASSET_BASE_URL } = require('../lib/constants');
+const { buildReadingReportPdf } = require('../lib/reading-report-pdf');
 
 const DEFAULT_READING_DAILY_COUNT = 3;
 const MAX_READING_DAILY_COUNT = 20;
@@ -118,6 +119,138 @@ function normalizePassage(item) {
     sentencePatterns: Array.isArray(item.sentencePatterns) ? item.sentencePatterns : [],
     status: item.status || 'sample'
   };
+}
+
+function readingReportImageKey(image) {
+  return String(image && (image.cloudPath || image.fileId || image.fileID || image.src || image.url) || '');
+}
+
+function collectReadingReportImages(passage) {
+  const images = [];
+  const seen = new Set();
+  const add = (image) => {
+    const key = readingReportImageKey(image);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    images.push(image);
+  };
+  (passage && passage.images || []).forEach(add);
+  (passage && passage.questions || []).forEach((question) => {
+    (question && question.sourceImages || []).forEach(add);
+    Object.values(question && question.optionImages || {}).forEach(add);
+  });
+  return images;
+}
+
+function downloadReadingReportUrlBuffer(url, redirects = 3) {
+  return new Promise((resolve, reject) => {
+    const request = https.get(url, (response) => {
+      if ([301, 302, 303, 307, 308].includes(response.statusCode) && response.headers.location && redirects > 0) {
+        response.resume();
+        resolve(downloadReadingReportUrlBuffer(new URL(response.headers.location, url).toString(), redirects - 1));
+        return;
+      }
+      if (response.statusCode !== 200) {
+        response.resume();
+        reject(new Error(`reading-report-image-http-${response.statusCode || 0}`));
+        return;
+      }
+      const chunks = [];
+      response.on('data', (chunk) => chunks.push(chunk));
+      response.on('end', () => resolve(Buffer.concat(chunks)));
+    });
+    request.setTimeout(15000, () => request.destroy(new Error('reading-report-image-timeout')));
+    request.on('error', reject);
+  });
+}
+
+async function downloadReadingReportImages(passage) {
+  const imageBuffers = {};
+  for (const image of collectReadingReportImages(passage)) {
+    const key = readingReportImageKey(image);
+    try {
+      const buffer = image && (image.fileId || image.fileID || image.cloudPath)
+        ? await storageAdapter.downloadCloudFileBuffer(image.fileId || image.fileID, image.cloudPath)
+        : await downloadReadingReportUrlBuffer(String(image && (image.src || image.url) || ''));
+      if (!buffer || !buffer.length) throw new Error('reading-report-source-image-empty');
+      imageBuffers[key] = buffer;
+    } catch (error) {
+      throw new Error('reading-report-source-image-unavailable');
+    }
+  }
+  return imageBuffers;
+}
+
+function buildAttemptReviewStudyPack(attempt, passage) {
+  const review = attempt && attempt.review || {};
+  const analyses = (Array.isArray(review.analysis) ? review.analysis : []).map((item) => ({
+    number: item && item.number,
+    answer: item && item.answer || '',
+    answerSentence: typeof (item && item.answerSentence) === 'string'
+      ? item.answerSentence
+      : item && item.answerSentence && item.answerSentence.text || '',
+    answerSentenceTranslation: item && (
+      item.answerSentenceTranslation
+      || item.answerSentence && item.answerSentence.translation
+    ) || '',
+    analysis: item && (item.analysis || item.text) || ''
+  }));
+  return normalizeStudyPack({
+    fullTranslation: review.fullTranslation || '',
+    vocabularyCards: review.vocabularyCards || review.vocabulary || [],
+    phraseCards: review.phraseCards || review.phrases || [],
+    sentencePatternCards: review.sentencePatternCards || review.sentencePatterns || [],
+    questionAnalyses: analyses,
+    source: review.studyPackSource || ''
+  }, passage);
+}
+
+async function ensureReadingReportStudyPack(passage, attempt) {
+  const cached = await getCachedStudyPack(passage);
+  let studyPack = mergeStudyPacks(cached, buildAttemptReviewStudyPack(attempt, passage), passage);
+  if (!isValidQuestionStudyPack(studyPack, passage)) {
+    const generated = await getOrCreateStudyPack(passage, studyPack, false);
+    if (generated.generating || !generated.studyPack) {
+      throw new Error('reading-report-study-pack-generating');
+    }
+    studyPack = mergeStudyPacks(studyPack, generated.studyPack, passage);
+  }
+  if (!hasStudyPackSection(studyPack, 'cards', passage)) {
+    const generatedCards = await buildLearningPackWithModel(passage, 'cards');
+    studyPack = mergeStudyPacks(studyPack, generatedCards, passage);
+    const saved = await saveStudyPack(passage, studyPack, { validateQuestions: true });
+    if (!saved) throw new Error('reading-report-study-pack-save-failed');
+  }
+  validateQuestionStudyPack(studyPack, passage);
+  validateLearningStudyPack(studyPack, 'cards', passage);
+  return normalizeStudyPack(studyPack, passage);
+}
+
+async function loadReadingReportAttempt(ctx, payload) {
+  const attemptId = String(payload && payload.attemptId || '').trim();
+  if (attemptId) {
+    try {
+      const result = await dbAdapter.collection('readingAttempts').doc(attemptId).get();
+      const attempt = result && result.data ? Object.assign({}, result.data, { _id: attemptId }) : null;
+      if (attempt
+        && attempt.familyId === ctx.family.familyId
+        && attempt.childId === ctx.child.childId) {
+        return attempt;
+      }
+    } catch (error) {}
+  }
+  const completionId = String(payload && payload.completionId || '').trim();
+  if (completionId) {
+    const result = await dbAdapter.collection('studyCompletedItems').where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      recordId: completionId,
+      type: 'reading'
+    }).orderBy('updatedAt', 'desc').limit(1).get();
+    const item = result && result.data && result.data[0];
+    if (item && item.latestAttempt) return item.latestAttempt;
+  }
+  throw new Error('reading-report-attempt-not-found');
 }
 
 function hasUsableReadingQuestions(passage) {
@@ -2229,6 +2362,46 @@ async function submitReadingAttempt(event) {
   };
 }
 
+async function generateReadingReportPdf(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'generateReadingReportPdf'
+  }));
+  const attempt = await loadReadingReportAttempt(ctx, payload);
+  const passageId = String(attempt && attempt.passageId || payload.passageId || '').trim();
+  if (!passageId || !attempt || !Array.isArray(attempt.questionResults) || !attempt.questionResults.length) {
+    throw new Error('reading-report-not-ready');
+  }
+  const passage = await findPassageById(passageId, study.getTodayString());
+  if (!passage) throw new Error('reading-report-passage-not-found');
+  const studyPack = await ensureReadingReportStudyPack(passage, attempt);
+  const imageBuffers = await downloadReadingReportImages(passage);
+  const pdfBuffer = await buildReadingReportPdf({
+    passage,
+    attempt,
+    studyPack,
+    imageBuffers
+  });
+  const safeAttemptId = String(attempt._id || payload.completionId || passageId)
+    .replace(/[^a-zA-Z0-9_-]/g, '')
+    .slice(0, 100);
+  const cloudPath = [
+    '_exports',
+    'reading-reports',
+    ctx.family.familyId,
+    ctx.child.childId,
+    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-study-v1.pdf`
+  ].join('/');
+  const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
+  const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);
+  return {
+    fileId: uploaded.fileId,
+    cloudPath: uploaded.cloudPath,
+    tempUrl,
+    fileName: `${String(passage.title || 'reading-report').replace(/[\\/:*?"<>|]/g, ' ')}.pdf`
+  };
+}
+
 async function synthesizeReadingAudio(event) {
   const payload = (event && event.payload) || {};
   await study.prepareRequestContext(Object.assign({}, event, {
@@ -2372,12 +2545,15 @@ module.exports = {
   getReadingStudyPack,
   synthesizeReadingAudio,
   submitReadingAttempt,
+  generateReadingReportPdf,
   lookupWord,
   _test: {
     isValidQuestionStudyPack,
     buildQuestionStudyPackWithRequester,
     extractModelQuestionAnalyses,
     parseJsonText,
+    collectReadingReportImages,
+    buildAttemptReviewStudyPack,
     READING_STUDY_MODEL_TIMEOUT_MS
   }
 };

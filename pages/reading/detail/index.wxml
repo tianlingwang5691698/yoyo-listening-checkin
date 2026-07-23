@@ -145,6 +145,13 @@
         <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
         <view class="review-score" wx:else>{{texts.completed}}</view>
         <view class="review-copy">{{reviewSummary || texts.resultReady}}</view>
+        <button
+          class="reading-report-download"
+          wx:if="{{attempt && attempt._id}}"
+          loading="{{pdfGenerating}}"
+          disabled="{{pdfGenerating}}"
+          bindtap="downloadReadingReportPdf"
+        >{{pdfGenerating ? texts.readingPdfGenerating : texts.readingPdfDownload}}</button>
       </view>
 
       <view class="cloze-review-card library-proof-panel" wx:if="{{submitted && passage.isClozePassage}}">
@@ -487,6 +494,13 @@
         <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
         <view class="review-score" wx:else>{{texts.completed}}</view>
         <view class="review-copy">{{reviewSummary || texts.resultReady}}</view>
+        <button
+          class="reading-report-download"
+          wx:if="{{attempt && attempt._id}}"
+          loading="{{pdfGenerating}}"
+          disabled="{{pdfGenerating}}"
+          bindtap="downloadReadingReportPdf"
+        >{{pdfGenerating ? texts.readingPdfGenerating : texts.readingPdfDownload}}</button>
       </view>
 
       <view class="cloze-review-card" wx:if="{{submitted && passage.isClozePassage}}">

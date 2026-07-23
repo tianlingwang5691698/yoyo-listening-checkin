@@ -1002,6 +1002,50 @@
   line-height: 1.55;
 }
 
+.reading-report-download {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 76rpx;
+  margin-top: 22rpx;
+  border: 2rpx solid #17314f;
+  border-radius: 8rpx;
+  background: #17314f;
+  color: #fff;
+  font-size: 25rpx;
+  line-height: 72rpx;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.reading-report-download::after {
+  border: 0;
+}
+
+.reading-report-download[disabled] {
+  opacity: 0.62;
+}
+
+.theme-library .reading-report-download {
+  border-color: #514b43;
+  background: #514b43;
+  color: #fffdf5;
+  font-family: "Songti SC", "STSong", serif;
+}
+
+.theme-voyage .reading-report-download {
+  border-color: #173b5f;
+  background: #173b5f;
+  color: #fff8e6;
+  box-shadow: 4rpx 4rpx 0 rgba(223, 107, 74, 0.42);
+}
+
+.theme-dragon .reading-report-download {
+  border-color: #203a5f;
+  background: #203a5f;
+  color: #fff7d6;
+  box-shadow: 4rpx 4rpx 0 #d9a625;
+}
+
 .review-title {
   color: #17314f;
   font-size: 28rpx;

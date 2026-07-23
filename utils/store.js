@@ -33,6 +33,7 @@ const MUTATION_ACTIONS = {
   rescoreSpeakingAttempt: true,
   completeTodayCheckin: true,
   submitReadingAttempt: true,
+  generateReadingReportPdf: true,
   analyzeWritingTranslation: true,
   submitWritingAttempt: true,
   gradeWritingAttempt: true,
@@ -1030,6 +1031,14 @@ async function submitReadingAttempt(options) {
   }, { useCache: false });
 }
 
+async function generateReadingReportPdf(options) {
+  return callCloud('generateReadingReportPdf', withSelectedStudent(options || {}), {
+    fileId: '',
+    tempUrl: '',
+    fileName: ''
+  }, { useCache: false });
+}
+
 async function submitWritingAttempt(options) {
   return callCloud('submitWritingAttempt', withSelectedStudent(options || {}), {
     prompt: null,
@@ -1466,6 +1475,7 @@ module.exports = {
   lookupWord,
   addDictionaryWord,
   submitReadingAttempt,
+  generateReadingReportPdf,
   analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,

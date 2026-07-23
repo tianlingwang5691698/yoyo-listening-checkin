@@ -63,6 +63,14 @@
             <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
             <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !isParentView && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
           </view>
+          <button
+            class="reading-report-download"
+            wx:if="{{viewMode === 'history'}}"
+            loading="{{item.pdfGenerating}}"
+            disabled="{{item.pdfGenerating}}"
+            data-record-id="{{item.id}}"
+            bindtap="downloadReadingReportPdf"
+          >{{item.pdfGenerating ? texts.readingPdfGenerating : texts.readingPdfDownload}}</button>
         </block>
 
         <block wx:if="{{type === 'grammar'}}">

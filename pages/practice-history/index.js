@@ -3,6 +3,7 @@ const store = require('../../utils/store');
 const i18n = require('../../utils/i18n');
 const { normalizeWritingReview } = require('../../utils/writing-report');
 const { openWritingReportPdf } = require('../../utils/writing-report-download');
+const { openReadingReportPdf } = require('../../utils/reading-report-download');
 
 const text = (key, fallback) => i18n.getPageText('practiceHistory', key, undefined, fallback);
 
@@ -91,7 +92,8 @@ function normalizeReading(item, index) {
     detailQuestions: [],
     aiAnalysisLoaded: false,
     aiAnalysisLoading: false,
-    aiAnalysisStatus: ''
+    aiAnalysisStatus: '',
+    pdfGenerating: false
   };
 }
 
@@ -583,6 +585,7 @@ Page({
       aiAnalysisLoading: false,
       aiAnalysisLoaded: analysesReady,
       aiAnalysisStatus: analysesReady ? text('analysisLoaded', '已从云端加载 AI 解析') : text('noAnalysis', '这篇阅读尚未生成 AI 解析'),
+      attempt,
       passageText: (passage && passage.passage) || '',
       manualMarkItems: (attempt.manualMarks && Array.isArray(attempt.manualMarks.items) ? attempt.manualMarks.items : []).filter((item) => item && item.text),
       detailQuestions: detailQuestions.map((question) => Object.assign({}, question, {
@@ -801,6 +804,34 @@ Page({
     } catch (error) {
       console.error('writing-history-report-pdf-failed', String(error && error.message || error || ''));
       wx.showToast({ title: text('pdfFailedToast', 'PDF 生成失败，请重试'), icon: 'none' });
+    } finally {
+      this.updateRecord(recordId, { pdfGenerating: false });
+    }
+  },
+  async downloadReadingReportPdf(event) {
+    const recordId = String(event.currentTarget.dataset.recordId || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    if (!record || record.pdfGenerating) return;
+    this.updateRecord(recordId, { pdfGenerating: true });
+    try {
+      const result = await store.generateReadingReportPdf({
+        completionId: record.id,
+        attemptId: record.attempt && (record.attempt._id || record.attempt.attemptId) || '',
+        passageId: record.targetId
+      });
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error(result.cloudError && result.cloudError.message || 'reading-report-generate-failed');
+      }
+      await openReadingReportPdf(result);
+    } catch (error) {
+      const message = String(error && error.message || error || '');
+      console.error('reading-history-report-pdf-failed', message);
+      wx.showToast({
+        title: message.includes('study-pack-generating')
+          ? text('readingPdfPreparing', '正在补齐学习包，请稍后重试')
+          : text('readingPdfFailed', 'PDF 生成失败，请重试'),
+        icon: 'none'
+      });
     } finally {
       this.updateRecord(recordId, { pdfGenerating: false });
     }
