@@ -3,6 +3,7 @@ const crypto = require('crypto');
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
+const catalog = require('./catalog.service');
 const completion = require('./completion.service');
 const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
 const { buildWritingReportPdf } = require('../lib/writing-report-pdf');
@@ -53,6 +54,49 @@ function normalizeEssayForFingerprint(value) {
 
 function cloneJson(value) {
   return JSON.parse(JSON.stringify(value));
+}
+
+function normalizeAttemptPromptImages(images) {
+  return (Array.isArray(images) ? images : []).slice(0, 2).map((image) => ({
+    fileId: String(image && (image.fileId || image.fileID) || ''),
+    cloudPath: String(image && image.cloudPath || ''),
+    alt: String(image && image.alt || ''),
+    src: String(image && (image.src || image.url) || '')
+  })).filter((image) => image.fileId || image.cloudPath || image.src);
+}
+
+async function resolveAttemptPromptImages(attempt, options = {}) {
+  const savedImages = normalizeAttemptPromptImages(attempt && attempt.promptMeta && attempt.promptMeta.images);
+  if (savedImages.length) return savedImages;
+  const promptId = String(attempt && attempt.promptId || '').trim();
+  if (!promptId) {
+    if (options.strict) throw new Error('writing-report-prompt-source-unavailable');
+    return [];
+  }
+  try {
+    const result = await catalog.getMaterialItem({
+      payload: { moduleId: 'writing', itemId: promptId }
+    });
+    if (!result || !result.item) {
+      if (options.strict) throw new Error('writing-report-prompt-source-unavailable');
+      return [];
+    }
+    return normalizeAttemptPromptImages(result.item.images);
+  } catch (error) {
+    if (options.strict) {
+      if (String(error && error.message || '') === 'writing-report-prompt-source-unavailable') throw error;
+      throw new Error('writing-report-prompt-source-unavailable');
+    }
+    return [];
+  }
+}
+
+async function hydrateAttemptPromptImages(attempt) {
+  const images = await resolveAttemptPromptImages(attempt);
+  if (!images.length) return attempt;
+  return Object.assign({}, attempt, {
+    promptMeta: Object.assign({}, attempt.promptMeta || {}, { images })
+  });
 }
 
 function resolveWritingAttemptRef(attemptId) {
@@ -1949,7 +1993,7 @@ async function getWritingAttemptDetail(event) {
   }));
   if (!attemptId) return { attempt: null };
   const loaded = await loadWritingAttempt(ctx, attemptId);
-  const attempt = loaded.attempt;
+  const attempt = await hydrateAttemptPromptImages(loaded.attempt);
   const attemptRef = loaded.ref;
   const gradingAgeMs = Date.now() - Date.parse(attempt.updatedAt || attempt.createdAt || 0);
   const shouldResume = ['grading-pending', 'grading-failed'].includes(attempt.status)
@@ -1978,12 +2022,10 @@ async function generateWritingReportPdf(event) {
   if (!attempt || attempt.status !== 'graded' || !attempt.review) {
     throw new Error('writing-report-not-ready');
   }
-  const promptImages = attempt.promptMeta && Array.isArray(attempt.promptMeta.images)
-    ? attempt.promptMeta.images
-    : [];
-  const requiredPromptImages = promptImages.slice(0, 2).filter((image) => (
-    image && (image.fileId || image.fileID || image.cloudPath)
-  ));
+  const requiredPromptImages = await resolveAttemptPromptImages(attempt, { strict: true });
+  if (requiredPromptImages.some((image) => !image.fileId && !image.cloudPath)) {
+    throw new Error('writing-report-prompt-image-unavailable');
+  }
   const imageBuffers = [];
   for (const image of requiredPromptImages) {
     try {
@@ -2043,6 +2085,7 @@ module.exports = {
     normalizeBandSample,
     normalizeTask1FactCheck,
     normalizeOfficialBandDecisions,
+    normalizeAttemptPromptImages,
     isCompleteOfficialBandDecision,
     hasCompleteIeltsCriterionDetails,
     hasCompleteOfficialBandDecisions,

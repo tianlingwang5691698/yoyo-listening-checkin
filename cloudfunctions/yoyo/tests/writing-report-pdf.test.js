@@ -5,6 +5,7 @@ const path = require('node:path');
 const test = require('node:test');
 
 const { buildWritingReportPdf, FONT_PATH } = require('../lib/writing-report-pdf');
+const writing = require('../services/writing.service');
 
 test('生成含中英文、题目图片、作文和批改内容的 PDF', async () => {
   const image = fs.readFileSync(path.resolve(
@@ -60,4 +61,20 @@ test('生成含中英文、题目图片、作文和批改内容的 PDF', async (
   fs.writeFileSync(output, buffer);
   assert.ok(fs.statSync(output).size > 10000);
   fs.unlinkSync(output);
+});
+
+test('旧写作记录原题图片字段可规范化为 PDF 与记录页共用格式', () => {
+  assert.deepEqual(writing._test.normalizeAttemptPromptImages([
+    {
+      fileID: 'cloud://example/image.jpg',
+      cloudPath: '_content/writing/image.jpg',
+      url: 'https://example.test/image.jpg',
+      alt: '原题图'
+    }
+  ]), [{
+    fileId: 'cloud://example/image.jpg',
+    cloudPath: '_content/writing/image.jpg',
+    alt: '原题图',
+    src: 'https://example.test/image.jpg'
+  }]);
 });

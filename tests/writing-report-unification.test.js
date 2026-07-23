@@ -41,6 +41,10 @@ test('PDF 导出包含结构化题目、原图、作文全文和完整批改', (
   ['写作题目', '题目图片', '学生作文', '批改报告', '原文证据', '卡分原因', '升到下一档', '参考范文']
     .forEach((label) => assert.match(pdf, new RegExp(label)));
   assert.match(service, /loadWritingAttempt\(ctx, attemptId\)/);
+  assert.match(service, /catalog\.getMaterialItem/);
+  assert.match(service, /itemId: promptId/);
+  assert.match(service, /hydrateAttemptPromptImages/);
+  assert.match(service, /writing-report-prompt-source-unavailable/);
   assert.match(service, /writing-report-prompt-image-unavailable/);
   assert.match(service, /writing-reports/);
   assert.match(store, /generateWritingReportPdf/);
