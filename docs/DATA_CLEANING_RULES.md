@@ -164,6 +164,13 @@
 - 旧云端兼容必须用正式云端旧详情逐条回归，验证恢复后的标题数、段落数、正文归一化内容和污染数与本地正式数据一致。
 - 小程序运行时结构恢复元数据必须生成到未被 `project.config.json` 排除的 JS 模块；禁止从运行时代码直接 `require` 被排除的 `data/` 文件或 JSON 文件。
 
+## IELTS 口语学习报告
+
+- PDF 原题只能取正式 `speaking/items-v1|v2` 数据，按 `exercises` 的 Part 与原顺序输出，不从学生记录反推或补造题目。
+- 学生记录仅可按 `familyId + childId + category + attemptType + Test ID` 聚合；旧记录的单题 `taskId` 必须用 `${Test ID}-part-` 前缀兼容，题目匹配优先 `questionViewKey`，旧记录才允许用完全一致的 prompt 回退。
+- 未作答题不得借用其他 Test、其他学生或其他日期的相似回答；四项 Band 不完整时显示“评分未完整返回”。
+- 原题声明有图片时必须成功取得原图才能生成 PDF，避免形成缺失原卷信息的不完整报告。
+
 ## 双栏 PDF / 答案听力文本
 
 - 双栏 PDF 不直接用 `pdftotext` 结果入库；必须优先找同源 Word/docx 或可保序文本。

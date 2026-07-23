@@ -116,6 +116,7 @@
             <view class="attempt-play-icon"></view>
             <text>{{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? texts.resumePlaying : texts.pauseRecording) : texts.playRecording}}</text>
           </button>
+          <button class="speaking-report-pdf" wx:if="{{item.isIelts}}" loading="{{item.pdfGenerating}}" disabled="{{item.pdfGenerating}}" data-index="{{index}}" bindtap="downloadIeltsSpeakingReportPdf">{{item.pdfGenerating ? '正在生成完整 PDF' : '下载完整套题 PDF'}}</button>
         </view>
       </block>
       <view class="library-empty" wx:else>{{texts.noRecording}}</view>
@@ -384,6 +385,7 @@
             <view class="attempt-play-icon"></view>
             <text>{{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? texts.resumePlaying : texts.pauseRecording) : texts.playRecording}}</text>
           </button>
+          <button class="speaking-report-pdf" wx:if="{{item.isIelts}}" loading="{{item.pdfGenerating}}" disabled="{{item.pdfGenerating}}" data-index="{{index}}" bindtap="downloadIeltsSpeakingReportPdf">{{item.pdfGenerating ? '正在生成完整 PDF' : '下载完整套题 PDF'}}</button>
         </view>
       </view>
     </block>

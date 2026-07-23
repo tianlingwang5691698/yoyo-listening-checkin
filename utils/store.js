@@ -35,6 +35,7 @@ const MUTATION_ACTIONS = {
   submitReadingAttempt: true,
   generateReadingReportPdf: true,
   generateListeningReportPdf: true,
+  generateIeltsSpeakingReportPdf: true,
   analyzeWritingTranslation: true,
   submitWritingAttempt: true,
   gradeWritingAttempt: true,
@@ -1049,6 +1050,14 @@ async function generateListeningReportPdf(options) {
   }, { useCache: false });
 }
 
+async function generateIeltsSpeakingReportPdf(options) {
+  return callCloud('generateIeltsSpeakingReportPdf', withSelectedStudent(options || {}), {
+    fileId: '',
+    tempUrl: '',
+    fileName: ''
+  }, { useCache: false });
+}
+
 async function submitWritingAttempt(options) {
   return callCloud('submitWritingAttempt', withSelectedStudent(options || {}), {
     prompt: null,
@@ -1487,6 +1496,7 @@ module.exports = {
   submitReadingAttempt,
   generateReadingReportPdf,
   generateListeningReportPdf,
+  generateIeltsSpeakingReportPdf,
   analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,

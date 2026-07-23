@@ -49,6 +49,7 @@ function payload(planRunType) {
       category: 'ielts-speaking',
       taskId: 'ielts-academic-21-test-1-speaking-part-1-1',
       attemptType: 'ielts_speaking',
+      ieltsItemId: 'ielts-academic-21-test-1-speaking',
       ieltsPart: 1,
       questionViewKey: 'part-1-topic-1-question-1',
       planRunType,
@@ -84,6 +85,7 @@ test('IELTS 学生提交即使传 preview 仍写记录并刷新日报', async (t
   assert.equal(records.length, 1);
   assert.equal(records[0].planRunType, 'normal');
   assert.equal(records[0].attemptType, 'ielts_speaking');
+  assert.equal(records[0].ieltsItemId, 'ielts-academic-21-test-1-speaking');
   assert.equal(records[0].ieltsOverallBand, 7);
   assert.equal(records[0].ieltsFluencyCoherenceBand, 7);
   assert.equal(records[0].ieltsLexicalResourceBand, 7);

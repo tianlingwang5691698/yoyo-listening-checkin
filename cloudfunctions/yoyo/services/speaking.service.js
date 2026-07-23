@@ -3,6 +3,7 @@ const attemptRepository = require('../repositories/attempt.repository');
 const storageAdapter = require('../adapters/storage.adapter');
 const dbAdapter = require('../adapters/db.adapter');
 const speakingEngine = require('../lib/speaking-engine');
+const { buildIeltsSpeakingReportPdf } = require('../lib/ielts-speaking-report-pdf');
 const catalogService = require('./catalog.service');
 const crypto = require('crypto');
 const https = require('https');
@@ -271,6 +272,7 @@ function normalizeAttemptPayload(payload) {
     attemptIndex: Number(payload.attemptIndex || 0),
     sentenceIndex: Number(payload.sentenceIndex || 0),
     ieltsPart: Number(payload.ieltsPart || 0),
+    ieltsItemId: String(payload.ieltsItemId || '').trim(),
     questionViewKey: String(payload.questionViewKey || '').trim(),
     audioFormat: 'mp3',
     questionText: String(payload.questionText || '').trim(),
@@ -564,6 +566,74 @@ async function getSpeakingAttempts(event) {
   };
 }
 
+async function generateIeltsSpeakingReportPdf(event) {
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'generateIeltsSpeakingReportPdf'
+  }));
+  const payload = (event && event.payload) || {};
+  const itemId = String(payload.itemId || '').trim();
+  if (!/^ielts-academic-(?:1[0-9]|20|21)-test-\d+-speaking$/i.test(itemId)) {
+    throw new Error('ielts-speaking-report-item-invalid');
+  }
+  const materialResult = await catalogService.getMaterialItem({
+    payload: { moduleId: 'speaking', itemId }
+  });
+  const item = materialResult && materialResult.item;
+  if (!item || String(item._id || item.id || '') !== itemId || !Array.isArray(item.exercises) || !item.exercises.length) {
+    throw new Error('ielts-speaking-report-material-incomplete');
+  }
+  const scope = study.getUserScope(ctx);
+  const attempts = (await attemptRepository.findIeltsByTest(scope, itemId)).filter((attempt) => (
+    attempt
+    && attempt.attemptType === 'ielts_speaking'
+    && attempt.category === 'ielts-speaking'
+    && (attempt.ieltsItemId === itemId || String(attempt.taskId || '').startsWith(`${itemId}-part-`))
+    && attempt.familyId === scope.familyId
+    && attempt.childId === scope.childId
+  )).map(formatAttemptForClient);
+  if (!attempts.some((attempt) => attempt.status === 'scored' && Number(attempt.ieltsOverallBand || 0) > 0)) {
+    throw new Error('ielts-speaking-report-attempt-not-found');
+  }
+  let imageBuffer = null;
+  const sourceImage = Array.isArray(item.images) ? item.images[0] : null;
+  if (!sourceImage) {
+    throw new Error('ielts-speaking-report-source-image-unavailable');
+  }
+  if (sourceImage && (sourceImage.fileId || sourceImage.fileID || sourceImage.cloudPath)) {
+    try {
+      imageBuffer = await storageAdapter.downloadCloudFileBuffer(
+        sourceImage.fileId || sourceImage.fileID,
+        sourceImage.cloudPath
+      );
+    } catch (error) {
+      throw new Error('ielts-speaking-report-source-image-unavailable');
+    }
+  }
+  if (sourceImage && (!imageBuffer || !imageBuffer.length)) {
+    throw new Error('ielts-speaking-report-source-image-unavailable');
+  }
+  const pdfBuffer = await buildIeltsSpeakingReportPdf({ item, attempts, imageBuffer });
+  const latestFingerprint = crypto.createHash('sha1')
+    .update(attempts.map((attempt) => `${attempt.attemptId}:${attempt.updatedAt || attempt.createdAt || ''}`).join('|'))
+    .digest('hex')
+    .slice(0, 12);
+  const cloudPath = [
+    '_exports',
+    'ielts-speaking-reports',
+    scope.familyId,
+    scope.childId,
+    `${itemId}-r${Number(item.contentRevision || 0)}-${latestFingerprint}-v1.pdf`
+  ].join('/');
+  const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
+  const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);
+  return {
+    fileId: uploaded.fileId,
+    cloudPath: uploaded.cloudPath,
+    tempUrl,
+    fileName: `${String(item.title || 'IELTS Speaking').replace(/[\\/:*?"<>|]/g, ' ')} 口语学习报告.pdf`
+  };
+}
+
 async function rescoreSpeakingAttempt(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'rescoreSpeakingAttempt'
@@ -646,5 +716,6 @@ module.exports = {
   submitSpeakingAttempt,
   evaluateSpeakingPronunciation,
   getSpeakingAttempts,
+  generateIeltsSpeakingReportPdf,
   rescoreSpeakingAttempt
 };

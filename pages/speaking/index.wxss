@@ -3051,6 +3051,24 @@
 .theme-voyage .repeat-inline-feedback { border-color: rgba(99, 58, 32, 0.24); color: #49321f; }
 .theme-dragon .repeat-inline-feedback { border-color: rgba(16, 46, 98, 0.22); color: #102e62; }
 .ielts-band-note { margin-top: 10rpx; color: rgba(34, 49, 61, 0.48); font-size: 18rpx; text-align: center; }
+.ielts-pdf-button {
+  width: 100%;
+  min-height: 72rpx;
+  margin-top: 16rpx;
+  border: 0;
+  border-radius: 8rpx;
+  background: #173b50;
+  color: #fffdf7;
+  font-size: 23rpx;
+  font-weight: 750;
+  line-height: 72rpx;
+  box-shadow: 0 6rpx 0 rgba(23, 59, 80, 0.2);
+}
+.ielts-pdf-button::after { border: 0; }
+.ielts-pdf-button[disabled] { background: rgba(23, 59, 80, 0.58); color: rgba(255, 253, 247, 0.88); }
+.theme-library .ielts-pdf-button { background: #493b2d; box-shadow: 0 6rpx 0 rgba(73, 59, 45, 0.22); }
+.theme-voyage .ielts-pdf-button { background: #743b24; box-shadow: 0 6rpx 0 rgba(116, 59, 36, 0.24); }
+.theme-dragon .ielts-pdf-button { background: #102e62; box-shadow: 0 6rpx 0 rgba(16, 46, 98, 0.24); }
 .ielts-inline-progress { color: #c64f43; font-weight: 700; }
 .ielts-inline-error { color: #b4382f; }
 

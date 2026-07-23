@@ -32,6 +32,9 @@ function loadSpeakingPage(store) {
       if (request === '../../utils/labels') {
         return { decodeHtmlEntities: (value) => String(value || '').replace(/&#39;/g, "'") };
       }
+      if (request === '../../utils/ielts-speaking-report-download') {
+        return { openIeltsSpeakingReportPdf: async () => {} };
+      }
       if (request === '../../app-config') return { cloudAssetBaseUrl: 'https://example.test' };
       throw new Error(`Unexpected require: ${request}`);
     },

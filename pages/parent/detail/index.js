@@ -4,6 +4,7 @@ const labels = require('../../../utils/labels');
 const appConfig = require('../../../app-config');
 const snapshotStore = require('../../../utils/snapshot');
 const i18n = require('../../../utils/i18n');
+const { openIeltsSpeakingReportPdf } = require('../../../utils/ielts-speaking-report-download');
 const accountCatalog = require('../../../utils/i18n-catalog-account');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
@@ -132,6 +133,8 @@ function normalizeSpeakingAttempt(item, index) {
   const contentScore = Number(safeItem.contentGrammarScore || 0);
   const ieltsOverallBand = Number(safeItem.ieltsOverallBand || 0);
   const isIelts = safeItem.attemptType === 'ielts_speaking' && ieltsOverallBand > 0;
+  const ieltsItemMatch = String(safeItem.taskId || '').match(/^(ielts-academic-(?:1[0-9]|20|21)-test-\d+-speaking)(?:-part-|$)/i);
+  const ieltsItemId = String(safeItem.ieltsItemId || (ieltsItemMatch && ieltsItemMatch[1]) || '');
   const isRepeatRecording = safeItem.attemptType === 'unlock_sentence_repeat' || safeItem.attemptType === 'standalone_sentence_repeat';
   return {
     key: safeItem.attemptId || `${safeItem.taskId || 'task'}-${safeItem.attemptIndex || index}-${safeItem.createdAt || index}`,
@@ -145,6 +148,8 @@ function normalizeSpeakingAttempt(item, index) {
     completionScore,
     contentScore,
     isIelts,
+    itemId: isIelts ? ieltsItemId : '',
+    pdfGenerating: false,
     ieltsOverallBand,
     ieltsFluencyCoherenceBand: Number(safeItem.ieltsFluencyCoherenceBand || 0),
     ieltsLexicalResourceBand: Number(safeItem.ieltsLexicalResourceBand || 0),
@@ -1173,6 +1178,31 @@ Page({
       this.destroySpeakingAudioContext();
       this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
       wx.showToast({ title: this.data.texts.recordingLoadFailed, icon: 'none' });
+    }
+  },
+  async downloadIeltsSpeakingReportPdf(event) {
+    const index = Number(event.currentTarget.dataset.index || 0);
+    const attempt = (this.data.report.speakingAttempts || [])[index] || null;
+    if (!attempt || !attempt.isIelts || !attempt.itemId || attempt.pdfGenerating) return;
+    this.setData({
+      'report.speakingAttempts': (this.data.report.speakingAttempts || []).map((item, itemIndex) => (
+        itemIndex === index ? Object.assign({}, item, { pdfGenerating: true }) : item
+      ))
+    });
+    try {
+      const response = await store.generateIeltsSpeakingReportPdf({ itemId: attempt.itemId });
+      if (response && response.syncMode === 'cloud-error') {
+        throw new Error(response.cloudError && response.cloudError.message || 'ielts-speaking-report-generate-failed');
+      }
+      await openIeltsSpeakingReportPdf(response);
+    } catch (error) {
+      wx.showToast({ title: 'PDF 生成失败，请重试', icon: 'none' });
+    } finally {
+      this.setData({
+        'report.speakingAttempts': (this.data.report.speakingAttempts || []).map((item, itemIndex) => (
+          itemIndex === index ? Object.assign({}, item, { pdfGenerating: false }) : item
+        ))
+      });
     }
   }
 });

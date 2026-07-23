@@ -4,6 +4,7 @@ const effects = require('../../utils/effects');
 const i18n = require('../../utils/i18n');
 const labels = require('../../utils/labels');
 const appConfig = require('../../app-config');
+const { openIeltsSpeakingReportPdf } = require('../../utils/ielts-speaking-report-download');
 
 const text = (key, fallback) => i18n.getPageText('speaking', key, undefined, fallback);
 const SPEAKING_LEVEL_KEY = 'speakingSelectedLevelV1';
@@ -394,6 +395,7 @@ Page({
     ieltsIntroText: '',
     ieltsIntroPlaying: false,
     ieltsIntroLoading: false,
+    ieltsPdfGenerating: false,
     ieltsParts: []
   }),
 
@@ -1816,6 +1818,7 @@ Page({
         category: 'ielts-speaking',
         taskId: active.id,
         attemptType: 'ielts_speaking',
+        ieltsItemId: this.data.ieltsItemId,
         ieltsPart,
         questionViewKey: this.data.activeId,
         promptText: active.prompt,
@@ -1846,6 +1849,25 @@ Page({
       this.setData({ errorText: text('scoreFailed', '评分暂时没有成功，请稍后再试。') });
     } finally {
       this.setData({ submitting: false });
+    }
+  },
+  async downloadIeltsSpeakingReportPdf() {
+    const itemId = String(this.data.ieltsItemId || '');
+    if (!itemId || this.data.ieltsPdfGenerating) return;
+    this.setData({ ieltsPdfGenerating: true });
+    try {
+      const response = await store.generateIeltsSpeakingReportPdf({ itemId });
+      if (response && response.syncMode === 'cloud-error') {
+        throw new Error(response.cloudError && response.cloudError.message || 'ielts-speaking-report-generate-failed');
+      }
+      await openIeltsSpeakingReportPdf(response);
+    } catch (error) {
+      wx.showToast({
+        title: text('ieltsPdfFailed', 'PDF 生成失败，请重试'),
+        icon: 'none'
+      });
+    } finally {
+      this.setData({ ieltsPdfGenerating: false });
     }
   },
   playScoreEffect() {

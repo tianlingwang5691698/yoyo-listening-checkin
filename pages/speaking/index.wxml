@@ -163,6 +163,7 @@
                 </view>
                 <view class="ielts-band-feedback" wx:if="{{result.feedback}}">{{result.feedback}}</view>
                 <view class="ielts-band-note">正式成绩由 IELTS 考官根据完整三部分评定</view>
+                <button class="ielts-pdf-button" loading="{{ieltsPdfGenerating}}" disabled="{{ieltsPdfGenerating}}" bindtap="downloadIeltsSpeakingReportPdf">{{ieltsPdfGenerating ? '正在生成完整 PDF' : '下载完整套题 PDF'}}</button>
               </view>
               <view class="ielts-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
               <view class="ielts-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
@@ -400,6 +401,7 @@
                     </view>
                     <view class="ielts-band-feedback" wx:if="{{result.feedback}}">{{result.feedback}}</view>
                     <view class="ielts-band-note">正式成绩由 IELTS 考官根据完整三部分评定</view>
+                    <button class="ielts-pdf-button" loading="{{ieltsPdfGenerating}}" disabled="{{ieltsPdfGenerating}}" bindtap="downloadIeltsSpeakingReportPdf">{{ieltsPdfGenerating ? '正在生成完整 PDF' : '下载完整套题 PDF'}}</button>
                   </view>
                   <view class="ielts-inline-result" wx:elif="{{result}}"><text>{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text><view>{{texts.accuracy}} {{result.accuracy || 0}} · {{texts.fluency}} {{result.fluency || 0}} · {{texts.completeness}} {{result.completion || 0}}</view></view>
                   <view class="ielts-inline-progress" wx:else>{{submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>

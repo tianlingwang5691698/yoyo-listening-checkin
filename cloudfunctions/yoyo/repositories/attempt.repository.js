@@ -1,4 +1,4 @@
-const { collection } = require('../adapters/db.adapter');
+const { collection, db } = require('../adapters/db.adapter');
 
 function taskAttempts() {
   return collection('taskAttempts');
@@ -40,6 +40,24 @@ async function findByTask(scope, filters) {
   return res.data || [];
 }
 
+async function findIeltsByTest(scope, itemId) {
+  const escapedItemId = String(itemId || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const where = {
+    familyId: scope.familyId,
+    childId: scope.childId,
+    category: 'ielts-speaking',
+    attemptType: 'ielts_speaking',
+    taskId: db.RegExp({
+      regexp: `^${escapedItemId}(?:$|-part-)`,
+      options: 'i'
+    })
+  };
+  const res = await taskAttempts().where(where).limit(500).get();
+  return (res.data || []).sort((left, right) => (
+    String(left.createdAt || '').localeCompare(String(right.createdAt || ''))
+  ));
+}
+
 async function findByDate(scope, date) {
   const res = await taskAttempts().where({
     familyId: scope.familyId,
@@ -76,6 +94,7 @@ module.exports = {
   update,
   findByDate,
   findByTask,
+  findIeltsByTest,
   findRecentByTask,
   findBestAndLatestByTask
 };
