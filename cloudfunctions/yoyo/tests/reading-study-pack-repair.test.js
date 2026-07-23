@@ -53,3 +53,53 @@ test('repairs a missing question analysis and preserves the official answer', as
   assert.equal(result.questionAnalyses[3].answer, 'D');
   assert.equal(result.questionAnalyses[3].analysis, '第 4 题解析');
 });
+
+test('accepts IELTS response aliases and falls back to one-question repair', async () => {
+  const passage = {
+    title: 'Cambridge IELTS reading',
+    passage: 'The passage does not state the proposed date.',
+    questions: [
+      { number: 14, prompt: 'The plan has a fixed date.', answer: 'NOT GIVEN' },
+      { number: 15, prompt: 'The plan is optional.', answer: 'FALSE' }
+    ]
+  };
+  const calls = [];
+  const requestJson = async (model, prompt) => {
+    calls.push(prompt);
+    if (calls.length === 1) {
+      return [{
+        question_number: 'Question 14',
+        correct_answer: 'TRUE',
+        evidence_sentence: 'The passage does not state the proposed date.',
+        evidence_translation: '文章没有说明拟定日期。',
+        explanation: '原文未提供固定日期，因此为 NOT GIVEN。'
+      }];
+    }
+    if (calls.length === 2) {
+      return { questions: [] };
+    }
+    return {
+      answer: 'TRUE',
+      evidence: { quote: 'The plan is optional.' },
+      translation: '该计划是可选的。',
+      rationale: '原文直接说明可选，因此题干说法错误。'
+    };
+  };
+
+  const result = await readingService._test.buildQuestionStudyPackWithRequester(
+    passage,
+    'gpt-5.6-terra',
+    requestJson
+  );
+
+  assert.equal(calls.length, 3);
+  assert.deepEqual(result.questionAnalyses.map((item) => item.number), [14, 15]);
+  assert.equal(result.questionAnalyses[0].answer, 'NOT GIVEN');
+  assert.equal(result.questionAnalyses[1].answer, 'FALSE');
+  assert.equal(result.questionAnalyses[1].answerSentence, 'The plan is optional.');
+});
+
+test('parses fenced top-level JSON arrays', () => {
+  const parsed = readingService._test.parseJsonText('结果如下：```json\n[{"number":1}]\n```');
+  assert.deepEqual(parsed, [{ number: 1 }]);
+});

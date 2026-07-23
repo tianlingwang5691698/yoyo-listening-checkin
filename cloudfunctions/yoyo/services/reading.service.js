@@ -727,19 +727,21 @@ function parseJsonText(text) {
   if (!raw) {
     return null;
   }
-  try {
-    return JSON.parse(raw);
-  } catch (error) {
-    const match = raw.match(/\{[\s\S]*\}/);
-    if (!match) {
-      return null;
-    }
+  const candidates = [raw];
+  const fenced = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fenced && fenced[1]) candidates.push(fenced[1].trim());
+  const objectStart = raw.indexOf('{');
+  const objectEnd = raw.lastIndexOf('}');
+  if (objectStart >= 0 && objectEnd > objectStart) candidates.push(raw.slice(objectStart, objectEnd + 1));
+  const arrayStart = raw.indexOf('[');
+  const arrayEnd = raw.lastIndexOf(']');
+  if (arrayStart >= 0 && arrayEnd > arrayStart) candidates.push(raw.slice(arrayStart, arrayEnd + 1));
+  for (let index = 0; index < candidates.length; index += 1) {
     try {
-      return JSON.parse(match[0]);
-    } catch (innerError) {
-      return null;
-    }
+      return JSON.parse(candidates[index]);
+    } catch (error) {}
   }
+  return null;
 }
 
 function normalizeExamType(value) {
@@ -966,7 +968,7 @@ function validateModelStudyPack(studyPack, passage) {
   if (studyPack.phraseCards.some((item) => !item.text || !item.meaning)) {
     throw new Error('reading-study-pack-missing-phrase-meaning');
   }
-  if (!studyPack.questionAnalyses || studyPack.questionAnalyses.length < questions.length) {
+  if (!Array.isArray(studyPack.questionAnalyses)) {
     throw new Error('reading-study-pack-missing-question-analyses');
   }
   const analysisByNumber = studyPack.questionAnalyses.reduce((map, item) => {
@@ -992,7 +994,7 @@ function validateQuestionStudyPack(studyPack, passage) {
   if (!isModelStudyPack(studyPack)) {
     throw new Error('reading-study-pack-not-model');
   }
-  if (!studyPack.questionAnalyses || studyPack.questionAnalyses.length < questions.length) {
+  if (!Array.isArray(studyPack.questionAnalyses)) {
     throw new Error('reading-study-pack-missing-question-analyses');
   }
   const analysisByNumber = studyPack.questionAnalyses.reduce((map, item) => {
@@ -1018,6 +1020,70 @@ function isValidQuestionStudyPack(studyPack, passage) {
 
 function isCompleteQuestionAnalysis(item) {
   return !!(item && normalizeText(item.answerSentence) && normalizeText(item.analysis));
+}
+
+function modelField(item, names) {
+  for (let index = 0; index < names.length; index += 1) {
+    const value = item && item[names[index]];
+    if (value === undefined || value === null) continue;
+    if (typeof value === 'object') {
+      const nested = textValue(value, ['text', 'sentence', 'quote', 'explanation', 'translation']);
+      if (nested) return nested;
+      continue;
+    }
+    if (String(value).trim()) return value;
+  }
+  return '';
+}
+
+function extractModelQuestionAnalyses(payload, expectedQuestions) {
+  const expected = expectedQuestions || [];
+  let items = [];
+  if (Array.isArray(payload)) {
+    items = payload;
+  } else if (payload && typeof payload === 'object') {
+    const collection = payload.questionAnalyses
+      || payload.question_analyses
+      || payload.questions
+      || payload.analyses
+      || payload.items;
+    if (Array.isArray(collection)) {
+      items = collection;
+    } else {
+      const single = payload.questionAnalysis || payload.question_analysis;
+      if (single && typeof single === 'object') {
+        items = [single];
+      } else if (
+        payload.number !== undefined
+        || payload.questionNumber !== undefined
+        || payload.question_number !== undefined
+        || payload.answer !== undefined
+        || payload.answerSentence
+        || payload.answer_sentence
+        || payload.evidence
+        || payload.explanation
+        || payload.rationale
+      ) {
+        items = [payload];
+      }
+    }
+  }
+  if (expected.length === 1 && items.length) {
+    items = [items[0]];
+  }
+  return items.map((item) => {
+    const rawNumber = expected.length === 1
+      ? expected[0].number
+      : modelField(item, ['number', 'questionNumber', 'question_number', 'questionNo', 'question_no', 'id']);
+    const numberMatch = String(rawNumber || '').match(/\d+/);
+    return {
+      number: numberMatch ? Number(numberMatch[0]) : rawNumber,
+      answer: modelField(item, ['answer', 'correctAnswer', 'correct_answer']),
+      answerSentence: modelField(item, ['answerSentence', 'answer_sentence', 'evidenceSentence', 'evidence_sentence', 'sourceSentence', 'source_sentence', 'evidence', 'quote']),
+      answerSentenceTranslation: modelField(item, ['answerSentenceTranslation', 'answer_sentence_translation', 'evidenceTranslation', 'evidence_translation', 'translation']),
+      analysis: modelField(item, ['analysis', 'explanation', 'reasoning', 'rationale'])
+    };
+  });
 }
 
 function mergeQuestionAnalyses(passage, current, repairs) {
@@ -1051,10 +1117,11 @@ function getMissingAnalysisQuestions(studyPack, passage) {
 
 function buildQuestionAnalysisPrompt(passage, questions, repair) {
   return [
-    '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
+    '你是英语阅读老师，覆盖中高考和 IELTS Academic。请只返回 JSON，不要 Markdown。',
     repair ? '这是漏题补全请求，只返回下面列出的真实题号，不要返回其他题目。' : '只做逐题解析：必须按真实题号返回每题答案、原文直接答案句、答案句中文翻译、中文解析。',
     '题目自带 answer 时按标准答案讲，不得修改标准答案；answer 为空时，请根据文章和题干生成最可能答案。',
     'answerSentence 必须是原文中的直接依据，不要改写，不要只写泛泛依据。',
+    '若答案为 NOT GIVEN，answerSentence 返回与题干最相关的原文句子，并在 analysis 明确说明原文没有给出判断所需信息。',
     'analysis 用中文说明为什么选该答案，并点出排除干扰项的关键。',
     'JSON 格式：{"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
     `标题：${passage.title}`,
@@ -1065,9 +1132,10 @@ function buildQuestionAnalysisPrompt(passage, questions, repair) {
 
 async function buildQuestionStudyPackWithRequester(passage, model, requestJson) {
   const parsed = await requestJson(model, buildQuestionAnalysisPrompt(passage, passage.questions || [], false));
-  const studyPack = normalizeStudyPack(Object.assign({}, parsed || {}, {
+  const studyPack = normalizeStudyPack({
+    questionAnalyses: extractModelQuestionAnalyses(parsed, passage.questions || []),
     source: `model:${model}`
-  }), passage);
+  }, passage);
   studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, []);
   const missingQuestions = getMissingAnalysisQuestions(studyPack, passage);
   if (missingQuestions.length) {
@@ -1077,9 +1145,17 @@ async function buildQuestionStudyPackWithRequester(passage, model, requestJson) 
     }
     const repairResults = await Promise.all(repairGroups.map(async (questions) => {
       const repaired = await requestJson(model, buildQuestionAnalysisPrompt(passage, questions, true));
-      return Array.isArray(repaired && repaired.questionAnalyses) ? repaired.questionAnalyses : [];
+      return extractModelQuestionAnalyses(repaired, questions);
     }));
     studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, repairResults.flat());
+  }
+  const individuallyMissing = getMissingAnalysisQuestions(studyPack, passage);
+  if (individuallyMissing.length) {
+    const individualResults = await Promise.all(individuallyMissing.map(async (question) => {
+      const repaired = await requestJson(model, buildQuestionAnalysisPrompt(passage, [question], true));
+      return extractModelQuestionAnalyses(repaired, [question]);
+    }));
+    studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, individualResults.flat());
   }
   validateQuestionStudyPack(studyPack, passage);
   return studyPack;
@@ -2103,6 +2179,8 @@ module.exports = {
   _test: {
     isValidQuestionStudyPack,
     buildQuestionStudyPackWithRequester,
+    extractModelQuestionAnalyses,
+    parseJsonText,
     READING_STUDY_MODEL_TIMEOUT_MS
   }
 };

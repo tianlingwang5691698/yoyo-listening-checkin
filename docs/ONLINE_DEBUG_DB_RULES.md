@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-24 IELTS 阅读补漏后仍报 missing-question-analyses
+
+1. 现象：已部署漏题补请求后，IELTS 阅读仍报 `reading-study-pack-missing-question-analyses`。
+2. 查询：线上报错行号对应新版本 `buildStudyPackWithModel:1179`，确认不是旧云函数；补漏返回未命中固定 `questionAnalyses` 数组结构。
+3. 结论：模型可能返回顶层数组、`questions`、snake_case 或无题号单题对象，旧兼容会把有效解析当成空数组。
+4. 修复：统一恢复常见返回结构和字段别名；批量补漏仍缺题时逐题请求并绑定真实题号，标准答案继续只取题库。
+5. 是否需要发版：需部署 `yoyo` 云函数；前端无需重新发布。
+
 ### 2026-07-23 阅读模型调用成功但逐题解析报漏题
 
 1. 现象：模型平台已有 Completion 和费用，阅读页仍显示 `reading-study-pack-missing-question-4`。
