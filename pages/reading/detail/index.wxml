@@ -22,7 +22,7 @@
         <view class="article-page-number">READING</view>
         <view class="highlight-actions library-answer-index" wx:if="{{submitted && review}}">
           <block wx:for="{{highlightButtons}}" wx:key="key">
-            <view wx:if="{{!passage.isClozePassage || item.key !== 'answer'}}" class="highlight-button highlight-{{item.key}} {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" data-mode="{{item.key}}" bindtap="selectHighlight">
+            <view wx:if="{{passage.canHighlightAnswers || item.key !== 'answer'}}" class="highlight-button highlight-{{item.key}} {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" data-mode="{{item.key}}" bindtap="selectHighlight">
               <text>{{item.label}}</text>
               <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
             </view>
@@ -364,7 +364,7 @@
         </view>
         <view class="highlight-actions" wx:if="{{submitted && review}}">
           <block wx:for="{{highlightButtons}}" wx:key="key">
-            <view wx:if="{{!passage.isClozePassage || item.key !== 'answer'}}" class="highlight-button highlight-{{item.key}} {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" data-mode="{{item.key}}" bindtap="selectHighlight">
+            <view wx:if="{{passage.canHighlightAnswers || item.key !== 'answer'}}" class="highlight-button highlight-{{item.key}} {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" data-mode="{{item.key}}" bindtap="selectHighlight">
               <text>{{item.label}}</text>
               <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
             </view>

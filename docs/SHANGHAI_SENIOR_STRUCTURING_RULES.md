@@ -13,6 +13,7 @@
 - 阅读标题、副标题、Section 说明和正文分开保存；原卷自然段必须保留。副标题不是正文第 1 段，A/B/C 等原卷段标只标真实正文段落。
 - 同一年份试卷必须使用 `paperId` 归档，按原卷大题、Section 和原题号顺序展示；不得把 `Section B (A–D)` 展平成无归属的 BA–BD。
 - 语法与词汇的语篇选词填空可使用阅读式页面建模，但标题必须保留 `Grammar and Vocabulary Section B`，不得误标为阅读 Section B。
+- `Grammar and Vocabulary Section A/B`、`Reading Section A` 完形及带编号空格的句子匹配题，提交后均不得在原文整句显示答案句颜色；答案句仅保留在逐题证据区，“全部”模式同样排除答案句层。
 - 当年原卷没有独立语法选择题时，`Grammar and Vocabulary Section A` 放入阅读区，位于 Section B 之前；空格必须嵌入原文原位置，保留原题号和括号提示词，不得拆成文章外的独立题卡。
 - 写作只保留情境、任务、字数和注意事项；删除范文、解析、评分标准。原卷用圆点或编号列出的写作要点必须保留为 `requirements[]`，每点独立展示，不得压成连续段落。
 - Guided Writing 页面按实际字段固定展示为 `Directions → 写作任务/情境 → 原卷表格 → 写作要点 → 注意事项 → 开头提示`；各区使用独立标题、字号、行距和分隔，`requirements[]` 逐项编号，不得与情境粘连。

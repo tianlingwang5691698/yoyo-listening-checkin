@@ -212,6 +212,11 @@ function normalizePassage(passage, answers, submitted, review) {
     ? [structuredPassage.paperTitle, structuredPassage.sectionLabel].filter(Boolean).join(' · ')
     : structuredPassage.title;
   const paragraphRanges = buildReadingParagraphRanges(passageId, cleanPassageText, questions, ieltsParagraphMetadata[passageId]);
+  const canHighlightAnswers = canHighlightReadingAnswers(Object.assign({}, structuredPassage, {
+    passage: cleanPassageText,
+    isClozePassage,
+    questions
+  }));
   return Object.assign({}, structuredPassage, {
     passage: cleanPassageText,
     headerTitle: headerTitle || structuredPassage.title,
@@ -229,6 +234,7 @@ function normalizePassage(passage, answers, submitted, review) {
     sectionDisplay: structuredPassage.sectionLabel || (structuredPassage.section ? `阅读 ${structuredPassage.section}` : '阅读'),
     difficultyDisplay: structuredPassage.difficultyLabel || '',
     isClozePassage,
+    canHighlightAnswers,
     questions,
     clozePassageParagraphs: isClozePassage ? paragraphRanges.map((range) => ({
       index: range.index,
