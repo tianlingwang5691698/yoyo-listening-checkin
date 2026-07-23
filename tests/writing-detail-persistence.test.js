@@ -22,7 +22,9 @@ test('同一篇作文批改中或未修改时禁止再次提交', () => {
   const template = read('pages/writing/detail/index.wxml');
   assert.match(page, /if \(this\.writingSubmitInFlight \|\| this\.data\.submitting\) return/);
   assert.match(page, /if \(this\.data\.grading\)[\s\S]*?正在批改/);
-  assert.match(page, /this\.data\.currentAttemptId && essay === String\(this\.data\.submittedEssayText/);
+  assert.match(page, /function normalizeEssayIdentityText[\s\S]*?replace\(\/\\s\+\/g, ' '\)\.trim\(\)/);
+  assert.match(page, /this\.data\.currentAttemptId && !hasEssayContentChanged\(essay, this\.data\.submittedEssayText\)/);
+  assert.match(page, /essayDirty && this\.data\.currentAttemptId[\s\S]*?内容已修改，需重新批改/);
   assert.equal((template.match(/disabled="\{\{restoringAttempt \|\| submitting \|\| submitLocked\}\}"/g) || []).length, 2);
   assert.equal((template.match(/disabled="\{\{restoringAttempt \|\| grading \|\| submitting\}\}"/g) || []).length, 2);
 });

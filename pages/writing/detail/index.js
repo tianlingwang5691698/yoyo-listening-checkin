@@ -153,6 +153,14 @@ function countWords(text) {
   return matches ? matches.length : 0;
 }
 
+function normalizeEssayIdentityText(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function hasEssayContentChanged(currentEssay, submittedEssay) {
+  return normalizeEssayIdentityText(currentEssay) !== normalizeEssayIdentityText(submittedEssay);
+}
+
 function createWritingCloudError(result, action) {
   const cloudError = result && result.cloudError || {};
   const syncDebug = result && result.syncDebug || {};
@@ -346,11 +354,14 @@ Page({
     const status = String(attempt.status || '');
     const pending = WRITING_PENDING_STATUSES.includes(status);
     const failed = status === 'grading-failed';
-    const preserveDraft = !!(session && session.essayDirty && session.essayText);
     const submittedEssayText = String(attempt.essay || session && session.submittedEssayText || '');
+    const sessionEssayText = String(session && session.essayText || '');
+    const preserveDraft = !!(session
+      && sessionEssayText.trim() !== submittedEssayText.trim()
+      && (session.essayDirty || !hasEssayContentChanged(sessionEssayText, submittedEssayText)));
     const essayText = preserveDraft ? String(session.essayText || '') : submittedEssayText;
     const review = status === 'graded' && attempt.review ? normalizeReview(attempt.review, prompt) : null;
-    const essayDirty = preserveDraft && essayText.trim() !== submittedEssayText.trim();
+    const essayDirty = preserveDraft && hasEssayContentChanged(essayText, submittedEssayText);
     this.setData({
       essayText,
       submittedEssayText,
@@ -448,14 +459,16 @@ Page({
     const essayText = event.detail.value || '';
     const submittedEssayText = String(this.data.submittedEssayText || '');
     const essayDirty = !!this.data.currentAttemptId
-      ? essayText.trim() !== submittedEssayText.trim()
+      ? hasEssayContentChanged(essayText, submittedEssayText)
       : !!essayText.trim();
     this.setData({
       essayText,
       wordCount: countWords(essayText),
       essayDirty,
       submitLocked: !!this.data.grading || (!!this.data.currentAttemptId && !essayDirty),
-      errorText: ''
+      errorText: essayDirty && this.data.currentAttemptId
+        ? text('essayChanged', '内容已修改，需重新批改。')
+        : ''
     });
     this.scheduleWritingDraftSave();
   },
@@ -552,7 +565,7 @@ Page({
     const attemptId = gradedAttempt.attemptId || gradedAttempt._id || this.data.currentAttemptId || '';
     const submittedEssayText = String(gradedAttempt.essay || this.data.submittedEssayText || this.data.essayText || '');
     const essayDirty = !!this.data.essayDirty
-      && String(this.data.essayText || '').trim() !== submittedEssayText.trim();
+      && hasEssayContentChanged(this.data.essayText, submittedEssayText);
     this.writingGradeResumeAttemptId = '';
     this.writingGradeResumeStartedAt = 0;
     this.setData({
@@ -657,8 +670,8 @@ Page({
       wx.showToast({ title: text('grading', '正在批改'), icon: 'none' });
       return;
     }
-    if (this.data.currentAttemptId && essay === String(this.data.submittedEssayText || '').trim()) {
-      wx.showToast({ title: text('editBeforeResubmit', '请修改作文后再提交'), icon: 'none' });
+    if (this.data.currentAttemptId && !hasEssayContentChanged(essay, this.data.submittedEssayText)) {
+      wx.showToast({ title: text('sameEssayResult', '内容未变化，保留上次结果'), icon: 'none' });
       return;
     }
     if (!prompt) {

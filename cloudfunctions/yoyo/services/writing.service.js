@@ -42,6 +42,10 @@ function normalizeLongText(value) {
     .trim();
 }
 
+function normalizeEssayForFingerprint(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
 function cloneJson(value) {
   return JSON.parse(JSON.stringify(value));
 }
@@ -762,14 +766,22 @@ function sanitizePromptForGrading(prompt) {
   };
 }
 
-function buildWritingScoreFingerprint(prompt, essay) {
+function buildWritingScoreFingerprintWithEssay(prompt, essay) {
   return crypto.createHash('sha256').update(JSON.stringify({
     gradingVersion: WRITING_SCORING_VERSION,
     prompt: sanitizePromptForGrading(prompt),
     promptId: normalizeText(prompt && (prompt._id || prompt.id)),
     contentRevision: Number(prompt && prompt.contentRevision || 0),
-    essay: normalizeLongText(essay)
+    essay
   })).digest('hex');
+}
+
+function buildWritingScoreFingerprint(prompt, essay) {
+  return buildWritingScoreFingerprintWithEssay(prompt, normalizeEssayForFingerprint(essay));
+}
+
+function buildLegacyWritingScoreFingerprint(prompt, essay) {
+  return buildWritingScoreFingerprintWithEssay(prompt, normalizeLongText(essay));
 }
 
 function getMemoryCachedWritingReview(fingerprint) {
@@ -1219,25 +1231,57 @@ async function findCachedWritingReview(ctx, promptId, scoreFingerprint) {
   }
 }
 
-function selectReusableWritingAttempt(records, scoreFingerprint) {
+function selectReusableWritingAttempt(records, scoreFingerprints) {
+  const fingerprintSet = new Set(
+    (Array.isArray(scoreFingerprints) ? scoreFingerprints : [scoreFingerprints])
+      .map((item) => String(item || ''))
+      .filter(Boolean)
+  );
   return (Array.isArray(records) ? records : [])
     .filter((item) => item
-      && item.scoreFingerprint === scoreFingerprint
+      && fingerprintSet.has(item.scoreFingerprint)
       && item.gradingVersion === WRITING_SCORING_VERSION
       && ['grading-pending', 'grading', 'grading-failed', 'graded'].includes(item.status)
       && (item.status !== 'graded' || item.review))
     .sort((a, b) => Date.parse(b.updatedAt || b.createdAt || 0) - Date.parse(a.updatedAt || a.createdAt || 0))[0] || null;
 }
 
-async function findReusableWritingAttempt(ctx, promptId, scoreFingerprint) {
-  if (!ctx || !promptId || !scoreFingerprint) return null;
+function collectReusableWritingFingerprints(records, prompt, essay, scoreFingerprints) {
+  const fingerprints = new Set(
+    (Array.isArray(scoreFingerprints) ? scoreFingerprints : [scoreFingerprints])
+      .map((item) => String(item || ''))
+      .filter(Boolean)
+  );
+  const normalizedEssay = normalizeEssayForFingerprint(essay);
+  (Array.isArray(records) ? records : []).forEach((item) => {
+    if (!item || normalizeEssayForFingerprint(item.essay) !== normalizedEssay) return;
+    if (item.scoreFingerprint === buildLegacyWritingScoreFingerprint(prompt, item.essay)) {
+      fingerprints.add(item.scoreFingerprint);
+    }
+  });
+  return Array.from(fingerprints);
+}
+
+async function findReusableWritingAttempt(ctx, prompt, essay, scoreFingerprints, isPreview = false) {
+  const promptId = String(prompt && (prompt._id || prompt.id) || '').trim();
+  if (!ctx || !promptId || !scoreFingerprints) return null;
   try {
-    const result = await dbAdapter.collection(COLLECTION).where({
+    const collectionName = isPreview ? PREVIEW_COLLECTION : COLLECTION;
+    const result = await dbAdapter.collection(collectionName).where({
       familyId: ctx.family.familyId,
       childId: ctx.child.childId,
       promptId
     }).limit(20).get();
-    return selectReusableWritingAttempt(result.data, scoreFingerprint);
+    const accessibleRecords = (result.data || []).filter((item) => (
+      isWritingAttemptAccessible(ctx, item, isPreview)
+    ));
+    const compatibleFingerprints = collectReusableWritingFingerprints(
+      accessibleRecords,
+      prompt,
+      essay,
+      scoreFingerprints
+    );
+    return selectReusableWritingAttempt(accessibleRecords, compatibleFingerprints);
   } catch (error) {
     return null;
   }
@@ -1258,6 +1302,8 @@ async function submitWritingAttempt(event) {
   const taskType = getWritingTaskType(prompt);
   const totalScore = resolveTotalScore(prompt, taskType);
   const scoreFingerprint = buildWritingScoreFingerprint(prompt, essay);
+  const legacyScoreFingerprint = buildLegacyWritingScoreFingerprint(prompt, essay);
+  const reusableScoreFingerprints = Array.from(new Set([scoreFingerprint, legacyScoreFingerprint]));
   const attempt = {
     promptId,
     title: prompt.title || '',
@@ -1330,7 +1376,7 @@ async function submitWritingAttempt(event) {
         cached: true
       };
     }
-    if (existing && ['grading-pending', 'grading'].includes(existing.status)) {
+    if (existing && ['grading-pending', 'grading', 'grading-failed'].includes(existing.status)) {
       return {
         prompt: {
           _id: promptId,
@@ -1343,6 +1389,31 @@ async function submitWritingAttempt(event) {
         resumable: true,
         preview: true,
         cached: true
+      };
+    }
+    const reusablePreviewAttempt = await findReusableWritingAttempt(
+      ctx,
+      prompt,
+      essay,
+      reusableScoreFingerprints,
+      true
+    );
+    if (reusablePreviewAttempt) {
+      const formatted = formatAttempt(reusablePreviewAttempt);
+      const isGraded = formatted.status === 'graded' && formatted.review;
+      return {
+        prompt: {
+          _id: promptId,
+          title: prompt.title || '',
+          prompt: prompt.prompt || ''
+        },
+        attempt: formatted,
+        review: isGraded ? formatted.review : null,
+        pending: !isGraded,
+        resumable: !isGraded,
+        preview: true,
+        cached: true,
+        reusedAttempt: true
       };
     }
     const previewAttempt = Object.assign({}, attempt, {
@@ -1376,7 +1447,7 @@ async function submitWritingAttempt(event) {
       preview: true
     };
   }
-  const reusableAttempt = await findReusableWritingAttempt(ctx, promptId, scoreFingerprint);
+  const reusableAttempt = await findReusableWritingAttempt(ctx, prompt, essay, reusableScoreFingerprints);
   if (reusableAttempt) {
     const formatted = formatAttempt(reusableAttempt);
     const isGraded = formatted.status === 'graded' && formatted.review;
@@ -1802,8 +1873,11 @@ module.exports = {
     countIeltsWritingWords,
     applyOfficialMinimumResponseRule,
     sanitizePromptForGrading,
+    normalizeEssayForFingerprint,
     buildWritingScoreFingerprint,
+    buildLegacyWritingScoreFingerprint,
     selectReusableWritingAttempt,
+    collectReusableWritingFingerprints,
     resolveWritingAttemptRef,
     formatWritingAttemptId,
     buildPreviewAttemptDocumentId,

@@ -391,12 +391,58 @@ test('同一题目和作文生成稳定评分指纹并复用内存结果', () =>
   };
   const first = writing.buildWritingScoreFingerprint(prompt, 'First paragraph.\n\nSecond paragraph.');
   const same = writing.buildWritingScoreFingerprint(prompt, 'First paragraph.\n\nSecond paragraph.');
+  const whitespaceOnly = writing.buildWritingScoreFingerprint(prompt, '  First   paragraph. Second paragraph.  ');
+  const punctuationChanged = writing.buildWritingScoreFingerprint(prompt, 'First paragraph! Second paragraph.');
+  const spellingChanged = writing.buildWritingScoreFingerprint(prompt, 'First paragraf. Second paragraph.');
   const changed = writing.buildWritingScoreFingerprint(prompt, 'A different essay.');
   assert.equal(first, same);
+  assert.equal(first, whitespaceOnly);
+  assert.notEqual(first, punctuationChanged);
+  assert.notEqual(first, spellingChanged);
   assert.notEqual(first, changed);
 
   writing.setMemoryCachedWritingReview(first, { score: 7.5, summary: '稳定结果' });
   assert.deepEqual(writing.getMemoryCachedWritingReview(first), { score: 7.5, summary: '稳定结果' });
+});
+
+test('空格换行归一后仍兼容历史评分指纹', () => {
+  const prompt = {
+    _id: 'ielts-academic-21-test-1-writing-task-1',
+    contentType: 'ielts-writing-task-1',
+    contentRevision: 3,
+    prompt: 'The graph below gives information about jobs.'
+  };
+  const oldEssay = 'First paragraph.\n\nSecond paragraph.';
+  const whitespaceChangedEssay = '  First   paragraph. Second paragraph.  ';
+  const currentFingerprint = writing.buildWritingScoreFingerprint(prompt, whitespaceChangedEssay);
+  const incomingLegacyFingerprint = writing.buildLegacyWritingScoreFingerprint(prompt, whitespaceChangedEssay);
+  const storedLegacyFingerprint = writing.buildLegacyWritingScoreFingerprint(prompt, oldEssay);
+  const records = [{
+    _id: 'legacy-result',
+    essay: oldEssay,
+    scoreFingerprint: storedLegacyFingerprint,
+    gradingVersion: writing.WRITING_SCORING_VERSION,
+    status: 'graded',
+    review: { score: 7 },
+    updatedAt: '2026-07-24T00:00:00.000Z'
+  }];
+  const compatibleFingerprints = writing.collectReusableWritingFingerprints(
+    records,
+    prompt,
+    whitespaceChangedEssay,
+    [currentFingerprint, incomingLegacyFingerprint]
+  );
+  const selected = writing.selectReusableWritingAttempt(records, compatibleFingerprints);
+  assert.notEqual(storedLegacyFingerprint, incomingLegacyFingerprint);
+  assert.equal(selected._id, 'legacy-result');
+  const changedPrompt = Object.assign({}, prompt, { contentRevision: 4 });
+  const changedPromptFingerprints = writing.collectReusableWritingFingerprints(
+    records,
+    changedPrompt,
+    whitespaceChangedEssay,
+    [writing.buildWritingScoreFingerprint(changedPrompt, whitespaceChangedEssay)]
+  );
+  assert.equal(writing.selectReusableWritingAttempt(records, changedPromptFingerprints), null);
 });
 
 test('同题同文优先复用当前版本原批改任务', () => {
