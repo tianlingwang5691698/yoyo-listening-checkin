@@ -45,6 +45,7 @@ const REQUIRED_COLLECTIONS = [
   'dailyReports',
   'subscriptionPreferences',
   'taskAttempts',
+  'writingPreviewAttempts',
   'deviceStudySessions',
   'fixedPlanProgressSummaries'
 ];

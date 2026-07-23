@@ -22,7 +22,10 @@ test('翻译提交调用写作专用模型并逐题展示讲解', () => {
   assert.match(view, /texts\.recommendedTranslation/);
 });
 
-test('翻译分析、家长预览和历史续批使用 180 秒等待上限', () => {
+test('翻译分析、家长预览和历史续批等待覆盖云函数 300 秒上限', () => {
   const cloudClient = read('domain/cloud/index.js');
-  assert.match(cloudClient, /analyzeWritingTranslation'[\s\S]*?submitWritingAttempt'[\s\S]*?gradeWritingAttempt'[\s\S]*?getWritingAttemptDetail'[\s\S]*?timeoutMs = 180000/);
+  const cloudbaseConfig = JSON.parse(read('cloudbaserc.json'));
+  const yoyo = (cloudbaseConfig.functions || []).find((item) => item.name === 'yoyo');
+  assert.equal(yoyo && yoyo.timeout, 300);
+  assert.match(cloudClient, /analyzeWritingTranslation'[\s\S]*?submitWritingAttempt'[\s\S]*?gradeWritingAttempt'[\s\S]*?getWritingAttemptDetail'[\s\S]*?timeoutMs = 320000/);
 });

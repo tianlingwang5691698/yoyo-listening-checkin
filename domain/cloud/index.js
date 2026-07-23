@@ -103,7 +103,9 @@ async function callYoyo(action, payload) {
   let response;
   try {
     let timeoutMs = 12000;
-    if (action === 'getReadingStudyPack' || action === 'getListeningStudyPack' || action === 'analyzeWritingTranslation' || action === 'submitWritingAttempt' || action === 'gradeWritingAttempt' || action === 'generateWritingBandSample' || action === 'getWritingAttemptDetail' || action === 'getGrammarNarrationAudio' || action === 'synthesizeIeltsPromptAudio') {
+    if (action === 'analyzeWritingTranslation' || action === 'submitWritingAttempt' || action === 'gradeWritingAttempt' || action === 'generateWritingBandSample' || action === 'getWritingAttemptDetail') {
+      timeoutMs = 320000;
+    } else if (action === 'getReadingStudyPack' || action === 'getListeningStudyPack' || action === 'getGrammarNarrationAudio' || action === 'synthesizeIeltsPromptAudio') {
       timeoutMs = 180000;
     } else if (action === 'submitSpeakingAttempt') {
       timeoutMs = 320000;

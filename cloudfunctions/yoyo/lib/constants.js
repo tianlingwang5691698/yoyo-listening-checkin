@@ -66,7 +66,8 @@ const REQUIRED_COLLECTIONS = [
   'dailyTaskProgress',
   'dailyCheckins',
   'dailyReports',
-  'subscriptionPreferences'
+  'subscriptionPreferences',
+  'writingPreviewAttempts'
 ];
 
 module.exports = {

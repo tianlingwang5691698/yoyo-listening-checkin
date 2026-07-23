@@ -5,7 +5,7 @@
   "functions": [
     {
       "name": "yoyo",
-      "timeout": 180,
+      "timeout": 300,
       "memorySize": 512,
       "runtime": "Nodejs16.13"
     }

@@ -203,6 +203,7 @@ Page({
     errorText: ''
   }),
   async onLoad(options) {
+    this.writingPageActive = true;
     this.writingPerf = page.startPagePerf('writing-detail');
     const promptId = decodeURIComponent((options && options.id) || '');
     let prompt = null;
@@ -391,6 +392,60 @@ Page({
       this.setData({ translationAnalyzing: false });
     }
   },
+  finishWritingGrade(graded, prompt, fallbackAttempt) {
+    const gradedAttempt = graded && graded.attempt || fallbackAttempt || {};
+    const reviewSource = graded && graded.review || gradedAttempt.review;
+    if (!reviewSource) {
+      throw new Error('writing-review-missing');
+    }
+    const review = normalizeReview(reviewSource, prompt);
+    const attemptId = gradedAttempt.attemptId || gradedAttempt._id || this.data.currentAttemptId || '';
+    this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
+    this.playWritingReviewEffect();
+    if (!gradedAttempt.isPreview) {
+      completed.addCompletedItem({
+        id: `${completed.todayString()}:writing:${prompt._id}`,
+        type: 'writing',
+        targetId: prompt._id,
+        title: prompt.title || '写作',
+        meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
+        progressText: `${review.score}/${review.totalScore}${text('scoreUnit', ' 分')}`,
+        latestAttempt: gradedAttempt,
+        prompt
+      });
+    }
+  },
+  scheduleWritingResultPoll(attemptId, prompt, fallbackAttempt, delayMs = 10000) {
+    if (this.writingResultPollTimer) clearTimeout(this.writingResultPollTimer);
+    this.writingResultPollTimer = setTimeout(async () => {
+      this.writingResultPollTimer = null;
+      if (!this.writingPageActive) return;
+      const result = await store.getWritingAttemptDetail(attemptId);
+      if (!this.writingPageActive) return;
+      if (result && result.syncMode !== 'cloud-error' && result.attempt) {
+        if (result.attempt.status === 'graded' && result.attempt.review) {
+          this.finishWritingGrade(result, prompt, fallbackAttempt);
+          return;
+        }
+        if (result.attempt.status === 'grading-failed') {
+          const error = new Error(result.attempt.gradeError || 'writing-grading-failed');
+          const errorText = buildWritingSubmitError(error, 'getWritingAttemptDetail');
+          console.error(errorText);
+          this.setData({ grading: false, errorText });
+          return;
+        }
+      }
+      this.scheduleWritingResultPoll(attemptId, prompt, result && result.attempt || fallbackAttempt);
+    }, delayMs);
+  },
+  continueWritingResultPolling(attemptId, prompt, fallbackAttempt, error) {
+    console.error(buildWritingSubmitError(error, 'gradeWritingAttempt'));
+    this.setData({
+      grading: true,
+      errorText: text('gradingResumeStatus', '云端仍在批改。可以返回，完成后会出现在写作记录中。')
+    });
+    this.scheduleWritingResultPoll(attemptId, prompt, fallbackAttempt, 5000);
+  },
   async submitEssay() {
     const prompt = this.data.prompt;
     const essay = String(this.data.essayText || '').trim();
@@ -442,39 +497,22 @@ Page({
         if (graded && graded.syncMode === 'cloud-error') {
           throw createWritingCloudError(graded, 'gradeWritingAttempt');
         }
-        const review = normalizeReview(graded.review, prompt);
-        this.setData({ review, currentAttemptId: attemptId, grading: false, errorText: '' });
-        this.playWritingReviewEffect();
-        const item = {
+        this.finishWritingGrade(graded, prompt, attempt);
+      }).catch((error) => {
+        this.continueWritingResultPolling(attemptId, prompt, attempt, error);
+      });
+      if (!attempt.isPreview) {
+        completed.addCompletedItem({
           id: `${completed.todayString()}:writing:${prompt._id}`,
           type: 'writing',
           targetId: prompt._id,
           title: prompt.title || '写作',
           meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
-          progressText: `${review.score}/${review.totalScore}${text('scoreUnit', ' 分')}`,
-          latestAttempt: graded.attempt || attempt,
+          progressText: text('grading', '批改中'),
+          latestAttempt: attempt,
           prompt
-        };
-        completed.addCompletedItem(item);
-      }).catch((error) => {
-        const errorText = buildWritingSubmitError(error, 'gradeWritingAttempt');
-        console.error(errorText);
-        this.setData({
-          grading: false,
-          errorText
         });
-      });
-      const item = {
-        id: `${completed.todayString()}:writing:${prompt._id}`,
-        type: 'writing',
-        targetId: prompt._id,
-        title: prompt.title || '写作',
-        meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
-        progressText: text('grading', '批改中'),
-        latestAttempt: attempt,
-        prompt
-      };
-      completed.addCompletedItem(item);
+      }
     } catch (error) {
       const errorText = buildWritingSubmitError(error, 'submitWritingAttempt');
       console.error(errorText);
@@ -536,6 +574,11 @@ Page({
     }, 1600);
   },
   onUnload() {
+    this.writingPageActive = false;
+    if (this.writingResultPollTimer) {
+      clearTimeout(this.writingResultPollTimer);
+      this.writingResultPollTimer = null;
+    }
     if (this.reviewEffectTimer) {
       clearTimeout(this.reviewEffectTimer);
       this.reviewEffectTimer = null;

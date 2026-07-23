@@ -5,21 +5,18 @@ const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
 const completion = require('./completion.service');
 const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
+const {
+  SOURCE_URL: IELTS_WRITING_RUBRIC_SOURCE,
+  VERSION: IELTS_WRITING_RUBRIC_VERSION,
+  buildOfficialWritingBandGuide
+} = require('../lib/ielts-writing-band-descriptors');
 
 const COLLECTION = 'writingAttempts';
-const IELTS_WRITING_RUBRIC_VERSION = 'IELTS public Writing band descriptors · May 2023';
-const WRITING_SCORING_VERSION = 'writing-score-v3-20260723';
+const PREVIEW_COLLECTION = 'writingPreviewAttempts';
+const PREVIEW_ATTEMPT_PREFIX = 'preview-';
+const WRITING_SCORING_VERSION = 'writing-score-v5-official-20260723';
 const WRITING_REVIEW_MEMORY_CACHE_LIMIT = 100;
 const writingReviewMemoryCache = new Map();
-const IELTS_WRITING_RUBRIC_GUIDE = [
-  '按 IELTS 公开 Writing Band Descriptors（2023-05）逐项匹配，不得只凭整体印象给分。',
-  'Task Achievement/Response：9=完整深入且几乎无遗漏；8=充分、清晰发展且仅偶有遗漏；7=主要要求均回应，立场清楚，支持总体充分但偶有泛化或不够聚焦；6=主要要求已回应，但发展不均、论据可能不足或重复；5=回应不完整且发展有限；4及以下=仅最低限度回应、明显偏题或信息严重不足。Task 1 还必须核对 overview、主要特征、比较和数据准确性。',
-  'Coherence and Cohesion：9=阅读毫不费力且衔接几乎不显眼；8=逻辑顺序清楚、衔接熟练，仅偶有瑕疵；7=进展清楚、段落有效、衔接较灵活；6=总体连贯但衔接可能机械或段落主题不够清楚；5=有组织但整体推进不足、重复或指代不清；4及以下=信息关系难以跟随。',
-  'Lexical Resource：9=词汇广泛、精确、自然且错误极少；8=词汇宽广灵活，偶有选词或搭配问题；7=能灵活准确表达并使用较少见词汇，但仍有搭配或词形错误；6=词汇基本够用但范围或精确度受限，错误通常不妨碍交流；5=范围有限且错误会给读者造成一定困难；4及以下=基础、重复且错误可能妨碍理解。',
-  'Grammatical Range and Accuracy：9=结构广泛且完全灵活控制，错误极少；8=结构宽广、灵活准确，多数句子无误；7=复杂结构有变化且常有无误句，少量持续错误不妨碍交流；6=简单与复杂句混用但灵活度有限，错误通常不妨碍交流；5=结构范围有限，复杂句准确度低且频繁错误造成阅读困难；4及以下=结构非常有限且错误频繁。',
-  '低分档必须单独判断：3=回应或组织极弱、语言错误使大部分意思难以传达；2=内容几乎不相关、可辨认语言极少且几乎没有句子控制；1=20词或更少且无法传达有效信息；0仅用于未作答、全篇非英语或可证实完全背诵。题干照抄不计入有效作答。',
-  '每项必须引用学生原文中的具体证据，说明最匹配的描述、限制本档或更高档的原因，以及升到下一档的可执行动作。'
-].join('\n');
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -43,6 +40,55 @@ function normalizeLongText(value) {
 
 function cloneJson(value) {
   return JSON.parse(JSON.stringify(value));
+}
+
+function resolveWritingAttemptRef(attemptId) {
+  const value = String(attemptId || '').trim();
+  const isPreview = value.startsWith(PREVIEW_ATTEMPT_PREFIX);
+  return {
+    attemptId: value,
+    documentId: isPreview ? value.slice(PREVIEW_ATTEMPT_PREFIX.length) : value,
+    collectionName: isPreview ? PREVIEW_COLLECTION : COLLECTION,
+    isPreview
+  };
+}
+
+function formatWritingAttemptId(documentId, isPreview) {
+  const value = String(documentId || '').trim();
+  return isPreview && value ? `${PREVIEW_ATTEMPT_PREFIX}${value}` : value;
+}
+
+function buildPreviewAttemptDocumentId(ctx, scoreFingerprint) {
+  return crypto.createHash('sha256').update(JSON.stringify({
+    userId: ctx && ctx.user && ctx.user.userId || '',
+    memberId: ctx && ctx.member && ctx.member.memberId || '',
+    familyId: ctx && ctx.family && ctx.family.familyId || '',
+    childId: ctx && ctx.child && ctx.child.childId || '',
+    scoreFingerprint: String(scoreFingerprint || '')
+  })).digest('hex').slice(0, 32);
+}
+
+function isWritingAttemptAccessible(ctx, attempt, isPreview) {
+  if (!ctx || !attempt) return false;
+  if (attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) return false;
+  if (!isPreview) return true;
+  return attempt.userId === ctx.user.userId
+    && attempt.memberId === ctx.member.memberId
+    && attempt.isPreview === true;
+}
+
+async function loadWritingAttempt(ctx, attemptId) {
+  const ref = resolveWritingAttemptRef(attemptId);
+  if (!ref.documentId) return { ref, attempt: null };
+  const result = await dbAdapter.collection(ref.collectionName).doc(ref.documentId).get();
+  const attempt = result && result.data ? Object.assign({}, result.data, {
+    _id: ref.documentId,
+    isPreview: ref.isPreview || result.data.isPreview === true
+  }) : null;
+  if (!isWritingAttemptAccessible(ctx, attempt, ref.isPreview)) {
+    throw new Error('writing-attempt-not-found');
+  }
+  return { ref, attempt };
 }
 
 function postJson(url, headers, body) {
@@ -168,9 +214,15 @@ function normalizeBandScore(value) {
   return Math.max(0, Math.min(9, Math.round(score * 2) / 2));
 }
 
+function normalizeCriterionBandScore(value) {
+  const score = Number(value);
+  if (!Number.isFinite(score)) return null;
+  return Math.max(0, Math.min(9, Math.round(score)));
+}
+
 function readDimensionScore(dimensions, keys) {
   for (const key of keys) {
-    const score = normalizeBandScore(dimensions && dimensions[key]);
+    const score = normalizeCriterionBandScore(dimensions && dimensions[key]);
     if (score !== null) return score;
   }
   const normalizedEntries = Object.entries(dimensions || {}).reduce((map, [key, value]) => {
@@ -178,7 +230,7 @@ function readDimensionScore(dimensions, keys) {
     return map;
   }, {});
   for (const key of keys) {
-    const score = normalizeBandScore(normalizedEntries[normalizeSchemaKey(key)]);
+    const score = normalizeCriterionBandScore(normalizedEntries[normalizeSchemaKey(key)]);
     if (score !== null) return score;
   }
   return null;
@@ -384,10 +436,7 @@ function normalizeReview(data, prompt) {
     : dimensions;
   if (taskType === 'ielts-task-1' || taskType === 'ielts-task-2') {
     const task1FactCheck = taskType === 'ielts-task-1' ? normalizeTask1FactCheck(data) : null;
-    const rawTaskScore = readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']);
-    const taskScore = task1FactCheck && task1FactCheck.hasMajorIssue && rawTaskScore !== null
-      ? Math.min(rawTaskScore, 7)
-      : rawTaskScore;
+    const taskScore = readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']);
     const dimensionScores = {
       task: taskScore,
       coherenceCohesion: readDimensionScore(rawDimensionScores, ['coherenceCohesion', 'coherence_and_cohesion', 'Coherence and Cohesion']),
@@ -420,7 +469,7 @@ function normalizeReview(data, prompt) {
       criterionDetails,
       taskType,
       task1FactCheck,
-      taskAchievementCapApplied: !!(task1FactCheck && task1FactCheck.hasMajorIssue && rawTaskScore !== null && rawTaskScore > taskScore),
+      taskAchievementCapApplied: false,
       gradingVersion: WRITING_SCORING_VERSION,
       strengths: Array.isArray(data.strengths) ? data.strengths.map(normalizeText).filter(Boolean).slice(0, 3) : [],
       problems: Array.isArray(data.problems) ? data.problems.map(normalizeText).filter(Boolean).slice(0, 6) : [],
@@ -527,15 +576,16 @@ function buildGradingPrompt(prompt, essay) {
     return [
       `你是IELTS Academic Writing官方标准阅卷老师。本题是${taskType === 'ielts-task-1' ? 'Writing Task 1' : 'Writing Task 2'}。`,
       `严格按四项标准评分：${taskCriterion}、Coherence and Cohesion、Lexical Resource、Grammatical Range and Accuracy。`,
-      '每项0–9分，只能使用0.5分档；总分为四项平均后按雅思规则取最近0.5分。不得使用20分制。',
+      '四项分别只能给0–9整数Band；单项练习预估为四项整数Band的平均值，再按雅思0.5档报告。不得给单项维度0.5分，不得使用20分制。',
       `评分依据版本：${IELTS_WRITING_RUBRIC_VERSION}。`,
-      IELTS_WRITING_RUBRIC_GUIDE,
+      `官方来源：${IELTS_WRITING_RUBRIC_SOURCE}`,
+      buildOfficialWritingBandGuide(taskType),
       taskType === 'ielts-task-1'
         ? [
           '必须以附带的原题图片为最终事实来源，同时核对 visualData、题干和要求；visualData 可能只有标题、坐标和图例，不得把它当作完整数值表。',
           '先在 task1FactCheck 中独立列出图表关键事实，再评判学生是否准确覆盖主要特征、数据、overview和跨系列比较。',
-          'Task Achievement 固定门槛：overview 若遗漏最终排名、重要交叉、共同最高/最低、峰值或主导趋势等重大特征，该项最高7分；只遗漏一个中间年份数值但主要趋势完整，不自动降档。',
-          '数据错误必须标 major 或 minor；重大遗漏写入 majorMissingFeatures，次要细节写入 minorMissingDetails。少于150词必须在 Task Achievement 中明确处理。',
+          'Task Achievement 必须直接匹配官方描述：Band 8 要求 key features are skilfully selected, clearly presented, highlighted and illustrated；Band 7 要求 clear overview、appropriate categorisation，以及识别 main trends or differences。不得使用程序自定义封顶。',
+          '数据错误必须标 major 或 minor；遗漏写入 majorMissingFeatures 或 minorMissingDetails，最终由官方 Task Achievement 描述决定档位。少于150词必须在 Task Achievement 中按官方标准处理。',
           'polishedVersion必须是独立生成的原题参考范文，不是学生文章的改写；不得编造原图中没有的数据。'
         ].join('')
         : '必须完整回应原题的所有问题，立场明确，论证充分；少于250词必须在 Task Response 中明确处理。',
@@ -725,8 +775,20 @@ function buildCompletionPayload(prompt, attempt, progressText) {
 
 async function saveWritingCompletion(ctx, date, prompt, attempt, progressText) {
   try {
-    await completion.upsertStudyCompletion(ctx, date, buildCompletionPayload(prompt, attempt, progressText));
-  } catch (error) {}
+    const result = await completion.upsertStudyCompletion(ctx, date, buildCompletionPayload(prompt, attempt, progressText));
+    if (result && result.saved) {
+      await study.upsertDailyReport(study.getUserScope(ctx), date);
+    }
+    return result;
+  } catch (error) {
+    console.error('writing-completion-sync-failed', {
+      action: 'saveWritingCompletion',
+      attemptId: String(attempt && (attempt.attemptId || attempt._id) || ''),
+      date: String(date || ''),
+      error: String(error && error.message || error || '')
+    });
+    return { saved: false, reason: 'completion-sync-failed' };
+  }
 }
 
 async function gradeWriting(prompt, essay) {
@@ -810,7 +872,7 @@ function buildBandSamplePrompt(prompt, essay, review, delta) {
   return [
     '你是 IELTS Academic Writing 教学范文设计师。只返回 JSON，不要 Markdown。',
     `依据 ${IELTS_WRITING_RUBRIC_VERSION}，生成目标 Band ${targetBand.toFixed(1)} 的练习范文。此目标仅作教学示范，不声称是官方认证分数。`,
-    IELTS_WRITING_RUBRIC_GUIDE,
+    buildOfficialWritingBandGuide(taskType),
     `本题为 ${taskType === 'ielts-task-1' ? 'Task 1' : 'Task 2'}，重点标准为 ${taskCriterion}。${strategy}`,
     taskType === 'ielts-task-1'
       ? '必须严格依据原题图片、visualData 和题干；包含清楚 overview、主要特征与准确比较，不得补造任何数据。建议 160–210 词。'
@@ -861,12 +923,11 @@ async function generateWritingBandSample(event) {
   let prompt = payload.prompt || {};
   let essay = String(payload.essay || '').trim();
   let review = payload.review || null;
+  let attemptRef = null;
   if (attemptId) {
-    const result = await dbAdapter.collection(COLLECTION).doc(attemptId).get();
-    attempt = result && result.data ? result.data : null;
-    if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
-      throw new Error('writing-attempt-not-found');
-    }
+    const loaded = await loadWritingAttempt(ctx, attemptId);
+    attempt = loaded.attempt;
+    attemptRef = loaded.ref;
     prompt = {
       _id: attempt.promptId || '',
       title: attempt.title || '',
@@ -889,10 +950,10 @@ async function generateWritingBandSample(event) {
   }
   const sample = await generateBandSample(prompt, essay, normalizedReview, delta);
   const bandSamples = normalizeBandSamples([].concat(normalizedReview.bandSamples || [], sample), normalizedReview.score);
-  if (attemptId && study.isStudyWriteAllowed(ctx)) {
+  if (attemptId && attemptRef) {
     const command = dbAdapter.getCommand();
     const nextReview = Object.assign({}, normalizedReview, { bandSamples });
-    await dbAdapter.collection(COLLECTION).doc(attemptId).update({
+    await dbAdapter.collection(attemptRef.collectionName).doc(attemptRef.documentId).update({
       data: {
         review: command.set(nextReview),
         updatedAt: new Date().toISOString()
@@ -985,21 +1046,75 @@ async function submitWritingAttempt(event) {
   };
   let attemptId = '';
   if (!study.isStudyWriteAllowed(ctx)) {
-    const review = await gradeWriting(prompt, essay);
+    const previewDocumentId = buildPreviewAttemptDocumentId(ctx, scoreFingerprint);
+    const previewAttemptId = formatWritingAttemptId(previewDocumentId, true);
+    let existing = null;
+    try {
+      const result = await dbAdapter.collection(PREVIEW_COLLECTION).doc(previewDocumentId).get();
+      existing = result && result.data ? Object.assign({}, result.data, {
+        _id: previewDocumentId,
+        isPreview: true
+      }) : null;
+    } catch (error) {}
+    if (existing && existing.status === 'graded' && existing.review) {
+      const formatted = formatAttempt(existing);
+      return {
+        prompt: {
+          _id: promptId,
+          title: prompt.title || '',
+          prompt: prompt.prompt || ''
+        },
+        attempt: formatted,
+        review: existing.review,
+        pending: false,
+        preview: true,
+        cached: true
+      };
+    }
+    if (existing && ['grading-pending', 'grading'].includes(existing.status)) {
+      return {
+        prompt: {
+          _id: promptId,
+          title: prompt.title || '',
+          prompt: prompt.prompt || ''
+        },
+        attempt: formatAttempt(existing),
+        review: null,
+        pending: true,
+        resumable: true,
+        preview: true,
+        cached: true
+      };
+    }
+    const previewAttempt = Object.assign({}, attempt, {
+      isPreview: true,
+      userId: ctx.user.userId,
+      memberId: ctx.member.memberId,
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      deviceId: ctx.member.deviceId || '',
+      status: 'grading-pending',
+      createdAt: existing && existing.createdAt || now,
+      updatedAt: now
+    });
+    await dbAdapter.collection(PREVIEW_COLLECTION).doc(previewDocumentId).set({
+      data: previewAttempt
+    });
+    const savedPreviewAttempt = formatAttempt(Object.assign({}, previewAttempt, {
+      _id: previewDocumentId,
+      attemptId: previewAttemptId
+    }));
     return {
       prompt: {
         _id: promptId,
         title: prompt.title || '',
         prompt: prompt.prompt || ''
       },
-      attempt: Object.assign({}, attempt, {
-        score: review.score,
-        totalScore: review.totalScore,
-        review,
-        status: 'preview'
-      }),
-      review,
-      pending: false
+      attempt: savedPreviewAttempt,
+      review: null,
+      pending: true,
+      resumable: true,
+      preview: true
     };
   }
   const storedReview = await findCachedWritingReview(ctx, promptId, scoreFingerprint);
@@ -1120,11 +1235,10 @@ async function gradeWritingAttempt(event) {
   if (!attemptId) {
     throw new Error('missing-writing-attempt-id');
   }
-  const result = await dbAdapter.collection(COLLECTION).doc(attemptId).get();
-  const attempt = result && result.data ? result.data : null;
-  if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
-    throw new Error('writing-attempt-not-found');
-  }
+  const loaded = await loadWritingAttempt(ctx, attemptId);
+  const attemptRef = loaded.ref;
+  const attempt = loaded.attempt;
+  const isPreview = attemptRef.isPreview;
   const prompt = {
     _id: attempt.promptId || '',
     title: attempt.title || '',
@@ -1134,13 +1248,15 @@ async function gradeWritingAttempt(event) {
   };
   const scoreFingerprint = attempt.scoreFingerprint || buildWritingScoreFingerprint(prompt, attempt.essay || '');
   if (attempt.status === 'graded' && attempt.review) {
-    const formatted = formatAttempt(Object.assign({}, attempt, { _id: attemptId }));
-    await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${formatted.score}/${formatted.totalScore} 分`);
+    const formatted = formatAttempt(Object.assign({}, attempt, { _id: attemptRef.documentId, isPreview }));
+    if (!isPreview) {
+      await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${formatted.score}/${formatted.totalScore} 分`);
+    }
     return { attempt: formatted, review: attempt.review, pending: false };
   }
   const now = new Date().toISOString();
   try {
-    await dbAdapter.collection(COLLECTION).doc(attemptId).update({
+    await dbAdapter.collection(attemptRef.collectionName).doc(attemptRef.documentId).update({
       data: {
         status: 'grading',
         updatedAt: now
@@ -1155,9 +1271,11 @@ async function gradeWritingAttempt(event) {
       })
       : await gradeWriting(prompt, attempt.essay || '');
     let testEstimateResult = null;
-    try {
-      testEstimateResult = await resolveIeltsWritingTestEstimate(ctx, attempt.promptId, review);
-    } catch (error) {}
+    if (!isPreview) {
+      try {
+        testEstimateResult = await resolveIeltsWritingTestEstimate(ctx, attempt.promptId, review);
+      } catch (error) {}
+    }
     if (testEstimateResult) {
       review = Object.assign({}, review, { writingTestEstimate: testEstimateResult.estimate });
     }
@@ -1173,7 +1291,7 @@ async function gradeWritingAttempt(event) {
       gradedAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
-    await dbAdapter.collection(COLLECTION).doc(attemptId).update({ data: patch });
+    await dbAdapter.collection(attemptRef.collectionName).doc(attemptRef.documentId).update({ data: patch });
     if (testEstimateResult && testEstimateResult.otherAttempt) {
       const otherAttempt = testEstimateResult.otherAttempt;
       const otherAttemptId = otherAttempt._id || otherAttempt.attemptId;
@@ -1190,8 +1308,14 @@ async function gradeWritingAttempt(event) {
         } catch (error) {}
       }
     }
-    const formatted = formatAttempt(Object.assign({}, attempt, patch, { review, _id: attemptId }));
-    await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${review.score}/${review.totalScore} 分`);
+    const formatted = formatAttempt(Object.assign({}, attempt, patch, {
+      review,
+      _id: attemptRef.documentId,
+      isPreview
+    }));
+    if (!isPreview) {
+      await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${review.score}/${review.totalScore} 分`);
+    }
     return {
       attempt: formatted,
       review,
@@ -1199,18 +1323,21 @@ async function gradeWritingAttempt(event) {
     };
   } catch (error) {
     const failedAttempt = formatAttempt(Object.assign({}, attempt, {
-      _id: attemptId,
+      _id: attemptRef.documentId,
+      isPreview,
       status: 'grading-failed',
       gradeError: String(error && error.message || error || '')
     }));
-    await dbAdapter.collection(COLLECTION).doc(attemptId).update({
+    await dbAdapter.collection(attemptRef.collectionName).doc(attemptRef.documentId).update({
       data: {
         status: 'grading-failed',
         gradeError: String(error && error.message || error || ''),
         updatedAt: new Date().toISOString()
       }
     });
-    await saveWritingCompletion(ctx, attempt.date || today, prompt, failedAttempt, '批改失败');
+    if (!isPreview) {
+      await saveWritingCompletion(ctx, attempt.date || today, prompt, failedAttempt, '批改失败');
+    }
     throw error;
   }
 }
@@ -1218,12 +1345,20 @@ async function gradeWritingAttempt(event) {
 function formatAttempt(record) {
   const item = record || {};
   const review = item.review || {};
+  const isPreview = item.isPreview === true;
+  const documentId = item._id || item.attemptId || '';
   return {
-    attemptId: item._id || item.attemptId || '',
+    attemptId: formatWritingAttemptId(
+      String(documentId).startsWith(PREVIEW_ATTEMPT_PREFIX)
+        ? String(documentId).slice(PREVIEW_ATTEMPT_PREFIX.length)
+        : documentId,
+      isPreview
+    ),
+    isPreview,
     promptId: item.promptId || '',
     title: item.title || '写作',
     prompt: item.prompt || '',
-    promptMeta: item.promptMeta || {},
+    promptMeta: Object.assign({}, item.promptMeta || {}, { isPreview }),
     date: item.date || '',
     essay: item.essay || '',
     wordCount: Number(item.wordCount || 0),
@@ -1257,17 +1392,40 @@ async function getWritingAttempts(event) {
   if (promptId) {
     where.promptId = promptId;
   }
-  const res = await dbAdapter.collection(COLLECTION)
+  const studentPromise = dbAdapter.collection(COLLECTION)
     .where(where)
     .orderBy('createdAt', 'desc')
     .limit(limit)
     .get();
+  const previewWhere = {
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    userId: ctx.user.userId,
+    memberId: ctx.member.memberId,
+    isPreview: true
+  };
+  if (promptId) previewWhere.promptId = promptId;
+  const previewPromise = study.isStudyWriteAllowed(ctx)
+    ? Promise.resolve({ data: [] })
+    : dbAdapter.collection(PREVIEW_COLLECTION)
+      .where(previewWhere)
+      .orderBy('createdAt', 'desc')
+      .limit(limit)
+      .get()
+      .catch(() => ({ data: [] }));
+  const [studentRes, previewRes] = await Promise.all([studentPromise, previewPromise]);
+  const rows = []
+    .concat(studentRes.data || [])
+    .concat((previewRes.data || []).map((item) => Object.assign({}, item, { isPreview: true })))
+    .sort((a, b) => Date.parse(b.createdAt || 0) - Date.parse(a.createdAt || 0))
+    .slice(0, limit);
   return {
-    attempts: (res.data || []).map((item) => {
+    attempts: rows.map((item) => {
       const attempt = formatAttempt(item);
       if (!payload.summaryOnly) return attempt;
       return {
         attemptId: attempt.attemptId,
+        isPreview: attempt.isPreview,
         promptId: attempt.promptId,
         title: attempt.title,
         promptMeta: attempt.promptMeta,
@@ -1289,11 +1447,9 @@ async function getWritingAttemptDetail(event) {
     action: 'getWritingAttemptDetail'
   }));
   if (!attemptId) return { attempt: null };
-  const result = await dbAdapter.collection(COLLECTION).doc(attemptId).get();
-  const attempt = result && result.data;
-  if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
-    throw new Error('writing-attempt-not-found');
-  }
+  const loaded = await loadWritingAttempt(ctx, attemptId);
+  const attempt = loaded.attempt;
+  const attemptRef = loaded.ref;
   const gradingAgeMs = Date.now() - Date.parse(attempt.updatedAt || attempt.createdAt || 0);
   const shouldResume = ['grading-pending', 'grading-failed'].includes(attempt.status)
     || (attempt.status === 'grading' && (!Number.isFinite(gradingAgeMs) || gradingAgeMs > 170000));
@@ -1304,14 +1460,22 @@ async function getWritingAttemptDetail(event) {
       }));
     } catch (error) {
       return {
-        attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })),
+        attempt: formatAttempt(Object.assign({}, attempt, {
+          _id: attemptRef.documentId,
+          isPreview: attemptRef.isPreview
+        })),
         pending: true,
         resumable: true,
         gradeError: String(error && error.message || error || '')
       };
     }
   }
-  return { attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })) };
+  return {
+    attempt: formatAttempt(Object.assign({}, attempt, {
+      _id: attemptRef.documentId,
+      isPreview: attemptRef.isPreview
+    }))
+  };
 }
 
 module.exports = {
@@ -1336,11 +1500,16 @@ module.exports = {
     normalizeReview,
     sanitizePromptForGrading,
     buildWritingScoreFingerprint,
+    resolveWritingAttemptRef,
+    formatWritingAttemptId,
+    buildPreviewAttemptDocumentId,
+    isWritingAttemptAccessible,
     getMemoryCachedWritingReview,
     setMemoryCachedWritingReview,
     buildGradingPrompt,
     buildBandSamplePrompt,
     IELTS_WRITING_RUBRIC_VERSION,
-    WRITING_SCORING_VERSION
+    WRITING_SCORING_VERSION,
+    PREVIEW_COLLECTION
   }
 };

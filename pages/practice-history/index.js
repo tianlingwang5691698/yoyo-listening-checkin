@@ -215,12 +215,15 @@ function applyWrongStatus(records, wrongItems) {
 function normalizeWriting(attempt, index) {
   const review = attempt.review || {};
   const totalScore = Number(attempt.totalScore || review.totalScore || 20);
-  const pending = attempt.status === 'grading-pending' || attempt.status === 'grading';
+  const pending = ['grading-pending', 'grading'].includes(attempt.status);
+  const sourceMeta = [attempt.promptMeta && attempt.promptMeta.year, attempt.promptMeta && attempt.promptMeta.district, attempt.promptMeta && attempt.promptMeta.examType].filter(Boolean).join(' · ');
   return {
     id: String(attempt.attemptId || `writing-${index}`),
     targetId: String(attempt.promptId || ''),
     title: attempt.title || '写作练习',
-    meta: [attempt.promptMeta && attempt.promptMeta.year, attempt.promptMeta && attempt.promptMeta.district, attempt.promptMeta && attempt.promptMeta.examType].filter(Boolean).join(' · ') || text('writingEyebrow', '写作'),
+    meta: attempt.isPreview
+      ? `家长预览${sourceMeta ? ` · ${sourceMeta}` : ''}`
+      : (sourceMeta || text('writingEyebrow', '写作')),
     dateLabel: cleanDate(attempt.date, attempt.createdAt),
     summary: pending ? text('grading', '批改中') : `${Number(attempt.score || review.score || 0)}/${totalScore}`,
     attempt: Object.assign({}, attempt, {
@@ -234,6 +237,10 @@ function normalizeWriting(attempt, index) {
     detailLoading: false,
     manualMarkItems: (attempt.manualMarks && attempt.manualMarks.items) || []
   };
+}
+
+function isWritingGradingPending(attempt) {
+  return ['grading-pending', 'grading'].includes(String(attempt && attempt.status || ''));
 }
 
 function buildDebugLines(result, action) {
@@ -278,6 +285,7 @@ Page({
     texts: buildTexts()
   }),
   onLoad(options) {
+    this.historyPageActive = true;
     this.historyPerf = page.startPagePerf('practice-history');
     const type = MODULES[options && options.type] ? options.type : 'reading';
     const config = MODULES[type];
@@ -309,10 +317,12 @@ Page({
     this.setData({ config, isParentView, texts: buildTexts() });
   },
   onUnload() {
+    this.historyPageActive = false;
     Object.keys(this.readingDebugTimers || {}).forEach((key) => clearTimeout(this.readingDebugTimers[key]));
     this.readingDebugTimers = {};
     Object.keys(this.writingResumeTimers || {}).forEach((key) => clearTimeout(this.writingResumeTimers[key]));
     this.writingResumeTimers = {};
+    this.writingResumeInFlight = {};
   },
   async loadHistory() {
     this.setData({ loading: true, debugLines: [] });
@@ -321,13 +331,15 @@ Page({
       return;
     }
     if (this.data.type === 'writing') {
-      const result = await store.getWritingAttempts({ limit: 50, summaryOnly: true });
+      const result = await store.getWritingAttempts({ limit: 50, summaryOnly: true, forceRefresh: true });
       const debugLines = buildDebugLines(result, 'getWritingAttempts');
+      const records = debugLines.length ? [] : (result.attempts || []).map(normalizeWriting);
       this.setData({
         loading: false,
-        records: debugLines.length ? [] : (result.attempts || []).map(normalizeWriting),
+        records,
         debugLines
       });
+      this.resumePendingWritingAttempts(records);
       if (this.historyPerf) {
         this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
       }
@@ -356,6 +368,50 @@ Page({
     });
     if (this.historyPerf) {
       this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
+    }
+  },
+  resumePendingWritingAttempts(records) {
+    (records || [])
+      .filter((record) => isWritingGradingPending(record.attempt))
+      .forEach((record) => this.resumeWritingAttempt(record));
+  },
+  async resumeWritingAttempt(record) {
+    const recordId = String(record && record.id || '');
+    if (!recordId) return;
+    this.writingResumeInFlight = this.writingResumeInFlight || {};
+    if (this.writingResumeInFlight[recordId]) return;
+    this.writingResumeInFlight[recordId] = true;
+    const result = await store.getWritingAttemptDetail(recordId);
+    delete this.writingResumeInFlight[recordId];
+    if (!this.historyPageActive) return;
+    if (!result || result.syncMode === 'cloud-error' || !result.attempt) {
+      this.writingResumeTimers = this.writingResumeTimers || {};
+      clearTimeout(this.writingResumeTimers[recordId]);
+      this.writingResumeTimers[recordId] = setTimeout(() => {
+        if (!this.historyPageActive) return;
+        const latest = (this.data.records || []).find((item) => item.id === recordId);
+        if (latest) this.resumeWritingAttempt(latest);
+      }, 10000);
+      return;
+    }
+    const normalized = normalizeWriting(result.attempt, 0);
+    const current = (this.data.records || []).find((item) => item.id === recordId);
+    if (!current) return;
+    this.updateRecord(recordId, {
+      summary: normalized.summary,
+      attempt: normalized.attempt,
+      manualMarkItems: normalized.manualMarkItems,
+      detailReady: current.detailReady,
+      detailLoading: false
+    });
+    if (isWritingGradingPending(normalized.attempt)) {
+      this.writingResumeTimers = this.writingResumeTimers || {};
+      clearTimeout(this.writingResumeTimers[recordId]);
+      this.writingResumeTimers[recordId] = setTimeout(() => {
+        if (!this.historyPageActive) return;
+        const latest = (this.data.records || []).find((item) => item.id === recordId);
+        if (latest) this.resumeWritingAttempt(latest);
+      }, 10000);
     }
   },
   openHistory() {

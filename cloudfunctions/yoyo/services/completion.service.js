@@ -67,14 +67,19 @@ async function upsertStudyCompletion(ctx, today, payload) {
     recordId
   }).orderBy('updatedAt', 'desc').limit(20).get();
   const current = completionRecords.dedupeCompletionItems(result && result.data || [])[0];
-  if (current && current._id) {
-    await dbAdapter.collection(COLLECTION).doc(current._id).update({ data: record });
-    return { saved: true, updated: true, item: record };
-  }
-  await dbAdapter.collection(COLLECTION).doc(completionRecords.buildCompletionDocumentId(recordId)).set({
-    data: Object.assign({}, record, { createdAt: now })
+  const documentId = current && current._id
+    ? current._id
+    : completionRecords.buildCompletionDocumentId(recordId);
+  await dbAdapter.collection(COLLECTION).doc(documentId).set({
+    data: Object.assign({}, record, {
+      createdAt: current && current.createdAt || now
+    })
   });
-  return { saved: true, updated: false, item: record };
+  return {
+    saved: true,
+    updated: !!(current && current._id),
+    item: Object.assign({}, record, { _id: documentId })
+  };
 }
 
 async function recordStudyCompletion(event) {

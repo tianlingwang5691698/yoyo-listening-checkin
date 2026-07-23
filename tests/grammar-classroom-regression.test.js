@@ -802,7 +802,7 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   const grammarService = fs.readFileSync(path.join(__dirname, '../cloudfunctions/yoyo/services/grammar.service.js'), 'utf8');
   assert.match(storeSource, /getGrammarNarrationAudio/);
   assert.match(cloudIndex, /getGrammarNarrationAudio/);
-  assert.match(cloudClient, /analyzeWritingTranslation' \|\| action === 'submitWritingAttempt' \|\| action === 'gradeWritingAttempt' \|\| action === 'getWritingAttemptDetail' \|\| action === 'getGrammarNarrationAudio' \|\| action === 'synthesizeIeltsPromptAudio'\)[\s\S]*timeoutMs = 180000/);
+  assert.match(cloudClient, /getReadingStudyPack' \|\| action === 'getListeningStudyPack' \|\| action === 'getGrammarNarrationAudio' \|\| action === 'synthesizeIeltsPromptAudio'\)[\s\S]*timeoutMs = 180000/);
   assert.match(grammarService, /grammarLessonNarrationAudios/);
   assert.match(grammarService, /getCachedNarrationAudio/);
   assert.match(grammarService, /getHistoricalNarrationAudio/);

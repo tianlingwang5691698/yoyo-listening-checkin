@@ -1057,9 +1057,12 @@ async function generateWritingBandSample(options) {
 }
 
 async function getWritingAttempts(options, onRefresh) {
-  return callCloud('getWritingAttempts', withSelectedStudent(Object.assign({}, options || {})), {
+  const payload = Object.assign({}, options || {});
+  const forceRefresh = payload.forceRefresh === true;
+  delete payload.forceRefresh;
+  return callCloud('getWritingAttempts', withSelectedStudent(payload), {
     attempts: []
-  }, { onRefresh });
+  }, { onRefresh, useCache: !forceRefresh });
 }
 
 async function getWritingAttemptDetail(attemptId) {

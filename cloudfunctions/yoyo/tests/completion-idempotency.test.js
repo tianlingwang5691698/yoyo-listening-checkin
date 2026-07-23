@@ -50,6 +50,48 @@ test('concurrent completion writes use one deterministic document', async (t) =>
   assert.equal(addCalls, 0);
 });
 
+test('existing completion is replaced with the final grading result', async (t) => {
+  let saved = null;
+  t.mock.method(study, 'isStudyWriteAllowed', () => true);
+  t.mock.method(dbAdapter, 'collection', () => ({
+    where: () => ({
+      orderBy: () => ({
+        limit: () => ({
+          get: async () => ({
+            data: [{
+              _id: 'completion-existing',
+              recordId: 'family-1_child-1_2026-07-23_writing_prompt-1',
+              progressText: '批改中',
+              createdAt: '2026-07-23T10:00:00.000Z',
+              updatedAt: '2026-07-23T10:00:00.000Z'
+            }]
+          })
+        })
+      })
+    }),
+    doc: (id) => ({
+      set: async ({ data }) => { saved = { id, data }; }
+    })
+  }));
+  const result = await completionService.upsertStudyCompletion({
+    family: { familyId: 'family-1' },
+    child: { childId: 'child-1' },
+    user: { userId: 'user-1' },
+    member: { memberId: 'member-1' }
+  }, '2026-07-23', {
+    type: 'writing',
+    targetId: 'prompt-1',
+    title: 'IELTS Writing Task 1',
+    progressText: '7.0/9 分',
+    latestAttempt: { status: 'graded', score: 7, totalScore: 9 }
+  });
+  assert.equal(result.updated, true);
+  assert.equal(saved.id, 'completion-existing');
+  assert.equal(saved.data.createdAt, '2026-07-23T10:00:00.000Z');
+  assert.equal(saved.data.progressText, '7.0/9 分');
+  assert.equal(saved.data.latestAttempt.status, 'graded');
+});
+
 test('distributed listening study-pack job returns generating without calling the model again', async (t) => {
   t.mock.method(study, 'prepareRequestContext', async () => ({}));
   t.mock.method(dbAdapter, 'collection', () => ({

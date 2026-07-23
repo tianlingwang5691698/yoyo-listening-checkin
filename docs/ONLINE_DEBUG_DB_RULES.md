@@ -1,5 +1,22 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-23 学生写作评分完成但日报仍显示批改中
+
+1. 现象：学生 IELTS Task 1 已得到 8 分，但当日日报看不到最终分；再次提交同文仍为 8 分。
+2. 查询：最新两条 `writingAttempts` 均为 `graded / 8`；同日同题 `studyCompletedItems` 仍为 `grading-pending / 批改中`，日报同步保存了这条旧完成记录；第二次记录 `scoreSource=identical-cache`。
+3. 结论：评分完成后的完成记录覆盖失败被静默忽略，且相同评分版本按指纹正确复用了第一次结果；原评分提示对 Band 8 的语言与结构门槛不够具体。
+4. 修复：完成记录改为确定性 `set` 覆盖，成功后立即重建当日日报，失败输出 `writing-completion-sync-failed`；评分版本升级，四项按官方整数 Band 描述逐项匹配，移除自定义封顶和半分维度，旧 8 分缓存不再复用。
+5. 是否需要发版：需部署 `yoyo`；前端无需改动。
+
+### 2026-07-23 写作提交约 65 秒资源超时
+
+1. 现象：两次 `gpt-5.6-sol` 调用分别耗时 88 秒、84 秒并成功，但页面均没有结果；此前页面在约 65 秒返回 `-501002 resource server timeout / ESOCKETTIMEDOUT`。
+2. 查询：正式库对应时间 `writingAttempts=0`、写作 `studyCompletedItems=0`；两个相关设备会话均为 `studyRole=parent`。第二次 `yoyo` 从 19:54:26 运行 86852ms，`RetCode=0 / InvokeFinished=1`，证明云函数最终成功。
+3. 结论：两次都走 `submitWritingAttempt` 的家长预览分支，直接同步等待 `gradeWriting`，按规则不落学生记录。第一次开始于 19:53:26 部署切换前后；第二次云端虽成功，但 `wx.cloud.callFunction` 约 65 秒已断开，86.852 秒返回值无法送达页面，也没有记录可供续查。
+4. 当前配置：`yoyo.timeout=300`、写作客户端等待 320 秒只保证云端可继续执行，无法绕过同步调用资源连接中断。
+5. 修复：家长预览拆为“快速写入 `writingPreviewAttempts` → 独立评分写回 → 页面/写作记录轮询同一任务”；任务按创建家长和目标学生隔离，不写学生 `writingAttempts`、完成记录或日报。
+6. 是否需要发版：需先创建空集合 `writingPreviewAttempts`，再部署 `yoyo` 并发布前端；单独调整超时不足以解决。
+
 ### 2026-07-23 IELTS Writing Task 1 模型成功但页面显示批改失败
 
 1. 现象：IELTS 小作文提交后页面显示批改失败，模型平台显示 `gpt-5.6-sol` 已在 72 秒完成调用。

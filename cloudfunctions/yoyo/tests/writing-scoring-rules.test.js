@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const writing = require('../services/writing.service')._test;
+const officialDescriptors = require('../lib/ielts-writing-band-descriptors');
 
 test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   const task1 = {
@@ -26,14 +27,35 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /Task Achievement/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /visualData/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题参考范文/);
-  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /public Writing band descriptors · May 2023/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /public Writing Band Descriptors, updated May 2023/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /四项分别只能给0–9整数Band/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /A script must fully fit the positive features/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
+  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v5-official-/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原文证据/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题图片为最终事实来源/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /task1FactCheck/);
-  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /重大特征，该项最高7分/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
   assert.match(writing.buildGradingPrompt(task2, 'Essay'), /Task Response/);
   assert.doesNotMatch(writing.buildGradingPrompt(task1, 'Essay'), /"totalScore":20/);
+});
+
+test('Task 1 和 Task 2 完整加载官方 0–9 Band 四项描述', () => {
+  const task1Guide = officialDescriptors.buildOfficialWritingBandGuide('ielts-task-1');
+  const task2Guide = officialDescriptors.buildOfficialWritingBandGuide('ielts-task-2');
+  for (let band = 0; band <= 9; band += 1) {
+    assert.match(task1Guide, new RegExp(`Band ${band}(?:\\n|$)`));
+    assert.match(task2Guide, new RegExp(`Band ${band}(?:\\n|$)`));
+  }
+  ['Task Achievement', 'Task Response', 'Coherence and Cohesion', 'Lexical Resource', 'Grammatical Range and Accuracy']
+    .forEach((label) => assert.match(`${task1Guide}\n${task2Guide}`, new RegExp(label)));
+  assert.match(task1Guide, /key features are skilfully selected/);
+  assert.match(task1Guide, /clear overview/);
+  assert.match(task2Guide, /well-developed position/);
+  assert.match(task2Guide, /Paragraphing may be inadequate or missing/);
+  assert.match(task1Guide, /20 words or fewer/);
+  assert.match(task2Guide, /totally memorised/);
 });
 
 test('雅思总分由四项平均并归入半分档', () => {
@@ -65,9 +87,9 @@ test('雅思总分由四项平均并归入半分档', () => {
     polishedVersion: 'model answer'
   }, prompt);
 
-  assert.equal(review.score, 6.5);
+  assert.equal(review.score, 7);
   assert.equal(review.totalScore, 9);
-  assert.equal(review.level, 'IELTS Band 6.5');
+  assert.equal(review.level, 'IELTS Band 7.0');
   assert.equal(review.contentLabel, 'Task Achievement · 6.0');
   assert.equal(review.polishedTitle, '原题参考范文');
   assert.equal(review.isIelts, true);
@@ -114,7 +136,7 @@ test('雅思评分兼容官方维度名称与常见讲解字段变体', () => {
     ]
   }, prompt);
 
-  assert.equal(review.score, 6.5);
+  assert.equal(review.score, 7);
   assert.equal(review.criterionDetailsComplete, true);
   assert.equal(review.feedbackNotice, '');
   assert.equal(writing.hasUsableIeltsReview(review), true);
@@ -142,7 +164,7 @@ test('雅思四项分有效时保留评分，不因部分讲解缺失判整次�
   assert.match(review.feedbackNotice, /四项 Band 分已保留/);
 });
 
-test('Task 1 重大图表遗漏限制 Task Achievement，次要中间值遗漏不机械降档', () => {
+test('Task 1 事实核对只提供证据，不机械改写官方维度分', () => {
   const prompt = { _id: 'ielts-task-1', contentType: 'ielts-writing-task-1', score: 9 };
   const base = {
     dimensionScores: {
@@ -171,11 +193,29 @@ test('Task 1 重大图表遗漏限制 Task Achievement，次要中间值遗漏�
     }
   }), prompt);
 
-  assert.equal(major.dimensionScores.task, 7);
+  assert.equal(major.dimensionScores.task, 8);
   assert.equal(major.score, 8);
-  assert.equal(major.taskAchievementCapApplied, true);
+  assert.equal(major.taskAchievementCapApplied, false);
   assert.equal(minor.dimensionScores.task, 8);
   assert.equal(minor.taskAchievementCapApplied, false);
+});
+
+test('雅思四项维度按官方整数 Band 归一，总分按最近 0.5 报告', () => {
+  const review = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 6.5,
+      coherenceCohesion: 7.6,
+      lexicalResource: 7.4,
+      grammaticalRangeAccuracy: 6.5
+    }
+  }, { contentType: 'ielts-writing-task-1', score: 9 });
+  assert.deepEqual(review.dimensionScores, {
+    task: 7,
+    coherenceCohesion: 8,
+    lexicalResource: 7,
+    grammaticalRangeAccuracy: 7
+  });
+  assert.equal(review.score, 7.5);
 });
 
 test('同一题目和作文生成稳定评分指纹并复用内存结果', () => {
@@ -193,6 +233,34 @@ test('同一题目和作文生成稳定评分指纹并复用内存结果', () =>
 
   writing.setMemoryCachedWritingReview(first, { score: 7.5, summary: '稳定结果' });
   assert.deepEqual(writing.getMemoryCachedWritingReview(first), { score: 7.5, summary: '稳定结果' });
+});
+
+test('家长写作预览使用独立且受归属保护的任务引用', () => {
+  const ctx = {
+    user: { userId: 'user-parent' },
+    member: { memberId: 'member-parent' },
+    family: { familyId: 'family-1' },
+    child: { childId: 'child-1' }
+  };
+  const documentId = writing.buildPreviewAttemptDocumentId(ctx, 'fingerprint-1');
+  const attemptId = writing.formatWritingAttemptId(documentId, true);
+  const ref = writing.resolveWritingAttemptRef(attemptId);
+  const attempt = {
+    isPreview: true,
+    userId: 'user-parent',
+    memberId: 'member-parent',
+    familyId: 'family-1',
+    childId: 'child-1'
+  };
+
+  assert.equal(documentId.length, 32);
+  assert.equal(ref.collectionName, 'writingPreviewAttempts');
+  assert.equal(ref.documentId, documentId);
+  assert.equal(ref.isPreview, true);
+  assert.equal(writing.isWritingAttemptAccessible(ctx, attempt, true), true);
+  assert.equal(writing.isWritingAttemptAccessible(Object.assign({}, ctx, {
+    user: { userId: 'other-parent' }
+  }), attempt, true), false);
 });
 
 test('雅思按需生成高 1 与高 2 Band 教学范文协议', () => {
