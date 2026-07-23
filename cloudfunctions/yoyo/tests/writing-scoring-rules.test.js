@@ -12,6 +12,21 @@ function buildFeatureChecks(taskType, key, band, evidence = 'Student evidence') 
   }));
 }
 
+function buildCompleteDecision(taskType, key, band, evidence = 'Student evidence') {
+  return {
+    key,
+    awardedBand: band,
+    checkedFromBand9: true,
+    awardedBandFullyMet: true,
+    awardedBandEvidence: [evidence],
+    awardedBandFeatureChecks: buildFeatureChecks(taskType, key, band, evidence),
+    nextHigherBand: band === 9 ? null : band + 1,
+    nextHigherBandFullyMet: band === 9 ? null : false,
+    unmetHigherBandFeatures: band === 9 ? [] : [`Band ${band + 1} is not fully met.`],
+    decisionReason: `Band ${band} is the highest fully met band.`
+  };
+}
+
 test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   const task1 = {
     title: 'Cambridge IELTS 21 Test 1 Writing Task 1',
@@ -42,7 +57,7 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /officialBandDecisions/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /从 Band 9 向下/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
-  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v8-terra-trial-/);
+  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v9-terra-midband-/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /awardedBandFeatureChecks/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /仅有常规图表词、准确但重复的趋势词不能自动满足/);
@@ -335,6 +350,92 @@ test('雅思校准超时或逐档证据不完整时保留有效四项评分', ()
   assert.equal(timeoutFallback.score, 7.5);
   assert.equal(timeoutFallback.gradingDegradedReason, 'writing-timeout');
   assert.match(timeoutFallback.feedbackNotice, /分数和有效反馈已保留/);
+});
+
+test('雅思 3.5–7.5 强制独立校准且完整高分不重复校准', () => {
+  const midBandReview = {
+    isIelts: true,
+    taskType: 'ielts-task-1',
+    score: 7.5,
+    dimensionScores: {
+      task: 7,
+      coherenceCohesion: 8,
+      lexicalResource: 7,
+      grammaticalRangeAccuracy: 7
+    },
+    officialBandDecisions: [
+      buildCompleteDecision('ielts-task-1', 'task', 7),
+      buildCompleteDecision('ielts-task-1', 'coherenceCohesion', 8),
+      buildCompleteDecision('ielts-task-1', 'lexicalResource', 7),
+      buildCompleteDecision('ielts-task-1', 'grammaticalRangeAccuracy', 7)
+    ]
+  };
+  const highBandReview = Object.assign({}, midBandReview, {
+    score: 8,
+    dimensionScores: {
+      task: 8,
+      coherenceCohesion: 8,
+      lexicalResource: 8,
+      grammaticalRangeAccuracy: 8
+    },
+    officialBandDecisions: [
+      buildCompleteDecision('ielts-task-1', 'task', 8),
+      buildCompleteDecision('ielts-task-1', 'coherenceCohesion', 8),
+      buildCompleteDecision('ielts-task-1', 'lexicalResource', 8),
+      buildCompleteDecision('ielts-task-1', 'grammaticalRangeAccuracy', 8)
+    ]
+  });
+
+  for (let score = 3.5; score <= 7.5; score += 0.5) {
+    assert.equal(writing.shouldRunIeltsCalibration(Object.assign({}, midBandReview, { score })), true);
+  }
+  assert.equal(writing.shouldRunIeltsCalibration(highBandReview), false);
+});
+
+test('雅思独立校准不携带首轮分数并强化 Band 4–7 边界', () => {
+  const prompt = {
+    title: 'Cambridge IELTS 19 Test 1 Writing Task 1',
+    contentType: 'ielts-writing-task-1',
+    prompt: 'Summarise the information.'
+  };
+  const calibrationPrompt = writing.buildIeltsCalibrationPrompt(prompt, 'The figure increased.');
+
+  assert.match(calibrationPrompt, /盲校准/);
+  assert.match(calibrationPrompt, /3\.5–7\.5/);
+  assert.match(calibrationPrompt, /明确区分 Band 4、5、6、7/);
+  assert.match(calibrationPrompt, /不得作为 Band 7 的 less common or idiomatic items/);
+  assert.match(calibrationPrompt, /不足以证明 Band 7 的 a variety of complex structures/);
+  assert.doesNotMatch(calibrationPrompt, /上一次输出/);
+});
+
+test('雅思独立校准覆盖首轮分数但保留有效参考范文', () => {
+  const prompt = { contentType: 'ielts-writing-task-1', score: 9 };
+  const firstReview = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 7,
+      coherenceCohesion: 8,
+      lexicalResource: 7,
+      grammaticalRangeAccuracy: 7
+    },
+    summary: '首轮 Band 7.5。',
+    polishedVersion: 'First model answer.'
+  }, prompt);
+  const calibratedReview = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 7,
+      coherenceCohesion: 8,
+      lexicalResource: 6,
+      grammaticalRangeAccuracy: 6
+    },
+    summary: '独立校准为 Band 7.0。'
+  }, prompt);
+  const merged = writing.mergeIeltsCalibrationReview(firstReview, calibratedReview);
+
+  assert.equal(merged.score, 7);
+  assert.equal(merged.summary, '独立校准为 Band 7.0。');
+  assert.equal(merged.polishedVersion, 'First model answer.');
+  assert.equal(merged.calibrationApplied, true);
+  assert.equal(merged.calibrationPreviousScore, 7.5);
 });
 
 test('雅思四项评分均不可恢复时才判定失败', () => {

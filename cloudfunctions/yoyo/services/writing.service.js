@@ -17,10 +17,12 @@ const {
 const COLLECTION = 'writingAttempts';
 const PREVIEW_COLLECTION = 'writingPreviewAttempts';
 const PREVIEW_ATTEMPT_PREFIX = 'preview-';
-const WRITING_SCORING_VERSION = 'writing-score-v8-terra-trial-20260723';
+const WRITING_SCORING_VERSION = 'writing-score-v9-terra-midband-20260724';
 const WRITING_GRADING_STALE_MS = 330000;
 const WRITING_MODEL_REQUEST_TIMEOUT_MS = 180000;
 const WRITING_MODEL_TOTAL_BUDGET_MS = 280000;
+const IELTS_MID_BAND_MIN = 3.5;
+const IELTS_MID_BAND_MAX = 7.5;
 const WRITING_REVIEW_MEMORY_CACHE_LIMIT = 100;
 const writingReviewMemoryCache = new Map();
 
@@ -584,12 +586,60 @@ function hasUsableIeltsReview(review) {
       .every((key) => normalizeBandScore(scores[key]) !== null));
 }
 
+function shouldRunIeltsCalibration(review) {
+  if (!hasUsableIeltsReview(review) || !hasCompleteOfficialBandDecisions(review)) return true;
+  const score = normalizeBandScore(review.score);
+  return score !== null && score >= IELTS_MID_BAND_MIN && score <= IELTS_MID_BAND_MAX;
+}
+
+function mergeIeltsCalibrationReview(firstReview, calibratedReview) {
+  if (!hasUsableIeltsReview(calibratedReview)) return calibratedReview;
+  const base = hasUsableIeltsReview(firstReview) ? firstReview : {};
+  const calibratedDetailsComplete = hasCompleteIeltsCriterionDetails(calibratedReview);
+  const criterionDetails = calibratedDetailsComplete
+    ? calibratedReview.criterionDetails
+    : (Array.isArray(base.criterionDetails) ? base.criterionDetails : []);
+  const merged = Object.assign({}, base, calibratedReview, {
+    task1FactCheck: calibratedReview.task1FactCheck
+      && Array.isArray(calibratedReview.task1FactCheck.chartFacts)
+      && calibratedReview.task1FactCheck.chartFacts.length
+      ? calibratedReview.task1FactCheck
+      : (base.task1FactCheck || calibratedReview.task1FactCheck),
+    criterionDetails,
+    strengths: calibratedReview.strengths && calibratedReview.strengths.length
+      ? calibratedReview.strengths
+      : (base.strengths || []),
+    problems: calibratedReview.problems && calibratedReview.problems.length
+      ? calibratedReview.problems
+      : (base.problems || []),
+    suggestions: calibratedReview.suggestions && calibratedReview.suggestions.length
+      ? calibratedReview.suggestions
+      : (base.suggestions || []),
+    grammarCorrections: calibratedReview.grammarCorrections && calibratedReview.grammarCorrections.length
+      ? calibratedReview.grammarCorrections
+      : (base.grammarCorrections || []),
+    polishedVersion: base.polishedVersion || calibratedReview.polishedVersion || '',
+    bandSamples: base.bandSamples || calibratedReview.bandSamples || [],
+    calibrationApplied: true,
+    calibrationPreviousScore: normalizeBandScore(base.score)
+  });
+  merged.criterionDetailsComplete = hasCompleteIeltsCriterionDetails(merged);
+  merged.officialBandDecisionsComplete = hasCompleteOfficialBandDecisions(merged);
+  merged.feedbackNotice = merged.criterionDetailsComplete && merged.officialBandDecisionsComplete
+    ? ''
+    : '四项 Band 分已完成独立校准；部分逐档证据或讲解未完整返回，有效结果已保留。';
+  return merged;
+}
+
 function selectIeltsReviewAfterRepair(firstReview, repairedReview, repairError) {
-  if (hasUsableIeltsReview(repairedReview) && hasCompleteOfficialBandDecisions(repairedReview)) {
-    return repairedReview;
+  const calibratedReview = hasUsableIeltsReview(repairedReview)
+    ? mergeIeltsCalibrationReview(firstReview, repairedReview)
+    : null;
+  if (calibratedReview && hasCompleteOfficialBandDecisions(calibratedReview)) {
+    return calibratedReview;
   }
-  const usableReview = hasUsableIeltsReview(repairedReview)
-    ? repairedReview
+  const usableReview = calibratedReview
+    ? calibratedReview
     : (hasUsableIeltsReview(firstReview) ? firstReview : null);
   if (usableReview) {
     return Object.assign({}, usableReview, {
@@ -894,6 +944,34 @@ function buildGradingPrompt(prompt, essay) {
   ].join('\n');
 }
 
+function buildIeltsCalibrationPrompt(prompt, essay) {
+  const taskType = getWritingTaskType(prompt);
+  if (taskType !== 'ielts-task-1' && taskType !== 'ielts-task-2') {
+    throw new Error('writing-ielts-calibration-only');
+  }
+  const taskCriterion = taskType === 'ielts-task-1' ? 'Task Achievement' : 'Task Response';
+  const original = sanitizePromptForGrading(prompt);
+  const essayWordCount = countIeltsWritingWords(essay);
+  const decisionShape = '{"awardedBand":number,"checkedFromBand9":true,"awardedBandFullyMet":true,"awardedBandEvidence":["当前档全部正向特征的直接原文证据"],"awardedBandFeatureChecks":[{"feature":"当前档官方英文描述中的一条完整句子","met":true,"evidence":["直接支持整句要求的学生原文"]}],"nextHigherBand":number|null,"nextHigherBandFullyMet":false|null,"unmetHigherBandFeatures":["相邻高一档未满足的官方特征"],"decisionReason":"中文逐档结论"}';
+  return [
+    `你是独立的 IELTS Academic Writing ${taskType === 'ielts-task-1' ? 'Task 1' : 'Task 2'} 复核阅卷员。只返回 JSON，不要 Markdown。`,
+    '这是一次盲校准：你看不到也不得猜测首轮分数，必须仅依据原题、学生原文和官方描述重新评分。',
+    `重点校准总分 3.5–7.5 常见边界，四项仍只能给整数 Band。必须明确区分 Band 4、5、6、7，并核查可能出现的 Band 8 单项。`,
+    buildOfficialWritingBandGuide(taskType),
+    buildOfficialBandSelectionProtocol(taskType),
+    '中分段门禁：Band 7 只有在该项官方描述的每个正向要求都有直接证据时才能授予；表达清楚、错误少或文章流畅，不能单独补偿词汇范围、复杂结构范围、任务覆盖或衔接控制的不足。',
+    'Lexical Resource：常规图表词 rise/fall/increase/decrease/figure/number、常用连接词 however/by contrast/overall、题干改写和模板短语，不得作为 Band 7 的 less common or idiomatic items。若主要依赖这些词，即使拼写全对，也应优先核对 Band 6。',
+    'Grammatical Range and Accuracy：and/but 连接、并列谓语、时间介词短语和单独一个关系从句，不足以证明 Band 7 的 a variety of complex structures。准确的简单句不能补偿复杂结构种类不足；复杂句类型有限时应优先核对 Band 6。',
+    'Coherence and Cohesion：分成四段或使用 Overall/However/By contrast 不能自动达到 Band 8；必须核查信息推进、句间衔接、指代替换和段落组织是否整体管理良好。',
+    `${taskCriterion}：准确列出若干信息不能自动达到 Band 7；必须核查题目各部分、overview或立场、主要特征或观点的发展与支持。不得使用程序自定义封顶。`,
+    'Band 6 与 Band 5：意义总体清楚、资源基本够用、总体推进清晰且错误很少妨碍理解时才支持 Band 6；范围有限重复、复杂句经常出错、组织不完全合逻辑或任务发展不足时应下查 Band 5。',
+    'Band 5 与 Band 4：只在文章仍有可辨识组织、最低限度资源和部分任务回应时给 Band 5；内容、组织或语言非常有限且频繁妨碍意义时下查 Band 4。',
+    `四项分别返回 dimensionScores、完整 officialBandDecisions 和简洁 criterionFeedback。格式：{"dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"officialBandDecisions":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":${decisionShape},"coherenceCohesion":${decisionShape},"lexicalResource":${decisionShape},"grammaticalRangeAccuracy":${decisionShape}},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文结论","evidence":["直接原文"],"descriptorMatch":"本档匹配","limiters":["高一档未满足"],"nextBandActions":["改进动作"]},"coherenceCohesion":{"comment":"中文结论","evidence":["直接原文"],"descriptorMatch":"本档匹配","limiters":["高一档未满足"],"nextBandActions":["改进动作"]},"lexicalResource":{"comment":"中文结论","evidence":["直接原文"],"descriptorMatch":"本档匹配","limiters":["高一档未满足"],"nextBandActions":["改进动作"]},"grammaticalRangeAccuracy":{"comment":"中文结论","evidence":["直接原文"],"descriptorMatch":"本档匹配","limiters":["高一档未满足"],"nextBandActions":["改进动作"]}},"summary":"独立校准总评"}`,
+    `原题信息：${JSON.stringify(original)}`,
+    `学生作答（${essayWordCount} words）：${essay}`
+  ].join('\n');
+}
+
 async function resolvePromptImageUrl(prompt, taskType) {
   if (taskType !== 'ielts-task-1') return '';
   const image = Array.isArray(prompt && prompt.images) ? prompt.images.find((item) => item && (item.fileId || item.cloudPath)) : null;
@@ -1101,16 +1179,11 @@ async function gradeWriting(prompt, essay) {
   let parsed = parseJsonText(extractMessageText(data));
   let review = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
   const isIelts = taskType === 'ielts-task-1' || taskType === 'ielts-task-2';
-  const firstReviewUsable = !isIelts || hasUsableIeltsReview(review);
-  if (isIelts && (!firstReviewUsable || !hasCompleteOfficialBandDecisions(review))) {
-    const repairPrompt = [
-      gradingPrompt,
-      '请重新执行官方 Band 0–9 逐档校准。必须从 Band 9 向下检查四个维度，返回完整 dimensionScores 和 officialBandDecisions；awardedBandFeatureChecks 必须逐字覆盖当前档官方英文描述的每一个完整句子，并分别给出直接学生原文证据。任一句无法全部举证就必须下查一档。每项同时说明相邻高一档具体哪条官方特征未满足。criterionFeedback 完整返回 comment、evidence、descriptorMatch、limiters 和 nextBandActions。',
-      `上一次输出：${JSON.stringify(parsed)}`
-    ].join('\n');
-    const repairContent = imageUrl
-      ? [{ type: 'text', text: repairPrompt }, { type: 'image_url', image_url: { url: imageUrl } }]
-      : repairPrompt;
+  if (isIelts && shouldRunIeltsCalibration(review)) {
+    const calibrationPrompt = buildIeltsCalibrationPrompt(prompt, essay);
+    const calibrationContent = imageUrl
+      ? [{ type: 'text', text: calibrationPrompt }, { type: 'image_url', image_url: { url: imageUrl } }]
+      : calibrationPrompt;
     let repairedReview = null;
     let repairError = null;
     try {
@@ -1119,7 +1192,7 @@ async function gradeWriting(prompt, essay) {
       }, {
         model: config.model,
         temperature: 0,
-        messages: [{ role: 'user', content: repairContent }]
+        messages: [{ role: 'user', content: calibrationContent }]
       }, resolveWritingModelRequestTimeout(gradingStartedAt));
       parsed = parseJsonText(extractMessageText(data));
       repairedReview = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
@@ -1902,6 +1975,8 @@ module.exports = {
     hasCompleteIeltsCriterionDetails,
     hasCompleteOfficialBandDecisions,
     hasUsableIeltsReview,
+    shouldRunIeltsCalibration,
+    mergeIeltsCalibrationReview,
     selectIeltsReviewAfterRepair,
     normalizeReview,
     countIeltsWritingWords,
@@ -1919,6 +1994,7 @@ module.exports = {
     getMemoryCachedWritingReview,
     setMemoryCachedWritingReview,
     buildGradingPrompt,
+    buildIeltsCalibrationPrompt,
     buildBandSamplePrompt,
     IELTS_WRITING_RUBRIC_VERSION,
     WRITING_SCORING_VERSION,
