@@ -786,3 +786,218 @@
 .theme-voyage .rhythm-day.is-active .rhythm-dot {
   background: #1f70a8;
 }
+
+.theme-dragon.parent-page {
+  padding-top: 34rpx;
+  background:
+    linear-gradient(180deg, #f6b51d 0 188rpx, #fff0ba 188rpx 100%),
+    #fff0ba;
+  color: #102e62;
+}
+
+.theme-dragon .parent-hero,
+.theme-dragon .daily-brief,
+.theme-dragon .insight-panel,
+.theme-dragon .today-archive,
+.theme-dragon .trend-card {
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fffdf1;
+  box-shadow: 0 8rpx 0 #f45a16;
+}
+
+.theme-dragon .parent-hero {
+  margin-top: 18rpx;
+  overflow: visible;
+  border-top: 12rpx solid #f45a16;
+  background:
+    linear-gradient(90deg, transparent 0 92%, rgba(16, 46, 98, 0.08) 92%),
+    #fffdf1;
+}
+
+.dragon-report-crest {
+  position: absolute;
+  z-index: 3;
+  top: -38rpx;
+  right: 28rpx;
+  width: 94rpx;
+  height: 94rpx;
+}
+
+.dragon-report-crest > text {
+  position: absolute;
+  left: 47rpx;
+  top: 47rpx;
+  border: 3rpx solid #102e62;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dragon-report-crest > text:nth-of-type(1) { width: 88rpx; height: 88rpx; background: #ffd83d; }
+.dragon-report-crest > text:nth-of-type(2) { width: 66rpx; height: 66rpx; }
+.dragon-report-crest > text:nth-of-type(3) { width: 46rpx; height: 46rpx; background: #fff7d4; }
+
+.dragon-report-core {
+  position: absolute;
+  z-index: 4;
+  left: 25rpx;
+  top: 25rpx;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  color: #102e62;
+  font-size: 22rpx;
+  font-weight: 900;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.theme-dragon .family-orbit {
+  display: none;
+}
+
+.theme-dragon .parent-title,
+.theme-dragon .brief-title,
+.theme-dragon .brief-copy,
+.theme-dragon .section-title,
+.theme-dragon .archive-title,
+.theme-dragon .child-name,
+.theme-dragon .module-label,
+.theme-dragon .module-count {
+  color: #102e62;
+  font-weight: 800;
+}
+
+.theme-dragon .parent-kicker,
+.theme-dragon .brief-kicker,
+.theme-dragon .brief-note,
+.theme-dragon .section-copy,
+.theme-dragon .module-copy,
+.theme-dragon .child-code,
+.theme-dragon .archive-copy,
+.theme-dragon .rhythm-copy,
+.theme-dragon .rhythm-minutes {
+  color: #665b48;
+}
+
+.theme-dragon .student-switch,
+.theme-dragon .brief-action,
+.theme-dragon .archive-link,
+.theme-dragon .detail-link {
+  min-height: 62rpx;
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #f45a16;
+  color: #fff;
+  box-shadow: 0 5rpx 0 #102e62;
+}
+
+.theme-dragon .brief-progress {
+  margin-bottom: 20rpx;
+}
+
+.theme-dragon .progress-line {
+  height: 4rpx;
+  background: #102e62;
+}
+
+.theme-dragon .progress-node {
+  border: 3rpx solid #102e62;
+  background: #fff7d4;
+}
+
+.theme-dragon .progress-node.is-active {
+  background: #ffd83d;
+  box-shadow: 0 0 0 7rpx rgba(244, 90, 22, 0.16);
+}
+
+.dragon-report-meter {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10rpx;
+  margin-bottom: 24rpx;
+}
+
+.dragon-report-meter view {
+  min-width: 0;
+  padding: 14rpx 8rpx;
+  border: 3rpx solid #102e62;
+  border-radius: 6rpx;
+  background: #ffd83d;
+  text-align: center;
+}
+
+.dragon-report-meter text {
+  display: block;
+  color: #102e62;
+  font-size: 19rpx;
+  line-height: 1.2;
+}
+
+.dragon-report-meter text + text {
+  margin-top: 6rpx;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.theme-dragon .insight-map {
+  gap: 18rpx;
+}
+
+.theme-dragon .insight-card {
+  min-height: 156rpx;
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fff7d4;
+  box-shadow: 0 5rpx 0 rgba(244, 90, 22, 0.72);
+}
+
+.theme-dragon .module-reading,
+.theme-dragon .module-speaking {
+  background: #eaf7e6;
+}
+
+.theme-dragon .module-writing {
+  background: #ffe0cf;
+}
+
+.theme-dragon .insight-symbol {
+  opacity: 1;
+}
+
+.theme-dragon .insight-symbol text {
+  border-radius: 0;
+  background: #f45a16;
+}
+
+.theme-dragon .today-archive {
+  padding-left: 92rpx;
+  background: #102e62;
+}
+
+.theme-dragon .today-archive .archive-title,
+.theme-dragon .today-archive .archive-copy {
+  color: #fff7d4;
+}
+
+.theme-dragon .archive-ribbon {
+  border-radius: 3rpx;
+  background: repeating-linear-gradient(180deg, #ffd83d 0 14rpx, #f45a16 14rpx 28rpx);
+}
+
+.theme-dragon .rhythm-day {
+  border: 3rpx solid #102e62;
+  border-radius: 7rpx;
+  background: #fff7d4;
+}
+
+.theme-dragon .rhythm-day.is-active {
+  background: #ffd83d;
+  box-shadow: inset 0 -6rpx 0 #f45a16;
+}
+
+.theme-dragon .rhythm-dot,
+.theme-dragon .rhythm-day.is-active .rhythm-dot {
+  border: 2rpx solid #102e62;
+  background: #f45a16;
+}

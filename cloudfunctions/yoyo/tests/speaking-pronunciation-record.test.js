@@ -6,6 +6,24 @@ const study = require('../facades/study.facade');
 const attemptRepository = require('../repositories/attempt.repository');
 const speakingEngine = require('../lib/speaking-engine');
 
+test('SOE 跟读总分由三个可见分项统一计算', () => {
+  assert.equal(speakingEngine.calculatePronunciationScore(95, 96, 100), 96);
+  const result = speakingEngine.extractTencentSoeScores([{
+    SuggestedScore: 66,
+    PronAccuracy: 95,
+    PronFluency: 0.96,
+    PronCompletion: 1
+  }]);
+  assert.equal(result.score, 96);
+  assert.equal(result.providerSuggestedScore, 66);
+  assert.equal(result.scoreFormula, 'accuracy*0.55+fluency*0.25+completion*0.20');
+  assert.ok(result.feedback);
+  assert.match(speakingEngine.buildPronunciationFeedback(95, 96, 100), /重音和语调/);
+  assert.match(speakingEngine.buildPronunciationFeedback(72, 90, 100), /发音和单词重音/);
+  assert.match(speakingEngine.buildPronunciationFeedback(92, 70, 100), /意群朗读/);
+  assert.match(speakingEngine.buildPronunciationFeedback(92, 90, 68), /漏词或未读完整/);
+});
+
 test('学生 SOE 跟读评分写入记录并刷新日报', async (t) => {
   const records = [];
   let reportDate = '';
@@ -30,6 +48,9 @@ test('学生 SOE 跟读评分写入记录并刷新日报', async (t) => {
     accuracy: 95,
     fluency: 91,
     completion: 100,
+    feedback: '发音准确、节奏流畅、内容完整。',
+    scoreFormula: 'accuracy*0.55+fluency*0.25+completion*0.20',
+    providerSuggestedScore: 66,
     requestId: 'soe-request-1',
     status: 'Finished'
   }));
@@ -61,6 +82,9 @@ test('学生 SOE 跟读评分写入记录并刷新日报', async (t) => {
   assert.equal(records[0].pronunciationAccuracyScore, 95);
   assert.equal(records[0].pronunciationFluencyScore, 91);
   assert.equal(records[0].pronunciationCompletionScore, 100);
+  assert.equal(records[0].feedback, '发音准确、节奏流畅、内容完整。');
+  assert.equal(records[0].scoreFormula, 'accuracy*0.55+fluency*0.25+completion*0.20');
+  assert.equal(records[0].providerSuggestedScore, 66);
   assert.equal(records[0].scoreProvider, 'tencent-soe');
   assert.equal(reportDate, '2026-07-22');
   assert.equal(result.attempt.attemptId, 'attempt-1');

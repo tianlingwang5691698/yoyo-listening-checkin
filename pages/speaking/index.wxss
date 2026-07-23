@@ -3033,6 +3033,10 @@
 .ielts-band-grid .ielts-band-value { grid-row: 1 / 3; grid-column: 2; color: #c64f43; font-size: 32rpx; font-weight: 800; line-height: 1; }
 .ielts-band-grid .ielts-band-en { color: rgba(34, 49, 61, 0.52); font-size: 17rpx; line-height: 1.25; }
 .ielts-band-feedback { margin-top: 14rpx; padding-top: 12rpx; border-top: 1rpx solid rgba(23, 59, 80, 0.12); color: #22313d; font-size: 21rpx; line-height: 1.55; }
+.repeat-inline-feedback { width: 100%; margin-top: 14rpx; padding-top: 12rpx; border-top: 1rpx solid rgba(23, 59, 80, 0.12); color: #22313d; font-size: 22rpx; line-height: 1.55; text-align: left; }
+.theme-library .repeat-inline-feedback { border-color: rgba(76, 57, 39, 0.18); color: #493b2d; }
+.theme-voyage .repeat-inline-feedback { border-color: rgba(99, 58, 32, 0.24); color: #49321f; }
+.theme-dragon .repeat-inline-feedback { border-color: rgba(16, 46, 98, 0.22); color: #102e62; }
 .ielts-band-note { margin-top: 10rpx; color: rgba(34, 49, 61, 0.48); font-size: 18rpx; text-align: center; }
 .ielts-inline-progress { color: #c64f43; font-weight: 700; }
 .ielts-inline-error { color: #b4382f; }
@@ -3450,3 +3454,262 @@
 .theme-dragon .ielts-exam-sheet .ielts-focus-answer.is-recording { border-color: #102e62; background: #b72d24; }
 .theme-dragon .ielts-exam-sheet .ielts-play-button { border: 3rpx solid #102e62; background: #ffd83d; }
 .theme-dragon .ielts-exam-sheet .ielts-score-button.is-focus { background: #fffef7; color: #b72d24; }
+
+/* Four-theme speaking scenes */
+.speaking-header {
+  position: relative;
+  min-height: 170rpx;
+  padding-right: 190rpx;
+}
+
+.speaking-header-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.warm-speaking-stage,
+.voyage-speaking-stage,
+.dragon-speaking-stage {
+  position: absolute;
+  right: 26rpx;
+  top: 50%;
+  width: 136rpx;
+  height: 116rpx;
+  transform: translateY(-50%);
+}
+
+.warm-speaking-stage {
+  border: 1rpx solid rgba(255, 255, 255, 0.82);
+  border-radius: 18rpx;
+  background: rgba(219, 238, 245, 0.72);
+  box-shadow: inset 0 0 24rpx rgba(255, 255, 255, 0.64);
+}
+
+.warm-stage-ring {
+  position: absolute;
+  left: 18rpx;
+  top: 16rpx;
+  width: 54rpx;
+  height: 54rpx;
+  border: 2rpx solid #8db7d4;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9rpx rgba(141, 183, 212, 0.12);
+}
+
+.warm-stage-mic {
+  position: absolute;
+  left: 35rpx;
+  top: 27rpx;
+  width: 20rpx;
+  height: 30rpx;
+  border: 3rpx solid #477a99;
+  border-radius: 12rpx;
+}
+
+.warm-stage-mic::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -13rpx;
+  width: 28rpx;
+  height: 14rpx;
+  border-right: 3rpx solid #477a99;
+  border-bottom: 3rpx solid #477a99;
+  border-left: 3rpx solid #477a99;
+  border-radius: 0 0 16rpx 16rpx;
+  transform: translateX(-50%);
+}
+
+.warm-stage-wave,
+.voyage-stage-signal,
+.dragon-stage-meter {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  gap: 5rpx;
+}
+
+.warm-stage-wave {
+  right: 15rpx;
+  bottom: 18rpx;
+  height: 52rpx;
+}
+
+.warm-stage-wave text {
+  width: 5rpx;
+  border-radius: 4rpx;
+  background: #86aaa1;
+}
+
+.warm-stage-wave text:nth-child(1),
+.warm-stage-wave text:nth-child(5) { height: 18rpx; }
+.warm-stage-wave text:nth-child(2),
+.warm-stage-wave text:nth-child(4) { height: 36rpx; }
+.warm-stage-wave text:nth-child(3) { height: 52rpx; }
+
+.voyage-speaking-stage {
+  border: 4rpx solid #8f5b2d;
+  border-radius: 6rpx;
+  background:
+    repeating-linear-gradient(0deg, rgba(105, 68, 29, 0.04) 0 2rpx, transparent 2rpx 16rpx),
+    #f5e3b5;
+  box-shadow: 0 6rpx 0 #633a20;
+}
+
+.voyage-stage-compass {
+  position: absolute;
+  left: 12rpx;
+  top: 14rpx;
+  width: 58rpx;
+  height: 58rpx;
+  border: 5rpx double #c49338;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 337.5deg, #bf4938 0 12.5%, #f5e5b7 12.5% 25%, #176a99 25% 37.5%, #f5e5b7 37.5% 50%, #bf4938 50% 62.5%, #f5e5b7 62.5% 75%, #176a99 75% 87.5%, #f5e5b7 87.5%);
+  box-shadow: inset 0 0 0 10rpx #f5e5b7;
+  color: #173f57;
+  font: 800 15rpx/26rpx Georgia, serif;
+  text-align: center;
+}
+
+.voyage-stage-route {
+  position: absolute;
+  left: 16rpx;
+  right: 16rpx;
+  bottom: 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2rpx dashed #b47a31;
+}
+
+.voyage-stage-route text {
+  width: 12rpx;
+  height: 12rpx;
+  margin-top: -7rpx;
+  border: 3rpx solid #f5e3b5;
+  border-radius: 50%;
+  background: #176a99;
+  box-shadow: 0 0 0 2rpx #c49338;
+}
+
+.voyage-stage-route text:nth-child(2) { background: #bf4938; }
+.voyage-stage-route text:nth-child(3) { background: #318d7b; }
+
+.voyage-stage-signal {
+  right: 16rpx;
+  top: 18rpx;
+  height: 46rpx;
+}
+
+.voyage-stage-signal text {
+  width: 6rpx;
+  border-radius: 3rpx;
+  background: #bf4938;
+}
+
+.voyage-stage-signal text:nth-child(1),
+.voyage-stage-signal text:nth-child(3) { height: 22rpx; }
+.voyage-stage-signal text:nth-child(2) { height: 46rpx; background: #176a99; }
+
+.dragon-speaking-stage {
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #ffd83d;
+  box-shadow: 0 7rpx 0 #f45a16;
+}
+
+.dragon-stage-orbit text {
+  position: absolute;
+  left: 48rpx;
+  top: 48rpx;
+  border: 2rpx solid #102e62;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dragon-stage-orbit text:nth-child(1) { width: 70rpx; height: 70rpx; }
+.dragon-stage-orbit text:nth-child(2) { width: 50rpx; height: 50rpx; }
+.dragon-stage-orbit text:nth-child(3) { width: 32rpx; height: 32rpx; background: #fff7d4; }
+
+.dragon-stage-core {
+  position: absolute;
+  left: 29rpx;
+  top: 28rpx;
+  z-index: 2;
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  color: #102e62;
+  font-size: 18rpx;
+  font-weight: 900;
+  line-height: 38rpx;
+  text-align: center;
+}
+
+.dragon-stage-meter {
+  right: 16rpx;
+  bottom: 16rpx;
+  height: 58rpx;
+}
+
+.dragon-stage-meter text {
+  width: 10rpx;
+  border: 2rpx solid #102e62;
+  background: #f45a16;
+}
+
+.dragon-stage-meter text:nth-child(1) { height: 24rpx; }
+.dragon-stage-meter text:nth-child(2) { height: 42rpx; }
+.dragon-stage-meter text:nth-child(3) { height: 58rpx; }
+
+.theme-voyage .speaking-mode-row,
+.theme-dragon .speaking-mode-row {
+  position: relative;
+  padding-top: 46rpx;
+}
+
+.voyage-mode-route,
+.dragon-mode-rank {
+  position: absolute;
+  left: 20rpx;
+  top: 0;
+  min-width: 104rpx;
+  height: 34rpx;
+  padding: 0 14rpx;
+  border-radius: 0 0 5rpx 5rpx;
+  font-size: 17rpx;
+  font-weight: 800;
+  line-height: 34rpx;
+  letter-spacing: 1rpx;
+  text-align: center;
+}
+
+.voyage-mode-route {
+  background: #176a99;
+  color: #fff1c8;
+}
+
+.theme-voyage .is-ielts .voyage-mode-route {
+  background: #bf4938;
+}
+
+.dragon-mode-rank {
+  border-right: 3rpx solid #102e62;
+  border-bottom: 3rpx solid #102e62;
+  border-left: 3rpx solid #102e62;
+  background: #f45a16;
+  color: #fff;
+}
+
+.theme-dragon .is-ielts .dragon-mode-rank {
+  background: #102e62;
+  color: #ffd83d;
+}
+
+@media (max-width: 340px) {
+  .speaking-header { padding-right: 154rpx; }
+  .warm-speaking-stage,
+  .voyage-speaking-stage,
+  .dragon-speaking-stage { right: 16rpx; width: 116rpx; transform: translateY(-50%) scale(0.9); transform-origin: right center; }
+}

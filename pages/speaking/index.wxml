@@ -201,6 +201,7 @@
                   <view class="repeat-inline-metric"><text>{{texts.fluency}}</text><text>{{result.fluency || 0}}</text></view>
                   <view class="repeat-inline-metric"><text>{{texts.completeness}}</text><text>{{result.completion || 0}}</text></view>
                 </view>
+                <view class="repeat-inline-feedback" wx:if="{{result.feedback}}">{{result.feedback}}</view>
               </view>
               <view class="repeat-inline-progress" wx:else>{{repeatScoring || submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
             </view>
@@ -218,13 +219,32 @@
 
 <view class="theme-{{theme}} language-{{language}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
-    <view class="speaking-title">{{pageTitle}}</view>
-    <view class="speaking-copy" wx:if="{{pageCopy}}">{{pageCopy}}</view>
+    <view class="speaking-header-copy">
+      <view class="speaking-title">{{pageTitle}}</view>
+      <view class="speaking-copy" wx:if="{{pageCopy}}">{{pageCopy}}</view>
+    </view>
+    <view class="warm-speaking-stage" wx:if="{{theme === 'warm'}}">
+      <view class="warm-stage-ring"></view>
+      <view class="warm-stage-mic"></view>
+      <view class="warm-stage-wave"><text></text><text></text><text></text><text></text><text></text></view>
+    </view>
+    <view class="voyage-speaking-stage" wx:elif="{{theme === 'voyage'}}">
+      <view class="voyage-stage-compass">N</view>
+      <view class="voyage-stage-route"><text></text><text></text><text></text></view>
+      <view class="voyage-stage-signal"><text></text><text></text><text></text></view>
+    </view>
+    <view class="dragon-speaking-stage" wx:elif="{{theme === 'dragon'}}">
+      <view class="dragon-stage-orbit"><text></text><text></text><text></text></view>
+      <view class="dragon-stage-core">声</view>
+      <view class="dragon-stage-meter"><text></text><text></text><text></text></view>
+    </view>
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
     <view class="speaking-mode-list">
       <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
+        <view class="voyage-mode-route" wx:if="{{theme === 'voyage'}}">ROUTE 01</view>
+        <view class="dragon-mode-rank" wx:if="{{theme === 'dragon'}}">训练 01</view>
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
@@ -235,6 +255,8 @@
       </view>
 
       <view class="speaking-mode-row is-ielts" hover-class="is-pressed" bindtap="openIeltsSpeaking">
+        <view class="voyage-mode-route" wx:if="{{theme === 'voyage'}}">ROUTE 02</view>
+        <view class="dragon-mode-rank" wx:if="{{theme === 'dragon'}}">训练 02</view>
         <view class="speaking-mode-icon"><view class="mode-part">P</view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.ieltsSpeaking}}</view>
@@ -417,6 +439,7 @@
                   <view class="repeat-inline-metric"><text>{{texts.fluency}}</text><text>{{result.fluency || 0}}</text></view>
                   <view class="repeat-inline-metric"><text>{{texts.completeness}}</text><text>{{result.completion || 0}}</text></view>
                 </view>
+                <view class="repeat-inline-feedback" wx:if="{{result.feedback}}">{{result.feedback}}</view>
               </view>
               <view class="repeat-inline-progress" wx:else>{{repeatScoring || submitting ? texts.scoring : (recording ? texts.recording : texts.recorded + recordDurationText)}}</view>
             </view>

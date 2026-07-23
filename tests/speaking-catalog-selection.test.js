@@ -318,7 +318,15 @@ test('分级跟读以预览模式评分并保留录音', async () => {
     },
     async evaluateSpeakingPronunciation(payload) {
       calls.push(['evaluate', payload]);
-      return { pronunciation: { score: 91, accuracy: 92, fluency: 89, completion: 100 } };
+      return {
+        pronunciation: {
+          score: 91,
+          accuracy: 92,
+          fluency: 89,
+          completion: 100,
+          feedback: '整体完成良好。按意群朗读，减少不必要的停顿并注意连读。'
+        }
+      };
     }
   }));
   page.playScoreEffect = () => {};
@@ -340,7 +348,9 @@ test('分级跟读以预览模式评分并保留录音', async () => {
   assert.equal(calls[2][1].planRunType, 'preview');
   assert.equal(page.data.tempFilePath, '/tmp/repeat.mp3');
   assert.equal(page.data.result.score, 91);
+  assert.match(page.data.result.feedback, /意群朗读/);
   assert.equal(page.data.exercises[0].repeatResult.score, 91);
+  assert.match(page.data.exercises[0].repeatResult.feedback, /意群朗读/);
 
   page.questionAudioContext = { stop() {} };
   page.queueQuestionAutoPlay = () => {};

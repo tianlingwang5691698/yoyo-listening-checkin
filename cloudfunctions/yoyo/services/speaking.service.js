@@ -510,6 +510,13 @@ async function evaluateSpeakingPronunciation(event) {
     pronunciationFluencyScore: Number(result.fluency || 0),
     pronunciationCompletionScore: Number(result.completion || 0),
     contentGrammarScore: 0,
+    feedback: result.feedback || '',
+    scoreFormula: result.scoreFormula || '',
+    providerSuggestedScore: result.providerSuggestedScore !== null
+      && result.providerSuggestedScore !== ''
+      && Number.isFinite(Number(result.providerSuggestedScore))
+      ? Number(result.providerSuggestedScore)
+      : null,
     status: 'scored',
     scoreProvider: 'tencent-soe',
     scoreRequestId: result.requestId || '',

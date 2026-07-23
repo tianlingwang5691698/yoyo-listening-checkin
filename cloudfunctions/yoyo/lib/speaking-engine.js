@@ -40,6 +40,40 @@ function clampScore(value, fallback) {
   return Math.max(0, Math.min(100, score));
 }
 
+const PRONUNCIATION_SCORE_FORMULA = 'accuracy*0.55+fluency*0.25+completion*0.20';
+
+function calculatePronunciationScore(accuracy, fluency, completion) {
+  const values = [accuracy, fluency, completion].map((value) => clampScore(value, NaN));
+  if (values.some((value) => !Number.isFinite(value))) {
+    return NaN;
+  }
+  return Math.round((values[0] * 0.55) + (values[1] * 0.25) + (values[2] * 0.2));
+}
+
+function buildPronunciationFeedback(accuracy, fluency, completion) {
+  const metrics = [
+    { key: 'accuracy', value: clampScore(accuracy, 0) },
+    { key: 'fluency', value: clampScore(fluency, 0) },
+    { key: 'completion', value: clampScore(completion, 0) }
+  ];
+  if (metrics.every((item) => item.value >= 90)) {
+    return '发音准确、节奏流畅、内容完整。下一遍注意重音和语调变化，让表达更自然。';
+  }
+  const lowest = metrics.reduce((current, item) => (
+    item.value < current.value ? item : current
+  ));
+  const prefix = calculatePronunciationScore(accuracy, fluency, completion) >= 80
+    ? '整体完成良好。'
+    : '建议再跟读一次。';
+  if (lowest.key === 'accuracy') {
+    return `${prefix}放慢易错词，核对发音和单词重音。`;
+  }
+  if (lowest.key === 'fluency') {
+    return `${prefix}按意群朗读，减少不必要的停顿并注意连读。`;
+  }
+  return `${prefix}注意漏词或未读完整，确保每个词都清楚读出。`;
+}
+
 function readNumber(value) {
   if (value === null || value === undefined || value === '') {
     return NaN;
@@ -763,18 +797,7 @@ function extractTencentSoeScores(messages) {
     firstTencentSoeNumber(messages, ['PronCompletion', 'pron_completion', 'pronCompletion'])
       || readNamedNumber(resultText, 'PronCompletion')
   );
-  let blended = Number.isFinite(suggestedScore) ? suggestedScore : NaN;
-  if (!Number.isFinite(blended)) {
-    const weighted = [
-      [accuracy, 0.55],
-      [fluency, 0.25],
-      [completion, 0.2]
-    ].filter(([value]) => Number.isFinite(value));
-    const totalWeight = weighted.reduce((sum, item) => sum + item[1], 0);
-    blended = totalWeight
-      ? weighted.reduce((sum, item) => sum + (item[0] * item[1]), 0) / totalWeight
-      : NaN;
-  }
+  const blended = calculatePronunciationScore(accuracy, fluency, completion);
   if (!Number.isFinite(blended)) {
     return null;
   }
@@ -783,6 +806,9 @@ function extractTencentSoeScores(messages) {
     accuracy,
     fluency,
     completion,
+    feedback: buildPronunciationFeedback(accuracy, fluency, completion),
+    scoreFormula: PRONUNCIATION_SCORE_FORMULA,
+    providerSuggestedScore: Number.isFinite(suggestedScore) ? suggestedScore : null,
     rawResult: resultText
   };
 }
@@ -1038,9 +1064,7 @@ async function evaluateWithTencentSoeLegacy(audioBuffer, payload, transcript) {
   const accuracy = clampScore(readNumber(result && result.PronAccuracy), NaN);
   const fluency = clampScore(readNumber(result && result.PronFluency) * 100, NaN);
   const completion = clampScore(readNumber(result && result.PronCompletion) * 100, NaN);
-  const blended = Number.isFinite(suggestedScore)
-    ? suggestedScore
-    : clampScore((accuracy * 0.55) + (fluency * 0.25) + (completion * 0.2), NaN);
+  const blended = calculatePronunciationScore(accuracy, fluency, completion);
   if (!Number.isFinite(blended)) {
     throw new Error(`tencent-soe-no-valid-score:${result && result.Status ? result.Status : 'unknown'}`);
   }
@@ -1050,7 +1074,10 @@ async function evaluateWithTencentSoeLegacy(audioBuffer, payload, transcript) {
     status: result && result.Status,
     accuracy,
     fluency,
-    completion
+    completion,
+    feedback: buildPronunciationFeedback(accuracy, fluency, completion),
+    scoreFormula: PRONUNCIATION_SCORE_FORMULA,
+    providerSuggestedScore: Number.isFinite(suggestedScore) ? suggestedScore : null
   };
 }
 
@@ -1080,11 +1107,21 @@ async function evaluateSpeakingPronunciation(payload) {
   if (!result) {
     throw new Error('tencent-soe-no-result');
   }
+  const accuracy = Math.round(clampScore(result.accuracy, result.score || 0));
+  const fluency = Math.round(clampScore(result.fluency, result.score || 0));
+  const completion = Math.round(clampScore(result.completion, result.score || 0));
   return {
-    score: Math.round(clampScore(result.score, 0)),
-    accuracy: Math.round(clampScore(result.accuracy, result.score || 0)),
-    fluency: Math.round(clampScore(result.fluency, result.score || 0)),
-    completion: Math.round(clampScore(result.completion, result.score || 0)),
+    score: calculatePronunciationScore(accuracy, fluency, completion),
+    accuracy,
+    fluency,
+    completion,
+    feedback: buildPronunciationFeedback(accuracy, fluency, completion),
+    scoreFormula: result.scoreFormula || PRONUNCIATION_SCORE_FORMULA,
+    providerSuggestedScore: result.providerSuggestedScore !== null
+      && result.providerSuggestedScore !== ''
+      && Number.isFinite(Number(result.providerSuggestedScore))
+      ? Number(result.providerSuggestedScore)
+      : null,
     requestId: result.requestId || '',
     status: result.status || 'success'
   };
@@ -1604,6 +1641,9 @@ function summarizeAttempts(items) {
 
 module.exports = {
   getSpeakingHttpTimeoutMs,
+  calculatePronunciationScore,
+  buildPronunciationFeedback,
+  extractTencentSoeScores,
   findQuestionFromTranscript,
   buildSourceTextFromTranscript,
   roundIeltsOverallBand,

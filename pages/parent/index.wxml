@@ -74,6 +74,10 @@
   <block wx:else>
   <view class="parent-hero">
     <view class="voyage-report-crest" wx:if="{{theme === 'voyage'}}">✉</view>
+    <view class="dragon-report-crest" wx:if="{{theme === 'dragon'}}">
+      <view class="dragon-report-core">报</view>
+      <text></text><text></text><text></text>
+    </view>
     <view class="parent-identity">
       <view>
         <view class="parent-kicker">{{texts.observation}}</view>
@@ -115,6 +119,11 @@
       <view class="progress-node {{todayReport.totalCompletedCount ? 'is-active' : ''}}"></view>
       <view class="progress-line"></view>
       <view class="progress-node {{todayReport.totalMinutes ? 'is-active' : ''}}"></view>
+    </view>
+    <view class="dragon-report-meter" wx:if="{{theme === 'dragon'}}">
+      <view><text>任务</text><text>{{todayReport.totalCompletedCount || 0}}</text></view>
+      <view><text>时长</text><text>{{todayReport.totalMinutes || 0}}</text></view>
+      <view><text>模块</text><text>{{moduleStats.length || 0}}</text></view>
     </view>
     <view class="brief-action" data-date="{{todayReport.date}}" bindtap="openDailyDetail">{{texts.viewLearningFile}}</view>
   </view>
