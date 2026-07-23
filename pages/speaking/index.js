@@ -379,7 +379,10 @@ Page({
     this.ieltsItemCache = {};
     this.ieltsItemInflight = {};
     this.questionPlaybackRequestToken = 0;
+    this.questionPlaybackRequested = false;
+    this.questionAudioPlaying = false;
     this.ieltsIntroPlaybackRequestToken = 0;
+    this.answerPlaybackRequested = false;
     this.selectedRepeatTask = null;
     this.repeatPlanRequest = String(options.dailyPlan || '') === 'unlock1speaking'
       ? {
@@ -422,11 +425,20 @@ Page({
       if (!clip || !clip.started || !this.data.questionPlaying) return;
       if (Number(this.questionAudioContext.currentTime || 0) >= clip.endSec - 0.03) {
         this.pendingQuestionClip = null;
+        this.questionPlaybackRequested = false;
+        this.questionAudioPlaying = false;
         if (!this.data.ieltsMode) this.setData({ repeatPromptReady: true });
         this.questionAudioContext.stop();
       }
     });
     this.questionAudioContext.onPlay(() => {
+      if (!this.questionPlaybackRequested || this.data.recording) {
+        this.questionAudioPlaying = false;
+        this.questionPlaybackRequested = false;
+        this.questionAudioContext.stop();
+        return;
+      }
+      this.questionAudioPlaying = true;
       this.setData({
         questionPlaying: true,
         questionLoading: false,
@@ -435,6 +447,8 @@ Page({
       });
     });
     this.questionAudioContext.onEnded(() => {
+      this.questionPlaybackRequested = false;
+      this.questionAudioPlaying = false;
       this.pendingQuestionClip = null;
       this.setData({
         questionPlaying: false,
@@ -444,18 +458,29 @@ Page({
       });
     });
     this.questionAudioContext.onStop(() => {
+      this.questionAudioPlaying = false;
       this.setData({ questionPlaying: false, ieltsCueLineIndex: -1 });
     });
     this.questionAudioContext.onError((error) => this.handleQuestionAudioError(error));
     this.answerAudioContext = wx.createInnerAudioContext();
     this.answerAudioContext.obeyMuteSwitch = false;
-    this.answerAudioContext.onPlay(() => this.setData({ answerPlaying: true }));
-    this.answerAudioContext.onEnded(() => this.setData({ answerPlaying: false }));
-    this.answerAudioContext.onStop(() => this.setData({ answerPlaying: false }));
-    this.answerAudioContext.onError(() => this.setData({
-      answerPlaying: false,
-      errorText: text('answerPlaybackFailed', '录音回放失败，请重新录一次。')
-    }));
+    this.answerAudioContext.onPlay(() => {
+      if (!this.answerPlaybackRequested || this.data.recording) {
+        this.answerPlaybackRequested = false;
+        this.answerAudioContext.stop();
+        return;
+      }
+      this.setData({ answerPlaying: true });
+    });
+    this.answerAudioContext.onEnded(() => {
+      this.answerPlaybackRequested = false;
+      this.setData({ answerPlaying: false });
+    });
+    this.answerAudioContext.onStop(() => {
+      this.answerPlaybackRequested = false;
+      this.setData({ answerPlaying: false });
+    });
+    this.answerAudioContext.onError(() => this.handleAnswerPlaybackError());
     this.ieltsIntroAudioContext = wx.createInnerAudioContext();
     this.ieltsIntroAudioContext.obeyMuteSwitch = false;
     this.ieltsIntroAudioContext.autoplay = true;
@@ -988,11 +1013,8 @@ Page({
       });
       return;
     }
-    if (this.questionAudioContext) {
-      this.questionPlaybackRequestToken += 1;
-      this.pendingQuestionClip = null;
-      this.questionAudioContext.stop();
-    }
+    this.questionPlaybackRequestToken += 1;
+    this.stopQuestionPlayback();
     if (this.ieltsIntroAudioContext) {
       this.ieltsIntroPlaybackRequestToken += 1;
       this.ieltsIntroAudioContext.stop();
@@ -1258,11 +1280,8 @@ Page({
     const sequence = this.data.ieltsQuestionSequence || [];
     const questionIndex = sequence.findIndex((item) => item.viewKey === viewKey);
     const activeIeltsQuestion = questionIndex >= 0 ? sequence[questionIndex] : this.data.activeIeltsQuestion;
-    if (this.questionAudioContext) {
-      this.questionPlaybackRequestToken += 1;
-      this.pendingQuestionClip = null;
-      this.questionAudioContext.stop();
-    }
+    this.questionPlaybackRequestToken += 1;
+    this.stopQuestionPlayback();
     this.setData({
       activeId: viewKey,
       activeExercise: Object.assign({}, base, { prompt }),
@@ -1349,11 +1368,8 @@ Page({
     const exercises = this.data.exercises || [];
     const activeExercise = exercises.find((item) => item.id === id) || exercises[0];
     const session = this.repeatPracticeSessions && this.repeatPracticeSessions[activeExercise.id] || {};
-    if (this.questionAudioContext) {
-      this.questionPlaybackRequestToken += 1;
-      this.pendingQuestionClip = null;
-      this.questionAudioContext.stop();
-    }
+    this.questionPlaybackRequestToken += 1;
+    this.stopQuestionPlayback();
     this.setData({
       activeId: activeExercise.id,
       activeExercise,
@@ -1383,8 +1399,7 @@ Page({
   replayQuestion() {
     if (!this.questionAudioContext || this.data.recording || this.data.submitting) return;
     this.questionPlaybackRequestToken += 1;
-    this.pendingQuestionClip = null;
-    this.questionAudioContext.stop();
+    this.stopQuestionPlayback();
     this.setData({
       questionPlaying: false,
       questionLoading: false,
@@ -1417,6 +1432,10 @@ Page({
   },
 
   async handleQuestionAudioError(error) {
+    if (!this.questionPlaybackRequested || this.pageUnloading) {
+      this.questionAudioPlaying = false;
+      return;
+    }
     const clip = this.pendingQuestionClip;
     const requestToken = this.questionPlaybackRequestToken;
     if (!this.data.ieltsMode && clip && !clip.fallbackTried && clip.audioFileId) {
@@ -1432,7 +1451,6 @@ Page({
           clip.src = fallbackSrc;
           clip.seekRequested = false;
           clip.started = false;
-          this.questionAudioContext.stop();
           this.pendingQuestionClip = clip;
           this.questionAudioContext.src = fallbackSrc;
           return;
@@ -1440,6 +1458,8 @@ Page({
       } catch (fallbackError) {}
     }
     console.warn(`[speaking-original-audio] pages/speaking.questionAudioContext.onError -> temp-url-fallback: ${String(error && (error.errCode || error.errMsg) || 'unknown')}`);
+    this.questionPlaybackRequested = false;
+    this.questionAudioPlaying = false;
     this.pendingQuestionClip = null;
     this.setData({
       questionPlaying: false,
@@ -1464,8 +1484,6 @@ Page({
       seekRequested: false,
       started: false
     };
-    this.pendingQuestionClip = null;
-    this.questionAudioContext.stop();
     this.pendingQuestionClip = clip;
     if (String(this.questionAudioContext.src || '') === src) {
       this.startPendingQuestionClip();
@@ -1479,12 +1497,12 @@ Page({
       return;
     }
     if (this.data.questionPlaying) {
-      this.pendingQuestionClip = null;
-      this.questionAudioContext.stop();
+      this.stopQuestionPlayback();
       return;
     }
     const active = this.data.activeExercise || {};
     const requestToken = ++this.questionPlaybackRequestToken;
+    this.questionPlaybackRequested = true;
     this.setData({ questionLoading: true, errorText: '' });
     try {
       if (!this.data.ieltsMode && (active.audioUrl || active.audioFileId || active.audioCloudPath)) {
@@ -1521,11 +1539,12 @@ Page({
       if (!src) {
         throw new Error('empty-question-audio');
       }
-      this.questionAudioContext.stop();
       this.questionAudioContext.src = src;
       this.questionAudioContext.play();
     } catch (error) {
       if (requestToken !== this.questionPlaybackRequestToken) return;
+      this.questionPlaybackRequested = false;
+      this.questionAudioPlaying = false;
       this.setData({
         questionLoading: false,
         questionPlaying: false,
@@ -1541,11 +1560,8 @@ Page({
     if (this.data.recording || this.data.submitting) {
       return;
     }
-    if (this.questionAudioContext) {
-      this.questionPlaybackRequestToken += 1;
-      this.pendingQuestionClip = null;
-      this.questionAudioContext.stop();
-    }
+    this.questionPlaybackRequestToken += 1;
+    this.stopQuestionPlayback();
     this.stopAnswerPlayback();
     this.setData({
       recording: true,
@@ -1586,7 +1602,38 @@ Page({
   },
 
   stopAnswerPlayback() {
-    if (this.answerAudioContext) this.answerAudioContext.stop();
+    const shouldStop = Boolean(this.data.answerPlaying || this.answerPlaybackRequested);
+    this.answerPlaybackRequested = false;
+    if (this.answerAudioContext && shouldStop) this.answerAudioContext.stop();
+  },
+
+  stopQuestionPlayback() {
+    const clip = this.pendingQuestionClip;
+    const shouldStop = Boolean(
+      this.questionAudioPlaying
+      || this.data.questionPlaying
+      || (clip && clip.started)
+    );
+    this.questionPlaybackRequested = false;
+    this.questionAudioPlaying = false;
+    this.pendingQuestionClip = null;
+    if (this.questionClipSeekTimer) {
+      clearTimeout(this.questionClipSeekTimer);
+      this.questionClipSeekTimer = null;
+    }
+    if (this.questionAudioContext && shouldStop) this.questionAudioContext.stop();
+  },
+
+  handleAnswerPlaybackError() {
+    const shouldReport = Boolean(this.answerPlaybackRequested)
+      && !this.data.recording
+      && !this.pageUnloading;
+    this.answerPlaybackRequested = false;
+    const patch = { answerPlaying: false };
+    if (shouldReport) {
+      patch.errorText = text('answerPlaybackFailed', '录音回放失败，请重新录一次。');
+    }
+    this.setData(patch);
   },
 
   replayRepeatRecording() {
@@ -1595,13 +1642,16 @@ Page({
       this.stopAnswerPlayback();
       return;
     }
-    if (this.questionAudioContext) {
-      this.questionPlaybackRequestToken += 1;
-      this.pendingQuestionClip = null;
-      this.questionAudioContext.stop();
+    this.questionPlaybackRequestToken += 1;
+    this.stopQuestionPlayback();
+    this.answerPlaybackRequested = true;
+    this.setData({ errorText: '' });
+    try {
+      this.answerAudioContext.src = this.data.tempFilePath;
+      this.answerAudioContext.play();
+    } catch (error) {
+      this.handleAnswerPlaybackError();
     }
-    this.answerAudioContext.src = this.data.tempFilePath;
-    this.answerAudioContext.play();
   },
 
   toggleRepeatRecording() {

@@ -278,6 +278,26 @@ test('分句原音不把 cloud 文件标识直接交给真机播放器', async (
   assert.equal(page.data.exercises[0].audioEndSec, 1.8);
 });
 
+test('原句首次播放前不调用空播放器停止', () => {
+  const page = createPageInstance(loadSpeakingPage({}));
+  let stopCount = 0;
+  page.questionAudioContext = {
+    src: '',
+    stop() { stopCount += 1; }
+  };
+  page.questionPlaybackRequested = true;
+
+  page.playOriginalQuestionClip({
+    audioUrl: 'https://example.test/audio.mp3',
+    audioStartSec: 0,
+    audioEndSec: 1.2
+  });
+
+  assert.equal(stopCount, 0);
+  assert.equal(page.questionAudioContext.src, 'https://example.test/audio.mp3');
+  assert.ok(page.pendingQuestionClip);
+});
+
 test('分句公开地址播放失败时自动切换 CloudBase 临时地址', async () => {
   const page = createPageInstance(loadSpeakingPage({
     async getTempFileURL() { return 'https://temp.example.test/audio.mp3'; }
@@ -288,6 +308,7 @@ test('分句公开地址播放失败时自动切换 CloudBase 临时地址', asy
     stop() { stopCount += 1; }
   };
   page.questionPlaybackRequestToken = 3;
+  page.questionPlaybackRequested = true;
   page.pendingQuestionClip = {
     src: 'https://public.example.test/audio.mp3',
     audioFileId: 'cloud://test-env/audio.mp3',
@@ -298,10 +319,20 @@ test('分句公开地址播放失败时自动切换 CloudBase 临时地址', asy
 
   await page.handleQuestionAudioError({ errCode: 10001 });
 
-  assert.equal(stopCount, 1);
+  assert.equal(stopCount, 0);
   assert.equal(page.pendingQuestionClip.fallbackTried, true);
   assert.equal(page.pendingQuestionClip.src, 'https://temp.example.test/audio.mp3');
   assert.equal(page.questionAudioContext.src, 'https://temp.example.test/audio.mp3');
+  assert.equal(page.data.errorText, '');
+});
+
+test('无有效原句播放请求的错误回调不会污染页面', async () => {
+  const page = createPageInstance(loadSpeakingPage({}));
+  page.questionPlaybackRequested = false;
+  page.data.errorText = '';
+
+  await page.handleQuestionAudioError({ errCode: 10001 });
+
   assert.equal(page.data.errorText, '');
 });
 
@@ -461,6 +492,43 @@ test('分级跟读评分后可以回放或停止自己的录音', () => {
   page.data.answerPlaying = true;
   page.replayRepeatRecording();
   assert.equal(stopCount, 1);
+});
+
+test('开始跟读时停止旧回放不会误报录音回放失败', () => {
+  const page = createPageInstance(loadSpeakingPage({}));
+  let stopCount = 0;
+  page.answerPlaybackRequested = true;
+  page.data.answerPlaying = true;
+  page.data.activeExercise = { id: 'sentence-1', maxDurationSec: 20 };
+  page.questionAudioContext = { stop() {} };
+  page.answerAudioContext = {
+    stop() {
+      stopCount += 1;
+      page.handleAnswerPlaybackError();
+    }
+  };
+  page.recorderManager = { start() {} };
+
+  page.startRecord();
+
+  assert.equal(stopCount, 1);
+  assert.equal(page.data.recording, true);
+  assert.equal(page.data.errorText, '');
+  assert.equal(page.answerPlaybackRequested, false);
+
+  page.handleAnswerPlaybackError();
+  assert.equal(page.data.errorText, '');
+});
+
+test('用户主动回放失败时仍显示真实错误', () => {
+  const page = createPageInstance(loadSpeakingPage({}));
+  page.answerPlaybackRequested = true;
+  page.data.recording = false;
+
+  page.handleAnswerPlaybackError();
+
+  assert.equal(page.data.answerPlaying, false);
+  assert.match(page.data.errorText, /录音回放失败/);
 });
 
 test('雅思口语按分册和 Test 逐层进入且只渲染当前层', async () => {

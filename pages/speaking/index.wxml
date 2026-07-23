@@ -152,7 +152,7 @@
             <button class="ielts-focus-answer {{recording ? 'is-recording' : ''}}" disabled="{{!ieltsPromptReady || submitting || questionLoading || questionPlaying}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="toggleIeltsAnswer">{{recording ? texts.endAnswer : (submitting ? texts.scoring : (tempFilePath ? texts.restartAnswer : texts.startAnswer))}}</button>
             <button class="ielts-score-button is-focus" wx:if="{{tempFilePath && !recording && !submitting}}" catchtap="scoreIeltsAnswer">{{texts.scoreAnswer}}</button>
             <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
-              <view class="ielts-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="ielts-inline-error" wx:if="{{errorText && !recording}}">{{errorText}}</view>
               <view class="ielts-band-result" wx:elif="{{result && result.isIeltsBand}}">
                 <view class="ielts-band-summary"><view><text>练习预估</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
                 <view class="ielts-band-grid">
@@ -193,7 +193,7 @@
               <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
             </view>
             <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || repeatScoring || result || errorText}}">
-              <view class="repeat-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="repeat-inline-error" wx:if="{{errorText && !recording}}">{{errorText}}</view>
               <view class="repeat-inline-result" wx:elif="{{result}}">
                 <text class="repeat-inline-result-total">{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text>
                 <view class="repeat-inline-metrics">
@@ -389,7 +389,7 @@
                 <button class="ielts-focus-answer {{recording ? 'is-recording' : ''}}" disabled="{{!ieltsPromptReady || submitting || questionLoading || questionPlaying}}" data-exercise-id="{{activeIeltsQuestion.exerciseId}}" data-view-key="{{activeIeltsQuestion.viewKey}}" data-prompt="{{activeIeltsQuestion.prompt}}" catchtap="toggleIeltsAnswer">{{recording ? texts.endAnswer : (submitting ? texts.scoring : (tempFilePath ? texts.restartAnswer : texts.startAnswer))}}</button>
                 <button class="ielts-score-button is-focus" wx:if="{{tempFilePath && !recording && !submitting}}" catchtap="scoreIeltsAnswer">{{texts.scoreAnswer}}</button>
                 <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
-                  <view class="ielts-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+                  <view class="ielts-inline-error" wx:if="{{errorText && !recording}}">{{errorText}}</view>
                   <view class="ielts-band-result" wx:elif="{{result && result.isIeltsBand}}">
                     <view class="ielts-band-summary"><view><text>练习预估</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
                     <view class="ielts-band-grid">
@@ -431,7 +431,7 @@
               <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
             </view>
             <view class="repeat-inline-state" wx:if="{{recording || tempFilePath || submitting || repeatScoring || result || errorText}}">
-              <view class="repeat-inline-error" wx:if="{{errorText}}">{{errorText}}</view>
+              <view class="repeat-inline-error" wx:if="{{errorText && !recording}}">{{errorText}}</view>
               <view class="repeat-inline-result" wx:elif="{{result}}">
                 <text class="repeat-inline-result-total">{{texts.result}} {{result.score || 0}}{{texts.scoreUnit}}</text>
                 <view class="repeat-inline-metrics">
