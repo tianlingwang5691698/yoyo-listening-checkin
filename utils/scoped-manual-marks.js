@@ -19,6 +19,37 @@ function tokenizeScopedText(text, scopeKey) {
   });
 }
 
+function splitScopedSentences(text) {
+  const source = String(text || '').trim();
+  if (!source) return [];
+  const ranges = [];
+  const abbreviations = new Set(['mr', 'mrs', 'ms', 'dr', 'prof', 'sr', 'jr', 'st', 'vs', 'etc', 'e.g', 'i.e', 'fig', 'no']);
+  let start = 0;
+  for (let index = 0; index < source.length; index += 1) {
+    const ch = source[index];
+    if (!'.．!?。！？'.includes(ch)) continue;
+    if (ch === '.' || ch === '．') {
+      if (/\d/.test(source[index - 1] || '') && /\d/.test(source[index + 1] || '')) continue;
+      const before = source.slice(start, index);
+      const tokenMatch = before.match(/([A-Za-z]+(?:\.[A-Za-z]+)?)$/);
+      const token = String(tokenMatch && tokenMatch[1] || '').toLowerCase();
+      if (abbreviations.has(token) || /^[a-z]$/.test(token)) continue;
+      if (source[index + 1] === '.' || source[index + 1] === '．') continue;
+    }
+    let end = index + 1;
+    while (end < source.length && /["'”’)]/.test(source[end])) end += 1;
+    if (end < source.length && !/\s/.test(source[end]) && !/[A-Z“"‘']/.test(source[end])) continue;
+    while (end < source.length && /\s/.test(source[end])) end += 1;
+    const sentence = source.slice(start, end).trim();
+    if (sentence) ranges.push(sentence);
+    start = end;
+    index = end - 1;
+  }
+  const tail = source.slice(start).trim();
+  if (tail) ranges.push(tail);
+  return ranges.length ? ranges : [source];
+}
+
 function buildScopedMarkItems(sources, tokenMarks, sentenceMarks) {
   const sourceMap = sources || {};
   const wordMap = tokenMarks || {};
@@ -62,6 +93,7 @@ function buildManualMarks(sources, tokenMarks, sentenceMarks) {
 
 module.exports = {
   tokenizeScopedText,
+  splitScopedSentences,
   toggleScopedTokenMark: toggleWordMark,
   toggleScopedSentenceMark: toggleSentenceMark,
   countScopedMarks: countReadingMarks,

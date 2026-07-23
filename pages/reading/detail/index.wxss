@@ -197,6 +197,15 @@
   margin-bottom: 0;
 }
 
+.passage-paragraph.is-subtitle {
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+  border-color: transparent;
+  background: transparent;
+  text-align: center;
+  font-style: italic;
+}
+
 .passage-paragraph-label {
   display: inline-flex;
   align-items: center;

@@ -33,8 +33,8 @@
         <view class="paper-body library-article-body">
           <block wx:if="{{passage.isClozePassage}}">
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
-              <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
-                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+              <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
+                <view class="passage-paragraph-label" wx:if="{{paragraph.label && !paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main cloze-passage-text library-cloze-text">
@@ -52,8 +52,8 @@
               </view>
             </view>
             <view class="passage-text cloze-highlight-text" wx:else>
-              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
-                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
+                <view class="passage-paragraph-label" wx:if="{{paragraph.label && !paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
@@ -79,8 +79,8 @@
           </block>
           <view class="passage-text" wx:else>
             <block wx:if="{{passageParagraphs.length}}">
-              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
-                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
+                <view class="passage-paragraph-label" wx:if="{{paragraph.label && !paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
@@ -367,8 +367,8 @@
         <view class="paper-body">
           <block wx:if="{{passage.isClozePassage}}">
             <view class="cloze-passage-stack" wx:if="{{!submitted}}">
-              <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
-                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+              <view wx:for="{{passage.clozePassageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
+                <view class="passage-paragraph-label" wx:if="{{paragraph.label && !paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main cloze-passage-text">
@@ -386,8 +386,8 @@
               </view>
             </view>
             <view class="passage-text cloze-highlight-text" wx:else>
-              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
-                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
+                <view class="passage-paragraph-label" wx:if="{{paragraph.label && !paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">
@@ -413,8 +413,8 @@
           </block>
           <view class="passage-text" wx:else>
             <block wx:if="{{passageParagraphs.length}}">
-              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph">
-                <view class="passage-paragraph-label" wx:if="{{!paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
+              <view wx:for="{{passageParagraphs}}" wx:key="index" wx:for-item="paragraph" class="passage-paragraph {{paragraph.isSubtitle ? 'is-subtitle' : ''}}">
+                <view class="passage-paragraph-label" wx:if="{{paragraph.label && !paragraph.hasOriginalSourceLabel}}">{{paragraph.label}}</view>
                 <text class="passage-source-label" wx:if="{{paragraph.hasOriginalSourceLabel}}">{{paragraph.sourceLabelText}}</text>
                 <view class="passage-paragraph-content">
                   <view class="passage-paragraph-main">

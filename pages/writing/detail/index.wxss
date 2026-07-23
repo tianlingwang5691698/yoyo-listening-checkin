@@ -1771,7 +1771,7 @@
 }
 
 .writing-mark-clear { flex: none; color: #17314f; font-weight: 700; }
-.writing-mark-lines { display: grid; gap: 14rpx; }
+.writing-mark-lines { display: grid; gap: 4rpx; }
 .writing-mark-line { padding: 8rpx 10rpx; border-radius: 8rpx; color: #17314f; font-size: 27rpx; line-height: 1.7; }
 .manual-mark-word { border-radius: 5rpx; background: rgba(255, 210, 69, 0.58); }
 .manual-mark-phrase { border-radius: 5rpx; background: rgba(91, 169, 233, 0.34); }

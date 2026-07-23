@@ -46,6 +46,17 @@ test('IELTS 单独占行的 A-F 段标会与正文合并', () => {
   assert.match(source.slice(ranges[0].contentStart, ranges[0].end), /^First section opening/);
 });
 
+test('IELTS 标题下的副标题不占用正文段号', () => {
+  const file = path.join(root, 'data/ielts-academic/cambridge-17/reading/v2/reading-passages.json');
+  const item = JSON.parse(fs.readFileSync(file, 'utf8')).find((passage) => passage._id === 'ielts-academic-17-test-4-reading-passage-1');
+  const ranges = buildReadingParagraphRanges(item._id, item.passage, item.questions, ieltsParagraphMetadata[item._id]);
+  assert.equal(ranges[0].isSubtitle, true);
+  assert.equal(ranges[0].label, '');
+  assert.equal(item.passage.slice(ranges[0].start, ranges[0].end).trim(), 'How Madagascar’s bats are helping to save the rainforest');
+  assert.equal(ranges[1].label, 'Paragraph 1');
+  assert.match(item.passage.slice(ranges[1].start, ranges[1].end), /^There are few places/);
+});
+
 test('IELTS Cambridge 10-21 原始分段符号统计稳定', () => {
   let total = 0;
   let naturalParagraphs = 0;

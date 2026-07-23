@@ -209,6 +209,7 @@ function normalizePassage(passage, answers, submitted, review) {
     clozePassageParagraphs: isClozePassage ? paragraphRanges.map((range) => ({
       index: range.index,
       label: range.label,
+      isSubtitle: !!range.isSubtitle,
       hasOriginalSourceLabel: !!range.hasOriginalSourceLabel,
       sourceLabelText: range.sourceLabelText || '',
       parts: buildClozePassageParts(
@@ -530,6 +531,7 @@ function buildPassageParagraphs(passage, review, mode) {
     return {
       index: range.index,
       label: range.label,
+      isSubtitle: !!range.isSubtitle,
       hasOriginalSourceLabel: !!range.hasOriginalSourceLabel,
       sourceLabelText: range.sourceLabelText || '',
       segments

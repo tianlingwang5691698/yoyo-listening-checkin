@@ -960,3 +960,169 @@
   background: #f6e4bb;
   color: #775838;
 }
+
+/* 龙珠修炼：目录使用训练卡，不沿用雾蓝玻璃。 */
+.theme-dragon.reading-page {
+  background:
+    repeating-linear-gradient(135deg, rgba(18, 53, 107, 0.035) 0 2rpx, transparent 2rpx 28rpx),
+    linear-gradient(180deg, #fff7d9 0%, #fff0bd 100%);
+  color: #12356b;
+}
+
+.theme-dragon .reading-light {
+  background: rgba(255, 216, 61, 0.24);
+  filter: none;
+}
+
+.theme-dragon .light-two {
+  background: rgba(244, 81, 30, 0.08);
+}
+
+.theme-dragon .reading-line {
+  background: linear-gradient(90deg, transparent, rgba(18, 53, 107, 0.28), transparent);
+}
+
+.theme-dragon .reading-hero {
+  border: 4rpx solid #12356b;
+  border-radius: 10rpx;
+  background: linear-gradient(135deg, #ffd83d 0%, #ffe983 100%);
+  box-shadow: 0 10rpx 0 #f4511e;
+}
+
+.theme-dragon .reading-hero::after {
+  background: #f4511e;
+}
+
+.theme-dragon .hero-page {
+  border: 3rpx solid #12356b;
+  border-radius: 7rpx;
+  background: #fffbed;
+  box-shadow: 7rpx 7rpx 0 rgba(244, 81, 30, 0.55);
+}
+
+.theme-dragon .hero-page-back {
+  background: #ffe16b;
+}
+
+.theme-dragon .hero-page-front::after {
+  border-radius: 0 5rpx 0 5rpx;
+  background: #ffd83d;
+}
+
+.theme-dragon .hero-page-line {
+  background: rgba(18, 53, 107, 0.38);
+}
+
+.theme-dragon .hero-page-line.line-short {
+  background: #f4511e;
+}
+
+.theme-dragon .reading-eyebrow {
+  border: 2rpx solid #12356b;
+  border-radius: 5rpx;
+  background: #fff4bd;
+  color: #12356b;
+  font-weight: 700;
+}
+
+.theme-dragon .reading-title {
+  color: #12356b;
+  font-weight: 800;
+}
+
+.theme-dragon .reading-history-tabs {
+  border: 3rpx solid #12356b;
+  border-radius: 8rpx;
+  background: #fff8dd;
+}
+
+.theme-dragon .reading-history-tab {
+  border-radius: 4rpx;
+  color: #526783;
+  font-weight: 700;
+}
+
+.theme-dragon .reading-history-tab.is-active {
+  background: #12356b;
+  color: #fff6cc;
+  box-shadow: inset 0 -5rpx 0 #f4511e;
+}
+
+.theme-dragon .reading-card {
+  border: 4rpx solid #12356b;
+  border-radius: 9rpx;
+  background: #fff9df;
+  box-shadow: 0 9rpx 0 rgba(18, 53, 107, 0.24);
+  backdrop-filter: none;
+}
+
+.theme-dragon .reading-card-label,
+.theme-dragon .reading-card-state,
+.theme-dragon .directory-back-icon,
+.theme-dragon .reading-breadcrumb {
+  color: #12356b;
+}
+
+.theme-dragon .directory-row,
+.theme-dragon .task-row {
+  border: 3rpx solid #12356b;
+  border-radius: 7rpx;
+  background: #fffbed;
+  box-shadow: 0 7rpx 0 rgba(18, 53, 107, 0.20);
+}
+
+.theme-dragon .paper-group-panel {
+  background:
+    linear-gradient(90deg, #f4511e 0 14rpx, transparent 14rpx),
+    #ffe16b;
+}
+
+.theme-dragon .paper-group-panel::before {
+  background: #12356b;
+}
+
+.theme-dragon .paper-stack-mark {
+  border: 2rpx solid #12356b;
+  border-radius: 5rpx;
+  background: #fffdf1;
+  box-shadow: 6rpx 6rpx 0 #f4511e;
+}
+
+.theme-dragon .paper-stack-line {
+  background: rgba(18, 53, 107, 0.42);
+}
+
+.theme-dragon .drawer-tab,
+.theme-dragon .reading-sheet::before {
+  background: #f4511e;
+}
+
+.theme-dragon .directory-title,
+.theme-dragon .task-title {
+  color: #12356b;
+  font-weight: 800;
+}
+
+.theme-dragon .directory-meta,
+.theme-dragon .task-meta {
+  color: #5f6e83;
+}
+
+.theme-dragon .directory-arrow {
+  color: #f4511e;
+  font-weight: 900;
+}
+
+.theme-dragon .task-index,
+.theme-dragon .task-state {
+  border: 2rpx solid #12356b;
+  border-radius: 5rpx;
+  background: #ffd83d;
+  color: #12356b;
+}
+
+.theme-dragon .task-state.is-done {
+  border-color: #28784c;
+  background: #4fa26e;
+  color: #fffbed;
+}

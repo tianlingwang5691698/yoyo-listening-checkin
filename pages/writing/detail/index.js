@@ -5,7 +5,7 @@ const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const promptDisplay = require('../../../utils/writing-prompt-display');
-const { tokenizeScopedText, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../../utils/scoped-manual-marks');
+const { tokenizeScopedText, splitScopedSentences, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../../utils/scoped-manual-marks');
 
 const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
@@ -54,8 +54,15 @@ function buildWritingMarkLines(display) {
   const add = (textValue, label) => {
     const value = cleanPromptText(textValue);
     if (!value) return;
-    const scope = `writing-prompt-${entries.length}`;
-    entries.push({ scope, label: label || '', text: value, tokens: tokenizeScopedText(value, scope) });
+    splitScopedSentences(value).forEach((sentence, sentenceIndex) => {
+      const scope = `writing-prompt-${entries.length}`;
+      entries.push({
+        scope,
+        label: sentenceIndex === 0 ? (label || '') : '',
+        text: sentence,
+        tokens: tokenizeScopedText(sentence, scope)
+      });
+    });
   };
   add(source.directions, '');
   add(source.scenario, source.scenarioTitle);

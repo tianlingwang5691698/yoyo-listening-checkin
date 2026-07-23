@@ -158,6 +158,33 @@ function finalizeReadingRanges(source, ranges) {
   return markOriginalSourceLabels(source, ranges);
 }
 
+function normalizeIeltsLeadSubtitle(source, ranges) {
+  if (!Array.isArray(ranges) || ranges.length < 2) return ranges || [];
+  const first = ranges[0];
+  const firstText = source.slice(first.start, first.end).trim();
+  const isNumericFirst = /^Paragraph\s+1$/i.test(String(first.label || ''));
+  const looksLikeSubtitle = isNumericFirst
+    && !String(first.sourceLabel || '').trim()
+    && firstText.length > 1
+    && firstText.length <= 180
+    && !/[.!?。！？]["'”’)]*$/.test(firstText);
+  if (!looksLikeSubtitle) return ranges;
+  return ranges.map((range, index) => {
+    if (index === 0) {
+      return Object.assign({}, range, { index: 0, label: '', isSubtitle: true });
+    }
+    const numericMatch = String(range.label || '').match(/^Paragraph\s+(\d+)$/i);
+    return Object.assign({}, range, {
+      index,
+      label: numericMatch ? `Paragraph ${index}` : range.label
+    });
+  });
+}
+
+function finalizeIeltsRanges(source, ranges) {
+  return finalizeReadingRanges(source, normalizeIeltsLeadSubtitle(source, ranges));
+}
+
 function splitSentenceRanges(source) {
   const ranges = [];
   let start = 0;
@@ -216,18 +243,18 @@ function buildReadingParagraphRanges(passageId, passageText, questions, metadata
 
   if (isIelts && metadata) {
     const metadataRanges = rangesFromMetadata(source, metadata);
-    if (metadataRanges.length) return finalizeReadingRanges(source, metadataRanges);
+    if (metadataRanges.length) return finalizeIeltsRanges(source, metadataRanges);
   }
 
   if (isIelts && blankLineBlocks.length > 1) {
     const anchors = findOriginalIeltsLabelAnchors(source, blankLineBlocks);
     if (anchors.length) {
-      return finalizeReadingRanges(source, rangesFromIeltsAnchors(source, anchors));
+      return finalizeIeltsRanges(source, rangesFromIeltsAnchors(source, anchors));
     }
     const expected = expectedIeltsLabels(questions);
     if (expected.length && (blankLineBlocks.length === expected.length || blankLineBlocks.length === expected.length + 1)) {
       const hasIntroduction = blankLineBlocks.length === expected.length + 1;
-      return finalizeReadingRanges(source, blankLineBlocks.map((range, index) => {
+      return finalizeIeltsRanges(source, blankLineBlocks.map((range, index) => {
         if (hasIntroduction && index === 0) {
           return Object.assign({}, range, { index: 1, label: 'Introduction', sourceLabel: '' });
         }
@@ -239,12 +266,12 @@ function buildReadingParagraphRanges(passageId, passageText, questions, metadata
         });
       }));
     }
-    return finalizeReadingRanges(source, withNumericLabels(blankLineBlocks, true));
+    return finalizeIeltsRanges(source, withNumericLabels(blankLineBlocks, true));
   }
 
   if (isIelts) {
     const inlineAnchors = findInlineIeltsLabelAnchors(source, questions);
-    if (inlineAnchors.length) return finalizeReadingRanges(source, rangesFromIeltsAnchors(source, inlineAnchors));
+    if (inlineAnchors.length) return finalizeIeltsRanges(source, rangesFromIeltsAnchors(source, inlineAnchors));
   }
 
   if (!isIelts) {
@@ -255,7 +282,8 @@ function buildReadingParagraphRanges(passageId, passageText, questions, metadata
     }
   }
 
-  return finalizeReadingRanges(source, withNumericLabels(buildHeuristicRanges(source), isIelts));
+  const heuristicRanges = withNumericLabels(buildHeuristicRanges(source), isIelts);
+  return isIelts ? finalizeIeltsRanges(source, heuristicRanges) : finalizeReadingRanges(source, heuristicRanges);
 }
 
 function analyzeOriginalIeltsParagraphLabels(passageText) {
