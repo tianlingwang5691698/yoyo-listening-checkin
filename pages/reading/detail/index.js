@@ -1107,6 +1107,10 @@ Page({
       clearTimeout(this.readingEffectTimer);
       this.readingEffectTimer = null;
     }
+    if (this.questionAnalysisPollTimer) {
+      clearTimeout(this.questionAnalysisPollTimer);
+      this.questionAnalysisPollTimer = null;
+    }
     if (this.readingAudioContext) {
       this.readingAudioContext.destroy();
       this.readingAudioContext = null;
@@ -1312,6 +1316,10 @@ Page({
     const personalOnly = !!options.personalOnly;
     const cached = force ? null : getPhoneStudyPack(passageId);
     if (cached && cached.studyPack && isQuestionStudyPack(cached.studyPack)) {
+      if (this.questionAnalysisPollTimer) {
+        clearTimeout(this.questionAnalysisPollTimer);
+        this.questionAnalysisPollTimer = null;
+      }
       this.applyReview(mergeStudyPackIntoReview(this.data.review, cached.studyPack));
       this.setData({
         questionAnalysisReady: true,
@@ -1349,7 +1357,19 @@ Page({
         throw new Error(cloudError.message || text('analysisFailed', '云端解析加载失败'));
       }
       const studyPack = result && result.studyPack ? result.studyPack : null;
+      if (result && result.generating) {
+        this.setData({
+          questionAnalysisMessage: text('analysisGenerating', 'AI 解析生成中，完成后自动加载'),
+          readingDebugLines: []
+        });
+        this.scheduleQuestionAnalysisPoll(passageId, result.retryAfterMs, options);
+        return;
+      }
       if (studyPack && isQuestionStudyPack(studyPack)) {
+        if (this.questionAnalysisPollTimer) {
+          clearTimeout(this.questionAnalysisPollTimer);
+          this.questionAnalysisPollTimer = null;
+        }
         if (!personalOnly) {
           mergePhoneStudyPack(passageId, studyPack);
         }
@@ -1389,6 +1409,16 @@ Page({
       this._questionAnalysisLoading = false;
       this.setData({ questionAnalysisLoading: false });
     }
+  },
+  scheduleQuestionAnalysisPoll(passageId, retryAfterMs, options) {
+    if (this.questionAnalysisPollTimer) {
+      clearTimeout(this.questionAnalysisPollTimer);
+    }
+    const delay = Math.max(1500, Math.min(Number(retryAfterMs || 3000), 10000));
+    this.questionAnalysisPollTimer = setTimeout(() => {
+      this.questionAnalysisPollTimer = null;
+      this.ensureQuestionAnalysis(passageId, options || {});
+    }, delay);
   },
   requestQuestionAnalysis() {
     if (this.data.questionAnalysisLoading) return;

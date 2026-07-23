@@ -9,6 +9,8 @@ const { CLOUD_ASSET_BASE_URL } = require('../lib/constants');
 const DEFAULT_READING_DAILY_COUNT = 3;
 const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
+const STUDY_PACK_JOB_STALE_MS = 330000;
+const STUDY_PACK_RETRY_AFTER_MS = 3000;
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
 const READING_STUDY_MODEL_TIMEOUT_MS = 50000;
 const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
@@ -1144,32 +1146,60 @@ function buildQuestionAnalysisPrompt(passage, questions, repair) {
   ].join('\n');
 }
 
-async function buildQuestionStudyPackWithRequester(passage, model, requestJson) {
-  const parsed = await requestJson(model, buildQuestionAnalysisPrompt(passage, passage.questions || [], false));
-  const studyPack = normalizeStudyPack({
-    questionAnalyses: extractModelQuestionAnalyses(parsed, passage.questions || []),
+async function buildQuestionStudyPackWithRequester(passage, model, requestJson, options) {
+  const settings = options || {};
+  const existingStudyPack = settings.existingStudyPack && isModelStudyPack(settings.existingStudyPack)
+    ? settings.existingStudyPack
+    : null;
+  const studyPack = normalizeStudyPack(existingStudyPack || {
+    questionAnalyses: [],
     source: `model:${model}`
   }, passage);
+  studyPack.source = `model:${model}`;
   studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, []);
+  const persistProgress = async (stage) => {
+    if (typeof settings.onProgress === 'function') {
+      await settings.onProgress(studyPack, stage);
+    }
+  };
+  if (!studyPack.questionAnalyses.length) {
+    const parsed = await requestJson(model, buildQuestionAnalysisPrompt(passage, passage.questions || [], false));
+    studyPack.questionAnalyses = mergeQuestionAnalyses(
+      passage,
+      studyPack.questionAnalyses,
+      extractModelQuestionAnalyses(parsed, passage.questions || [])
+    );
+    await persistProgress('initial');
+  }
   const missingQuestions = getMissingAnalysisQuestions(studyPack, passage);
   if (missingQuestions.length) {
     const repairGroups = [];
     for (let index = 0; index < missingQuestions.length; index += 4) {
       repairGroups.push(missingQuestions.slice(index, index + 4));
     }
-    const repairResults = await Promise.all(repairGroups.map(async (questions) => {
+    const repairResults = await Promise.allSettled(repairGroups.map(async (questions) => {
       const repaired = await requestJson(model, buildQuestionAnalysisPrompt(passage, questions, true));
       return extractModelQuestionAnalyses(repaired, questions);
     }));
-    studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, repairResults.flat());
+    studyPack.questionAnalyses = mergeQuestionAnalyses(
+      passage,
+      studyPack.questionAnalyses,
+      repairResults.filter((result) => result.status === 'fulfilled').flatMap((result) => result.value)
+    );
+    await persistProgress('group-repair');
   }
   const individuallyMissing = getMissingAnalysisQuestions(studyPack, passage);
   if (individuallyMissing.length) {
-    const individualResults = await Promise.all(individuallyMissing.map(async (question) => {
+    const individualResults = await Promise.allSettled(individuallyMissing.map(async (question) => {
       const repaired = await requestJson(model, buildQuestionAnalysisPrompt(passage, [question], true));
       return extractModelQuestionAnalyses(repaired, [question]);
     }));
-    studyPack.questionAnalyses = mergeQuestionAnalyses(passage, studyPack.questionAnalyses, individualResults.flat());
+    studyPack.questionAnalyses = mergeQuestionAnalyses(
+      passage,
+      studyPack.questionAnalyses,
+      individualResults.filter((result) => result.status === 'fulfilled').flatMap((result) => result.value)
+    );
+    await persistProgress('single-repair');
   }
   validateQuestionStudyPack(studyPack, passage);
   return studyPack;
@@ -1237,11 +1267,13 @@ function getReadingStudyModelConfig() {
   };
 }
 
-async function buildStudyPackWithModel(passage) {
+async function buildStudyPackWithModel(passage, options) {
+  const settings = options || {};
   const config = getReadingStudyModelConfig();
   if (!config.endpoint || !config.apiKey) {
     throw new Error('reading-study-model-not-configured');
   }
+  let latestStudyPack = settings.existingStudyPack || null;
   async function requestJson(model, prompt) {
     const response = await postJson(config.endpoint, config.apiKey, {
       model,
@@ -1254,11 +1286,22 @@ async function buildStudyPackWithModel(passage) {
     return parseJsonText(extractMessageText(response)) || {};
   }
   async function requestModel(model) {
-    return buildQuestionStudyPackWithRequester(passage, model, requestJson);
+    return buildQuestionStudyPackWithRequester(passage, model, requestJson, {
+      existingStudyPack: latestStudyPack,
+      onProgress: async (studyPack, stage) => {
+        latestStudyPack = studyPack;
+        if (typeof settings.onProgress === 'function') {
+          await settings.onProgress(studyPack, stage);
+        }
+      }
+    });
   }
   try {
     return await requestModel(config.model);
   } catch (error) {
+    if (error && error.skipModelFallback) {
+      throw error;
+    }
     if (config.fallbackModel && config.fallbackModel !== config.model) {
       try {
         return await requestModel(config.fallbackModel);
@@ -1438,22 +1481,121 @@ async function getCachedStudyPack(passageOrId) {
   const passage = passageOrId && typeof passageOrId === 'object' ? passageOrId : null;
   const passageId = passage ? passage._id : passageOrId;
   try {
+    const cacheKey = getStudyPackCacheKey(passageId);
+    const direct = await getStudyPackJob(cacheKey);
     const result = await dbAdapter.collection(STUDY_PACK_COLLECTION)
       .where({ passageId })
       .orderBy('updatedAt', 'desc')
       .limit(20)
       .get();
     const rows = result && Array.isArray(result.data) ? result.data.filter((row) => row && row.studyPack) : [];
+    if (direct && direct.studyPack && !rows.some((row) => row && row._id === cacheKey)) {
+      rows.push(direct);
+    }
     if (!rows.length) {
       return null;
     }
+    rows.sort((left, right) => String(left.updatedAt || '').localeCompare(String(right.updatedAt || '')));
     if (!passage) {
-      return rows[0].studyPack;
+      return rows[rows.length - 1].studyPack;
     }
-    return rows.reverse().reduce((merged, row) => mergeStudyPacks(merged, row.studyPack, passage), null);
+    return rows.reduce((merged, row) => mergeStudyPacks(merged, row.studyPack, passage), null);
   } catch (error) {
     throw new Error(`reading-study-pack-cache-read-failed:${error && error.message ? error.message : error}`);
   }
+}
+
+function getStudyPackCacheKey(passageId) {
+  return crypto.createHash('sha256').update(String(passageId || '')).digest('hex').slice(0, 40);
+}
+
+function isMissingDocumentError(error) {
+  const message = String(error && (error.errMsg || error.message || error) || '');
+  return message.includes('-502005') || /document.*not exist|not found/i.test(message);
+}
+
+async function getStudyPackJob(cacheKey) {
+  try {
+    const result = await dbAdapter.collection(STUDY_PACK_COLLECTION).doc(cacheKey).get();
+    return result && result.data ? result.data : null;
+  } catch (error) {
+    if (isMissingDocumentError(error)) return null;
+    throw error;
+  }
+}
+
+async function acquireStudyPackJob(cacheKey, passage, force) {
+  const now = new Date().toISOString();
+  return dbAdapter.db.runTransaction(async (transaction) => {
+    const reference = transaction.collection(STUDY_PACK_COLLECTION).doc(cacheKey);
+    let current = null;
+    try {
+      const result = await reference.get();
+      current = result && result.data ? result.data : null;
+    } catch (error) {
+      if (!isMissingDocumentError(error)) throw error;
+    }
+    const currentPack = current && current.studyPack
+      ? normalizeStudyPack(current.studyPack, passage)
+      : null;
+    if (!force && currentPack && isValidQuestionStudyPack(currentPack, passage)) {
+      return { state: 'ready', item: current };
+    }
+    const startedAt = Date.parse(current && current.generationStartedAt || '');
+    if (current && current.status === 'generating' && Number.isFinite(startedAt) && Date.now() - startedAt < STUDY_PACK_JOB_STALE_MS) {
+      return { state: 'generating' };
+    }
+    await reference.set({
+      data: {
+        passageId: passage._id,
+        title: passage.title,
+        studyPack: current && current.studyPack || null,
+        source: current && current.source || '',
+        status: 'generating',
+        generationStartedAt: now,
+        createdAt: current && current.createdAt || now,
+        updatedAt: now
+      }
+    });
+    return { state: 'acquired' };
+  });
+}
+
+async function saveQuestionStudyPackJob(cacheKey, passage, studyPack, status) {
+  try {
+    const current = await getStudyPackJob(cacheKey);
+    const mergedStudyPack = mergeStudyPacks(current && current.studyPack, studyPack, passage);
+    const now = new Date().toISOString();
+    await dbAdapter.collection(STUDY_PACK_COLLECTION).doc(cacheKey).set({
+      data: {
+        passageId: passage._id,
+        title: passage.title,
+        studyPack: mergedStudyPack,
+        source: mergedStudyPack.source || '',
+        status,
+        generationStartedAt: current && current.generationStartedAt || now,
+        generationFinishedAt: status === 'ready' ? now : '',
+        createdAt: current && current.createdAt || now,
+        updatedAt: now
+      }
+    });
+    return true;
+  } catch (error) {
+    console.error('[reading-study-pack] checkpoint save failed', passage._id, error && error.message ? error.message : error);
+    return false;
+  }
+}
+
+async function markQuestionStudyPackJobFailed(cacheKey, error) {
+  try {
+    await dbAdapter.collection(STUDY_PACK_COLLECTION).doc(cacheKey).update({
+      data: {
+        status: 'failed',
+        lastError: String(error && error.message || error || 'unknown').slice(0, 500),
+        updatedAt: new Date().toISOString()
+      }
+    });
+  } catch (updateError) {}
 }
 
 async function saveStudyPack(passage, studyPack, options) {
@@ -1491,11 +1633,44 @@ async function getOrCreateStudyPack(passage, existingCached, force) {
   if (!force && promiseKey && studyPackBuildPromises[promiseKey]) {
     return studyPackBuildPromises[promiseKey];
   }
+  const cacheKey = getStudyPackCacheKey(passage && passage._id);
+  const job = await acquireStudyPackJob(cacheKey, passage, force);
+  if (job.state === 'generating') {
+    return {
+      studyPack: null,
+      cached: false,
+      generating: true,
+      retryAfterMs: STUDY_PACK_RETRY_AFTER_MS
+    };
+  }
+  if (job.state === 'ready' && job.item && job.item.studyPack) {
+    return {
+      studyPack: normalizeStudyPack(job.item.studyPack, passage),
+      cached: true,
+      generating: false
+    };
+  }
   const request = (async () => {
-    const studyPack = await buildStudyPackWithModel(passage);
-    const saved = await saveStudyPack(passage, studyPack, { validateQuestions: true });
-    if (!saved) throw new Error('reading-study-pack-save-failed');
-    return { studyPack, cached: false };
+    try {
+      const studyPack = await buildStudyPackWithModel(passage, {
+        existingStudyPack: cachedPack,
+        onProgress: async (progressPack) => {
+          const saved = await saveQuestionStudyPackJob(cacheKey, passage, progressPack, 'generating');
+          if (!saved) {
+            const error = new Error('reading-study-pack-checkpoint-save-failed');
+            error.skipModelFallback = true;
+            throw error;
+          }
+        }
+      });
+      validateQuestionStudyPack(studyPack, passage);
+      const saved = await saveQuestionStudyPackJob(cacheKey, passage, studyPack, 'ready');
+      if (!saved) throw new Error('reading-study-pack-save-failed');
+      return { studyPack, cached: false, generating: false };
+    } catch (error) {
+      await markQuestionStudyPackJobFailed(cacheKey, error);
+      throw error;
+    }
   })();
   if (promiseKey) studyPackBuildPromises[promiseKey] = request;
   try {
@@ -1904,7 +2079,9 @@ async function getReadingStudyPack(event) {
       passageId: passage._id,
       section,
       studyPack: result.studyPack,
-      cached: result.cached
+      cached: result.cached,
+      generating: !!result.generating,
+      retryAfterMs: result.retryAfterMs || 0
     };
   }
   if (cached && hasStudyPackSection(cached, section, passage)) {
@@ -1979,6 +2156,7 @@ async function submitReadingAttempt(event) {
     questionResults: grade.questionResults,
     review,
     status: 'completed',
+    analysisStatus: 'pending',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   };
@@ -2007,29 +2185,34 @@ async function submitReadingAttempt(event) {
     try {
       const cached = await getCachedStudyPack(passage);
       const generated = await getOrCreateStudyPack(passage, cached, false);
-      review = keepQuestionReviewOnly(buildReview(passage, grade, generated.studyPack));
-      attempt.review = review;
-      attempt.analysisStatus = 'ready';
-      attempt.updatedAt = new Date().toISOString();
-      if (attempt._id) {
-        const command = dbAdapter.getCommand();
-        await dbAdapter.collection('readingAttempts').doc(attempt._id).update({
-          data: {
-            review: command.set(review),
-            analysisStatus: 'ready',
-            updatedAt: attempt.updatedAt
-          }
+      if (generated.generating || !generated.studyPack) {
+        attempt.analysisStatus = 'pending';
+        attempt.updatedAt = new Date().toISOString();
+      } else {
+        review = keepQuestionReviewOnly(buildReview(passage, grade, generated.studyPack));
+        attempt.review = review;
+        attempt.analysisStatus = 'ready';
+        attempt.updatedAt = new Date().toISOString();
+        if (attempt._id) {
+          const command = dbAdapter.getCommand();
+          await dbAdapter.collection('readingAttempts').doc(attempt._id).update({
+            data: {
+              review: command.set(review),
+              analysisStatus: 'ready',
+              updatedAt: attempt.updatedAt
+            }
+          });
+        }
+        await completion.upsertStudyCompletion(ctx, today, {
+          type: 'reading',
+          targetId: passage._id,
+          passageId: passage._id,
+          title: passage.title || '阅读练习',
+          meta: passage.year ? `${passage.year} · ${passage.district || ''}` : '阅读',
+          progressText: `${grade.score}/${grade.totalScore} 分`,
+          latestAttempt: attempt
         });
       }
-      await completion.upsertStudyCompletion(ctx, today, {
-        type: 'reading',
-        targetId: passage._id,
-        passageId: passage._id,
-        title: passage.title || '阅读练习',
-        meta: passage.year ? `${passage.year} · ${passage.district || ''}` : '阅读',
-        progressText: `${grade.score}/${grade.totalScore} 分`,
-        latestAttempt: attempt
-      });
     } catch (error) {
       attempt.analysisStatus = 'pending';
       attempt.analysisError = String(error && error.message || error || '');

@@ -107,6 +107,17 @@ test('阅读提交后自动衔接题目 AI 解析并优先使用缓存', () => {
   assert.doesNotMatch(readingDetailSource, /section: 'questions'[^}]*force:\s*true/);
 });
 
+test('阅读共享解析使用云端生成锁、分批持久化并在重进后轮询复用', () => {
+  const serviceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/reading.service.js'), 'utf8');
+  assert.match(serviceSource, /STUDY_PACK_JOB_STALE_MS = 330000/);
+  assert.match(serviceSource, /dbAdapter\.db\.runTransaction[\s\S]*?status: 'generating'/);
+  assert.match(serviceSource, /buildQuestionStudyPackWithRequester[\s\S]*?settings\.onProgress/);
+  assert.match(serviceSource, /saveQuestionStudyPackJob\(cacheKey, passage, progressPack, 'generating'\)/);
+  assert.match(serviceSource, /job\.state === 'generating'[\s\S]*?retryAfterMs: STUDY_PACK_RETRY_AFTER_MS/);
+  assert.match(readingDetailSource, /result && result\.generating[\s\S]*?scheduleQuestionAnalysisPoll/);
+  assert.match(readingDetailSource, /onUnload\(\)[\s\S]*?clearTimeout\(this\.questionAnalysisPollTimer\)/);
+});
+
 test('阅读题目解析占位内容不会被当成有效 AI 解析', () => {
   assert.match(readingDetailSource, /analysisText !== '生成解析中'/);
   assert.match(readingDetailSource, /analysisText !== '点击“查看 AI 解析”后按需加载'/);

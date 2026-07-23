@@ -130,3 +130,55 @@ test('allows blank questions to omit an unreliable answer sentence', async () =>
   assert.equal(result.questionAnalyses[0].answerSentence, '');
   assert.match(result.questionAnalyses[0].analysis, /一般现在时/);
 });
+
+test('resumes a persisted partial pack and requests only missing questions', async () => {
+  const passage = {
+    title: 'Resume passage',
+    passage: 'Evidence one. Evidence two.',
+    questions: [
+      { number: 1, prompt: 'Q1', answer: 'A' },
+      { number: 2, prompt: 'Q2', answer: 'B' }
+    ]
+  };
+  const calls = [];
+  const progress = [];
+  const result = await readingService._test.buildQuestionStudyPackWithRequester(
+    passage,
+    'gpt-5.6-terra',
+    async (model, prompt) => {
+      calls.push(prompt);
+      return {
+        questionAnalyses: [{
+          number: 2,
+          answer: 'A',
+          answerSentence: 'Evidence two.',
+          answerSentenceTranslation: '证据二。',
+          analysis: '第 2 题解析'
+        }]
+      };
+    },
+    {
+      existingStudyPack: {
+        source: 'model:gpt-5.6-terra',
+        questionAnalyses: [{
+          number: 1,
+          answer: 'A',
+          answerSentence: 'Evidence one.',
+          answerSentenceTranslation: '证据一。',
+          analysis: '第 1 题解析'
+        }]
+      },
+      onProgress: async (studyPack, stage) => {
+        progress.push({ stage, count: studyPack.questionAnalyses.length });
+      }
+    }
+  );
+
+  assert.equal(calls.length, 1);
+  assert.match(calls[0], /漏题补全请求/);
+  assert.match(calls[0], /"number":2/);
+  assert.doesNotMatch(calls[0], /"number":1/);
+  assert.deepEqual(progress, [{ stage: 'group-repair', count: 2 }]);
+  assert.deepEqual(result.questionAnalyses.map((item) => item.number), [1, 2]);
+  assert.equal(result.questionAnalyses[1].answer, 'B');
+});
