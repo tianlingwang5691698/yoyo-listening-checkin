@@ -30,8 +30,11 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /public Writing Band Descriptors, updated May 2023/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /四项分别只能给0–9整数Band/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /A script must fully fit the positive features/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /Official band-selection protocol/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /officialBandDecisions/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /从 Band 9 向下/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
-  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v5-official-/);
+  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v6-official-fullband-/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原文证据/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题图片为最终事实来源/);
@@ -56,6 +59,8 @@ test('Task 1 和 Task 2 完整加载官方 0–9 Band 四项描述', () => {
   assert.match(task2Guide, /Paragraphing may be inadequate or missing/);
   assert.match(task1Guide, /20 words or fewer/);
   assert.match(task2Guide, /totally memorised/);
+  assert.match(task1Guide, /ielts-writing-band-descriptors\.pdf/);
+  assert.match(task1Guide, /ielts-writing-key-assessment-criteria\.pdf/);
 });
 
 test('雅思总分由四项平均并归入半分档', () => {
@@ -118,6 +123,98 @@ test('雅思证据化评分必须四项字段完整', () => {
   assert.equal(writing.hasCompleteIeltsCriterionDetails(complete), false);
 });
 
+test('雅思四项按官方逐档决策确定档位', () => {
+  const decision = (awardedBand, evidence, unmet) => ({
+    awardedBand,
+    checkedFromBand9: true,
+    awardedBandFullyMet: true,
+    awardedBandEvidence: [evidence],
+    nextHigherBand: awardedBand === 9 ? null : awardedBand + 1,
+    nextHigherBandFullyMet: awardedBand === 9 ? null : false,
+    unmetHigherBandFeatures: awardedBand === 9 ? [] : [unmet],
+    decisionReason: `完整符合 Band ${awardedBand}，但未完整符合更高档。`
+  });
+  const review = writing.normalizeReview({
+    dimensionScores: {
+      taskAchievement: 8,
+      coherenceCohesion: 8,
+      lexicalResource: 8,
+      grammaticalRangeAccuracy: 8
+    },
+    officialBandDecisions: {
+      taskAchievement: decision(7, 'A clear overview is present.', 'Key features are not skilfully illustrated.'),
+      coherenceCohesion: decision(7, 'Ideas progress clearly.', 'Cohesion is not consistently well managed.'),
+      lexicalResource: decision(7, 'Some less common items are used.', 'Word choice is not consistently precise.'),
+      grammaticalRangeAccuracy: decision(8, 'Most sentences are error-free.', 'The range is not fully controlled.')
+    }
+  }, { contentType: 'ielts-writing-task-1', score: 9 });
+
+  assert.deepEqual(review.dimensionScores, {
+    task: 7,
+    coherenceCohesion: 7,
+    lexicalResource: 7,
+    grammaticalRangeAccuracy: 8
+  });
+  assert.equal(review.score, 7.5);
+  assert.equal(review.officialBandDecisionsComplete, true);
+  assert.equal(writing.hasCompleteOfficialBandDecisions(review), true);
+});
+
+test('雅思官方逐档决策覆盖 Band 0–9 全部档位', () => {
+  for (let band = 0; band <= 9; band += 1) {
+    const decision = {
+      awardedBand: band,
+      checkedFromBand9: true,
+      awardedBandFullyMet: true,
+      awardedBandEvidence: [`Band ${band} evidence`],
+      nextHigherBand: band === 9 ? null : band + 1,
+      nextHigherBandFullyMet: band === 9 ? null : false,
+      unmetHigherBandFeatures: band === 9 ? [] : [`Band ${band + 1} feature not fully met`],
+      decisionReason: `Band ${band} is the highest fully met band.`
+    };
+    const review = writing.normalizeReview({
+      dimensionScores: {
+        taskResponse: band,
+        coherenceCohesion: band,
+        lexicalResource: band,
+        grammaticalRangeAccuracy: band
+      },
+      officialBandDecisions: {
+        taskResponse: decision,
+        coherenceCohesion: decision,
+        lexicalResource: decision,
+        grammaticalRangeAccuracy: decision
+      }
+    }, { contentType: 'ielts-writing-task-2', score: 9 });
+
+    assert.deepEqual(Object.values(review.dimensionScores), [band, band, band, band]);
+    assert.equal(review.score, band);
+    assert.equal(writing.hasCompleteOfficialBandDecisions(review), true);
+  }
+});
+
+test('不完整的逐档决策不能覆盖有效维度分', () => {
+  const review = writing.normalizeReview({
+    dimensionScores: {
+      taskResponse: 6,
+      coherenceCohesion: 6,
+      lexicalResource: 6,
+      grammaticalRangeAccuracy: 6
+    },
+    officialBandDecisions: {
+      taskResponse: {
+        awardedBand: 8,
+        checkedFromBand9: true,
+        awardedBandFullyMet: true
+      }
+    }
+  }, { contentType: 'ielts-writing-task-2', score: 9 });
+
+  assert.equal(review.dimensionScores.task, 6);
+  assert.equal(review.score, 6);
+  assert.equal(review.officialBandDecisionsComplete, false);
+});
+
 test('雅思评分兼容官方维度名称与常见讲解字段变体', () => {
   const prompt = { contentType: 'ielts-writing-task-1', score: 9 };
   const review = writing.normalizeReview({
@@ -138,7 +235,8 @@ test('雅思评分兼容官方维度名称与常见讲解字段变体', () => {
 
   assert.equal(review.score, 7);
   assert.equal(review.criterionDetailsComplete, true);
-  assert.equal(review.feedbackNotice, '');
+  assert.equal(review.officialBandDecisionsComplete, false);
+  assert.match(review.feedbackNotice, /官方逐档匹配证据/);
   assert.equal(writing.hasUsableIeltsReview(review), true);
   assert.deepEqual(review.criterionDetails[0].evidence, ['The chart rose steadily.']);
   assert.deepEqual(review.criterionDetails[0].nextBandActions, ['补充关键比较']);
@@ -218,6 +316,30 @@ test('雅思四项维度按官方整数 Band 归一，总分按最近 0.5 报告
   assert.equal(review.score, 7.5);
 });
 
+test('雅思官方最低作答长度规则覆盖 Band 0 与 Band 1', () => {
+  const prompt = { contentType: 'ielts-writing-task-2', score: 9 };
+  const base = writing.normalizeReview({
+    dimensionScores: {
+      taskResponse: 8,
+      coherenceCohesion: 8,
+      lexicalResource: 8,
+      grammaticalRangeAccuracy: 8
+    }
+  }, prompt);
+  const short = writing.applyOfficialMinimumResponseRule(base, 'This response contains fewer than twenty one English words.');
+  const empty = writing.applyOfficialMinimumResponseRule(base, '');
+
+  assert.deepEqual(short.dimensionScores, {
+    task: 1,
+    coherenceCohesion: 1,
+    lexicalResource: 1,
+    grammaticalRangeAccuracy: 1
+  });
+  assert.equal(short.score, 1);
+  assert.equal(short.officialBandDecisionsComplete, true);
+  assert.equal(empty.score, 0);
+});
+
 test('同一题目和作文生成稳定评分指纹并复用内存结果', () => {
   const prompt = {
     _id: 'ielts-academic-21-test-1-writing-task-1',
@@ -295,6 +417,9 @@ test('雅思按需生成高 1 与高 2 Band 教学范文协议', () => {
 test('整套 Writing 按 Task 1 一份、Task 2 两份计算', () => {
   assert.equal(writing.calculateIeltsWritingTestEstimate(6, 7), 6.5);
   assert.equal(writing.calculateIeltsWritingTestEstimate(6.5, 7.5), 7);
+  assert.equal(writing.normalizeBandScore(7.125), 7);
+  assert.equal(writing.normalizeBandScore(7.25), 7.5);
+  assert.equal(writing.normalizeBandScore(7.75), 8);
   assert.deepEqual(writing.getIeltsWritingPair('ielts-academic-21-test-3-writing-task-2'), {
     paperId: 'ielts-academic-21-test-3',
     taskNumber: 2,

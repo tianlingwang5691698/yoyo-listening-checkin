@@ -1,4 +1,5 @@
-const SOURCE_URL = 'https://ielts.org/news-and-insights/ielts-writing-band-descriptors-and-key-assessment-criteria';
+const SOURCE_URL = 'https://ielts.org/cdn/Guides/ielts-writing-band-descriptors.pdf';
+const KEY_ASSESSMENT_CRITERIA_URL = 'https://ielts.org/cdn/Guides/ielts-writing-key-assessment-criteria.pdf';
 const VERSION = 'IELTS public Writing Band Descriptors, updated May 2023';
 
 const TASK_1_ACHIEVEMENT = {
@@ -96,16 +97,33 @@ function buildOfficialWritingBandGuide(taskType) {
   }
   return [
     VERSION,
-    `Official source: ${SOURCE_URL}`,
+    `Official Band Descriptors source: ${SOURCE_URL}`,
+    `Official Key Assessment Criteria source: ${KEY_ASSESSMENT_CRITERIA_URL}`,
     'A script must fully fit the positive features of the descriptor at a particular level. Negative features limit a rating.',
     ...bands
   ].join('\n\n');
 }
 
+function buildOfficialBandSelectionProtocol(taskType) {
+  const taskLabel = taskType === 'ielts-task-1' ? 'Task Achievement' : 'Task Response';
+  return [
+    'Official band-selection protocol:',
+    `1. Assess ${taskLabel}, Coherence and Cohesion, Lexical Resource, and Grammatical Range and Accuracy independently.`,
+    '2. For each criterion, start at Band 9 and move down one whole band at a time.',
+    '3. Award the first band only when every positive feature at that band fully fits the script. One strong feature cannot compensate for an unmet feature in the same criterion.',
+    '4. Record why the awarded band is fully met and identify the exact feature or features preventing the immediately higher band. Do not award a band when evidence is uncertain or absent.',
+    '5. Dimension bands must be whole numbers. The reported task estimate is calculated later from the four dimension bands and rounded to the nearest 0.5.',
+    '6. A response of 20 words or fewer is Band 1 for every criterion. Band 0 is reserved for no attempt, non-English throughout, or a proven totally memorised response.',
+    '7. Do not infer a target score from writing fluency, school level, user identity, prior scores, or the requested score. Use only the official descriptors and the submitted response.'
+  ].join('\n');
+}
+
 module.exports = {
   SOURCE_URL,
+  KEY_ASSESSMENT_CRITERIA_URL,
   VERSION,
   buildOfficialWritingBandGuide,
+  buildOfficialBandSelectionProtocol,
   _test: {
     TASK_1_ACHIEVEMENT,
     TASK_2_RESPONSE,

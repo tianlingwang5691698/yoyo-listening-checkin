@@ -7,14 +7,16 @@ const completion = require('./completion.service');
 const { sanitizeManualMarks } = require('../lib/manual-mark-engine');
 const {
   SOURCE_URL: IELTS_WRITING_RUBRIC_SOURCE,
+  KEY_ASSESSMENT_CRITERIA_URL: IELTS_WRITING_KEY_CRITERIA_SOURCE,
   VERSION: IELTS_WRITING_RUBRIC_VERSION,
-  buildOfficialWritingBandGuide
+  buildOfficialWritingBandGuide,
+  buildOfficialBandSelectionProtocol
 } = require('../lib/ielts-writing-band-descriptors');
 
 const COLLECTION = 'writingAttempts';
 const PREVIEW_COLLECTION = 'writingPreviewAttempts';
 const PREVIEW_ATTEMPT_PREFIX = 'preview-';
-const WRITING_SCORING_VERSION = 'writing-score-v5-official-20260723';
+const WRITING_SCORING_VERSION = 'writing-score-v6-official-fullband-20260723';
 const WRITING_REVIEW_MEMORY_CACHE_LIMIT = 100;
 const writingReviewMemoryCache = new Map();
 
@@ -240,6 +242,115 @@ function normalizeSchemaKey(value) {
   return String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+function normalizeOptionalBoolean(value) {
+  if (value === true || String(value).toLowerCase() === 'true') return true;
+  if (value === false || String(value).toLowerCase() === 'false') return false;
+  return null;
+}
+
+function firstDefined(...values) {
+  return values.find((value) => value !== undefined && value !== null);
+}
+
+function normalizeOfficialBandDecisions(data, taskType, fallbackScores) {
+  if (taskType !== 'ielts-task-1' && taskType !== 'ielts-task-2') return [];
+  const source = data.officialBandDecisions
+    || data.official_band_decisions
+    || data.bandDecisions
+    || data.band_decisions
+    || {};
+  const items = Array.isArray(source)
+    ? source
+    : Object.entries(source && typeof source === 'object' ? source : {}).map(([key, value]) => (
+      Object.assign({ key }, value && typeof value === 'object' ? value : {})
+    ));
+  const specs = [
+    {
+      key: 'task',
+      sourceKeys: ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response'],
+      fallback: fallbackScores.task
+    },
+    {
+      key: 'coherenceCohesion',
+      sourceKeys: ['coherenceCohesion', 'coherence_and_cohesion', 'Coherence and Cohesion'],
+      fallback: fallbackScores.coherenceCohesion
+    },
+    {
+      key: 'lexicalResource',
+      sourceKeys: ['lexicalResource', 'lexical_resource', 'Lexical Resource'],
+      fallback: fallbackScores.lexicalResource
+    },
+    {
+      key: 'grammaticalRangeAccuracy',
+      sourceKeys: ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy', 'Grammatical Range and Accuracy'],
+      fallback: fallbackScores.grammaticalRangeAccuracy
+    }
+  ];
+  return specs.map((spec) => {
+    const acceptedKeys = spec.sourceKeys.map(normalizeSchemaKey);
+    const raw = items.find((item) => {
+      const identity = item && (item.key || item.label || item.criterion || item.name || item.title);
+      return acceptedKeys.includes(normalizeSchemaKey(identity));
+    }) || {};
+    const awardedBand = normalizeCriterionBandScore(
+      raw.awardedBand !== undefined ? raw.awardedBand
+        : raw.awarded_band !== undefined ? raw.awarded_band
+          : raw.band !== undefined ? raw.band
+            : raw.score !== undefined ? raw.score
+              : spec.fallback
+    );
+    const expectedHigherBand = awardedBand !== null && awardedBand < 9 ? awardedBand + 1 : null;
+    const nextHigherBand = normalizeCriterionBandScore(
+      raw.nextHigherBand !== undefined ? raw.nextHigherBand
+        : raw.next_higher_band !== undefined ? raw.next_higher_band
+          : expectedHigherBand
+    );
+    return {
+      key: spec.key,
+      awardedBand,
+      checkedFromBand9: normalizeOptionalBoolean(firstDefined(raw.checkedFromBand9, raw.checked_from_band_9)),
+      awardedBandFullyMet: normalizeOptionalBoolean(firstDefined(raw.awardedBandFullyMet, raw.awarded_band_fully_met)),
+      awardedBandEvidence: normalizeTextList(
+        raw.awardedBandEvidence || raw.awarded_band_evidence || raw.evidence || raw.examples,
+        8
+      ),
+      nextHigherBand: awardedBand === 9 ? null : nextHigherBand,
+      nextHigherBandFullyMet: awardedBand === 9
+        ? null
+        : normalizeOptionalBoolean(firstDefined(raw.nextHigherBandFullyMet, raw.next_higher_band_fully_met)),
+      unmetHigherBandFeatures: normalizeTextList(
+        raw.unmetHigherBandFeatures
+          || raw.unmet_higher_band_features
+          || raw.higherBandLimiters
+          || raw.higher_band_limiters,
+        8
+      ),
+      decisionReason: normalizeText(raw.decisionReason || raw.decision_reason || raw.reason || raw.analysis)
+    };
+  });
+}
+
+function isCompleteOfficialBandDecision(decision, expectedBand = decision && decision.awardedBand) {
+  const score = normalizeCriterionBandScore(expectedBand);
+  if (!decision || score === null || decision.awardedBand !== score) return false;
+  if (decision.checkedFromBand9 !== true || decision.awardedBandFullyMet !== true) return false;
+  if (!decision.awardedBandEvidence.length || !decision.decisionReason) return false;
+  if (score === 9) return decision.nextHigherBand === null;
+  return decision.nextHigherBand === score + 1
+    && decision.nextHigherBandFullyMet === false
+    && decision.unmetHigherBandFeatures.length > 0;
+}
+
+function hasCompleteOfficialBandDecisions(review) {
+  const decisions = review && review.officialBandDecisions;
+  const scores = review && review.dimensionScores;
+  if (!Array.isArray(decisions) || decisions.length !== 4 || !scores) return false;
+  return decisions.every((decision) => {
+    const score = normalizeCriterionBandScore(scores[decision.key]);
+    return isCompleteOfficialBandDecision(decision, score);
+  });
+}
+
 function normalizeFactIssueList(value, limit = 8) {
   return (Array.isArray(value) ? value : []).map((item) => {
     if (typeof item === 'string') {
@@ -436,12 +547,30 @@ function normalizeReview(data, prompt) {
     : dimensions;
   if (taskType === 'ielts-task-1' || taskType === 'ielts-task-2') {
     const task1FactCheck = taskType === 'ielts-task-1' ? normalizeTask1FactCheck(data) : null;
-    const taskScore = readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']);
-    const dimensionScores = {
-      task: taskScore,
+    const fallbackDimensionScores = {
+      task: readDimensionScore(rawDimensionScores, ['task', 'taskAchievement', 'taskResponse', 'Task Achievement', 'Task Response']),
       coherenceCohesion: readDimensionScore(rawDimensionScores, ['coherenceCohesion', 'coherence_and_cohesion', 'Coherence and Cohesion']),
       lexicalResource: readDimensionScore(rawDimensionScores, ['lexicalResource', 'lexical_resource', 'Lexical Resource']),
       grammaticalRangeAccuracy: readDimensionScore(rawDimensionScores, ['grammaticalRangeAccuracy', 'grammatical_range_and_accuracy', 'Grammatical Range and Accuracy'])
+    };
+    const officialBandDecisions = normalizeOfficialBandDecisions(data, taskType, fallbackDimensionScores);
+    const decisionScores = officialBandDecisions.reduce((scores, decision) => {
+      if (isCompleteOfficialBandDecision(decision)) {
+        scores[decision.key] = decision.awardedBand;
+      }
+      return scores;
+    }, {});
+    const dimensionScores = {
+      task: decisionScores.task !== undefined ? decisionScores.task : fallbackDimensionScores.task,
+      coherenceCohesion: decisionScores.coherenceCohesion !== undefined
+        ? decisionScores.coherenceCohesion
+        : fallbackDimensionScores.coherenceCohesion,
+      lexicalResource: decisionScores.lexicalResource !== undefined
+        ? decisionScores.lexicalResource
+        : fallbackDimensionScores.lexicalResource,
+      grammaticalRangeAccuracy: decisionScores.grammaticalRangeAccuracy !== undefined
+        ? decisionScores.grammaticalRangeAccuracy
+        : fallbackDimensionScores.grammaticalRangeAccuracy
     };
     const scores = Object.values(dimensionScores).filter((score) => score !== null);
     const calculatedBand = scores.length === 4
@@ -466,6 +595,7 @@ function normalizeReview(data, prompt) {
       language: normalizeText(data.language || dimensions.language || ''),
       spelling: normalizeText(data.spelling || dimensions.spelling || ''),
       dimensionScores,
+      officialBandDecisions,
       criterionDetails,
       taskType,
       task1FactCheck,
@@ -485,9 +615,10 @@ function normalizeReview(data, prompt) {
       bandSamples: normalizeBandSamples(data.bandSamples, score)
     }, buildReviewLabels(taskType, dimensionScores));
     normalized.criterionDetailsComplete = hasCompleteIeltsCriterionDetails(normalized);
-    normalized.feedbackNotice = normalized.criterionDetailsComplete
+    normalized.officialBandDecisionsComplete = hasCompleteOfficialBandDecisions(normalized);
+    normalized.feedbackNotice = normalized.criterionDetailsComplete && normalized.officialBandDecisionsComplete
       ? ''
-      : '四项 Band 分已保留；部分逐项证据或升档讲解未完整生成，可稍后重新批改补全。';
+      : '四项 Band 分已保留；部分官方逐档匹配证据或升档讲解未完整生成，可稍后重新批改补全。';
     return normalized;
   }
   const totalScore = resolveTotalScore(prompt, taskType);
@@ -515,6 +646,64 @@ function normalizeReview(data, prompt) {
     polishedVersion: normalizeLongText(data.polishedVersion || data.modelAnswer || data.polished || '').slice(0, 5000),
     ...buildReviewLabels(taskType, {})
   };
+}
+
+function countIeltsWritingWords(essay) {
+  return (String(essay || '').match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length;
+}
+
+function applyOfficialMinimumResponseRule(review, essay) {
+  if (!review || !review.isIelts) return review;
+  const essayWordCount = countIeltsWritingWords(essay);
+  if (essayWordCount > 20) return Object.assign({}, review, { essayWordCount });
+  const forcedBand = essayWordCount === 0 ? 0 : 1;
+  const dimensionScores = {
+    task: forcedBand,
+    coherenceCohesion: forcedBand,
+    lexicalResource: forcedBand,
+    grammaticalRangeAccuracy: forcedBand
+  };
+  const criterionLabels = {
+    task: review.taskType === 'ielts-task-1' ? 'Task Achievement' : 'Task Response',
+    coherenceCohesion: 'Coherence and Cohesion',
+    lexicalResource: 'Lexical Resource',
+    grammaticalRangeAccuracy: 'Grammatical Range and Accuracy'
+  };
+  const ruleReason = essayWordCount === 0
+    ? 'No response was submitted, so the official Band 0 condition applies.'
+    : 'The response contains 20 words or fewer, so the official Band 1 condition applies to every criterion.';
+  const officialBandDecisions = Object.keys(dimensionScores).map((key) => ({
+    key,
+    awardedBand: forcedBand,
+    checkedFromBand9: true,
+    awardedBandFullyMet: true,
+    awardedBandEvidence: [`Word count: ${essayWordCount}`],
+    nextHigherBand: forcedBand + 1,
+    nextHigherBandFullyMet: false,
+    unmetHigherBandFeatures: [ruleReason],
+    decisionReason: ruleReason
+  }));
+  const criterionDetails = (Array.isArray(review.criterionDetails) ? review.criterionDetails : []).map((item) => ({
+    ...item,
+    score: forcedBand,
+    label: formatBandLabel(criterionLabels[item.key] || item.label || item.key, forcedBand)
+  }));
+  const adjusted = Object.assign({}, review, buildReviewLabels(review.taskType, dimensionScores), {
+    score: forcedBand,
+    level: `IELTS Band ${forcedBand.toFixed(1)}`,
+    dimensionScores,
+    officialBandDecisions,
+    officialBandDecisionsComplete: true,
+    criterionDetails,
+    essayWordCount,
+    officialMinimumResponseRuleApplied: true,
+    officialMinimumResponseRuleReason: ruleReason
+  });
+  adjusted.criterionDetailsComplete = hasCompleteIeltsCriterionDetails(adjusted);
+  adjusted.feedbackNotice = adjusted.criterionDetailsComplete
+    ? ''
+    : '四项 Band 分已按官方最低作答长度规则确定；部分逐项讲解未完整生成。';
+  return adjusted;
 }
 
 function sanitizePromptForGrading(prompt) {
@@ -573,13 +762,17 @@ function buildGradingPrompt(prompt, essay) {
   ];
   if (taskType === 'ielts-task-1' || taskType === 'ielts-task-2') {
     const taskCriterion = taskType === 'ielts-task-1' ? 'Task Achievement' : 'Task Response';
+    const decisionShape = '{"awardedBand":number,"checkedFromBand9":true,"awardedBandFullyMet":true,"awardedBandEvidence":["当前档全部正向特征的原文证据"],"nextHigherBand":number|null,"nextHigherBandFullyMet":false|null,"unmetHigherBandFeatures":["未达到相邻高一档的官方特征"],"decisionReason":"中文逐档结论"}';
     return [
       `你是IELTS Academic Writing官方标准阅卷老师。本题是${taskType === 'ielts-task-1' ? 'Writing Task 1' : 'Writing Task 2'}。`,
       `严格按四项标准评分：${taskCriterion}、Coherence and Cohesion、Lexical Resource、Grammatical Range and Accuracy。`,
       '四项分别只能给0–9整数Band；单项练习预估为四项整数Band的平均值，再按雅思0.5档报告。不得给单项维度0.5分，不得使用20分制。',
       `评分依据版本：${IELTS_WRITING_RUBRIC_VERSION}。`,
-      `官方来源：${IELTS_WRITING_RUBRIC_SOURCE}`,
+      `官方 Band Descriptors：${IELTS_WRITING_RUBRIC_SOURCE}`,
+      `官方 Key Assessment Criteria：${IELTS_WRITING_KEY_CRITERIA_SOURCE}`,
       buildOfficialWritingBandGuide(taskType),
+      buildOfficialBandSelectionProtocol(taskType),
+      '必须对四个维度分别执行上述从 Band 9 向下的逐档匹配。dimensionScores 必须与 officialBandDecisions.awardedBand 完全一致；总分 score 将由程序按四项平均重新计算。',
       taskType === 'ielts-task-1'
         ? [
           '必须以附带的原题图片为最终事实来源，同时核对 visualData、题干和要求；visualData 可能只有标题、坐标和图例，不得把它当作完整数值表。',
@@ -589,7 +782,7 @@ function buildGradingPrompt(prompt, essay) {
           'polishedVersion必须是独立生成的原题参考范文，不是学生文章的改写；不得编造原图中没有的数据。'
         ].join('')
         : '必须完整回应原题的所有问题，立场明确，论证充分；少于250词必须在 Task Response 中明确处理。',
-      `criterionFeedback 的四个对象都必须给出：2–4条学生原文证据、对应本档描述、1–4条卡分原因、1–4条升到下一档的具体动作。返回格式：{"score":number,"totalScore":9,"level":"IELTS Band x.x"${taskType === 'ielts-task-1' ? ',"task1FactCheck":{"chartFacts":["从原图读取的关键事实"],"overviewCoverage":"学生overview覆盖情况","crossSeriesComparisons":["学生已写出的跨系列比较"],"majorMissingFeatures":["遗漏的重大特征"],"minorMissingDetails":["遗漏的次要数值"],"dataErrors":[{"detail":"数据错误","severity":"major|minor"}]}' : ''},"dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文评语","evidence":["原文证据"],"descriptorMatch":"匹配本档原因","limiters":["卡分原因"],"nextBandActions":["升档动作"]},"coherenceCohesion":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"lexicalResource":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"grammaticalRangeAccuracy":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]}},"summary":"中文总评","content":"${taskCriterion}中文评语","structure":"Coherence and Cohesion中文评语","language":"Lexical Resource中文评语","spelling":"Grammatical Range and Accuracy中文评语","strengths":["优点"],"problems":["问题"],"suggestions":["建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedVersion":"英文参考范文"}`,
+      `criterionFeedback 的四个对象都必须给出：2–4条学生原文证据、对应本档描述、1–4条卡分原因、1–4条升到下一档的具体动作。officialBandDecisions 的四个对象必须给出：awardedBand、checkedFromBand9=true、awardedBandFullyMet=true、当前档证据、相邻高一档及其未满足的官方特征；Band 9 的 nextHigherBand 使用 null。返回格式：{"score":number,"totalScore":9,"level":"IELTS Band x.x"${taskType === 'ielts-task-1' ? ',"task1FactCheck":{"chartFacts":["从原图读取的关键事实"],"overviewCoverage":"学生overview覆盖情况","crossSeriesComparisons":["学生已写出的跨系列比较"],"majorMissingFeatures":["遗漏的重大特征"],"minorMissingDetails":["遗漏的次要数值"],"dataErrors":[{"detail":"数据错误","severity":"major|minor"}]}' : ''},"dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"officialBandDecisions":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":${decisionShape},"coherenceCohesion":${decisionShape},"lexicalResource":${decisionShape},"grammaticalRangeAccuracy":${decisionShape}},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文评语","evidence":["原文证据"],"descriptorMatch":"匹配本档原因","limiters":["卡分原因"],"nextBandActions":["升档动作"]},"coherenceCohesion":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"lexicalResource":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"grammaticalRangeAccuracy":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]}},"summary":"中文总评","content":"${taskCriterion}中文评语","structure":"Coherence and Cohesion中文评语","language":"Lexical Resource中文评语","spelling":"Grammatical Range and Accuracy中文评语","strengths":["优点"],"problems":["问题"],"suggestions":["建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedVersion":"英文参考范文"}`,
       ...common
     ].join('\n');
   }
@@ -825,11 +1018,13 @@ async function gradeWriting(prompt, essay) {
     }]
   });
   let parsed = parseJsonText(extractMessageText(data));
-  let review = normalizeReview(parsed, prompt);
-  if ((taskType === 'ielts-task-1' || taskType === 'ielts-task-2') && !hasUsableIeltsReview(review)) {
+  let review = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
+  const isIelts = taskType === 'ielts-task-1' || taskType === 'ielts-task-2';
+  const firstReviewUsable = !isIelts || hasUsableIeltsReview(review);
+  if (isIelts && (!firstReviewUsable || !hasCompleteOfficialBandDecisions(review))) {
     const repairPrompt = [
       gradingPrompt,
-      '上一次 JSON 未返回可用的四项 Band 分。请重新完整评分，必须返回四项 dimensionScores；criterionFeedback 同时尽量完整返回 comment、evidence、descriptorMatch、limiters 和 nextBandActions。',
+      '请重新执行官方 Band 0–9 逐档校准。必须从 Band 9 向下检查四个维度，返回完整 dimensionScores 和 officialBandDecisions；每项说明当前档为什么全部满足、相邻高一档具体哪条官方特征未满足。criterionFeedback 同时完整返回 comment、evidence、descriptorMatch、limiters 和 nextBandActions。',
       `上一次输出：${JSON.stringify(parsed)}`
     ].join('\n');
     const repairContent = imageUrl
@@ -843,8 +1038,10 @@ async function gradeWriting(prompt, essay) {
       messages: [{ role: 'user', content: repairContent }]
     });
     parsed = parseJsonText(extractMessageText(data));
-    review = normalizeReview(parsed, prompt);
-    if (!hasUsableIeltsReview(review)) {
+    const repairedReview = applyOfficialMinimumResponseRule(normalizeReview(parsed, prompt), essay);
+    if (hasUsableIeltsReview(repairedReview)) {
+      review = repairedReview;
+    } else if (!firstReviewUsable) {
       throw new Error('writing-ielts-review-invalid');
     }
   }
@@ -1495,9 +1692,14 @@ module.exports = {
     calculateIeltsWritingTestEstimate,
     normalizeBandSample,
     normalizeTask1FactCheck,
+    normalizeOfficialBandDecisions,
+    isCompleteOfficialBandDecision,
     hasCompleteIeltsCriterionDetails,
+    hasCompleteOfficialBandDecisions,
     hasUsableIeltsReview,
     normalizeReview,
+    countIeltsWritingWords,
+    applyOfficialMinimumResponseRule,
     sanitizePromptForGrading,
     buildWritingScoreFingerprint,
     resolveWritingAttemptRef,
