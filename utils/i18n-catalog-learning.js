@@ -214,3 +214,51 @@ Object.assign(module.exports.lesson['zh-CN'], { manualMarkHint: '点词标黄，
 Object.assign(module.exports.lesson.en, { manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press the current line for green.', clearManualMarks: 'Clear marks' });
 Object.assign(module.exports.materialDetail['zh-CN'], { manualMarkHint: '点词标黄，连续点标蓝；长按题干标绿', clearManualMarks: '清除标记' });
 Object.assign(module.exports.materialDetail.en, { manualMarkHint: 'Tap yellow; adjacent words turn blue. Long-press the question for green.', clearManualMarks: 'Clear marks' });
+Object.assign(module.exports.materialDetail['zh-CN'], {
+  listeningPdfDownload: '下载完整听力 PDF',
+  listeningPdfGenerating: '正在生成 PDF',
+  listeningPdfFailed: 'PDF 生成失败，请重试',
+  listeningPdfPreparing: '正在补齐学习报告，请稍后重试'
+});
+Object.assign(module.exports.materialDetail.en, {
+  listeningPdfDownload: 'Download Full Listening PDF',
+  listeningPdfGenerating: 'Generating PDF',
+  listeningPdfFailed: 'Could not generate PDF',
+  listeningPdfPreparing: 'Preparing the learning report. Try again shortly.'
+});
+Object.assign(module.exports.practiceHistory['zh-CN'], {
+  listeningTitle: '听力记录',
+  listeningEyebrow: '听力套题',
+  listeningCopy: '回看原题、原文、答案、解析和学习卡。',
+  noListening: '还没有听力套题记录',
+  listeningOriginalImages: '原题图片',
+  listeningTranscript: '完整听力原文',
+  listeningAnalysis: '逐题解析',
+  listeningEvidence: '听力依据',
+  listeningEvidenceTranslation: '依据翻译',
+  listeningVocabularyCards: '生词学习卡',
+  listeningPhraseCards: '短语学习卡',
+  listeningPatternCards: '句型学习卡',
+  listeningPdfDownload: '下载完整听力 PDF',
+  listeningPdfGenerating: '正在生成 PDF',
+  listeningPdfFailed: 'PDF 生成失败，请重试',
+  listeningPdfPreparing: '正在补齐学习报告，请稍后重试'
+});
+Object.assign(module.exports.practiceHistory.en, {
+  listeningTitle: 'Listening History',
+  listeningEyebrow: 'Listening Sets',
+  listeningCopy: 'Review original questions, transcript, answers, analysis, and study cards.',
+  noListening: 'No listening set history yet',
+  listeningOriginalImages: 'Original Question Images',
+  listeningTranscript: 'Full Transcript',
+  listeningAnalysis: 'Question Analysis',
+  listeningEvidence: 'Listening Evidence',
+  listeningEvidenceTranslation: 'Evidence Translation',
+  listeningVocabularyCards: 'Vocabulary Cards',
+  listeningPhraseCards: 'Phrase Cards',
+  listeningPatternCards: 'Sentence Pattern Cards',
+  listeningPdfDownload: 'Download Full Listening PDF',
+  listeningPdfGenerating: 'Generating PDF',
+  listeningPdfFailed: 'Could not generate PDF',
+  listeningPdfPreparing: 'Preparing the learning report. Try again shortly.'
+});

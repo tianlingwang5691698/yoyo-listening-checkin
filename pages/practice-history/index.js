@@ -4,6 +4,7 @@ const i18n = require('../../utils/i18n');
 const { normalizeWritingReview } = require('../../utils/writing-report');
 const { openWritingReportPdf } = require('../../utils/writing-report-download');
 const { openReadingReportPdf } = require('../../utils/reading-report-download');
+const { openListeningReportPdf } = require('../../utils/listening-report-download');
 
 const text = (key, fallback) => i18n.getPageText('practiceHistory', key, undefined, fallback);
 
@@ -36,6 +37,12 @@ const MODULES = {
     eyebrow: text('readingEyebrow', '中考阅读'),
     copy: text('readingCopy', '回看做过的文章和逐题解析。'),
     empty: text('noReading', '还没有阅读记录')
+  },
+  listening: {
+    title: text('listeningTitle', '听力记录'),
+    eyebrow: text('listeningEyebrow', '听力套题'),
+    copy: text('listeningCopy', '回看原题、原文、答案、解析和学习卡。'),
+    empty: text('noListening', '还没有听力套题记录')
   },
   grammar: {
     title: text('grammarTitle', '语法记录'),
@@ -93,6 +100,30 @@ function normalizeReading(item, index) {
     aiAnalysisLoaded: false,
     aiAnalysisLoading: false,
     aiAnalysisStatus: '',
+    pdfGenerating: false
+  };
+}
+
+function normalizeListening(item, index) {
+  const attempt = item.latestAttempt || {};
+  const totalCount = Number(attempt.totalCount || attempt.answeredCount || 0);
+  const correctCount = Number(attempt.correctCount || 0);
+  return {
+    id: String(item.id || item.recordId || `listening-${index}`),
+    targetId: String(item.targetId || ''),
+    title: item.title || '听力套题',
+    meta: item.meta || text('listeningEyebrow', '听力套题'),
+    dateLabel: cleanDate(item.date, item.updatedAt),
+    summary: totalCount ? `${correctCount}/${totalCount}${text('questionSuffix', ' 题')}` : (item.progressText || text('completed', '已完成')),
+    attempt,
+    detailReady: false,
+    detailLoading: false,
+    transcript: '',
+    sourceImages: [],
+    detailQuestions: [],
+    vocabularyCards: [],
+    phraseCards: [],
+    sentencePatternCards: [],
     pdfGenerating: false
   };
 }
@@ -266,6 +297,31 @@ async function resolveWritingPromptImages(attempt) {
   return Object.assign({}, source, { promptImages });
 }
 
+async function resolveListeningImages(item) {
+  const resolveImage = async (image) => {
+    if (!image || image.src || image.url) return image;
+    try {
+      const src = await store.getTempFileURL(image.fileId || image.fileID || image.cloudPath);
+      return Object.assign({}, image, { src });
+    } catch (error) {
+      return image;
+    }
+  };
+  const source = item || {};
+  const images = await Promise.all((source.images || []).map(resolveImage));
+  const questions = await Promise.all((source.questions || []).map(async (question) => {
+    const optionEntries = await Promise.all(Object.entries(question.optionImages || {}).map(async ([key, image]) => [
+      key,
+      await resolveImage(image)
+    ]));
+    return Object.assign({}, question, {
+      sourceImages: await Promise.all((question.sourceImages || []).map(resolveImage)),
+      optionImages: Object.fromEntries(optionEntries)
+    });
+  }));
+  return Object.assign({}, source, { images, questions });
+}
+
 function isWritingGradingPending(attempt) {
   return ['grading-pending', 'grading', 'grading-failed'].includes(String(attempt && attempt.status || ''));
 }
@@ -338,6 +394,8 @@ Page({
       ? { title: text('grammarTitle'), eyebrow: text('grammarEyebrow'), copy: text('grammarCopy'), empty: text('noGrammar') }
       : type === 'writing'
         ? { title: text('writingTitle'), eyebrow: text('writingEyebrow'), copy: text('writingCopy'), empty: text('noWriting') }
+        : type === 'listening'
+          ? { title: text('listeningTitle'), eyebrow: text('listeningEyebrow'), copy: text('listeningCopy'), empty: text('noListening') }
         : type === 'vocabulary'
           ? { title: text('vocabularyTitle'), eyebrow: text('vocabularyEyebrow'), copy: text('vocabularyCopy'), empty: text('noVocabulary') }
         : { title: text('readingTitle'), eyebrow: text('readingEyebrow'), copy: text('readingCopy'), empty: text('noReading') };
@@ -377,6 +435,23 @@ Page({
       const result = await store.getVocabularyDictationHistory();
       const debugLines = buildDebugLines(result, 'getVocabularyDictationHistory');
       this.setData({ loading: false, records: debugLines.length ? [] : (result.attempts || []).map(normalizeVocabulary), debugLines });
+      if (this.historyPerf) this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
+      return;
+    }
+    if (this.data.type === 'listening') {
+      const result = await store.getStudyCompletions({
+        days: 3650,
+        type: 'listening',
+        summaryOnly: true
+      });
+      const debugLines = buildDebugLines(result, 'getStudyCompletions');
+      this.setData({
+        loading: false,
+        records: debugLines.length
+          ? []
+          : (result.items || []).filter((item) => item.section === 'questions').map(normalizeListening),
+        debugLines
+      });
       if (this.historyPerf) this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
       return;
     }
@@ -502,6 +577,73 @@ Page({
     if (this.data.type === 'vocabulary' && record && !record.detailReady && !record.detailLoading) {
       this.loadVocabularyDetail(record);
     }
+    if (this.data.type === 'listening' && record && !record.detailReady && !record.detailLoading) {
+      this.loadListeningDetail(record);
+    }
+  },
+  async loadListeningDetail(record) {
+    this.updateRecord(record.id, { detailLoading: true });
+    const [completionResult, materialResult] = await Promise.all([
+      store.getStudyCompletionDetail(record.id),
+      store.getMaterialItem({ moduleId: 'listening', itemId: record.targetId })
+    ]);
+    const completion = completionResult && completionResult.item;
+    const rawItem = materialResult && materialResult.item;
+    if (!completion || !rawItem) {
+      this.updateRecord(record.id, { detailLoading: false });
+      return;
+    }
+    const item = await resolveListeningImages(rawItem);
+    let packResult = null;
+    try {
+      packResult = await store.getListeningStudyPack(item, {
+        includeQuestionAnalyses: true,
+        useCache: false
+      });
+    } catch (error) {}
+    const studyPack = packResult && packResult.studyPack || {};
+    const attempt = completion.latestAttempt || {};
+    const results = Array.isArray(attempt.questions) ? attempt.questions : [];
+    const analyses = Array.isArray(studyPack.questionAnalyses) ? studyPack.questionAnalyses : [];
+    const detailQuestions = (item.questions || []).map((question, index) => {
+      const number = question.number === undefined || question.number === null ? index + 1 : question.number;
+      const result = results.find((entry) => String(entry.number) === String(number)) || {};
+      const analysis = analyses.find((entry) => String(entry.number) === String(number)) || {};
+      const selected = result.selectedAnswer || '';
+      const answer = question.answer || result.answer || '';
+      return {
+        number,
+        sectionTitle: question.sectionTitle || '',
+        groupTitle: question.groupTitle || '',
+        groupInstruction: question.groupInstruction || '',
+        formTitle: question.formTitle || '',
+        givenRows: question.givenRows || [],
+        questionImages: [].concat(
+          question.sourceImages || [],
+          Object.values(question.optionImages || {})
+        ),
+        prompt: question.prompt || result.prompt || '',
+        optionsList: buildOptions(question.options || result.options, selected, answer),
+        selected,
+        answer,
+        correct: result.isCorrect === true
+          || (!!selected && String(selected).toLowerCase() === String(answer).toLowerCase()),
+        analysis: analysis.analysis || '',
+        evidence: analysis.evidence || '',
+        evidenceTranslation: analysis.evidenceTranslation || ''
+      };
+    });
+    this.updateRecord(record.id, {
+      detailLoading: false,
+      detailReady: true,
+      attempt,
+      transcript: item.transcript || '',
+      sourceImages: item.images || [],
+      detailQuestions,
+      vocabularyCards: studyPack.vocabularyCards || [],
+      phraseCards: studyPack.phraseCards || [],
+      sentencePatternCards: studyPack.sentencePatternCards || []
+    });
   },
   async loadVocabularyDetail(record) {
     this.updateRecord(record.id, { detailLoading: true });
@@ -830,6 +972,29 @@ Page({
         title: message.includes('study-pack-generating')
           ? text('readingPdfPreparing', '正在补齐学习包，请稍后重试')
           : text('readingPdfFailed', 'PDF 生成失败，请重试'),
+        icon: 'none'
+      });
+    } finally {
+      this.updateRecord(recordId, { pdfGenerating: false });
+    }
+  },
+  async downloadListeningReportPdf(event) {
+    const recordId = String(event.currentTarget.dataset.recordId || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    if (!record || record.pdfGenerating) return;
+    this.updateRecord(recordId, { pdfGenerating: true });
+    try {
+      const result = await store.generateListeningReportPdf({ completionId: record.id });
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error(result.cloudError && result.cloudError.message || 'listening-report-generate-failed');
+      }
+      await openListeningReportPdf(result);
+    } catch (error) {
+      const message = String(error && error.message || error || '');
+      wx.showToast({
+        title: message.includes('generating')
+          ? text('listeningPdfPreparing', '正在补齐学习报告，请稍后重试')
+          : text('listeningPdfFailed', 'PDF 生成失败，请重试'),
         icon: 'none'
       });
     } finally {

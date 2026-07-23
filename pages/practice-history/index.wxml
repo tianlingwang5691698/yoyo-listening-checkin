@@ -7,7 +7,7 @@
     <view class="history-copy">{{config.copy}}</view>
     <view class="history-parent-badge" wx:if="{{isParentView}}">{{texts.parentReadOnly}}</view>
     <view class="history-archive-mark {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">
-      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
+      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'listening' ? 'L' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W')))}}</view>
       <text>ARCHIVE</text>
     </view>
   </view>
@@ -24,7 +24,7 @@
   <view class="history-list" wx:if="{{records.length}}">
     <view class="history-record {{expandedId === item.id ? 'is-expanded' : ''}}" wx:for="{{records}}" wx:key="id">
       <view class="history-summary" data-id="{{item.id}}" bindtap="toggleRecord">
-        <view class="history-record-stamp {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
+        <view class="history-record-stamp {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">{{type === 'reading' ? 'R' : (type === 'listening' ? 'L' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W')))}}</view>
         <view class="history-summary-main">
           <view class="history-record-title">{{item.title}}</view>
           <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}<text wx:if="{{item.durationText}}"> · {{texts.durationLabel}} {{item.durationText}}</text></view>
@@ -71,6 +71,96 @@
             data-record-id="{{item.id}}"
             bindtap="downloadReadingReportPdf"
           >{{item.pdfGenerating ? texts.readingPdfGenerating : texts.readingPdfDownload}}</button>
+        </block>
+
+        <block wx:if="{{type === 'listening' && item.detailReady}}">
+          <view class="history-section" wx:if="{{item.sourceImages.length}}">
+            <view class="history-section-title">{{texts.listeningOriginalImages}}</view>
+            <image
+              class="history-listening-image"
+              wx:for="{{item.sourceImages}}"
+              wx:key="key"
+              wx:for-item="sourceImage"
+              src="{{sourceImage.src || sourceImage.url}}"
+              mode="widthFix"
+              show-menu-by-longpress="{{true}}"
+            ></image>
+          </view>
+          <view class="history-section" wx:if="{{item.transcript}}">
+            <view class="history-section-title">{{texts.listeningTranscript}}</view>
+            <view class="history-listening-transcript">{{item.transcript}}</view>
+          </view>
+          <view class="history-question history-listening-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
+            <view class="history-listening-section" wx:if="{{question.sectionTitle}}">{{question.sectionTitle}}</view>
+            <view class="history-listening-group" wx:if="{{question.groupTitle}}">{{question.groupTitle}}</view>
+            <view class="history-listening-instruction" wx:if="{{question.groupInstruction}}">{{question.groupInstruction}}</view>
+            <view class="history-listening-form" wx:if="{{question.formTitle}}">{{question.formTitle}}</view>
+            <view class="history-list-line" wx:for="{{question.givenRows}}" wx:key="index" wx:for-item="row">{{row.label}}<text wx:if="{{row.label}}">: </text>{{row.value}}</view>
+            <image
+              class="history-listening-image"
+              wx:for="{{question.questionImages}}"
+              wx:key="key"
+              wx:for-item="questionImage"
+              src="{{questionImage.src || questionImage.url}}"
+              mode="widthFix"
+              show-menu-by-longpress="{{true}}"
+            ></image>
+            <view class="history-question-no">{{texts.questionPrefix}}{{question.number}}{{texts.questionSuffix}}</view>
+            <view class="history-question-prompt">{{question.prompt}}</view>
+            <view class="history-option {{option.isAnswer ? 'is-answer' : ''}} {{option.isSelected && !option.isAnswer ? 'is-selected-wrong' : ''}}" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">
+              <text>{{option.key}}. {{option.text}}</text>
+              <text wx:if="{{option.isSelected}}">{{texts.childAnswer}}</text>
+            </view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">
+              <text>{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}}</text>
+              <text>{{texts.correctAnswer}}{{question.answer || texts.none}}</text>
+            </view>
+            <view class="history-analysis" wx:if="{{question.analysis}}">
+              <view class="history-analysis-label">{{texts.listeningAnalysis}}</view>
+              <view>{{question.analysis}}</view>
+            </view>
+            <view class="history-analysis is-evidence" wx:if="{{question.evidence}}">
+              <view class="history-analysis-label">{{texts.listeningEvidence}}</view>
+              <view>{{question.evidence}}</view>
+            </view>
+            <view class="history-analysis is-translation" wx:if="{{question.evidenceTranslation}}">
+              <view class="history-analysis-label">{{texts.listeningEvidenceTranslation}}</view>
+              <view>{{question.evidenceTranslation}}</view>
+            </view>
+          </view>
+          <view class="history-section history-listening-pack" wx:if="{{item.vocabularyCards.length}}">
+            <view class="history-section-title">{{texts.listeningVocabularyCards}}</view>
+            <view class="history-study-row" wx:for="{{item.vocabularyCards}}" wx:key="word" wx:for-item="card">
+              <view class="history-study-term">{{card.word}} <text>{{card.phonetic}}</text></view>
+              <view class="history-study-meaning">{{card.meaning}}</view>
+              <view class="history-study-example">{{card.example}}</view>
+              <view class="history-study-translation">{{card.exampleMeaning}}</view>
+            </view>
+          </view>
+          <view class="history-section history-listening-pack" wx:if="{{item.phraseCards.length}}">
+            <view class="history-section-title">{{texts.listeningPhraseCards}}</view>
+            <view class="history-study-row" wx:for="{{item.phraseCards}}" wx:key="text" wx:for-item="card">
+              <view class="history-study-term">{{card.text}}</view>
+              <view class="history-study-meaning">{{card.meaning}}</view>
+              <view class="history-study-example">{{card.example}}</view>
+            </view>
+          </view>
+          <view class="history-section history-listening-pack" wx:if="{{item.sentencePatternCards.length}}">
+            <view class="history-section-title">{{texts.listeningPatternCards}}</view>
+            <view class="history-study-row" wx:for="{{item.sentencePatternCards}}" wx:key="pattern" wx:for-item="card">
+              <view class="history-study-term">{{card.pattern}}</view>
+              <view class="history-study-meaning">{{card.meaning}}</view>
+              <view class="history-study-example">{{card.example}}</view>
+              <view class="history-study-translation">{{card.exampleMeaning}}</view>
+            </view>
+          </view>
+          <button
+            class="reading-report-download listening-report-download"
+            loading="{{item.pdfGenerating}}"
+            disabled="{{item.pdfGenerating}}"
+            data-record-id="{{item.id}}"
+            bindtap="downloadListeningReportPdf"
+          >{{item.pdfGenerating ? texts.listeningPdfGenerating : texts.listeningPdfDownload}}</button>
         </block>
 
         <block wx:if="{{type === 'grammar'}}">

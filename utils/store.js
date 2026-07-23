@@ -34,6 +34,7 @@ const MUTATION_ACTIONS = {
   completeTodayCheckin: true,
   submitReadingAttempt: true,
   generateReadingReportPdf: true,
+  generateListeningReportPdf: true,
   analyzeWritingTranslation: true,
   submitWritingAttempt: true,
   gradeWritingAttempt: true,
@@ -664,7 +665,8 @@ async function getListeningStudyPack(item, options, onRefresh) {
   const payload = {
     listeningId: item && (item._id || item.id),
     item,
-    cacheOnly: !!opts.cacheOnly
+    cacheOnly: !!opts.cacheOnly,
+    includeQuestionAnalyses: !!opts.includeQuestionAnalyses
   };
   return callCloud('getListeningStudyPack', withSelectedStudent(payload), {
     listeningId: payload.listeningId || '',
@@ -1033,6 +1035,14 @@ async function submitReadingAttempt(options) {
 
 async function generateReadingReportPdf(options) {
   return callCloud('generateReadingReportPdf', withSelectedStudent(options || {}), {
+    fileId: '',
+    tempUrl: '',
+    fileName: ''
+  }, { useCache: false });
+}
+
+async function generateListeningReportPdf(options) {
+  return callCloud('generateListeningReportPdf', withSelectedStudent(options || {}), {
     fileId: '',
     tempUrl: '',
     fileName: ''
@@ -1476,6 +1486,7 @@ module.exports = {
   addDictionaryWord,
   submitReadingAttempt,
   generateReadingReportPdf,
+  generateListeningReportPdf,
   analyzeWritingTranslation,
   submitWritingAttempt,
   gradeWritingAttempt,

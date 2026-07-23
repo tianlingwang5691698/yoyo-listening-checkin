@@ -94,6 +94,13 @@
   </view>
 
   <button class="library-submit-button" wx:if="{{!submitted}}" bindtap="submit">{{texts.submit}}</button>
+  <button
+    class="listening-report-download is-library"
+    wx:if="{{submitted && completionId}}"
+    loading="{{pdfGenerating}}"
+    disabled="{{pdfGenerating}}"
+    bindtap="downloadListeningReportPdf"
+  >{{pdfGenerating ? texts.listeningPdfGenerating : texts.listeningPdfDownload}}</button>
 
   <view class="library-study-margin">
     <view class="library-paper-head">
@@ -253,6 +260,13 @@
   </view>
 
   <button class="button-primary submit-button" wx:if="{{!submitted}}" bindtap="submit">{{texts.submit}}</button>
+  <button
+    class="listening-report-download"
+    wx:if="{{submitted && completionId}}"
+    loading="{{pdfGenerating}}"
+    disabled="{{pdfGenerating}}"
+    bindtap="downloadListeningReportPdf"
+  >{{pdfGenerating ? texts.listeningPdfGenerating : texts.listeningPdfDownload}}</button>
 
   <view class="study-card floating-study-card card">
     <view class="question-top">

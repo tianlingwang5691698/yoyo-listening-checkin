@@ -1573,3 +1573,45 @@
     grid-template-columns: 130rpx minmax(0, 1fr);
   }
 }
+
+.listening-report-download {
+  width: 100%;
+  min-height: 88rpx;
+  margin: 22rpx 0 0;
+  border: 2rpx solid #203a5f;
+  border-radius: 8rpx;
+  background: #fffdf7;
+  color: #203a5f;
+  font-size: 27rpx;
+  font-weight: 700;
+  line-height: 84rpx;
+  box-shadow: 0 7rpx 0 rgba(32, 58, 95, 0.16);
+}
+
+.listening-report-download::after {
+  border: 0;
+}
+
+.listening-report-download[disabled] {
+  opacity: 0.58;
+}
+
+.theme-library .listening-report-download {
+  border-color: #264b3f;
+  color: #264b3f;
+  box-shadow: 0 7rpx 0 rgba(38, 75, 63, 0.16);
+}
+
+.theme-voyage .listening-report-download {
+  border-color: #18344f;
+  background: #fffaf0;
+  color: #18344f;
+  box-shadow: 0 7rpx 0 rgba(201, 73, 52, 0.2);
+}
+
+.theme-dragon .listening-report-download {
+  border: 3rpx solid #102e62;
+  background: #ffd83d;
+  color: #102e62;
+  box-shadow: inset 0 -6rpx 0 #d28b0a;
+}

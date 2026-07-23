@@ -366,9 +366,9 @@ Page({
     });
   },
   openPracticeHistory() {
-    if (this.data.moduleId !== 'writing') return;
+    if (!['writing', 'listening'].includes(this.data.moduleId)) return;
     wx.navigateTo({
-      url: '/pages/practice-history/index?type=writing'
+      url: `/pages/practice-history/index?type=${this.data.moduleId}`
     });
   },
   selectStage(event) {

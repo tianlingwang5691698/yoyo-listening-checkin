@@ -3,6 +3,7 @@ const store = require('../../../utils/store');
 const snapshotStore = require('../../../utils/snapshot');
 const i18n = require('../../../utils/i18n');
 const { formatAudioTime, formatAudioDuration } = require('../../../utils/audio-time');
+const { openListeningReportPdf } = require('../../../utils/listening-report-download');
 const { stripRepeatedQuestionTitles } = require('../../../utils/listening-question-display');
 const { tokenizeScopedText, toggleScopedTokenMark, toggleScopedSentenceMark, countScopedMarks, buildManualMarks } = require('../../../utils/scoped-manual-marks');
 
@@ -207,6 +208,8 @@ Page({
     audioSeeking: false,
     audioEnded: false,
     submitted: false,
+    completionId: '',
+    pdfGenerating: false,
     correctCount: 0,
     questionTokenMarks: {},
     questionSentenceMarks: {},
@@ -640,6 +643,11 @@ Page({
         progressText: `${correctCount}/${questions.length}`,
         latestAttempt
       });
+      if (result && result.saved && result.item) {
+        this.setData({
+          completionId: String(result.item.recordId || result.item.id || '')
+        });
+      }
       if (result && result.syncMode === 'cloud-error') {
         const cloudError = result.cloudError || {};
         const syncDebug = result.syncDebug || {};
@@ -657,6 +665,28 @@ Page({
           `DEBUG: pages/material/detail.submit -> store.recordStudyCompletion -> cloud.recordStudyCompletion -> exception=${error && error.message ? error.message : String(error)}, targetChildId=${target.targetChildId || 'self'}`
         ]
       });
+    }
+  },
+  async downloadListeningReportPdf() {
+    const completionId = String(this.data.completionId || '');
+    if (!completionId || this.data.pdfGenerating) return;
+    this.setData({ pdfGenerating: true });
+    try {
+      const result = await store.generateListeningReportPdf({ completionId });
+      if (result && result.syncMode === 'cloud-error') {
+        throw new Error(result.cloudError && result.cloudError.message || 'listening-report-generate-failed');
+      }
+      await openListeningReportPdf(result);
+    } catch (error) {
+      const message = String(error && error.message || error || '');
+      wx.showToast({
+        title: message.includes('generating')
+          ? text('listeningPdfPreparing', '正在补齐学习报告，请稍后重试')
+          : text('listeningPdfFailed', 'PDF 生成失败，请重试'),
+        icon: 'none'
+      });
+    } finally {
+      this.setData({ pdfGenerating: false });
     }
   },
   completeStudy() {

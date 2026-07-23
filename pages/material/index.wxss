@@ -176,6 +176,19 @@
   color: #fffdf7;
 }
 
+.library-material-page .writing-history-tabs.is-library {
+  margin-top: 20rpx;
+}
+
+.library-material-page .writing-history-tabs.is-library .writing-history-tab {
+  color: #6f675f;
+}
+
+.library-material-page .writing-history-tabs.is-library .writing-history-tab.is-active {
+  background: #14283a;
+  color: #fffdf7;
+}
+
 .material-channel-card {
   padding-right: 0;
 }

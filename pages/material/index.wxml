@@ -12,6 +12,11 @@
     </view>
   </view>
 
+  <view class="writing-history-tabs is-library">
+    <view class="writing-history-tab is-active">{{texts.practice}}</view>
+    <view class="writing-history-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
+  </view>
+
   <view class="library-listening-debug-note" wx:if="{{debugLines.length}}">
     <view class="library-listening-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
@@ -225,8 +230,8 @@
     </view>
   </view>
 
-  <view class="writing-history-tabs" wx:if="{{moduleId === 'writing'}}">
-    <view class="writing-history-tab is-active">{{texts.prompts}}</view>
+  <view class="writing-history-tabs" wx:if="{{moduleId === 'writing' || moduleId === 'listening'}}">
+    <view class="writing-history-tab is-active">{{moduleId === 'writing' ? texts.prompts : texts.practice}}</view>
     <view class="writing-history-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
   </view>
 
