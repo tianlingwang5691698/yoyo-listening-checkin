@@ -190,6 +190,8 @@ async function getTaskDetail(event) {
     })
     : dashboard.planSource === 'custom-listening' && planRunType === 'normal'
       ? dashboard.dailyTasks.filter((item) => item.category === payload.category)
+      : dashboard.planSource === 'fixed-yoyo' && planRunType === 'normal' && study.isYoyoChild(ctx.child)
+        ? dashboard.dailyTasks.filter((item) => item.category === payload.category)
       : STANDALONE_LEVEL_CATEGORIES.includes(payload.category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
       planRunType: 'level',
@@ -353,20 +355,20 @@ async function markTaskListened(event, context) {
       targetDate,
       listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
     }).filter((item) => item.category === category)
+    : (planRunType === 'normal' && study.isYoyoChild(ctx.child))
+      ? study.decorateFixedSlotPlanTasks(progressRecords, ctx.child.childId, targetDate, todayPlan, { planRunType })
+        .filter((item) => item.category === category)
     : STANDALONE_LEVEL_CATEGORIES.includes(category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,
       planDayIndex: 1
     })
-    : (planRunType === 'normal' && study.isYoyoChild(ctx.child)
-      ? study.decorateFixedSlotPlanTasks(progressRecords, ctx.child.childId, targetDate, todayPlan, { planRunType })
-        .filter((item) => item.category === category)
-      : study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
+    : study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
         planRunType,
         targetDate,
         planDayIndex: todayPlan.dayIndex
-      }));
+      });
   const task = categoryTasks.find((item) => item.taskId === payload.taskId)
     || categoryTasks.find((item) => !item.completedToday)
     || categoryTasks[0];
@@ -456,6 +458,8 @@ async function markTaskListened(event, context) {
         targetDate,
         listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
       })
+      : (planRunType === 'normal' && study.isYoyoChild(ctx.child))
+        ? study.decorateFixedSlotPlanTasks(nextProgressRecords, ctx.child.childId, targetDate, todayPlan, { planRunType })
       : study.decoratePlanTasks(nextProgressRecords, ctx.child.childId, targetDate, todayPlan, {
         planRunType,
         targetDate
@@ -616,8 +620,8 @@ async function completeGrammarPlanTask(event) {
     taskId: task.taskId,
     category: 'grammar',
     topicId: task.topic || '',
-    title: task.title || task.displayTitle || '词法微课',
-    meta: [task.topicLabel, task.lessonNumber ? `第 ${task.lessonNumber} 节` : ''].filter(Boolean).join(' · '),
+    title: task.title || task.displayTitle || `${task.grammarDomainLabel || '词法'}微课`,
+    meta: [task.grammarDomainLabel, task.topicLabel, task.lessonNumber ? `第 ${task.lessonNumber} 节` : ''].filter(Boolean).join(' · '),
     progressText: `完成 1 节微课 · 答对 ${correctQuestionCount}/${totalQuestionCount} 题 · 讲解收听完成`,
     taskSnapshot: task,
     latestAttempt: {

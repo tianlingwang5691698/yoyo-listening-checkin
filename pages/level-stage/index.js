@@ -9,7 +9,15 @@ const LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const YOYO_FIXED_PLAN_OUTLINE = {
   cycleDays: 72,
   items: [
-    { category: 'grammar', slotCount: 5, startNo: 1, endNo: 168, totalCount: 168 },
+    {
+      category: 'grammar',
+      slotCount: 5,
+      startNo: 1,
+      endNo: 168,
+      totalCount: 168,
+      syntaxTotalCount: 106,
+      scheduleText: '词法第1轮每天5课；词法第2轮每天10课；句法每天5课'
+    },
     { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
     { category: 'peppa', slotCount: 5, startNo: 73, endNo: 157, totalCount: 85 },
     { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24, workbookCount: 12 },
@@ -148,7 +156,7 @@ function normalizeStageTaskGroups(taskGroups) {
 function buildFixedPlanOutline(outline) {
   if (!outline || !Array.isArray(outline.items)) return null;
   const categoryTitles = {
-    grammar: '词法微课',
+    grammar: '语法微课',
     newconcept1: 'New Concept 1',
     peppa: 'Peppa',
     unlock1: 'Unlock 1 听口 第二版',
@@ -174,6 +182,13 @@ function buildFixedPlanOutline(outline) {
           title: categoryTitles.speaking,
           rangeText: '练习册32天 → 课本45天',
           dailyText: '练习册约8–12句；课本每天3段'
+        });
+      }
+      if (item.category === 'grammar') {
+        return Object.assign({}, item, {
+          title: categoryTitles.grammar,
+          rangeText: `词法 ${totalCount} 课 × 2轮 → 句法 ${Number(item.syntaxTotalCount || 106)} 课`,
+          dailyText: item.scheduleText || '词法第1轮每天5课；词法第2轮每天10课；句法每天5课'
         });
       }
       if (item.category === 'unlock1') {

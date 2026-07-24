@@ -77,6 +77,9 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
 
   assert.equal(result.fixedPlanOutline.cycleDays, 72);
   assert.equal(result.fixedPlanOutline.progression, 'independent-slots');
+  const grammar = result.fixedPlanOutline.items.find((item) => item.category === 'grammar');
+  assert.equal(grammar.syntaxTotalCount, 106);
+  assert.match(grammar.scheduleText, /第2轮每天10课/);
   const newConcept = result.fixedPlanOutline.items.find((item) => item.category === 'newconcept1');
   assert.deepEqual([newConcept.startNo, newConcept.endNo, newConcept.totalCount], [1, 76, 76]);
   const vocabulary = result.fixedPlanOutline.items.find((item) => item.category === 'vocabulary');

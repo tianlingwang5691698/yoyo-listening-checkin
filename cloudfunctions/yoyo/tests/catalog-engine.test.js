@@ -7,6 +7,16 @@ const taskPresenter = require('../lib/task-presenter');
 const labels = require('../../../utils/labels');
 const { TRANSCRIPT_BUNDLE_PATHS } = require('../lib/constants');
 
+test('句法语法任务显示句法徽标', () => {
+  assert.equal(taskPresenter.getTaskPresentation({
+    category: 'grammar',
+    title: '句子成分的定义与本质',
+    topicLabel: '句子成分',
+    lessonNumber: 1,
+    grammarDomainLabel: '句法'
+  }).coverBadge, '句法');
+});
+
 test('Peppa 时长按云端 128kbps MP3 文件大小还原', () => {
   assert.equal(catalogEngine.inferPeppaDurationFromFileSize(4976408), 311);
   assert.equal(catalogEngine.inferPeppaDurationFromFileSize(10145727), 634);

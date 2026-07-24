@@ -43,11 +43,12 @@ function getTaskPresentation(task) {
     return { displayTitle: '', displaySubtitle: '', coverVariant: 'song', coverBadge: '' };
   }
   if (task.category === 'grammar') {
+    const grammarLabel = task.grammarDomainLabel || task.domainLabel || '词法';
     return {
       displayTitle: title,
       displaySubtitle: task.meta || `${task.topicLabel || '十大词性'} · 第 ${Number(task.lessonNumber || 1)} 节`,
       coverVariant: 'grammar',
-      coverBadge: '词法'
+      coverBadge: grammarLabel
     };
   }
   if (task.category === 'peppa') {
@@ -132,8 +133,9 @@ function getTaskPresentation(task) {
 function getTaskReward(category, progress, task) {
   const nextStep = Math.min((progress && progress.playCount || 0) + 1, (task && task.repeatTarget) || 3);
   if (category === 'grammar') {
+    const grammarLabel = task && (task.grammarDomainLabel || task.domainLabel) || '词法';
     return {
-      rewardBadge: progress && progress.completedToday ? '已完成' : '词法',
+      rewardBadge: progress && progress.completedToday ? '已完成' : grammarLabel,
       rewardTitle: task && task.topicLabel ? task.topicLabel : '十大词性',
       rewardCopy: progress && progress.completedToday ? '今天这节微课已完成。' : '完成例句观察和小练习。'
     };

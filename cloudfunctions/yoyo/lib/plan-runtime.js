@@ -1,5 +1,6 @@
 const { addDays, formatChinaDateFromDate } = require('./date');
 const grammarPlanCatalog = require('../data/grammar-plan-catalog.json');
+const grammarSyntaxPlanCatalog = require('../data/grammar-syntax-plan-catalog.json');
 
 const PLAN_SLOT_COUNT = 24;
 const GRAMMAR_PLAN_START_DAY = 86;
@@ -19,6 +20,7 @@ const GRAMMAR_TOPICS = [
   ['interjection', '感叹词', 10]
 ];
 let grammarCatalogCache = null;
+let grammarSyntaxCatalogCache = null;
 const PLAN_PHASES = [
   { key: 'round-1', label: '第1轮', startDay: 1, length: 72, batchSize: 1 },
   { key: 'round-2', label: '阶段二', startDay: 73, length: 72, batchSize: 1 }
@@ -46,6 +48,16 @@ function buildGrammarCatalog() {
     durationSec: 0
   }));
   return grammarCatalogCache;
+}
+
+function buildGrammarSyntaxCatalog() {
+  if (grammarSyntaxCatalogCache) return grammarSyntaxCatalogCache;
+  grammarSyntaxCatalogCache = grammarSyntaxPlanCatalog.map((item) => Object.assign({}, item, {
+    category: 'grammar',
+    repeatTarget: 1,
+    durationSec: 0
+  }));
+  return grammarSyntaxCatalogCache;
 }
 
 function getGrammarIndicesForDay(dayIndex, catalogLength = 168) {
@@ -237,6 +249,7 @@ module.exports = {
   buildLoopingIndices,
   buildLinearIndices,
   buildGrammarCatalog,
+  buildGrammarSyntaxCatalog,
   getGrammarIndicesForDay,
   getRound1IndicesForCategory,
   getRound2IndicesForCategory,
