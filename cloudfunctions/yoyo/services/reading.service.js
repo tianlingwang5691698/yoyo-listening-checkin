@@ -15,6 +15,7 @@ const STUDY_PACK_RETRY_AFTER_MS = 3000;
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
 const READING_STUDY_MODEL_TIMEOUT_MS = 50000;
 const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
+const READING_REPORT_PDF_CACHE_VERSION = 'study-v3';
 const studyPackBuildPromises = {};
 let passageListCache = null;
 const PASSAGE_LIST_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -215,11 +216,26 @@ async function ensureReadingReportStudyPack(passage, attempt) {
     }
     studyPack = mergeStudyPacks(studyPack, generated.studyPack, passage);
   }
-  if (!hasStudyPackSection(studyPack, 'cards', passage)) {
-    const generatedCards = await buildLearningPackWithModel(passage, 'cards');
-    studyPack = mergeStudyPacks(studyPack, generatedCards, passage);
-    const saved = await saveStudyPack(passage, studyPack, { validateQuestions: true });
-    if (!saved) throw new Error('reading-report-study-pack-save-failed');
+  const cardSections = ['vocabulary', 'phrases', 'patterns'];
+  let missingSections = cardSections.filter((section) => !isValidLearningSection(studyPack, section, passage));
+  if (missingSections.length) {
+    try {
+      const generatedCards = await buildLearningPackWithModel(passage, 'cards', { allowPartial: true });
+      studyPack = mergeStudyPacks(studyPack, generatedCards, passage);
+      const saved = await saveStudyPack(passage, studyPack, { validateQuestions: true });
+      if (!saved) throw new Error('reading-report-study-pack-save-failed');
+    } catch (error) {
+      if (String(error && error.message || error) === 'reading-report-study-pack-save-failed') throw error;
+    }
+    missingSections = cardSections.filter((section) => !isValidLearningSection(studyPack, section, passage));
+    if (missingSections.length) {
+      await Promise.allSettled(missingSections.map(async (section) => {
+        const generated = await buildLearningPackWithModel(passage, section);
+        const saved = await saveStudyPack(passage, generated, { validateQuestions: true });
+        if (!saved) throw new Error('reading-report-study-pack-save-failed');
+      }));
+      studyPack = mergeStudyPacks(studyPack, await getCachedStudyPack(passage), passage);
+    }
   }
   validateQuestionStudyPack(studyPack, passage);
   validateLearningStudyPack(studyPack, 'cards', passage);
@@ -251,6 +267,33 @@ async function loadReadingReportAttempt(ctx, payload) {
     if (item && item.latestAttempt) return item.latestAttempt;
   }
   throw new Error('reading-report-attempt-not-found');
+}
+
+function buildReadingReportPdfMeta(ctx, attempt, payload, passage) {
+  const safeAttemptId = String(attempt._id || payload.completionId || passage._id)
+    .replace(/[^a-zA-Z0-9_-]/g, '')
+    .slice(0, 100);
+  const cloudPath = [
+    '_exports',
+    'reading-reports',
+    ctx.family.familyId,
+    ctx.child.childId,
+    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-${READING_REPORT_PDF_CACHE_VERSION}.pdf`
+  ].join('/');
+  return {
+    fileId: storageAdapter.buildCloudFileId(cloudPath),
+    cloudPath,
+    fileName: `${String(passage.title || 'reading-report').replace(/[\\/:*?"<>|]/g, ' ')}.pdf`
+  };
+}
+
+async function getCachedReadingReportPdf(meta) {
+  if (!await storageAdapter.cloudFileExists(meta.cloudPath)) return null;
+  const tempUrl = await storageAdapter.getTempFileURL(meta.fileId, meta.cloudPath);
+  return Object.assign({}, meta, {
+    tempUrl: tempUrl || storageAdapter.buildCloudAssetUrl(meta.cloudPath),
+    cached: true
+  });
 }
 
 function hasUsableReadingQuestions(passage) {
@@ -1354,6 +1397,15 @@ function validateLearningStudyPack(studyPack, section, passage) {
   }
 }
 
+function isValidLearningSection(studyPack, section, passage) {
+  try {
+    validateLearningStudyPack(studyPack, section, passage);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
 function hasStudyPackSection(studyPack, section, passage) {
   const pack = normalizeStudyPack(studyPack, passage);
   if (section === 'vocabulary') {
@@ -1447,7 +1499,8 @@ async function buildStudyPackWithModel(passage, options) {
   }
 }
 
-async function buildLearningPackWithModel(passage, section) {
+async function buildLearningPackWithModel(passage, section, options) {
+  const settings = options || {};
   const config = getReadingStudyModelConfig();
   const target = ['vocabulary', 'phrases', 'patterns', 'cards'].includes(section) ? section : 'cards';
   if (!config.endpoint || !config.apiKey) {
@@ -1496,7 +1549,9 @@ async function buildLearningPackWithModel(passage, section) {
     const studyPack = normalizeStudyPack(Object.assign({}, parseJsonText(extractMessageText(response)) || {}, {
       source: `model:${model}`
     }), passage);
-    validateLearningStudyPack(studyPack, target, passage);
+    if (!settings.allowPartial) {
+      validateLearningStudyPack(studyPack, target, passage);
+    }
     return studyPack;
   }
   try {
@@ -1738,18 +1793,38 @@ async function saveStudyPack(passage, studyPack, options) {
     return false;
   }
   try {
-    if (options && options.validateQuestions && (studyPack.questionAnalyses || []).length) {
-      validateQuestionStudyPack(studyPack, passage);
-    }
-    await dbAdapter.collection(STUDY_PACK_COLLECTION).add({
-      data: {
-        passageId: passage._id,
-        title: passage.title,
-        studyPack,
-        source: studyPack.source || '',
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
+    const cacheKey = getStudyPackCacheKey(passage._id);
+    const sharedCached = await getCachedStudyPack(passage);
+    await dbAdapter.db.runTransaction(async (transaction) => {
+      const reference = transaction.collection(STUDY_PACK_COLLECTION).doc(cacheKey);
+      let current = null;
+      try {
+        const result = await reference.get();
+        current = result && result.data ? result.data : null;
+      } catch (error) {
+        if (!isMissingDocumentError(error)) throw error;
       }
+      const mergedCurrent = mergeStudyPacks(sharedCached, current && current.studyPack, passage);
+      const mergedStudyPack = mergeStudyPacks(mergedCurrent, studyPack, passage);
+      if (options && options.validateQuestions && (mergedStudyPack.questionAnalyses || []).length) {
+        validateQuestionStudyPack(mergedStudyPack, passage);
+      }
+      const now = new Date().toISOString();
+      const questionReady = isValidQuestionStudyPack(mergedStudyPack, passage);
+      await reference.set({
+        data: {
+          passageId: passage._id,
+          title: passage.title,
+          studyPack: mergedStudyPack,
+          source: mergedStudyPack.source || '',
+          status: questionReady ? 'ready' : (current && current.status || 'partial'),
+          generationStartedAt: current && current.generationStartedAt || '',
+          generationFinishedAt: questionReady ? (current && current.generationFinishedAt || now) : '',
+          lastError: questionReady ? '' : (current && current.lastError || ''),
+          createdAt: current && current.createdAt || now,
+          updatedAt: now
+        }
+      });
     });
     return true;
   } catch (error) {
@@ -2376,6 +2451,17 @@ async function generateReadingReportPdf(event) {
   }
   const passage = await findPassageById(passageId, study.getTodayString());
   if (!passage) throw new Error('reading-report-passage-not-found');
+  const reportMeta = buildReadingReportPdfMeta(ctx, attempt, payload, passage);
+  const cachedReport = await getCachedReadingReportPdf(reportMeta);
+  if (cachedReport) return cachedReport;
+  if (payload.cacheOnly) {
+    return Object.assign({}, reportMeta, {
+      tempUrl: '',
+      cached: false,
+      generating: true,
+      retryAfterMs: 5000
+    });
+  }
   const studyPack = await ensureReadingReportStudyPack(passage, attempt);
   const imageBuffers = await downloadReadingReportImages(passage);
   const pdfBuffer = await buildReadingReportPdf({
@@ -2384,24 +2470,14 @@ async function generateReadingReportPdf(event) {
     studyPack,
     imageBuffers
   });
-  const safeAttemptId = String(attempt._id || payload.completionId || passageId)
-    .replace(/[^a-zA-Z0-9_-]/g, '')
-    .slice(0, 100);
-  const cloudPath = [
-    '_exports',
-    'reading-reports',
-    ctx.family.familyId,
-    ctx.child.childId,
-    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-study-v3.pdf`
-  ].join('/');
-  const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
+  const uploaded = await storageAdapter.uploadCloudFileBuffer(reportMeta.cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);
-  return {
+  return Object.assign({}, reportMeta, {
     fileId: uploaded.fileId,
     cloudPath: uploaded.cloudPath,
     tempUrl,
-    fileName: `${String(passage.title || 'reading-report').replace(/[\\/:*?"<>|]/g, ' ')}.pdf`
-  };
+    cached: false
+  });
 }
 
 async function synthesizeReadingAudio(event) {
@@ -2556,6 +2632,7 @@ module.exports = {
     parseJsonText,
     collectReadingReportImages,
     buildAttemptReviewStudyPack,
+    isValidLearningSection,
     READING_STUDY_MODEL_TIMEOUT_MS
   }
 };

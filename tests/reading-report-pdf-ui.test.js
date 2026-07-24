@@ -41,12 +41,26 @@ test('旧阅读记录保留真实 attempt 并允许 completionId 回退导出', 
   assert.match(service, /completionId[\s\S]*?studyCompletedItems[\s\S]*?recordId: completionId[\s\S]*?latestAttempt/);
 });
 
+test('阅读学习包共享持久化，PDF 超时后只轮询稳定成品', () => {
+  const service = read('cloudfunctions/yoyo/services/reading.service.js');
+  const storage = read('cloudfunctions/yoyo/adapters/storage.adapter.js');
+  const store = read('utils/store.js');
+  assert.match(service, /saveStudyPack[\s\S]*?runTransaction[\s\S]*?doc\(cacheKey\)[\s\S]*?mergeStudyPacks/);
+  assert.match(service, /buildLearningPackWithModel\(passage, 'cards', \{ allowPartial: true \}\)/);
+  assert.match(service, /Promise\.allSettled\(missingSections\.map[\s\S]*?saveStudyPack\(passage, generated/);
+  assert.match(service, /getCachedReadingReportPdf\(reportMeta\)[\s\S]*?payload\.cacheOnly/);
+  assert.match(storage, /function cloudFileExists\(/);
+  assert.match(store, /shouldPollReadingReportPdf[\s\S]*?cacheOnly: true[\s\S]*?cached\.tempUrl/);
+});
+
 test('阅读报告完整性与 UI 规则已写入门禁', () => {
   const dataRules = read('docs/DATA_CLEANING_RULES.md');
   const uiLog = read('docs/UI_DESIGN_LANGUAGE_LOG.md');
   const catalog = require('../utils/i18n-catalog-learning');
   assert.match(dataRules, /阅读 PDF[\s\S]*?作答说明[\s\S]*?原题图片[\s\S]*?生词、短语和句型/);
   assert.match(dataRules, /无法完整取得时，不得输出残缺 PDF/);
+  assert.match(dataRules, /阅读 PDF 补齐生词、短语、句型[\s\S]*?确定性共享缓存/);
+  assert.match(dataRules, /客户端连接超时后只能轮询该路径的成品状态/);
   assert.match(uiLog, /阅读学习报告 PDF 导出/);
   assert.equal(catalog.readingDetail['zh-CN'].readingPdfDownload, '下载完整阅读 PDF');
   assert.equal(catalog.practiceHistory.en.readingPdfGenerating, 'Generating PDF');

@@ -141,6 +141,16 @@ test('旧提交中的完整模型解析可恢复为报告学习包', () => {
   assert.equal(pack.questionAnalyses[0].answerSentenceTranslation, '学生学习更有效。');
 });
 
+test('旧缓存短语有数量但无法在原文定位时必须定向补短语', () => {
+  const input = buildFixture('');
+  input.passage.passage = input.passage.passageParagraphs.join('\n\n');
+  const invalid = Object.assign({}, input.studyPack, {
+    phraseCards: [{ text: 'not in the passage', meaning: '无效短语', example: 'not in the passage' }]
+  });
+  assert.equal(reading._test.isValidLearningSection(invalid, 'phrases', input.passage), false);
+  assert.equal(reading._test.isValidLearningSection(input.studyPack, 'phrases', input.passage), true);
+});
+
 test('阅读 PDF 使用统一层级、英文正文字体和分区起页', () => {
   const source = fs.readFileSync(path.resolve(__dirname, '../lib/reading-report-pdf.js'), 'utf8');
   assert.match(source, /function addQuestions[\s\S]*doc\.addPage\(\)/);

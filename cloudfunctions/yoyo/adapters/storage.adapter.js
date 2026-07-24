@@ -29,6 +29,26 @@ function buildCloudFileId(cloudPath) {
   return `cloud://${envId}.${CLOUD_BUCKET}/${normalizedPath}`;
 }
 
+function cloudFileExists(cloudPath, redirects = 2) {
+  const target = buildCloudAssetUrl(cloudPath);
+  if (!target) return Promise.resolve(false);
+  const check = (targetUrl, remaining) => new Promise((resolve) => {
+    const request = https.request(targetUrl, { method: 'HEAD' }, (response) => {
+      if ([301, 302, 303, 307, 308].includes(response.statusCode) && response.headers.location && remaining > 0) {
+        response.resume();
+        check(new URL(response.headers.location, targetUrl).toString(), remaining - 1).then(resolve);
+        return;
+      }
+      response.resume();
+      resolve(Number(response.statusCode || 0) === 200);
+    });
+    request.setTimeout(5000, () => request.destroy());
+    request.on('error', () => resolve(false));
+    request.end();
+  });
+  return check(target, redirects);
+}
+
 function getStorageManager() {
   if (storageManager) {
     return storageManager;
@@ -217,6 +237,7 @@ module.exports = {
   normalizeCloudPath,
   buildCloudAssetUrl,
   buildCloudFileId,
+  cloudFileExists,
   getStorageManager,
   formatStorageError,
   getBaseName,

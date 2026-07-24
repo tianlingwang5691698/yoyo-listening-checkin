@@ -1,38 +1,10 @@
-function downloadFile(url) {
-  return new Promise((resolve, reject) => {
-    wx.downloadFile({
-      url,
-      success: (result) => {
-        if (Number(result.statusCode || 0) === 200 && result.tempFilePath) {
-          resolve(result.tempFilePath);
-          return;
-        }
-        reject(new Error(`listening-report-download-${result.statusCode || 0}`));
-      },
-      fail: reject
-    });
-  });
-}
-
-function openDocument(filePath, fileName) {
-  return new Promise((resolve, reject) => {
-    wx.openDocument({
-      filePath,
-      fileType: 'pdf',
-      fileName: fileName || 'listening-report.pdf',
-      showMenu: true,
-      success: resolve,
-      fail: reject
-    });
-  });
-}
+const { openReportPdf } = require('./report-pdf-download');
 
 async function openListeningReportPdf(result) {
-  const url = String(result && (result.tempUrl || result.url) || '');
-  if (!url) throw new Error('listening-report-url-missing');
-  const filePath = await downloadFile(url);
-  await openDocument(filePath, result.fileName);
-  return filePath;
+  return openReportPdf(result, {
+    fallbackFileName: 'listening-report.pdf',
+    errorPrefix: 'listening-report'
+  });
 }
 
 module.exports = {

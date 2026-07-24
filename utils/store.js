@@ -1034,12 +1034,42 @@ async function submitReadingAttempt(options) {
   }, { useCache: false });
 }
 
+function shouldPollReadingReportPdf(result) {
+  const message = String(result && result.cloudError && result.cloudError.message || '');
+  return /-501002|resource server timeout|ESOCKETTIMEDOUT|generateReadingReportPdf-timeout|cloud\.callFunction:fail.*timeout/i.test(message);
+}
+
+function waitForReadingReportPdf(delayMs) {
+  return new Promise((resolve) => setTimeout(resolve, delayMs));
+}
+
 async function generateReadingReportPdf(options) {
-  return callCloud('generateReadingReportPdf', withSelectedStudent(options || {}), {
+  const payload = withSelectedStudent(options || {});
+  const defaults = {
     fileId: '',
     tempUrl: '',
     fileName: ''
-  }, { useCache: false });
+  };
+  const result = await callCloud('generateReadingReportPdf', payload, defaults, {
+    useCache: false,
+    preserveReadCache: true
+  });
+  if (!result || result.syncMode !== 'cloud-error' || !shouldPollReadingReportPdf(result)) {
+    return result;
+  }
+  for (let attempt = 0; attempt < 36; attempt += 1) {
+    await waitForReadingReportPdf(5000);
+    const cached = await callCloud('generateReadingReportPdf', Object.assign({}, payload, {
+      cacheOnly: true
+    }), defaults, {
+      useCache: false,
+      preserveReadCache: true
+    });
+    if (cached && cached.syncMode !== 'cloud-error' && (cached.tempUrl || cached.fileId) && !cached.generating) {
+      return cached;
+    }
+  }
+  return result;
 }
 
 async function generateListeningReportPdf(options) {
