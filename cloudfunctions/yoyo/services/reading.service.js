@@ -1267,11 +1267,12 @@ function buildQuestionAnalysisPrompt(passage, questions, repair) {
   return [
     '你是英语阅读老师，覆盖中高考和 IELTS Academic。请只返回 JSON，不要 Markdown。',
     repair ? '这是漏题补全请求，只返回下面列出的真实题号，不要返回其他题目。' : '只做逐题解析：必须按真实题号返回每题答案、原文直接答案句、答案句中文翻译、中文解析。',
+    '学生可见内容只写答案依据和解题方法，不得出现 AI、模型、系统生成、评分过程、内部依据或返回状态等技术说明。',
     '题目自带 answer 时按标准答案讲，不得修改标准答案；answer 为空时，请根据文章和题干生成最可能答案。',
     '选择题的 answerSentence 必须是原文中的直接依据，不要改写。',
     '填空题只有在原文存在可直接引用的完整依据句时才返回 answerSentence；无法可靠定位时返回空字符串，禁止编造或拼接答案句，analysis 仍需讲清答案依据。',
     '若答案为 NOT GIVEN，answerSentence 返回与题干最相关的原文句子，并在 analysis 明确说明原文没有给出判断所需信息。',
-    'analysis 用中文说明为什么选该答案，并点出排除干扰项的关键。',
+    'analysis 最多两句，用中文说明为什么选该答案，并点出排除干扰项的关键；不要重复答案句和正确答案。',
     'JSON 格式：{"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
     `标题：${passage.title}`,
     `题目：${JSON.stringify((questions || []).map((item) => ({ number: item.number, prompt: item.prompt, options: item.options, answer: item.answer })))}`,
@@ -1478,6 +1479,7 @@ async function buildLearningPackWithModel(passage, section) {
   };
   const prompt = [
     '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
+    '学生可见内容不得出现 AI、模型、系统生成、评分过程、内部依据或返回状态；同类卡片不得重复或同义反复。',
     ...sectionRules[target],
     `标题：${passage.title}`,
     `文章：${passage.passage}`
@@ -2390,7 +2392,7 @@ async function generateReadingReportPdf(event) {
     'reading-reports',
     ctx.family.familyId,
     ctx.child.childId,
-    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-study-v1.pdf`
+    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-study-v2.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);

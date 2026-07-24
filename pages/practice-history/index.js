@@ -726,7 +726,7 @@ Page({
       detailReady: true,
       aiAnalysisLoading: false,
       aiAnalysisLoaded: analysesReady,
-      aiAnalysisStatus: analysesReady ? text('analysisLoaded', '已从云端加载 AI 解析') : text('noAnalysis', '这篇阅读尚未生成 AI 解析'),
+      aiAnalysisStatus: analysesReady ? text('analysisLoaded', '逐题解析已加载') : text('noAnalysis', '这篇阅读尚未生成逐题解析'),
       attempt,
       passageText: (passage && passage.passage) || '',
       manualMarkItems: (attempt.manualMarks && Array.isArray(attempt.manualMarks.items) ? attempt.manualMarks.items : []).filter((item) => item && item.text),
@@ -862,7 +862,7 @@ Page({
     if (!analyses.length) {
       this.updateRecord(recordId, {
         aiAnalysisLoading: false,
-        aiAnalysisStatus: text('noAnalysis', '这篇阅读尚未生成 AI 解析')
+        aiAnalysisStatus: text('noAnalysis', '这篇阅读尚未生成逐题解析')
       });
       this.setData({
         debugLines: buildReadingAnalysisDebugLines(record, result, result && result.cacheMiss ? 'cache-miss' : 'cached-pack-incomplete', 0)
@@ -872,7 +872,7 @@ Page({
     this.updateRecord(recordId, {
       aiAnalysisLoading: false,
       aiAnalysisLoaded: true,
-      aiAnalysisStatus: text('analysisLoaded', '已从云端加载 AI 解析'),
+      aiAnalysisStatus: text('analysisLoaded', '逐题解析已加载'),
       detailQuestions: (record.detailQuestions || []).map((question) => {
         const analysis = analyses.find((item) => String(item.number) === String(question.number)) || {};
         const analysisText = analysis.analysis || analysis.text || question.analysis || '';

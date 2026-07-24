@@ -140,3 +140,12 @@ test('旧提交中的完整模型解析可恢复为报告学习包', () => {
   assert.equal(pack.questionAnalyses[0].analysis, '旧记录解析');
   assert.equal(pack.questionAnalyses[0].answerSentenceTranslation, '学生学习更有效。');
 });
+
+test('阅读 PDF 使用统一层级、英文正文字体和分区起页', () => {
+  const source = fs.readFileSync(path.resolve(__dirname, '../lib/reading-report-pdf.js'), 'utf8');
+  assert.match(source, /function addQuestions[\s\S]*doc\.addPage\(\)/);
+  assert.match(source, /function addStudyCards[\s\S]*doc\.addPage\(\)/);
+  assert.match(source, /font:\s*LATIN_FONT_PATH[\s\S]*size:\s*11/);
+  assert.match(source, /const resultLine = hasOptions[\s\S]*答题结果/);
+  assert.doesNotMatch(source, /学生答案：.*正确答案：.*结果：.*\\n.*学生答案：/);
+});

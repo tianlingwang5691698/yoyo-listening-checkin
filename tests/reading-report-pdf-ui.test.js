@@ -51,3 +51,22 @@ test('阅读报告完整性与 UI 规则已写入门禁', () => {
   assert.equal(catalog.readingDetail['zh-CN'].readingPdfDownload, '下载完整阅读 PDF');
   assert.equal(catalog.practiceHistory.en.readingPdfGenerating, 'Generating PDF');
 });
+
+test('阅读结果和历史记录不显示技术来源措辞', () => {
+  const catalog = require('../utils/i18n-catalog-learning');
+  const readingZh = catalog.readingDetail['zh-CN'];
+  const readingEn = catalog.readingDetail.en;
+  const historyZh = catalog.practiceHistory['zh-CN'];
+  assert.equal(readingZh.viewAnalysis, '查看逐题解析');
+  assert.equal(readingZh.analysisReady, '逐题解析已加载');
+  assert.equal(readingEn.viewAnalysis, 'View Question Analysis');
+  assert.equal(historyZh.analysisLoaded, '逐题解析已加载');
+  assert.doesNotMatch([
+    readingZh.viewAnalysis,
+    readingZh.loadingAnalysis,
+    readingZh.analysisReady,
+    historyZh.analysisLoaded,
+    historyZh.viewAnalysis,
+    historyZh.noAnalysis
+  ].join(' '), /AI|模型|云端/);
+});

@@ -615,8 +615,12 @@ function withGroupIndexes(items) {
 
 function normalizeAnalysisText(text) {
   const value = String(text || '').trim();
-  if (!value || value === '结合原文判断。' || value === '结合原文判断' || /^解析.*请稍等。$/.test(value)) {
-    return '点击“查看 AI 解析”后按需加载';
+  if (!value
+    || value === '结合原文判断。'
+    || value === '结合原文判断'
+    || /^解析.*请稍等。$/.test(value)
+    || value === '点击“查看 AI 解析”后按需加载') {
+    return '点击“查看逐题解析”后按需加载';
   }
   return value;
 }
@@ -657,7 +661,7 @@ function buildScoreText(attempt) {
   const correctCount = Number(attempt.correctCount);
   const totalCount = Number(attempt.totalCount);
   if (Number.isFinite(correctCount) && Number.isFinite(totalCount) && totalCount > 0) {
-    return `${correctCount * 2} / ${totalCount * 2}`;
+    return `${correctCount} / ${totalCount}`;
   }
   const score = Number(attempt.score);
   const totalScore = Number(attempt.totalScore);
@@ -679,8 +683,9 @@ function buildReviewSummary(attempt) {
   if (!Number.isFinite(totalCount) || totalCount <= 0) {
     return '';
   }
-  const wrongCount = Math.max(0, totalCount - (Number.isFinite(correctCount) ? correctCount : 0));
-  return `${correctCount}/${totalCount}`;
+  return Number.isFinite(correctCount) && correctCount >= totalCount
+    ? '全部答对，继续积累本文表达。'
+    : '重点订正错题，并核对原文依据。';
 }
 
 function mergeStudyPackIntoReview(review, studyPack) {
@@ -749,7 +754,8 @@ function isQuestionStudyPack(studyPack) {
       && analysisText !== '结合原文判断'
       && analysisText !== '生成解析中'
       && !/^解析.*请稍等。?$/.test(analysisText)
-      && analysisText !== '点击“查看 AI 解析”后按需加载';
+      && analysisText !== '点击“查看 AI 解析”后按需加载'
+      && analysisText !== '点击“查看逐题解析”后按需加载';
   });
 }
 
@@ -765,7 +771,8 @@ function isModelReview(review) {
       && analysisText !== '结合原文判断'
       && analysisText !== '生成解析中'
       && !/^解析.*请稍等。?$/.test(analysisText)
-      && analysisText !== '点击“查看 AI 解析”后按需加载';
+      && analysisText !== '点击“查看 AI 解析”后按需加载'
+      && analysisText !== '点击“查看逐题解析”后按需加载';
   });
 }
 
@@ -1325,7 +1332,7 @@ Page({
       this.applyReview(mergeStudyPackIntoReview(this.data.review, cached.studyPack));
       this.setData({
         questionAnalysisReady: true,
-        questionAnalysisMessage: text('analysisReady', '已从本机加载 AI 解析')
+        questionAnalysisMessage: text('analysisReady', '已加载逐题解析')
       });
       return;
     }
@@ -1361,7 +1368,7 @@ Page({
       const studyPack = result && result.studyPack ? result.studyPack : null;
       if (result && result.generating) {
         this.setData({
-          questionAnalysisMessage: text('analysisGenerating', 'AI 解析生成中，完成后自动加载'),
+          questionAnalysisMessage: text('analysisGenerating', '逐题解析生成中，完成后自动加载'),
           readingDebugLines: []
         });
         this.scheduleQuestionAnalysisPoll(passageId, result.retryAfterMs, options);
@@ -1381,7 +1388,7 @@ Page({
           attempt: result && result.attempt ? result.attempt : this.data.attempt,
           questionAnalysisMessage: personalOnly
             ? text('personalAnalysisReady', '个人解析已生成')
-            : (result.cached ? text('analysisReady', '已从云端加载 AI 解析') : text('analysisReady', 'AI 解析已生成并保存到云端'))
+            : text('analysisReady', '逐题解析已加载')
         });
       } else {
         const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};

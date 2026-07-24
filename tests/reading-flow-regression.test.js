@@ -98,7 +98,7 @@ test('阅读目录摘要不会被写入或读取为完整文章快照', () => {
   assert.match(readingDetailSource, /passage\._id === passageId && isCompletePassageSnapshot\(passage\)/);
 });
 
-test('阅读提交后自动衔接题目 AI 解析并优先使用缓存', () => {
+test('阅读提交后自动衔接逐题解析并优先使用缓存', () => {
   assert.match(readingDetailSource, /wx\.nextTick\(\(\) => this\.ensureQuestionAnalysis\(this\.data\.passage && this\.data\.passage\._id\)\)/);
   assert.match(readingDetailSource, /getPhoneStudyPack\(passageId\)[\s\S]*?isQuestionStudyPack\(cached\.studyPack\)/);
   const phoneCacheCheck = readingDetailSource.indexOf('isQuestionStudyPack(cached.studyPack)');
@@ -118,9 +118,9 @@ test('阅读共享解析使用云端生成锁、分批持久化并在重进后�
   assert.match(readingDetailSource, /onUnload\(\)[\s\S]*?clearTimeout\(this\.questionAnalysisPollTimer\)/);
 });
 
-test('阅读题目解析占位内容不会被当成有效 AI 解析', () => {
+test('阅读题目解析占位内容不会被当成有效逐题解析', () => {
   assert.match(readingDetailSource, /analysisText !== '生成解析中'/);
-  assert.match(readingDetailSource, /analysisText !== '点击“查看 AI 解析”后按需加载'/);
+  assert.match(readingDetailSource, /analysisText !== '点击“查看逐题解析”后按需加载'/);
 });
 
 test('阅读重新解析只保存当前学生且不覆盖公共学习包', () => {
@@ -184,4 +184,10 @@ test('阅读学生每次成功提交都能看到并听到完成反馈', () => {
   assert.match(effectsSource, /playVoice\(options\.voiceKey,[\s\S]*?studentOnly: options\.studentOnly/);
   assert.doesNotMatch(readingDetailSource, /onceKey: `reading:/);
   assert.match(wxss, /\.reading-result-effect[\s\S]*?position: fixed[\s\S]*?z-index: 90/);
+});
+
+test('阅读结果只显示一次正确题数并给出简短建议', () => {
+  assert.ok(readingDetailSource.includes('return `${correctCount} / ${totalCount}`;'));
+  assert.match(readingDetailSource, /全部答对，继续积累本文表达/);
+  assert.match(readingDetailSource, /重点订正错题，并核对原文依据/);
 });
