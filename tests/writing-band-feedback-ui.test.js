@@ -16,10 +16,10 @@ test('雅思写作报告展示证据、卡分原因和升档动作', () => {
   assert.match(template, /texts\.limitersLabel/);
   assert.match(template, /texts\.nextBandLabel/);
   assert.match(template, /review\.strengths/);
-  assert.match(template, /AI 练习预估|review\.estimateLabel/);
-  assert.match(template, /review\.writingTestEstimate/);
-  assert.match(template, /review\.feedbackNotice/);
-  assert.match(template, /Task 1.*Task 2/);
+  assert.doesNotMatch(template, /AI 练习预估|review\.estimateLabel/);
+  assert.doesNotMatch(template, /review\.writingTestEstimate/);
+  assert.doesNotMatch(template, /review\.feedbackNotice/);
+  assert.doesNotMatch(template, /review\.weightingNote|review\.rubricVersion/);
 });
 
 test('高 1 与高 2 Band 范文按需生成并覆盖四主题对比色', () => {

@@ -1,4 +1,6 @@
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const test = require('node:test');
 
 const writing = require('../services/writing.service')._test;
@@ -696,4 +698,42 @@ test('中考作文保留 8+8+4 和字数限分规则', () => {
   assert.equal(writing.getWritingTaskType(prompt), 'junior-essay');
   assert.match(gradingPrompt, /内容8分、语言8分、组织结构4分/);
   assert.match(gradingPrompt, /不足30词时总分最高9分/);
+});
+
+test('学生可见批改隐藏内部评分过程并去重', () => {
+  const review = writing.sanitizeReviewForDisplay({
+    isIelts: true,
+    summary: '独立校准结果为 Band 6.5。',
+    estimateLabel: 'AI 练习预估',
+    weightingNote: 'Task 2 权重为 Task 1 的两倍',
+    rubricVersion: 'Band Descriptors',
+    feedbackNotice: '模型已完成评分',
+    writingTestEstimate: { score: 6.5 },
+    strengths: ['结构清楚', '结构清楚'],
+    problems: ['词汇重复', '词汇重复', '模型输出不完整'],
+    suggestions: ['增加比较', '增加比较']
+  });
+  assert.equal(review.summary, '');
+  assert.equal(review.estimateLabel, '');
+  assert.equal(review.weightingNote, '');
+  assert.equal(review.rubricVersion, '');
+  assert.equal(review.feedbackNotice, '');
+  assert.equal(review.writingTestEstimate, null);
+  assert.deepEqual(review.strengths, ['结构清楚']);
+  assert.deepEqual(review.problems, ['词汇重复']);
+  assert.deepEqual(review.suggestions, ['增加比较']);
+});
+
+test('评分接口各分支只返回清洗后的学生可见批改', () => {
+  const source = fs.readFileSync(path.resolve(__dirname, '../services/writing.service.js'), 'utf8');
+  assert.doesNotMatch(source, /review:\s*(existing|attempt|latest)\.review/);
+  assert.match(source, /review:\s*formatted\.review/);
+  assert.match(source, /review:\s*formattedAttempt\.review/);
+  const legacy = writing.sanitizeReviewForDisplay({
+    totalScore: 9,
+    level: 'IELTS Band 6.5',
+    summary: '文章完成度较好。'
+  });
+  assert.equal(legacy.isIelts, true);
+  assert.equal(legacy.summary, '');
 });

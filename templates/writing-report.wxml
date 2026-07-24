@@ -3,20 +3,11 @@
     <view class="shared-writing-report-head">
       <view>
         <view class="shared-writing-report-title">{{reportTitle || texts.report}}</view>
-        <view class="shared-writing-report-score">{{review.score}} / {{review.totalScore || totalScore || 20}}</view>
-        <view class="shared-writing-report-estimate" wx:if="{{review.estimateLabel}}">{{review.estimateLabel}}</view>
+        <view class="shared-writing-report-score">{{review.isIelts ? review.level : review.score + ' / ' + (review.totalScore || totalScore || 20)}}</view>
       </view>
-      <view class="shared-writing-report-level">{{review.level}}</view>
+      <view class="shared-writing-report-level" wx:if="{{!review.isIelts && review.level}}">{{review.level}}</view>
     </view>
-    <view class="shared-writing-report-note" wx:if="{{review.weightingNote}}">{{review.weightingNote}}</view>
-    <view class="shared-writing-test-estimate" wx:if="{{review.writingTestEstimate}}">
-      <view>{{review.writingTestEstimate.label}}</view>
-      <view>Task 1 {{review.writingTestEstimate.task1Score}} · Task 2 {{review.writingTestEstimate.task2Score}}</view>
-      <view class="shared-writing-test-score">Band {{review.writingTestEstimate.score}}</view>
-    </view>
-    <view class="shared-writing-report-rubric" wx:if="{{review.rubricVersion}}">{{texts.rubricLabel}}{{review.rubricVersion}}</view>
     <view class="shared-writing-report-summary" wx:if="{{review.summary}}">{{review.summary}}</view>
-    <view class="shared-writing-report-notice" wx:if="{{review.feedbackNotice}}">{{review.feedbackNotice}}</view>
 
     <block wx:if="{{review.criterionDetails.length}}">
       <view class="shared-writing-criterion" wx:for="{{review.criterionDetails}}" wx:key="key" wx:for-item="criterion">

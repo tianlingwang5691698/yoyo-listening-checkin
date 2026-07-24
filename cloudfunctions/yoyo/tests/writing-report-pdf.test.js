@@ -4,7 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 
-const { buildWritingReportPdf, FONT_PATH } = require('../lib/writing-report-pdf');
+const { buildWritingReportPdf, FONT_PATH, LATIN_FONT_PATH, _test } = require('../lib/writing-report-pdf');
 const writing = require('../services/writing.service');
 
 test('生成含中英文、题目图片、作文和批改内容的 PDF', async () => {
@@ -31,6 +31,10 @@ test('生成含中英文、题目图片、作文和批改内容的 PDF', async (
         score: 16,
         totalScore: 20,
         level: '良好',
+        estimateLabel: 'AI 练习预估',
+        weightingNote: '评分过程说明',
+        rubricVersion: 'model rubric',
+        feedbackNotice: '模型已完成评分',
         summary: '结构清楚，内容完整。',
         criterionDetails: [{
           label: '内容与任务完成',
@@ -57,10 +61,20 @@ test('生成含中英文、题目图片、作文和批改内容的 PDF', async (
   assert.equal(buffer.subarray(0, 4).toString(), '%PDF');
   assert.ok(buffer.length > 10000);
   assert.ok(fs.existsSync(FONT_PATH));
+  assert.ok(fs.existsSync(LATIN_FONT_PATH));
   const output = path.join(os.tmpdir(), `writing-report-${Date.now()}.pdf`);
   fs.writeFileSync(output, buffer);
   assert.ok(fs.statSync(output).size > 10000);
   fs.unlinkSync(output);
+});
+
+test('写作 PDF 隐藏评分过程并使用简洁分数', () => {
+  assert.equal(_test.containsScoringProcess('AI 练习预估'), true);
+  assert.equal(_test.containsScoringProcess('模型已完成评分'), true);
+  assert.equal(_test.formatScoreLine({ level: 'IELTS Band 6.5', score: 6.5, totalScore: 9 }), 'Band 6.5');
+  const source = fs.readFileSync(path.resolve(__dirname, '../lib/writing-report-pdf.js'), 'utf8');
+  assert.doesNotMatch(source, /writeText\(doc, data\.(estimateLabel|weightingNote|feedbackNotice)/);
+  assert.match(source, /function addStudentEssay[\s\S]*doc\.addPage\(\)/);
 });
 
 test('旧写作记录原题图片字段可规范化为 PDF 与记录页共用格式', () => {

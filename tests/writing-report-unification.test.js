@@ -50,6 +50,11 @@ test('PDF 导出包含结构化题目、原图、作文全文和完整批改', (
   assert.match(store, /generateWritingReportPdf/);
   assert.match(read('pages/practice-history/index.wxml'), /class="history-writing-image"/);
   assert.match(read('pages/practice-history/index.js'), /previewWritingPromptImage/);
+  assert.match(pdf, /function addStudentEssay[\s\S]*doc\.addPage\(\)/);
+  assert.doesNotMatch(pdf, /writeText\(doc, data\.(estimateLabel|weightingNote|feedbackNotice)/);
+  const template = read('templates/writing-report.wxml');
+  assert.doesNotMatch(template, /estimateLabel|weightingNote|writingTestEstimate|rubricVersion|feedbackNotice/);
+  assert.match(service, /review:\s*sanitizeReviewForDisplay\(attempt\.review\)/);
 });
 
 test('共享报告保持结果字体层级和主题风格', () => {

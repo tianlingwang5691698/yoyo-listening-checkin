@@ -5,6 +5,7 @@ const appConfig = require('../../../app-config');
 const snapshotStore = require('../../../utils/snapshot');
 const i18n = require('../../../utils/i18n');
 const { openIeltsSpeakingReportPdf } = require('../../../utils/ielts-speaking-report-download');
+const { normalizeWritingReview } = require('../../../utils/writing-report');
 const accountCatalog = require('../../../utils/i18n-catalog-account');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
@@ -500,12 +501,15 @@ function normalizeCompletionItem(item, index) {
   const isListeningStudyPack = isListeningStudyCompletion(safeItem);
   const listeningTarget = isListeningStudyPack ? parseListeningStudyTarget(safeItem) : {};
   const latestAttempt = safeItem.latestAttempt || {};
-  const review = latestAttempt.review || {};
+  const rawReview = latestAttempt.review || {};
   const questionResults = Array.isArray(latestAttempt.questionResults) ? latestAttempt.questionResults : [];
   const correctCount = Number(latestAttempt.correctCount || 0);
   const totalCount = Number(latestAttempt.totalCount || questionResults.length || 0);
-  const score = Number(latestAttempt.score || review.score || 0);
-  const totalScore = Number(latestAttempt.totalScore || review.totalScore || 0);
+  const score = Number(latestAttempt.score || rawReview.score || 0);
+  const totalScore = Number(latestAttempt.totalScore || rawReview.totalScore || 0);
+  const review = safeItem.type === 'writing'
+    ? normalizeWritingReview(rawReview, totalScore)
+    : rawReview;
   const reviewProblems = Array.isArray(review.problems) ? review.problems : [];
   const reviewSuggestions = Array.isArray(review.suggestions) ? review.suggestions : [];
   const grammarQuestions = Array.isArray(latestAttempt.questions) ? latestAttempt.questions : [];
