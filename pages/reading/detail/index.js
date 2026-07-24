@@ -10,6 +10,8 @@ const { splitReadingNotePrompt, formatReadingQuestionRange } = require('../../..
 const { buildReadingParagraphRanges, normalizeReadingPassageText } = require('../../../utils/reading-paragraph-display');
 const { structureLegacyReadingContent } = require('../../../utils/reading-content-structure');
 const { toggleWordMark, toggleSentenceMark, countReadingMarks, buildReadingMarkItems } = require('../../../utils/reading-manual-marks');
+const { splitReadingSentenceRanges } = require('../../../utils/reading-sentence-ranges');
+const { findClozeBlanks, normalizeClozeBlankMarkers } = require('../../../utils/reading-cloze-display');
 const { canHighlightReadingAnswers, resolveReadingHighlightMode } = require('../../../utils/reading-highlight-mode');
 const { openReadingReportPdf } = require('../../../utils/reading-report-download');
 const ieltsParagraphMetadata = require('./ielts-paragraph-metadata');
@@ -45,32 +47,12 @@ function formatAnswerDisplay(value) {
   return /^[A-F]$/.test(text) ? text.toLowerCase() : text;
 }
 
-function findClozeBlanks(text) {
-  const source = String(text || '');
-  const found = {};
-  const regex = /([A-Za-z])?[_＿]{1,}(\d{1,3})[_＿]{1,}/g;
-  let match;
-  while ((match = regex.exec(source))) {
-    const number = Number(match[2]);
-    if (!number || found[number]) {
-      continue;
-    }
-    found[number] = {
-      number,
-      initial: match[1] || '',
-      start: match.index,
-      end: match.index + match[0].length
-    };
-  }
-  return Object.keys(found).map((key) => found[key]).sort((a, b) => a.number - b.number);
-}
-
 function buildClozeQuestions(passage) {
   const existing = (passage.questions || []).reduce((map, question) => {
     map[String(question.number)] = question;
     return map;
   }, {});
-  return findClozeBlanks(passage.passage).map((blank) => Object.assign({}, existing[String(blank.number)] || {}, {
+  return findClozeBlanks(passage.passage, passage.questions).map((blank) => Object.assign({}, existing[String(blank.number)] || {}, {
     number: blank.number,
     initial: blank.initial,
     questionType: 'blank'
@@ -80,7 +62,7 @@ function buildClozeQuestions(passage) {
 function buildClozePassageParts(passage, questions, baseOffset) {
   const source = String((passage && passage.passage) || '');
   const offset = Number(baseOffset || 0);
-  const sentenceRanges = splitSentenceRanges(source).map((range) => ({
+  const sentenceRanges = splitReadingSentenceRanges(source).map((range) => ({
     start: range.start + offset,
     end: range.end + offset
   }));
@@ -90,30 +72,28 @@ function buildClozePassageParts(passage, questions, baseOffset) {
     return map;
   }, {});
   const parts = [];
-  const regex = /([A-Za-z])?[_＿]{1,}(\d{1,3})[_＿]{1,}/g;
   let cursor = 0;
-  let match;
-  while ((match = regex.exec(source))) {
-    if (match.index > cursor) {
-      const partText = source.slice(cursor, match.index);
+  findClozeBlanks(source, questions).forEach((blank) => {
+    if (blank.start > cursor) {
+      const partText = source.slice(cursor, blank.start);
       parts.push({
         type: 'text',
         text: partText,
         tokens: decorateClozeTokens(partText, offset + cursor, sentenceRanges, wordIndexes)
       });
     }
-    const number = Number(match[2]);
+    const number = blank.number;
     const question = questionMap[String(number)] || {};
     parts.push({
       type: 'blank',
       number,
-      initial: match[1] || question.initial || '',
+      initial: blank.initial || question.initial || '',
       inputValue: question.inputValue || '',
       answerDisplay: question.answerDisplay || '',
       isCorrect: question.isCorrect
     });
-    cursor = match.index + match[0].length;
-  }
+    cursor = blank.end;
+  });
   if (cursor < source.length) {
     const partText = source.slice(cursor);
     parts.push({
@@ -142,11 +122,11 @@ function normalizePassage(passage, answers, submitted, review) {
   const structuredParagraphs = (Array.isArray(structuredPassage.passageParagraphs) ? structuredPassage.passageParagraphs : [])
     .map((paragraph) => String(paragraph || '').trim())
     .filter(Boolean);
-  const cleanPassageText = normalizeReadingPassageText(
+  const cleanPassageText = normalizeClozeBlankMarkers(normalizeReadingPassageText(
     structuredPassage._id || structuredPassage.id,
     stripQuestionBlockFromPassage(structuredParagraphs.length ? structuredParagraphs.join('\n\n') : structuredPassage.passage)
-  );
-  const inlineClozeBlanks = findClozeBlanks(cleanPassageText);
+  ), structuredPassage.questions);
+  const inlineClozeBlanks = findClozeBlanks(cleanPassageText, structuredPassage.questions);
   const isClozePassage = inlineClozeBlanks.length > 0
     && (structuredPassage.questions || []).some((question) => question.questionType === 'blank');
   const sourceQuestions = isClozePassage
@@ -345,49 +325,6 @@ function pushTermRanges(source, terms, tone, wordBoundary, ranges) {
   });
 }
 
-function splitSentenceRanges(source) {
-  const text = String(source || '');
-  if (!text) {
-    return [];
-  }
-  const ranges = [];
-  const marks = '.．!?。！？';
-  let start = 0;
-  for (let index = 0; index < text.length; index += 1) {
-    const ch = text[index];
-    const next = text[index + 1] || '';
-    const isEnd = marks.includes(ch) || ch === '\n';
-    if (!isEnd) {
-      continue;
-    }
-    if (ch === '.' && isAlpha(text[index - 1]) && isAlpha(next)) {
-      continue;
-    }
-    if (ch === '.') {
-      const before = text.slice(Math.max(0, index - 8), index + 1);
-      if (/\b(Mr|Mrs|Ms|Dr|No|St|Jr|Sr)\.$/.test(before)) {
-        continue;
-      }
-      const nextNonSpace = text.slice(index + 1).match(/\S/);
-      if (/\b[A-Z]\.$/.test(before) && nextNonSpace && /[A-Z]/.test(nextNonSpace[0])) {
-        continue;
-      }
-    }
-    let end = index + 1;
-    while (end < text.length && /\s/.test(text[end])) {
-      end += 1;
-    }
-    if (text.slice(start, end).trim()) {
-      ranges.push({ start, end });
-    }
-    start = end;
-  }
-  if (start < text.length && text.slice(start).trim()) {
-    ranges.push({ start, end: text.length });
-  }
-  return ranges.length ? ranges : [{ start: 0, end: text.length }];
-}
-
 function pickSentenceTone(sentenceRange, ranges) {
   const hits = ranges.filter((range) => range.start < sentenceRange.end && range.end > sentenceRange.start);
   if (!hits.length) {
@@ -535,7 +472,7 @@ function buildPassageSegments(text, review, mode, includeAnswerHighlight) {
   if (review && (activeMode === 'word' || activeMode === 'all')) {
     pushTermRanges(source, termEntries([].concat(review.vocabularyCards || [], review.vocabulary || []), ['word', 'text']), 'word', true, ranges);
   }
-  return attachChunkTokens(splitSentenceRanges(source).map((sentenceRange) => {
+  return attachChunkTokens(splitReadingSentenceRanges(source).map((sentenceRange) => {
     const meta = pickSentenceTone(sentenceRange, ranges);
     const shouldColorWholeSentence = meta.tone === 'answer';
     return Object.assign({

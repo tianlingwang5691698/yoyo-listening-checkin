@@ -21,7 +21,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from shanghai_senior_summary_structure import extract_summary_source
-from reading_content_structure import structure_reading_item
+from reading_content_structure import normalize_numbered_blank_markers, structure_reading_item
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1134,8 +1134,18 @@ def build_grammar_cloze_reading_item(session: str, year: int, text: str, answer_
         )
         passage = re.sub(rf'(?<!\d){number}\s*[.．](?!\d)', f'_____{number}_____', passage, count=1)
         if f'_____{number}_____' not in passage:
+            passage = re.sub(
+                rf'(?<![\d_＿]){number}(?![\d_＿])(?=\s*[（(]\s*[A-Za-z][A-Za-z\'-]*\s*[）)])',
+                f'_____{number}_____',
+                passage,
+                count=1,
+            )
+        if f'_____{number}_____' not in passage:
             passage = re.sub(rf'(?<!\d){number}(?!\d)', f'_____{number}_____', passage, count=1)
     passage = compact(passage)
+    passage = normalize_numbered_blank_markers(passage, [
+        {'number': number, 'questionType': 'blank'} for number in expected_numbers
+    ])
     valid = bool(
         len(passage) >= 500
         and len(expected_numbers) in {10, 16}
@@ -1170,7 +1180,7 @@ def build_grammar_cloze_reading_item(session: str, year: int, text: str, answer_
         'paperId': f'{prefix}-{year}',
         'paperTitle': f'{year} 上海高考{label}英语真题',
         'paperOrder': 10,
-        'contentRevision': 2,
+        'contentRevision': 4 if session == 'spring' and year == 2026 else 2,
         'difficultyLevel': 4,
         'difficultyLabel': '高考真题',
         'sourceType': 'shanghai-gaokao',

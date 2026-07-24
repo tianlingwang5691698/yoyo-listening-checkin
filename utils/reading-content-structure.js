@@ -1,3 +1,6 @@
+const { splitReadingSentenceRanges } = require('./reading-sentence-ranges');
+const { normalizeClozeBlankMarkers } = require('./reading-cloze-display');
+
 const ARTICLE_TITLES = {
   'sh-spring-2017-grammar-vocabulary-a': '“Zootopia” Broke Disney Records',
   'sh-spring-2018-grammar-vocabulary-a': 'My Kid-Free Life',
@@ -51,22 +54,6 @@ function stripKnownTitle(value, title) {
   return matched ? compact(source.slice(matched.length)) : original;
 }
 
-function splitSentenceRanges(source) {
-  const ranges = [];
-  let start = 0;
-  for (let index = 0; index < source.length; index += 1) {
-    const char = source[index];
-    if (!'.．!?。！？\n'.includes(char)) continue;
-    if (char === '.' && /[A-Za-z]/.test(source[index - 1] || '') && /[A-Za-z]/.test(source[index + 1] || '')) continue;
-    let end = index + 1;
-    while (end < source.length && /\s/.test(source[end])) end += 1;
-    if (source.slice(start, end).trim()) ranges.push([start, end]);
-    start = end;
-  }
-  if (source.slice(start).trim()) ranges.push([start, source.length]);
-  return ranges.length ? ranges : [[0, source.length]];
-}
-
 function splitParagraphs(value) {
   const source = String(value || '').trim();
   const blankBlocks = source.split(/\n\s*\n+/).map(compact).filter(Boolean);
@@ -77,7 +64,7 @@ function splitParagraphs(value) {
     : 0;
   if (lineBlocks.length > 1 && lineBlocks.length <= 30 && averageLength >= 90) return lineBlocks;
   const flat = compact(source);
-  const sentences = splitSentenceRanges(flat);
+  const sentences = splitReadingSentenceRanges(flat).map((range) => [range.start, range.end]);
   const paragraphs = [];
   let start = sentences[0][0];
   let sentenceCount = 0;
@@ -230,6 +217,7 @@ function structureLegacyReadingContent(passage) {
 
   value = value.replace(scorePrefix, '');
   value = stripKnownTitle(value, articleTitle);
+  value = normalizeClozeBlankMarkers(value, passage.questions || []);
   let passageParagraphs = splitParagraphs(value);
   if (isIelts && !articleSubtitle) {
     const ieltsStructure = splitIeltsSubtitle(passageParagraphs);

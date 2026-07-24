@@ -172,6 +172,7 @@
       "pollutionTypes": {
         "article-title": 10,
         "directions": 12,
+        "inline-blank-position": 1,
         "page-watermark": 11,
         "score-prefix": 8,
         "section-heading": 7
@@ -2007,11 +2008,12 @@
       "pollution": [
         "article-title",
         "directions",
+        "inline-blank-position",
         "score-prefix"
       ],
       "oldHash": "ab16f8246c7924618e4a6b58981ae9cc239a3ee0a0cd525d17a7307e6847e429",
-      "newHash": "ab16f8246c7924618e4a6b58981ae9cc239a3ee0a0cd525d17a7307e6847e429",
-      "paragraphCount": 4
+      "newHash": "331641dbd890c18ea0bb60aa6629fb5b00b36226d76d0fa4fda216ddcaf69186",
+      "paragraphCount": 3
     },
     {
       "_id": "sh-spring-2026-reading-a",
@@ -3517,6 +3519,7 @@
     "article-title": 25,
     "cross-section-content": 4,
     "directions": 27,
+    "inline-blank-position": 1,
     "page-watermark": 11,
     "question-directions": 95,
     "score-prefix": 50,

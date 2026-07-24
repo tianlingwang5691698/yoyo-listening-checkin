@@ -50,11 +50,9 @@ test('IELTS 标题下的副标题不占用正文段号', () => {
   const file = path.join(root, 'data/ielts-academic/cambridge-17/reading/v2/reading-passages.json');
   const item = JSON.parse(fs.readFileSync(file, 'utf8')).find((passage) => passage._id === 'ielts-academic-17-test-4-reading-passage-1');
   const ranges = buildReadingParagraphRanges(item._id, item.passage, item.questions, ieltsParagraphMetadata[item._id]);
-  assert.equal(ranges[0].isSubtitle, true);
-  assert.equal(ranges[0].label, '');
-  assert.equal(item.passage.slice(ranges[0].start, ranges[0].end).trim(), 'How Madagascar’s bats are helping to save the rainforest');
-  assert.equal(ranges[1].label, 'Paragraph 1');
-  assert.match(item.passage.slice(ranges[1].start, ranges[1].end), /^There are few places/);
+  assert.equal(item.articleSubtitle, 'How Madagascar’s bats are helping to save the rainforest');
+  assert.equal(ranges[0].label, 'Paragraph 1');
+  assert.match(item.passage.slice(ranges[0].start, ranges[0].end), /^There are few places/);
 });
 
 test('IELTS Cambridge 10-21 原始分段符号统计稳定', () => {
@@ -100,7 +98,7 @@ test('题目声明 A-F 时，压平的灭绝物种文章不得显示数字段号
   assert.deepEqual(ranges.map((range) => range.label), ['Paragraph A', 'Paragraph B', 'Paragraph C', 'Paragraph D', 'Paragraph E', 'Paragraph F']);
 });
 
-test('初中和高中 934 篇阅读全部覆盖成完整段落', () => {
+test('初中和高中 960 篇阅读全部覆盖成完整段落', () => {
   const files = [
     'data/reading-em1/reading-passages.json',
     'data/reading/reading-passages.json',
@@ -118,7 +116,7 @@ test('初中和高中 934 篇阅读全部覆盖成完整段落', () => {
       ranges.slice(1).forEach((range, index) => assert.equal(ranges[index].end, range.start, item._id));
     });
   });
-  assert.equal(total, 934);
+  assert.equal(total, 960);
 });
 
 test('普通阅读和文内填空都使用段落区块', () => {

@@ -2701,6 +2701,25 @@
 .theme-dragon .reading-mark-hint,
 .theme-dragon .reading-mark-clear { color: #244573; }
 
+.theme-dragon .reading-mark-word {
+  background: #ffe36f;
+  box-shadow: inset 0 -3rpx 0 #d99b00;
+}
+
+.theme-dragon .reading-mark-phrase {
+  background: #ffbd73;
+  box-shadow: inset 0 -3rpx 0 #f45a16;
+}
+
+.theme-dragon .passage-segment.reading-mark-sentence,
+.theme-dragon .reading-mark-sentence-token {
+  background: #d9edc5;
+}
+
+.theme-dragon .passage-segment.reading-mark-sentence {
+  box-shadow: inset 4rpx 0 0 #3e8b4f;
+}
+
 .theme-dragon .question-side-notes::before {
   background: linear-gradient(180deg, #ffd83d, #f45a16, #ffd83d);
 }

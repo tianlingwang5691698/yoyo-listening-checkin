@@ -147,6 +147,29 @@ def compact(value: str) -> str:
     return re.sub(r'\s+', ' ', str(value or '')).strip()
 
 
+def normalize_numbered_blank_markers(value: str, questions: list[dict]) -> str:
+    source = str(value or '')
+    numbers = {
+        int(question.get('number'))
+        for question in questions or []
+        if question.get('questionType') == 'blank' and str(question.get('number') or '').isdigit()
+    }
+    for number in sorted(numbers):
+        bare_re = re.compile(
+            rf'(^|[^\d_＿])({number})(?![\d_＿])(?=\s*[（(]\s*[A-Za-z][A-Za-z\'-]*\s*[）)])'
+        )
+        if not bare_re.search(source):
+            continue
+        marker_re = re.compile(
+            rf'([A-Za-z])?[_＿]+{number}[_＿]+(?:\s*[.．](?=\s*\d+%))?'
+        )
+        if marker_re.search(source):
+            source = marker_re.sub(lambda match: match.group(1) or '', source)
+            source = re.sub(r'([A-Za-z])\s{2,}(?=\d+%)', r'\1 ', source)
+        source = bare_re.sub(lambda match: f'{match.group(1)}_____{number}_____', source, count=1)
+    return source
+
+
 def normalize_title_for_match(value: str) -> str:
     value = compact(value)
     value = value.replace('？', '?').replace('：', ':')
@@ -174,8 +197,16 @@ def split_sentence_ranges(source: str) -> list[tuple[int, int]]:
     for index, char in enumerate(source):
         if char not in '.．!?。！？\n':
             continue
-        if char == '.' and index and index + 1 < len(source) and source[index - 1].isalpha() and source[index + 1].isalpha():
-            continue
+        if char == '.' and index and index + 1 < len(source):
+            previous = source[index - 1]
+            following = source[index + 1]
+            if previous.isdigit() and following.isdigit():
+                continue
+            if previous.isalpha() and following.isalpha():
+                if following.islower() or (index + 2 < len(source) and source[index + 2] == '.'):
+                    continue
+            if re.search(r'\b(?:Mr|Mrs|Ms|Dr|No|St|Jr|Sr)\.$', source[max(0, index - 8):index + 1]):
+                continue
         end = index + 1
         while end < len(source) and source[end].isspace():
             end += 1
@@ -358,6 +389,10 @@ def structure_reading_item(item: dict) -> tuple[dict, dict]:
     if value != before_title:
         pollution.append('article-title')
 
+    normalized_blanks = normalize_numbered_blank_markers(value, item.get('questions') or [])
+    if normalized_blanks != value:
+        pollution.append('inline-blank-position')
+    value = normalized_blanks
     value = compact(value) if not is_ielts else str(value or '').strip()
     paragraphs = split_paragraphs(value)
     if is_ielts and not article_subtitle:
@@ -380,7 +415,8 @@ def structure_reading_item(item: dict) -> tuple[dict, dict]:
         'passage': passage,
     })
     if item_id.startswith(('sh-spring-', 'sh-autumn-')):
-        next_item['contentRevision'] = max(3, int(item.get('contentRevision') or 0))
+        minimum_revision = 4 if 'inline-blank-position' in pollution else 3
+        next_item['contentRevision'] = max(minimum_revision, int(item.get('contentRevision') or 0))
     return next_item, {
         'affected': True,
         'pollution': sorted(set(pollution)),

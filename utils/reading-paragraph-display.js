@@ -1,3 +1,5 @@
+const { splitReadingSentenceRanges } = require('./reading-sentence-ranges');
+
 function normalizeReadingPassageText(passageId, passageText) {
   const source = String(passageText || '');
   if (!/^sh-em\d.*-reading-a$/.test(String(passageId || ''))) return source;
@@ -185,24 +187,8 @@ function finalizeIeltsRanges(source, ranges) {
   return finalizeReadingRanges(source, normalizeIeltsLeadSubtitle(source, ranges));
 }
 
-function splitSentenceRanges(source) {
-  const ranges = [];
-  let start = 0;
-  for (let index = 0; index < source.length; index += 1) {
-    const ch = source[index];
-    if (!'.．!?。！？\n'.includes(ch)) continue;
-    if (ch === '.' && /[A-Za-z]/.test(source[index - 1] || '') && /[A-Za-z]/.test(source[index + 1] || '')) continue;
-    let end = index + 1;
-    while (end < source.length && /\s/.test(source[end])) end += 1;
-    if (source.slice(start, end).trim()) ranges.push({ start, end });
-    start = end;
-  }
-  if (start < source.length && source.slice(start).trim()) ranges.push({ start, end: source.length });
-  return ranges.length ? ranges : [{ start: 0, end: source.length }];
-}
-
 function buildHeuristicRanges(source) {
-  const sentences = splitSentenceRanges(source);
+  const sentences = splitReadingSentenceRanges(source);
   const ranges = [];
   let start = sentences[0].start;
   let count = 0;
