@@ -325,7 +325,7 @@ function addPageNumbers(doc) {
       .fontSize(8)
       .fillColor(COLORS.muted)
       .text(
-        `佑佑英语写作报告 · ${index + 1} / ${range.count}`,
+        `写作报告 · ${index + 1} / ${range.count}`,
         doc.page.margins.left,
         doc.page.height - 30,
         {
@@ -349,7 +349,6 @@ function buildWritingReportPdf(input) {
       bufferPages: true,
       info: {
         Title: `${cleanText(attempt.title || '写作练习')} - 批改报告`,
-        Author: '佑佑英语',
         Subject: '写作题目、学生作文与批改报告'
       }
     });
@@ -365,7 +364,7 @@ function buildWritingReportPdf(input) {
     doc.on('end', () => resolve(Buffer.concat(chunks)));
 
     paintPage();
-    writeText(doc, '佑佑英语 · 写作批改报告', { size: 10, color: COLORS.coral, lineGap: 1, paragraphGap: 5 });
+    writeText(doc, '写作批改报告', { size: 10, color: COLORS.coral, lineGap: 1, paragraphGap: 5 });
     writeText(doc, attempt.title || '写作练习', { size: 20, color: COLORS.ink, lineGap: 2, paragraphGap: 8 });
     const meta = [
       attempt.date,

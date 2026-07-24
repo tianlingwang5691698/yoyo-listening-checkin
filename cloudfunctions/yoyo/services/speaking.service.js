@@ -605,7 +605,7 @@ async function generateIeltsSpeakingReportPdf(event) {
     'ielts-speaking-reports',
     scope.familyId,
     scope.childId,
-    `${itemId}-r${Number(item.contentRevision || 0)}-${latestFingerprint}-v2.pdf`
+    `${itemId}-r${Number(item.contentRevision || 0)}-${latestFingerprint}-v3.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);

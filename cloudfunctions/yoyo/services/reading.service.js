@@ -2392,7 +2392,7 @@ async function generateReadingReportPdf(event) {
     'reading-reports',
     ctx.family.familyId,
     ctx.child.childId,
-    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-study-v2.pdf`
+    `${safeAttemptId}-r${Number(passage.contentRevision || 0)}-study-v3.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);

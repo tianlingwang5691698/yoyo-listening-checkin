@@ -42,5 +42,5 @@ test('report service enforces official item, family-child scope and no source im
   assert.match(service, /attempt\.childId === scope\.childId/);
   assert.doesNotMatch(service, /ielts-speaking-report-source-image-unavailable/);
   assert.doesNotMatch(service, /downloadCloudFileBuffer[\s\S]{0,300}buildIeltsSpeakingReportPdf/);
-  assert.match(service, /-v2\.pdf/);
+  assert.match(service, /-v3\.pdf/);
 });

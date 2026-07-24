@@ -302,7 +302,7 @@ function addPageNumbers(doc) {
     doc.page.margins.bottom = 0;
     doc.font(FONT_PATH).fontSize(8).fillColor(COLORS.muted)
       .text(
-        `佑佑英语 IELTS Speaking 练习报告 · ${index + 1} / ${range.count}`,
+        `IELTS Speaking 练习报告 · ${index + 1} / ${range.count}`,
         doc.page.margins.left,
         doc.page.height - 30,
         {
@@ -327,7 +327,6 @@ function buildIeltsSpeakingReportPdf(input) {
       bufferPages: true,
       info: {
         Title: `${cleanText(item.title || 'IELTS Speaking')} - 口语套题练习报告`,
-        Author: '佑佑英语',
         Subject: 'IELTS Speaking 原题、学生回答、四项结果与逐题建议'
       }
     });
@@ -343,7 +342,7 @@ function buildIeltsSpeakingReportPdf(input) {
     doc.on('end', () => resolve(Buffer.concat(chunks)));
 
     paintPage();
-    writeText(doc, '佑佑英语 · IELTS Speaking 套题练习报告', {
+    writeText(doc, 'IELTS Speaking 套题练习报告', {
       size: 10.5,
       color: COLORS.coral,
       paragraphGap: 6

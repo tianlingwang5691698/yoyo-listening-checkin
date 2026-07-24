@@ -2091,7 +2091,7 @@ async function generateWritingReportPdf(event) {
     'writing-reports',
     ctx.family.familyId,
     ctx.child.childId,
-    `${safeAttemptId}-${safeVersion}.pdf`
+    `${safeAttemptId}-${safeVersion}-report-v2.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);

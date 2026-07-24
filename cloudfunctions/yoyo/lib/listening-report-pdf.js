@@ -387,7 +387,7 @@ function addPageNumbers(doc) {
     doc.page.margins.bottom = 0;
     doc.font(FONT_PATH).fontSize(8).fillColor(COLORS.muted)
       .text(
-        `佑佑英语听力学习报告 · ${index + 1} / ${range.count}`,
+        `听力学习报告 · ${index + 1} / ${range.count}`,
         doc.page.margins.left,
         doc.page.height - 30,
         {
@@ -412,7 +412,6 @@ function buildListeningReportPdf(input) {
       bufferPages: true,
       info: {
         Title: `${cleanText(item.title || '听力套题')} - 学习报告`,
-        Author: '佑佑英语',
         Subject: '听力原题、完整原文、学生答案、逐题解析与学习卡'
       }
     });
@@ -428,7 +427,7 @@ function buildListeningReportPdf(input) {
     doc.on('end', () => resolve(Buffer.concat(chunks)));
 
     paintPage();
-    writeText(doc, '佑佑英语 · 听力套题学习报告', {
+    writeText(doc, '听力套题学习报告', {
       size: 10.5,
       color: COLORS.coral,
       lineGap: 1,

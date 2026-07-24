@@ -385,7 +385,7 @@ function addPageNumbers(doc) {
       .fontSize(8)
       .fillColor(COLORS.muted)
       .text(
-        `佑佑英语阅读报告 · ${index + 1} / ${range.count}`,
+        `阅读报告 · ${index + 1} / ${range.count}`,
         doc.page.margins.left,
         doc.page.height - 30,
         {
@@ -410,7 +410,6 @@ function buildReadingReportPdf(input) {
       bufferPages: true,
       info: {
         Title: `${cleanText(passage.title || '阅读练习')} - 学习报告`,
-        Author: '佑佑英语',
         Subject: '阅读原题、学生答案、逐题解析与学习卡'
       }
     });
@@ -425,7 +424,7 @@ function buildReadingReportPdf(input) {
     doc.on('end', () => resolve(Buffer.concat(chunks)));
 
     paintPage();
-    writeText(doc, '佑佑英语 · 阅读学习报告', { size: 10, color: COLORS.coral, lineGap: 1, paragraphGap: 5 });
+    writeText(doc, '阅读学习报告', { size: 10, color: COLORS.coral, lineGap: 1, paragraphGap: 5 });
     writeText(doc, passage.title || '阅读练习', { size: 20, color: COLORS.ink, lineGap: 2, paragraphGap: 7 });
     const meta = [
       attempt.date,
