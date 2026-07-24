@@ -1,12 +1,19 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
 const i18n = require('../../utils/i18n');
+const appConfig = require('../../app-config');
 const { normalizeWritingReview } = require('../../utils/writing-report');
 const { openWritingReportPdf } = require('../../utils/writing-report-download');
 const { openReadingReportPdf } = require('../../utils/reading-report-download');
 const { openListeningReportPdf } = require('../../utils/listening-report-download');
 
 const text = (key, fallback) => i18n.getPageText('practiceHistory', key, undefined, fallback);
+
+function buildCloudFileId(cloudPath) {
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!normalizedPath || !appConfig.cloudEnvId || !appConfig.cloudBucket) return '';
+  return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
 
 function formatDuration(seconds) {
   const total = Math.max(0, Math.round(Number(seconds || 0)));
@@ -61,6 +68,12 @@ const MODULES = {
     eyebrow: text('vocabularyEyebrow', '听音写词'),
     copy: text('vocabularyCopy', '回看每次听写、错词和订正结果。'),
     empty: text('noVocabulary', '还没有词汇听写记录')
+  },
+  speaking: {
+    title: text('speakingTitle', '口语练习记录'),
+    eyebrow: text('speakingEyebrow', '口语练习'),
+    copy: text('speakingCopy', '回听录音，查看跟读分数和雅思练习结果。'),
+    empty: text('noSpeaking', '还没有口语练习记录')
   }
 };
 
@@ -80,11 +93,53 @@ function buildOptions(options, selected, answer) {
   }));
 }
 
+function buildAcademicFilter(values) {
+  const source = (Array.isArray(values) ? values : [values]).filter(Boolean).join(' ').toLowerCase();
+  if (/ielts|雅思/.test(source)) return { filterKey: 'ielts', filterLabel: 'IELTS', filterOrder: 30 };
+  if (/高中|高考|春考|秋考|senior|spring|autumn/.test(source)) return { filterKey: 'senior', filterLabel: text('filterSenior', '高中'), filterOrder: 20 };
+  if (/初中|中考|一模|二模|junior|em1|em2/.test(source)) return { filterKey: 'junior', filterLabel: text('filterJunior', '初中'), filterOrder: 10 };
+  return { filterKey: 'other', filterLabel: text('filterOther', '其他'), filterOrder: 90 };
+}
+
+function buildGrammarFilter(item) {
+  if (item.section === 'micro-lesson') {
+    return { filterKey: 'micro-lesson', filterLabel: text('microLesson', '词法微课'), filterOrder: 30 };
+  }
+  const stage = buildAcademicFilter([item.targetId, item.topicId, item.title, item.meta, item.category]);
+  return ['junior', 'senior'].includes(stage.filterKey)
+    ? stage
+    : { filterKey: 'other-grammar', filterLabel: text('filterOtherGrammar', '其他语法'), filterOrder: 90 };
+}
+
+function buildRecordFilterOptions(records) {
+  const groups = new Map();
+  (records || []).forEach((record) => {
+    if (!record.filterKey || !record.filterLabel) return;
+    const current = groups.get(record.filterKey) || {
+      key: record.filterKey,
+      label: record.filterLabel,
+      count: 0,
+      order: Number(record.filterOrder || 90)
+    };
+    current.count += 1;
+    groups.set(record.filterKey, current);
+  });
+  if (groups.size <= 1) return [];
+  return [{
+    key: 'all',
+    label: text('filterAllRecords', '全部记录'),
+    count: (records || []).length,
+    order: 0
+  }].concat(Array.from(groups.values()).sort((left, right) => (
+    left.order - right.order || left.label.localeCompare(right.label, 'zh-CN')
+  )));
+}
+
 function normalizeReading(item, index) {
   const attempt = item.latestAttempt || {};
   const correctCount = Number(attempt.correctCount || 0);
   const totalCount = Number(attempt.totalCount || (attempt.questionResults || []).length || 0);
-  return {
+  return Object.assign({
     id: String(item.id || item.recordId || attempt._id || `reading-${index}`),
     targetId: String(item.passageId || item.targetId || attempt.passageId || ''),
     title: item.title || attempt.title || '阅读练习',
@@ -101,14 +156,14 @@ function normalizeReading(item, index) {
     aiAnalysisLoading: false,
     aiAnalysisStatus: '',
     pdfGenerating: false
-  };
+  }, buildAcademicFilter([item.targetId, item.passageId, item.title, item.meta, item.category, item.taskId]));
 }
 
 function normalizeListening(item, index) {
   const attempt = item.latestAttempt || {};
   const totalCount = Number(attempt.totalCount || attempt.answeredCount || 0);
   const correctCount = Number(attempt.correctCount || 0);
-  return {
+  return Object.assign({
     id: String(item.id || item.recordId || `listening-${index}`),
     targetId: String(item.targetId || ''),
     title: item.title || '听力套题',
@@ -125,7 +180,7 @@ function normalizeListening(item, index) {
     phraseCards: [],
     sentencePatternCards: [],
     pdfGenerating: false
-  };
+  }, buildAcademicFilter([item.targetId, item.title, item.meta, item.category, item.taskId]));
 }
 
 function normalizeGrammar(item, index) {
@@ -135,7 +190,7 @@ function normalizeGrammar(item, index) {
   const correctCount = questions.length
     ? questions.filter((question) => question.isCorrect).length
     : Number(attempt.correctCount || 0);
-  return {
+  return Object.assign({
     id: String(item.id || item.recordId || `grammar-${index}`),
     targetId: String(item.topicId || item.targetId || ''),
     title: String(item.title || '语法练习').replace(/^语法：/, ''),
@@ -150,16 +205,17 @@ function normalizeGrammar(item, index) {
     detailLoading: false,
     manualMarkItems: (attempt.manualMarks && attempt.manualMarks.items) || [],
     detailQuestions: buildGrammarDetailQuestions(questions, item)
-  };
+  }, buildGrammarFilter(item));
 }
 
 function normalizeVocabulary(item, index) {
   const totalCount = Number(item.totalCount || 0);
   const correctCount = Number(item.correctCount || 0);
+  const meta = vocabularyModeLabel(item.practiceMode);
   return {
     id: String(item.recordId || item.id || `vocabulary-${index}`),
     title: item.sourceTitle || text('vocabularyTitle', '词汇听写'),
-    meta: vocabularyModeLabel(item.practiceMode),
+    meta,
     durationText: formatDuration(item.durationSec),
     dateLabel: cleanDate(item.date, item.updatedAt),
     summary: `${correctCount}/${totalCount}${text('wordUnit', ' 词')}`,
@@ -168,6 +224,39 @@ function normalizeVocabulary(item, index) {
     detailLoading: false,
     detailQuestions: []
   };
+}
+
+function buildIeltsSpeakingTitle(attempt) {
+  const matched = String(attempt.ieltsItemId || attempt.taskId || '').match(/ielts-academic-(\d+)-test-(\d+)-speaking/i);
+  const testLabel = matched ? `IELTS ${matched[1]} Test ${matched[2]}` : 'IELTS Speaking';
+  return attempt.ieltsPart ? `${testLabel} · Part ${attempt.ieltsPart}` : testLabel;
+}
+
+function normalizeSpeaking(attempt, index) {
+  const isIelts = attempt.category === 'ielts-speaking' || attempt.attemptType === 'ielts_speaking';
+  const prompt = attempt.promptText || attempt.questionText || text('speakingPromptFallback', '口语练习');
+  const score = Number(attempt.score || 0);
+  const overallBand = Number(attempt.ieltsOverallBand || 0);
+  return Object.assign({
+    id: String(attempt.attemptId || attempt._id || `speaking-${index}`),
+    title: isIelts ? buildIeltsSpeakingTitle(attempt) : prompt,
+    meta: isIelts ? text('speakingIelts', '雅思口语') : text('speakingRepeat', '分级跟读'),
+    dateLabel: cleanDate(attempt.date, attempt.createdAt),
+    durationText: formatDuration(Number(attempt.answerDurationMs || attempt.recordDurationMs || 0) / 1000),
+    summary: isIelts
+      ? (overallBand ? `Band ${overallBand}` : text('speakingResultIncomplete', '暂无完整结果'))
+      : (score ? `${score}${text('scoreUnit', ' 分')}` : text('speakingResultIncomplete', '暂无完整结果')),
+    attempt,
+    isIelts,
+    prompt,
+    hasRecording: !!(attempt.answerAudioFileId || attempt.answerCloudPath),
+    detailReady: true,
+    detailLoading: false
+  }, {
+    filterKey: isIelts ? 'ielts-speaking' : 'graded-repeat',
+    filterLabel: isIelts ? text('speakingIelts', '雅思口语') : text('speakingRepeat', '分级跟读'),
+    filterOrder: isIelts ? 20 : 10
+  });
 }
 
 function buildGrammarDetailQuestions(questions, item) {
@@ -261,7 +350,7 @@ function normalizeWriting(attempt, index) {
       src: String(image && (image.src || image.url) || '')
     })).filter((image) => image.fileId || image.cloudPath || image.src)
     : [];
-  return {
+  return Object.assign({
     id: String(attempt.attemptId || `writing-${index}`),
     targetId: String(attempt.promptId || ''),
     title: attempt.title || '写作练习',
@@ -278,7 +367,13 @@ function normalizeWriting(attempt, index) {
     detailLoading: false,
     pdfGenerating: false,
     manualMarkItems: (attempt.manualMarks && attempt.manualMarks.items) || []
-  };
+  }, buildAcademicFilter([
+    attempt.promptId,
+    attempt.title,
+    attempt.promptMeta && attempt.promptMeta.stage,
+    attempt.promptMeta && attempt.promptMeta.examType,
+    attempt.promptMeta && attempt.promptMeta.category
+  ]));
 }
 
 async function resolveWritingPromptImages(attempt) {
@@ -365,6 +460,13 @@ Page({
     expandedId: '',
     debugLines: [],
     isParentView: false,
+    recordFilterOpen: false,
+    activeRecordFilter: 'all',
+    activeRecordFilterLabel: text('filterAllRecords', '全部记录'),
+    recordFilterOptions: [],
+    playingSpeakingRecordId: '',
+    pausedSpeakingRecordId: '',
+    loadingSpeakingRecordId: '',
     texts: buildTexts()
   }),
   onLoad(options) {
@@ -398,6 +500,8 @@ Page({
           ? { title: text('listeningTitle'), eyebrow: text('listeningEyebrow'), copy: text('listeningCopy'), empty: text('noListening') }
         : type === 'vocabulary'
           ? { title: text('vocabularyTitle'), eyebrow: text('vocabularyEyebrow'), copy: text('vocabularyCopy'), empty: text('noVocabulary') }
+          : type === 'speaking'
+            ? { title: text('speakingTitle'), eyebrow: text('speakingEyebrow'), copy: text('speakingCopy'), empty: text('noSpeaking') }
         : { title: text('readingTitle'), eyebrow: text('readingEyebrow'), copy: text('readingCopy'), empty: text('noReading') };
     this.setData({ config, isParentView, texts: buildTexts() });
   },
@@ -409,6 +513,11 @@ Page({
     this.writingResumeTimers = {};
     this.writingResumeInFlight = {};
     this.writingGradeResumeStartedAt = {};
+    this.allHistoryRecords = [];
+    this.stopSpeakingPlayback();
+  },
+  onHide() {
+    this.stopSpeakingPlayback();
   },
   async loadHistory() {
     this.setData({ loading: true, debugLines: [] });
@@ -416,15 +525,20 @@ Page({
       this.setData({ loading: false });
       return;
     }
+    if (this.data.type === 'speaking') {
+      const result = await store.getSpeakingAttempts({ historyMode: 'recent', limit: 100 });
+      const debugLines = buildDebugLines(result, 'getSpeakingAttempts');
+      this.setHistoryRecords(debugLines.length ? [] : (result.attempts || []).map(normalizeSpeaking), debugLines);
+      if (this.historyPerf) {
+        this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
+      }
+      return;
+    }
     if (this.data.type === 'writing') {
       const result = await store.getWritingAttempts({ limit: 50, summaryOnly: true, forceRefresh: true });
       const debugLines = buildDebugLines(result, 'getWritingAttempts');
       const records = debugLines.length ? [] : (result.attempts || []).map(normalizeWriting);
-      this.setData({
-        loading: false,
-        records,
-        debugLines
-      });
+      this.setHistoryRecords(records, debugLines);
       this.resumePendingWritingAttempts(records);
       if (this.historyPerf) {
         this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
@@ -434,7 +548,7 @@ Page({
     if (this.data.type === 'vocabulary') {
       const result = await store.getVocabularyDictationHistory();
       const debugLines = buildDebugLines(result, 'getVocabularyDictationHistory');
-      this.setData({ loading: false, records: debugLines.length ? [] : (result.attempts || []).map(normalizeVocabulary), debugLines });
+      this.setHistoryRecords(debugLines.length ? [] : (result.attempts || []).map(normalizeVocabulary), debugLines);
       if (this.historyPerf) this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
       return;
     }
@@ -445,13 +559,12 @@ Page({
         summaryOnly: true
       });
       const debugLines = buildDebugLines(result, 'getStudyCompletions');
-      this.setData({
-        loading: false,
-        records: debugLines.length
+      this.setHistoryRecords(
+        debugLines.length
           ? []
           : (result.items || []).filter((item) => item.section === 'questions').map(normalizeListening),
         debugLines
-      });
+      );
       if (this.historyPerf) this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
       return;
     }
@@ -462,16 +575,59 @@ Page({
     const debugLines = buildDebugLines(result, 'getStudyCompletions');
     const normalize = this.data.type === 'grammar' ? normalizeGrammar : normalizeReading;
     this.wrongItems = (wrongResult && wrongResult.items) || [];
-    this.setData({
-      loading: false,
-      records: debugLines.length
+    this.setHistoryRecords(
+      debugLines.length
         ? []
         : applyWrongStatus((result.items || []).filter((item) => item.type === this.data.type).map(normalize), this.wrongItems),
       debugLines
-    });
+    );
     if (this.historyPerf) {
       this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
     }
+  },
+  setHistoryRecords(records, debugLines) {
+    const source = Array.isArray(records) ? records : [];
+    const filterableTypes = ['reading', 'grammar', 'writing', 'listening', 'speaking'];
+    const recordFilterOptions = filterableTypes.includes(this.data.type)
+      ? buildRecordFilterOptions(source)
+      : [];
+    this.allHistoryRecords = source;
+    this.setData({
+      loading: false,
+      records: source,
+      debugLines: debugLines || [],
+      recordFilterOpen: false,
+      activeRecordFilter: 'all',
+      activeRecordFilterLabel: text('filterAllRecords', '全部记录'),
+      recordFilterOptions
+    });
+  },
+  filterHistoryRecords(filterKey) {
+    const source = this.allHistoryRecords || [];
+    return filterKey === 'all'
+      ? source
+      : source.filter((record) => record.filterKey === filterKey);
+  },
+  findHistoryRecord(recordId) {
+    return (this.data.records || []).find((item) => item.id === recordId)
+      || (this.allHistoryRecords || []).find((item) => item.id === recordId)
+      || null;
+  },
+  toggleRecordFilter() {
+    if (!(this.data.recordFilterOptions || []).length) return;
+    this.setData({ recordFilterOpen: !this.data.recordFilterOpen });
+  },
+  selectRecordFilter(event) {
+    const filterKey = String(event.currentTarget.dataset.filterKey || 'all');
+    const option = (this.data.recordFilterOptions || []).find((item) => item.key === filterKey);
+    if (!option) return;
+    this.setData({
+      records: this.filterHistoryRecords(filterKey),
+      activeRecordFilter: filterKey,
+      activeRecordFilterLabel: option.label,
+      recordFilterOpen: false,
+      expandedId: ''
+    });
   },
   resumePendingWritingAttempts(records) {
     (records || [])
@@ -487,7 +643,7 @@ Page({
     this.writingGradeResumeStartedAt[id] = Date.now();
     store.gradeWritingAttempt(id).then(() => {
       if (!this.historyPageActive) return;
-      const latest = (this.data.records || []).find((item) => item.id === id);
+      const latest = this.findHistoryRecord(id);
       if (latest) this.resumeWritingAttempt(latest);
     }).catch(() => {});
   },
@@ -509,14 +665,14 @@ Page({
       clearTimeout(this.writingResumeTimers[recordId]);
       this.writingResumeTimers[recordId] = setTimeout(() => {
         if (!this.historyPageActive) return;
-        const latest = (this.data.records || []).find((item) => item.id === recordId);
+        const latest = this.findHistoryRecord(recordId);
         if (latest) this.resumeWritingAttempt(latest);
       }, 10000);
       return;
     }
     const normalized = normalizeWriting(result.attempt, 0);
     if (result.resumable) this.startWritingGradeOnce(recordId);
-    const current = (this.data.records || []).find((item) => item.id === recordId);
+    const current = this.findHistoryRecord(recordId);
     if (!current) return;
     this.updateRecord(recordId, {
       summary: normalized.summary,
@@ -530,7 +686,7 @@ Page({
       clearTimeout(this.writingResumeTimers[recordId]);
       this.writingResumeTimers[recordId] = setTimeout(() => {
         if (!this.historyPageActive) return;
-        const latest = (this.data.records || []).find((item) => item.id === recordId);
+        const latest = this.findHistoryRecord(recordId);
         if (latest) this.resumeWritingAttempt(latest);
       }, 10000);
     }
@@ -542,7 +698,17 @@ Page({
   },
   async openWrongBook() {
     if (this.data.type === 'writing' || this.data.viewMode === 'wrong') return;
-    this.setData({ viewMode: 'wrong', loading: true, expandedId: '', debugLines: [] });
+    this.allHistoryRecords = [];
+    this.setData({
+      viewMode: 'wrong',
+      loading: true,
+      expandedId: '',
+      debugLines: [],
+      recordFilterOpen: false,
+      activeRecordFilter: 'all',
+      activeRecordFilterLabel: text('filterAllRecords', '全部记录'),
+      recordFilterOptions: []
+    });
     const result = await store.getPracticeWrongQuestions({ type: this.data.type });
     const debugLines = buildDebugLines(result, 'getPracticeWrongQuestions');
     this.wrongItems = (result && result.items) || [];
@@ -561,10 +727,12 @@ Page({
     if (!id) return;
     if (this.data.expandedId === id) {
       this.setData({ expandedId: '' });
+      if (this.data.type === 'speaking') this.stopSpeakingPlayback();
       return;
     }
+    if (this.data.type === 'speaking') this.stopSpeakingPlayback();
     this.setData({ expandedId: id });
-    const record = (this.data.records || []).find((item) => item.id === id);
+    const record = this.findHistoryRecord(id);
     if (this.data.type === 'reading' && record && !record.detailReady && !record.detailLoading) {
       this.loadReadingDetail(record);
     }
@@ -579,6 +747,86 @@ Page({
     }
     if (this.data.type === 'listening' && record && !record.detailReady && !record.detailLoading) {
       this.loadListeningDetail(record);
+    }
+  },
+  stopSpeakingPlayback() {
+    this.speakingPlaybackRequestId = Number(this.speakingPlaybackRequestId || 0) + 1;
+    const audioContext = this.speakingAudioContext;
+    this.speakingAudioContext = null;
+    if (audioContext) audioContext.destroy();
+    if (this.data && (
+      this.data.playingSpeakingRecordId
+      || this.data.pausedSpeakingRecordId
+      || this.data.loadingSpeakingRecordId
+    )) {
+      this.setData({
+        playingSpeakingRecordId: '',
+        pausedSpeakingRecordId: '',
+        loadingSpeakingRecordId: ''
+      });
+    }
+  },
+  async playSpeakingRecording(event) {
+    const recordId = String(event.currentTarget.dataset.recordId || '');
+    const record = this.findHistoryRecord(recordId);
+    if (!record || !record.hasRecording) return;
+    if (this.data.playingSpeakingRecordId === recordId && this.speakingAudioContext) {
+      if (this.data.pausedSpeakingRecordId === recordId) {
+        this.setData({ loadingSpeakingRecordId: recordId });
+        this.speakingAudioContext.play();
+      } else {
+        this.speakingAudioContext.pause();
+      }
+      return;
+    }
+    const fileId = String(record.attempt.answerAudioFileId || buildCloudFileId(record.attempt.answerCloudPath)).trim();
+    if (!fileId) {
+      wx.showToast({ title: text('speakingRecordingUnavailable', '录音暂不可播放'), icon: 'none' });
+      return;
+    }
+    this.stopSpeakingPlayback();
+    const requestId = this.speakingPlaybackRequestId;
+    this.setData({ loadingSpeakingRecordId: recordId });
+    try {
+      const src = await store.getTempFileURL(fileId);
+      if (this.speakingPlaybackRequestId !== requestId) return;
+      if (!src) throw new Error('speaking-history-audio-url-empty');
+      const audioContext = wx.createInnerAudioContext();
+      const isCurrent = () => (
+        this.speakingAudioContext === audioContext
+        && this.speakingPlaybackRequestId === requestId
+      );
+      audioContext.obeyMuteSwitch = false;
+      audioContext.onPlay(() => {
+        if (!isCurrent()) return;
+        this.setData({
+          playingSpeakingRecordId: recordId,
+          pausedSpeakingRecordId: '',
+          loadingSpeakingRecordId: ''
+        });
+      });
+      audioContext.onWaiting(() => {
+        if (isCurrent()) this.setData({ loadingSpeakingRecordId: recordId });
+      });
+      audioContext.onPause(() => {
+        if (!isCurrent()) return;
+        this.setData({ pausedSpeakingRecordId: recordId, loadingSpeakingRecordId: '' });
+      });
+      audioContext.onEnded(() => {
+        if (isCurrent()) this.stopSpeakingPlayback();
+      });
+      audioContext.onError(() => {
+        if (!isCurrent()) return;
+        this.stopSpeakingPlayback();
+        wx.showToast({ title: text('speakingRecordingFailed', '录音播放失败，请稍后重试'), icon: 'none' });
+      });
+      this.speakingAudioContext = audioContext;
+      audioContext.src = src;
+      audioContext.play();
+    } catch (error) {
+      if (this.speakingPlaybackRequestId !== requestId) return;
+      this.stopSpeakingPlayback();
+      wx.showToast({ title: text('speakingRecordingFailed', '录音播放失败，请稍后重试'), icon: 'none' });
     }
   },
   async loadListeningDetail(record) {
@@ -670,7 +918,7 @@ Page({
     this.readingDebugTimers = this.readingDebugTimers || {};
     clearTimeout(this.readingDebugTimers[record.id]);
     this.readingDebugTimers[record.id] = setTimeout(() => {
-      const latest = (this.data.records || []).find((item) => item.id === record.id);
+      const latest = this.findHistoryRecord(record.id);
       if (!latest || !latest.detailLoading) return;
       this.setData({
         debugLines: buildReadingAnalysisDebugLines(record, null, 'pending-over-3s', Date.now() - startedAt)
@@ -807,7 +1055,7 @@ Page({
     if (this.data.isParentView) return;
     const recordId = String(event.currentTarget.dataset.recordId || '');
     const questionId = String(event.currentTarget.dataset.questionId || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     const question = record && (record.detailQuestions || []).find((item) => item.questionId === questionId);
     if (!record || !question || question.inWrongBook || question.addingWrong) return;
     this.updateQuestion(recordId, questionId, { addingWrong: true });
@@ -842,7 +1090,7 @@ Page({
   },
   async loadReadingCachedAnalysis(event) {
     const recordId = String(event.currentTarget.dataset.id || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     if (!record || record.aiAnalysisLoading || record.aiAnalysisLoaded) return;
     this.updateRecord(recordId, { aiAnalysisLoading: true, aiAnalysisStatus: '' });
     const result = await store.getReadingStudyPack({
@@ -891,7 +1139,7 @@ Page({
       this.writingResumeTimers = this.writingResumeTimers || {};
       clearTimeout(this.writingResumeTimers[record.id]);
       this.writingResumeTimers[record.id] = setTimeout(() => {
-        const latest = (this.data.records || []).find((item) => item.id === record.id);
+        const latest = this.findHistoryRecord(record.id);
         if (!latest || this.data.expandedId !== record.id) return;
         this.loadWritingDetail(Object.assign({}, latest, { detailLoading: false }));
       }, 5000);
@@ -916,7 +1164,7 @@ Page({
       this.writingResumeTimers = this.writingResumeTimers || {};
       clearTimeout(this.writingResumeTimers[record.id]);
       this.writingResumeTimers[record.id] = setTimeout(() => {
-        const latest = (this.data.records || []).find((item) => item.id === record.id);
+        const latest = this.findHistoryRecord(record.id);
         if (!latest || this.data.expandedId !== record.id) return;
         this.loadWritingDetail(Object.assign({}, latest, { detailLoading: false }));
       }, 3000);
@@ -925,7 +1173,7 @@ Page({
   previewWritingPromptImage(event) {
     const recordId = String(event.currentTarget.dataset.recordId || '');
     const current = String(event.currentTarget.dataset.src || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     const urls = record && record.attempt && Array.isArray(record.attempt.promptImages)
       ? record.attempt.promptImages.map((image) => image.src).filter(Boolean)
       : [];
@@ -934,7 +1182,7 @@ Page({
   },
   async downloadWritingReportPdf(event) {
     const recordId = String(event.currentTarget.dataset.attemptId || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     if (!record || record.pdfGenerating) return;
     this.updateRecord(recordId, { pdfGenerating: true });
     try {
@@ -952,7 +1200,7 @@ Page({
   },
   async downloadReadingReportPdf(event) {
     const recordId = String(event.currentTarget.dataset.recordId || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     if (!record || record.pdfGenerating) return;
     this.updateRecord(recordId, { pdfGenerating: true });
     try {
@@ -980,7 +1228,7 @@ Page({
   },
   async downloadListeningReportPdf(event) {
     const recordId = String(event.currentTarget.dataset.recordId || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     if (!record || record.pdfGenerating) return;
     this.updateRecord(recordId, { pdfGenerating: true });
     try {
@@ -1004,7 +1252,7 @@ Page({
   async loadGrammarExplanation(event) {
     const recordId = String(event.currentTarget.dataset.recordId || '');
     const questionId = String(event.currentTarget.dataset.questionId || '');
-    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const record = this.findHistoryRecord(recordId);
     const question = record && (record.detailQuestions || []).find((item) => item.questionId === questionId);
     if (!question || question.analysis || question.explaining) return;
     this.updateQuestion(recordId, questionId, { explaining: true });
@@ -1034,21 +1282,25 @@ Page({
     }
   },
   updateQuestion(recordId, questionId, patch) {
+    const update = (records) => (records || []).map((record) => (
+      record.id !== recordId ? record : Object.assign({}, record, {
+        detailQuestions: (record.detailQuestions || []).map((question) => (
+          question.questionId === questionId ? Object.assign({}, question, patch) : question
+        ))
+      })
+    ));
+    this.allHistoryRecords = update(this.allHistoryRecords);
     this.setData({
-      records: (this.data.records || []).map((record) => (
-        record.id !== recordId ? record : Object.assign({}, record, {
-          detailQuestions: (record.detailQuestions || []).map((question) => (
-            question.questionId === questionId ? Object.assign({}, question, patch) : question
-          ))
-        })
-      ))
+      records: update(this.data.records)
     });
   },
   updateRecord(id, patch) {
+    const update = (records) => (records || []).map((item) => (
+      item.id === id ? Object.assign({}, item, patch) : item
+    ));
+    this.allHistoryRecords = update(this.allHistoryRecords);
     this.setData({
-      records: (this.data.records || []).map((item) => (
-        item.id === id ? Object.assign({}, item, patch) : item
-      ))
+      records: update(this.data.records)
     });
   }
 });

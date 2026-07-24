@@ -9,6 +9,10 @@
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
+    <view class="library-speaking-section-tabs">
+      <view class="library-speaking-section-tab is-active">{{texts.mainPractice}}</view>
+      <view class="library-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
+    </view>
     <view class="speaking-mode-list is-library">
       <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
@@ -242,6 +246,20 @@
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
+    <view class="warm-speaking-section-tabs" wx:if="{{theme === 'warm'}}">
+      <view class="warm-speaking-section-tab is-active">{{texts.mainPractice}}</view>
+      <view class="warm-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
+    </view>
+    <view class="voyage-speaking-section-tabs" wx:elif="{{theme === 'voyage'}}">
+      <view class="voyage-speaking-section-route">ROUTE</view>
+      <view class="voyage-speaking-section-tab is-active">{{texts.mainPractice}}</view>
+      <view class="voyage-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
+    </view>
+    <view class="dragon-speaking-section-tabs" wx:else>
+      <view class="dragon-speaking-section-badge">声</view>
+      <view class="dragon-speaking-section-tab is-active">{{texts.mainPractice}}</view>
+      <view class="dragon-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
+    </view>
     <view class="speaking-mode-list">
       <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
         <view class="voyage-mode-route" wx:if="{{theme === 'voyage'}}">ROUTE 01</view>

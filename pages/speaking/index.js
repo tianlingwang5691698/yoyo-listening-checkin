@@ -1103,6 +1103,12 @@ Page({
     if (returningHome || returnToSelector) this.previousSpeakingLevel = '';
   },
 
+  openSpeakingHistory() {
+    wx.navigateTo({
+      url: '/pages/practice-history/index?type=speaking'
+    });
+  },
+
   openIeltsSpeaking() {
     const tests = this.data.ieltsTests.length ? this.data.ieltsTests : buildIeltsTests();
     const books = this.data.ieltsBooks.length ? this.data.ieltsBooks : buildIeltsBooks(tests);

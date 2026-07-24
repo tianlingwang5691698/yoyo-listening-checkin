@@ -157,6 +157,8 @@ Object.assign(module.exports.practiceHistory['zh-CN'], { vocabularyTitle: '单�
 Object.assign(module.exports.practiceHistory.en, { vocabularyTitle: 'Vocabulary Practice History', vocabularyEyebrow: 'Listen and Spell', vocabularyCopy: 'Review meaning, dictation, time, and correction results.', noVocabulary: 'No vocabulary practice history yet', wordMeaning: 'Word to Meaning', audioMeaning: 'Sound to Meaning', durationLabel: 'Time', minuteUnit: 'm ', secondUnit: 's' });
 Object.assign(module.exports.speaking['zh-CN'], { startAnswer: '开始回答', endAnswer: '结束回答', restartAnswer: '重新回答', scoreAnswer: '评分', endRepeat: '结束跟读', restartRepeat: '重新跟读', replayRecording: '回放我的录音', stopPlayback: '停止回放', answerPlaybackFailed: '录音回放失败，请重新录一次。', listenQuestion: '点击听题', questionReadingHidden: '正在念题，点击显示', questionHidden: '题目已隐藏，点击显示', ieltsOpeningTitle: '考试开场', ieltsOpeningCopy: '先听考官开场，准备好后再开始第一题。', ieltsIntroPlaying: '正在播放开场', ieltsIntroReplay: '重听考试开场', ieltsIntroMeta: '英文考官口播', startPartOne: '开始 Part 1 · 第1题', listenQuestionShort: '听题', questionPlaying: '正在念题', relistenQuestion: '重听题目', questionListenHint: '先听题，准备好后开始回答', showQuestion: '显示题目', hideQuestion: '隐藏题目', ieltsAnswerArea: '回答区', ieltsAnswerReady: '可以开始回答', ieltsAnswerLocked: '听完题目后开放', previousQuestion: '上一题', nextQuestion: '下一题', ieltsIntroFailed: '考试开场播放失败，请稍后重试。' });
 Object.assign(module.exports.speaking.en, { startAnswer: 'Start Answer', endAnswer: 'End Answer', restartAnswer: 'Answer Again', scoreAnswer: 'Score', endRepeat: 'End Repeat', restartRepeat: 'Repeat Again', replayRecording: 'Play My Recording', stopPlayback: 'Stop Playback', answerPlaybackFailed: 'Could not play the recording. Please record again.', listenQuestion: 'Listen to Question', questionReadingHidden: 'Question playing · Tap to show', questionHidden: 'Question hidden · Tap to show', ieltsOpeningTitle: 'Speaking Test Opening', ieltsOpeningCopy: 'Listen to the examiner, then start with the first question.', ieltsIntroPlaying: 'Playing the opening', ieltsIntroReplay: 'Replay the opening', ieltsIntroMeta: 'Examiner introduction', startPartOne: 'Start Part 1 · Question 1', listenQuestionShort: 'Listen', questionPlaying: 'Question playing', relistenQuestion: 'Replay question', questionListenHint: 'Listen first, then start your answer', showQuestion: 'Show question', hideQuestion: 'Hide question', ieltsAnswerArea: 'Your answer', ieltsAnswerReady: 'Ready to answer', ieltsAnswerLocked: 'Available after playback', previousQuestion: 'Previous', nextQuestion: 'Next', ieltsIntroFailed: 'Could not play the test opening. Try again.' });
+Object.assign(module.exports.speaking['zh-CN'], { practiceHistory: '练习记录' });
+Object.assign(module.exports.speaking.en, { practiceHistory: 'Practice History' });
 
 module.exports.vocabularyPractice = {
   'zh-CN': {
@@ -261,4 +263,82 @@ Object.assign(module.exports.practiceHistory.en, {
   listeningPdfGenerating: 'Generating PDF',
   listeningPdfFailed: 'Could not generate PDF',
   listeningPdfPreparing: 'Preparing the learning report. Try again shortly.'
+});
+Object.assign(module.exports.practiceHistory['zh-CN'], {
+  speakingTitle: '口语练习记录',
+  speakingEyebrow: '口语练习',
+  speakingCopy: '回听录音，查看跟读分数和雅思练习结果。',
+  noSpeaking: '还没有口语练习记录',
+  speakingRepeat: '分级跟读',
+  speakingIelts: '雅思口语',
+  speakingQuestion: '练习题目',
+  speakingSentence: '跟读句',
+  speakingPracticeResult: '练习结果',
+  speakingAccuracy: '准确度',
+  speakingFluency: '流利度',
+  speakingCompleteness: '完整度',
+  speakingFluencyCoherence: '流利与连贯',
+  speakingLexicalResource: '词汇资源',
+  speakingGrammar: '语法范围与准确性',
+  speakingPronunciation: '发音',
+  speakingTranscript: '回答转写',
+  speakingFeedback: '练习反馈',
+  speakingIeltsNote: '用于练习参考，不是正式 IELTS 成绩',
+  speakingRecordingPlay: '播放我的录音',
+  speakingRecordingPause: '暂停录音',
+  speakingRecordingContinue: '继续播放',
+  speakingRecordingLoading: '正在加载录音',
+  speakingRecordingUnavailable: '录音暂不可播放',
+  speakingRecordingFailed: '录音播放失败，请稍后重试',
+  speakingPromptFallback: '口语练习',
+  speakingResultIncomplete: '暂无完整结果',
+  scoreUnit: ' 分'
+});
+Object.assign(module.exports.practiceHistory.en, {
+  speakingTitle: 'Speaking Practice History',
+  speakingEyebrow: 'Speaking Practice',
+  speakingCopy: 'Replay recordings and review repeat scores and IELTS practice results.',
+  noSpeaking: 'No speaking practice history yet',
+  speakingRepeat: 'Graded Repeat',
+  speakingIelts: 'IELTS Speaking',
+  speakingQuestion: 'Practice Question',
+  speakingSentence: 'Repeat Sentence',
+  speakingPracticeResult: 'Practice Result',
+  speakingAccuracy: 'Accuracy',
+  speakingFluency: 'Fluency',
+  speakingCompleteness: 'Completeness',
+  speakingFluencyCoherence: 'Fluency & Coherence',
+  speakingLexicalResource: 'Lexical Resource',
+  speakingGrammar: 'Grammar',
+  speakingPronunciation: 'Pronunciation',
+  speakingTranscript: 'Answer Transcript',
+  speakingFeedback: 'Practice Feedback',
+  speakingIeltsNote: 'For practice only, not an official IELTS score',
+  speakingRecordingPlay: 'Play My Recording',
+  speakingRecordingPause: 'Pause Recording',
+  speakingRecordingContinue: 'Continue Playback',
+  speakingRecordingLoading: 'Loading Recording',
+  speakingRecordingUnavailable: 'Recording unavailable',
+  speakingRecordingFailed: 'Could not play the recording',
+  speakingPromptFallback: 'Speaking Practice',
+  speakingResultIncomplete: 'Incomplete result',
+  scoreUnit: ' points'
+});
+Object.assign(module.exports.practiceHistory['zh-CN'], {
+  filterRecords: '筛选',
+  filterAllRecords: '全部记录',
+  filterJunior: '初中',
+  filterSenior: '高中',
+  filterOther: '其他',
+  filterOtherGrammar: '其他语法',
+  recordUnit: '条'
+});
+Object.assign(module.exports.practiceHistory.en, {
+  filterRecords: 'Filter',
+  filterAllRecords: 'All Records',
+  filterJunior: 'Junior High',
+  filterSenior: 'Senior High',
+  filterOther: 'Other',
+  filterOtherGrammar: 'Other Grammar',
+  recordUnit: ''
 });

@@ -549,10 +549,17 @@ async function getSpeakingAttempts(event) {
     action: 'getSpeakingAttempts'
   }));
   const payload = (event && event.payload) || {};
+  const scope = study.getUserScope(ctx);
+  if (payload.historyMode === 'recent') {
+    const attempts = await attemptRepository.findSpeakingHistory(scope, payload.limit);
+    return {
+      attempts: attempts.map(formatAttemptForClient),
+      summary: speakingEngine.summarizeAttempts(attempts)
+    };
+  }
   const attempt = normalizeAttemptPayload(Object.assign({}, payload, {
     targetDate: payload.targetDate || today
   }));
-  const scope = study.getUserScope(ctx);
   const attempts = attempt.category && attempt.taskId
     ? await attemptRepository.findBestAndLatestByTask(scope, {
       date: attempt.date || today,

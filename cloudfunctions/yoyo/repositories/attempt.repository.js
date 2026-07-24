@@ -67,6 +67,23 @@ async function findByDate(scope, date) {
   return res.data || [];
 }
 
+async function findSpeakingHistory(scope, limit = 100) {
+  const safeLimit = Math.max(1, Math.min(Number(limit || 100), 100));
+  const categories = ['speaking', 'ielts-speaking'];
+  const results = await Promise.all(categories.map(async (category) => {
+    const res = await taskAttempts().where({
+      familyId: scope.familyId,
+      childId: scope.childId,
+      category
+    }).orderBy('createdAt', 'desc').limit(safeLimit).get();
+    return res.data || [];
+  }));
+  return results
+    .reduce((items, group) => items.concat(group), [])
+    .sort((left, right) => String(right.createdAt || '').localeCompare(String(left.createdAt || '')))
+    .slice(0, safeLimit);
+}
+
 async function findRecentByTask(scope, filters, limit = 3) {
   const items = await findByTask(scope, filters);
   return items.slice(-limit);
@@ -93,6 +110,7 @@ module.exports = {
   findById,
   update,
   findByDate,
+  findSpeakingHistory,
   findByTask,
   findIeltsByTest,
   findRecentByTask,

@@ -7,7 +7,7 @@
     <view class="history-copy">{{config.copy}}</view>
     <view class="history-parent-badge" wx:if="{{isParentView}}">{{texts.parentReadOnly}}</view>
     <view class="history-archive-mark {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">
-      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'listening' ? 'L' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W')))}}</view>
+      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'listening' ? 'L' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : (type === 'speaking' ? 'S' : 'W'))))}}</view>
       <text>ARCHIVE</text>
     </view>
   </view>
@@ -17,6 +17,83 @@
     <view class="history-tab {{viewMode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">{{texts.wrongBook}}</view>
   </view>
 
+  <view class="warm-history-filter" wx:if="{{theme === 'warm' && viewMode === 'history' && recordFilterOptions.length}}">
+    <view class="warm-history-filter-row">
+      <view class="warm-history-filter-current">
+        <text>{{activeRecordFilterLabel}}</text>
+        <text>{{records.length}}{{texts.recordUnit}}</text>
+      </view>
+      <view class="warm-history-filter-trigger" bindtap="toggleRecordFilter">{{texts.filterRecords}}</view>
+    </view>
+    <view class="warm-history-filter-options" wx:if="{{recordFilterOpen}}">
+      <view
+        class="warm-history-filter-option {{activeRecordFilter === item.key ? 'is-active' : ''}}"
+        wx:for="{{recordFilterOptions}}"
+        wx:key="key"
+        data-filter-key="{{item.key}}"
+        bindtap="selectRecordFilter"
+      >
+        <text>{{item.label}}</text>
+        <text>{{item.count}}{{texts.recordUnit}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="library-history-filter" wx:if="{{theme === 'library' && viewMode === 'history' && recordFilterOptions.length}}">
+    <view class="library-history-filter-spine">INDEX</view>
+    <view class="library-history-filter-body">
+      <view class="library-history-filter-row">
+        <view class="library-history-filter-current"><text>{{activeRecordFilterLabel}}</text><text>{{records.length}}{{texts.recordUnit}}</text></view>
+        <view class="library-history-filter-trigger" bindtap="toggleRecordFilter">{{texts.filterRecords}}</view>
+      </view>
+      <view class="library-history-filter-options" wx:if="{{recordFilterOpen}}">
+        <view
+          class="library-history-filter-option {{activeRecordFilter === item.key ? 'is-active' : ''}}"
+          wx:for="{{recordFilterOptions}}"
+          wx:key="key"
+          data-filter-key="{{item.key}}"
+          bindtap="selectRecordFilter"
+        ><view class="library-history-filter-mark">{{index + 1}}</view><text>{{item.label}}</text><text>{{item.count}}{{texts.recordUnit}}</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="voyage-history-filter" wx:if="{{theme === 'voyage' && viewMode === 'history' && recordFilterOptions.length}}">
+    <view class="voyage-history-filter-route"><text></text><text></text><text></text></view>
+    <view class="voyage-history-filter-row">
+      <view class="voyage-history-filter-current"><text>{{activeRecordFilterLabel}}</text><text>{{records.length}}{{texts.recordUnit}}</text></view>
+      <view class="voyage-history-filter-trigger" bindtap="toggleRecordFilter">{{texts.filterRecords}}</view>
+    </view>
+    <view class="voyage-history-filter-options" wx:if="{{recordFilterOpen}}">
+      <view
+        class="voyage-history-filter-option {{activeRecordFilter === item.key ? 'is-active' : ''}}"
+        wx:for="{{recordFilterOptions}}"
+        wx:key="key"
+        data-filter-key="{{item.key}}"
+        bindtap="selectRecordFilter"
+      ><view class="voyage-history-filter-node"></view><text>{{item.label}}</text><text>{{item.count}}{{texts.recordUnit}}</text></view>
+    </view>
+  </view>
+
+  <view class="dragon-history-filter" wx:if="{{theme === 'dragon' && viewMode === 'history' && recordFilterOptions.length}}">
+    <view class="dragon-history-filter-badge">筛</view>
+    <view class="dragon-history-filter-main">
+      <view class="dragon-history-filter-row">
+        <view class="dragon-history-filter-current"><text>{{activeRecordFilterLabel}}</text><text>{{records.length}}{{texts.recordUnit}}</text></view>
+        <view class="dragon-history-filter-trigger" bindtap="toggleRecordFilter">{{texts.filterRecords}}</view>
+      </view>
+      <view class="dragon-history-filter-options" wx:if="{{recordFilterOpen}}">
+        <view
+          class="dragon-history-filter-option {{activeRecordFilter === item.key ? 'is-active' : ''}}"
+          wx:for="{{recordFilterOptions}}"
+          wx:key="key"
+          data-filter-key="{{item.key}}"
+          bindtap="selectRecordFilter"
+        ><view class="dragon-history-filter-rank">{{index + 1}}</view><text>{{item.label}}</text><text>{{item.count}}{{texts.recordUnit}}</text></view>
+      </view>
+    </view>
+  </view>
+
   <view class="history-debug" wx:if="{{debugLines.length}}">
     <text selectable="{{true}}" wx:for="{{debugLines}}" wx:key="*this">{{item}}</text>
   </view>
@@ -24,7 +101,7 @@
   <view class="history-list" wx:if="{{records.length}}">
     <view class="history-record {{expandedId === item.id ? 'is-expanded' : ''}}" wx:for="{{records}}" wx:key="id">
       <view class="history-summary" data-id="{{item.id}}" bindtap="toggleRecord">
-        <view class="history-record-stamp {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">{{type === 'reading' ? 'R' : (type === 'listening' ? 'L' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W')))}}</view>
+        <view class="history-record-stamp {{theme === 'voyage' ? 'is-voyage' : (theme === 'dragon' ? 'is-dragon' : '')}}" wx:if="{{theme === 'library' || theme === 'voyage' || theme === 'dragon'}}">{{type === 'reading' ? 'R' : (type === 'listening' ? 'L' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : (type === 'speaking' ? 'S' : 'W'))))}}</view>
         <view class="history-summary-main">
           <view class="history-record-title">{{item.title}}</view>
           <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}<text wx:if="{{item.durationText}}"> · {{texts.durationLabel}} {{item.durationText}}</text></view>
@@ -161,6 +238,54 @@
             data-record-id="{{item.id}}"
             bindtap="downloadListeningReportPdf"
           >{{item.pdfGenerating ? texts.listeningPdfGenerating : texts.listeningPdfDownload}}</button>
+        </block>
+
+        <block wx:if="{{type === 'speaking' && item.detailReady}}">
+          <view class="history-speaking-block">
+            <view class="history-speaking-label">{{item.isIelts ? texts.speakingQuestion : texts.speakingSentence}}</view>
+            <view class="history-speaking-prompt">{{item.prompt}}</view>
+          </view>
+
+          <view class="history-speaking-block" wx:if="{{item.isIelts}}">
+            <view class="history-speaking-total"><text>{{texts.speakingPracticeResult}}</text><view>Band {{item.attempt.ieltsOverallBand || '-'}}</view></view>
+            <view class="history-speaking-band-grid">
+              <view><text>{{texts.speakingFluencyCoherence}}</text><view>{{item.attempt.ieltsFluencyCoherenceBand || '-'}}</view></view>
+              <view><text>{{texts.speakingLexicalResource}}</text><view>{{item.attempt.ieltsLexicalResourceBand || '-'}}</view></view>
+              <view><text>{{texts.speakingGrammar}}</text><view>{{item.attempt.ieltsGrammaticalRangeAccuracyBand || '-'}}</view></view>
+              <view><text>{{texts.speakingPronunciation}}</text><view>{{item.attempt.ieltsPronunciationBand || '-'}}</view></view>
+            </view>
+            <view class="history-speaking-note">{{texts.speakingIeltsNote}}</view>
+          </view>
+
+          <view class="history-speaking-block" wx:else>
+            <view class="history-speaking-total"><text>{{texts.speakingPracticeResult}}</text><view>{{item.attempt.score || '-'}}<text wx:if="{{item.attempt.score}}">{{texts.scoreUnit}}</text></view></view>
+            <view class="history-speaking-metric-grid">
+              <view><text>{{texts.speakingAccuracy}}</text><view>{{item.attempt.pronunciationAccuracyScore || '-'}}</view></view>
+              <view><text>{{texts.speakingFluency}}</text><view>{{item.attempt.pronunciationFluencyScore || '-'}}</view></view>
+              <view><text>{{texts.speakingCompleteness}}</text><view>{{item.attempt.pronunciationCompletionScore || '-'}}</view></view>
+            </view>
+          </view>
+
+          <view class="history-speaking-block" wx:if="{{item.attempt.studentTranscript}}">
+            <view class="history-speaking-label">{{texts.speakingTranscript}}</view>
+            <view class="history-speaking-text">{{item.attempt.studentTranscript}}</view>
+          </view>
+
+          <view class="history-speaking-block" wx:if="{{item.attempt.feedback}}">
+            <view class="history-speaking-label">{{texts.speakingFeedback}}</view>
+            <view class="history-speaking-text is-feedback">{{item.attempt.feedback}}</view>
+          </view>
+
+          <button
+            class="history-speaking-play"
+            wx:if="{{item.hasRecording}}"
+            hover-class="is-pressed"
+            data-record-id="{{item.id}}"
+            bindtap="playSpeakingRecording"
+          >
+            <view class="history-speaking-play-icon {{playingSpeakingRecordId === item.id && pausedSpeakingRecordId !== item.id ? 'is-pause' : ''}}"></view>
+            <text>{{loadingSpeakingRecordId === item.id ? texts.speakingRecordingLoading : (playingSpeakingRecordId === item.id ? (pausedSpeakingRecordId === item.id ? texts.speakingRecordingContinue : texts.speakingRecordingPause) : texts.speakingRecordingPlay)}}</text>
+          </button>
         </block>
 
         <block wx:if="{{type === 'grammar'}}">
