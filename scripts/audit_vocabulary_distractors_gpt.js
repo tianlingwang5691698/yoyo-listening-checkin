@@ -6,7 +6,7 @@ const path = require('path');
 const CloudBase = require('../cloudfunctions/yoyo/node_modules/@cloudbase/manager-node');
 const appConfig = require('../app-config');
 const { formatVocabularyDefinitions } = require('../utils/vocabulary-definitions');
-const { buildRecognitionQuestions } = require('../utils/vocabulary-recognition');
+const { buildRecognitionQuestions } = require('../pages/reading/shared/vocabulary-recognition');
 
 const ROOT = path.join(__dirname, '..');
 const MODEL = 'gpt-5.6-sol';

@@ -3,7 +3,7 @@ const store = require('../../../../utils/store');
 const effects = require('../../../../utils/effects');
 const i18n = require('../../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../../utils/vocabulary-definitions');
-const { resolveVocabularyEntry } = require('../../../../utils/vocabulary-phonetics');
+const { resolveVocabularyEntry } = require('../../shared/vocabulary-phonetics');
 const { createVocabularySessionTimer, formatDuration } = require('../../../../utils/vocabulary-session-timer');
 const {
   buildDictionaryVoiceUrls,

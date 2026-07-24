@@ -3,7 +3,7 @@ const test = require('node:test');
 const {
   buildMeaningOptions,
   buildRecognitionQuestions
-} = require('../utils/vocabulary-recognition');
+} = require('../pages/reading/shared/vocabulary-recognition');
 
 const cards = [
   { key: 'evidence', word: 'evidence', meaning: 'n. 证据；证明' },

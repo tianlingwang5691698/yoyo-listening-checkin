@@ -117,6 +117,19 @@ test('口语页使用普通分包，避免主包超过 2MB', () => {
   assert.equal((app.pages || []).includes('pages/speaking/index'), false);
 });
 
+test('阅读专用大体积词汇数据必须留在阅读分包', () => {
+  const readingShared = path.join(root, 'pages/reading/shared');
+  [
+    'ielts-phonetics-v2.js',
+    'vocabulary-distractor-audit-data.js',
+    'vocabulary-phonetics.js',
+    'vocabulary-recognition.js'
+  ].forEach((file) => {
+    assert.ok(fs.existsSync(path.join(readingShared, file)), `${file} 必须位于阅读分包`);
+    assert.equal(fs.existsSync(path.join(root, 'utils', file)), false, `${file} 不得回到主包`);
+  });
+});
+
 test('阶段详情只加载轻量语法目录', () => {
   const catalogPath = path.join(root, 'cloudfunctions/yoyo/data/grammar-plan-catalog.json');
   const raw = fs.readFileSync(catalogPath, 'utf8');

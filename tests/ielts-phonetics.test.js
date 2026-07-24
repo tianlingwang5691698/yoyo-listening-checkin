@@ -2,8 +2,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
-const runtime = require('../utils/ielts-phonetics-v2');
-const { resolveVocabularyEntry } = require('../utils/vocabulary-phonetics');
+const runtime = require('../pages/reading/shared/ielts-phonetics-v2');
+const { resolveVocabularyEntry } = require('../pages/reading/shared/vocabulary-phonetics');
 
 const root = path.resolve(__dirname, '..');
 const unusualIpa = /[ɹɚɝ().]|[ɾʔʍɫɨʉɐɘ]|[\u0300-\u036f]/u;

@@ -7,13 +7,13 @@ const path = require('path');
 const CloudBase = require('../cloudfunctions/yoyo/node_modules/@cloudbase/manager-node');
 const appConfig = require('../app-config');
 const { formatVocabularyDefinitions } = require('../utils/vocabulary-definitions');
-const { buildRecognitionQuestions, isBlockedDistractorPair, isRecognitionTargetAllowed } = require('../utils/vocabulary-recognition');
+const { buildRecognitionQuestions, isBlockedDistractorPair, isRecognitionTargetAllowed } = require('../pages/reading/shared/vocabulary-recognition');
 
 const ROOT = path.join(__dirname, '..');
 const MODEL = process.env.VOCABULARY_AUDIT_MODEL || 'gpt-5.4-mini';
 const CHECKPOINT = path.join(ROOT, 'data/dictionary-import/distractor-audits/all-vocabulary-checkpoint.json');
 const REPORT = path.join(ROOT, 'data/dictionary-import/distractor-audits/all-vocabulary.json');
-const RUNTIME_DATA = path.join(ROOT, 'utils/vocabulary-distractor-audit-data.js');
+const RUNTIME_DATA = path.join(ROOT, 'pages/reading/shared/vocabulary-distractor-audit-data.js');
 const BATCH_WORD_LIMIT = Math.max(50, Number(process.env.VOCABULARY_AUDIT_BATCH_WORDS || 180));
 const CONCURRENCY = Math.max(1, Math.min(8, Number(process.env.VOCABULARY_AUDIT_CONCURRENCY || 3)));
 const PREPARE_ONLY = process.argv.includes('--prepare-only');

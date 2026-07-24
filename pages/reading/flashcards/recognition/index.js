@@ -3,8 +3,8 @@ const store = require('../../../../utils/store');
 const effects = require('../../../../utils/effects');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../../utils/vocabulary-definitions');
 const { createDictionaryVoicePlayer } = require('../../../../utils/dictionary-voice-player');
-const { buildRecognitionQuestions, isRecognitionTargetAllowed } = require('../../../../utils/vocabulary-recognition');
-const { resolveVocabularyEntry } = require('../../../../utils/vocabulary-phonetics');
+const { buildRecognitionQuestions, isRecognitionTargetAllowed } = require('../../shared/vocabulary-recognition');
+const { resolveVocabularyEntry } = require('../../shared/vocabulary-phonetics');
 const { createVocabularySessionTimer, formatDuration } = require('../../../../utils/vocabulary-session-timer');
 
 const SESSION_LIMIT = 20;
