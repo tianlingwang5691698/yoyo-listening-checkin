@@ -582,6 +582,8 @@ function normalizeCompletionItem(item, index) {
     reviewSuggestionsText: reviewSuggestions.join('；'),
     phraseCards,
     grammarCorrections: Array.isArray(review.grammarCorrections) ? review.grammarCorrections : [],
+    polishedTitle: review.polishedTitle || '',
+    polishedStandard: review.polishedStandard || '',
     polishedVersion: review.polishedVersion || '',
     passage,
     writingPrompt: latestAttempt.prompt || safeItem.prompt || null,

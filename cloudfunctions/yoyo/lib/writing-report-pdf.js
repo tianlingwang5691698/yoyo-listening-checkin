@@ -275,7 +275,16 @@ function addReview(doc, review) {
     });
   }
   if (cleanText(data.polishedVersion)) {
+    doc.addPage();
     addSectionTitle(doc, data.polishedTitle || '参考范文');
+    if (cleanText(data.polishedStandard)) {
+      writeText(doc, data.polishedStandard, {
+        size: 9.8,
+        color: COLORS.muted,
+        lineGap: 3,
+        paragraphGap: 8
+      });
+    }
     addLongEnglishText(doc, data.polishedVersion);
   }
   const bandSamples = Array.isArray(data.bandSamples) ? data.bandSamples : [];

@@ -161,6 +161,14 @@
   font-family: "PingFang SC", "Helvetica Neue", sans-serif;
 }
 
+.shared-writing-polished-standard {
+  margin-bottom: 12rpx;
+  color: #68778d;
+  font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  font-size: 21rpx;
+  line-height: 1.55;
+}
+
 .shared-writing-band-head,
 .shared-writing-band-buttons {
   display: flex;

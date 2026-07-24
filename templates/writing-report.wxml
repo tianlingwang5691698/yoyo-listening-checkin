@@ -69,6 +69,7 @@
     </view>
     <view class="shared-writing-polished" wx:if="{{review.polishedVersion}}">
       <view class="shared-writing-section-title">{{review.polishedTitle || texts.rewrite}}</view>
+      <view class="shared-writing-polished-standard" wx:if="{{review.polishedStandard}}">{{review.polishedStandard}}</view>
       <view>{{review.polishedVersion}}</view>
     </view>
 

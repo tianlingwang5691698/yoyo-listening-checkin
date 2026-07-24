@@ -22,6 +22,8 @@ test('初中、高中和 IELTS 作文详情与练习记录共用完整报告模�
     'limiters',
     'nextBandActions',
     'grammarCorrections',
+    'polishedTitle',
+    'polishedStandard',
     'polishedVersion',
     'bandSamples',
     'downloadWritingReportPdf'
@@ -38,8 +40,9 @@ test('PDF 导出包含结构化题目、原图、作文全文和完整批改', (
   assert.match(page, /promptDisplay: this\.data\.promptDisplay/);
   ['articleTitle', 'articleParagraphs', 'requirements', 'notices', 'promptStarter', 'promptTable', 'images']
     .forEach((field) => assert.match(service, new RegExp(field)));
-  ['写作题目', '题目图片', '学生作文', '批改报告', '原文证据', '卡分原因', '升到下一档', '参考范文']
+  ['写作题目', '题目图片', '学生作文', '批改报告', '原文证据', '卡分原因', '升到下一档', '参考范文', 'polishedStandard']
     .forEach((label) => assert.match(pdf, new RegExp(label)));
+  assert.match(pdf, /if \(cleanText\(data\.polishedVersion\)\) \{\s*doc\.addPage\(\)/);
   assert.match(service, /loadWritingAttempt\(ctx, attemptId\)/);
   assert.match(service, /catalog\.getMaterialItem/);
   assert.match(service, /itemId: promptId/);

@@ -19,7 +19,7 @@ const {
 const COLLECTION = 'writingAttempts';
 const PREVIEW_COLLECTION = 'writingPreviewAttempts';
 const PREVIEW_ATTEMPT_PREFIX = 'preview-';
-const WRITING_SCORING_VERSION = 'writing-score-v9-terra-midband-20260724';
+const WRITING_SCORING_VERSION = 'writing-score-v10-terra-target-sample-20260724';
 const WRITING_GRADING_STALE_MS = 330000;
 const WRITING_MODEL_REQUEST_TIMEOUT_MS = 180000;
 const WRITING_MODEL_TOTAL_BUDGET_MS = 280000;
@@ -508,14 +508,21 @@ function formatBandLabel(label, score) {
   return score === null ? label : `${label} · ${score.toFixed(1)}`;
 }
 
-function buildReviewLabels(taskType, dimensionScores) {
+function buildReviewLabels(taskType, dimensionScores, polishedTargetBand) {
   if (taskType === 'ielts-task-1' || taskType === 'ielts-task-2') {
+    const targetBand = normalizeBandScore(polishedTargetBand);
+    const basePolishedTitle = taskType === 'ielts-task-1' ? '原题参考范文' : '参考范文';
     return {
       contentLabel: formatBandLabel(taskType === 'ielts-task-1' ? 'Task Achievement' : 'Task Response', dimensionScores.task),
       structureLabel: formatBandLabel('Coherence and Cohesion', dimensionScores.coherenceCohesion),
       languageLabel: formatBandLabel('Lexical Resource', dimensionScores.lexicalResource),
       spellingLabel: formatBandLabel('Grammatical Range and Accuracy', dimensionScores.grammaticalRangeAccuracy),
-      polishedTitle: taskType === 'ielts-task-1' ? '原题参考范文' : '参考范文'
+      polishedTitle: targetBand === null
+        ? basePolishedTitle
+        : `${basePolishedTitle} · 目标 Band ${targetBand.toFixed(1)}`,
+      polishedStandard: targetBand === null
+        ? ''
+        : `生成标准：目标 Band ${targetBand.toFixed(1)}，最高不超过 Band 9.0。`
     };
   }
   if (taskType === 'senior-summary') {
@@ -696,6 +703,15 @@ function mergeIeltsCalibrationReview(firstReview, calibratedReview) {
       ? calibratedReview.grammarCorrections
       : (base.grammarCorrections || []),
     polishedVersion: base.polishedVersion || calibratedReview.polishedVersion || '',
+    polishedTargetBand: base.polishedVersion
+      ? base.polishedTargetBand
+      : calibratedReview.polishedTargetBand,
+    polishedTitle: base.polishedVersion
+      ? base.polishedTitle
+      : calibratedReview.polishedTitle,
+    polishedStandard: base.polishedVersion
+      ? base.polishedStandard
+      : calibratedReview.polishedStandard,
     bandSamples: base.bandSamples || calibratedReview.bandSamples || [],
     calibrationApplied: true,
     calibrationPreviousScore: normalizeBandScore(base.score)
@@ -769,6 +785,7 @@ function normalizeReview(data, prompt) {
       ? normalizeBandScore(scores.reduce((sum, score) => sum + score, 0) / 4)
       : null;
     const score = calculatedBand !== null ? calculatedBand : (normalizeBandScore(data.score) || 0);
+    const polishedTargetBand = normalizeBandScore(Math.min(9, score + 1));
     const storedCriterionDetails = normalizeStoredCriterionDetails(data.criterionDetails);
     const criterionDetails = storedCriterionDetails.length === 4
       ? storedCriterionDetails
@@ -803,9 +820,10 @@ function normalizeReview(data, prompt) {
           reason: normalizeText(item && item.reason)
         })).filter((item) => item.original || item.corrected).slice(0, 12)
         : [],
+      polishedTargetBand,
       polishedVersion: normalizeLongText(data.polishedVersion || data.modelAnswer || data.polished || '').slice(0, 5000),
       bandSamples: normalizeBandSamples(data.bandSamples, score)
-    }, buildReviewLabels(taskType, dimensionScores));
+    }, buildReviewLabels(taskType, dimensionScores, polishedTargetBand));
     normalized.criterionDetailsComplete = hasCompleteIeltsCriterionDetails(normalized);
     normalized.officialBandDecisionsComplete = hasCompleteOfficialBandDecisions(normalized);
     normalized.feedbackNotice = normalized.criterionDetailsComplete && normalized.officialBandDecisionsComplete
@@ -885,9 +903,15 @@ function applyOfficialMinimumResponseRule(review, essay) {
     score: forcedBand,
     label: formatBandLabel(criterionLabels[item.key] || item.label || item.key, forcedBand)
   }));
-  const adjusted = Object.assign({}, review, buildReviewLabels(review.taskType, dimensionScores), {
+  const polishedTargetBand = normalizeBandScore(Math.min(9, forcedBand + 1));
+  const adjusted = Object.assign({}, review, buildReviewLabels(
+    review.taskType,
+    dimensionScores,
+    polishedTargetBand
+  ), {
     score: forcedBand,
     level: `IELTS Band ${forcedBand.toFixed(1)}`,
+    polishedTargetBand,
     dimensionScores,
     officialBandDecisions,
     officialBandDecisionsComplete: true,
@@ -987,11 +1011,11 @@ function buildGradingPrompt(prompt, essay) {
           '先在 task1FactCheck 中独立列出图表关键事实，再评判学生是否准确覆盖主要特征、数据、overview和跨系列比较。',
           'Task Achievement 必须直接匹配官方描述：Band 8 要求 key features are skilfully selected, clearly presented, highlighted and illustrated；Band 7 要求 clear overview、appropriate categorisation，以及识别 main trends or differences。不得使用程序自定义封顶。',
           '数据错误必须标 major 或 minor；遗漏写入 majorMissingFeatures 或 minorMissingDetails，最终由官方 Task Achievement 描述决定档位。少于150词必须在 Task Achievement 中按官方标准处理。',
-          'polishedVersion必须是独立生成的原题参考范文，不是学生文章的改写；不得编造原图中没有的数据。'
+          'polishedVersion必须是独立生成的原题参考范文，不是学生文章的改写；目标档为dimensionScores四项平均并按0.5档归一后的总分加1 Band，最高Band 9；建议160–210词；不得编造原图中没有的数据。'
         ].join('')
-        : '必须完整回应原题的所有问题，立场明确，论证充分；少于250词必须在 Task Response 中明确处理。',
+        : '必须完整回应原题的所有问题，立场明确，论证充分；少于250词必须在 Task Response 中明确处理。polishedVersion必须是目标档为dimensionScores四项平均并按0.5档归一后的总分加1 Band、最高Band 9的独立参考范文，建议270–330词。',
       '学生可见字段只写文章表现和可执行改进，不得出现“AI、模型、校准、预估、评分过程、评分依据版本、官方文件返回情况”等内部说明。summary最多两句，不重复四项评语；strengths、problems、suggestions各项不得同义反复。',
-      `criterionFeedback 的四个对象都必须给出：2–4条学生原文证据、对应本档描述、1–4条卡分原因、1–4条升到下一档的具体动作。officialBandDecisions 的四个对象必须给出：awardedBand、checkedFromBand9=true、awardedBandFullyMet=true、当前档证据、相邻高一档及其未满足的官方特征；Band 9 的 nextHigherBand 使用 null。返回格式：{"score":number,"totalScore":9,"level":"IELTS Band x.x"${taskType === 'ielts-task-1' ? ',"task1FactCheck":{"chartFacts":["从原图读取的关键事实"],"overviewCoverage":"学生overview覆盖情况","crossSeriesComparisons":["学生已写出的跨系列比较"],"majorMissingFeatures":["遗漏的重大特征"],"minorMissingDetails":["遗漏的次要数值"],"dataErrors":[{"detail":"数据错误","severity":"major|minor"}]}' : ''},"dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"officialBandDecisions":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":${decisionShape},"coherenceCohesion":${decisionShape},"lexicalResource":${decisionShape},"grammaticalRangeAccuracy":${decisionShape}},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文评语","evidence":["原文证据"],"descriptorMatch":"匹配本档原因","limiters":["卡分原因"],"nextBandActions":["升档动作"]},"coherenceCohesion":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"lexicalResource":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"grammaticalRangeAccuracy":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]}},"summary":"中文总评","content":"${taskCriterion}中文评语","structure":"Coherence and Cohesion中文评语","language":"Lexical Resource中文评语","spelling":"Grammatical Range and Accuracy中文评语","strengths":["优点"],"problems":["问题"],"suggestions":["建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedVersion":"英文参考范文"}`,
+      `criterionFeedback 的四个对象都必须给出：2–4条学生原文证据、对应本档描述、1–4条卡分原因、1–4条升到下一档的具体动作。officialBandDecisions 的四个对象必须给出：awardedBand、checkedFromBand9=true、awardedBandFullyMet=true、当前档证据、相邻高一档及其未满足的官方特征；Band 9 的 nextHigherBand 使用 null。polishedTargetBand必须等于dimensionScores四项平均并按0.5档归一后的总分加1 Band，最高为9。返回格式：{"score":number,"totalScore":9,"level":"IELTS Band x.x"${taskType === 'ielts-task-1' ? ',"task1FactCheck":{"chartFacts":["从原图读取的关键事实"],"overviewCoverage":"学生overview覆盖情况","crossSeriesComparisons":["学生已写出的跨系列比较"],"majorMissingFeatures":["遗漏的重大特征"],"minorMissingDetails":["遗漏的次要数值"],"dataErrors":[{"detail":"数据错误","severity":"major|minor"}]}' : ''},"dimensionScores":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":number,"coherenceCohesion":number,"lexicalResource":number,"grammaticalRangeAccuracy":number},"officialBandDecisions":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":${decisionShape},"coherenceCohesion":${decisionShape},"lexicalResource":${decisionShape},"grammaticalRangeAccuracy":${decisionShape}},"criterionFeedback":{"${taskType === 'ielts-task-1' ? 'taskAchievement' : 'taskResponse'}":{"comment":"中文评语","evidence":["原文证据"],"descriptorMatch":"匹配本档原因","limiters":["卡分原因"],"nextBandActions":["升档动作"]},"coherenceCohesion":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"lexicalResource":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]},"grammaticalRangeAccuracy":{"comment":"中文评语","evidence":[],"descriptorMatch":"","limiters":[],"nextBandActions":[]}},"summary":"中文总评","content":"${taskCriterion}中文评语","structure":"Coherence and Cohesion中文评语","language":"Lexical Resource中文评语","spelling":"Grammatical Range and Accuracy中文评语","strengths":["优点"],"problems":["问题"],"suggestions":["建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedTargetBand":number,"polishedVersion":"英文参考范文"}`,
       ...common
     ].join('\n');
   }

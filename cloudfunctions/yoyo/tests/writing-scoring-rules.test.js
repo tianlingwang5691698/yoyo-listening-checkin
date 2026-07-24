@@ -52,6 +52,8 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /Task Achievement/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /visualData/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /原题参考范文/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /四项平均并按0\.5档归一后的总分加1 Band/);
+  assert.match(writing.buildGradingPrompt(task1, 'Essay'), /160–210词/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /public Writing Band Descriptors, updated May 2023/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /四项分别只能给0–9整数Band/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /A script must fully fit the positive features/);
@@ -59,7 +61,7 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /officialBandDecisions/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /从 Band 9 向下/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
-  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v9-terra-midband-/);
+  assert.match(writing.WRITING_SCORING_VERSION, /^writing-score-v10-terra-target-sample-/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /criterionFeedback/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /awardedBandFeatureChecks/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /仅有常规图表词、准确但重复的趋势词不能自动满足/);
@@ -69,6 +71,7 @@ test('雅思 Task 1 和 Task 2 按9分制与四项标准评分', () => {
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /task1FactCheck/);
   assert.match(writing.buildGradingPrompt(task1, 'Essay'), /不得使用程序自定义封顶/);
   assert.match(writing.buildGradingPrompt(task2, 'Essay'), /Task Response/);
+  assert.match(writing.buildGradingPrompt(task2, 'Essay'), /270–330词/);
   assert.doesNotMatch(writing.buildGradingPrompt(task1, 'Essay'), /"totalScore":20/);
 });
 
@@ -124,7 +127,9 @@ test('雅思总分由四项平均并归入半分档', () => {
   assert.equal(review.totalScore, 9);
   assert.equal(review.level, 'IELTS Band 7.0');
   assert.equal(review.contentLabel, 'Task Achievement · 6.0');
-  assert.equal(review.polishedTitle, '原题参考范文');
+  assert.equal(review.polishedTargetBand, 8);
+  assert.equal(review.polishedTitle, '原题参考范文 · 目标 Band 8.0');
+  assert.match(review.polishedStandard, /目标 Band 8\.0/);
   assert.equal(review.isIelts, true);
   assert.match(review.weightingNote, /Task 2 权重为 Task 1 的两倍/);
   assert.equal(review.criterionDetails.length, 4);
@@ -436,6 +441,8 @@ test('雅思独立校准覆盖首轮分数但保留有效参考范文', () => {
   assert.equal(merged.score, 7);
   assert.equal(merged.summary, '独立校准为 Band 7.0。');
   assert.equal(merged.polishedVersion, 'First model answer.');
+  assert.equal(merged.polishedTargetBand, 8.5);
+  assert.equal(merged.polishedTitle, '原题参考范文 · 目标 Band 8.5');
   assert.equal(merged.calibrationApplied, true);
   assert.equal(merged.calibrationPreviousScore, 7.5);
 });
@@ -525,6 +532,8 @@ test('雅思官方最低作答长度规则覆盖 Band 0 与 Band 1', () => {
     grammaticalRangeAccuracy: 1
   });
   assert.equal(short.score, 1);
+  assert.equal(short.polishedTargetBand, 2);
+  assert.equal(short.polishedTitle, '参考范文 · 目标 Band 2.0');
   assert.equal(short.officialBandDecisionsComplete, true);
   assert.equal(empty.score, 0);
 });

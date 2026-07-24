@@ -198,7 +198,8 @@
               </view>
             </view>
             <view class="detail-sheet" wx:if="{{item.polishedVersion}}">
-              <view class="sheet-title">{{texts.referenceEssay}}</view>
+              <view class="sheet-title">{{item.polishedTitle || texts.referenceEssay}}</view>
+              <view class="sheet-copy" wx:if="{{item.polishedStandard}}">{{item.polishedStandard}}</view>
               <view class="sheet-copy">{{item.polishedVersion}}</view>
             </view>
             <block wx:if="{{item.phraseCards.length}}">
@@ -469,7 +470,8 @@
               </view>
             </view>
             <view class="detail-sheet" wx:if="{{item.polishedVersion}}">
-              <view class="sheet-title">{{texts.referenceEssay}}</view>
+              <view class="sheet-title">{{item.polishedTitle || texts.referenceEssay}}</view>
+              <view class="sheet-copy" wx:if="{{item.polishedStandard}}">{{item.polishedStandard}}</view>
               <view class="sheet-copy">{{item.polishedVersion}}</view>
             </view>
             <block wx:if="{{item.phraseCards.length}}">
