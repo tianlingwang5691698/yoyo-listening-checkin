@@ -741,8 +741,10 @@ test('评分接口各分支只返回清洗后的学生可见批改', () => {
   const legacy = writing.sanitizeReviewForDisplay({
     totalScore: 9,
     level: 'IELTS Band 6.5',
-    summary: '文章完成度较好。'
+    summary: '文章完成度较好。',
+    polishedVersion: 'Legacy sample essay.'
   });
   assert.equal(legacy.isIelts, true);
   assert.equal(legacy.summary, '');
+  assert.match(legacy.polishedStandard, /历史记录未保存目标 Band/);
 });

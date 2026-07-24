@@ -20,6 +20,7 @@ const COLLECTION = 'writingAttempts';
 const PREVIEW_COLLECTION = 'writingPreviewAttempts';
 const PREVIEW_ATTEMPT_PREFIX = 'preview-';
 const WRITING_SCORING_VERSION = 'writing-score-v10-terra-target-sample-20260724';
+const WRITING_REPORT_PDF_VERSION = 'v3-target-band-pagebreak';
 const WRITING_GRADING_STALE_MS = 330000;
 const WRITING_MODEL_REQUEST_TIMEOUT_MS = 180000;
 const WRITING_MODEL_TOTAL_BUDGET_MS = 280000;
@@ -133,6 +134,8 @@ function sanitizeReviewForDisplay(review) {
   const isIelts = source.isIelts === true
     || Number(source.totalScore || 0) === 9
     || /IELTS\s*Band/i.test(normalizeText(source.level));
+  const polishedTargetBand = normalizeBandScore(source.polishedTargetBand);
+  const polishedVersion = normalizeLongText(source.polishedVersion);
   return Object.assign({}, source, {
     isIelts,
     summary: isIelts || hasInternalScoringLanguage(source.summary) ? '' : normalizeText(source.summary),
@@ -141,6 +144,10 @@ function sanitizeReviewForDisplay(review) {
     rubricVersion: '',
     feedbackNotice: '',
     writingTestEstimate: null,
+    polishedStandard: normalizeText(source.polishedStandard)
+      || (isIelts && polishedVersion && polishedTargetBand === null
+        ? '生成标准：历史记录未保存目标 Band，仅作原题参考。'
+        : ''),
     strengths: uniqueStudentVisibleList(source.strengths, 3),
     problems: uniqueStudentVisibleList(source.problems, 4),
     suggestions: uniqueStudentVisibleList(source.suggestions, 4)
@@ -2115,7 +2122,7 @@ async function generateWritingReportPdf(event) {
     'writing-reports',
     ctx.family.familyId,
     ctx.child.childId,
-    `${safeAttemptId}-${safeVersion}-report-v2.pdf`
+    `${safeAttemptId}-${safeVersion}-report-${WRITING_REPORT_PDF_VERSION}.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);
@@ -2175,6 +2182,7 @@ module.exports = {
     buildBandSamplePrompt,
     IELTS_WRITING_RUBRIC_VERSION,
     WRITING_SCORING_VERSION,
+    WRITING_REPORT_PDF_VERSION,
     WRITING_GRADING_STALE_MS,
     WRITING_MODEL_REQUEST_TIMEOUT_MS,
     WRITING_MODEL_TOTAL_BUDGET_MS,

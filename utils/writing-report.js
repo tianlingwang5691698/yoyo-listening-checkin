@@ -39,6 +39,11 @@ function normalizeWritingReview(review, totalScore) {
   const isIelts = source.isIelts === true
     || resolvedTotalScore === 9
     || /IELTS\s*Band/i.test(String(source.level || ''));
+  const polishedTargetBand = Number(source.polishedTargetBand);
+  const hasPolishedTargetBand = source.polishedTargetBand !== undefined
+    && source.polishedTargetBand !== null
+    && String(source.polishedTargetBand).trim() !== ''
+    && Number.isFinite(polishedTargetBand);
   return Object.assign({
     score: 0,
     totalScore: resolvedTotalScore,
@@ -72,6 +77,11 @@ function normalizeWritingReview(review, totalScore) {
     rubricVersion: '',
     feedbackNotice: '',
     writingTestEstimate: null,
+    polishedStandard: String(source.polishedStandard || (
+      isIelts && source.polishedVersion && !hasPolishedTargetBand
+        ? '生成标准：历史记录未保存目标 Band，仅作原题参考。'
+        : ''
+    )),
     strengths: uniqueList(source.strengths, 3),
     problems: uniqueList(source.problems, 4),
     suggestions: uniqueList(source.suggestions, 4),

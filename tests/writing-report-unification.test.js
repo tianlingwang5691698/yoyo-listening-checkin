@@ -50,6 +50,7 @@ test('PDF 导出包含结构化题目、原图、作文全文和完整批改', (
   assert.match(service, /writing-report-prompt-source-unavailable/);
   assert.match(service, /writing-report-prompt-image-unavailable/);
   assert.match(service, /writing-reports/);
+  assert.match(service, /v3-target-band-pagebreak/);
   assert.match(store, /generateWritingReportPdf/);
   assert.match(read('pages/practice-history/index.wxml'), /class="history-writing-image"/);
   assert.match(read('pages/practice-history/index.js'), /previewWritingPromptImage/);
@@ -96,4 +97,14 @@ test('详情与记录页共享报告文案同时覆盖中英文', () => {
       assert.ok(catalog[scope].en[key], `${scope}.en.${key}`);
     });
   });
+});
+
+test('旧 IELTS 范文明确标记未保存目标 Band', () => {
+  const { normalizeWritingReview } = require('../utils/writing-report');
+  const review = normalizeWritingReview({
+    totalScore: 9,
+    level: 'IELTS Band 6.5',
+    polishedVersion: 'Legacy sample essay.'
+  }, 9);
+  assert.match(review.polishedStandard, /历史记录未保存目标 Band/);
 });
