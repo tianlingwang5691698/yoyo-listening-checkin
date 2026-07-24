@@ -19,6 +19,8 @@ test('both IELTS speaking result layouts expose the complete PDF control', () =>
   const buttons = wxml.match(/bindtap="downloadIeltsSpeakingReportPdf"/g) || [];
   assert.equal(buttons.length, 2);
   assert.match(wxml, /ieltsPdfGenerating/);
+  assert.equal((wxml.match(/练习结果/g) || []).length, 2);
+  assert.doesNotMatch(wxml, /练习预估|AI 练习预估/);
   const wxss = read('pages/speaking/index.wxss');
   assert.match(wxss, /\.ielts-pdf-button/);
   assert.match(wxss, /\.theme-library \.ielts-pdf-button/);
@@ -30,7 +32,7 @@ test('both IELTS speaking result layouts expose the complete PDF control', () =>
   assert.match(read('pages/parent/detail/index.wxss'), /\.speaking-report-pdf/);
 });
 
-test('report service enforces official item and family-child scoped real attempts', () => {
+test('report service enforces official item, family-child scope and no source image dependency', () => {
   const service = read('cloudfunctions/yoyo/services/speaking.service.js');
   assert.match(service, /catalogService\.getMaterialItem/);
   assert.match(service, /findIeltsByTest/);
@@ -38,5 +40,7 @@ test('report service enforces official item and family-child scoped real attempt
   assert.match(read('cloudfunctions/yoyo/repositories/attempt.repository.js'), /db\.RegExp/);
   assert.match(service, /attempt\.familyId === scope\.familyId/);
   assert.match(service, /attempt\.childId === scope\.childId/);
-  assert.match(service, /ielts-speaking-report-source-image-unavailable/);
+  assert.doesNotMatch(service, /ielts-speaking-report-source-image-unavailable/);
+  assert.doesNotMatch(service, /downloadCloudFileBuffer[\s\S]{0,300}buildIeltsSpeakingReportPdf/);
+  assert.match(service, /-v2\.pdf/);
 });

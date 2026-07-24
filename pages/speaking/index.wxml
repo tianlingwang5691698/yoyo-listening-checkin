@@ -154,7 +154,7 @@
             <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
               <view class="ielts-inline-error" wx:if="{{errorText && !recording}}">{{errorText}}</view>
               <view class="ielts-band-result" wx:elif="{{result && result.isIeltsBand}}">
-                <view class="ielts-band-summary"><view><text>练习预估</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
+                <view class="ielts-band-summary"><view><text>练习结果</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
                 <view class="ielts-band-grid">
                   <view><text>流利与连贯</text><text class="ielts-band-value">{{result.fluencyCoherenceBand}}</text><text class="ielts-band-en">Fluency &amp; Coherence</text></view>
                   <view><text>词汇资源</text><text class="ielts-band-value">{{result.lexicalResourceBand}}</text><text class="ielts-band-en">Lexical Resource</text></view>
@@ -392,7 +392,7 @@
                 <view class="ielts-inline-state is-focus" wx:if="{{recording || tempFilePath || submitting || result || errorText}}">
                   <view class="ielts-inline-error" wx:if="{{errorText && !recording}}">{{errorText}}</view>
                   <view class="ielts-band-result" wx:elif="{{result && result.isIeltsBand}}">
-                    <view class="ielts-band-summary"><view><text>练习预估</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
+                    <view class="ielts-band-summary"><view><text>练习结果</text><text class="ielts-band-overall">Band {{result.overallBand}}</text></view><text>Part {{result.ieltsPart}}</text></view>
                     <view class="ielts-band-grid">
                       <view><text>流利与连贯</text><text class="ielts-band-value">{{result.fluencyCoherenceBand}}</text><text class="ielts-band-en">Fluency &amp; Coherence</text></view>
                       <view><text>词汇资源</text><text class="ielts-band-value">{{result.lexicalResourceBand}}</text><text class="ielts-band-en">Lexical Resource</text></view>

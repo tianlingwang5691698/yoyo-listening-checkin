@@ -338,6 +338,7 @@ async function buildStudyPackWithModel(item) {
     '生词选择初中阶段重要、学生可能不熟、且在听力场景里值得掌握的词。',
     '短语选择原文中值得掌握的固定搭配或听力高频表达。',
     '句型卡 meaning 必须是中文解释，example 必须来自原文或贴近原文，exampleMeaning 必须是中文翻译。',
+    '学生可见内容不得提及 AI、模型、系统、接口、生成过程、内部来源或返回状态，不重复标题、原文或同一解释。',
     'JSON 格式：{"vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}],"phraseCards":[{"text":"","meaning":"","example":""}],"sentencePatternCards":[{"pattern":"","meaning":"","example":"","exampleMeaning":""}]}',
     `标题：${item.title || ''}`,
     `听力文本：${item.transcript}`
@@ -396,6 +397,8 @@ async function buildQuestionAnalysesWithModel(item) {
     '你是英语听力教师。只返回 JSON，不要 Markdown。',
     '逐题提供解析、听力原文依据、依据中文翻译。不得改变题号或标准答案。',
     'evidence 必须引用听力原文中能支持答案的完整英文句子；analysis 用中文说明如何从依据得到答案。',
+    'analysis 最多两句，不重复标准答案、题目、evidence 或 evidenceTranslation。',
+    '学生可见内容不得提及 AI、模型、系统、接口、生成过程、内部来源或返回状态。',
     'JSON 格式：{"questionAnalyses":[{"number":1,"answer":"","evidence":"","evidenceTranslation":"","analysis":""}]}',
     `标题：${item.title || ''}`,
     `听力原文：${item.transcript || ''}`,
@@ -532,7 +535,6 @@ function collectListeningReportImages(item) {
     seen.add(key);
     images.push(image);
   };
-  (item && item.images || []).forEach(add);
   (item && item.questions || []).forEach((question) => {
     (question && question.sourceImages || []).forEach(add);
     Object.values(question && question.optionImages || {}).forEach(add);
@@ -654,7 +656,7 @@ async function generateListeningReportPdf(event) {
     'listening-reports',
     ctx.family.familyId,
     ctx.child.childId,
-    `${safeId}-r${Number(item.contentRevision || 0)}-study-v1.pdf`
+    `${safeId}-r${Number(item.contentRevision || 0)}-study-v2.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);

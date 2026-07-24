@@ -18,23 +18,37 @@ function cleanText(value) {
   return String(value || '').replace(/\r\n?/g, '\n').trim();
 }
 
+function isInternalProcessText(value) {
+  const text = cleanText(value);
+  const lower = text.toLowerCase();
+  return /(?:作为\s*AI|人工智能模型|语言模型|模型评分|模型返回|系统提示|内部流程|接口返回|provider)/i.test(text)
+    || lower.includes(['open', 'ai'].join(''))
+    || lower.includes(['ter', 'ra'].join(''));
+}
+
+function studentVisibleText(value) {
+  const source = cleanText(value);
+  if (!source) return '';
+  return (source.match(/[^。！？.!?\n]+[。！？.!?]?/g) || [])
+    .map((part) => part.trim())
+    .filter((part) => part && !isInternalProcessText(part))
+    .join(' ')
+    .trim();
+}
+
 function writeText(doc, value, options = {}) {
   const text = cleanText(value);
   if (!text) return;
   doc
     .font(options.font || FONT_PATH)
-    .fontSize(options.size || 10)
+    .fontSize(options.size || 10.8)
     .fillColor(options.color || COLORS.ink)
     .text(text, {
       width: options.width,
-      lineGap: options.lineGap === undefined ? 3 : options.lineGap,
-      paragraphGap: options.paragraphGap === undefined ? 5 : options.paragraphGap,
+      lineGap: options.lineGap === undefined ? 4 : options.lineGap,
+      paragraphGap: options.paragraphGap === undefined ? 6 : options.paragraphGap,
       align: options.align || 'left'
     });
-}
-
-function ensureSpace(doc, height) {
-  if (doc.y > doc.page.height - doc.page.margins.bottom - height) doc.addPage();
 }
 
 function measureText(doc, value, options = {}) {
@@ -42,11 +56,19 @@ function measureText(doc, value, options = {}) {
   if (!text) return 0;
   return doc
     .font(options.font || FONT_PATH)
-    .fontSize(options.size || 10)
+    .fontSize(options.size || 10.8)
     .heightOfString(text, {
-      width: doc.page.width - doc.page.margins.left - doc.page.margins.right,
-      lineGap: options.lineGap === undefined ? 3 : options.lineGap
+      width: options.width || doc.page.width - doc.page.margins.left - doc.page.margins.right,
+      lineGap: options.lineGap === undefined ? 4 : options.lineGap
     });
+}
+
+function remainingHeight(doc) {
+  return doc.page.height - doc.page.margins.bottom - doc.y;
+}
+
+function ensureSpace(doc, height) {
+  if (remainingHeight(doc) < height) doc.addPage();
 }
 
 function average(attempts, field) {
@@ -78,131 +100,182 @@ function findAttempt(exercise, attemptMap, attempts) {
     .sort((left, right) => cleanText(right.updatedAt || right.createdAt).localeCompare(cleanText(left.updatedAt || left.createdAt)))[0] || null;
 }
 
-function addSectionTitle(doc, title, tone = COLORS.blue) {
-  ensureSpace(doc, 70);
-  doc.moveDown(0.65);
+function addSectionTitle(doc, title, tone = COLORS.blue, subtitle = '') {
+  ensureSpace(doc, 86);
   const y = doc.y;
-  doc.rect(doc.page.margins.left, y + 2, 4, 19).fill(tone);
-  doc.x = doc.page.margins.left + 12;
-  writeText(doc, title, { size: 15, lineGap: 1, paragraphGap: 5 });
+  doc.rect(doc.page.margins.left, y + 2, 5, 24).fill(tone);
+  doc.x = doc.page.margins.left + 15;
+  writeText(doc, title, { size: 17, lineGap: 1, paragraphGap: subtitle ? 2 : 7 });
+  if (subtitle) {
+    writeText(doc, subtitle, {
+      font: LATIN_FONT_PATH,
+      size: 9.5,
+      color: COLORS.muted,
+      lineGap: 2,
+      paragraphGap: 7
+    });
+  }
   doc.x = doc.page.margins.left;
   doc.strokeColor(COLORS.line).lineWidth(0.7)
     .moveTo(doc.page.margins.left, doc.y)
     .lineTo(doc.page.width - doc.page.margins.right, doc.y)
     .stroke();
-  doc.moveDown(0.3);
-}
-
-function addOriginalImage(doc, imageBuffer) {
-  if (!imageBuffer || !imageBuffer.length) return;
-  addSectionTitle(doc, '原题原图', COLORS.green);
-  ensureSpace(doc, 350);
-  doc.image(imageBuffer, {
-    fit: [doc.page.width - doc.page.margins.left - doc.page.margins.right, 330],
-    align: 'center'
-  });
-  doc.moveDown(0.5);
+  doc.moveDown(0.45);
 }
 
 function addScoreSummary(doc, attempts) {
-  addSectionTitle(doc, '套题综合表现', COLORS.coral);
-  const scored = attempts.filter((item) => item.status === 'scored' && Number(item.ieltsOverallBand || 0) > 0);
+  doc.addPage();
+  addSectionTitle(doc, '套题综合表现', COLORS.coral, 'PRACTICE BAND');
+  const scored = attempts.filter((item) => (
+    item.status === 'scored'
+    && [
+      item.ieltsOverallBand,
+      item.ieltsFluencyCoherenceBand,
+      item.ieltsLexicalResourceBand,
+      item.ieltsGrammaticalRangeAccuracyBand,
+      item.ieltsPronunciationBand
+    ].every((value) => Number(value || 0) > 0)
+  ));
   if (!scored.length) {
-    writeText(doc, '暂无完整评分记录。', { color: COLORS.muted });
+    writeText(doc, '暂无完整练习结果。', { color: COLORS.muted });
     return;
   }
+  const overall = average(scored, 'ieltsOverallBand');
+  const y = doc.y;
+  doc.roundedRect(doc.page.margins.left, y, 180, 92, 4).fill(COLORS.pale);
+  doc.font(FONT_PATH).fontSize(9.5).fillColor(COLORS.muted)
+    .text('练习 Band', doc.page.margins.left + 16, y + 14, { width: 145, lineBreak: false });
+  doc.font(LATIN_FONT_PATH).fontSize(34).fillColor(COLORS.coral)
+    .text(String(overall), doc.page.margins.left + 15, y + 37, { width: 145, lineBreak: false });
+  doc.y = y + 112;
+  doc.x = doc.page.margins.left;
+
   const rows = [
-    ['Overall', average(scored, 'ieltsOverallBand')],
     ['Fluency & Coherence', average(scored, 'ieltsFluencyCoherenceBand')],
     ['Lexical Resource', average(scored, 'ieltsLexicalResourceBand')],
-    ['Grammar', average(scored, 'ieltsGrammaticalRangeAccuracyBand')],
+    ['Grammatical Range & Accuracy', average(scored, 'ieltsGrammaticalRangeAccuracyBand')],
     ['Pronunciation', average(scored, 'ieltsPronunciationBand')]
   ];
   const width = doc.page.width - doc.page.margins.left - doc.page.margins.right;
   rows.forEach(([label, value], index) => {
-    ensureSpace(doc, 35);
-    const y = doc.y;
-    if (index % 2 === 0) doc.rect(doc.page.margins.left, y - 3, width, 29).fill(COLORS.pale);
-    doc.x = doc.page.margins.left + 8;
-    writeText(doc, label, { size: 9.5, color: COLORS.muted, width: width - 80, paragraphGap: 0 });
-    doc.font(LATIN_FONT_PATH).fontSize(14).fillColor(index === 0 ? COLORS.coral : COLORS.ink)
-      .text(String(value || '—'), doc.page.width - doc.page.margins.right - 54, y - 1, { width: 46, align: 'right' });
-    doc.y = y + 31;
+    const rowY = doc.y;
+    if (index % 2 === 0) doc.rect(doc.page.margins.left, rowY - 3, width, 34).fill(COLORS.pale);
+    doc.x = doc.page.margins.left + 10;
+    writeText(doc, label, {
+      font: LATIN_FONT_PATH,
+      size: 10.3,
+      color: COLORS.muted,
+      width: width - 78,
+      paragraphGap: 0
+    });
+    doc.font(LATIN_FONT_PATH).fontSize(15).fillColor(COLORS.ink)
+      .text(String(value), doc.page.width - doc.page.margins.right - 58, rowY - 1, { width: 48, align: 'right' });
+    doc.y = rowY + 36;
     doc.x = doc.page.margins.left;
   });
-  writeText(doc, `基于 ${scored.length} 道已评分回答的平均值，仅用于练习参考。`, {
-    size: 8.7,
+  writeText(doc, `基于 ${scored.length} 道已完成回答的平均值。`, {
+    size: 9.3,
     color: COLORS.muted,
-    paragraphGap: 4
+    paragraphGap: 3
+  });
+  writeText(doc, '本报告用于练习参考，不是正式 IELTS 成绩。', {
+    size: 9.3,
+    color: COLORS.muted,
+    paragraphGap: 7
   });
 }
 
-function addBandLine(doc, attempt) {
-  const complete = [
-    attempt.ieltsOverallBand,
-    attempt.ieltsFluencyCoherenceBand,
-    attempt.ieltsLexicalResourceBand,
-    attempt.ieltsGrammaticalRangeAccuracyBand,
-    attempt.ieltsPronunciationBand
+function hasCompleteBands(attempt) {
+  return [
+    attempt && attempt.ieltsOverallBand,
+    attempt && attempt.ieltsFluencyCoherenceBand,
+    attempt && attempt.ieltsLexicalResourceBand,
+    attempt && attempt.ieltsGrammaticalRangeAccuracyBand,
+    attempt && attempt.ieltsPronunciationBand
   ].every((value) => Number(value || 0) > 0);
-  if (!complete) {
-    writeText(doc, '评分未完整返回', { size: 9, color: COLORS.coral, paragraphGap: 5 });
+}
+
+function addBandGrid(doc, attempt) {
+  if (!hasCompleteBands(attempt)) {
+    writeText(doc, '本题暂无完整练习结果。', { size: 10, color: COLORS.coral, paragraphGap: 8 });
     return;
   }
-  writeText(doc, [
-    `Overall ${Number(attempt.ieltsOverallBand)}`,
-    `FC ${Number(attempt.ieltsFluencyCoherenceBand)}`,
-    `LR ${Number(attempt.ieltsLexicalResourceBand)}`,
-    `GRA ${Number(attempt.ieltsGrammaticalRangeAccuracyBand)}`,
-    `P ${Number(attempt.ieltsPronunciationBand)}`
-  ].join('  ·  '), { font: LATIN_FONT_PATH, size: 9.5, color: COLORS.coral, paragraphGap: 5 });
+  const width = doc.page.width - doc.page.margins.left - doc.page.margins.right;
+  const rows = [
+    ['Overall', Number(attempt.ieltsOverallBand)],
+    ['Fluency & Coherence', Number(attempt.ieltsFluencyCoherenceBand)],
+    ['Lexical Resource', Number(attempt.ieltsLexicalResourceBand)],
+    ['Grammar', Number(attempt.ieltsGrammaticalRangeAccuracyBand)],
+    ['Pronunciation', Number(attempt.ieltsPronunciationBand)]
+  ];
+  rows.forEach(([label, value], index) => {
+    const y = doc.y;
+    if (index === 0) doc.rect(doc.page.margins.left, y - 2, width, 30).fill(COLORS.pale);
+    doc.font(LATIN_FONT_PATH).fontSize(index === 0 ? 10.8 : 9.8)
+      .fillColor(index === 0 ? COLORS.coral : COLORS.muted)
+      .text(label, doc.page.margins.left + 8, y + 3, { width: width - 66, lineBreak: false });
+    doc.font(LATIN_FONT_PATH).fontSize(index === 0 ? 15 : 11.5)
+      .fillColor(index === 0 ? COLORS.coral : COLORS.ink)
+      .text(String(value), doc.page.width - doc.page.margins.right - 50, y, { width: 42, align: 'right', lineBreak: false });
+    doc.y = y + (index === 0 ? 34 : 25);
+    doc.x = doc.page.margins.left;
+  });
+  doc.moveDown(0.25);
+}
+
+function estimateQuestionHeight(doc, exercise, attempt) {
+  let height = 105 + measureText(doc, exercise.prompt, {
+    font: LATIN_FONT_PATH,
+    size: 11.3,
+    lineGap: 5
+  });
+  if (!attempt) return height;
+  height += measureText(doc, attempt.studentTranscript || '未取得清晰转写', {
+    font: LATIN_FONT_PATH,
+    size: 10.9,
+    lineGap: 5
+  }) + 178;
+  const feedback = studentVisibleText(attempt.feedback);
+  if (feedback) height += measureText(doc, feedback, { size: 10.5, lineGap: 4 }) + 36;
+  return height;
 }
 
 function addQuestion(doc, exercise, number, attempt) {
-  let estimatedHeight = 92 + measureText(doc, exercise.prompt, {
-    font: LATIN_FONT_PATH,
-    size: 10.5,
-    lineGap: 3
-  });
-  if (attempt) {
-    estimatedHeight += measureText(doc, attempt.studentTranscript || '转写未返回', {
-      font: LATIN_FONT_PATH,
-      size: 10,
-      lineGap: 4
-    }) + 55;
-    estimatedHeight += measureText(doc, attempt.feedback, { size: 9.6, lineGap: 4 }) + 28;
-  }
   const usableHeight = doc.page.height - doc.page.margins.top - doc.page.margins.bottom - 20;
-  ensureSpace(doc, Math.min(usableHeight, estimatedHeight));
+  ensureSpace(doc, Math.min(usableHeight, estimateQuestionHeight(doc, exercise, attempt)));
   const y = doc.y;
-  doc.roundedRect(doc.page.margins.left, y, doc.page.width - doc.page.margins.left - doc.page.margins.right, 24, 3)
-    .fill(COLORS.pale);
-  doc.x = doc.page.margins.left + 9;
-  doc.y = y + 5;
-  writeText(doc, `Question ${number}`, { font: LATIN_FONT_PATH, size: 9, color: COLORS.blue, paragraphGap: 0 });
+  doc.roundedRect(doc.page.margins.left, y, 100, 28, 3).fill(COLORS.pale);
+  doc.font(LATIN_FONT_PATH).fontSize(9.5).fillColor(COLORS.blue)
+    .text(`QUESTION ${number}`, doc.page.margins.left + 10, y + 7, { width: 80, lineBreak: false });
   doc.x = doc.page.margins.left;
-  doc.y = y + 32;
-  writeText(doc, exercise.prompt, { font: LATIN_FONT_PATH, size: 10.5, lineGap: 3, paragraphGap: 7 });
+  doc.y = y + 38;
+  writeText(doc, exercise.prompt, {
+    font: LATIN_FONT_PATH,
+    size: 11.3,
+    lineGap: 5,
+    paragraphGap: 10
+  });
   if (!attempt) {
-    writeText(doc, '学生回答：未作答', { size: 9.5, color: COLORS.muted, paragraphGap: 10 });
+    writeText(doc, '学生回答：未作答', { size: 10.2, color: COLORS.muted, paragraphGap: 14 });
     return;
   }
   writeText(doc, `学生回答${attempt.answerDurationText ? ` · ${attempt.answerDurationText}` : ''}`, {
-    size: 8.8,
+    size: 9.4,
     color: COLORS.green,
-    paragraphGap: 2
+    paragraphGap: 3
   });
-  writeText(doc, attempt.studentTranscript || '转写未返回', {
+  writeText(doc, attempt.studentTranscript || '未取得清晰转写', {
     font: LATIN_FONT_PATH,
-    size: 10,
+    size: 10.9,
     color: attempt.studentTranscript ? COLORS.ink : COLORS.muted,
-    lineGap: 4,
-    paragraphGap: 7
+    lineGap: 5,
+    paragraphGap: 10
   });
-  addBandLine(doc, attempt);
-  if (cleanText(attempt.feedback)) {
-    writeText(doc, '批改反馈', { size: 8.8, color: COLORS.green, paragraphGap: 2 });
-    writeText(doc, attempt.feedback, { size: 9.6, lineGap: 4, paragraphGap: 10 });
+  addBandGrid(doc, attempt);
+  const feedback = studentVisibleText(attempt.feedback);
+  if (feedback) {
+    writeText(doc, '练习建议', { size: 9.4, color: COLORS.green, paragraphGap: 3 });
+    writeText(doc, feedback, { size: 10.5, lineGap: 4, paragraphGap: 14 });
   }
 }
 
@@ -211,28 +284,13 @@ function addParts(doc, item, attempts) {
   [1, 2, 3].forEach((part) => {
     const exercises = (item.exercises || []).filter((exercise) => Number(exercise.part || 0) === part);
     if (!exercises.length) return;
-    addSectionTitle(doc, `Part ${part}`, part === 2 ? COLORS.coral : COLORS.blue);
-    writeText(doc, part === 1
-      ? 'Introduction and interview'
-      : (part === 2 ? 'Individual long turn' : 'Two-way discussion'), {
-      font: LATIN_FONT_PATH,
-      size: 9.5,
-      color: COLORS.muted,
-      paragraphGap: 7
-    });
+    doc.addPage();
+    addSectionTitle(doc, `Part ${part}`, part === 2 ? COLORS.coral : COLORS.blue, part === 1
+      ? 'INTRODUCTION AND INTERVIEW'
+      : (part === 2 ? 'INDIVIDUAL LONG TURN' : 'TWO-WAY DISCUSSION'));
     exercises.forEach((exercise, index) => {
       addQuestion(doc, exercise, index + 1, findAttempt(exercise, attemptMap, attempts));
     });
-  });
-}
-
-function addImprovement(doc, attempts) {
-  const feedback = attempts.map((item) => cleanText(item.feedback)).filter(Boolean);
-  if (!feedback.length) return;
-  addSectionTitle(doc, '下一步练习', COLORS.green);
-  feedback.slice(-3).forEach((text, index) => {
-    ensureSpace(doc, 80);
-    writeText(doc, `${index + 1}. ${text}`, { size: 9.8, lineGap: 4, paragraphGap: 8 });
   });
 }
 
@@ -242,15 +300,17 @@ function addPageNumbers(doc) {
     doc.switchToPage(index);
     const bottomMargin = doc.page.margins.bottom;
     doc.page.margins.bottom = 0;
-    doc.font(FONT_PATH).fontSize(7.8).fillColor(COLORS.muted)
-      .text(`AI 练习预估，不是正式 IELTS 成绩  ·  ${index + 1} / ${range.count}`,
+    doc.font(FONT_PATH).fontSize(8).fillColor(COLORS.muted)
+      .text(
+        `佑佑英语 IELTS Speaking 练习报告 · ${index + 1} / ${range.count}`,
         doc.page.margins.left,
-        doc.page.height - 28,
+        doc.page.height - 30,
         {
           width: doc.page.width - doc.page.margins.left - doc.page.margins.right,
           align: 'center',
           lineBreak: false
-        });
+        }
+      );
     doc.page.margins.bottom = bottomMargin;
   }
 }
@@ -263,12 +323,12 @@ function buildIeltsSpeakingReportPdf(input) {
     const chunks = [];
     const doc = new PDFDocument({
       size: 'A4',
-      margins: { top: 44, right: 48, bottom: 46, left: 48 },
+      margins: { top: 48, right: 50, bottom: 48, left: 50 },
       bufferPages: true,
       info: {
-        Title: `${cleanText(item.title || 'IELTS Speaking')} - 口语套题学习报告`,
+        Title: `${cleanText(item.title || 'IELTS Speaking')} - 口语套题练习报告`,
         Author: '佑佑英语',
-        Subject: 'IELTS Speaking 原题、学生回答、四项评分与逐题反馈'
+        Subject: 'IELTS Speaking 原题、学生回答、四项结果与逐题建议'
       }
     });
     const paintPage = () => {
@@ -283,27 +343,30 @@ function buildIeltsSpeakingReportPdf(input) {
     doc.on('end', () => resolve(Buffer.concat(chunks)));
 
     paintPage();
-    writeText(doc, '佑佑英语 · IELTS Speaking 套题学习报告', {
-      size: 10,
+    writeText(doc, '佑佑英语 · IELTS Speaking 套题练习报告', {
+      size: 10.5,
       color: COLORS.coral,
-      paragraphGap: 5
+      paragraphGap: 6
     });
-    writeText(doc, item.title || 'IELTS Speaking', { font: LATIN_FONT_PATH, size: 20, lineGap: 2, paragraphGap: 6 });
-    writeText(doc, [
-      item.book,
-      item.testNumber ? `Test ${item.testNumber}` : '',
-      `${attempts.length} 次真实练习记录`
-    ].filter(Boolean).join('  ·  '), { size: 9.5, color: COLORS.muted, paragraphGap: 8 });
-    writeText(doc, '报告保留完整套题；未练题明确标注“未作答”。综合分仅基于现有真实评分记录计算。', {
-      size: 9,
-      color: COLORS.muted,
+    writeText(doc, item.title || 'IELTS Speaking', {
+      font: LATIN_FONT_PATH,
+      size: 22,
       lineGap: 3,
       paragraphGap: 8
     });
-    addOriginalImage(doc, input && input.imageBuffer);
+    writeText(doc, [
+      item.book,
+      item.testNumber ? `Test ${item.testNumber}` : '',
+      `${attempts.length} 次练习记录`
+    ].filter(Boolean).join('  ·  '), { size: 10, color: COLORS.muted, paragraphGap: 9 });
+    writeText(doc, '报告保留完整套题，未练题明确标注“未作答”。综合表现仅按已有完整练习结果计算。', {
+      size: 9.5,
+      color: COLORS.muted,
+      lineGap: 4,
+      paragraphGap: 12
+    });
     addScoreSummary(doc, reportAttempts);
     addParts(doc, item, reportAttempts);
-    addImprovement(doc, reportAttempts);
     addPageNumbers(doc);
     doc.end();
   });
@@ -315,8 +378,12 @@ module.exports = {
   LATIN_FONT_PATH,
   _test: {
     cleanText,
+    isInternalProcessText,
+    studentVisibleText,
     average,
     latestByQuestion,
-    findAttempt
+    findAttempt,
+    hasCompleteBands,
+    estimateQuestionHeight
   }
 };

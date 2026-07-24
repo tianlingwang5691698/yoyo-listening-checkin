@@ -299,6 +299,7 @@ function formatAttemptForClient(record) {
   const answerDurationMs = Number(record && (record.answerDurationMs || record.recordDurationMs || 0));
   return Object.assign({}, record, {
     attemptId: (record && (record.attemptId || record._id)) || '',
+    feedback: speakingEngine.sanitizeStudentVisibleFeedback(record && record.feedback),
     answerDurationMs,
     answerDurationText: formatDuration(answerDurationMs)
   });
@@ -594,25 +595,7 @@ async function generateIeltsSpeakingReportPdf(event) {
   if (!attempts.some((attempt) => attempt.status === 'scored' && Number(attempt.ieltsOverallBand || 0) > 0)) {
     throw new Error('ielts-speaking-report-attempt-not-found');
   }
-  let imageBuffer = null;
-  const sourceImage = Array.isArray(item.images) ? item.images[0] : null;
-  if (!sourceImage) {
-    throw new Error('ielts-speaking-report-source-image-unavailable');
-  }
-  if (sourceImage && (sourceImage.fileId || sourceImage.fileID || sourceImage.cloudPath)) {
-    try {
-      imageBuffer = await storageAdapter.downloadCloudFileBuffer(
-        sourceImage.fileId || sourceImage.fileID,
-        sourceImage.cloudPath
-      );
-    } catch (error) {
-      throw new Error('ielts-speaking-report-source-image-unavailable');
-    }
-  }
-  if (sourceImage && (!imageBuffer || !imageBuffer.length)) {
-    throw new Error('ielts-speaking-report-source-image-unavailable');
-  }
-  const pdfBuffer = await buildIeltsSpeakingReportPdf({ item, attempts, imageBuffer });
+  const pdfBuffer = await buildIeltsSpeakingReportPdf({ item, attempts });
   const latestFingerprint = crypto.createHash('sha1')
     .update(attempts.map((attempt) => `${attempt.attemptId}:${attempt.updatedAt || attempt.createdAt || ''}`).join('|'))
     .digest('hex')
@@ -622,7 +605,7 @@ async function generateIeltsSpeakingReportPdf(event) {
     'ielts-speaking-reports',
     scope.familyId,
     scope.childId,
-    `${itemId}-r${Number(item.contentRevision || 0)}-${latestFingerprint}-v1.pdf`
+    `${itemId}-r${Number(item.contentRevision || 0)}-${latestFingerprint}-v2.pdf`
   ].join('/');
   const uploaded = await storageAdapter.uploadCloudFileBuffer(cloudPath, pdfBuffer);
   const tempUrl = await storageAdapter.getTempFileURL(uploaded.fileId, uploaded.cloudPath);

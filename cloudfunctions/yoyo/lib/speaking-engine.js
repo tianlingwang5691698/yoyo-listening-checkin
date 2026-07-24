@@ -8,6 +8,20 @@ function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function containsInternalProcessText(value) {
+  return /(?:作为\s*AI|人工智能模型|语言模型|模型评分|模型返回|系统提示|内部流程|接口返回|provider|openai|terra)/i.test(normalizeText(value));
+}
+
+function sanitizeStudentVisibleFeedback(value) {
+  const source = normalizeText(value);
+  if (!source) return '';
+  return (source.match(/[^。！？.!?]+[。！？.!?]?/g) || [])
+    .map((part) => part.trim())
+    .filter((part) => part && !containsInternalProcessText(part))
+    .join(' ')
+    .trim();
+}
+
 function stripTranscriptSpeakerLabel(value) {
   const source = normalizeText(value);
   const match = source.match(/^([A-Z][A-Za-z.'’-]*(?:\s+(?:[A-Z][A-Za-z.'’-]*|\d+)){0,3})\s*[:：]\s*(.*)$/);
@@ -1426,7 +1440,9 @@ function buildIeltsScoreBody(payload, transcript, soeResult) {
         `Student transcript:\n${transcript}`,
         `Recorded duration milliseconds: ${Number(payload.answerDurationMs || 0)}`,
         `Tencent SOE delivery evidence (0-100, not an IELTS band): ${Number.isFinite(soeEvidence) ? Math.round(soeEvidence) : 'unavailable'}`,
-        'Feedback must briefly identify one demonstrated strength and one specific next improvement tied to the awarded descriptors.'
+        'Feedback must use no more than two concise Chinese sentences: one demonstrated strength and one specific next improvement tied to the awarded descriptors.',
+        'Do not mention AI, models, systems, providers, internal scoring steps, response formats or return states in feedback.',
+        'Do not repeat any Band number, the prompt, the transcript or the suggested answer inside feedback.'
       ].join('\n')
     }]
   };
@@ -1678,7 +1694,7 @@ async function scoreSpeakingAttempt(payload) {
         return {
           score: 0,
           transcript,
-          feedback: '模型评分暂时失败，录音已保存，请重新提交评分。',
+          feedback: '本次练习结果暂未完成，录音已保存，请重新提交。',
           status: 'score-pending',
           error: 'invalid-ielts-band-json',
           errorType: 'model-output'
@@ -1700,7 +1716,10 @@ async function scoreSpeakingAttempt(payload) {
         pronunciationFluencyScore: Math.round(getTencentSoeEvidenceScore(pronunciationResult)),
         contentGrammarScore: Math.round((contentBandAverage / 9) * 100),
         transcript,
-        feedback: buildFeedbackWithSuggestedAnswer(parsed.feedback, parsed.suggestedAnswer),
+        feedback: buildFeedbackWithSuggestedAnswer(
+          sanitizeStudentVisibleFeedback(parsed.feedback),
+          parsed.suggestedAnswer
+        ),
         status: 'scored',
         ieltsOverallBand: overallBand,
         ieltsFluencyCoherenceBand: contentParsed.fluencyCoherenceBand,
@@ -1722,7 +1741,7 @@ async function scoreSpeakingAttempt(payload) {
         pronunciationFluencyScore: 0,
         contentGrammarScore: 0,
         transcript,
-        feedback: '模型评分暂时失败，录音已保存，请重新提交评分。',
+        feedback: '本次练习结果暂未完成，录音已保存，请重新提交。',
         status: 'score-pending',
         error: 'invalid-score-json',
         errorType: 'model-output'
@@ -1738,7 +1757,10 @@ async function scoreSpeakingAttempt(payload) {
       pronunciationFluencyScore: Math.round(expressionScore),
       contentGrammarScore: Math.round(contentScore),
       transcript,
-      feedback: buildFeedbackWithSuggestedAnswer(parsed.feedback || (looseParsed && looseParsed.feedback), parsed.suggestedAnswer || (looseParsed && looseParsed.suggestedAnswer))
+      feedback: buildFeedbackWithSuggestedAnswer(
+        sanitizeStudentVisibleFeedback(parsed.feedback || (looseParsed && looseParsed.feedback)),
+        parsed.suggestedAnswer || (looseParsed && looseParsed.suggestedAnswer)
+      )
         || buildTemplateFeedback(payload.attemptType, payload.attemptIndex, payload.promptText),
       status: 'scored'
     };
@@ -1766,7 +1788,7 @@ async function scoreSpeakingAttempt(payload) {
       score: 0,
       pronunciationFluencyScore: 0,
       contentGrammarScore: 0,
-      feedback: '模型评分暂时失败，录音已保存，请重新提交评分。',
+      feedback: '本次练习结果暂未完成，录音已保存，请重新提交。',
       status: 'score-pending',
       error: String(error && error.message || error || ''),
       errorType
@@ -1819,6 +1841,8 @@ function summarizeAttempts(items) {
 
 module.exports = {
   getSpeakingHttpTimeoutMs,
+  containsInternalProcessText,
+  sanitizeStudentVisibleFeedback,
   stripTranscriptSpeakerLabel,
   calculatePronunciationScore,
   buildPronunciationFeedback,

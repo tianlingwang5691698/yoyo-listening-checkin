@@ -133,6 +133,11 @@ test('IELTS 四项等权汇总为 0.5 Band，并按三个 Part 使用不同任�
   assert.match(part2Prompt, /long turn/);
   assert.match(part3Prompt, /abstract discussion/);
   assert.match(part3Prompt, /official public IELTS Speaking Band Descriptors/);
+  assert.match(part3Prompt, /Do not mention AI, models, systems, providers/);
+  assert.equal(
+    speakingEngine.sanitizeStudentVisibleFeedback('模型评分已完成。表达清楚。下一步补充原因。'),
+    '表达清楚。 下一步补充原因。'
+  );
 });
 
 test('口语内容评分最长等待 240 秒', () => {

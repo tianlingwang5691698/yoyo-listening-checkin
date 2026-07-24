@@ -86,7 +86,7 @@ function buildFixture(imageKey) {
   };
 }
 
-test('生成含原图、完整原文、学生答案、逐题解析和学习卡的听力 PDF', async () => {
+test('生成含结构化原题、完整原文、学生答案、逐题解析和学习卡的听力 PDF', async () => {
   const imagePath = path.resolve(
     __dirname,
     '../../../data/reading-senior-autumn/images/sh-autumn-2012-reading-1-489b40029d.png'
@@ -108,7 +108,7 @@ test('生成含原图、完整原文、学生答案、逐题解析和学习卡�
 test('听力报告收集套题、题目和选项图片且去重', () => {
   const shared = { cloudPath: '_content/listening/shared.png' };
   const images = listening._test.collectListeningReportImages({
-    images: [shared],
+    images: [{ cloudPath: '_content/listening/full-page-scan.png' }, shared],
     questions: [{
       sourceImages: [shared, { cloudPath: '_content/listening/question.png' }],
       optionImages: { A: { cloudPath: '_content/listening/option.png' } }

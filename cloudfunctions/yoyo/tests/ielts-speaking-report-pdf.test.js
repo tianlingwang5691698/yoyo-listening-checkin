@@ -62,4 +62,6 @@ test('IELTS speaking report maps latest real attempts and keeps unanswered quest
 test('IELTS speaking report source has no model generation dependency', () => {
   const source = fs.readFileSync(path.resolve(__dirname, '../lib/ielts-speaking-report-pdf.js'), 'utf8');
   assert.doesNotMatch(source, /openai|terra|chat\.completions|responses\.create/i);
+  assert.doesNotMatch(source, /原题原图|imageBuffer|doc\.image/);
+  assert.equal(_test.studentVisibleText('模型评分已完成。请增加一个具体例子。'), '请增加一个具体例子。');
 });
