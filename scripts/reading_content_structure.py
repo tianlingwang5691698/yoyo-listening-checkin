@@ -147,6 +147,46 @@ def compact(value: str) -> str:
     return re.sub(r'\s+', ' ', str(value or '')).strip()
 
 
+def normalize_initial_cloze_marker_sequence(value: str, questions: list[dict]) -> str:
+    source = str(value or '')
+    expected_questions = []
+    seen = set()
+    for question in questions or []:
+        number = question.get('number')
+        if question.get('questionType') != 'blank' or not str(number or '').isdigit():
+            continue
+        number = int(number)
+        if number <= 0 or number in seen:
+            continue
+        seen.add(number)
+        expected_questions.append(question)
+    expected_numbers = [int(question['number']) for question in expected_questions]
+    if len(expected_numbers) < 2 or any(
+        number <= expected_numbers[index - 1]
+        for index, number in enumerate(expected_numbers)
+        if index
+    ):
+        return source
+    marker_re = re.compile(r'([A-Za-z])[_＿]+(\d{1,3})[_＿]+')
+    matches = list(marker_re.finditer(source))
+    if len(matches) != len(expected_numbers):
+        return source
+    for index, match in enumerate(matches):
+        prompt_match = marker_re.search(str(expected_questions[index].get('prompt') or ''))
+        if prompt_match and prompt_match.group(1).lower() != match.group(1).lower():
+            return source
+    if all(int(match.group(2)) == expected_numbers[index] for index, match in enumerate(matches)):
+        return source
+    parts = []
+    cursor = 0
+    for index, match in enumerate(matches):
+        parts.append(source[cursor:match.start()])
+        parts.append(f'{match.group(1)}_____{expected_numbers[index]}_____')
+        cursor = match.end()
+    parts.append(source[cursor:])
+    return ''.join(parts)
+
+
 def normalize_numbered_blank_markers(value: str, questions: list[dict]) -> str:
     source = str(value or '')
     numbers = {
@@ -167,7 +207,7 @@ def normalize_numbered_blank_markers(value: str, questions: list[dict]) -> str:
             source = marker_re.sub(lambda match: match.group(1) or '', source)
             source = re.sub(r'([A-Za-z])\s{2,}(?=\d+%)', r'\1 ', source)
         source = bare_re.sub(lambda match: f'{match.group(1)}_____{number}_____', source, count=1)
-    return source
+    return normalize_initial_cloze_marker_sequence(source, questions)
 
 
 def normalize_title_for_match(value: str) -> str:

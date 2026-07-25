@@ -5,12 +5,57 @@ function questionNumbers(questions) {
     .filter((number) => Number.isInteger(number) && number > 0));
 }
 
+function orderedBlankQuestions(questions) {
+  const seen = new Set();
+  return (questions || []).filter((question) => {
+    const number = Number(question && question.number);
+    if (!question || question.questionType !== 'blank' || !Number.isInteger(number) || number <= 0 || seen.has(number)) {
+      return false;
+    }
+    seen.add(number);
+    return true;
+  });
+}
+
 function standardBlankRegex() {
   return /([A-Za-z])?[_＿]{1,}(\d{1,3})[_＿]{1,}/g;
 }
 
 function hintedBareBlankRegex(number) {
   return new RegExp(`(^|[^\\d_＿])(${number})(?![\\d_＿])(?=\\s*[（(]\\s*[A-Za-z][A-Za-z'-]*\\s*[）)])`);
+}
+
+function promptInitial(question) {
+  const match = String(question && question.prompt || '').match(/([A-Za-z])[_＿]{1,}\d{1,3}[_＿]{1,}/);
+  return match ? match[1].toLowerCase() : '';
+}
+
+function normalizeInitialClozeMarkerSequence(text, questions) {
+  const expectedQuestions = orderedBlankQuestions(questions);
+  const expectedNumbers = expectedQuestions.map((question) => Number(question.number));
+  if (expectedNumbers.length < 2 || expectedNumbers.some((number, index) => index > 0 && number <= expectedNumbers[index - 1])) {
+    return String(text || '');
+  }
+  const matches = Array.from(String(text || '').matchAll(standardBlankRegex()));
+  if (matches.length !== expectedNumbers.length || matches.some((match) => !match[1])) {
+    return String(text || '');
+  }
+  const promptsAlign = matches.every((match, index) => {
+    const initial = promptInitial(expectedQuestions[index]);
+    return !initial || initial === String(match[1]).toLowerCase();
+  });
+  if (!promptsAlign || matches.every((match, index) => Number(match[2]) === expectedNumbers[index])) {
+    return String(text || '');
+  }
+  let cursor = 0;
+  return matches.reduce((result, match, index) => {
+    const start = Number(match.index || 0);
+    const end = start + match[0].length;
+    const next = `${match[1]}_____${expectedNumbers[index]}_____`;
+    const value = `${result}${String(text || '').slice(cursor, start)}${next}`;
+    cursor = end;
+    return value;
+  }, '') + String(text || '').slice(cursor);
 }
 
 function normalizeClozeBlankMarkers(text, questions) {
@@ -26,7 +71,7 @@ function normalizeClozeBlankMarkers(text, questions) {
     }
     source = source.replace(hintedBareBlankRegex(number), (match, prefix) => `${prefix}_____${number}_____`);
   });
-  return source;
+  return normalizeInitialClozeMarkerSequence(source, questions);
 }
 
 function findClozeBlanks(text, questions) {
@@ -50,5 +95,6 @@ function findClozeBlanks(text, questions) {
 
 module.exports = {
   findClozeBlanks,
-  normalizeClozeBlankMarkers
+  normalizeClozeBlankMarkers,
+  normalizeInitialClozeMarkerSequence
 };
