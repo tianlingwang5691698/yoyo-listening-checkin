@@ -59,14 +59,19 @@ async function listDirectAudioTasksForCategory(category, deps) {
 }
 
 async function resolveStandaloneCategoryTasks(category, childId, date, deps) {
-  if (!['newconcept1', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'song', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'].includes(category)) {
+  if (!['newconcept1', 'littlebear', 'juniebjones', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'song', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'].includes(category)) {
     return [];
   }
   const tasks = await listDirectAudioTasksForCategory(category, deps);
+  const planPhaseLabel = ['littlebear'].includes(category) ? 'Pre A1'
+    : ['newconcept1', 'juniebjones', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'peppa', 'song'].includes(category) ? 'A1'
+      : category === 'magictreehouseb1' || category.startsWith('unlock3') || category === 'newconcept3' ? 'B1'
+        : category.startsWith('unlock4') || category === 'newconcept4' ? 'B2'
+          : 'A2';
   return tasks.map((task) => Object.assign({}, task, {
     planDayIndex: 1,
     planPhase: 'level',
-    planPhaseLabel: category === 'magictreehouseb1' ? 'B1' : 'A2',
+    planPhaseLabel,
     targetDate: date,
     planRunType: 'level'
   }));

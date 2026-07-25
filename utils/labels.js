@@ -17,6 +17,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'petethecat') {
     return 'Pete the Cat';
   }
+  if (category === 'juniebjones') {
+    return 'Junie B. Jones';
+  }
   if (category === 'magictreehouse' || category === 'magictreehouseb1') {
     return 'Magic Tree House';
   }

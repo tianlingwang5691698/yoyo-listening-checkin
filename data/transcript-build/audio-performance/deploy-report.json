@@ -1,24 +1,49 @@
 {
   "mode": "applied",
   "statusAfter": "Active",
-  "modifiedAfter": "2026-07-16 02:14:16",
+  "modifiedAfter": "2026-07-25 13:46:02",
   "files": [
     "data/static-catalog-manifests.json",
     "data/unlock-series-manifests.json",
-    "lib/catalog-engine.js"
+    "lib/catalog-engine.js",
+    "lib/constants.js",
+    "lib/level-engine.js",
+    "lib/listening-plan-engine.js",
+    "lib/request-context-engine.js",
+    "services/level.service.js"
   ],
   "requests": [
     {
       "file": "data/static-catalog-manifests.json",
-      "requestId": "50367ceb-90e5-4ebb-a83e-a2fef6f9b081"
+      "requestId": "c6dbae82-8095-44f0-8dc4-6bef295ea7c9"
     },
     {
       "file": "data/unlock-series-manifests.json",
-      "requestId": "bba01480-4621-4fbc-9055-86991398cbbb"
+      "requestId": "0a7f5837-6826-45e1-b6fe-dbadda315af0"
     },
     {
       "file": "lib/catalog-engine.js",
-      "requestId": "873813fe-a104-41b8-b0cd-fa63987ed763"
+      "requestId": "bfe89de7-b68a-4c60-a2a6-3a2530fc47ad"
+    },
+    {
+      "file": "lib/constants.js",
+      "requestId": "75e302cf-bb52-43b5-a265-6cbf97c0e677"
+    },
+    {
+      "file": "lib/level-engine.js",
+      "requestId": "754ebe2a-e232-4a0a-800a-e68bec4bc286"
+    },
+    {
+      "file": "lib/listening-plan-engine.js",
+      "requestId": "61f91c67-a10f-420f-8519-e619d09e7f13"
+    },
+    {
+      "file": "lib/request-context-engine.js",
+      "requestId": "20443e3f-cc6c-4450-ab17-0e207c35c0a9"
+    },
+    {
+      "file": "services/level.service.js",
+      "requestId": "e5cdbee4-562f-4ce7-a985-61d3a33554a6"
     }
   ]
 }

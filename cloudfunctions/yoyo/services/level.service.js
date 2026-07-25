@@ -144,6 +144,7 @@ async function getLevelOverview(event) {
           scheduleText: '词法第1轮每天5课；词法第2轮每天10课；句法每天5课'
         },
         { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
+        { category: 'juniebjones', slotCount: 1, startNo: 1, endNo: study.getPlanCatalog('juniebjones').length, totalCount: study.getPlanCatalog('juniebjones').length },
         { category: 'peppa', slotCount: 5, startNo: 73, endNo: study.getPlanCatalog('peppa').length, totalCount: Math.max(0, study.getPlanCatalog('peppa').length - 72) },
         { category: 'unlock1', slotCount: 3, startNo: 1, endNo: study.getPlanCatalog('unlock1').length, totalCount: study.getPlanCatalog('unlock1').length, workbookCount: study.getPlanCatalog('unlock1workbook').length },
         { category: 'speaking', slotCount: 1, startNo: 1, endNo: 77, totalCount: 77 },

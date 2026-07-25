@@ -18,6 +18,7 @@ test('新客户端只在 Pre A1 展示 Peppa 并隔离旧 A1 缓存', () => {
 
     assert.match(preA1Block, /category: 'peppa'/);
     assert.match(preA1Block, /category: 'littlebear'/);
+    assert.match(a1Block, /category: 'juniebjones'/);
     assert.doesNotMatch(a1Block, /category: 'littlebear'/);
     assert.doesNotMatch(a2Block, /category: 'littlebear'/);
     assert.doesNotMatch(a1Block, /category: 'peppa'/);
@@ -26,6 +27,8 @@ test('新客户端只在 Pre A1 展示 Peppa 并隔离旧 A1 缓存', () => {
     assert.match(source, /levelId === 'A1' && item\.category === 'peppa'/);
     assert.match(source, /Peppa Pig · 第1–3季/);
   });
+  const stageSource = read('pages/level-stage/index.js');
+  assert.match(stageSource, /category: 'juniebjones'/);
 
   const detailSource = read('pages/listening-material/index.js');
   assert.match(detailSource, /category === 'littlebear' \|\| category === 'peppa' \? 'Pre A1'/);

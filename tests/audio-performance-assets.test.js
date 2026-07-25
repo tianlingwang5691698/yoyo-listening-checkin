@@ -47,6 +47,22 @@ test('Magic Tree House 全部 52 条分片满足 500ms 大小门槛', () => {
   });
 });
 
+test('Junie B. Jones 全部 28 条分片满足 A1 500ms 大小门槛', () => {
+  const tracks = staticManifest.categories.juniebjones;
+  assert.equal(tracks.length, 28);
+  tracks.forEach((track) => {
+    assert.ok(track.audioSegments.length >= 2);
+    assert.equal(track.audioSegments[0].startSec, 0);
+    assert.ok(track.audioSegments[0].durationSec <= 31);
+    assert.ok(track.audioSegments[0].size <= 280000);
+    track.audioSegments.slice(1).forEach((segment) => assert.ok(segment.size <= 800000));
+    const lastSegment = track.audioSegments.at(-1);
+    assert.ok(Math.abs((lastSegment.startSec + lastSegment.durationSec) - track.durationSec) <= 0.6);
+    assert.equal(track.transcriptStatus, 'ready');
+    assert.equal(track.syncGranularity, 'line');
+  });
+});
+
 test('课程播放器支持整集时间、下一片预下载和整集回退', () => {
   const source = fs.readFileSync(path.join(ROOT, 'pages', 'lesson', 'index.js'), 'utf8');
   assert.match(source, /getCurrentAudioPositionSeconds\(\)/);

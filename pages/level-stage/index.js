@@ -19,6 +19,7 @@ const YOYO_FIXED_PLAN_OUTLINE = {
       scheduleText: '词法第1轮每天5课；词法第2轮每天10课；句法每天5课'
     },
     { category: 'newconcept1', slotCount: 3, startNo: 1, endNo: 76, totalCount: 76 },
+    { category: 'juniebjones', slotCount: 1, startNo: 1, endNo: 28, totalCount: 28 },
     { category: 'peppa', slotCount: 5, startNo: 73, endNo: 157, totalCount: 85 },
     { category: 'unlock1', slotCount: 3, startNo: 1, endNo: 24, totalCount: 24, workbookCount: 12 },
     { category: 'vocabulary', slotCount: 1, startNo: 1, endNo: 32, totalCount: 1690, round: 1, currentList: 1 }
@@ -158,6 +159,7 @@ function buildFixedPlanOutline(outline) {
   const categoryTitles = {
     grammar: '语法微课',
     newconcept1: 'New Concept 1',
+    juniebjones: 'Junie B. Jones',
     peppa: 'Peppa',
     unlock1: 'Unlock 1 听口 第二版',
     speaking: 'Unlock 1 每日跟读',

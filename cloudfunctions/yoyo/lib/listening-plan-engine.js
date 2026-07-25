@@ -4,6 +4,7 @@ const MATERIALS = [
   { category: 'song', levelIds: ['Pre A1'], title: 'Songs' },
   { category: 'littlebear', levelIds: ['Pre A1'], title: 'Little Bear' },
   { category: 'peppa', levelIds: ['Pre A1', 'A1'], title: 'Peppa Pig · 第1–3季' },
+  { category: 'juniebjones', levelIds: ['A1'], title: 'Junie B. Jones' },
   { category: 'newconcept1', levelIds: ['A1'], title: 'New Concept 1' },
   { category: 'unlock1', levelIds: ['A1'], title: 'Unlock 1 听口 第二版' },
   { category: 'unlock1thirdedition', levelIds: ['A1'], title: 'Unlock 1 听口 第三版' },

@@ -39,6 +39,7 @@ const STORAGE_ROOTS = {
   newconcept4: NEW_CONCEPT4_AUDIO_ROOT,
   peppa: 'A1/Peppa',
   littlebear: 'Pre A1/Little Bear/Audio',
+  juniebjones: 'A1/Junie B. Jones/Audio',
   petethecat: 'A2/Pete the Cat/Audio',
   magictreehouse: 'A2/Magic Tree House/Audio',
   magictreehouseb1: 'B1/Magic Tree House/Audio',
@@ -67,6 +68,7 @@ const STORAGE_ROOT_CANDIDATES = {
   newconcept4: [NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4-US/新概念英语（第4册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语（第四册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语第四册', 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US', 'B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）'],
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   littlebear: [STORAGE_ROOTS.littlebear],
+  juniebjones: [STORAGE_ROOTS.juniebjones],
   petethecat: [STORAGE_ROOTS.petethecat],
   magictreehouse: [STORAGE_ROOTS.magictreehouse],
   magictreehouseb1: [STORAGE_ROOTS.magictreehouseb1],
@@ -278,6 +280,7 @@ const newConcept2Tasks = buildStaticManifestTasks('newconcept2');
 const newConcept3Tasks = buildStaticManifestTasks('newconcept3');
 const newConcept4Tasks = buildStaticManifestTasks('newconcept4');
 const littleBearTasks = buildStaticManifestTasks('littlebear');
+const junieBJonesTasks = buildStaticManifestTasks('juniebjones');
 const peteTheCatTasks = buildStaticManifestTasks('petethecat');
 const magicTreeHouseTasks = buildStaticManifestTasks('magictreehouse');
 const magicTreeHouseB1Tasks = buildStaticManifestTasks('magictreehouseb1');
@@ -298,11 +301,11 @@ const songPlaceholder = {
   textSource: null
 };
 
-const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
+const STANDALONE_LEVEL_CATEGORIES = ['littlebear', 'juniebjones', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbookthirdedition', 'unlock1workbook', 'unlock2workbookthirdedition', 'unlock2workbook', 'unlock3workbookthirdedition', 'unlock3', 'unlock4workbookthirdedition', 'unlock4workbook'];
-const MANIFEST_ONLY_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock2workbookthirdedition', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock3workbookthirdedition', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'unlock4workbookthirdedition', 'song'];
+const MANIFEST_ONLY_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'littlebear', 'juniebjones', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1thirdedition', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock2workbookthirdedition', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock3workbookthirdedition', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'unlock4workbookthirdedition', 'song'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -615,6 +618,7 @@ function getStaticCatalogMap() {
     newconcept4: newConcept4Tasks,
     peppa: peppaTasks.concat(peppaSeason23Tasks),
     littlebear: littleBearTasks,
+    juniebjones: junieBJonesTasks,
     petethecat: peteTheCatTasks,
     magictreehouse: magicTreeHouseTasks,
     magictreehouseb1: magicTreeHouseB1Tasks,
@@ -812,7 +816,7 @@ async function getDurationTrackMap(category) {
 }
 
 async function getTranscriptDurationLookup(category) {
-  if (![...NEW_CONCEPT_CATEGORIES, ...UNLOCK_SERIES_CATEGORIES, 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'song'].includes(category)) {
+  if (![...NEW_CONCEPT_CATEGORIES, ...UNLOCK_SERIES_CATEGORIES, 'peppa', 'littlebear', 'juniebjones', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'song'].includes(category)) {
     return {};
   }
   const trackMap = await getDurationTrackMap(category);
@@ -1379,7 +1383,7 @@ function mergeCatalogDebug(...debugEntries) {
 async function refreshRuntimeCatalogs(force, categories) {
   const startedAt = Date.now();
   const now = Date.now();
-  const requestedCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'littlebear', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'song']).filter(Boolean)));
+  const requestedCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'littlebear', 'juniebjones', 'petethecat', 'magictreehouse', 'magictreehouseb1', 'unlock1', 'unlock1thirdedition', 'unlock1workbook', 'song']).filter(Boolean)));
   const staticMap = getStaticCatalogMap();
   if (!runtimeCatalogs) runtimeCatalogs = staticMap;
   const targetCategories = requestedCategories.filter((category) => !STATIC_MANIFEST_ONLY_CATEGORIES.includes(category));
@@ -1438,7 +1442,7 @@ function getResourceDebugSnapshot() {
   return Object.assign({}, runtimeCatalogDebug || summarizeRuntimeCatalogDebug({}));
 }
 
-const CATEGORY_ORDER = ['littlebear', 'song', 'newconcept1', 'peppa', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'magictreehouseb1', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
+const CATEGORY_ORDER = ['littlebear', 'juniebjones', 'song', 'newconcept1', 'peppa', 'unlock1', 'unlock1thirdedition', 'unlock1workbookthirdedition', 'unlock1workbook', 'newconcept2', 'petethecat', 'magictreehouse', 'unlock2', 'unlock2thirdedition', 'unlock2workbookthirdedition', 'unlock2workbook', 'newconcept3', 'magictreehouseb1', 'unlock3textbook', 'unlock3thirdedition', 'unlock3workbookthirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbookthirdedition', 'unlock4workbook'];
 const CATEGORY_LABELS = {
   newconcept1: 'New Concept 1',
   newconcept2: 'New Concept 2',
@@ -1446,6 +1450,7 @@ const CATEGORY_LABELS = {
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
   littlebear: 'Little Bear',
+  juniebjones: 'Junie B. Jones',
   petethecat: 'Pete the Cat',
   magictreehouse: 'Magic Tree House',
   magictreehouseb1: 'Magic Tree House',

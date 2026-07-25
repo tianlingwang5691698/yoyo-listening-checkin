@@ -82,6 +82,8 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   assert.match(grammar.scheduleText, /第2轮每天10课/);
   const newConcept = result.fixedPlanOutline.items.find((item) => item.category === 'newconcept1');
   assert.deepEqual([newConcept.startNo, newConcept.endNo, newConcept.totalCount], [1, 76, 76]);
+  const junie = result.fixedPlanOutline.items.find((item) => item.category === 'juniebjones');
+  assert.deepEqual([junie.startNo, junie.endNo, junie.totalCount], [1, grammarTasks.length, grammarTasks.length]);
   const vocabulary = result.fixedPlanOutline.items.find((item) => item.category === 'vocabulary');
   assert.deepEqual([vocabulary.startNo, vocabulary.endNo, vocabulary.totalCount], [1, 32, 1690]);
   const vocabularyCategory = result.categories.find((item) => item.category === 'vocabulary');

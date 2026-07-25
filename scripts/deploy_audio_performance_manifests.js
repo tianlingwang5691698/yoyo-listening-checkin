@@ -11,7 +11,12 @@ const REPORT_PATH = path.join(ROOT, 'data', 'transcript-build', 'audio-performan
 const FILES = [
   'data/static-catalog-manifests.json',
   'data/unlock-series-manifests.json',
-  'lib/catalog-engine.js'
+  'lib/catalog-engine.js',
+  'lib/constants.js',
+  'lib/level-engine.js',
+  'lib/listening-plan-engine.js',
+  'lib/request-context-engine.js',
+  'services/level.service.js'
 ];
 
 function credentials() {

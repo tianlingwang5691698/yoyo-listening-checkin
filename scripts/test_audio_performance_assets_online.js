@@ -73,6 +73,9 @@ function collectPaths() {
   const magicTasks = [...staticManifest.magictreehouse, ...staticManifest.magictreehouseb1];
   const magicSegments = magicTasks.flatMap((task) => (task.audioSegments || []).map((segment) => segment.audioCloudPath));
   const magicFallbacks = magicTasks.map((task) => task.audioCloudPath);
+  const junieTasks = staticManifest.juniebjones || [];
+  const junieSegments = junieTasks.flatMap((task) => (task.audioSegments || []).map((segment) => segment.audioCloudPath));
+  const junieFallbacks = junieTasks.map((task) => task.audioCloudPath);
   const unlock4Tasks = unlockManifest.unlock4.tracks;
   const unlock4Optimized = unlock4Tasks.map((track) => track.cloudPath);
   const unlock4Segments = unlock4Tasks.flatMap((track) => (track.audioSegments || []).map((segment) => segment.audioCloudPath));
@@ -81,6 +84,8 @@ function collectPaths() {
     workbook,
     magicSegments,
     magicFallbacks,
+    junieSegments,
+    junieFallbacks,
     unlock4Optimized,
     unlock4Segments,
     unlock4Fallbacks,
@@ -88,6 +93,8 @@ function collectPaths() {
       ...workbook,
       ...magicSegments,
       ...magicFallbacks,
+      ...junieSegments,
+      ...junieFallbacks,
       ...unlock4Optimized,
       ...unlock4Segments,
       ...unlock4Fallbacks
@@ -98,6 +105,7 @@ function collectPaths() {
 async function main() {
   const paths = collectPaths();
   if (paths.magicSegments.length < 2000) throw new Error(`Magic Tree House segment count too low: ${paths.magicSegments.length}`);
+  if (paths.junieSegments.length < 900) throw new Error(`Junie B. Jones segment count too low: ${paths.junieSegments.length}`);
   if (paths.unlock4Segments.length < 100) throw new Error(`Unlock 4 segment count too low: ${paths.unlock4Segments.length}`);
   const app = cloudbase.init({ env: appConfig.cloudEnvId, ...credentials() });
   const temp = await tempStates(app, paths.all);

@@ -18,12 +18,12 @@ const ROUNDS = Math.max(1, Number(process.env.AUDIO_PERF_ROUNDS || 3));
 const LIST_ONLY = process.env.AUDIO_PERF_LIST_ONLY === '1';
 const SERIES = [
   ['Pre A1', 'song'], ['Pre A1', 'littlebear'],
-  ['A1', 'peppa'], ['A1', 'newconcept1'], ['A1', 'unlock1'], ['A1', 'unlock1thirdedition'], ['A1', 'unlock1workbookthirdedition'], ['A1', 'unlock1workbook'],
+  ['A1', 'peppa'], ['A1', 'juniebjones'], ['A1', 'newconcept1'], ['A1', 'unlock1'], ['A1', 'unlock1thirdedition'], ['A1', 'unlock1workbookthirdedition'], ['A1', 'unlock1workbook'],
   ['A2', 'newconcept2'], ['A2', 'petethecat'], ['A2', 'magictreehouse'], ['A2', 'unlock2'], ['A2', 'unlock2thirdedition'], ['A2', 'unlock2workbookthirdedition'], ['A2', 'unlock2workbook'],
   ['B1', 'newconcept3'], ['B1', 'magictreehouseb1'], ['B1', 'unlock3textbook'], ['B1', 'unlock3thirdedition'], ['B1', 'unlock3workbookthirdedition'], ['B1', 'unlock3'],
   ['B2', 'newconcept4'], ['B2', 'unlock4'], ['B2', 'unlock4thirdedition'], ['B2', 'unlock4workbookthirdedition'], ['B2', 'unlock4workbook']
 ];
-const EXTENDED = new Set(['magictreehouse', 'magictreehouseb1', 'unlock4', 'unlock1workbookthirdedition']);
+const EXTENDED = new Set(['juniebjones', 'magictreehouse', 'magictreehouseb1', 'unlock4', 'unlock1workbookthirdedition']);
 const FULL_SERIES = new Set(['unlock1workbookthirdedition']);
 const SERIES_FILTER = new Set(String(process.env.AUDIO_PERF_SERIES || '').split(',').map((item) => item.trim()).filter(Boolean));
 const ACTIVE_SERIES = SERIES_FILTER.size ? SERIES.filter(([, category]) => SERIES_FILTER.has(category)) : SERIES;

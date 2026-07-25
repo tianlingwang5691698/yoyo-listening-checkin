@@ -39,6 +39,7 @@ const LEVEL_MATERIALS = {
   ],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
+    { category: 'juniebjones', title: 'Junie B. Jones' },
     { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
     { category: 'unlock1thirdedition', title: 'Unlock 1 听口 第三版' },
     { category: 'unlock1workbookthirdedition', title: 'Unlock 1 听口练习册 第三版' },
