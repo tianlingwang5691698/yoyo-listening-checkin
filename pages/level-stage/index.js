@@ -182,8 +182,8 @@ function buildFixedPlanOutline(outline) {
       if (item.category === 'speaking') {
         return Object.assign({}, item, {
           title: categoryTitles.speaking,
-          rangeText: '练习册32天 → 课本45天',
-          dailyText: '练习册约8–12句；课本每天3段'
+          rangeText: '练习册 → 课本连续循环',
+          dailyText: item.scheduleText || `每天${Number(item.dailySentenceCount || 20)}句`
         });
       }
       if (item.category === 'grammar') {

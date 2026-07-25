@@ -2,11 +2,9 @@ const WORKBOOK_WORD_COUNTS = require('../data/unlock1-workbook-speaking-word-cou
 const TEXTBOOK_SENTENCE_COUNTS = require('../data/unlock1-textbook-speaking-paragraph-sentence-counts.json');
 
 const ROUND_TWO_START_DAY = 73;
-const WORKBOOK_DAYS = 32;
-const TEXTBOOK_PARAGRAPHS_PER_DAY = 3;
-const TEXTBOOK_DAYS = 45;
-const CYCLE_DAYS = WORKBOOK_DAYS + TEXTBOOK_DAYS;
-const PLAN_STARTED_AT = '2026-07-23';
+const DAILY_SENTENCE_COUNT = 20;
+const PLAN_STARTED_AT = '2026-07-25';
+const START_SENTENCE_OFFSET = 23;
 
 function flattenWorkbookSentences() {
   return WORKBOOK_WORD_COUNTS.flatMap((paragraphs, trackIndex) => paragraphs.flatMap((wordCounts, paragraphOffset) => (
@@ -14,7 +12,22 @@ function flattenWorkbookSentences() {
       trackIndex,
       paragraphIndex: paragraphOffset + 1,
       sentenceIndex: sentenceOffset + 1,
-      wordCount: Number(wordCount || 0)
+      wordCount: Number(wordCount || 0),
+      audioCategory: 'unlock1workbook',
+      phase: 'workbook'
+    }))
+  )));
+}
+
+function flattenTextbookSentences() {
+  return TEXTBOOK_SENTENCE_COUNTS.flatMap((paragraphs, trackIndex) => paragraphs.flatMap((sentenceCount, paragraphOffset) => (
+    Array.from({ length: Number(sentenceCount || 0) }, (_, sentenceOffset) => ({
+      trackIndex,
+      paragraphIndex: paragraphOffset + 1,
+      sentenceIndex: sentenceOffset + 1,
+      wordCount: 0,
+      audioCategory: 'unlock1',
+      phase: 'textbook'
     }))
   )));
 }
@@ -58,7 +71,8 @@ function partitionSentencesByWordCount(sentences, dayCount, options = {}) {
 function splitDayIntoParagraphSegments(sentences) {
   return (sentences || []).reduce((segments, sentence) => {
     const previous = segments[segments.length - 1];
-    if (previous && previous.trackIndex === sentence.trackIndex && previous.paragraphIndex === sentence.paragraphIndex
+    if (previous && previous.audioCategory === sentence.audioCategory
+      && previous.trackIndex === sentence.trackIndex && previous.paragraphIndex === sentence.paragraphIndex
       && previous.sentenceEndIndex + 1 === sentence.sentenceIndex) {
       previous.sentenceEndIndex = sentence.sentenceIndex;
       previous.sentenceCount += 1;
@@ -70,7 +84,9 @@ function splitDayIntoParagraphSegments(sentences) {
         sentenceStartIndex: sentence.sentenceIndex,
         sentenceEndIndex: sentence.sentenceIndex,
         sentenceCount: 1,
-        wordCount: sentence.wordCount
+        wordCount: sentence.wordCount,
+        audioCategory: sentence.audioCategory,
+        phase: sentence.phase
       });
     }
     return segments;
@@ -78,10 +94,11 @@ function splitDayIntoParagraphSegments(sentences) {
 }
 
 const SENTENCES = flattenWorkbookSentences();
-const DAILY_SENTENCE_GROUPS = partitionSentencesByWordCount(SENTENCES, WORKBOOK_DAYS, {
-  minSentences: 8,
-  maxSentences: 12
-});
+const TEXTBOOK_SENTENCES = flattenTextbookSentences();
+const CURRICULUM_SENTENCES = SENTENCES.concat(TEXTBOOK_SENTENCES);
+const TOTAL_SENTENCES = CURRICULUM_SENTENCES.length;
+const greatestCommonDivisor = (left, right) => (right ? greatestCommonDivisor(right, left % right) : left);
+const CYCLE_DAYS = TOTAL_SENTENCES / greatestCommonDivisor(TOTAL_SENTENCES, DAILY_SENTENCE_COUNT);
 const TOTAL_WORDS = SENTENCES.reduce((sum, item) => sum + item.wordCount, 0);
 const TEXTBOOK_PARAGRAPHS = TEXTBOOK_SENTENCE_COUNTS.flatMap((paragraphs, trackIndex) => paragraphs.map((sentenceCount, paragraphOffset) => ({
   trackIndex,
@@ -100,11 +117,22 @@ function getRoundDayForDate(date, startedAt = PLAN_STARTED_AT) {
   return (elapsedDays % CYCLE_DAYS) + 1;
 }
 
-function buildWorkbookTasks(roundDay, planDayIndex, catalog) {
-  const segments = splitDayIntoParagraphSegments(DAILY_SENTENCE_GROUPS[roundDay - 1] || []);
+function getDailySentences(roundDay) {
+  if (roundDay < 1 || roundDay > CYCLE_DAYS) return [];
+  const startIndex = (START_SENTENCE_OFFSET + ((roundDay - 1) * DAILY_SENTENCE_COUNT)) % TOTAL_SENTENCES;
+  return Array.from({ length: DAILY_SENTENCE_COUNT }, (_, offset) => (
+    CURRICULUM_SENTENCES[(startIndex + offset) % TOTAL_SENTENCES]
+  ));
+}
+
+function buildDailyTasks(roundDay, planDayIndex, catalogs) {
+  const segments = splitDayIntoParagraphSegments(getDailySentences(roundDay));
   return segments.map((segment, slotIndex) => {
+    const catalog = segment.audioCategory === 'unlock1workbook'
+      ? (catalogs && catalogs.workbook)
+      : (catalogs && catalogs.textbook);
     const audioTask = (catalog || [])[segment.trackIndex] || {};
-    const audioTaskId = String(audioTask.taskId || `unlock1workbook-${segment.trackIndex + 1}`);
+    const audioTaskId = String(audioTask.taskId || `${segment.audioCategory}-${segment.trackIndex + 1}`);
     const paragraphId = `${audioTaskId}-paragraph-${segment.paragraphIndex}`;
     const rangeText = segment.sentenceStartIndex === segment.sentenceEndIndex
       ? `第 ${segment.sentenceStartIndex} 句`
@@ -112,7 +140,7 @@ function buildWorkbookTasks(roundDay, planDayIndex, catalog) {
     return {
       category: 'speaking',
       taskId: `${paragraphId}-sentences-${segment.sentenceStartIndex}-${segment.sentenceEndIndex}`,
-      audioCategory: 'unlock1workbook',
+      audioCategory: segment.audioCategory,
       audioTaskId,
       paragraphId,
       paragraphIndex: segment.paragraphIndex,
@@ -121,50 +149,17 @@ function buildWorkbookTasks(roundDay, planDayIndex, catalog) {
       sentenceCount: segment.sentenceCount,
       wordCount: segment.wordCount,
       sentenceTaskIds: Array.from({ length: segment.sentenceCount }, (_, index) => `${paragraphId}-sentence-${segment.sentenceStartIndex + index}`),
-      title: `${audioTask.title || `Unlock 1 练习册音频 ${segment.trackIndex + 1}`} · 第 ${segment.paragraphIndex} 段 · ${rangeText}`,
-      displayTitle: `${audioTask.title || `Unlock 1 练习册音频 ${segment.trackIndex + 1}`} · 第 ${segment.paragraphIndex} 段 · ${rangeText}`,
+      title: `${audioTask.title || `Unlock 1 音频 ${segment.trackIndex + 1}`} · 第 ${segment.paragraphIndex} 段 · ${rangeText}`,
+      displayTitle: `${audioTask.title || `Unlock 1 音频 ${segment.trackIndex + 1}`} · 第 ${segment.paragraphIndex} 段 · ${rangeText}`,
       planSlotIndex: slotIndex + 1,
       planSlotCount: segments.length,
       planDayIndex: Number(planDayIndex || 0),
       roundDay,
-      phase: 'workbook',
-      phaseDay: roundDay,
+      phase: segment.phase,
       repeatTarget: 1,
-      durationSec: Math.max(45, segment.wordCount * 7)
-    };
-  });
-}
-
-function buildTextbookTasks(roundDay, planDayIndex, catalog) {
-  const phaseDay = roundDay - WORKBOOK_DAYS;
-  const start = (phaseDay - 1) * TEXTBOOK_PARAGRAPHS_PER_DAY;
-  const paragraphs = TEXTBOOK_PARAGRAPHS.slice(start, start + TEXTBOOK_PARAGRAPHS_PER_DAY);
-  return paragraphs.map((paragraph, slotIndex) => {
-    const audioTask = (catalog || [])[paragraph.trackIndex] || {};
-    const audioTaskId = String(audioTask.taskId || `unlock1-${paragraph.trackIndex + 1}`);
-    const paragraphId = `${audioTaskId}-paragraph-${paragraph.paragraphIndex}`;
-    return {
-      category: 'speaking',
-      taskId: paragraphId,
-      audioCategory: 'unlock1',
-      audioTaskId,
-      paragraphId,
-      paragraphIndex: paragraph.paragraphIndex,
-      sentenceStartIndex: 1,
-      sentenceEndIndex: paragraph.sentenceCount,
-      sentenceCount: paragraph.sentenceCount,
-      wordCount: 0,
-      sentenceTaskIds: Array.from({ length: paragraph.sentenceCount }, (_, index) => `${paragraphId}-sentence-${index + 1}`),
-      title: `${audioTask.title || `Unlock 1 课本音频 ${paragraph.trackIndex + 1}`} · 第 ${paragraph.paragraphIndex} 段`,
-      displayTitle: `${audioTask.title || `Unlock 1 课本音频 ${paragraph.trackIndex + 1}`} · 第 ${paragraph.paragraphIndex} 段`,
-      planSlotIndex: slotIndex + 1,
-      planSlotCount: paragraphs.length,
-      planDayIndex: Number(planDayIndex || 0),
-      roundDay,
-      phase: 'textbook',
-      phaseDay,
-      repeatTarget: 1,
-      durationSec: Math.max(120, paragraph.sentenceCount * 35)
+      durationSec: segment.phase === 'workbook'
+        ? Math.max(45, segment.wordCount * 7)
+        : Math.max(45, segment.sentenceCount * 35)
     };
   });
 }
@@ -172,23 +167,22 @@ function buildTextbookTasks(roundDay, planDayIndex, catalog) {
 function buildPlanTasks(planDayIndex, catalogs) {
   const roundDay = getRoundDay(planDayIndex);
   if (roundDay < 1 || roundDay > CYCLE_DAYS) return [];
-  return roundDay <= WORKBOOK_DAYS
-    ? buildWorkbookTasks(roundDay, planDayIndex, catalogs && catalogs.workbook)
-    : buildTextbookTasks(roundDay, planDayIndex, catalogs && catalogs.textbook);
+  return buildDailyTasks(roundDay, planDayIndex, catalogs);
 }
 
 module.exports = {
   CYCLE_DAYS,
-  DAILY_SENTENCE_GROUPS,
+  CURRICULUM_SENTENCES,
+  DAILY_SENTENCE_COUNT,
   PLAN_STARTED_AT,
   ROUND_TWO_START_DAY,
   SENTENCES,
-  TEXTBOOK_DAYS,
   TEXTBOOK_PARAGRAPHS,
-  TEXTBOOK_PARAGRAPHS_PER_DAY,
+  TEXTBOOK_SENTENCES,
+  TOTAL_SENTENCES,
   TOTAL_WORDS,
-  WORKBOOK_DAYS,
   buildPlanTasks,
+  getDailySentences,
   getRoundDay,
   getRoundDayForDate,
   partitionSentencesByWordCount,

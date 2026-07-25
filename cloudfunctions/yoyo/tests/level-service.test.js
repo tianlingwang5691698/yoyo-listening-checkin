@@ -1,5 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const levelService = require('../services/level.service');
 const study = require('../facades/study.facade');
@@ -60,6 +62,8 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
     active: true,
     completedCount: 0,
     totalCount: 2,
+    dailySentenceCount: 20,
+    curriculumSentenceCount: 889,
     tasks: [{
       category: 'speaking',
       taskId: 'unlock1workbook-1-paragraph-1-sentences-1-5',
@@ -86,7 +90,16 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   assert.deepEqual([junie.startNo, junie.endNo, junie.totalCount], [1, grammarTasks.length, grammarTasks.length]);
   const vocabulary = result.fixedPlanOutline.items.find((item) => item.category === 'vocabulary');
   assert.deepEqual([vocabulary.startNo, vocabulary.endNo, vocabulary.totalCount], [1, 32, 1690]);
+  const speaking = result.fixedPlanOutline.items.find((item) => item.category === 'speaking');
+  assert.equal(speaking.dailySentenceCount, 20);
+  assert.match(speaking.scheduleText, /每天20句/);
   const vocabularyCategory = result.categories.find((item) => item.category === 'vocabulary');
   assert.equal(vocabularyCategory.todayTask.displayTitle, '初中词汇第2轮 · List 3');
   assert.equal(result.categories.find((item) => item.category === 'speaking').todayTask.taskId, 'unlock1workbook-1-paragraph-1-sentences-1-5');
+});
+
+test('阶段页显示佑佑口语每天 20 句', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../../../pages/level-stage/index.js'), 'utf8');
+  assert.match(source, /练习册 → 课本连续循环/);
+  assert.match(source, /每天\$\{Number\(item\.dailySentenceCount \|\| 20\)\}句/);
 });
