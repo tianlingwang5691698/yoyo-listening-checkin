@@ -178,6 +178,21 @@ async function getCachedStudyPack(listeningId) {
   }
 }
 
+async function getCachedStudyPackByTitle(title) {
+  const normalizedTitle = normalizeText(title);
+  if (!normalizedTitle) return null;
+  try {
+    const result = await dbAdapter.collection(STUDY_PACK_COLLECTION)
+      .where({ title: normalizedTitle })
+      .orderBy('updatedAt', 'desc')
+      .limit(10)
+      .get();
+    return (result && result.data || []).find((row) => row && row.studyPack) || null;
+  } catch (error) {
+    return null;
+  }
+}
+
 async function acquireStudyPackJob(cacheKey, listeningId, title) {
   const now = new Date().toISOString();
   return dbAdapter.db.runTransaction(async (transaction) => {
@@ -450,10 +465,11 @@ async function buildQuestionAnalysesWithModel(item) {
 
 async function getOrCreateListeningStudyPack(listeningId, item, cacheOnly) {
   const transcript = normalizeText(item && item.transcript);
-  const cached = await getCachedStudyPack(listeningId);
+  const cached = await getCachedStudyPack(listeningId)
+    || await getCachedStudyPackByTitle(item && item.title);
   if (cached) {
     return {
-      listeningId,
+      listeningId: cached.listeningId || listeningId,
       studyPack: normalizeStudyPack(Object.assign({
         source: cached.source || ''
       }, cached.studyPack)),
@@ -674,6 +690,7 @@ module.exports = {
   _test: {
     normalizeQuestionAnalyses,
     normalizeStudyPack,
+    getCachedStudyPackByTitle,
     hasCompleteQuestionAnalyses,
     collectListeningReportImages,
     listeningReportImageKey

@@ -50,6 +50,36 @@ test('concurrent completion writes use one deterministic document', async (t) =>
   assert.equal(addCalls, 0);
 });
 
+test('fixed-plan listening study pack can be restored by its audio title', async (t) => {
+  const cachedPack = {
+    listeningId: 'lesson-unlock1workbook-unlock1workbook-3__fixed_listening_round_1',
+    title: 'UL2v2_L1_TST_LS_U03_Audio_3.1',
+    source: 'model:gpt-5.6-luna',
+    studyPack: {
+      source: 'model:gpt-5.6-luna',
+      vocabularyCards: [{ word: 'focus' }],
+      phraseCards: [{ text: 'pay attention' }],
+      sentencePatternCards: [{ pattern: 'It is important to...' }]
+    }
+  };
+  t.mock.method(dbAdapter, 'collection', () => ({
+    where: (filter) => ({
+      orderBy: () => ({
+        limit: () => ({
+          get: async () => ({
+            data: filter.title === cachedPack.title ? [cachedPack] : []
+          })
+        })
+      })
+    })
+  }));
+
+  const result = await listeningService._test.getCachedStudyPackByTitle(cachedPack.title);
+
+  assert.equal(result.listeningId, cachedPack.listeningId);
+  assert.equal(result.studyPack.phraseCards.length, 1);
+});
+
 test('existing completion is replaced with the final grading result', async (t) => {
   let saved = null;
   t.mock.method(study, 'isStudyWriteAllowed', () => true);
