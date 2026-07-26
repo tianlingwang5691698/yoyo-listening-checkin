@@ -720,3 +720,23 @@
   opacity: 1;
   filter: none;
 }
+
+.theme-voyage .voyage-level-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 94rpx;
+  overflow: hidden;
+}
+
+.theme-voyage .voyage-level-head .voyage-anime-subpage-banner {
+  display: block;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 268rpx;
+  margin-bottom: 26rpx;
+  border: 4rpx solid rgba(255, 244, 214, 0.82);
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}

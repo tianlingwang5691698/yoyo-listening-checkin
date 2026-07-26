@@ -3700,3 +3700,36 @@ page { overflow-x: hidden; }
   opacity:1;
   filter:none;
 }
+
+.theme-voyage .voyage-vocab-banner {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 260rpx;
+  flex: none;
+  margin-bottom: 24rpx;
+  border-radius: 3rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-voyage .vocab-practice-head .voyage-vocab-banner {
+  width: calc(100% + 224rpx);
+  margin: -36rpx -190rpx 28rpx -34rpx;
+}
+
+.theme-voyage .bookshelf-head {
+  display: block;
+}
+
+.theme-voyage .bookshelf-head .voyage-vocab-banner {
+  width: calc(100% + 278rpx);
+  margin: -36rpx -244rpx 28rpx -34rpx;
+}
+
+.theme-voyage .library-hero .voyage-vocab-banner {
+  width: calc(100% + 246rpx);
+  margin: -38rpx -210rpx 28rpx -36rpx;
+}

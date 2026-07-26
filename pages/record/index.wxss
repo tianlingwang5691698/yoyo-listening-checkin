@@ -1563,6 +1563,20 @@
   opacity:1;
   filter:none;
 }
+
+.theme-voyage .voyage-growth-image {
+  display: block;
+  width: 100%;
+  height: 470rpx;
+  flex: none;
+  margin-bottom: 28rpx;
+  border: 2rpx solid #b37c35;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
 .theme-tactical .month-arrow { background: #dce4da; color: #172019; }
 .theme-tactical .track-rail::before { background: #bdc8bd; }
 .theme-tactical .track-pin,

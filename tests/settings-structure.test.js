@@ -236,6 +236,33 @@ test('tactical subpage images keep their dedicated sources and fixed display siz
   assert.ok(fs.existsSync(path.join(root, 'assets/tactical/subpages-v1/profile-operator.jpg')));
 });
 
+test('voyage anime theme uses distinct role-matched images with stable sizes', () => {
+  const release = '_assets/themes/voyage/20260727-anime-v1/';
+  const homeWxml = read('pages/home/index.wxml');
+  assert.match(homeWxml, new RegExp(`${release}ad-shanks-sunny\\.jpg`));
+  assert.match(homeWxml, new RegExp(`${release}ad-luffy-zoro-sunny\\.jpg`));
+  assert.match(homeWxml, new RegExp(`${release}home-luffy-nami-sunny\\.jpg`));
+
+  const cases = [
+    ['pages/level/index.wxml', 'pages/level/index.wxss', 'listening-usopp-radio.jpg', 'voyage-anime-subpage-banner', '268rpx'],
+    ['pages/reading/index.wxml', 'pages/reading/index.wxss', 'reading-robin-library.jpg', 'voyage-anime-subpage-banner', '280rpx'],
+    ['pages/grammar/index.wxml', 'pages/grammar/index.wxss', 'grammar-robin-zoro-map.jpg', 'voyage-anime-subpage-banner', '280rpx'],
+    ['pages/writing/detail/index.wxml', 'pages/writing/detail/index.wxss', 'writing-nami-robin-log.jpg', 'voyage-anime-subpage-banner', '280rpx'],
+    ['pages/speaking/index.wxml', 'pages/speaking/index.wxss', 'speaking-sanji-usopp.jpg', 'voyage-anime-subpage-banner', '280rpx'],
+    ['pages/reading/flashcards/index.wxml', 'pages/reading/flashcards/index.wxss', 'vocabulary-chopper-franky.jpg', 'voyage-vocab-banner', '260rpx'],
+    ['pages/record/index.wxml', 'pages/record/index.wxss', 'record-brook-chopper.jpg', 'voyage-growth-image', '470rpx'],
+    ['pages/parent/index.wxml', 'pages/parent/index.wxss', 'parent-jinbe-robin.jpg', 'voyage-parent-image', '468rpx'],
+    ['pages/profile/index.wxml', 'pages/profile/index.wxss', 'profile-luffy-sunny.jpg', 'voyage-profile-photo', '210rpx'],
+  ];
+
+  cases.forEach(([wxmlFile, wxssFile, asset, className, height]) => {
+    assert.match(read(wxmlFile), new RegExp(`${release}subpages/${asset}`));
+    assert.match(read(wxmlFile), new RegExp(`class="${className}"[^>]*mode="aspectFill"`));
+    assert.match(read(wxssFile), new RegExp(`\\.${className}\\s*\\{[^}]*height:\\s*${height}`));
+    assert.ok(fs.existsSync(path.join(root, 'assets/voyage-anime-v1/subpages', asset)));
+  });
+});
+
 test('voyage settings emblem stays outside the title flow', () => {
   const settingsWxss = read('pages/settings/index.wxss');
   const emblemRules = [...settingsWxss.matchAll(/\.voyage-settings-emblem\s*\{([^}]*)\}/g)];

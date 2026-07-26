@@ -292,7 +292,8 @@
 <view class="theme-{{theme}} language-{{language}} page-shell flashcard-page {{mode === 'review' ? 'is-review' : ''}}" style="{{pageTopStyle}}">
   <block wx:if="{{sourceMode === 'practice-home'}}">
     <view class="vocab-practice-head">
-      <image wx:if="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
+      <image wx:if="{{theme === 'voyage'}}" class="voyage-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/vocabulary-chopper-franky.jpg" mode="aspectFill"></image>
+      <image wx:elif="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
       <view class="vocab-practice-kicker">VOCABULARY PRACTICE</view>
       <view class="vocab-practice-title">{{texts.practiceHomeTitle}}</view>
       <view class="vocab-practice-copy">{{texts.practiceHomeCopy}}</view>
@@ -313,7 +314,8 @@
 
   <block wx:elif="{{sourceMode === 'bookshelf'}}">
     <view class="bookshelf-head">
-      <image wx:if="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
+      <image wx:if="{{theme === 'voyage'}}" class="voyage-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/vocabulary-chopper-franky.jpg" mode="aspectFill"></image>
+      <image wx:elif="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
       <view class="bookshelf-copy">
         <view class="progress-title">{{texts.libraryTitle}}</view>
         <view class="progress-copy">{{texts.libraryCopy}}</view>
@@ -381,7 +383,8 @@
   <block wx:else>
     <block wx:if="{{mode === 'library'}}">
       <view class="library-hero">
-        <image wx:if="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
+        <image wx:if="{{theme === 'voyage'}}" class="voyage-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/vocabulary-chopper-franky.jpg" mode="aspectFill"></image>
+        <image wx:elif="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
         <view class="progress-head">
           <view class="hero-copy">
             <view class="progress-title">{{activeSourceTitle || texts.myLibrary}} <text wx:if="{{demoMode}}" class="demo-tag">{{texts.demo}}</text></view>

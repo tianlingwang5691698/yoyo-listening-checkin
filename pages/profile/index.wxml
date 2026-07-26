@@ -49,7 +49,8 @@
   <view wx:elif="{{theme === 'voyage' || theme === 'dragon' || theme === 'tactical'}}" class="voyage-profile">
     <view class="voyage-profile-hero">
       <view class="voyage-profile-seal">
-        <image wx:if="{{theme === 'tactical'}}" class="tactical-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/profile-operator.jpg" mode="aspectFill"></image>
+        <image wx:if="{{theme === 'voyage'}}" class="voyage-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/profile-luffy-sunny.jpg" mode="aspectFill"></image>
+        <image wx:elif="{{theme === 'tactical'}}" class="tactical-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/profile-operator.jpg" mode="aspectFill"></image>
         <view wx:else class="voyage-wheel"><view></view></view>
         <view class="voyage-role">{{currentMember.studyRole === 'parent' ? texts.parent : texts.student}}</view>
       </view>

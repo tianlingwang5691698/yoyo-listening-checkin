@@ -2619,6 +2619,28 @@
   opacity:1;
   filter:none;
 }
+
+.theme-voyage .writing-hero {
+  padding: 0 0 26rpx;
+  overflow: hidden;
+}
+
+.theme-voyage .writing-hero .voyage-anime-subpage-banner {
+  display: block;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 24rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-voyage .writing-hero > .eyebrow,
+.theme-voyage .writing-hero > .title,
+.theme-voyage .writing-hero > .meta {
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+}
 .theme-tactical .writing-hero > .eyebrow,
 .theme-tactical .writing-hero > .title,
 .theme-tactical .writing-hero > .meta { margin-right:30rpx; margin-left:30rpx; }

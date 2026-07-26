@@ -3908,6 +3908,18 @@
   height: 520rpx;
 }
 
+.theme-voyage .voyage-sky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 67, 108, 0.03) 0%, rgba(15, 88, 127, 0.08) 58%, rgba(9, 79, 113, 0.3) 100%);
+  pointer-events: none;
+}
+
+.theme-voyage .voyage-anime-home-art {
+  filter: saturate(1.04) brightness(1.04);
+}
+
 .voyage-sun,
 .voyage-cloud,
 .voyage-gull,
@@ -3926,6 +3938,15 @@
   border: 3rpx solid rgba(255, 247, 215, 0.94);
   border-radius: 50%;
   box-sizing: border-box;
+}
+
+.theme-voyage .voyage-avatar .voyage-profile-avatar {
+  height: auto;
+  transform: translateY(-4rpx);
+}
+
+.theme-voyage .voyage-anime-poster-art {
+  filter: saturate(1.04) brightness(1.04);
 }
 
 .voyage-badge {

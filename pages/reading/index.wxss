@@ -1171,4 +1171,31 @@
   opacity: 1;
   filter: none;
 }
+
+.theme-voyage .reading-hero {
+  display: block;
+  overflow: hidden;
+  padding: 0 0 34rpx;
+}
+
+.theme-voyage .reading-hero::before,
+.theme-voyage .reading-hero::after {
+  display: none;
+}
+
+.theme-voyage .reading-hero .voyage-anime-subpage-banner {
+  display: block;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 26rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-voyage .reading-hero > .reading-eyebrow,
+.theme-voyage .reading-hero > .reading-title {
+  margin-right: 38rpx;
+  margin-left: 38rpx;
+}
 .theme-tactical .reading-title { color: #172019; }

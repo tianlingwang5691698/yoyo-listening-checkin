@@ -224,6 +224,7 @@
 
 <view class="theme-{{theme}} language-{{language}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
+    <image wx:if="{{theme === 'voyage'}}" class="voyage-anime-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/speaking-sanji-usopp.jpg" mode="aspectFill"></image>
     <image wx:if="{{theme === 'tactical'}}" class="tactical-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/speaking-radio.jpg" mode="aspectFill"></image>
     <view class="speaking-header-copy">
       <view class="speaking-title">{{pageTitle}}</view>

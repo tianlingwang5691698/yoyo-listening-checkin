@@ -1091,3 +1091,22 @@
   opacity: 1;
   filter: none;
 }
+
+.theme-voyage .voyage-profile-seal {
+  justify-content: flex-start;
+  gap: 12rpx;
+  padding: 12rpx;
+}
+
+.theme-voyage .voyage-profile-photo {
+  display: block;
+  width: 126rpx;
+  height: 210rpx;
+  flex: none;
+  border: 2rpx solid #9b692e;
+  border-radius: 5rpx;
+  box-sizing: border-box;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
