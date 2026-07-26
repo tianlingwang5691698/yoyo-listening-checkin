@@ -163,12 +163,13 @@
 .tactical-data-strip > view { min-width: 0; min-height: 88rpx; padding: 14rpx; border: 1rpx solid #b8c4b6; border-radius: 4rpx; background: #e8ede6; box-sizing: border-box; }
 .tactical-data-strip > view > text { display: block; color: #5b685f; font-size: 16rpx; white-space: nowrap; }
 .tactical-data-strip > view > view { margin-top: 7rpx; color: #172019; font-family: "DIN Alternate", sans-serif; font-size: 24rpx; font-weight: 750; }
+.tactical-signal > text { color: #314000; font-size: 20rpx; font-weight: 700; }
 .tactical-signal > view { display: flex; align-items: flex-end; gap: 4rpx; height: 28rpx; }
-.tactical-signal > view text { display: block; width: 7rpx; background: #d7ff45; }
-.tactical-signal > view text:nth-child(1) { height: 8rpx; opacity: 0.45; }
-.tactical-signal > view text:nth-child(2) { height: 14rpx; opacity: 0.62; }
-.tactical-signal > view text:nth-child(3) { height: 21rpx; opacity: 0.8; }
-.tactical-signal > view text:nth-child(4) { height: 28rpx; }
+.tactical-signal > view text { display: block; width: 7rpx; background: #668000; }
+.tactical-signal > view text:nth-child(1) { height: 8rpx; }
+.tactical-signal > view text:nth-child(2) { height: 14rpx; }
+.tactical-signal > view text:nth-child(3) { height: 21rpx; }
+.tactical-signal > view text:nth-child(4) { height: 28rpx; background: #526900; }
 .tactical-empty-note { margin-top: 18rpx; padding: 18rpx; border: 1rpx dashed #9fac9d; color: #4f5d53; font-size: 22rpx; text-align: center; }
 
 .tactical-ad {

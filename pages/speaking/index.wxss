@@ -4185,7 +4185,21 @@
 .theme-tactical .ielts-listen-copy text,
 .theme-tactical .ielts-band-note,
 .theme-tactical .repeat-audio-option-copy text { color: #4f5d53; }
-.theme-tactical .repeat-sentence-item.is-active,
+.theme-tactical .speaking-practice-nav,
+.theme-tactical .library-practice-nav {
+  border-color: #668000;
+  background: #dce4da;
+  color: #314000;
+}
+.theme-tactical .repeat-sentence-text {
+  --speaking-prompt-base: #172019;
+  --speaking-prompt-active: #526900;
+}
+.theme-tactical .repeat-sentence-item.is-active {
+  border-color: #668000;
+  background: #d6e0d4;
+  box-shadow: inset 5rpx 0 0 #668000;
+}
 .theme-tactical .repeat-audio-option.is-active { background: #e4edc9; }
 .theme-tactical .tactical-speaking-section-tab.is-active,
 .theme-tactical .speaking-level-tab.is-active,

@@ -198,6 +198,14 @@ test('tactical subpages keep the comfortable daylight contrast palette', () => {
   const materialSource = read('pages/material/index.wxss');
   assert.match(materialSource, /\.theme-tactical\.material-module-listening \.directory-back-icon\s*\{[^}]*background:\s*#e4efbd[^}]*color:\s*#314000/);
   assert.match(materialSource, /\.theme-tactical\.material-module-listening \.task-state\s*\{[^}]*border:\s*1rpx solid #668000[^}]*background:\s*#e4efbd[^}]*color:\s*#314000/);
+  const homeSource = read('pages/home/index.wxss');
+  assert.match(homeSource, /\.tactical-signal > text\s*\{[^}]*color:\s*#314000[^}]*font-weight:\s*700/);
+  assert.match(homeSource, /\.tactical-signal > view text\s*\{[^}]*background:\s*#668000/);
+  assert.doesNotMatch(homeSource, /\.tactical-signal > view text:nth-child\([^)]*\)\s*\{[^}]*opacity:/);
+  const speakingSource = read('pages/speaking/index.wxss');
+  assert.match(speakingSource, /\.theme-tactical \.speaking-practice-nav,[\s\S]*?background:\s*#dce4da;[\s\S]*?color:\s*#314000/);
+  assert.match(speakingSource, /\.theme-tactical \.repeat-sentence-text\s*\{[^}]*--speaking-prompt-active:\s*#526900/);
+  assert.match(speakingSource, /\.theme-tactical \.repeat-sentence-item\.is-active\s*\{[^}]*border-color:\s*#668000;[^}]*background:\s*#d6e0d4/);
 });
 
 test('tactical subpage images keep their dedicated sources and fixed display sizes', () => {
