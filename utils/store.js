@@ -571,7 +571,10 @@ async function getMaterialItem(options, onRefresh) {
 }
 
 async function getLevelOverview(options, onRefresh) {
-  return callCloud('getLevelOverview', withSelectedStudent(Object.assign({}, options || {})), {
+  const payload = Object.assign({}, options || {});
+  const forceRefresh = payload.forceRefresh === true;
+  delete payload.forceRefresh;
+  return callCloud('getLevelOverview', withSelectedStudent(payload), {
     user: {},
     currentUser: {},
     currentMember: contracts.createCurrentMemberDefaults(),
@@ -584,7 +587,7 @@ async function getLevelOverview(options, onRefresh) {
     a2Categories: [],
     b1Categories: [],
     b2Categories: []
-  }, { onRefresh });
+  }, { onRefresh, useCache: !forceRefresh });
 }
 
 async function getListeningPlanOverview(options, onRefresh) {

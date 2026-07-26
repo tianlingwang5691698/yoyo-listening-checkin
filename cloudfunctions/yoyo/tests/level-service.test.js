@@ -102,4 +102,6 @@ test('阶段页显示佑佑口语每天 20 句', () => {
   const source = fs.readFileSync(path.join(__dirname, '../../../pages/level-stage/index.js'), 'utf8');
   assert.match(source, /练习册 → 课本连续循环/);
   assert.match(source, /每天\$\{Number\(item\.dailySentenceCount \|\| 20\)\}句/);
+  assert.match(source, /onShow\(\)[\s\S]*refreshOverview\(\{ forceRefresh: true \}\)/);
+  assert.match(source, /openFreshSpeakingTask[\s\S]*tasks\.findIndex\(\(task\) => !task\.completedToday/);
 });

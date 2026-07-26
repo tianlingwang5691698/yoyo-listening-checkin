@@ -6,7 +6,7 @@ const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '..');
 
-function loadSpeakingPage(store) {
+function loadSpeakingPage(store, wx = {}) {
   const source = fs.readFileSync(path.join(root, 'pages/speaking/index.js'), 'utf8');
   let definition = null;
   const context = {
@@ -38,7 +38,8 @@ function loadSpeakingPage(store) {
       if (request === '../../app-config') return { cloudAssetBaseUrl: 'https://example.test' };
       throw new Error(`Unexpected require: ${request}`);
     },
-    setTimeout
+    setTimeout,
+    wx
   };
   vm.runInNewContext(source, context, { filename: 'pages/speaking/index.js' });
   return definition;
@@ -257,6 +258,62 @@ test('逐句练习纵向展示全文，播放完成后在当前句内跟读', as
 
   const source = fs.readFileSync(path.join(root, 'pages/speaking/index.js'), 'utf8');
   assert.match(source, /handleRecordingStopped[\s\S]+submitPronunciation/);
+});
+
+test('每日跟读只打开当天未完成句子', async () => {
+  const completedIds = [
+    'unlock1workbook-2-paragraph-4-sentence-1',
+    'unlock1workbook-2-paragraph-4-sentence-2'
+  ];
+  let navigateBackCount = 0;
+  const wx = {
+    showToast() {},
+    navigateBack() { navigateBackCount += 1; }
+  };
+  const store = {
+    getDeviceStudyRole: () => 'student',
+    async getSpeakingAttempts() {
+      return {
+        attempts: completedIds.concat(completedIds).map((taskId) => ({
+          category: 'speaking',
+          attemptType: 'standalone_sentence_repeat',
+          taskId
+        }))
+      };
+    }
+  };
+  const page = createPageInstance(loadSpeakingPage(store, wx));
+  page.repeatPlanRequest = {
+    audioTaskId: 'unlock1workbook-2',
+    paragraphIndex: 4,
+    sentenceStartIndex: 1,
+    sentenceEndIndex: 4
+  };
+  page.data.selectedAudio = { taskId: 'unlock1workbook-2' };
+  page.data.selectedParagraph = {
+    id: 'unlock1workbook-2-paragraph-4',
+    sentences: Array.from({ length: 4 }, (_, index) => ({
+      text: `Sentence ${index + 1}.`,
+      startMs: index * 1000,
+      endMs: (index + 1) * 1000
+    }))
+  };
+  page.selectedRepeatTask = { taskId: 'unlock1workbook-2', audioUrl: 'https://example.test/audio.mp3' };
+
+  await page.startSelectedRepeat();
+  assert.deepEqual(Array.from(page.data.exercises, (item) => item.id), [
+    'unlock1workbook-2-paragraph-4-sentence-3',
+    'unlock1workbook-2-paragraph-4-sentence-4'
+  ]);
+  assert.deepEqual(Array.from(page.data.exercises, (item) => item.sentenceNumber), [3, 4]);
+
+  completedIds.push(
+    'unlock1workbook-2-paragraph-4-sentence-3',
+    'unlock1workbook-2-paragraph-4-sentence-4'
+  );
+  await page.startSelectedRepeat();
+  await wait(550);
+  assert.equal(navigateBackCount, 1);
 });
 
 test('分级跟读把说话人标签与评分正文分离', () => {

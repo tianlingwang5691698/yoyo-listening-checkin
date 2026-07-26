@@ -186,6 +186,14 @@ Object.assign(module.exports.readingDetail.en, {
   readingPdfFailed: 'Could not generate PDF',
   readingPdfPreparing: 'Preparing the study pack. Try again shortly.'
 });
+Object.assign(module.exports.speaking['zh-CN'], {
+  dailyProgressLoadFailed: '今日跟读进度加载失败，请返回后重试。',
+  dailySegmentCompleted: '该段已完成，正在更新今日计划'
+});
+Object.assign(module.exports.speaking.en, {
+  dailyProgressLoadFailed: "Could not load today's repeat progress. Go back and try again.",
+  dailySegmentCompleted: 'This paragraph is complete. Updating the plan.'
+});
 Object.assign(module.exports.practiceHistory['zh-CN'], {
   readingPdfDownload: '下载完整阅读 PDF',
   readingPdfGenerating: '正在生成 PDF',

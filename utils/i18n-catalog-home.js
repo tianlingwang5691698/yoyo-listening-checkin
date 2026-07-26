@@ -55,6 +55,16 @@ module.exports = {
 
 module.exports.levelStage['zh-CN'].course = '课程';
 module.exports.levelStage.en.course = 'Course';
+Object.assign(module.exports.levelStage['zh-CN'], {
+  progressRefreshFailed: '今日进度刷新失败，请重试',
+  dailySpeakingCompleted: '今日跟读已全部完成',
+  openNextSpeakingSegment: '已为你打开下一个未完成段落'
+});
+Object.assign(module.exports.levelStage.en, {
+  progressRefreshFailed: "Could not refresh today's progress. Try again.",
+  dailySpeakingCompleted: "Today's repeat practice is complete",
+  openNextSpeakingSegment: 'Opening the next unfinished paragraph'
+});
 module.exports.level['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';
 module.exports.level.en.peppaSeasons = 'Peppa Pig · Seasons 1–3';
 module.exports.listeningPlan['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';

@@ -219,6 +219,7 @@ function buildParagraphExercises(paragraph, task) {
     const suffix = text('sentenceSuffix', '句');
     return Object.assign({
       id: `${paragraph.id}-sentence-${index + 1}`,
+      sentenceNumber: index + 1,
       title: `${text('sentencePrefix', '第')} ${index + 1}${suffix ? ` ${suffix}` : ''}`,
       meta: text('sentencePractice', '逐句跟读'),
       prompt,
@@ -562,7 +563,7 @@ Page({
       return;
     }
     this.selectRepeatParagraph({ currentTarget: { dataset: { paragraphId } } });
-    this.startSelectedRepeat();
+    await this.startSelectedRepeat();
   },
 
   onShow() {
@@ -999,16 +1000,39 @@ Page({
     this.setData({ selectedParagraphId: selectedParagraph.id, selectedParagraph });
   },
 
-  startSelectedRepeat() {
+  async startSelectedRepeat() {
     const paragraph = this.data.selectedParagraph;
     const allExercises = buildParagraphExercises(paragraph, this.selectedRepeatTask || this.data.selectedAudio);
     const request = this.repeatPlanRequest;
     const isDailySegment = request
       && request.audioTaskId === String((this.data.selectedAudio || {}).taskId || '')
       && request.paragraphIndex === Number((paragraph && paragraph.id || '').split('-paragraph-')[1] || 0);
-    const exercises = isDailySegment
+    let exercises = isDailySegment
       ? allExercises.slice(request.sentenceStartIndex - 1, request.sentenceEndIndex)
       : allExercises;
+    if (isDailySegment && store.getDeviceStudyRole && store.getDeviceStudyRole() === 'student') {
+      try {
+        const result = await store.getSpeakingAttempts({});
+        if (result && result.syncMode === 'cloud-error') {
+          throw new Error(result.cloudError && result.cloudError.message || 'getSpeakingAttempts-cloud-error');
+        }
+        const completedSentenceIds = new Set((result.attempts || [])
+          .filter((item) => item.category === 'speaking' && item.attemptType === 'standalone_sentence_repeat')
+          .map((item) => String(item.taskId || ''))
+          .filter(Boolean));
+        exercises = exercises.filter((exercise) => !completedSentenceIds.has(exercise.id));
+      } catch (error) {
+        const message = String(error && error.message || error || '');
+        console.warn(`[speaking-daily-plan] pages/speaking.startSelectedRepeat -> store.getSpeakingAttempts -> cloud.getSpeakingAttempts -> attempts: ${message}; taskId=${request.audioTaskId}`);
+        this.setData({ repeatLoadError: text('dailyProgressLoadFailed') });
+        return;
+      }
+      if (!exercises.length) {
+        wx.showToast({ title: text('dailySegmentCompleted'), icon: 'none' });
+        setTimeout(() => wx.navigateBack(), 500);
+        return;
+      }
+    }
     if (!exercises.length) return;
     this.repeatPracticeSessions = {};
     this.repeatScoringRequests = {};

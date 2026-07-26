@@ -67,3 +67,40 @@ test('每日完成状态要求该段每一句都有学生评分记录', async (t
   assert.equal(summary.tasks[0].completedToday, true);
   assert.equal(summary.tasks[1].completedToday, false);
 });
+
+test('重复提交已完成段落不能抵消遗漏段落', async (t) => {
+  t.mock.method(study, 'getUserScope', () => ({ familyId: 'family-1', childId: 'child-1' }));
+  const tasks = plan.buildPlanTasks(74, {
+    workbook: catalogEngine.getCatalog('unlock1workbook'),
+    textbook: catalogEngine.getCatalog('unlock1')
+  });
+  const missingTask = tasks.find((task) => task.taskId === 'unlock1workbook-2-paragraph-4-sentences-1-4');
+  const duplicatedTask = tasks.find((task) => task.taskId === 'unlock1workbook-2-paragraph-5-sentences-1-3');
+  let attempts = tasks
+    .filter((task) => task !== missingTask)
+    .flatMap((task) => task.sentenceTaskIds.map((taskId) => ({
+      category: 'speaking',
+      attemptType: 'standalone_sentence_repeat',
+      taskId
+    })))
+    .concat(duplicatedTask.sentenceTaskIds.map((taskId) => ({
+      category: 'speaking',
+      attemptType: 'standalone_sentence_repeat',
+      taskId
+    })));
+  t.mock.method(attemptRepository, 'findByDate', async () => attempts);
+
+  const incomplete = await planService.getDailyPlanSummary({ child: {} }, '2026-07-26', 87);
+  assert.equal(incomplete.completedToday, false);
+  assert.equal(incomplete.completedCount, 4);
+  assert.equal(incomplete.tasks.find((task) => !task.completedToday).taskId, missingTask.taskId);
+
+  attempts = attempts.concat(missingTask.sentenceTaskIds.map((taskId) => ({
+    category: 'speaking',
+    attemptType: 'standalone_sentence_repeat',
+    taskId
+  })));
+  const complete = await planService.getDailyPlanSummary({ child: {} }, '2026-07-26', 87);
+  assert.equal(complete.completedToday, true);
+  assert.equal(complete.tasks.reduce((sum, task) => sum + task.completedSentenceCount, 0), 20);
+});
