@@ -50,6 +50,7 @@
     <view class="voyage-profile-hero">
       <view class="voyage-profile-seal">
         <image wx:if="{{theme === 'voyage'}}" class="voyage-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/profile-luffy-sunny.jpg" mode="aspectFill"></image>
+        <image wx:elif="{{theme === 'dragon'}}" class="dragon-classic-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/profile-kid-goku.jpg" mode="aspectFill"></image>
         <image wx:elif="{{theme === 'tactical'}}" class="tactical-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/profile-operator.jpg" mode="aspectFill"></image>
         <view wx:else class="voyage-wheel"><view></view></view>
         <view class="voyage-role">{{currentMember.studyRole === 'parent' ? texts.parent : texts.student}}</view>

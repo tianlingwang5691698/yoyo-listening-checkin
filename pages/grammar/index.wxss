@@ -2628,6 +2628,32 @@
   padding: 0 38rpx;
   box-sizing: border-box;
 }
+
+.theme-dragon .grammar-hero {
+  display: block;
+  overflow: hidden;
+  padding: 0 0 34rpx;
+}
+
+.theme-dragon .grammar-hero::after,
+.theme-dragon .grammar-hero-visual {
+  display: none;
+}
+
+.theme-dragon .grammar-hero .dragon-classic-subpage-banner {
+  display: block;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 26rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-dragon .grammar-hero-main {
+  padding: 0 38rpx;
+  box-sizing: border-box;
+}
 .theme-tactical .grammar-eyebrow { color:#526900; }
 .theme-tactical .grammar-title { color:#172019; }
 .theme-tactical .grammar-copy { color:#4f5d53; }

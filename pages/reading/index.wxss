@@ -1198,4 +1198,32 @@
   margin-right: 38rpx;
   margin-left: 38rpx;
 }
+
+.theme-dragon .reading-hero {
+  display: block;
+  overflow: hidden;
+  padding: 0 0 34rpx;
+}
+
+.theme-dragon .reading-hero::before,
+.theme-dragon .reading-hero::after,
+.theme-dragon .reading-hero .hero-pages {
+  display: none;
+}
+
+.theme-dragon .reading-hero .dragon-classic-subpage-banner {
+  display: block;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 26rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-dragon .reading-hero > .reading-eyebrow,
+.theme-dragon .reading-hero > .reading-title {
+  margin-right: 38rpx;
+  margin-left: 38rpx;
+}
 .theme-tactical .reading-title { color: #172019; }

@@ -1091,6 +1091,24 @@
   opacity: 1;
   filter: none;
 }
+
+.theme-dragon .dragon-classic-parent-image {
+  display: block;
+  width: 100%;
+  height: 468rpx;
+  flex: none;
+  margin-bottom: 28rpx;
+  border: 2rpx solid #102e62;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-dragon .dragon-report-crest {
+  display: none;
+}
 .theme-tactical .insight-card,
 .theme-tactical .rhythm-day { border-color: #bcc8bb; background: #dce4da; }
 .theme-tactical .progress-line { background: #bdc8bd; }

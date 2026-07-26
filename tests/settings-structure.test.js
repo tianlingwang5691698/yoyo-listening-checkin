@@ -94,9 +94,10 @@ test('dragon theme uses dedicated home art and global theme tokens', () => {
 
   assert.match(themeJs, /key: 'dragon', label: '龙珠修炼'/);
   assert.match(themeEntry, /themes\/dragon\.wxss/);
-  assert.match(homeWxml, /assets\/dragon\/shenron-home\.jpg/);
-  assert.match(homeWxml, /assets\/dragon\/goku\.png/);
-  assert.match(homeWxml, /assets\/dragon\/tournament-hero\.jpg/);
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/home-kid-goku-nimbus\.jpg/);
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/subpages\/profile-kid-goku\.jpg/);
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/ad-goku-bulma-quest\.jpg/);
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/ad-kame-training\.jpg/);
   assert.match(dragonWxss, /\.theme-dragon/);
 });
 
@@ -260,6 +261,33 @@ test('voyage anime theme uses distinct role-matched images with stable sizes', (
     assert.match(read(wxmlFile), new RegExp(`class="${className}"[^>]*mode="aspectFill"`));
     assert.match(read(wxssFile), new RegExp(`\\.${className}\\s*\\{[^}]*height:\\s*${height}`));
     assert.ok(fs.existsSync(path.join(root, 'assets/voyage-anime-v1/subpages', asset)));
+  });
+});
+
+test('classic dragon theme uses child-era role-matched images with stable sizes', () => {
+  const release = '_assets/themes/dragon/20260727-classic-v1/';
+  const homeWxml = read('pages/home/index.wxml');
+  assert.match(homeWxml, new RegExp(`${release}ad-goku-bulma-quest\\.jpg`));
+  assert.match(homeWxml, new RegExp(`${release}ad-kame-training\\.jpg`));
+  assert.match(homeWxml, new RegExp(`${release}home-kid-goku-nimbus\\.jpg`));
+
+  const cases = [
+    ['pages/level/index.wxml', 'pages/level/index.wxss', 'listening-goku-bulma-radio.jpg', 'dragon-classic-subpage-banner', '268rpx'],
+    ['pages/reading/index.wxml', 'pages/reading/index.wxss', 'reading-goku-bulma-map.jpg', 'dragon-classic-subpage-banner', '280rpx'],
+    ['pages/grammar/index.wxml', 'pages/grammar/index.wxss', 'grammar-roshi-goku-krillin.jpg', 'dragon-classic-subpage-banner', '280rpx'],
+    ['pages/writing/detail/index.wxml', 'pages/writing/detail/index.wxss', 'writing-bulma-goku-journal.jpg', 'dragon-classic-subpage-banner', '280rpx'],
+    ['pages/speaking/index.wxml', 'pages/speaking/index.wxss', 'speaking-goku-krillin-roshi.jpg', 'dragon-classic-subpage-banner', '280rpx'],
+    ['pages/reading/flashcards/index.wxml', 'pages/reading/flashcards/index.wxss', 'vocabulary-goku-oolong-puar.jpg', 'dragon-classic-vocab-banner', '260rpx'],
+    ['pages/record/index.wxml', 'pages/record/index.wxss', 'record-kame-training-progress.jpg', 'dragon-classic-growth-image', '470rpx'],
+    ['pages/parent/index.wxml', 'pages/parent/index.wxss', 'parent-grandpa-gohan-goku.jpg', 'dragon-classic-parent-image', '468rpx'],
+    ['pages/profile/index.wxml', 'pages/profile/index.wxss', 'profile-kid-goku.jpg', 'dragon-classic-profile-photo', '210rpx'],
+  ];
+
+  cases.forEach(([wxmlFile, wxssFile, asset, className, height]) => {
+    assert.match(read(wxmlFile), new RegExp(`${release}subpages/${asset}`));
+    assert.match(read(wxmlFile), new RegExp(`class="${className}"[^>]*mode="aspectFill"`));
+    assert.match(read(wxssFile), new RegExp(`\\.${className}\\s*\\{[^}]*height:\\s*${height}`));
+    assert.ok(fs.existsSync(path.join(root, 'assets/dragon-classic-v1/subpages', asset)));
   });
 });
 

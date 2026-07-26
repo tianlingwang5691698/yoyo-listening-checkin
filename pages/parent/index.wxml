@@ -74,6 +74,7 @@
   <block wx:else>
   <view class="parent-hero">
     <image wx:if="{{theme === 'voyage'}}" class="voyage-parent-image" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/parent-jinbe-robin.jpg" mode="aspectFill"></image>
+    <image wx:elif="{{theme === 'dragon'}}" class="dragon-classic-parent-image" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/parent-grandpa-gohan-goku.jpg" mode="aspectFill"></image>
     <image wx:elif="{{theme === 'tactical'}}" class="tactical-parent-image" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/growth-after-action.jpg" mode="aspectFill"></image>
     <view class="voyage-report-crest" wx:if="{{theme === 'voyage'}}">✉</view>
     <view class="dragon-report-crest" wx:if="{{theme === 'dragon'}}">

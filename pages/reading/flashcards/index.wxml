@@ -293,6 +293,7 @@
   <block wx:if="{{sourceMode === 'practice-home'}}">
     <view class="vocab-practice-head">
       <image wx:if="{{theme === 'voyage'}}" class="voyage-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/vocabulary-chopper-franky.jpg" mode="aspectFill"></image>
+      <image wx:elif="{{theme === 'dragon'}}" class="dragon-classic-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/vocabulary-goku-oolong-puar.jpg" mode="aspectFill"></image>
       <image wx:elif="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
       <view class="vocab-practice-kicker">VOCABULARY PRACTICE</view>
       <view class="vocab-practice-title">{{texts.practiceHomeTitle}}</view>
@@ -315,6 +316,7 @@
   <block wx:elif="{{sourceMode === 'bookshelf'}}">
     <view class="bookshelf-head">
       <image wx:if="{{theme === 'voyage'}}" class="voyage-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/vocabulary-chopper-franky.jpg" mode="aspectFill"></image>
+      <image wx:elif="{{theme === 'dragon'}}" class="dragon-classic-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/vocabulary-goku-oolong-puar.jpg" mode="aspectFill"></image>
       <image wx:elif="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
       <view class="bookshelf-copy">
         <view class="progress-title">{{texts.libraryTitle}}</view>
@@ -384,6 +386,7 @@
     <block wx:if="{{mode === 'library'}}">
       <view class="library-hero">
         <image wx:if="{{theme === 'voyage'}}" class="voyage-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/vocabulary-chopper-franky.jpg" mode="aspectFill"></image>
+        <image wx:elif="{{theme === 'dragon'}}" class="dragon-classic-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/vocabulary-goku-oolong-puar.jpg" mode="aspectFill"></image>
         <image wx:elif="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
         <view class="progress-head">
           <view class="hero-copy">

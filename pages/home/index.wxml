@@ -120,7 +120,7 @@
 
 <view wx:elif="{{theme === 'voyage' || theme === 'dragon'}}" class="theme-{{theme}} page-shell voyage-home-page {{theme === 'dragon' ? 'dragon-home-page' : ''}} language-{{language}}">
   <view class="voyage-sky" aria-hidden="true">
-    <image wx:if="{{theme === 'dragon'}}" class="voyage-ocean-art dragon-shenron-art" src="../../assets/dragon/shenron-home.jpg" mode="widthFix" />
+    <image wx:if="{{theme === 'dragon'}}" class="voyage-ocean-art dragon-shenron-art dragon-classic-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/home-kid-goku-nimbus.jpg" mode="aspectFill" />
     <image wx:else class="voyage-ocean-art voyage-anime-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/home-luffy-nami-sunny.jpg" mode="aspectFill" />
     <view class="voyage-sun"></view>
     <view class="voyage-cloud cloud-left"></view>
@@ -142,7 +142,7 @@
 
   <view class="voyage-header" style="{{homeNavStyle}}">
     <view class="voyage-avatar">
-      <image wx:if="{{theme === 'dragon'}}" class="dragon-avatar-image" src="../../assets/dragon/goku.png" mode="widthFix" />
+      <image wx:if="{{theme === 'dragon'}}" class="dragon-avatar-image dragon-classic-avatar" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/profile-kid-goku.jpg" mode="widthFix" />
       <image wx:else class="voyage-profile-avatar" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/profile-luffy-sunny.jpg" mode="widthFix" />
     </view>
     <view class="voyage-welcome">
@@ -250,7 +250,8 @@
   <view class="voyage-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? texts.setupPlanFirst : texts.noTasksToday}}</view>
 
   <view class="voyage-entry-poster is-page-{{entryPosterPage}}" wx:if="{{entryPosterVisible}}">
-    <image wx:if="{{theme === 'dragon'}}" class="voyage-poster-ocean" src="../../assets/dragon/tournament-hero.jpg" mode="aspectFill" aria-hidden="true" />
+    <image wx:if="{{theme === 'dragon' && entryPosterPage === 0}}" class="voyage-poster-ocean dragon-classic-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/ad-goku-bulma-quest.jpg" mode="aspectFill" aria-hidden="true" />
+    <image wx:elif="{{theme === 'dragon'}}" class="voyage-poster-ocean dragon-classic-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/ad-kame-training.jpg" mode="aspectFill" aria-hidden="true" />
     <image wx:elif="{{entryPosterPage === 0}}" class="voyage-poster-ocean voyage-anime-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/ad-shanks-sunny.jpg" mode="aspectFill" aria-hidden="true" />
     <image wx:else class="voyage-poster-ocean voyage-anime-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/ad-luffy-zoro-sunny.jpg" mode="aspectFill" aria-hidden="true" />
     <view class="voyage-poster-sun-glow" aria-hidden="true"></view>

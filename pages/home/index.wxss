@@ -4288,6 +4288,17 @@
   filter: saturate(1.05) contrast(1.05);
 }
 
+.theme-dragon .dragon-classic-home-art {
+  inset: 0;
+  width: 100%;
+  height: 650rpx;
+  filter: saturate(1.04) brightness(1.04);
+}
+
+.theme-dragon .dragon-classic-poster-art {
+  filter: saturate(1.04) brightness(1.03);
+}
+
 .theme-dragon .voyage-poster-sun-glow { display: none; }
 
 .theme-dragon .voyage-poster-skip {

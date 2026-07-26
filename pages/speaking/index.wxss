@@ -4244,6 +4244,34 @@
   padding: 0 30rpx;
 }
 
+.theme-dragon .speaking-header {
+  display: block;
+  overflow: hidden;
+  padding: 0 0 28rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fff9df;
+  box-shadow: 0 8rpx 0 #f45a16;
+}
+
+.theme-dragon .speaking-header .dragon-classic-subpage-banner {
+  display: block;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 26rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-dragon .speaking-header-copy {
+  padding: 0 30rpx;
+}
+
+.theme-dragon .dragon-speaking-stage {
+  display: none;
+}
+
 .theme-voyage .voyage-speaking-stage {
   display: none;
 }

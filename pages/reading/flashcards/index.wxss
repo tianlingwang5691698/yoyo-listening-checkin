@@ -3733,3 +3733,36 @@ page { overflow-x: hidden; }
   width: calc(100% + 246rpx);
   margin: -38rpx -210rpx 28rpx -36rpx;
 }
+
+.theme-dragon .dragon-classic-vocab-banner {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 260rpx;
+  flex: none;
+  margin-bottom: 24rpx;
+  border-radius: 3rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-dragon .vocab-practice-head .dragon-classic-vocab-banner {
+  width: calc(100% + 224rpx);
+  margin: -36rpx -190rpx 28rpx -34rpx;
+}
+
+.theme-dragon .bookshelf-head {
+  display: block;
+}
+
+.theme-dragon .bookshelf-head .dragon-classic-vocab-banner {
+  width: calc(100% + 278rpx);
+  margin: -36rpx -244rpx 28rpx -34rpx;
+}
+
+.theme-dragon .library-hero .dragon-classic-vocab-banner {
+  width: calc(100% + 246rpx);
+  margin: -38rpx -210rpx 28rpx -36rpx;
+}

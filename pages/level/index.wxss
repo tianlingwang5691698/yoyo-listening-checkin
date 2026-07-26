@@ -740,3 +740,34 @@
   opacity: 1;
   filter: none;
 }
+
+.theme-dragon .voyage-level-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 94rpx;
+  padding: 0 0 28rpx;
+  overflow: hidden;
+  border: 4rpx solid #102e62;
+  border-radius: 8rpx;
+  background: #fff9df;
+  color: #102e62;
+  box-shadow: 0 8rpx 0 #f45a16;
+}
+
+.theme-dragon .voyage-level-head .dragon-classic-subpage-banner {
+  display: block;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 268rpx;
+  margin-bottom: 26rpx;
+  object-fit: cover;
+  opacity: 1;
+  filter: none;
+}
+
+.theme-dragon .voyage-level-heading {
+  padding-left: 30rpx;
+}
+
+.theme-dragon .voyage-level-compass {
+  margin-right: 24rpx;
+}
