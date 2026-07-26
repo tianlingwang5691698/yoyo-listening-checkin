@@ -6,6 +6,38 @@
     linear-gradient(160deg, #f8fbfd 0%, #edf6fa 48%, #f7fbfd 100%);
 }
 
+/* Tactical Ops: material configuration and episode manifest. */
+.theme-tactical.voyage-material-page { padding: 30rpx 28rpx 56rpx; background: #101510; color: #eef2e8; }
+.theme-tactical .voyage-material-head { padding: 30rpx; border: 1rpx solid rgba(215,255,69,.42); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical .voyage-material-head::before,
+.theme-tactical .voyage-material-head::after,
+.theme-tactical .voyage-material-seal { display: none; content: none; }
+.theme-tactical .voyage-material-level { color: #d7ff45; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; font-weight: 750; }
+.theme-tactical .voyage-material-title { margin-top: 8rpx; color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 40rpx; font-weight: 750; line-height: 1.22; }
+.theme-tactical .voyage-material-count { margin-top: 10rpx; color: #b6c0b4; font-size: 22rpx; }
+.theme-tactical .voyage-instrument-panel { margin-top: 14rpx; padding: 26rpx; border: 1rpx solid rgba(255,255,255,.16); border-radius: 5rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .voyage-range-heading view,
+.theme-tactical .voyage-control-head > view:first-child { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-weight: 700; }
+.theme-tactical .voyage-range-heading text { color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .voyage-control-row { padding: 22rpx 0; border-bottom-color: rgba(255,255,255,.1); }
+.theme-tactical .voyage-stepper { border: 1rpx solid rgba(255,255,255,.16); border-radius: 3rpx; background: #101510; }
+.theme-tactical .voyage-stepper text { color: #d7ff45; }
+.theme-tactical .voyage-stepper view { color: #fff; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .voyage-plan-signature { margin-top: 14rpx; padding: 22rpx; border: 1rpx solid rgba(255,255,255,.16); border-radius: 4rpx; background: #18201a; }
+.theme-tactical .voyage-cancel,
+.theme-tactical .voyage-save { min-height: 70rpx; border: 1rpx solid rgba(255,255,255,.2); border-radius: 3rpx; background: #202922; color: #eef2e8; box-shadow: none; }
+.theme-tactical .voyage-save { border-color: #d7ff45; background: #d7ff45; color: #111813; }
+.theme-tactical .voyage-episode-manifest { margin-top: 22rpx; overflow: hidden; border: 1rpx solid rgba(255,255,255,.16); border-radius: 5rpx; background: #18201a; }
+.theme-tactical .voyage-episode-manifest::before { display: none; content: none; }
+.theme-tactical .voyage-episode-row { min-height: 108rpx; border-bottom: 1rpx solid rgba(255,255,255,.1); background: #18201a; }
+.theme-tactical .voyage-episode-row:last-child { border-bottom: 0; }
+.theme-tactical .voyage-episode-coordinate { width: 42rpx; height: 42rpx; border: 1rpx solid rgba(215,255,69,.48); border-radius: 3rpx; background: #101510; color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .voyage-episode-main view { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 25rpx; }
+.theme-tactical .voyage-episode-main text,
+.theme-tactical .voyage-episode-duration { color: #aeb7ad; }
+.theme-tactical .voyage-episode-arrow { color: #d7ff45; }
+.theme-tactical .voyage-debug-note { border-color: #ffbd55; border-radius: 4rpx; background: rgba(255,189,85,.1); color: #ffe0a6; }
+
 .material-hero {
   position: relative;
   overflow: hidden;
@@ -767,3 +799,52 @@
     flex: 1;
   }
 }
+
+/* Tactical clarity: light content field. */
+.theme-tactical.voyage-material-page { background: #eef2ec; color: #111813; }
+.theme-tactical .voyage-material-head { background: #18201a; }
+.theme-tactical .voyage-material-count { color: #d9e0d7; }
+.theme-tactical .voyage-instrument-panel,
+.theme-tactical .voyage-plan-signature,
+.theme-tactical .voyage-episode-manifest,
+.theme-tactical .voyage-episode-row { border-color: rgba(17,24,19,.14); background: #fff; color: #111813; }
+.theme-tactical .voyage-range-heading view,
+.theme-tactical .voyage-control-head > view:first-child,
+.theme-tactical .voyage-episode-main view { color: #111813; }
+.theme-tactical .voyage-stepper { border-color: rgba(17,24,19,.18); background: #f3f6f2; }
+.theme-tactical .voyage-stepper view { color: #111813; }
+.theme-tactical .voyage-cancel { border-color: rgba(17,24,19,.18); background: #f3f6f2; color: #111813; }
+.theme-tactical .voyage-episode-coordinate { background: #f3f6f2; }
+.theme-tactical .voyage-episode-main text,
+.theme-tactical .voyage-episode-duration { color: #536157; }
+.theme-tactical image { opacity: 1; filter: none; }
+.theme-tactical .voyage-material-level,
+.theme-tactical .voyage-material-count,
+.theme-tactical .voyage-control-head,
+.theme-tactical .voyage-plan-signature text,
+.theme-tactical .voyage-episode-main text,
+.theme-tactical .voyage-episode-duration,
+.theme-tactical .voyage-cancel,
+.theme-tactical .voyage-save { font-size: 22rpx; }
+.theme-tactical .voyage-range-heading view,
+.theme-tactical .voyage-episode-main view { font-size: 28rpx; }
+
+/* Tactical calibrated surfaces. */
+.theme-tactical.voyage-material-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .voyage-material-head { border-color: #91a45f; background: #c3d0c1; box-shadow: 0 10rpx 24rpx rgba(31,47,35,.1); }
+.theme-tactical .voyage-material-kicker { color: #526900; }
+.theme-tactical .voyage-material-title { color: #172019; }
+.theme-tactical .voyage-material-copy { color: #4f5d53; }
+.theme-tactical .voyage-instrument-panel,
+.theme-tactical .voyage-plan-signature,
+.theme-tactical .voyage-episode-manifest,
+.theme-tactical .voyage-episode-row { background: #e8ede6; color: #172019; }
+.theme-tactical .voyage-stepper,
+.theme-tactical .voyage-cancel,
+.theme-tactical .voyage-episode-coordinate { background: #dce4da; color: #172019; }
+.theme-tactical .voyage-range-heading view,
+.theme-tactical .voyage-control-head > view:first-child,
+.theme-tactical .voyage-episode-main view { color: #172019; }
+.theme-tactical .voyage-episode-main text,
+.theme-tactical .voyage-episode-duration { color: #4f5d53; }
+.theme-tactical .voyage-save { color: #172019; }

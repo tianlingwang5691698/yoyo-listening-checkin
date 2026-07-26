@@ -2552,3 +2552,73 @@
 .band-sample-score {
   font-family: var(--font-number-family);
 }
+
+/* Tactical Ops: clean writing desk with solid panels and bright prompt images. */
+.theme-tactical.writing-page { background:#d1dbcf; color:#172019; }
+.theme-tactical.writing-page::before,
+.theme-tactical .paper-fold,
+.theme-tactical .writing-hero::after { display:none; }
+.theme-tactical .writing-hero { border:2rpx solid #91a45f; border-radius:6rpx; background:#c3d0c1; box-shadow:0 10rpx 24rpx rgba(31,47,35,.1); }
+.theme-tactical .writing-hero .eyebrow,
+.theme-tactical .writing-hero .meta { color:#526900; }
+.theme-tactical .writing-hero .title { color:#172019; font-weight:800; }
+.theme-tactical .word-pill,
+.theme-tactical .level { border:1rpx solid #d9ef52; border-radius:3rpx; background:#d9ef52; color:#172019; }
+.theme-tactical .prompt-card,
+.theme-tactical .editor-card,
+.theme-tactical .review-card { border:2rpx solid #adb7ad; border-radius:6rpx; background:#e8ede6; box-shadow:0 10rpx 24rpx rgba(31,42,33,.1); backdrop-filter:none; }
+.theme-tactical .prompt-paper-head,
+.theme-tactical .editor-head,
+.theme-tactical .review-top { border-bottom-color:#b7c0b6; }
+.theme-tactical .section-title,
+.theme-tactical .requirements-title,
+.theme-tactical .translation-reference-title,
+.theme-tactical .list-title,
+.theme-tactical .writing-prompt-section-title { color:#172019; font-weight:800; }
+.theme-tactical .prompt-rules,
+.theme-tactical .prompt-directions,
+.theme-tactical .prompt-scenario,
+.theme-tactical .editor-subtitle,
+.theme-tactical .reason,
+.theme-tactical .criterion-evidence,
+.theme-tactical .criterion-descriptor,
+.theme-tactical .criterion-limiters,
+.theme-tactical .criterion-actions { color:#4f5d53; }
+.theme-tactical .prompt-section,
+.theme-tactical .writing-prompt-section,
+.theme-tactical .prompt-table,
+.theme-tactical .translation-item,
+.theme-tactical .translation-reference,
+.theme-tactical .translation-analysis,
+.theme-tactical .translation-analysis-summary,
+.theme-tactical .review-block,
+.theme-tactical .review-list,
+.theme-tactical .band-sample-card,
+.theme-tactical .band-sample-panel { border-color:#b6c0b4; border-radius:4rpx; background:#dce4da; box-shadow:none; }
+.theme-tactical .prompt-image,
+.theme-tactical .writing-prompt-image,
+.theme-tactical .chart-image,
+.theme-tactical .prompt-section image { opacity:1; filter:none; mix-blend-mode:normal; background:#e8ede6; }
+.theme-tactical .translation-number,
+.theme-tactical .writing-prompt-marker { border:2rpx solid #66745f; border-radius:3rpx; background:#dce4da; color:#172019; }
+.theme-tactical .translation-input,
+.theme-tactical .essay-input,
+.theme-tactical .letter-editor { border:2rpx solid #879486; border-radius:4rpx; background:#e8ede6; color:#172019; }
+.theme-tactical .submit-button,
+.theme-tactical .translation-submit,
+.theme-tactical .band-sample-button.is-strong { border:2rpx solid #273229; border-radius:4rpx; background:#273229; color:#fff; box-shadow:none; }
+.theme-tactical .score,
+.theme-tactical .band-sample-score,
+.theme-tactical .writing-test-estimate-score { color:#315f43; }
+.theme-tactical .writing-hero { padding:0 0 26rpx; overflow:hidden; }
+.theme-tactical .writing-hero .tactical-subpage-banner {
+  display:block;
+  width:100%;
+  height:280rpx;
+  margin-bottom:24rpx;
+  opacity:1;
+  filter:none;
+}
+.theme-tactical .writing-hero > .eyebrow,
+.theme-tactical .writing-hero > .title,
+.theme-tactical .writing-hero > .meta { margin-right:30rpx; margin-left:30rpx; }

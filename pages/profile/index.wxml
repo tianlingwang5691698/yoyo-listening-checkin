@@ -46,14 +46,15 @@
     </view>
   </view>
 
-  <view wx:elif="{{theme === 'voyage' || theme === 'dragon'}}" class="voyage-profile">
+  <view wx:elif="{{theme === 'voyage' || theme === 'dragon' || theme === 'tactical'}}" class="voyage-profile">
     <view class="voyage-profile-hero">
       <view class="voyage-profile-seal">
-        <view class="voyage-wheel"><view></view></view>
+        <image wx:if="{{theme === 'tactical'}}" class="tactical-profile-photo" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/profile-operator.jpg" mode="aspectFill"></image>
+        <view wx:else class="voyage-wheel"><view></view></view>
         <view class="voyage-role">{{currentMember.studyRole === 'parent' ? texts.parent : texts.student}}</view>
       </view>
       <view class="voyage-profile-main" wx:if="{{profileHydrated}}">
-        <view class="voyage-kicker">{{theme === 'dragon' ? 'TRAINING RECORD' : 'VOYAGE LOG'}}</view>
+        <view class="voyage-kicker">{{theme === 'dragon' ? 'TRAINING RECORD' : (theme === 'tactical' ? 'TACTICAL DOSSIER' : 'VOYAGE LOG')}}</view>
         <view class="voyage-profile-name">{{profileNickname}}</view>
         <view class="voyage-profile-code" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">{{texts.studentId}} {{childCodeText}}</view>
         <view class="voyage-profile-code" wx:else>{{currentMember.studyRole === 'student' ? texts.student : texts.parent}}</view>

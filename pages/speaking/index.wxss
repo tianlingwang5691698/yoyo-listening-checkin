@@ -3924,3 +3924,286 @@
 .ielts-focus-count {
   font-family: var(--font-number-family);
 }
+
+/* Tactical Ops: communications training. */
+.theme-tactical.speaking-page { padding: 30rpx 28rpx calc(86rpx + env(safe-area-inset-bottom)); background: #101510; color: #eef2e8; }
+.theme-tactical .speaking-header { min-height: 190rpx; padding: 30rpx; border: 1rpx solid rgba(215,255,69,.42); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical .speaking-title { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 42rpx; font-weight: 750; line-height: 1.22; }
+.theme-tactical .speaking-copy { margin-top: 10rpx; max-width: 430rpx; color: #b8c1b6; font-size: 23rpx; line-height: 1.5; }
+.tactical-speaking-stage { position: relative; flex: none; width: 180rpx; height: 116rpx; padding: 16rpx; border: 1rpx solid rgba(215,255,69,.38); border-radius: 4rpx; background: #101510; box-sizing: border-box; }
+.tactical-stage-status { display: flex; align-items: center; gap: 8rpx; color: #d7ff45; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; font-weight: 700; }
+.tactical-stage-status text { width: 7rpx; height: 7rpx; border-radius: 50%; background: #d7ff45; }
+.tactical-stage-bars { display: flex; align-items: flex-end; gap: 6rpx; height: 36rpx; margin-top: 12rpx; }
+.tactical-stage-bars text { width: 8rpx; border-radius: 2rpx; background: #d7ff45; }
+.tactical-stage-bars text:nth-child(1) { height: 14rpx; }
+.tactical-stage-bars text:nth-child(2) { height: 28rpx; }
+.tactical-stage-bars text:nth-child(3) { height: 20rpx; }
+.tactical-stage-bars text:nth-child(4) { height: 34rpx; }
+.tactical-stage-bars text:nth-child(5) { height: 24rpx; }
+.tactical-stage-code { display: none; }
+.tactical-speaking-section-tabs { display: grid; grid-template-columns: auto 1fr 1fr; gap: 6rpx; margin: 14rpx 0; padding: 5rpx; border: 1rpx solid rgba(255,255,255,.16); border-radius: 4rpx; background: #18201a; }
+.tactical-speaking-section-state { display: flex; align-items: center; gap: 7rpx; padding: 0 12rpx; color: #536157; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; }
+.tactical-speaking-section-state text { width: 6rpx; height: 6rpx; border-radius: 50%; background: #5dd7ba; }
+.tactical-speaking-section-tab { min-height: 60rpx; display: flex; align-items: center; justify-content: center; border-radius: 3rpx; color: #b7c0b5; font-size: 23rpx; font-weight: 700; }
+.tactical-speaking-section-tab.is-active { background: #d7ff45; color: #111813; }
+.theme-tactical .speaking-mode-list { gap: 12rpx; }
+.theme-tactical .speaking-mode-row { position: relative; min-height: 172rpx; padding: 26rpx 24rpx; border: 1rpx solid rgba(255,255,255,.16); border-left: 5rpx solid #d7ff45; border-radius: 4rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .speaking-mode-row.is-ielts { border-left-color: #62b8e8; }
+.theme-tactical .speaking-mode-icon { border: 1rpx solid rgba(215,255,69,.35); border-radius: 3rpx; background: #101510; color: #d7ff45; box-shadow: none; }
+.theme-tactical .speaking-mode-row.is-ielts .speaking-mode-icon { border-color: rgba(98,184,232,.55); color: #62b8e8; }
+.theme-tactical .speaking-mode-title { color: #fff; font-size: 30rpx; font-weight: 750; }
+.theme-tactical .speaking-mode-meta { color: #c3cbc1; font-size: 22rpx; }
+.theme-tactical .speaking-mode-detail { color: #536157; font-size: 22rpx; }
+.theme-tactical .speaking-mode-arrow { color: #d7ff45; }
+.tactical-mode-code { position: absolute; right: 20rpx; top: 18rpx; color: #536157; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; }
+.theme-tactical .speaking-practice-nav { margin: 0 0 14rpx; color: #d7ff45; font-size: 23rpx; font-weight: 700; }
+.theme-tactical .speaking-level-tabs,
+.theme-tactical .repeat-step-track { border-radius: 4rpx; background: #18201a; }
+.theme-tactical .speaking-level-tab { border: 1rpx solid rgba(255,255,255,.16); border-radius: 3rpx; background: #18201a; color: #b7c0b5; }
+.theme-tactical .speaking-level-tab.is-active { border-color: #d7ff45; background: #d7ff45; color: #111813; }
+.theme-tactical .speaking-ielts-row,
+.theme-tactical .ielts-book-card,
+.theme-tactical .ielts-test-row,
+.theme-tactical .repeat-selector-section,
+.theme-tactical .repeat-audio-picker,
+.theme-tactical .repeat-series-row,
+.theme-tactical .repeat-paragraph-row,
+.theme-tactical .voice-cabin,
+.theme-tactical .repeat-sentence-item,
+.theme-tactical .ielts-exam-sheet { border: 1rpx solid rgba(255,255,255,.16); border-radius: 4rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .speaking-ielts-title,
+.theme-tactical .ielts-book-copy view,
+.theme-tactical .ielts-test-title,
+.theme-tactical .repeat-selector-heading view,
+.theme-tactical .repeat-audio-copy view,
+.theme-tactical .repeat-sentence-text,
+.theme-tactical .ielts-intro-title,
+.theme-tactical .ielts-focus-topic,
+.theme-tactical .ielts-focus-question,
+.theme-tactical .ielts-cue-task { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .speaking-ielts-meta,
+.theme-tactical .repeat-audio-copy text,
+.theme-tactical .ielts-intro-copy,
+.theme-tactical .ielts-listen-copy text,
+.theme-tactical .ielts-band-note { color: #aeb7ad; }
+.theme-tactical .speaking-ielts-mark,
+.theme-tactical .repeat-picker-step,
+.theme-tactical .repeat-sentence-number { border: 1rpx solid rgba(215,255,69,.45); border-radius: 3rpx; background: #101510; color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .repeat-step text { border-radius: 3rpx; background: #303a32; color: #c4ccc2; }
+.theme-tactical .repeat-step.is-current text,
+.theme-tactical .repeat-step.is-done text { background: #d7ff45; color: #111813; }
+.theme-tactical .repeat-step-line { background: #303a32; }
+.theme-tactical .repeat-step-line.is-done { background: #5dd7ba; }
+.theme-tactical .repeat-start-button,
+.theme-tactical .ielts-session-start,
+.theme-tactical .ielts-focus-answer,
+.theme-tactical .ielts-score-button,
+.theme-tactical .ielts-pdf-button,
+.theme-tactical .repeat-inline-record,
+.theme-tactical .repeat-inline-choice-button.is-primary { border: 1rpx solid #d7ff45; border-radius: 4rpx; background: #d7ff45; color: #111813; box-shadow: none; }
+.theme-tactical .ielts-focus-answer.is-recording,
+.theme-tactical .repeat-inline-record.is-recording { border-color: #ff6e61; background: #ff6e61; color: #111813; }
+.theme-tactical .repeat-inline-choice-button.is-secondary,
+.theme-tactical .ielts-reveal-button,
+.theme-tactical .ielts-question-nav button { border: 1rpx solid rgba(255,255,255,.18); border-radius: 3rpx; background: #202922; color: #eef2e8; box-shadow: none; }
+.theme-tactical .ielts-question-nav button.is-next { border-color: #d7ff45; color: #d7ff45; }
+.theme-tactical .ielts-play-button { border: 1rpx solid #62b8e8; border-radius: 4rpx; background: #101510; color: #62b8e8; box-shadow: none; }
+.theme-tactical .ielts-play-button.is-playing { background: #62b8e8; color: #101510; }
+.theme-tactical .ielts-focus-prompt,
+.theme-tactical .ielts-cue-card,
+.theme-tactical .ielts-answer-zone,
+.theme-tactical .repeat-inline-state { border: 1rpx solid rgba(255,255,255,.12); border-radius: 4rpx; background: #101510; }
+.theme-tactical .ielts-focus-part,
+.theme-tactical .ielts-intro-part,
+.theme-tactical .ielts-answer-zone-head text { color: #d7ff45; }
+.theme-tactical .ielts-focus-count,
+.theme-tactical .ielts-band-overall,
+.theme-tactical .ielts-band-value,
+.theme-tactical .repeat-inline-result-total,
+.theme-tactical .repeat-sentence-score { color: #d7ff45; }
+.theme-tactical .ielts-band-grid > view,
+.theme-tactical .repeat-inline-metric { border: 1rpx solid rgba(255,255,255,.12); border-radius: 3rpx; background: #202922; }
+.theme-tactical .repeat-sentence-item.is-active { border-color: rgba(215,255,69,.55); background: #202922; }
+.theme-tactical .repeat-sentence-speaker { color: #62b8e8; }
+.theme-tactical .repeat-audio-drawer { border: 1rpx solid rgba(215,255,69,.35); border-radius: 5rpx 5rpx 0 0; background: #18201a; color: #eef2e8; }
+.theme-tactical .repeat-audio-drawer-handle { background: #586258; }
+.theme-tactical .repeat-audio-drawer-title,
+.theme-tactical .repeat-audio-option-copy view { color: #fff; }
+.theme-tactical .repeat-audio-search { border: 1rpx solid rgba(255,255,255,.16); border-radius: 3rpx; background: #101510; }
+.theme-tactical .repeat-audio-search-input { color: #fff; }
+.theme-tactical .repeat-audio-option { border-bottom-color: rgba(255,255,255,.1); background: #18201a; }
+.theme-tactical .repeat-audio-option.is-active { background: rgba(215,255,69,.1); }
+.theme-tactical .repeat-audio-option-number { border-radius: 3rpx; background: #101510; color: #d7ff45; }
+
+/* Tactical clarity: light content field. */
+.theme-tactical.speaking-page { background: #eef2ec; color: #111813; }
+.theme-tactical .speaking-header { border-color: rgba(17,24,19,.14); background: #fff; }
+.theme-tactical .speaking-title { color: #111813; }
+.theme-tactical .speaking-copy { color: #536157; }
+.tactical-speaking-stage { background: #18201a; }
+.tactical-speaking-section-tabs { border-color: rgba(17,24,19,.14); background: #fff; }
+.tactical-speaking-section-state { color: #536157; }
+.tactical-speaking-section-tab { color: #536157; }
+.theme-tactical .speaking-mode-row,
+.theme-tactical .speaking-level-tabs,
+.theme-tactical .repeat-step-track,
+.theme-tactical .speaking-ielts-row,
+.theme-tactical .ielts-book-card,
+.theme-tactical .ielts-test-row,
+.theme-tactical .repeat-selector-section,
+.theme-tactical .repeat-audio-picker,
+.theme-tactical .repeat-series-row,
+.theme-tactical .repeat-paragraph-row,
+.theme-tactical .voice-cabin,
+.theme-tactical .repeat-sentence-item,
+.theme-tactical .ielts-exam-sheet { border-color: rgba(17,24,19,.14); background: #fff; color: #111813; }
+.theme-tactical .speaking-mode-icon,
+.theme-tactical .speaking-level-tab,
+.theme-tactical .speaking-ielts-mark,
+.theme-tactical .repeat-picker-step,
+.theme-tactical .repeat-sentence-number { background: #f3f6f2; }
+.theme-tactical .speaking-mode-title,
+.theme-tactical .speaking-ielts-title,
+.theme-tactical .ielts-book-copy view,
+.theme-tactical .ielts-test-title,
+.theme-tactical .repeat-selector-heading view,
+.theme-tactical .repeat-audio-copy view,
+.theme-tactical .repeat-sentence-text,
+.theme-tactical .ielts-intro-title,
+.theme-tactical .ielts-focus-topic,
+.theme-tactical .ielts-focus-question,
+.theme-tactical .ielts-cue-task { color: #111813; }
+.theme-tactical .speaking-mode-meta,
+.theme-tactical .speaking-mode-detail,
+.theme-tactical .speaking-ielts-meta,
+.theme-tactical .repeat-audio-copy text,
+.theme-tactical .ielts-intro-copy,
+.theme-tactical .ielts-listen-copy text,
+.theme-tactical .ielts-band-note { color: #536157; }
+.theme-tactical .repeat-step text { background: #dfe5df; color: #536157; }
+.theme-tactical .repeat-step-line { background: #cbd3cc; }
+.theme-tactical .repeat-inline-choice-button.is-secondary,
+.theme-tactical .ielts-reveal-button,
+.theme-tactical .ielts-question-nav button,
+.theme-tactical .ielts-play-button { border-color: rgba(17,24,19,.18); background: #f3f6f2; color: #111813; }
+.theme-tactical .ielts-play-button { border-color: #3d819f; color: #285f78; }
+.theme-tactical .ielts-focus-prompt,
+.theme-tactical .ielts-cue-card,
+.theme-tactical .ielts-answer-zone,
+.theme-tactical .repeat-inline-state,
+.theme-tactical .ielts-band-grid > view,
+.theme-tactical .repeat-inline-metric { border-color: rgba(17,24,19,.12); background: #f3f6f2; color: #111813; }
+.theme-tactical .repeat-sentence-item.is-active { border-color: #8ead18; background: #eff8d3; }
+.theme-tactical .repeat-audio-drawer { border-color: rgba(17,24,19,.18); background: #fff; color: #111813; }
+.theme-tactical .repeat-audio-drawer-title,
+.theme-tactical .repeat-audio-option-copy view { color: #111813; }
+.theme-tactical .repeat-audio-search { border-color: rgba(17,24,19,.18); background: #f3f6f2; }
+.theme-tactical .repeat-audio-search-input { color: #111813; }
+.theme-tactical .repeat-audio-option { border-bottom-color: rgba(17,24,19,.1); background: #fff; }
+.theme-tactical .repeat-audio-option.is-active { background: #eff8d3; }
+.theme-tactical .repeat-audio-option-number { background: #f3f6f2; color: #466000; }
+.theme-tactical image { opacity: 1; filter: none; }
+.tactical-stage-status,
+.tactical-stage-code,
+.tactical-speaking-section-state,
+.tactical-mode-code,
+.theme-tactical .speaking-copy,
+.theme-tactical .speaking-mode-meta,
+.theme-tactical .speaking-mode-detail,
+.theme-tactical .speaking-ielts-meta,
+.theme-tactical .repeat-audio-copy text,
+.theme-tactical .ielts-intro-copy,
+.theme-tactical .ielts-listen-copy text,
+.theme-tactical .ielts-band-note,
+.theme-tactical .repeat-inline-feedback,
+.theme-tactical .repeat-audio-option-copy text { font-size: 22rpx; }
+.theme-tactical .speaking-mode-title,
+.theme-tactical .speaking-ielts-title,
+.theme-tactical .ielts-book-copy view,
+.theme-tactical .ielts-test-title,
+.theme-tactical .repeat-selector-heading view,
+.theme-tactical .repeat-audio-copy view,
+.theme-tactical .repeat-sentence-text { font-size: 28rpx; }
+
+/* Tactical calibrated surfaces. */
+.theme-tactical.speaking-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .speaking-header,
+.tactical-speaking-section-tabs,
+.theme-tactical .speaking-mode-row,
+.theme-tactical .speaking-level-tabs,
+.theme-tactical .repeat-step-track,
+.theme-tactical .speaking-ielts-row,
+.theme-tactical .ielts-book-card,
+.theme-tactical .ielts-test-row,
+.theme-tactical .repeat-selector-section,
+.theme-tactical .repeat-audio-picker,
+.theme-tactical .repeat-series-row,
+.theme-tactical .repeat-paragraph-row,
+.theme-tactical .voice-cabin,
+.theme-tactical .repeat-sentence-item,
+.theme-tactical .ielts-exam-sheet,
+.theme-tactical .repeat-audio-drawer,
+.theme-tactical .repeat-audio-option { background: #e8ede6; color: #172019; }
+.tactical-speaking-stage { background: #273229; }
+.theme-tactical .speaking-mode-icon,
+.theme-tactical .speaking-level-tab,
+.theme-tactical .speaking-ielts-mark,
+.theme-tactical .repeat-picker-step,
+.theme-tactical .repeat-sentence-number,
+.theme-tactical .repeat-inline-choice-button.is-secondary,
+.theme-tactical .ielts-reveal-button,
+.theme-tactical .ielts-question-nav button,
+.theme-tactical .ielts-play-button,
+.theme-tactical .ielts-focus-prompt,
+.theme-tactical .ielts-cue-card,
+.theme-tactical .ielts-answer-zone,
+.theme-tactical .repeat-inline-state,
+.theme-tactical .ielts-band-grid > view,
+.theme-tactical .repeat-inline-metric,
+.theme-tactical .repeat-audio-search,
+.theme-tactical .repeat-audio-option-number { background: #dce4da; color: #172019; }
+.theme-tactical .speaking-title,
+.theme-tactical .speaking-mode-title,
+.theme-tactical .speaking-ielts-title,
+.theme-tactical .ielts-book-copy view,
+.theme-tactical .ielts-test-title,
+.theme-tactical .repeat-selector-heading view,
+.theme-tactical .repeat-audio-copy view,
+.theme-tactical .repeat-sentence-text,
+.theme-tactical .ielts-intro-title,
+.theme-tactical .ielts-focus-topic,
+.theme-tactical .ielts-focus-question,
+.theme-tactical .ielts-cue-task,
+.theme-tactical .repeat-audio-drawer-title,
+.theme-tactical .repeat-audio-option-copy view { color: #172019; }
+.theme-tactical .speaking-copy,
+.theme-tactical .speaking-mode-meta,
+.theme-tactical .speaking-mode-detail,
+.theme-tactical .speaking-ielts-meta,
+.theme-tactical .repeat-audio-copy text,
+.theme-tactical .ielts-intro-copy,
+.theme-tactical .ielts-listen-copy text,
+.theme-tactical .ielts-band-note,
+.theme-tactical .repeat-audio-option-copy text { color: #4f5d53; }
+.theme-tactical .repeat-sentence-item.is-active,
+.theme-tactical .repeat-audio-option.is-active { background: #e4edc9; }
+.theme-tactical .tactical-speaking-section-tab.is-active,
+.theme-tactical .speaking-level-tab.is-active,
+.theme-tactical .repeat-start-button,
+.theme-tactical .ielts-session-start,
+.theme-tactical .ielts-focus-answer,
+.theme-tactical .ielts-score-button,
+.theme-tactical .ielts-pdf-button,
+.theme-tactical .repeat-inline-record,
+.theme-tactical .repeat-inline-choice-button.is-primary { color: #172019; }
+.theme-tactical .speaking-header { display:block; overflow:hidden; padding:0 0 28rpx; }
+.theme-tactical .speaking-header .tactical-subpage-banner {
+  display:block;
+  width:100%;
+  height:280rpx;
+  margin-bottom:26rpx;
+  opacity:1;
+  filter:none;
+}
+.theme-tactical .speaking-header-copy { padding:0 30rpx; }
+.theme-tactical .tactical-speaking-stage { display:none; }

@@ -80,6 +80,8 @@ test('五板块四主题仅在多来源时显示轻筛选', () => {
     assert.match(template, new RegExp(`class="${theme}-history-filter"`));
     assert.match(style, new RegExp(`\\.${theme}-history-filter`));
   });
+  assert.match(style, /\.theme-tactical\.history-grammar \.history-summary\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*minmax\(0, 1fr\) auto/);
+  assert.match(style, /\.theme-tactical\.history-grammar \.history-summary-main\s*\{[^}]*grid-column:\s*1 \/ -1[^}]*min-width:\s*0/);
   assert.equal((template.match(/viewMode === 'history' && recordFilterOptions\.length/g) || []).length, 4);
   assert.doesNotMatch(template, /class="history-record-filter"/);
 

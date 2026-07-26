@@ -21,13 +21,14 @@ test('题干与解析规范按模块分门别类', () => {
   });
 });
 
-test('总规范锁定四主题结果字号与字体角色', () => {
+test('总规范锁定五主题结果字号与字体角色', () => {
   const spec = read('docs/design/typography/README.md');
   const themes = [
     read('styles/themes/warm.wxss'),
     read('styles/themes/library.wxss'),
     read('styles/themes/voyage.wxss'),
-    read('styles/themes/dragon.wxss')
+    read('styles/themes/dragon.wxss'),
+    read('styles/themes/tactical.wxss')
   ];
   const tokens = [
     ['--result-score-size', '48rpx'],

@@ -368,3 +368,17 @@ page { overflow-x: hidden; }
   .word-practice-main { margin-left: 16rpx; }
   .language-en .word-practice-card-title { font-size: 25rpx; }
 }
+
+.theme-tactical.word-practice-nav { border-bottom:3rpx solid #91a45f; background:#c3d0c1; color:#172019; box-shadow:none; }
+.theme-tactical .word-practice-back,
+.theme-tactical .word-practice-nav-title { color:#fff; }
+.theme-tactical.word-practice-page { background:#d1dbcf; color:#172019; }
+.theme-tactical .word-practice-head { border:2rpx solid #91a45f; border-radius:6rpx; background:#c3d0c1; color:#172019; box-shadow:0 10rpx 24rpx rgba(31,47,35,.1); }
+.theme-tactical .word-practice-kicker { color:#c9d4c7; font-weight:800; }
+.theme-tactical .word-practice-title { color:#fff; font-weight:800; }
+.theme-tactical .word-practice-copy { color:#d4dbd2; }
+.theme-tactical .word-practice-card { border:2rpx solid #adb7ad; border-radius:5rpx; background:#e8ede6; box-shadow:0 5rpx 0 #d5dbd2; }
+.theme-tactical .word-practice-mark { border:2rpx solid #66745f; border-radius:4rpx; background:#dce4da; color:#172019; box-shadow:none; }
+.theme-tactical .word-practice-card-title { color:#172019; font-weight:800; }
+.theme-tactical .word-practice-card-copy { color:#4f5d53; }
+.theme-tactical .word-practice-arrow { color:#4b664f; font-weight:900; }

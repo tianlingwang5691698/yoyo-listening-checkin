@@ -451,3 +451,52 @@
 .custom-tabbar.theme-dragon .tabbar-icon-3::before { left: 8rpx; top: 3rpx; width: 26rpx; height: 26rpx; border: 4rpx solid currentColor; border-radius: 50%; }
 .custom-tabbar.theme-dragon .tabbar-icon-3 view { left: 4rpx; bottom: 1rpx; width: 34rpx; height: 17rpx; border: 4rpx solid currentColor; border-bottom: 0; border-radius: 22rpx 22rpx 0 0; }
 .custom-tabbar.theme-dragon .tabbar-text { font-size: 20rpx; }
+
+.custom-tabbar.theme-tactical {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(102rpx + env(safe-area-inset-bottom));
+  padding: 7rpx 20rpx calc(6rpx + env(safe-area-inset-bottom));
+  border: 0;
+  border-top: 2rpx solid #91a45f;
+  border-radius: 0;
+  background: #a7b7a4;
+  box-shadow: 0 -10rpx 24rpx rgba(31, 47, 35, 0.14);
+  backdrop-filter: none;
+}
+
+.custom-tabbar.theme-tactical::before {
+  content: "";
+  position: absolute;
+  left: 20rpx;
+  top: 0;
+  width: 86rpx;
+  height: 3rpx;
+  background: #59751f;
+}
+
+.custom-tabbar.theme-tactical .tabbar-item {
+  height: 86rpx;
+  gap: 5rpx;
+  color: #35433a;
+  font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  font-weight: 650;
+}
+
+.custom-tabbar.theme-tactical .tabbar-item.is-active { color: #203000; }
+.custom-tabbar.theme-tactical .tabbar-item.is-active .tabbar-icon { filter: none; }
+.custom-tabbar.theme-tactical .tabbar-item.is-active .tabbar-icon::after { width: 20rpx; height: 3rpx; margin-left: -10rpx; border-radius: 0; background: #59751f; }
+.custom-tabbar.theme-tactical .tabbar-icon { width: 38rpx; height: 38rpx; transform: scale(0.86); }
+.custom-tabbar.theme-tactical .tabbar-icon-0::before,
+.custom-tabbar.theme-tactical .tabbar-icon-0 view,
+.custom-tabbar.theme-tactical .tabbar-icon-2::before,
+.custom-tabbar.theme-tactical .tabbar-icon-3::before,
+.custom-tabbar.theme-tactical .tabbar-icon-3 view { border-radius: 0; }
+.custom-tabbar.theme-tactical .tabbar-icon-1 view,
+.custom-tabbar.theme-tactical .tabbar-icon-1 view::before,
+.custom-tabbar.theme-tactical .tabbar-icon-1 view::after,
+.custom-tabbar.theme-tactical .tabbar-icon-2 view,
+.custom-tabbar.theme-tactical .tabbar-icon-2 view::before,
+.custom-tabbar.theme-tactical .tabbar-icon-2 view::after { border-radius: 0; }
+.custom-tabbar.theme-tactical .tabbar-text { font-size: 21rpx; letter-spacing: 0; }

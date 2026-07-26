@@ -17,7 +17,7 @@
     <view class="history-tab {{viewMode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">{{texts.wrongBook}}</view>
   </view>
 
-  <view class="warm-history-filter" wx:if="{{theme === 'warm' && viewMode === 'history' && recordFilterOptions.length}}">
+  <view class="warm-history-filter" wx:if="{{(theme === 'warm' || theme === 'tactical') && viewMode === 'history' && recordFilterOptions.length}}">
     <view class="warm-history-filter-row">
       <view class="warm-history-filter-current">
         <text>{{activeRecordFilterLabel}}</text>

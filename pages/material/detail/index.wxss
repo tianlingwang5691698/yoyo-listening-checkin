@@ -1615,3 +1615,164 @@
   color: #102e62;
   box-shadow: inset 0 -6rpx 0 #d28b0a;
 }
+
+/* Tactical Ops: exam audio and answer surface. */
+.theme-tactical.listening-detail-page { padding: 30rpx 28rpx 76rpx; background: #101510; color: #eef2e8; }
+.theme-tactical .listening-source-pages,
+.theme-tactical .listening-form,
+.theme-tactical .transcript-box,
+.theme-tactical .study-card,
+.theme-tactical .question-card { border: 1rpx solid rgba(255,255,255,.16); border-radius: 5rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .listening-source-page { border-radius: 3rpx; background: #eef1e9; }
+.theme-tactical .audio-player { margin-top: 0; padding: 28rpx; border: 1rpx solid rgba(215,255,69,.4); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical .audio-player::before,
+.theme-tactical .audio-player::after { display: none; content: none; }
+.theme-tactical .audio-card { margin-top: 0; padding: 28rpx; border: 1rpx solid rgba(215,255,69,.4); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical .audio-card::after,
+.theme-tactical .audio-orbit::before,
+.theme-tactical .audio-orbit::after { display: none; content: none; }
+.theme-tactical .detail-eyebrow { color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .detail-title { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 36rpx; font-weight: 750; }
+.theme-tactical .detail-copy,
+.theme-tactical .audio-subtitle { color: #aeb7ad; }
+.theme-tactical .audio-title { color: #fff; }
+.theme-tactical .audio-time { color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .audio-player { padding: 22rpx; border-color: rgba(255,255,255,.14); background: #101510; box-shadow: none; }
+.theme-tactical .audio-orbit { border: 1rpx solid rgba(215,255,69,.42); border-radius: 4rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .audio-main { border: 1rpx solid #d7ff45; border-radius: 3rpx; background: #d7ff45; color: #111813; box-shadow: none; }
+.theme-tactical .audio-bars view { border-radius: 2rpx; background: #566057; }
+.theme-tactical .audio-bars view.is-active { background: #d7ff45; }
+.theme-tactical .audio-player-title,
+.theme-tactical .listening-group-title,
+.theme-tactical .question-title,
+.theme-tactical .section-heading,
+.theme-tactical .study-title { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-weight: 700; }
+.theme-tactical .audio-player-state,
+.theme-tactical .listening-group-instruction,
+.theme-tactical .question-label,
+.theme-tactical .study-meaning,
+.theme-tactical .study-example,
+.theme-tactical .study-example-meaning { color: #aeb7ad; }
+.theme-tactical .audio-play-button { border: 1rpx solid #d7ff45; border-radius: 3rpx; background: #d7ff45; color: #111813; box-shadow: none; }
+.theme-tactical .audio-step,
+.theme-tactical .mini-button { border: 1rpx solid rgba(255,255,255,.18); border-radius: 3rpx; background: #202922; color: #eef2e8; box-shadow: none; }
+.theme-tactical .listening-form-row,
+.theme-tactical .question-row,
+.theme-tactical .study-item { border-bottom-color: rgba(255,255,255,.1); background: #18201a; }
+.theme-tactical .listening-form-label,
+.theme-tactical .question-label { color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .answer-input { border: 1rpx solid rgba(255,255,255,.2); border-radius: 3rpx; background: #101510; color: #fff; }
+.theme-tactical .option-row { border: 1rpx solid rgba(255,255,255,.16); border-radius: 3rpx; background: #202922; color: #eef2e8; }
+.theme-tactical .option-row.is-selected { border-color: #d7ff45; background: rgba(215,255,69,.12); color: #fff; }
+.theme-tactical .submit-button,
+.theme-tactical .study-complete-button,
+.theme-tactical .listening-report-download { border: 1rpx solid #d7ff45; border-radius: 4rpx; background: #d7ff45; color: #111813; box-shadow: none; }
+.theme-tactical .question-state.is-correct,
+.theme-tactical .study-done { color: #5dd7ba; }
+.theme-tactical .question-state.is-wrong,
+.theme-tactical .study-error { color: #ff8278; }
+.theme-tactical .study-tabs { gap: 6rpx; padding: 4rpx; border-radius: 4rpx; background: #101510; }
+.theme-tactical .study-tab { border-radius: 3rpx; color: #aeb7ad; }
+.theme-tactical .study-tab.is-active { background: #d7ff45; color: #111813; }
+.theme-tactical .question-mark-toolbar { border-color: rgba(255,255,255,.16); border-radius: 4rpx; background: #202922; color: #c4ccc2; }
+.theme-tactical .question-mark-clear,
+.theme-tactical .study-add { color: #d7ff45; }
+
+/* Tactical clarity: light content field. */
+.theme-tactical.listening-detail-page { background: #eef2ec; color: #111813; }
+.theme-tactical .audio-card,
+.theme-tactical .listening-source-pages,
+.theme-tactical .listening-form,
+.theme-tactical .transcript-box,
+.theme-tactical .study-card,
+.theme-tactical .question-card { border-color: rgba(17,24,19,.14); background: #fff; color: #111813; }
+.theme-tactical .detail-eyebrow { color: #466000; }
+.theme-tactical .detail-title,
+.theme-tactical .audio-title,
+.theme-tactical .listening-group-title,
+.theme-tactical .question-title,
+.theme-tactical .section-heading,
+.theme-tactical .study-title { color: #111813; }
+.theme-tactical .detail-copy,
+.theme-tactical .audio-subtitle,
+.theme-tactical .listening-group-instruction,
+.theme-tactical .question-label,
+.theme-tactical .study-meaning,
+.theme-tactical .study-example,
+.theme-tactical .study-example-meaning { color: #536157; }
+.theme-tactical .audio-player,
+.theme-tactical .audio-orbit,
+.theme-tactical .audio-step,
+.theme-tactical .mini-button,
+.theme-tactical .option-row,
+.theme-tactical .study-tabs,
+.theme-tactical .question-mark-toolbar { border-color: rgba(17,24,19,.14); background: #f3f6f2; color: #111813; }
+.theme-tactical .audio-time { color: #314600; }
+.theme-tactical .audio-bars view { background: #8d998f; }
+.theme-tactical .option-row.is-selected { border-color: #8ead18; background: #eff8d3; color: #111813; }
+.theme-tactical .listening-form-row,
+.theme-tactical .question-row,
+.theme-tactical .study-item { border-bottom-color: rgba(17,24,19,.1); background: #fff; }
+.theme-tactical .answer-input { border-color: rgba(17,24,19,.18); background: #fff; color: #111813; }
+.theme-tactical .study-tab { color: #536157; }
+.theme-tactical .question-mark-toolbar { color: #536157; }
+.theme-tactical image { opacity: 1; filter: none; }
+.theme-tactical .detail-eyebrow,
+.theme-tactical .detail-copy,
+.theme-tactical .audio-title,
+.theme-tactical .audio-subtitle,
+.theme-tactical .audio-time,
+.theme-tactical .audio-step,
+.theme-tactical .listening-group-instruction,
+.theme-tactical .question-label,
+.theme-tactical .question-state,
+.theme-tactical .option-row,
+.theme-tactical .study-meaning,
+.theme-tactical .study-example,
+.theme-tactical .study-example-meaning,
+.theme-tactical .study-tab,
+.theme-tactical .question-mark-toolbar { font-size: 22rpx; }
+.theme-tactical .listening-group-title,
+.theme-tactical .question-title,
+.theme-tactical .section-heading,
+.theme-tactical .study-title { font-size: 28rpx; }
+
+/* Tactical calibrated surfaces. */
+.theme-tactical.listening-detail-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .audio-card,
+.theme-tactical .listening-source-pages,
+.theme-tactical .listening-form,
+.theme-tactical .transcript-box,
+.theme-tactical .study-card,
+.theme-tactical .question-card,
+.theme-tactical .listening-form-row,
+.theme-tactical .question-row,
+.theme-tactical .study-item { background: #e8ede6; color: #172019; }
+.theme-tactical .audio-player,
+.theme-tactical .audio-orbit,
+.theme-tactical .audio-step,
+.theme-tactical .mini-button,
+.theme-tactical .option-row,
+.theme-tactical .study-tabs,
+.theme-tactical .question-mark-toolbar { background: #dce4da; color: #172019; }
+.theme-tactical .detail-title,
+.theme-tactical .audio-title,
+.theme-tactical .listening-group-title,
+.theme-tactical .question-title,
+.theme-tactical .section-heading,
+.theme-tactical .study-title { color: #172019; }
+.theme-tactical .detail-copy,
+.theme-tactical .audio-subtitle,
+.theme-tactical .listening-group-instruction,
+.theme-tactical .question-label,
+.theme-tactical .study-meaning,
+.theme-tactical .study-example,
+.theme-tactical .study-example-meaning,
+.theme-tactical .question-mark-toolbar { color: #4f5d53; }
+.theme-tactical .answer-input { background: #e8ede6; color: #172019; }
+.theme-tactical .option-row.is-selected { background: #e4edc9; color: #172019; }
+.theme-tactical .audio-main,
+.theme-tactical .submit-button,
+.theme-tactical .study-complete-button,
+.theme-tactical .listening-report-download,
+.theme-tactical .study-tab.is-active { color: #172019; }

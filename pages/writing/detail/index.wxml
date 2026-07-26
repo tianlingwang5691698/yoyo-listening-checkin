@@ -138,6 +138,7 @@
 
 <view class="theme-{{theme}} language-{{language}} page-shell writing-page" wx:else>
   <view class="writing-hero">
+    <image wx:if="{{theme === 'tactical'}}" class="tactical-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/writing-field-notes.jpg" mode="aspectFill"></image>
     <view class="eyebrow">{{prompt.examType}} · {{prompt.district}}</view>
     <view class="title">{{prompt.title}}</view>
     <view class="meta">

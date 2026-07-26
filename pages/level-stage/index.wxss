@@ -639,3 +639,130 @@
 .voyage-stage-loading view { height: 28rpx; margin: 14rpx 0; background: rgba(23,106,153,.09); }.voyage-stage-loading view.is-short { width: 66%; }
 .voyage-stage-empty { text-align: center; }.voyage-stage-empty view { font-size: 28rpx; font-weight: 700; }.voyage-stage-empty text { display: block; margin-top: 10rpx; color: #6c5d49; font-size: 22rpx; }
 .language-en .voyage-stage-title { font-size: 37rpx; }
+
+/* Tactical Ops: daily mission manifest. */
+.theme-tactical.level-stage-page { padding: 30rpx 28rpx calc(80rpx + env(safe-area-inset-bottom)); background: #101510; color: #eef2e8; }
+.theme-tactical .voyage-stage-manifest { padding: 32rpx 30rpx; border: 1rpx solid rgba(215,255,69,.42); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical .voyage-stage-manifest::before,
+.theme-tactical .voyage-stage-manifest::after,
+.theme-tactical .voyage-fixed-manifest::before,
+.theme-tactical .voyage-route-groups::before { display: none; content: none; }
+.theme-tactical .voyage-stage-kicker { color: #d7ff45; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; font-weight: 750; }
+.theme-tactical .voyage-stage-title { margin-top: 8rpx; color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 40rpx; font-weight: 750; line-height: 1.24; }
+.theme-tactical .voyage-stage-hint { margin-top: 10rpx; color: #b8c1b6; font-size: 23rpx; line-height: 1.5; }
+.theme-tactical .voyage-stage-seal { position: static; width: auto; height: auto; margin-top: 18rpx; padding: 14rpx 16rpx; border: 1rpx solid rgba(215,255,69,.3); border-radius: 3rpx; background: #101510; color: #d7ff45; text-align: left; box-shadow: none; }
+.theme-tactical .voyage-stage-seal text,
+.theme-tactical .voyage-stage-seal view { display: inline; color: inherit; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; }
+.theme-tactical .voyage-stage-note { margin-top: 12rpx; border-radius: 3rpx; background: rgba(255,189,85,.12); color: #ffe0a6; }
+.theme-tactical .voyage-cycle-plaque,
+.theme-tactical .voyage-fixed-item,
+.theme-tactical .voyage-route-group,
+.theme-tactical .voyage-stage-loading,
+.theme-tactical .voyage-stage-empty { border: 1rpx solid rgba(255,255,255,.16); border-radius: 5rpx; background: #18201a; color: #eef2e8; box-shadow: none; }
+.theme-tactical .voyage-cycle-plaque { padding: 24rpx 26rpx; color: #aeb7ad; }
+.theme-tactical .voyage-cycle-plaque text { color: #fff; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .voyage-fixed-item { grid-template-columns: 14rpx minmax(0,1fr) auto; }
+.theme-tactical .voyage-checkpoint { width: 10rpx; height: 44rpx; border: 0; border-radius: 2rpx; background: #d7ff45; color: transparent; }
+.theme-tactical .voyage-fixed-item-title,
+.theme-tactical .voyage-route-group-name { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 28rpx; font-weight: 700; }
+.theme-tactical .voyage-fixed-item-meta,
+.theme-tactical .voyage-route-group-meta { color: #aeb7ad; font-size: 22rpx; }
+.theme-tactical .voyage-fixed-item-action,
+.theme-tactical .voyage-route-group-side,
+.theme-tactical .voyage-checkpoint-state { color: #d7ff45; font-weight: 700; }
+.theme-tactical .voyage-route-group-head { grid-template-columns: 44rpx minmax(0,1fr) auto; }
+.theme-tactical .voyage-port-number { width: 38rpx; height: 38rpx; border: 1rpx solid rgba(215,255,69,.55); border-radius: 3rpx; background: #101510; color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .voyage-checkpoint-list { padding: 0 20rpx 12rpx 68rpx; border-top: 1rpx solid rgba(255,255,255,.1); }
+.theme-tactical .voyage-checkpoint-row { border-bottom-color: rgba(255,255,255,.1); }
+.theme-tactical .voyage-checkpoint-order { border: 1rpx solid rgba(255,255,255,.2); border-radius: 3rpx; background: #101510; color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .voyage-checkpoint-main view { color: #fff; font-size: 25rpx; }
+.theme-tactical .voyage-checkpoint-main text { color: #aeb7ad; }
+.theme-tactical .voyage-checkpoint-row.is-done .voyage-checkpoint-order { border-color: #5dd7ba; background: #5dd7ba; color: #101510; }
+.theme-tactical .voyage-checkpoint-row.is-done .voyage-checkpoint-state { color: #5dd7ba; }
+.theme-tactical .voyage-stage-loading view { background: rgba(215,255,69,.1); }
+.theme-tactical .voyage-stage-empty text { color: #aeb7ad; }
+
+/* Tactical clarity: light content field. */
+.theme-tactical.level-stage-page { background: #eef2ec; color: #111813; }
+.theme-tactical .voyage-stage-manifest { border-color: rgba(17,24,19,.14); background: #fff; }
+.theme-tactical .voyage-stage-kicker { color: #466000; }
+.theme-tactical .voyage-stage-title { color: #111813; }
+.theme-tactical .voyage-stage-hint { color: #536157; }
+.theme-tactical .voyage-stage-seal { border-color: rgba(70,96,0,.3); background: #eff8d3; color: #314600; }
+.theme-tactical .voyage-cycle-plaque,
+.theme-tactical .voyage-fixed-item,
+.theme-tactical .voyage-route-group,
+.theme-tactical .voyage-stage-loading,
+.theme-tactical .voyage-stage-empty { border-color: rgba(17,24,19,.14); background: #fff; color: #111813; }
+.theme-tactical .voyage-cycle-plaque,
+.theme-tactical .voyage-fixed-item-meta,
+.theme-tactical .voyage-route-group-meta,
+.theme-tactical .voyage-checkpoint-main text,
+.theme-tactical .voyage-stage-empty text { color: #536157; }
+.theme-tactical .voyage-cycle-plaque text,
+.theme-tactical .voyage-fixed-item-title,
+.theme-tactical .voyage-route-group-name,
+.theme-tactical .voyage-checkpoint-main view { color: #111813; }
+.theme-tactical .voyage-checkpoint-order,
+.theme-tactical .voyage-port-number { background: #f3f6f2; }
+.theme-tactical image { opacity: 1; filter: none; }
+.theme-tactical .voyage-stage-kicker,
+.theme-tactical .voyage-stage-hint,
+.theme-tactical .voyage-stage-seal text,
+.theme-tactical .voyage-stage-seal view,
+.theme-tactical .voyage-cycle-plaque,
+.theme-tactical .voyage-fixed-item-meta,
+.theme-tactical .voyage-fixed-item-action,
+.theme-tactical .voyage-route-group-meta,
+.theme-tactical .voyage-route-group-side,
+.theme-tactical .voyage-checkpoint-main text,
+.theme-tactical .voyage-checkpoint-state { font-size: 22rpx; }
+.theme-tactical .voyage-fixed-item-title,
+.theme-tactical .voyage-route-group-name,
+.theme-tactical .voyage-checkpoint-main view { font-size: 28rpx; }
+
+/* Tactical calibrated surfaces. */
+.theme-tactical.level-stage-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .voyage-stage-manifest,
+.theme-tactical .voyage-cycle-plaque,
+.theme-tactical .voyage-fixed-item,
+.theme-tactical .voyage-route-group,
+.theme-tactical .voyage-stage-loading,
+.theme-tactical .voyage-stage-empty { background: #e8ede6; color: #172019; }
+.theme-tactical .voyage-stage-seal,
+.theme-tactical .voyage-checkpoint-order,
+.theme-tactical .voyage-port-number { background: #dce4da; }
+.theme-tactical .voyage-stage-title,
+.theme-tactical .voyage-cycle-plaque text,
+.theme-tactical .voyage-fixed-item-title,
+.theme-tactical .voyage-route-group-name,
+.theme-tactical .voyage-checkpoint-main view { color: #172019; }
+.theme-tactical .voyage-stage-hint,
+.theme-tactical .voyage-cycle-plaque,
+.theme-tactical .voyage-fixed-item-meta,
+.theme-tactical .voyage-route-group-meta,
+.theme-tactical .voyage-checkpoint-main text,
+.theme-tactical .voyage-stage-empty text { color: #4f5d53; }
+.theme-tactical .voyage-stage-note {
+  border-left-color: #a84f38;
+  background: #e4dfcf;
+  color: #684900;
+  font-weight: 650;
+}
+.theme-tactical .voyage-checkpoint {
+  background: #668000;
+  box-shadow: inset 0 0 0 2rpx rgba(215,255,69,.72);
+}
+.theme-tactical .voyage-fixed-item-action,
+.theme-tactical .voyage-route-group-side,
+.theme-tactical .voyage-checkpoint-state {
+  color: #405500;
+  font-weight: 750;
+}
+.theme-tactical .voyage-route-group-side > text { color: #4f5d53; }
+.theme-tactical .voyage-checkpoint-order,
+.theme-tactical .voyage-port-number {
+  border-color: #78931f;
+  color: #526900;
+  font-weight: 750;
+}

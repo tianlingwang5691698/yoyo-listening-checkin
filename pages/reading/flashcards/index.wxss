@@ -3626,3 +3626,77 @@ page { overflow-x: hidden; }
   .study-card { padding-left: 18rpx; padding-right: 18rpx; }
 }
 .vocabulary-session-duration { margin: 24rpx 0; color: #536b78; font-size: 28rpx; font-weight: 700; text-align: center; }
+
+/* Tactical Ops vocabulary: bright cards, solid navigation and compact status. */
+.theme-tactical.flashcard-nav { border-bottom:3rpx solid #91a45f; background:#c3d0c1; color:#172019; box-shadow:none; }
+.theme-tactical .flashcard-back,
+.theme-tactical .flashcard-nav-title { color:#172019; }
+.theme-tactical.flashcard-page { background:#d1dbcf; color:#172019; }
+.theme-tactical .bookshelf-head,
+.theme-tactical .library-hero,
+.theme-tactical .vocab-practice-head { border:2rpx solid #91a45f; border-radius:6rpx; background:#c3d0c1; box-shadow:0 10rpx 24rpx rgba(31,47,35,.1); backdrop-filter:none; }
+.theme-tactical .bookshelf-head::after { display:none; }
+.theme-tactical .progress-title,
+.theme-tactical .vocab-practice-title,
+.theme-tactical .library-title { color:#172019; font-weight:800; }
+.theme-tactical .progress-copy,
+.theme-tactical .hero-copy,
+.theme-tactical .vocab-practice-copy { color:#4f5d53; }
+.theme-tactical .vocab-practice-kicker { color:#526900; font-weight:800; }
+.theme-tactical .book-card,
+.theme-tactical .vocab-practice-card,
+.theme-tactical .today-repeat-panel,
+.theme-tactical .vocab-settings-panel,
+.theme-tactical .limit-panel,
+.theme-tactical .review-log,
+.theme-tactical .vocab-library-shelf { border:2rpx solid #adb7ad; border-radius:5rpx; background:#e8ede6; box-shadow:0 5rpx 0 #d5dbd2; backdrop-filter:none; }
+.theme-tactical .book-cover,
+.theme-tactical .vocab-practice-icon { border:2rpx solid #66745f; border-radius:4rpx; background:#dce4da; color:#172019; box-shadow:none; }
+.theme-tactical .book-title,
+.theme-tactical .vocab-practice-card-title,
+.theme-tactical .vocab-text,
+.theme-tactical .study-word { color:#172019; font-weight:800; }
+.theme-tactical .book-meta,
+.theme-tactical .vocab-practice-card-copy,
+.theme-tactical .vocab-meaning,
+.theme-tactical .vocab-example { color:#4f5d53; }
+.theme-tactical .book-action,
+.theme-tactical .vocab-practice-arrow { color:#4b664f; font-weight:900; }
+.theme-tactical .hero-tags view,
+.theme-tactical .study-age,
+.theme-tactical .study-choice-tag,
+.theme-tactical .study-easy-action { border:1rpx solid #879486; border-radius:3rpx; background:#dce4da; color:#334138; }
+.theme-tactical .progress-bar { border:2rpx solid #879486; border-radius:3rpx; background:#dfe5da; }
+.theme-tactical .progress-fill { border-radius:1rpx; background:#536d58; }
+.theme-tactical .stepper,
+.theme-tactical .today-repeat-controls { border:2rpx solid #879486; border-radius:4rpx; background:#dce4da; }
+.theme-tactical .stepper-btn,
+.theme-tactical .today-repeat-step { border-radius:3rpx; background:#d9ef52; color:#172019; }
+.theme-tactical .start-review,
+.theme-tactical .complete-action,
+.theme-tactical .flashcard-actions .strong { border:2rpx solid #273229; border-radius:4rpx; background:#273229; color:#fff; box-shadow:none; }
+.theme-tactical .sublevel-actions view,
+.theme-tactical .flashcard-actions .weak,
+.theme-tactical .source-back { border:2rpx solid #879486; border-radius:4rpx; background:#e8ede6; color:#334138; }
+.theme-tactical.flashcard-page.is-review { background:#d1dbcf; }
+.theme-tactical .review-full-head { border-bottom:3rpx solid #526157; color:#172019; }
+.theme-tactical .review-exit { color:#334138; }
+.theme-tactical .study-card,
+.theme-tactical .review-complete-card { border:2rpx solid #adb7ad; border-radius:6rpx; background:#e8ede6; box-shadow:0 10rpx 24rpx rgba(31,42,33,.1); }
+.theme-tactical .study-speak,
+.theme-tactical .complete-badge { border:2rpx solid #344238; background:#d9ef52; color:#172019; box-shadow:none; }
+.theme-tactical .study-example { border-left-color:#65765f; background:#dce4da; }
+.theme-tactical .limit-picker-sheet,
+.theme-tactical .dictation-jump-dialog { border:2rpx solid #879486; border-radius:6rpx 6rpx 0 0; background:#e8ede6; }
+.theme-tactical .limit-picker-action.confirm,
+.theme-tactical .dictation-jump-go { border-radius:4rpx; background:#273229; color:#fff; }
+.theme-tactical .bookshelf-head { display:block; }
+.theme-tactical .tactical-vocab-banner {
+  display:block;
+  width:100%;
+  height:260rpx;
+  margin-bottom:24rpx;
+  border-radius:3rpx;
+  opacity:1;
+  filter:none;
+}

@@ -1,5 +1,5 @@
 <view class="theme-{{theme}} page-shell level-stage-page language-{{language}}">
-  <block wx:if="{{theme === 'voyage' || theme === 'dragon'}}">
+  <block wx:if="{{theme === 'voyage' || theme === 'dragon' || theme === 'tactical'}}">
     <view class="voyage-stage-manifest">
       <view class="voyage-stage-kicker">{{stage.levelId}} · {{stage.stageText}}</view>
       <view class="voyage-stage-title">{{stage.title}}</view>

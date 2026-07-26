@@ -132,6 +132,7 @@
 <block wx:else>
 <view class="theme-{{theme}} language-{{language}} page-shell record-page">
   <view class="record-hero product-hero">
+    <image wx:if="{{theme === 'tactical'}}" class="tactical-growth-image" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/growth-after-action.jpg" mode="aspectFill"></image>
     <view class="voyage-log-ribbon" wx:if="{{theme === 'voyage'}}"><text>☸</text></view>
     <view class="dragon-growth-emblem" wx:if="{{theme === 'dragon'}}">
       <text>★</text><text>★</text><text>★</text><text>★</text>

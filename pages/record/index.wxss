@@ -1471,3 +1471,99 @@
 .theme-dragon .section-head > view:first-child {
   min-width: 0;
 }
+
+/* Tactical record: rectangular, high-contrast data panels. */
+.theme-tactical.record-page { --text-main: #f5f7ed; --text-strong: #fff; --text-muted: #b9c3b7; --text-soft: #9ca89b; --accent: #d7ff45; min-height: 100vh; background: #101510; color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .record-hero,
+.theme-tactical .section-panel,
+.theme-tactical .record-debug { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; backdrop-filter: none; }
+.theme-tactical .record-hero { min-height: 500rpx; border-left: 6rpx solid #d7ff45; }
+.theme-tactical .record-hero::before,
+.theme-tactical .growth-hero-glow,
+.theme-tactical .growth-hero-pattern,
+.theme-tactical .orbit-ring,
+.theme-tactical .streak-milestone-ring { display: none; }
+.theme-tactical .record-title,
+.theme-tactical .metric-value,
+.theme-tactical .summary-value,
+.theme-tactical .type-section-title,
+.theme-tactical .catchup-title,
+.theme-tactical .month-title,
+.theme-tactical .day-count { color: #f7f9f2; }
+.theme-tactical .record-eyebrow,
+.theme-tactical .metric-label,
+.theme-tactical .summary-label,
+.theme-tactical .section-copy,
+.theme-tactical .catchup-copy,
+.theme-tactical .catchup-purpose,
+.theme-tactical .week-label,
+.theme-tactical .calendar-swipe-hint,
+.theme-tactical .day-meta { color: #b9c3b7; }
+.theme-tactical .status-badge,
+.theme-tactical .catchup-state,
+.theme-tactical .detail-link { border: 1rpx solid #8da52f; border-radius: 2rpx; background: #111813; color: #d7ff45; }
+.theme-tactical .metric-switch { border: 1rpx solid #39453a; border-radius: 3rpx; background: #111813; }
+.theme-tactical .metric-tab { border-radius: 2rpx; color: #b9c3b7; }
+.theme-tactical .metric-tab.is-active { background: #d7ff45; color: #172019; box-shadow: none; }
+.theme-tactical .metric-orbit { width: 138rpx; height: 108rpx; border: 1rpx solid #d7ff45; border-radius: 2rpx; background: #111813; }
+.theme-tactical .orbit-core { width: auto; height: auto; border-radius: 0; background: transparent; color: #d7ff45; font-family: "DIN Alternate", "Helvetica Neue", sans-serif; font-size: 44rpx; }
+.theme-tactical .summary-item,
+.theme-tactical .calendar-slide,
+.theme-tactical .day-card,
+.theme-tactical .catchup-row { border: 1rpx solid #39453a; border-radius: 3rpx; background: #111813; }
+.theme-tactical .calendar-dot { border: 1rpx solid #39453a; border-radius: 2rpx; background: #1f2921; color: #d7ddd2; }
+.theme-tactical .calendar-cell.heat-1 .calendar-dot { background: #334031; color: #f5f7ed; }
+.theme-tactical .calendar-cell.heat-2 .calendar-dot { background: #586b37; color: #fff; }
+.theme-tactical .calendar-cell.heat-3 .calendar-dot,
+.theme-tactical .calendar-cell.is-completed .calendar-dot { background: #d7ff45; color: #172019; }
+.theme-tactical .calendar-cell.is-selected .calendar-dot { box-shadow: inset 0 0 0 3rpx #fff; }
+.theme-tactical .month-arrow { border-radius: 2rpx; background: #273128; color: #f5f7ed; }
+.theme-tactical .track-rail::before { background: #465247; }
+.theme-tactical .track-pin,
+.theme-tactical .track-node { border-color: #d7ff45; background: #111813; }
+.theme-tactical .streak-milestone-badge { border-radius: 2rpx; background: #d7ff45; color: #172019; animation: none; }
+
+.theme-tactical.record-page { --text-main: #172019; --text-strong: #172019; --text-muted: #4f5d53; --text-soft: #4f5d53; background: #d1dbcf; color: #172019; }
+.theme-tactical .record-hero,
+.theme-tactical .section-panel,
+.theme-tactical .record-debug { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .record-title,
+.theme-tactical .metric-value,
+.theme-tactical .summary-value,
+.theme-tactical .type-section-title,
+.theme-tactical .catchup-title,
+.theme-tactical .month-title,
+.theme-tactical .day-count { color: #172019; }
+.theme-tactical .record-eyebrow,
+.theme-tactical .metric-label,
+.theme-tactical .summary-label,
+.theme-tactical .section-copy,
+.theme-tactical .catchup-copy,
+.theme-tactical .catchup-purpose,
+.theme-tactical .week-label,
+.theme-tactical .calendar-swipe-hint,
+.theme-tactical .day-meta { color: #4f5d53; }
+.theme-tactical .metric-switch { border-color: #bcc8bb; background: #dce4da; }
+.theme-tactical .metric-tab { color: #4f5d53; }
+.theme-tactical .metric-orbit,
+.theme-tactical .summary-item,
+.theme-tactical .calendar-slide,
+.theme-tactical .day-card,
+.theme-tactical .catchup-row { border-color: #bcc8bb; background: #dce4da; }
+.theme-tactical .metric-orbit { border-color: #8da52f; }
+.theme-tactical .orbit-core { color: #314000; }
+.theme-tactical .calendar-dot { border-color: #bcc8bb; background: #e8ede6; color: #334039; }
+.theme-tactical .record-hero { overflow:hidden; }
+.theme-tactical .tactical-growth-image {
+  display:block;
+  width:100%;
+  height:470rpx;
+  margin-bottom:28rpx;
+  border-radius:3rpx;
+  opacity:1;
+  filter:none;
+}
+.theme-tactical .month-arrow { background: #dce4da; color: #172019; }
+.theme-tactical .track-rail::before { background: #bdc8bd; }
+.theme-tactical .track-pin,
+.theme-tactical .track-node { background: #e8ede6; }

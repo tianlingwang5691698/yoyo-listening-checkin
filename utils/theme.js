@@ -4,7 +4,8 @@ const THEMES = [
   { key: 'warm', label: '雾蓝玻璃' },
   { key: 'library', label: '图书馆静谧' },
   { key: 'voyage', label: '伟大航路' },
-  { key: 'dragon', label: '龙珠修炼' }
+  { key: 'dragon', label: '龙珠修炼' },
+  { key: 'tactical', label: '战术行动' }
 ];
 
 const THEME_MAP = THEMES.reduce((map, item) => {
@@ -16,7 +17,8 @@ const WINDOW_COLORS = {
   warm: { backgroundColor: '#F6FBFD', frontColor: '#000000' },
   library: { backgroundColor: '#FAF5EA', frontColor: '#000000' },
   voyage: { backgroundColor: '#5DB8DC', frontColor: '#000000' },
-  dragon: { backgroundColor: '#F5B632', frontColor: '#000000' }
+  dragon: { backgroundColor: '#F5B632', frontColor: '#000000' },
+  tactical: { backgroundColor: '#a7b7a4', frontColor: '#000000' }
 };
 
 const SLIDER_COLORS = {
@@ -39,6 +41,11 @@ const SLIDER_COLORS = {
     activeColor: '#F25B18',
     backgroundColor: 'rgba(16, 46, 98, 0.18)',
     blockColor: '#FFD83D'
+  },
+  tactical: {
+    activeColor: '#D7FF45',
+    backgroundColor: 'rgba(123, 142, 126, 0.28)',
+    blockColor: '#E7EBD8'
   }
 };
 

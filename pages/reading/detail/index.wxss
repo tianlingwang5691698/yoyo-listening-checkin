@@ -3058,3 +3058,55 @@
 .library-reading-detail .cloze-review-state {
   font-family: var(--font-number-family);
 }
+
+/* Tactical Ops: bright exam paper and fully unfiltered source imagery. */
+.theme-tactical.reading-detail { background: #d1dbcf; color: #172019; }
+.theme-tactical .detail-atmosphere,
+.theme-tactical .paper-corner,
+.theme-tactical .paper-margin-line { display: none; }
+.theme-tactical .reading-paper,
+.theme-tactical .question-card,
+.theme-tactical .review-card,
+.theme-tactical .cloze-review-card,
+.theme-tactical .retry-card,
+.theme-tactical .empty-state { border: 2rpx solid #adb7ad; border-radius: 6rpx; background:#e8ede6; box-shadow: 0 10rpx 24rpx rgba(31,42,33,.1); backdrop-filter: none; }
+.theme-tactical .reading-paper { padding: 30rpx 24rpx; }
+.theme-tactical .passage-head { margin: -30rpx -24rpx 0; padding: 26rpx 24rpx 24rpx; background: #273229; }
+.theme-tactical .passage-meta { color: #c9d4c7; font-weight: 700; }
+.theme-tactical .passage-title { color: #fff; font-weight: 800; }
+.theme-tactical .paper-body,
+.theme-tactical .passage-paragraph { border: 1rpx solid #c5ccc2; border-radius: 4rpx; background: #dce4da; box-shadow: none; }
+.theme-tactical .passage-text,
+.theme-tactical .cloze-passage-text,
+.theme-tactical .reading-article-title,
+.theme-tactical .question-title,
+.theme-tactical .question-text,
+.theme-tactical .review-title { color: #172019; }
+.theme-tactical .reading-source-structure { border-bottom-color: #aeb8ae; }
+.theme-tactical .reading-section-heading,
+.theme-tactical .reading-article-subtitle,
+.theme-tactical .question-meta,
+.theme-tactical .review-meta { color: #4f5d53; }
+.theme-tactical .reading-directions,
+.theme-tactical .reading-mark-toolbar { border: 1rpx solid #b6c0b4; border-left: 6rpx solid #65765f; border-radius: 3rpx; background: #dce4da; color: #334138; }
+.theme-tactical .passage-source-label,
+.theme-tactical .passage-paragraph-label { border: 1rpx solid #aeb8ae; border-radius: 3rpx; background: #dce4da; color: #172019; }
+.theme-tactical .passage-source-image,
+.theme-tactical .question-image,
+.theme-tactical .option-image { opacity: 1; filter: none; mix-blend-mode: normal; background:#e8ede6; }
+.theme-tactical .cloze-inline-input,
+.theme-tactical .answer-input,
+.theme-tactical .open-answer-input { border: 2rpx solid #839080; border-radius: 3rpx; background:#e8ede6; color: #172019; }
+.theme-tactical .highlight-actions,
+.theme-tactical .review-tabs { border: 2rpx solid #aeb8ae; border-radius: 4rpx; background: #dce4da; }
+.theme-tactical .highlight-button,
+.theme-tactical .review-tab { color: #4f5d53; }
+.theme-tactical .highlight-button.is-active,
+.theme-tactical .review-tab.is-active,
+.theme-tactical .submit-button,
+.theme-tactical .primary-action { border-radius: 4rpx; background: #273229; color: #fff; box-shadow: none; }
+.theme-tactical .option-row,
+.theme-tactical .answer-card,
+.theme-tactical .analysis-block,
+.theme-tactical .review-block,
+.theme-tactical .review-list { border-color: #b8c1b7; border-radius: 4rpx; background: #dce4da; }

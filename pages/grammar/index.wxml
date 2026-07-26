@@ -346,6 +346,7 @@
 
   <block wx:else>
   <view class="grammar-hero">
+    <image wx:if="{{theme === 'tactical'}}" class="tactical-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/grammar-briefing.jpg" mode="aspectFill"></image>
     <view class="grammar-hero-main">
       <view class="grammar-eyebrow">{{texts.eyebrow}}</view>
       <view class="grammar-title">{{texts.title}}</view>

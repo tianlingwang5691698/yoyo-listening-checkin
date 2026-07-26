@@ -1,6 +1,7 @@
 <view class="theme-{{theme}} page-shell level-page language-{{language}}">
-  <block wx:if="{{theme === 'voyage' || theme === 'dragon'}}">
+  <block wx:if="{{theme === 'voyage' || theme === 'dragon' || theme === 'tactical'}}">
     <view class="voyage-level-head">
+      <image wx:if="{{theme === 'tactical'}}" class="tactical-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/listening-comms.jpg" mode="aspectFill"></image>
       <view class="voyage-level-heading">
         <view class="voyage-level-kicker">{{texts.archiveKicker}}</view>
         <view class="voyage-level-title">{{texts.title}}</view>

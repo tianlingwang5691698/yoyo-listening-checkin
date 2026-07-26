@@ -1001,3 +1001,85 @@
   border: 2rpx solid #102e62;
   background: #f45a16;
 }
+
+.theme-tactical.parent-page { min-height: 100vh; background: #101510; color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .parent-hero,
+.theme-tactical .daily-brief,
+.theme-tactical .insight-panel,
+.theme-tactical .trend-card,
+.theme-tactical .today-archive,
+.theme-tactical .sync-debug { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; backdrop-filter: none; }
+.theme-tactical .parent-hero { border-left: 6rpx solid #d7ff45; }
+.theme-tactical .family-orbit,
+.theme-tactical .insight-map { display: none; }
+.theme-tactical .parent-title,
+.theme-tactical .child-name,
+.theme-tactical .brief-title,
+.theme-tactical .section-title,
+.theme-tactical .type-section-title,
+.theme-tactical .module-count,
+.theme-tactical .archive-title { color: #f7f9f2; }
+.theme-tactical .parent-kicker,
+.theme-tactical .brief-kicker,
+.theme-tactical .module-label { color: #d7ff45; }
+.theme-tactical .child-code,
+.theme-tactical .brief-copy,
+.theme-tactical .brief-note,
+.theme-tactical .section-copy,
+.theme-tactical .module-copy,
+.theme-tactical .rhythm-copy,
+.theme-tactical .archive-copy { color: #b9c3b7; }
+.theme-tactical .student-switch,
+.theme-tactical .brief-action,
+.theme-tactical .detail-link,
+.theme-tactical .archive-link { border: 1rpx solid #8da52f; border-radius: 2rpx; background: #111813; color: #d7ff45; }
+.theme-tactical .insight-card,
+.theme-tactical .rhythm-day { border: 1rpx solid #39453a; border-radius: 3rpx; background: #111813; }
+.theme-tactical .progress-line { background: #465247; }
+.theme-tactical .progress-node,
+.theme-tactical .rhythm-dot { border-color: #101510; background: #d7ff45; }
+.theme-tactical .rhythm-day.is-active { border-color: #d7ff45; background: #273128; }
+
+.theme-tactical.parent-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .parent-hero,
+.theme-tactical .daily-brief,
+.theme-tactical .insight-panel,
+.theme-tactical .trend-card,
+.theme-tactical .today-archive,
+.theme-tactical .sync-debug { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .parent-title,
+.theme-tactical .child-name,
+.theme-tactical .brief-title,
+.theme-tactical .section-title,
+.theme-tactical .type-section-title,
+.theme-tactical .module-count,
+.theme-tactical .archive-title { color: #172019; }
+.theme-tactical .parent-kicker,
+.theme-tactical .brief-kicker,
+.theme-tactical .module-label { color: #526900; }
+.theme-tactical .child-code,
+.theme-tactical .brief-copy,
+.theme-tactical .brief-note,
+.theme-tactical .section-copy,
+.theme-tactical .module-copy,
+.theme-tactical .rhythm-copy,
+.theme-tactical .archive-copy { color: #4f5d53; }
+.theme-tactical .student-switch,
+.theme-tactical .brief-action,
+.theme-tactical .detail-link,
+.theme-tactical .archive-link { background: #dce4da; color: #314000; }
+.theme-tactical .tactical-parent-image {
+  display:block;
+  width:100%;
+  height:468rpx;
+  margin-bottom:28rpx;
+  border-radius:3rpx;
+  opacity:1;
+  filter:none;
+}
+.theme-tactical .insight-card,
+.theme-tactical .rhythm-day { border-color: #bcc8bb; background: #dce4da; }
+.theme-tactical .progress-line { background: #bdc8bd; }
+.theme-tactical .progress-node,
+.theme-tactical .rhythm-dot { border-color: #e8ede6; }
+.theme-tactical .rhythm-day.is-active { border-color: #8da52f; background: #f0f6dd; }

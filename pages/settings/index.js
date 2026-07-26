@@ -23,6 +23,7 @@ const FALLBACK_TEXT = {
     libraryTheme: '图书馆静谧',
     voyageTheme: '伟大航路',
     dragonTheme: '龙珠修炼',
+    tacticalTheme: '战术行动',
     zhHans: '中文简体',
     english: 'English'
   },
@@ -44,6 +45,7 @@ const FALLBACK_TEXT = {
     libraryTheme: 'Quiet Library',
     voyageTheme: 'Grand Voyage',
     dragonTheme: 'Dragon Training',
+    tacticalTheme: 'Tactical Ops',
     zhHans: '中文简体',
     english: 'English'
   }

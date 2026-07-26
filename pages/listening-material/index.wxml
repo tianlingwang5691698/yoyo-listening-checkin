@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell voyage-material-page language-{{language}}" wx:if="{{theme === 'voyage' || theme === 'dragon'}}">
+<view class="theme-{{theme}} page-shell voyage-material-page language-{{language}}" wx:if="{{theme === 'voyage' || theme === 'dragon' || theme === 'tactical'}}">
   <view class="voyage-material-head">
     <view class="voyage-material-level">{{levelId}}</view>
     <view class="voyage-material-title">{{categoryLabel}}</view>

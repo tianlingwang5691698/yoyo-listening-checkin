@@ -259,6 +259,59 @@
   font-family: "Songti SC", serif;
 }
 
+.theme-tactical.identity-page { min-height: 100vh; padding: 48rpx 28rpx 150rpx; background: #101510; color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .identity-hero,
+.theme-tactical .role-switch,
+.theme-tactical .bind-card,
+.theme-tactical .reader-application,
+.theme-tactical .reader-pass { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .identity-hero { border-left: 6rpx solid #d7ff45; }
+.theme-tactical .identity-hero .product-title,
+.theme-tactical .section-title,
+.theme-tactical .role-title,
+.theme-tactical .reader-card-title { color: #f7f9f2; }
+.theme-tactical .identity-hero .product-copy,
+.theme-tactical .section-copy,
+.theme-tactical .role-copy,
+.theme-tactical .reader-card-label { color: #b9c3b7; }
+.theme-tactical .role-switch { padding: 8rpx; }
+.theme-tactical .role-option { border-radius: 2rpx; background: #111813; }
+.theme-tactical .role-option.is-active { border-color: #d7ff45; background: #273128; }
+.theme-tactical .role-option.is-active .role-title { color: #d7ff45; }
+.theme-tactical .role-option.is-active .role-copy { color: #d7ddd2; }
+.theme-tactical .form-input,
+.theme-tactical .reader-code-input,
+.theme-tactical .reader-relation-input { border: 1rpx solid #536054; border-radius: 2rpx; background: #111813; color: #fff; }
+.theme-tactical .button-primary,
+.theme-tactical .library-primary { border: 1rpx solid #d7ff45; border-radius: 2rpx; background: #d7ff45; color: #172019; box-shadow: none; }
+.theme-tactical .student-code,
+.theme-tactical .reader-number { border: 1rpx solid #d7ff45; border-radius: 2rpx; background: #111813; color: #f5f7ed; }
+
+.theme-tactical.identity-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .identity-hero,
+.theme-tactical .role-switch,
+.theme-tactical .bind-card,
+.theme-tactical .reader-application,
+.theme-tactical .reader-pass { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .identity-hero .product-title,
+.theme-tactical .section-title,
+.theme-tactical .role-title,
+.theme-tactical .reader-card-title { color: #172019; }
+.theme-tactical .identity-hero .product-copy,
+.theme-tactical .section-copy,
+.theme-tactical .role-copy,
+.theme-tactical .reader-card-label { color: #4f5d53; }
+.theme-tactical .role-switch { background: #dce4da; }
+.theme-tactical .role-option { background: #e8ede6; }
+.theme-tactical .role-option.is-active { background: #f0f6dd; }
+.theme-tactical .role-option.is-active .role-title { color: #314000; }
+.theme-tactical .role-option.is-active .role-copy { color: #4f5d53; }
+.theme-tactical .form-input,
+.theme-tactical .reader-code-input,
+.theme-tactical .reader-relation-input { border-color: #aebbad; background: #dce4da; color: #172019; }
+.theme-tactical .student-code,
+.theme-tactical .reader-number { border-color: #8da52f; background: #dce4da; color: #172019; }
+
 .theme-voyage .identity-hero .product-copy,
 .theme-voyage .section-copy,
 .theme-voyage .role-copy {

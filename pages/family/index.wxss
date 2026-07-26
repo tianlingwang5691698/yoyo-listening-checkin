@@ -951,3 +951,89 @@
   background: #f1dfb8;
   color: #755f45;
 }
+
+.theme-tactical.family-page { min-height: 100vh; background: #101510; color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .family-hero,
+.theme-tactical .join-panel,
+.theme-tactical .relation-panel,
+.theme-tactical .student-card,
+.theme-tactical .member-card,
+.theme-tactical .input-card,
+.theme-tactical .mini-panel,
+.theme-tactical .borrower-card,
+.theme-tactical .sync-debug,
+.theme-tactical .nickname-save-debug { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; backdrop-filter: none; }
+.theme-tactical .family-hero { border-left: 6rpx solid #d7ff45; }
+.theme-tactical .family-atmosphere,
+.theme-tactical .family-map,
+.theme-tactical .member-constellation,
+.theme-tactical .role-orb { display: none; }
+.theme-tactical .product-title,
+.theme-tactical .type-page-title,
+.theme-tactical .section-title,
+.theme-tactical .row-title,
+.theme-tactical .entry-title,
+.theme-tactical .student-current,
+.theme-tactical .member-name { color: #f7f9f2; }
+.theme-tactical .product-copy,
+.theme-tactical .row-copy,
+.theme-tactical .entry-copy,
+.theme-tactical .student-hint,
+.theme-tactical .member-role,
+.theme-tactical .type-caption,
+.theme-tactical .danger-copy { color: #b9c3b7; }
+.theme-tactical .student-avatar,
+.theme-tactical .member-index,
+.theme-tactical .borrower-mark,
+.theme-tactical .code-strip { border-color: #d7ff45; border-radius: 2rpx; background: #111813; color: #d7ff45; }
+.theme-tactical .family-input,
+.theme-tactical .reader-code-input,
+.theme-tactical .library-input { border: 1rpx solid #536054; border-radius: 2rpx; background: #111813; color: #fff; }
+.theme-tactical .primary-action,
+.theme-tactical .library-primary,
+.theme-tactical .binding-save-row { border-color: #d7ff45; border-radius: 2rpx; background: #d7ff45; color: #172019; box-shadow: none; }
+.theme-tactical .row-action,
+.theme-tactical .family-link,
+.theme-tactical .student-record-entry,
+.theme-tactical .library-secondary { border-color: #8da52f; border-radius: 2rpx; background: #111813; color: #d7ff45; }
+.theme-tactical .row-action-warn,
+.theme-tactical .library-danger-button { border-color: #d9846c; background: #38231e; color: #ffc4b3; }
+
+.theme-tactical.family-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .family-hero,
+.theme-tactical .join-panel,
+.theme-tactical .relation-panel,
+.theme-tactical .student-card,
+.theme-tactical .member-card,
+.theme-tactical .input-card,
+.theme-tactical .mini-panel,
+.theme-tactical .borrower-card,
+.theme-tactical .sync-debug,
+.theme-tactical .nickname-save-debug { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .product-title,
+.theme-tactical .type-page-title,
+.theme-tactical .section-title,
+.theme-tactical .row-title,
+.theme-tactical .entry-title,
+.theme-tactical .student-current,
+.theme-tactical .member-name { color: #172019; }
+.theme-tactical .product-copy,
+.theme-tactical .row-copy,
+.theme-tactical .entry-copy,
+.theme-tactical .student-hint,
+.theme-tactical .member-role,
+.theme-tactical .type-caption,
+.theme-tactical .danger-copy { color: #4f5d53; }
+.theme-tactical .student-avatar,
+.theme-tactical .member-index,
+.theme-tactical .borrower-mark,
+.theme-tactical .code-strip { border-color: #8da52f; background: #dce4da; color: #314000; }
+.theme-tactical .family-input,
+.theme-tactical .reader-code-input,
+.theme-tactical .library-input { border-color: #aebbad; background: #dce4da; color: #172019; }
+.theme-tactical .row-action,
+.theme-tactical .family-link,
+.theme-tactical .student-record-entry,
+.theme-tactical .library-secondary { background: #dce4da; color: #314000; }
+.theme-tactical .row-action-warn,
+.theme-tactical .library-danger-button { border-color: #bb6b55; background: #fff1ed; color: #8d3f2c; }

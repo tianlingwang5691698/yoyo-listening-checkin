@@ -34,6 +34,7 @@
           <view class="settings-option {{theme === 'library' ? 'is-active' : ''}}" data-theme="library" bindtap="changeTheme">{{texts.libraryTheme}}</view>
           <view class="settings-option {{theme === 'voyage' ? 'is-active' : ''}}" data-theme="voyage" bindtap="changeTheme">{{texts.voyageTheme}}</view>
           <view class="settings-option {{theme === 'dragon' ? 'is-active' : ''}}" data-theme="dragon" bindtap="changeTheme">{{texts.dragonTheme}}</view>
+          <view class="settings-option {{theme === 'tactical' ? 'is-active' : ''}}" data-theme="tactical" bindtap="changeTheme">{{texts.tacticalTheme}}</view>
         </view>
       </view>
       <view class="settings-choice-block with-divider">
@@ -61,9 +62,16 @@
     </view>
   </block>
 
-  <block wx:elif="{{theme === 'voyage' || theme === 'dragon'}}">
+  <block wx:elif="{{theme === 'voyage' || theme === 'dragon' || theme === 'tactical'}}">
     <view class="voyage-settings-hero">
-      <view class="voyage-settings-emblem"><view></view></view>
+      <view class="voyage-settings-emblem {{theme === 'tactical' ? 'tactical-control-icon' : ''}}" aria-hidden="true">
+        <block wx:if="{{theme === 'tactical'}}">
+          <text class="tactical-control-line is-one"></text>
+          <text class="tactical-control-line is-two"></text>
+          <text class="tactical-control-line is-three"></text>
+        </block>
+        <view wx:else></view>
+      </view>
       <view class="settings-title">{{texts.title}}</view>
       <view class="settings-subtitle">{{texts.subtitle}}</view>
     </view>
@@ -71,7 +79,14 @@
     <view class="settings-section-label">{{texts.accountSection}}</view>
     <view class="voyage-settings-card">
       <view class="settings-row" bindtap="openFamilyPage">
-        <view class="voyage-row-icon family-mark"><view></view></view>
+        <view class="voyage-row-icon family-mark {{theme === 'tactical' ? 'tactical-family-icon' : ''}}" aria-hidden="true">
+          <block wx:if="{{theme === 'tactical'}}">
+            <text class="tactical-person is-left"><text class="tactical-person-head"></text><text class="tactical-person-body"></text></text>
+            <text class="tactical-person is-right"><text class="tactical-person-head"></text><text class="tactical-person-body"></text></text>
+            <text class="tactical-account-shield"></text>
+          </block>
+          <view wx:else></view>
+        </view>
         <view class="settings-row-main">
           <view class="settings-row-title">{{texts.familyTitle}}</view>
           <view class="settings-row-description">{{texts.familyDescription}}</view>
@@ -95,6 +110,7 @@
           <view class="settings-option {{theme === 'library' ? 'is-active' : ''}}" data-theme="library" bindtap="changeTheme">{{texts.libraryTheme}}</view>
           <view class="settings-option {{theme === 'voyage' ? 'is-active' : ''}}" data-theme="voyage" bindtap="changeTheme">{{texts.voyageTheme}}</view>
           <view class="settings-option {{theme === 'dragon' ? 'is-active' : ''}}" data-theme="dragon" bindtap="changeTheme">{{texts.dragonTheme}}</view>
+          <view class="settings-option {{theme === 'tactical' ? 'is-active' : ''}}" data-theme="tactical" bindtap="changeTheme">{{texts.tacticalTheme}}</view>
         </view>
       </view>
       <view class="settings-choice-block with-divider">
@@ -155,6 +171,7 @@
           <view class="settings-option {{theme === 'library' ? 'is-active' : ''}}" data-theme="library" bindtap="changeTheme">{{texts.libraryTheme}}</view>
           <view class="settings-option {{theme === 'voyage' ? 'is-active' : ''}}" data-theme="voyage" bindtap="changeTheme">{{texts.voyageTheme}}</view>
           <view class="settings-option {{theme === 'dragon' ? 'is-active' : ''}}" data-theme="dragon" bindtap="changeTheme">{{texts.dragonTheme}}</view>
+          <view class="settings-option {{theme === 'tactical' ? 'is-active' : ''}}" data-theme="tactical" bindtap="changeTheme">{{texts.tacticalTheme}}</view>
         </view>
       </view>
       <view class="settings-choice-block with-divider">

@@ -245,3 +245,17 @@ page { overflow-x: hidden; }
   .dictation-library-book { padding-left: 16rpx; padding-right: 14rpx; }
   .dictation-library-main { margin-left: 14rpx; }
 }
+
+.theme-tactical.dictation-library-nav{border-bottom:3rpx solid #91a45f;background:#c3d0c1;color:#172019;box-shadow:none}
+.theme-tactical .dictation-library-back,.theme-tactical .dictation-library-nav-title{color:#fff}
+.theme-tactical.dictation-library-page{background:#d1dbcf;color:#172019}
+.theme-tactical .dictation-library-head{border:2rpx solid #91a45f;border-radius:6rpx;background:#c3d0c1;color:#172019;box-shadow:0 10rpx 24rpx rgba(31,47,35,.1)}
+.theme-tactical .dictation-library-kicker{color:#c9d4c7;font-weight:800}
+.theme-tactical .dictation-library-title{color:#fff;font-weight:800}
+.theme-tactical .dictation-library-copy{color:#d4dbd2}
+.theme-tactical .dictation-library-record{border:1rpx solid #d9ef52;border-radius:3rpx;background:#d9ef52;color:#172019;box-shadow:none}
+.theme-tactical .dictation-library-book{border:2rpx solid #adb7ad;border-radius:5rpx;background:#e8ede6;box-shadow:0 5rpx 0 #d5dbd2;backdrop-filter:none}
+.theme-tactical .dictation-library-mark{border:2rpx solid #66745f;border-radius:4rpx;background:#dce4da;color:#172019}
+.theme-tactical .dictation-library-book-title{color:#172019;font-weight:800}
+.theme-tactical .dictation-library-meta{color:#4f5d53}
+.theme-tactical .dictation-library-arrow{color:#4b664f;font-weight:900}

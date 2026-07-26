@@ -122,3 +122,24 @@ page{overflow-x:hidden}
 .theme-dragon .recognition-score view{border:2rpx solid #12356f;border-radius:5rpx;background:#fff0ac}
 @media(max-width:340px){.recognition-page{padding-left:20rpx;padding-right:20rpx}.recognition-menu,.recognition-question,.recognition-complete{padding-left:20rpx;padding-right:20rpx}.recognition-option{grid-template-columns:46rpx minmax(0,1fr) 30rpx;padding-left:12rpx;padding-right:12rpx;font-size:23rpx}.recognition-score{gap:6rpx}.recognition-score text:last-child{font-size:18rpx}}
 .recognition-duration { margin: 24rpx 0; color: #536b78; font-size: 28rpx; font-weight: 700; text-align: center; }
+
+.theme-tactical.recognition-nav{border-bottom:3rpx solid #91a45f;background:#c3d0c1;color:#172019;box-shadow:none}
+.theme-tactical .recognition-back,.theme-tactical .recognition-nav-title{color:#fff}
+.theme-tactical.recognition-page{background:#d1dbcf;color:#172019}
+.theme-tactical .recognition-hero{border:2rpx solid #91a45f;border-radius:6rpx;background:#c3d0c1;color:#172019;box-shadow:0 10rpx 24rpx rgba(31,47,35,.1)}
+.theme-tactical .recognition-hero::after{display:none}
+.theme-tactical .recognition-kicker{color:#c9d4c7;font-weight:800}
+.theme-tactical .recognition-title{color:#fff;font-weight:800}
+.theme-tactical .recognition-copy{color:#d4dbd2}
+.theme-tactical .recognition-menu,.theme-tactical .recognition-question,.theme-tactical .recognition-complete{border:2rpx solid #adb7ad;border-radius:6rpx;background:#e8ede6;box-shadow:0 10rpx 24rpx rgba(31,42,33,.1)}
+.theme-tactical .recognition-count-head,.theme-tactical .recognition-progress{color:#4f5d53}
+.theme-tactical .recognition-count-controls button{border:2rpx solid #344238;border-radius:4rpx;background:#d9ef52;color:#172019}
+.theme-tactical .recognition-start,.theme-tactical .recognition-feedback button,.theme-tactical .recognition-again{border:2rpx solid #273229;border-radius:4rpx;background:#273229;color:#fff;box-shadow:none}
+.theme-tactical .recognition-change{border:2rpx solid #879486;border-radius:4rpx;background:#e8ede6;color:#334138}
+.theme-tactical .recognition-audio,.theme-tactical .recognition-word-audio{border:2rpx solid #344238;background:#d9ef52;color:#172019;box-shadow:none}
+.theme-tactical .recognition-option{border:2rpx solid #adb7ad;border-radius:4rpx;background:#dce4da;color:#172019}
+.theme-tactical .recognition-option-key{border:1rpx solid #344238;border-radius:3rpx;background:#d9ef52;color:#172019}
+.theme-tactical .recognition-option.is-correct{border-color:#2f6c4a;background:#d9efe0;color:#225238}
+.theme-tactical .recognition-option.is-wrong{border-color:#a84f45;background:#f4e2df;color:#7c372f}
+.theme-tactical .recognition-complete-mark{border:2rpx solid #344238;background:#d9ef52;color:#172019;box-shadow:none}
+.theme-tactical .recognition-score view{border:1rpx solid #b4bdb3;border-radius:3rpx;background:#dce4da}

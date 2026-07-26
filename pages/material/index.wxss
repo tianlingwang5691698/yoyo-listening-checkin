@@ -4,6 +4,111 @@
   background: linear-gradient(180deg, #f6fbfd 0%, #edf6fa 100%);
 }
 
+/* Tactical Ops: listening exercise directory. */
+.theme-tactical.material-module-listening { padding: 30rpx 28rpx 70rpx; background: #101510; color: #eef2e8; }
+.theme-tactical.material-module-listening .material-hero { margin-top: 0; padding: 32rpx 30rpx; border: 1rpx solid rgba(215,255,69,.42); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical.material-module-listening .material-wave,
+.theme-tactical.material-module-listening .material-paper-mark,
+.theme-tactical.material-module-listening .directory-orb,
+.theme-tactical.material-module-listening .task-wave { display: none; }
+.theme-tactical.material-module-listening .material-eyebrow { color: #d7ff45; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; font-weight: 750; }
+.theme-tactical.material-module-listening .material-title { margin: 8rpx 0; color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 42rpx; font-weight: 750; line-height: 1.22; }
+.theme-tactical.material-module-listening .material-copy { color: #bac3b8; font-size: 23rpx; line-height: 1.5; }
+.theme-tactical.material-module-listening .writing-history-tabs { margin: 14rpx 0; padding: 4rpx; border: 1rpx solid rgba(255,255,255,.16); border-radius: 4rpx; background: #18201a; }
+.theme-tactical.material-module-listening .writing-history-tab { min-height: 62rpx; border-radius: 3rpx; color: #b7c0b5; }
+.theme-tactical.material-module-listening .writing-history-tab.is-active { background: #d7ff45; color: #111813; }
+.theme-tactical.material-module-listening .material-card { margin-top: 14rpx; overflow: hidden; border: 1rpx solid rgba(255,255,255,.16); border-radius: 5rpx; background: #18201a; box-shadow: none; }
+.theme-tactical.material-module-listening .material-card-top { padding: 20rpx 24rpx; border-bottom: 1rpx solid rgba(255,255,255,.1); background: #202922; }
+.theme-tactical.material-module-listening .material-card-label { color: #fff; font-size: 28rpx; font-weight: 700; }
+.theme-tactical.material-module-listening .material-card-state { color: #d7ff45; font-family: "DIN Alternate", sans-serif; font-size: 22rpx; }
+.theme-tactical.material-module-listening .stage-list,
+.theme-tactical.material-module-listening .drawer-stack,
+.theme-tactical.material-module-listening .program-stack { background: #18201a; }
+.theme-tactical.material-module-listening .directory-row,
+.theme-tactical.material-module-listening .task-row { min-height: 108rpx; padding: 22rpx 24rpx; border: 0; border-bottom: 1rpx solid rgba(255,255,255,.1); border-radius: 0; background: #18201a; box-shadow: none; }
+.theme-tactical.material-module-listening .directory-row:last-child,
+.theme-tactical.material-module-listening .task-row:last-child { border-bottom: 0; }
+.theme-tactical.material-module-listening .directory-row::before,
+.theme-tactical.material-module-listening .task-row::before { content: ""; flex: none; width: 5rpx; height: 44rpx; border-radius: 2rpx; background: #d7ff45; }
+.theme-tactical.material-module-listening .directory-title,
+.theme-tactical.material-module-listening .task-title { color: #fff; font-size: 27rpx; font-weight: 700; line-height: 1.4; }
+.theme-tactical.material-module-listening .directory-meta,
+.theme-tactical.material-module-listening .task-meta { margin-top: 7rpx; color: #aeb7ad; font-size: 22rpx; line-height: 1.45; }
+.theme-tactical.material-module-listening .directory-arrow,
+.theme-tactical.material-module-listening .task-state,
+.theme-tactical.material-module-listening .directory-back-icon { color: #d7ff45; font-weight: 700; }
+.theme-tactical.material-module-listening .material-debug { border: 1rpx solid #ffbd55; border-radius: 4rpx; background: rgba(255,189,85,.1); color: #ffe0a6; }
+.theme-tactical.material-module-listening .material-entry-skeleton,
+.theme-tactical.material-module-listening .material-skeleton-tile { background: rgba(215,255,69,.08); }
+.theme-tactical.material-module-listening .empty-state { color: #bac3b8; background: #18201a; }
+
+/* Tactical clarity: light content field. */
+.theme-tactical.material-module-listening { background: #eef2ec; color: #111813; }
+.theme-tactical.material-module-listening .material-hero,
+.theme-tactical.material-module-listening .material-card,
+.theme-tactical.material-module-listening .stage-list,
+.theme-tactical.material-module-listening .drawer-stack,
+.theme-tactical.material-module-listening .program-stack,
+.theme-tactical.material-module-listening .directory-row,
+.theme-tactical.material-module-listening .task-row { border-color: rgba(17,24,19,.14); background: #fff; color: #111813; }
+.theme-tactical.material-module-listening .material-eyebrow { color: #466000; }
+.theme-tactical.material-module-listening .material-title,
+.theme-tactical.material-module-listening .material-card-label,
+.theme-tactical.material-module-listening .directory-title,
+.theme-tactical.material-module-listening .task-title { color: #111813; }
+.theme-tactical.material-module-listening .material-copy,
+.theme-tactical.material-module-listening .directory-meta,
+.theme-tactical.material-module-listening .task-meta,
+.theme-tactical.material-module-listening .empty-state { color: #536157; }
+.theme-tactical.material-module-listening .material-card-top { border-color: rgba(17,24,19,.1); background: #f3f6f2; }
+.theme-tactical.material-module-listening .writing-history-tabs { border-color: rgba(17,24,19,.14); background: #fff; }
+.theme-tactical.material-module-listening .writing-history-tab { color: #536157; }
+.theme-tactical.material-module-listening image { opacity: 1; filter: none; }
+.theme-tactical.material-module-listening .material-eyebrow,
+.theme-tactical.material-module-listening .material-copy,
+.theme-tactical.material-module-listening .material-card-state,
+.theme-tactical.material-module-listening .directory-meta,
+.theme-tactical.material-module-listening .task-meta,
+.theme-tactical.material-module-listening .task-state,
+.theme-tactical.material-module-listening .directory-back-icon { font-size: 22rpx; }
+.theme-tactical.material-module-listening .material-card-label,
+.theme-tactical.material-module-listening .directory-title,
+.theme-tactical.material-module-listening .task-title { font-size: 28rpx; }
+
+/* Tactical calibrated surfaces. */
+.theme-tactical.material-module-listening { background: #d1dbcf; color: #172019; }
+.theme-tactical.material-module-listening .material-hero,
+.theme-tactical.material-module-listening .material-card,
+.theme-tactical.material-module-listening .stage-list,
+.theme-tactical.material-module-listening .drawer-stack,
+.theme-tactical.material-module-listening .program-stack,
+.theme-tactical.material-module-listening .directory-row,
+.theme-tactical.material-module-listening .task-row,
+.theme-tactical.material-module-listening .writing-history-tabs { background: #e8ede6; color: #172019; }
+.theme-tactical.material-module-listening .material-card-top { background: #dce4da; }
+.theme-tactical.material-module-listening .material-title,
+.theme-tactical.material-module-listening .material-card-label,
+.theme-tactical.material-module-listening .directory-title,
+.theme-tactical.material-module-listening .task-title { color: #172019; }
+.theme-tactical.material-module-listening .material-copy,
+.theme-tactical.material-module-listening .directory-meta,
+.theme-tactical.material-module-listening .task-meta,
+.theme-tactical.material-module-listening .empty-state,
+.theme-tactical.material-module-listening .writing-history-tab { color: #4f5d53; }
+.theme-tactical.material-module-listening .writing-history-tab.is-active { color: #172019; }
+.theme-tactical.material-module-listening .directory-back-icon {
+  border-color: #668000;
+  border-radius: 4rpx;
+  background: #e4efbd;
+  color: #314000;
+}
+.theme-tactical.material-module-listening .task-state {
+  border: 1rpx solid #668000;
+  border-radius: 4rpx;
+  background: #e4efbd;
+  color: #314000;
+}
+
 .material-hero {
   position: relative;
   overflow: hidden;

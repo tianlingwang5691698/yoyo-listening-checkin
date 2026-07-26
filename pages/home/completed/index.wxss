@@ -973,3 +973,104 @@
   overflow-wrap: normal;
   word-break: normal;
 }
+
+.theme-tactical.completed-page {
+  --text-main: #243027;
+  --text-strong: #111813;
+  --text-muted: #536157;
+  --text-soft: #718077;
+  --accent: #59751f;
+  --accent-deep: #304314;
+  width: 100%;
+  max-width: 100vw;
+  padding-top: 34rpx;
+  overflow-x: hidden;
+  background: #d1dbcf;
+  box-sizing: border-box;
+}
+
+.theme-tactical .completed-hero,
+.theme-tactical .completed-card,
+.theme-tactical .attempt-detail,
+.theme-tactical .debug-card,
+.theme-tactical .empty-state {
+  border: 1rpx solid #b8c4b6;
+  border-radius: 6rpx;
+  background: #e8ede6;
+  box-shadow: 0 12rpx 28rpx rgba(31, 47, 35, 0.1);
+  backdrop-filter: none;
+}
+
+.theme-tactical .completed-hero {
+  min-height: 210rpx;
+  border-top: 8rpx solid #d7ff45;
+  background: #18201a;
+}
+
+.theme-tactical .completed-hero::before,
+.theme-tactical .completed-hero-glow,
+.theme-tactical .completed-wave,
+.theme-tactical .completed-card::after {
+  display: none;
+}
+
+.theme-tactical .completed-header .type-page-title,
+.theme-tactical .completed-header .completed-subtitle {
+  color: #f7f9f2;
+}
+
+.theme-tactical .completed-count {
+  border: 1rpx solid #d7ff45;
+  border-radius: 4rpx;
+  background: #d7ff45;
+  box-shadow: none;
+}
+
+.theme-tactical .completed-count view,
+.theme-tactical .completed-count text {
+  color: #111813;
+}
+
+.theme-tactical .completed-card {
+  min-height: 210rpx;
+  border-left: 6rpx solid #59751f;
+}
+
+.theme-tactical .completed-index::before {
+  background: #aab6a8;
+}
+
+.theme-tactical .completed-index view,
+.theme-tactical .completed-type {
+  border: 1rpx solid #9baa98;
+  border-radius: 3rpx;
+  background: #e9eee7;
+  color: #243027;
+  box-shadow: none;
+}
+
+.theme-tactical .completed-title,
+.theme-tactical .attempt-title,
+.theme-tactical .attempt-text,
+.theme-tactical .attempt-feedback {
+  color: #111813;
+}
+
+.theme-tactical .completed-meta,
+.theme-tactical .completed-copy,
+.theme-tactical .attempt-subscore {
+  color: #536157;
+}
+
+.theme-tactical .completed-action,
+.theme-tactical .attempt-button {
+  border: 1rpx solid #304314;
+  border-radius: 3rpx;
+  background: #d7ff45;
+  color: #111813;
+  box-shadow: none;
+}
+
+.theme-tactical .attempt-detail {
+  background: #dce4da;
+}

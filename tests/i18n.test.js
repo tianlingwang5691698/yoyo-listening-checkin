@@ -20,11 +20,13 @@ test('language persists zh-CN and en', () => {
   assert.equal(i18n.getText('settings.title'), 'Settings');
   assert.equal(i18n.getText('settings.voyageTheme'), 'Grand Voyage');
   assert.equal(i18n.getText('settings.dragonTheme'), 'Dragon Training');
+  assert.equal(i18n.getText('settings.tacticalTheme'), 'Tactical Ops');
 
   assert.equal(i18n.setLanguage('zh-CN'), 'zh-CN');
   assert.equal(i18n.getText('settings.title'), '设置');
   assert.equal(i18n.getText('settings.voyageTheme'), '伟大航路');
   assert.equal(i18n.getText('settings.dragonTheme'), '龙珠修炼');
+  assert.equal(i18n.getText('settings.tacticalTheme'), '战术行动');
 });
 
 test('unsupported language falls back to simplified Chinese', () => {

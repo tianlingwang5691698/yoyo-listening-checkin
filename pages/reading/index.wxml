@@ -116,6 +116,7 @@
     </view>
 
     <view class="reading-hero">
+      <image wx:if="{{theme === 'tactical'}}" class="tactical-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/reading-intel.jpg" mode="aspectFill"></image>
       <view class="hero-pages">
         <view class="hero-page hero-page-back"></view>
         <view class="hero-page hero-page-front">

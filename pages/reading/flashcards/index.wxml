@@ -292,6 +292,7 @@
 <view class="theme-{{theme}} language-{{language}} page-shell flashcard-page {{mode === 'review' ? 'is-review' : ''}}" style="{{pageTopStyle}}">
   <block wx:if="{{sourceMode === 'practice-home'}}">
     <view class="vocab-practice-head">
+      <image wx:if="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
       <view class="vocab-practice-kicker">VOCABULARY PRACTICE</view>
       <view class="vocab-practice-title">{{texts.practiceHomeTitle}}</view>
       <view class="vocab-practice-copy">{{texts.practiceHomeCopy}}</view>
@@ -312,6 +313,7 @@
 
   <block wx:elif="{{sourceMode === 'bookshelf'}}">
     <view class="bookshelf-head">
+      <image wx:if="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
       <view class="bookshelf-copy">
         <view class="progress-title">{{texts.libraryTitle}}</view>
         <view class="progress-copy">{{texts.libraryCopy}}</view>
@@ -379,6 +381,7 @@
   <block wx:else>
     <block wx:if="{{mode === 'library'}}">
       <view class="library-hero">
+        <image wx:if="{{theme === 'tactical'}}" class="tactical-vocab-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/vocabulary-inventory.jpg" mode="aspectFill"></image>
         <view class="progress-head">
           <view class="hero-copy">
             <view class="progress-title">{{activeSourceTitle || texts.myLibrary}} <text wx:if="{{demoMode}}" class="demo-tag">{{texts.demo}}</text></view>
@@ -416,7 +419,7 @@
           <view class="today-repeat-value"><text>{{repeatLimit}}</text><text>/ {{todayRepeatTotal}} {{texts.repeatUnit}}</text></view>
           <view class="today-repeat-step" data-delta="1" bindtap="changeRepeatLimit">+</view>
         </view>
-        <slider class="today-repeat-slider" min="1" max="{{todayRepeatTotal || 1}}" step="1" value="{{repeatLimit || 1}}" activeColor="{{theme === 'voyage' ? '#b27a31' : (theme === 'dragon' ? '#f4511e' : '#315d73')}}" backgroundColor="{{theme === 'voyage' ? '#dfc28a' : (theme === 'dragon' ? '#f2c14e' : '#c9dce5')}}" block-color="{{theme === 'voyage' ? '#fff0c7' : (theme === 'dragon' ? '#fff8dc' : '#ffffff')}}" block-size="22" bindchanging="handleRepeatSlider" bindchange="handleRepeatSlider" />
+        <slider class="today-repeat-slider" min="1" max="{{todayRepeatTotal || 1}}" step="1" value="{{repeatLimit || 1}}" activeColor="{{theme === 'voyage' ? '#b27a31' : (theme === 'dragon' ? '#f4511e' : (theme === 'tactical' ? '#536d58' : '#315d73'))}}" backgroundColor="{{theme === 'voyage' ? '#dfc28a' : (theme === 'dragon' ? '#f2c14e' : (theme === 'tactical' ? '#e8ede6' : '#c9dce5'))}}" block-color="{{theme === 'voyage' ? '#fff0c7' : (theme === 'dragon' ? '#fff8dc' : '#ffffff')}}" block-size="22" bindchanging="handleRepeatSlider" bindchange="handleRepeatSlider" />
         <button class="today-repeat-action start-review" bindtap="startTodayRepeat">{{texts.startRepeat}}</button>
       </view>
       <button wx:else class="start-review {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" bindtap="startReview">{{previewMode ? texts.previewStart : texts.start}}</button>

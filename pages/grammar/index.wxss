@@ -2540,3 +2540,69 @@
 .theme-dragon.grammar-page .grammar-explain-action {
   color: #f4511e;
 }
+
+/* Tactical Ops: clear daylight workbook with restrained decoration. */
+.theme-tactical.grammar-page { --grammar-bg:#d1dbcf; --grammar-bg-soft:#dce4da; --grammar-card:#e8ede6; --grammar-card-soft:#dce4da; --grammar-blue:#172019; --grammar-muted:#4f5d53; --grammar-soft:#68766c; --grammar-line:#b3bdb2; --grammar-line-strong:#879486; --grammar-mist:#e5eadf; --grammar-sage:#3e7053; --grammar-sage-soft:#dfeee4; --grammar-coral:#a84f45; --grammar-coral-soft:#f4e2df; background:#d1dbcf; color:#172019; }
+.theme-tactical .grammar-hero::after,
+.theme-tactical .grammar-hero-visual,
+.theme-tactical .grammar-card::before,
+.theme-tactical .directory-card::before,
+.theme-tactical .practice-card::before,
+.theme-tactical .classroom-card::before { display:none; }
+.theme-tactical .grammar-hero { padding:34rpx 30rpx; border:2rpx solid #91a45f; border-radius:6rpx; background:#c3d0c1; box-shadow:0 10rpx 24rpx rgba(31,47,35,.1); }
+.theme-tactical .grammar-hero .eyebrow { color:#526900; }
+.theme-tactical .grammar-hero .title { color:#172019; }
+.theme-tactical .grammar-hero .subtitle { color:#4f5d53; }
+.theme-tactical .grammar-hero-main { max-width:none; }
+.theme-tactical .grammar-eyebrow { color:#c9d4c7; font-weight:800; }
+.theme-tactical .grammar-title { color:#fff; font-weight:800; }
+.theme-tactical .grammar-copy { color:#d4dbd2; }
+.theme-tactical .grammar-actions { border:2rpx solid #aeb8ae; border-radius:5rpx; background:#e8ede6; }
+.theme-tactical .grammar-action { border-radius:3rpx; color:#4f5d53; }
+.theme-tactical .grammar-action.is-active { background:#273229; color:#fff; }
+.theme-tactical .grammar-card,
+.theme-tactical .directory-card,
+.theme-tactical .practice-card,
+.theme-tactical .classroom-card { border:2rpx solid #adb7ad; border-radius:6rpx; background:#e8ede6; box-shadow:0 10rpx 24rpx rgba(31,42,33,.1); backdrop-filter:none; }
+.theme-tactical .directory-row,
+.theme-tactical .classroom-topic,
+.theme-tactical .verb-map-item,
+.theme-tactical .micro-course-item,
+.theme-tactical .question-row { border:2rpx solid #b4bdb3; border-radius:4rpx; background:#dce4da; box-shadow:0 4rpx 0 #d9ded6; }
+.theme-tactical .directory-mark,
+.theme-tactical .micro-course-no,
+.theme-tactical .question-row::before { border:2rpx solid #66745f; border-radius:3rpx; background:#dce4da; color:#172019; }
+.theme-tactical .directory-title,
+.theme-tactical .classroom-topic-title,
+.theme-tactical .verb-map-item-title,
+.theme-tactical .micro-course-title,
+.theme-tactical .question-title { color:#172019; font-weight:800; }
+.theme-tactical .directory-meta,
+.theme-tactical .classroom-topic-meta,
+.theme-tactical .verb-map-item-copy,
+.theme-tactical .micro-course-meta,
+.theme-tactical .question-meta { color:#4f5d53; }
+.theme-tactical .directory-arrow,
+.theme-tactical .classroom-topic-arrow,
+.theme-tactical .verb-map-item-arrow,
+.theme-tactical .micro-course-arrow { color:#5c6d58; font-weight:900; }
+.theme-tactical .sentence-analysis,
+.theme-tactical .inline-analysis,
+.theme-tactical .grammar-option,
+.theme-tactical .explanation-card,
+.theme-tactical .dictionary-card { border-color:#adb7ad; border-radius:4rpx; background:#dce4da; box-shadow:none; }
+.theme-tactical .submit-button,
+.theme-tactical .grammar-primary-action,
+.theme-tactical .classroom-footer-button.is-next { border-radius:4rpx; background:#273229; color:#fff; box-shadow:none; }
+.theme-tactical .grammar-hero { display:block; overflow:hidden; }
+.theme-tactical .grammar-hero .tactical-subpage-banner {
+  display:block;
+  width:calc(100% + 60rpx);
+  height:280rpx;
+  margin:-34rpx -30rpx 26rpx;
+  opacity:1;
+  filter:none;
+}
+.theme-tactical .grammar-eyebrow { color:#526900; }
+.theme-tactical .grammar-title { color:#172019; }
+.theme-tactical .grammar-copy { color:#4f5d53; }

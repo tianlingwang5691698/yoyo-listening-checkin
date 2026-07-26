@@ -120,7 +120,7 @@
           <view class="narration-meta">{{activeLesson.narration.lengthText}}</view>
           <view class="narration-time">{{narrationTimeText}}</view>
         </view>
-        <slider class="narration-slider" min="0" max="100" value="{{narrationProgress}}" disabled="{{!narrationReady}}" block-size="14" activeColor="{{theme === 'library' ? '#876a3c' : (theme === 'voyage' ? '#b27a31' : (theme === 'dragon' ? '#f4511e' : '#2f6788'))}}" backgroundColor="{{theme === 'library' ? '#d4c29e' : (theme === 'voyage' ? '#dfc28a' : (theme === 'dragon' ? '#f2c14e' : '#cbdde6'))}}" bindchanging="previewNarrationSeek" bindchange="seekNarration" />
+        <slider class="narration-slider" min="0" max="100" value="{{narrationProgress}}" disabled="{{!narrationReady}}" block-size="14" activeColor="{{theme === 'library' ? '#876a3c' : (theme === 'voyage' ? '#b27a31' : (theme === 'dragon' ? '#f4511e' : (theme === 'tactical' ? '#536d58' : '#2f6788')))}}" backgroundColor="{{theme === 'library' ? '#d4c29e' : (theme === 'voyage' ? '#dfc28a' : (theme === 'dragon' ? '#f2c14e' : (theme === 'tactical' ? '#e8ede6' : '#cbdde6')))}}" bindchanging="previewNarrationSeek" bindchange="seekNarration" />
         <view class="narration-controls">
           <view class="narration-control {{!narrationReady ? 'is-disabled' : ''}}" bindtap="rewindNarration" hover-class="narration-tapped" hover-stay-time="80"><text class="narration-seek-sign">-</text><text class="narration-seek-value">15</text><text class="narration-seek-unit">s</text></view>
           <view class="narration-button {{narrationPlaying ? 'is-playing' : ''}} {{narrationLoading ? 'is-loading' : ''}}" bindtap="playNarration" hover-class="narration-tapped" hover-stay-time="80">

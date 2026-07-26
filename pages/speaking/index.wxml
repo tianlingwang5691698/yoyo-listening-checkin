@@ -224,6 +224,7 @@
 
 <view class="theme-{{theme}} language-{{language}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
+    <image wx:if="{{theme === 'tactical'}}" class="tactical-subpage-banner" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-subpages-v1/speaking-radio.jpg" mode="aspectFill"></image>
     <view class="speaking-header-copy">
       <view class="speaking-title">{{pageTitle}}</view>
       <view class="speaking-copy" wx:if="{{pageCopy}}">{{pageCopy}}</view>
@@ -243,6 +244,11 @@
       <view class="dragon-stage-core">声</view>
       <view class="dragon-stage-meter"><text></text><text></text><text></text></view>
     </view>
+    <view class="tactical-speaking-stage" wx:elif="{{theme === 'tactical'}}" aria-hidden="true">
+      <view class="tactical-stage-status"><text></text>VOICE LINK</view>
+      <view class="tactical-stage-bars"><text></text><text></text><text></text><text></text><text></text></view>
+      <view class="tactical-stage-code">COMMS</view>
+    </view>
   </view>
 
   <block wx:if="{{viewMode === 'home'}}">
@@ -255,15 +261,21 @@
       <view class="voyage-speaking-section-tab is-active">{{texts.mainPractice}}</view>
       <view class="voyage-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
     </view>
-    <view class="dragon-speaking-section-tabs" wx:else>
+    <view class="dragon-speaking-section-tabs" wx:elif="{{theme === 'dragon'}}">
       <view class="dragon-speaking-section-badge">声</view>
       <view class="dragon-speaking-section-tab is-active">{{texts.mainPractice}}</view>
       <view class="dragon-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
+    </view>
+    <view class="tactical-speaking-section-tabs" wx:else>
+      <view class="tactical-speaking-section-state"><text></text>READY</view>
+      <view class="tactical-speaking-section-tab is-active">{{texts.mainPractice}}</view>
+      <view class="tactical-speaking-section-tab" bindtap="openSpeakingHistory">{{texts.practiceHistory}}</view>
     </view>
     <view class="speaking-mode-list">
       <view class="speaking-mode-row is-repeat" hover-class="is-pressed" bindtap="openRepeatPractice">
         <view class="voyage-mode-route" wx:if="{{theme === 'voyage'}}">ROUTE 01</view>
         <view class="dragon-mode-rank" wx:if="{{theme === 'dragon'}}">训练 01</view>
+        <view class="tactical-mode-code" wx:if="{{theme === 'tactical'}}">COMMS 01</view>
         <view class="speaking-mode-icon"><view class="mode-play"></view><view class="mode-wave"><text></text><text></text><text></text></view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.gradedRepeat}}</view>
@@ -276,6 +288,7 @@
       <view class="speaking-mode-row is-ielts" hover-class="is-pressed" bindtap="openIeltsSpeaking">
         <view class="voyage-mode-route" wx:if="{{theme === 'voyage'}}">ROUTE 02</view>
         <view class="dragon-mode-rank" wx:if="{{theme === 'dragon'}}">训练 02</view>
+        <view class="tactical-mode-code" wx:if="{{theme === 'tactical'}}">COMMS 02</view>
         <view class="speaking-mode-icon"><view class="mode-part">P</view></view>
         <view class="speaking-mode-copy">
           <view class="speaking-mode-title">{{texts.ieltsSpeaking}}</view>

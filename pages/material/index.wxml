@@ -207,7 +207,7 @@
   </view>
 </view>
 
-<view class="theme-{{theme}} language-{{language}} page-shell material-page" wx:elif="{{pageReady && !(theme === 'library' && moduleId === 'listening')}}">
+<view class="theme-{{theme}} language-{{language}} page-shell material-page material-module-{{moduleId}}" wx:elif="{{pageReady && !(theme === 'library' && moduleId === 'listening')}}">
   <view class="material-hero card {{moduleId === 'writing' ? 'is-writing' : 'is-listening'}}">
     <view class="material-hero-copy">
       <view class="material-eyebrow">{{eyebrow}}</view>

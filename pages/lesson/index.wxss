@@ -2858,3 +2858,201 @@
 .manual-mark-word { border-radius: 5rpx; background: rgba(255, 210, 69, 0.58); }
 .manual-mark-phrase { border-radius: 5rpx; background: rgba(91, 169, 233, 0.34); }
 .manual-mark-sentence { background: rgba(92, 177, 119, 0.20); box-shadow: inset 4rpx 0 0 rgba(46, 129, 77, 0.48); }
+
+/* Tactical Ops: course console with stable high contrast. */
+.theme-tactical.tactical-console-page { padding: 30rpx 28rpx calc(72rpx + env(safe-area-inset-bottom)); background: #101510; color: #eef2e8; }
+.theme-tactical .lesson-hero { min-height: 0; padding: 30rpx; border: 1rpx solid rgba(215,255,69,.42); border-radius: 5rpx; background: #1b241d; box-shadow: 0 14rpx 34rpx rgba(0,0,0,.28); }
+.theme-tactical .lesson-hero::before,
+.theme-tactical .lesson-hero::after { display: none; content: none; }
+.theme-tactical .lesson-hero-top { margin-bottom: 20rpx; }
+.theme-tactical .lesson-hero .pill { border: 1rpx solid rgba(215,255,69,.45); border-radius: 3rpx; background: #101510; color: #d7ff45; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .lesson-hero .status-badge { border-radius: 3rpx; background: #5dd7ba; color: #101510; }
+.theme-tactical .lesson-hero .status-badge.is-warn { background: #ffbd55; }
+.theme-tactical .lesson-hero .status-badge.is-muted { background: #303a32; color: #d8ded5; }
+.theme-tactical .lesson-title { color: #fff; font-family: "PingFang SC", "Helvetica Neue", sans-serif; font-size: 40rpx; font-weight: 750; line-height: 1.25; }
+.theme-tactical .lesson-copy,
+.theme-tactical .lesson-mode { color: #b7c0b5; font-size: 23rpx; line-height: 1.5; }
+.theme-tactical .section-panel { margin-top: 14rpx; border: 1rpx solid rgba(255,255,255,.16); border-radius: 5rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .player-card { border-color: rgba(215,255,69,.26); }
+.theme-tactical .pass-steps { gap: 6rpx; }
+.theme-tactical .pass-step { min-height: 48rpx; border: 1rpx solid rgba(255,255,255,.16); border-radius: 3rpx; background: #101510; color: #aeb7ad; }
+.theme-tactical .pass-step.is-current { border-color: #d7ff45; background: rgba(215,255,69,.1); color: #d7ff45; }
+.theme-tactical .pass-step.is-done { border-color: #5dd7ba; background: rgba(93,215,186,.1); color: #5dd7ba; }
+.theme-tactical .player-panel { padding: 24rpx; border: 1rpx solid rgba(255,255,255,.14); border-radius: 4rpx; background: #101510; box-shadow: none; }
+.theme-tactical .player-panel::before,
+.theme-tactical .player-panel::after { display: none; content: none; }
+.theme-tactical .player-status,
+.theme-tactical .player-progress-label { color: #d7ff45; font-family: "DIN Alternate", sans-serif; font-weight: 700; }
+.theme-tactical .player-wave view { border-radius: 2rpx; background: #556056; }
+.theme-tactical .player-wave view.is-active { background: #d7ff45; }
+.theme-tactical .player-toggle { border: 1rpx solid #d7ff45; border-radius: 4rpx; background: #d7ff45; box-shadow: none; }
+.theme-tactical .player-toggle-icon { color: #111813; }
+.theme-tactical .player-time { color: #eef2e8; font-family: "DIN Alternate", sans-serif; }
+.theme-tactical .player-action { border: 1rpx solid rgba(255,255,255,.18); border-radius: 3rpx; background: #202922; color: #eef2e8; box-shadow: none; }
+.theme-tactical .transcript-header .section-title,
+.theme-tactical .speaking-card .section-title { color: #fff; font-size: 30rpx; font-weight: 750; }
+.theme-tactical .section-copy { color: #aeb7ad; }
+.theme-tactical .transcript-pill,
+.theme-tactical .mini-action { border: 1rpx solid rgba(255,255,255,.18); border-radius: 3rpx; background: #202922; color: #eef2e8; box-shadow: none; }
+.theme-tactical .mini-action.strong,
+.theme-tactical .dictionary-add { border-color: #d7ff45; background: #d7ff45; color: #111813; }
+.theme-tactical .lesson-study-tabs { gap: 6rpx; padding: 4rpx; border-radius: 4rpx; background: #101510; }
+.theme-tactical .lesson-study-tab { border-radius: 3rpx; color: #aeb7ad; }
+.theme-tactical .lesson-study-tab.is-active { background: #d7ff45; color: #111813; }
+.theme-tactical .lesson-study-item { border: 1rpx solid rgba(255,255,255,.12); border-radius: 4rpx; background: #202922; box-shadow: none; }
+.theme-tactical .word-text,
+.theme-tactical .phrase-text,
+.theme-tactical .pattern-text,
+.theme-tactical .card-meaning { color: #fff; }
+.theme-tactical .phonetic,
+.theme-tactical .card-example,
+.theme-tactical .card-example-meaning { color: #aeb7ad; }
+.theme-tactical .transcript-focus { border: 1rpx solid rgba(255,255,255,.14); border-radius: 4rpx; background: #101510; }
+.theme-tactical .transcript-focus-line { color: #8f9a8e; }
+.theme-tactical .transcript-focus-line.is-active { border-left: 5rpx solid #d7ff45; background: #202922; color: #fff; }
+.theme-tactical .transcript-word.is-active { color: #111813; background: #d7ff45; }
+.theme-tactical .listening-mark-toolbar { border-color: rgba(255,255,255,.16); border-radius: 4rpx; background: #202922; color: #c4ccc2; }
+.theme-tactical .listening-mark-clear { color: #d7ff45; }
+.theme-tactical .speaking-prompt { border-radius: 4rpx; background: #101510; color: #fff; }
+.theme-tactical .player-action.record-action,
+.theme-tactical .submit-action { border: 1rpx solid #d7ff45; border-radius: 4rpx; background: #d7ff45; color: #111813; box-shadow: none; }
+.theme-tactical .player-action.record-action.is-recording { border-color: #ff6e61; background: #ff6e61; color: #111813; }
+.theme-tactical .score-board,
+.theme-tactical .score-dimensions { border-radius: 4rpx; background: #101510; }
+.theme-tactical .score-value,
+.theme-tactical .score-dimension-value { color: #d7ff45; }
+.theme-tactical .dictionary-sheet { border: 1rpx solid rgba(215,255,69,.4); border-radius: 5rpx 5rpx 0 0; background: #18201a; color: #eef2e8; }
+.theme-tactical .dictionary-word { color: #fff; }
+.theme-tactical .dictionary-phonetic,
+.theme-tactical .dictionary-definition { color: #b7c0b5; }
+
+/* Tactical clarity: light content field. */
+.theme-tactical.tactical-console-page { background: #eef2ec; color: #111813; }
+.theme-tactical .lesson-hero { border-color: rgba(17,24,19,.14); background: #fff; }
+.theme-tactical .lesson-hero .pill { border-color: rgba(70,96,0,.3); background: #eff8d3; color: #314600; }
+.theme-tactical .lesson-title { color: #111813; }
+.theme-tactical .lesson-copy,
+.theme-tactical .lesson-mode { color: #536157; }
+.theme-tactical .section-panel,
+.theme-tactical .lesson-study-item { border-color: rgba(17,24,19,.14); background: #fff; color: #111813; }
+.theme-tactical .player-panel,
+.theme-tactical .transcript-focus,
+.theme-tactical .speaking-prompt,
+.theme-tactical .score-board,
+.theme-tactical .score-dimensions { border-color: rgba(17,24,19,.14); background: #f3f6f2; }
+.theme-tactical .pass-step { border-color: rgba(17,24,19,.14); background: #f3f6f2; color: #536157; }
+.theme-tactical .player-time,
+.theme-tactical .transcript-header .section-title,
+.theme-tactical .speaking-card .section-title,
+.theme-tactical .word-text,
+.theme-tactical .phrase-text,
+.theme-tactical .pattern-text,
+.theme-tactical .card-meaning,
+.theme-tactical .speaking-prompt { color: #111813; }
+.theme-tactical .section-copy,
+.theme-tactical .phonetic,
+.theme-tactical .card-example,
+.theme-tactical .card-example-meaning,
+.theme-tactical .transcript-focus-line { color: #536157; }
+.theme-tactical .transcript-focus-line.is-active { background: #fff; color: #111813; }
+.theme-tactical .player-action,
+.theme-tactical .transcript-pill,
+.theme-tactical .mini-action { border-color: rgba(17,24,19,.18); background: #f3f6f2; color: #111813; }
+.theme-tactical .lesson-study-tabs { background: #f3f6f2; }
+.theme-tactical .lesson-study-tab { color: #536157; }
+.theme-tactical .listening-mark-toolbar { border-color: rgba(17,24,19,.14); background: #f3f6f2; color: #536157; }
+.theme-tactical .dictionary-sheet { border-color: rgba(17,24,19,.18); background: #fff; color: #111813; }
+.theme-tactical .dictionary-word { color: #111813; }
+.theme-tactical .dictionary-phonetic,
+.theme-tactical .dictionary-definition { color: #536157; }
+.theme-tactical image { opacity: 1; filter: none; }
+.theme-tactical .lesson-copy,
+.theme-tactical .lesson-mode,
+.theme-tactical .section-copy,
+.theme-tactical .pass-step,
+.theme-tactical .player-status,
+.theme-tactical .player-progress-label,
+.theme-tactical .player-time,
+.theme-tactical .player-action,
+.theme-tactical .transcript-pill,
+.theme-tactical .mini-action,
+.theme-tactical .phonetic,
+.theme-tactical .card-example,
+.theme-tactical .card-example-meaning,
+.theme-tactical .transcript-focus-line,
+.theme-tactical .listening-mark-toolbar,
+.theme-tactical .dictionary-phonetic,
+.theme-tactical .dictionary-definition { font-size: 22rpx; }
+.theme-tactical .word-text,
+.theme-tactical .phrase-text,
+.theme-tactical .pattern-text,
+.theme-tactical .card-meaning { font-size: 28rpx; }
+
+/* Tactical calibrated surfaces. */
+.theme-tactical.tactical-console-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .lesson-hero,
+.theme-tactical .section-panel,
+.theme-tactical .lesson-study-item,
+.theme-tactical .dictionary-sheet { background: #e8ede6; color: #172019; }
+.theme-tactical .player-panel,
+.theme-tactical .transcript-focus,
+.theme-tactical .speaking-prompt,
+.theme-tactical .score-board,
+.theme-tactical .score-dimensions,
+.theme-tactical .pass-step,
+.theme-tactical .player-action,
+.theme-tactical .transcript-pill,
+.theme-tactical .mini-action,
+.theme-tactical .lesson-study-tabs,
+.theme-tactical .listening-mark-toolbar { background: #dce4da; color: #172019; }
+.theme-tactical .lesson-title,
+.theme-tactical .transcript-header .section-title,
+.theme-tactical .speaking-card .section-title,
+.theme-tactical .word-text,
+.theme-tactical .phrase-text,
+.theme-tactical .pattern-text,
+.theme-tactical .card-meaning,
+.theme-tactical .speaking-prompt,
+.theme-tactical .dictionary-word { color: #172019; }
+.theme-tactical .lesson-copy,
+.theme-tactical .lesson-mode,
+.theme-tactical .section-copy,
+.theme-tactical .phonetic,
+.theme-tactical .card-example,
+.theme-tactical .card-example-meaning,
+.theme-tactical .transcript-focus-line,
+.theme-tactical .listening-mark-toolbar,
+.theme-tactical .dictionary-phonetic,
+.theme-tactical .dictionary-definition { color: #4f5d53; }
+.theme-tactical .transcript-focus-line.is-active { background: #e8ede6; color: #172019; }
+.theme-tactical .player-toggle,
+.theme-tactical .player-action.record-action,
+.theme-tactical .submit-action,
+.theme-tactical .mini-action.strong,
+.theme-tactical .dictionary-add { color: #172019; }
+
+/* Tactical player uses muted olive accents on the daylight surface. */
+.theme-tactical .player-status,
+.theme-tactical .player-progress-label {
+  color: #526900;
+}
+
+.theme-tactical .player-wave view.is-active {
+  background: #8da52f;
+}
+
+.theme-tactical .player-toggle {
+  border-color: #8da52f;
+  background: #d7ff45;
+}
+
+.theme-tactical .pass-step.is-current {
+  border-color: #8da52f;
+  background: #e4efbd;
+  color: #314000;
+}
+
+.theme-tactical .player-toggle-icon.is-pause::before,
+.theme-tactical .player-toggle-icon.is-pause::after {
+  background: #172019;
+}

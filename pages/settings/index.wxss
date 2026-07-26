@@ -518,3 +518,144 @@
 .theme-dragon .voyage-options .settings-option { min-height: 70rpx; border: 3rpx solid #102e62; border-radius: 7rpx; background: #fff4c7; color: #102e62; }
 .theme-dragon .voyage-options .settings-option.is-active { border-color: #102e62; background: #f45a16; color: #ffffff; box-shadow: 0 5rpx 0 #a92e0a; }
 .theme-dragon .voyage-admin-badge { border-color: #102e62; background: #f45a16; color: #ffffff; }
+
+/* 战术行动：设备设置控制台。 */
+.theme-tactical.settings-page { background: #111813; color: #e6eadc; }
+.theme-tactical .voyage-settings-hero { min-height: 202rpx; padding-left: 128rpx; border: 1rpx solid #39453a; border-left: 6rpx solid #d7ff45; border-radius: 4rpx; background: #1b241d; box-shadow: none; }
+.theme-tactical .voyage-settings-hero::after { display: none; }
+.theme-tactical .voyage-settings-emblem { position: absolute; left: 30rpx; top: 48rpx; border: 1rpx solid #d7ff45; border-radius: 0; background: #111813; color: #d7ff45; box-shadow: inset 0 0 0 7rpx #1b241d; }
+.theme-tactical .voyage-settings-emblem view { border-width: 2rpx; border-radius: 0; }
+.theme-tactical .voyage-settings-emblem view::before,
+.theme-tactical .voyage-settings-emblem view::after { width: 2rpx; border-radius: 0; }
+.theme-tactical .voyage-settings-hero .settings-title,
+.theme-tactical .settings-row-title { color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .voyage-settings-hero .settings-subtitle,
+.theme-tactical .settings-row-description { color: #b9c3b7; }
+.theme-tactical .settings-section-label { color: #d7ff45; font-family: "DIN Alternate", "Helvetica Neue", sans-serif; letter-spacing: 0; }
+.theme-tactical .voyage-settings-card,
+.theme-tactical .voyage-admin-card { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .voyage-settings-card .with-divider { border-top-color: rgba(201, 216, 196, 0.14); }
+.theme-tactical .voyage-row-icon { border: 1rpx solid rgba(215, 255, 69, 0.5); border-radius: 0; background: #111813; color: #d7ff45; }
+.theme-tactical .settings-arrow { color: #d7ff45; }
+.theme-tactical .voyage-options .settings-option { min-height: 70rpx; border: 1rpx solid #39453a; border-radius: 2rpx; background: #111813; color: #d7ddd2; }
+.theme-tactical .voyage-options .settings-option.is-active { border-color: #d7ff45; background: #d7ff45; color: #111813; box-shadow: none; }
+.theme-tactical .voyage-admin-badge { border-color: #d7ff45; border-radius: 2rpx; background: #d7ff45; color: #111813; }
+
+.theme-tactical.settings-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .voyage-settings-hero,
+.theme-tactical .voyage-settings-card,
+.theme-tactical .voyage-admin-card { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .voyage-settings-hero { border-left-color: #d7ff45; }
+.theme-tactical .voyage-settings-hero .settings-title,
+.theme-tactical .settings-row-title { color: #172019; }
+.theme-tactical .voyage-settings-hero .settings-subtitle,
+.theme-tactical .settings-row-description { color: #4f5d53; }
+.theme-tactical .settings-section-label { color: #526900; }
+.theme-tactical .voyage-settings-card .with-divider { border-top-color: #dce3da; }
+.theme-tactical .voyage-row-icon { border-color: #8da52f; background: #dce4da; color: #314000; }
+.theme-tactical .settings-arrow { color: #526900; }
+.theme-tactical .voyage-options .settings-option { border-color: #bcc8bb; background: #dce4da; color: #334039; }
+.theme-tactical .voyage-options .settings-option.is-active { border-color: #8da52f; background: #d7ff45; color: #111813; }
+
+.theme-tactical .tactical-control-icon {
+  overflow: hidden;
+  border-color: #8da52f;
+  background: #dce4da;
+  box-shadow: inset 0 0 0 5rpx #e8ede6;
+}
+
+.theme-tactical .tactical-control-line {
+  position: absolute;
+  left: 14rpx;
+  right: 14rpx;
+  display: block;
+  height: 3rpx;
+  background: #526900;
+}
+
+.theme-tactical .tactical-control-line.is-one { top: 18rpx; }
+.theme-tactical .tactical-control-line.is-two { top: 34rpx; }
+.theme-tactical .tactical-control-line.is-three { top: 50rpx; }
+
+.theme-tactical .tactical-control-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 10rpx;
+  height: 10rpx;
+  border: 2rpx solid #526900;
+  border-radius: 2rpx;
+  background: #d7ff45;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+}
+
+.theme-tactical .tactical-control-line.is-one::after { left: 68%; }
+.theme-tactical .tactical-control-line.is-two::after { left: 34%; }
+.theme-tactical .tactical-control-line.is-three::after { left: 58%; }
+
+.theme-tactical .tactical-family-icon {
+  overflow: hidden;
+  border-color: #8da52f;
+  background: #e4efbd;
+  color: #526900;
+}
+
+.theme-tactical .tactical-person {
+  position: absolute;
+  top: 12rpx;
+  display: block;
+  width: 22rpx;
+  height: 36rpx;
+}
+
+.theme-tactical .tactical-person.is-left { left: 9rpx; }
+.theme-tactical .tactical-person.is-right { left: 28rpx; }
+
+.theme-tactical .tactical-person-head {
+  position: absolute;
+  left: 6rpx;
+  top: 0;
+  display: block;
+  width: 10rpx;
+  height: 10rpx;
+  border: 2rpx solid #526900;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.theme-tactical .tactical-person-body {
+  position: absolute;
+  left: 2rpx;
+  bottom: 0;
+  display: block;
+  width: 18rpx;
+  height: 17rpx;
+  border: 2rpx solid #526900;
+  border-radius: 9rpx 9rpx 3rpx 3rpx;
+  box-sizing: border-box;
+}
+
+.theme-tactical .tactical-account-shield {
+  position: absolute;
+  right: 7rpx;
+  bottom: 6rpx;
+  display: block;
+  width: 16rpx;
+  height: 19rpx;
+  border: 2rpx solid #526900;
+  border-radius: 2rpx 2rpx 7rpx 7rpx;
+  background: #d7ff45;
+  box-sizing: border-box;
+}
+
+.theme-tactical .tactical-account-shield::after {
+  content: "";
+  position: absolute;
+  left: 6rpx;
+  top: 3rpx;
+  width: 2rpx;
+  height: 8rpx;
+  background: #526900;
+}

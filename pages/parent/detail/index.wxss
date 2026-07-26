@@ -1492,3 +1492,102 @@
 .theme-library .speaking-report-pdf { background: #493b2d; }
 .theme-voyage .speaking-report-pdf { background: #743b24; }
 .theme-dragon .speaking-report-pdf { background: #102e62; }
+
+.theme-tactical.parent-detail-page { min-height: 100vh; background: #101510; color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .report-hero,
+.theme-tactical .content-panel,
+.theme-tactical .detail-sheet,
+.theme-tactical .rhythm-panel,
+.theme-tactical .study-dossier,
+.theme-tactical .voice-panel,
+.theme-tactical .voice-card,
+.theme-tactical .analysis-card,
+.theme-tactical .question-card,
+.theme-tactical .manual-mark-sheet,
+.theme-tactical .sync-debug,
+.theme-tactical .empty-state { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; backdrop-filter: none; }
+.theme-tactical .report-hero { border-left: 6rpx solid #d7ff45; }
+.theme-tactical .hero-glow,
+.theme-tactical .hero-orbit,
+.theme-tactical .voice-ring,
+.theme-tactical .rhythm-canvas { display: none; }
+.theme-tactical .hero-title,
+.theme-tactical .section-title,
+.theme-tactical .sheet-title,
+.theme-tactical .node-title,
+.theme-tactical .voice-score,
+.theme-tactical .voice-card-head,
+.theme-tactical .question-card { color: #f7f9f2; }
+.theme-tactical .hero-kicker,
+.theme-tactical .section-kicker,
+.theme-tactical .node-label,
+.theme-tactical .voice-label,
+.theme-tactical .metric-label { color: #d7ff45; }
+.theme-tactical .hero-copy,
+.theme-tactical .panel-note,
+.theme-tactical .sheet-copy,
+.theme-tactical .node-status,
+.theme-tactical .voice-advice,
+.theme-tactical .voice-meta,
+.theme-tactical .quiet-note,
+.theme-tactical .letter-copy { color: #b9c3b7; }
+.theme-tactical .metric-pill,
+.theme-tactical .time-chip,
+.theme-tactical .answer-chip,
+.theme-tactical .voice-badge,
+.theme-tactical .node-mark { border: 1rpx solid #8da52f; border-radius: 2rpx; background: #111813; color: #d7ff45; }
+.theme-tactical .mini-card,
+.theme-tactical .node-card,
+.theme-tactical .voice-bands > view,
+.theme-tactical .analysis-grid > view,
+.theme-tactical .vocabulary-metric { border: 1rpx solid #39453a; border-radius: 3rpx; background: #111813; }
+.theme-tactical .detail-toggle,
+.theme-tactical .load-action,
+.theme-tactical .attempt-play,
+.theme-tactical .speaking-report-pdf { border: 1rpx solid #d7ff45; border-radius: 2rpx; background: #d7ff45; color: #172019; box-shadow: none; }
+.theme-tactical .attempt-play.is-pressed { transform: translateY(2rpx); background: #bedf3f; }
+.theme-tactical image { opacity: 1; filter: none; background: #fff; }
+
+.theme-tactical.parent-detail-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .report-hero,
+.theme-tactical .content-panel,
+.theme-tactical .detail-sheet,
+.theme-tactical .rhythm-panel,
+.theme-tactical .study-dossier,
+.theme-tactical .voice-panel,
+.theme-tactical .voice-card,
+.theme-tactical .analysis-card,
+.theme-tactical .question-card,
+.theme-tactical .manual-mark-sheet,
+.theme-tactical .sync-debug,
+.theme-tactical .empty-state { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .hero-title,
+.theme-tactical .section-title,
+.theme-tactical .sheet-title,
+.theme-tactical .node-title,
+.theme-tactical .voice-score,
+.theme-tactical .voice-card-head,
+.theme-tactical .question-card { color: #172019; }
+.theme-tactical .hero-kicker,
+.theme-tactical .section-kicker,
+.theme-tactical .node-label,
+.theme-tactical .voice-label,
+.theme-tactical .metric-label { color: #526900; }
+.theme-tactical .hero-copy,
+.theme-tactical .panel-note,
+.theme-tactical .sheet-copy,
+.theme-tactical .node-status,
+.theme-tactical .voice-advice,
+.theme-tactical .voice-meta,
+.theme-tactical .quiet-note,
+.theme-tactical .letter-copy { color: #4f5d53; }
+.theme-tactical .metric-pill,
+.theme-tactical .time-chip,
+.theme-tactical .answer-chip,
+.theme-tactical .voice-badge,
+.theme-tactical .node-mark { background: #dce4da; color: #314000; }
+.theme-tactical .mini-card,
+.theme-tactical .node-card,
+.theme-tactical .voice-bands > view,
+.theme-tactical .analysis-grid > view,
+.theme-tactical .vocabulary-metric { border-color: #bcc8bb; background: #dce4da; }

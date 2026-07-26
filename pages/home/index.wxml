@@ -1,4 +1,124 @@
-<view wx:if="{{theme === 'voyage' || theme === 'dragon'}}" class="theme-{{theme}} page-shell voyage-home-page {{theme === 'dragon' ? 'dragon-home-page' : ''}} language-{{language}}">
+<view wx:if="{{theme === 'tactical'}}" class="theme-tactical page-shell tactical-home-page language-{{language}}">
+  <view class="tactical-map" aria-hidden="true">
+    <image class="tactical-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-daylight-v2/home-longbow-valley-v2.jpg" mode="aspectFill" />
+    <view class="tactical-map-shade"></view>
+  </view>
+
+  <view class="tactical-header" style="{{homeNavStyle}}">
+    <view class="tactical-brand-mark"><text>Y</text></view>
+    <view class="tactical-header-copy">
+      <view class="tactical-brand">战术行动 <text>TACTICAL LEARNING</text></view>
+      <view class="tactical-callsign">{{greeting}}{{texts.greetingSeparator}}{{child.nickname || texts.classmate}}</view>
+    </view>
+    <view class="tactical-header-status">
+      <view><text></text>READY</view>
+      <text>{{todayDisplay}}</text>
+    </view>
+  </view>
+
+  <view class="tactical-alert" wx:if="{{!homeLoading && syncMode === 'cloud-error'}}">
+    <view>LINK INTERRUPTED</view>
+    <text>{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || texts.syncUnavailableDescription}}</text>
+  </view>
+  <view class="tactical-mode-notice" wx:if="{{modeChangedNoticeVisible}}">{{texts.parentModeRestored}}</view>
+
+  <view class="tactical-nickname-panel" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
+    <view class="tactical-panel-code">IDENTITY / 01</view>
+    <view class="tactical-panel-title">{{texts.nicknameRequiredTitle}}</view>
+    <view class="tactical-panel-copy">{{texts.nicknameRequiredDescription}}</view>
+    <view class="tactical-input-row">
+      <input class="tactical-input" placeholder="{{texts.nicknameExample}}" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
+      <view class="tactical-input-action" bindtap="saveRequiredNickname">{{texts.save}}</view>
+    </view>
+  </view>
+
+  <view class="tactical-command-shell">
+    <view class="tactical-mission-card {{homeDataReady ? (listeningTaskStatus.setupRequired ? 'is-empty' : 'is-ready') : 'is-loading'}}" bindtap="openCompleted">
+      <view class="tactical-mission-topline">
+        <view><text>TODAY / 01</text><view>{{texts.todayListening}}</view></view>
+        <view class="tactical-mission-state"><text></text>{{homeDataReady ? (listeningTaskStatus.setupRequired ? 'SETUP' : 'ACTIVE') : 'SYNC'}}</view>
+      </view>
+      <view class="tactical-mission-main">
+        <view class="tactical-progress-number">{{homeDataReady && !listeningTaskStatus.setupRequired ? todayProgressPercent : 0}}<text>%</text></view>
+        <view class="tactical-progress-copy">
+          <view>{{listeningTaskStatus.setupRequired ? texts.planStatus : texts.todayGoal}}</view>
+          <text wx:if="{{homeDataReady && listeningTaskStatus.setupRequired}}">{{texts.pendingSetup}}</text>
+          <text wx:elif="{{homeDataReady}}">{{todayDoneMinutes}} / {{todayGoalMinutes}} {{texts.minute}}</text>
+          <text wx:else>LOADING DATA</text>
+        </view>
+      </view>
+      <view class="tactical-progress-track">
+        <view class="tactical-progress-fill" style="width: {{homeDataReady && !listeningTaskStatus.setupRequired ? todayProgressPercent : 0}}%;"></view>
+        <view class="tactical-progress-segments"><text></text><text></text><text></text><text></text><text></text></view>
+      </view>
+      <view class="tactical-mission-footer">
+        <view><text>DAY</text><view>{{checkinDayCount}}</view></view>
+        <view><text>STREAK</text><view>{{streakDaysText}}</view></view>
+        <view><text>DONE</text><view>{{completedTasksText}}</view></view>
+        <view class="tactical-mission-action" wx:if="{{homeDataReady}}">{{listeningTaskStatus.action}}<text>›</text></view>
+      </view>
+    </view>
+
+    <view class="tactical-section-head">
+      <view><text>TRAINING</text><view>训练模块</view></view>
+      <text>6 MODULES</text>
+    </view>
+
+    <view class="tactical-module-grid">
+      <view class="tactical-module module-listening" bindtap="openListening"><view class="tactical-module-code">L-01</view><view class="tactical-module-icon">LST</view><view class="tactical-module-title">{{texts.listening}}</view><view class="tactical-module-arrow">↗</view></view>
+      <view class="tactical-module module-reading" bindtap="openReading"><view class="tactical-module-code">R-02</view><view class="tactical-module-icon">RD</view><view class="tactical-module-title">{{texts.reading}}</view><view class="tactical-module-arrow">↗</view></view>
+      <view class="tactical-module module-grammar" bindtap="openGrammar"><view class="tactical-module-code">G-03</view><view class="tactical-module-icon">GR</view><view class="tactical-module-title">{{texts.grammar}}</view><view class="tactical-module-arrow">↗</view></view>
+      <view class="tactical-module module-vocabulary" bindtap="openVocabulary"><view class="tactical-module-code">V-04</view><view class="tactical-module-icon">VOC</view><view class="tactical-module-title">{{texts.vocabulary}}</view><view class="tactical-module-arrow">↗</view></view>
+      <view class="tactical-module module-writing" bindtap="openWriting"><view class="tactical-module-code">W-05</view><view class="tactical-module-icon">WRT</view><view class="tactical-module-title">{{texts.writing}}</view><view class="tactical-module-arrow">↗</view></view>
+      <view class="tactical-module module-speaking" bindtap="openSpeaking"><view class="tactical-module-code">S-06</view><view class="tactical-module-icon">SPK</view><view class="tactical-module-title">{{texts.speaking}}</view><view class="tactical-module-arrow">↗</view></view>
+    </view>
+
+    <view class="tactical-data-strip">
+      <view><text>累计学习</text><view>{{totalStudyHoursText}}</view></view>
+      <view><text>今日状态</text><view>{{homeDataReady ? 'READY' : 'SYNC'}}</view></view>
+      <view class="tactical-signal"><text>连接状态</text><view><text></text><text></text><text></text><text></text></view></view>
+    </view>
+
+    <view class="tactical-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? texts.setupPlanFirst : texts.noTasksToday}}</view>
+  </view>
+
+  <view class="tactical-ad is-page-{{entryPosterPage}}" wx:if="{{entryPosterVisible}}">
+    <view class="tactical-ad-map" aria-hidden="true">
+      <image wx:if="{{entryPosterPage === 0}}" class="tactical-ad-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-daylight-v2/ad-zero-dam-v2.jpg" mode="aspectFill" />
+      <image wx:else class="tactical-ad-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/tactical/20260727-daylight-v2/ad-space-base-v2.jpg" mode="aspectFill" />
+      <view class="tactical-ad-shade"></view>
+    </view>
+    <view class="tactical-ad-topline"><text>YOYO / TACTICAL OPS</text><view bindtap="closeEntryPoster">{{texts.posterSkip}}</view></view>
+    <block wx:if="{{entryPosterPage === 0}}">
+      <view class="tactical-ad-copy">
+        <view class="tactical-ad-kicker"><text></text>TACTICAL LEARNING SYSTEM</view>
+        <view class="tactical-ad-title"><text>战术行动</text><view>把今天的学习，拆成可完成的行动。</view></view>
+        <view class="tactical-ad-meta"><text>FOCUS</text><view>输入 · 判断 · 表达</view></view>
+      </view>
+      <view class="tactical-ad-brief">
+        <view><text>01</text><view>锁定今日目标</view></view>
+        <view><text>02</text><view>推进六项训练</view></view>
+        <view><text>03</text><view>完成并留下记录</view></view>
+      </view>
+      <view class="tactical-ad-next" bindtap="showNextEntryPosterPage"><text>进入行动简报</text><view>›</view></view>
+    </block>
+    <block wx:else>
+      <view class="tactical-ad-briefing">
+        <view class="tactical-ad-kicker"><text></text>IDENTITY CONFIRMATION</view>
+        <view class="tactical-brief-title">选择本机行动身份</view>
+        <view class="tactical-brief-copy">身份仅决定记录写入方式。学生执行训练，家长查看同一份学习进度。</view>
+        <view class="tactical-role-grid">
+          <button data-role="parent" bindtap="confirmStudyIdentity"><text>OBSERVER</text><view>{{texts.identityIAmParent}}</view><text class="tactical-role-index">01</text></button>
+          <button class="is-primary" data-role="student" bindtap="confirmStudyIdentity"><text>OPERATOR</text><view>{{texts.identityIAmStudent}}</view><text class="tactical-role-index">02</text></button>
+        </view>
+      </view>
+      <view class="tactical-ad-back" bindtap="showPrevEntryPosterPage">‹ 返回</view>
+    </block>
+    <view class="tactical-ad-dots"><view class="{{entryPosterPage === 0 ? 'is-active' : ''}}"></view><view class="{{entryPosterPage === 1 ? 'is-active' : ''}}"></view></view>
+  </view>
+</view>
+
+<view wx:elif="{{theme === 'voyage' || theme === 'dragon'}}" class="theme-{{theme}} page-shell voyage-home-page {{theme === 'dragon' ? 'dragon-home-page' : ''}} language-{{language}}">
   <view class="voyage-sky" aria-hidden="true">
     <image wx:if="{{theme === 'dragon'}}" class="voyage-ocean-art dragon-shenron-art" src="../../assets/dragon/shenron-home.jpg" mode="widthFix" />
     <image wx:else class="voyage-ocean-art" src="../../assets/voyage/home-ocean-hero.jpg" mode="aspectFill" />

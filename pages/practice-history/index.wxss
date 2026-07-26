@@ -1758,3 +1758,161 @@
   min-width: 0;
   max-width: 100%;
 }
+
+/* Tactical archive: solid surfaces preserve source-image and text clarity. */
+.theme-tactical.practice-history-page { min-height: 100vh; background: #101510; color: #f5f7ed; font-family: "PingFang SC", "Helvetica Neue", sans-serif; }
+.theme-tactical .history-hero,
+.theme-tactical .history-record,
+.theme-tactical .warm-history-filter,
+.theme-tactical .history-debug { border: 1rpx solid #39453a; border-radius: 4rpx; background: #18201a; box-shadow: none; }
+.theme-tactical .history-hero { border-left: 6rpx solid #d7ff45; }
+.theme-tactical .history-eyebrow,
+.theme-tactical .history-record-meta,
+.theme-tactical .history-copy,
+.theme-tactical .history-ai-status,
+.theme-tactical .history-loading,
+.theme-tactical .history-empty-copy,
+.theme-tactical .history-speaking .history-speaking-label,
+.theme-tactical .history-speaking .history-speaking-note { color: #b9c3b7; }
+.theme-tactical .history-title,
+.theme-tactical .history-record-title,
+.theme-tactical .history-section-title,
+.theme-tactical .history-question-no,
+.theme-tactical .history-question-prompt,
+.theme-tactical .history-empty-title,
+.theme-tactical .history-speaking .history-speaking-prompt,
+.theme-tactical .history-speaking .history-speaking-text { color: #f7f9f2; }
+.theme-tactical .history-tabs { border: 1rpx solid #39453a; border-radius: 3rpx; background: #141b16; }
+.theme-tactical .history-tab { border-radius: 2rpx; color: #b9c3b7; }
+.theme-tactical .history-tab.is-active { background: #d7ff45; color: #172019; }
+.theme-tactical .warm-history-filter-options,
+.theme-tactical .history-detail { border-color: #323c33; }
+.theme-tactical .warm-history-filter-current { color: #f5f7ed; }
+.theme-tactical .warm-history-filter-current text:last-child,
+.theme-tactical .warm-history-filter-option text:last-child { color: #9ca89b; }
+.theme-tactical .warm-history-filter-trigger { border-color: #d7ff45; border-radius: 2rpx; background: #d7ff45; color: #172019; }
+.theme-tactical .warm-history-filter-option { border-radius: 2rpx; color: #d7ddd2; }
+.theme-tactical .warm-history-filter-option.is-active { background: #273128; color: #d7ff45; }
+.theme-tactical .history-summary { background: #18201a; }
+.theme-tactical .history-result { color: #d7ff45; }
+.theme-tactical .history-entry-action,
+.theme-tactical .history-ai-row,
+.theme-tactical .history-explain-action { border-color: #8da52f; border-radius: 2rpx; color: #d7ff45; }
+.theme-tactical .history-entry-action { background: #111813; }
+.theme-tactical .history-parent-badge { border-radius: 2rpx; background: #d7ff45; color: #172019; }
+.theme-tactical .history-section,
+.theme-tactical .history-question,
+.theme-tactical .history-speaking .history-speaking-band-grid > view,
+.theme-tactical .history-speaking .history-speaking-metric-grid > view { border: 1rpx solid #39453a; border-radius: 3rpx; background: #111813; }
+.theme-tactical .history-passage,
+.theme-tactical .history-writing-text,
+.theme-tactical .history-analysis,
+.theme-tactical .history-list-line,
+.theme-tactical .history-listening-transcript,
+.theme-tactical .history-study-example,
+.theme-tactical .history-study-translation,
+.theme-tactical .history-speaking .history-speaking-text.is-feedback { color: #d7ddd2; }
+.theme-tactical .history-option { border-color: #465247; border-radius: 2rpx; color: #d7ddd2; }
+.theme-tactical .history-option.is-answer { border-color: #769a57; background: #233323; color: #c9f3ad; }
+.theme-tactical .history-option.is-selected-wrong { border-color: #b66e59; background: #38231e; color: #ffc4b3; }
+.theme-tactical .history-standard-answer,
+.theme-tactical .history-answer.is-correct .history-answer-result { border-color: #769a57; background: #233323; color: #c9f3ad; }
+.theme-tactical .history-answer.is-wrong .history-answer-result { border-color: #b66e59; background: #38231e; color: #ffc4b3; }
+.theme-tactical .history-study-term,
+.theme-tactical .history-listening-section,
+.theme-tactical .history-listening-group,
+.theme-tactical .history-listening-form { color: #f5f7ed; }
+.theme-tactical .history-study-meaning,
+.theme-tactical .history-analysis-label,
+.theme-tactical .history-speaking .history-speaking-total > view,
+.theme-tactical .history-speaking .history-speaking-band-grid view view,
+.theme-tactical .history-speaking .history-speaking-metric-grid view view { color: #d7ff45; }
+.theme-tactical .history-speaking .history-speaking-play,
+.theme-tactical .reading-report-download,
+.theme-tactical .listening-report-download { border-color: #d7ff45; border-radius: 2rpx; background: #d7ff45; color: #172019; box-shadow: none; }
+.theme-tactical .history-listening-image,
+.theme-tactical .history-writing-image { opacity: 1; filter: none; border-color: #718071; background: #fff; }
+
+/* Tactical daylight palette. */
+.theme-tactical.practice-history-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .history-hero,
+.theme-tactical .history-record,
+.theme-tactical .warm-history-filter,
+.theme-tactical .history-debug,
+.theme-tactical .history-summary,
+.theme-tactical .history-section,
+.theme-tactical .history-question,
+.theme-tactical .history-speaking .history-speaking-band-grid > view,
+.theme-tactical .history-speaking .history-speaking-metric-grid > view { border-color: #bcc8bb; background: #e8ede6; }
+.theme-tactical .history-title,
+.theme-tactical .history-record-title,
+.theme-tactical .history-section-title,
+.theme-tactical .history-question-no,
+.theme-tactical .history-question-prompt,
+.theme-tactical .history-empty-title,
+.theme-tactical .history-study-term,
+.theme-tactical .history-listening-section,
+.theme-tactical .history-listening-group,
+.theme-tactical .history-listening-form,
+.theme-tactical .history-speaking .history-speaking-prompt,
+.theme-tactical .history-speaking .history-speaking-text { color: #172019; }
+.theme-tactical .history-eyebrow,
+.theme-tactical .history-record-meta,
+.theme-tactical .history-copy,
+.theme-tactical .history-ai-status,
+.theme-tactical .history-loading,
+.theme-tactical .history-empty-copy,
+.theme-tactical .history-passage,
+.theme-tactical .history-writing-text,
+.theme-tactical .history-analysis,
+.theme-tactical .history-list-line,
+.theme-tactical .history-listening-transcript,
+.theme-tactical .history-study-example,
+.theme-tactical .history-study-translation,
+.theme-tactical .history-speaking .history-speaking-label,
+.theme-tactical .history-speaking .history-speaking-note,
+.theme-tactical .history-speaking .history-speaking-text.is-feedback { color: #4f5d53; }
+.theme-tactical .history-tabs { border-color: #bcc8bb; background: #dce4da; }
+.theme-tactical .history-tab { color: #4f5d53; }
+.theme-tactical .history-detail,
+.theme-tactical .warm-history-filter-options { border-color: #dce3da; }
+.theme-tactical .warm-history-filter-current { color: #172019; }
+.theme-tactical .warm-history-filter-current text:last-child,
+.theme-tactical .warm-history-filter-option text:last-child,
+.theme-tactical .history-speaking .history-speaking-total > text,
+.theme-tactical .history-speaking .history-speaking-band-grid text,
+.theme-tactical .history-speaking .history-speaking-metric-grid text { color: #4f5d53; }
+.theme-tactical .warm-history-filter-option { color: #334039; }
+.theme-tactical .warm-history-filter-option.is-active { background: #e6eddf; color: #314000; }
+.theme-tactical .history-entry-action { background: #dce4da; color: #314000; }
+.theme-tactical .history-result,
+.theme-tactical .history-study-meaning,
+.theme-tactical .history-analysis-label,
+.theme-tactical .history-speaking .history-speaking-total > view,
+.theme-tactical .history-speaking .history-speaking-band-grid view view,
+.theme-tactical .history-speaking .history-speaking-metric-grid view view { color: #526900; }
+.theme-tactical .history-option { border-color: #c9d2c8; color: #334039; }
+
+/* Grammar summaries can be long; keep the title row at full width. */
+.theme-tactical.history-grammar .history-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14rpx 18rpx;
+}
+
+.theme-tactical.history-grammar .history-summary-main {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+}
+
+.theme-tactical.history-grammar .history-result {
+  min-width: 0;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.theme-tactical.history-grammar .history-entry-action {
+  justify-self: end;
+}

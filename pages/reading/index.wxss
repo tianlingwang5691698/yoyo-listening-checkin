@@ -1126,3 +1126,49 @@
   background: #4fa26e;
   color: #fffbed;
 }
+
+/* Tactical Ops: bright field desk, with text isolated from imagery. */
+.theme-tactical.reading-page { background: #d1dbcf; color: #172019; }
+.theme-tactical .reading-atmosphere,
+.theme-tactical .hero-pages,
+.theme-tactical .reading-hero::after,
+.theme-tactical .directory-row::after,
+.theme-tactical .paper-group-panel::before { display: none; }
+.theme-tactical .reading-hero { min-height: 190rpx; padding: 34rpx 32rpx; border: 2rpx solid #91a45f; border-radius: 6rpx; background: #c3d0c1; box-shadow: 0 10rpx 24rpx rgba(31,47,35,.1); }
+.theme-tactical .reading-hero .eyebrow { color: #526900; }
+.theme-tactical .reading-hero .title { color: #172019; }
+.theme-tactical .reading-hero .subtitle { color: #4f5d53; }
+.theme-tactical .reading-eyebrow { padding: 8rpx 12rpx; border: 1rpx solid #788679; border-radius: 3rpx; background: #66745f; color: #e8ede6; font-weight: 800; }
+.theme-tactical .reading-title { margin-top: 20rpx; color: #fff; font-size: 48rpx; font-weight: 800; }
+.theme-tactical .reading-history-tabs { border: 2rpx solid #b9c1b8; border-radius: 5rpx; background:#e8ede6; }
+.theme-tactical .reading-history-tab { border-radius: 3rpx; color: #4f5d53; font-weight: 700; }
+.theme-tactical .reading-history-tab.is-active { background: #273229; color: #f7f9f4; }
+.theme-tactical .reading-card { padding: 28rpx 24rpx; border: 2rpx solid #b8c0b7; border-radius: 6rpx; background: #e8ede6; box-shadow: 0 12rpx 26rpx rgba(31,42,33,.1); backdrop-filter: none; }
+.theme-tactical .reading-card-label,
+.theme-tactical .directory-title,
+.theme-tactical .task-title { color: #172019; font-weight: 800; }
+.theme-tactical .reading-card-state,
+.theme-tactical .directory-back-icon,
+.theme-tactical .reading-breadcrumb,
+.theme-tactical .directory-meta,
+.theme-tactical .task-meta { color: #4f5d53; }
+.theme-tactical .directory-row,
+.theme-tactical .task-row { border: 2rpx solid #aeb8ae; border-radius: 5rpx; background:#e8ede6; box-shadow: 0 5rpx 0 #d5dbd2; }
+.theme-tactical .paper-group-panel { background:#e8ede6; }
+.theme-tactical .directory-mark,
+.theme-tactical .task-index { border: 2rpx solid #66745f; border-radius: 3rpx; background: #dce4da; color: #172019; box-shadow: none; }
+.theme-tactical .drawer-tab,
+.theme-tactical .reading-sheet::before { background: #66745f; }
+.theme-tactical .directory-arrow { color: #5c6d58; font-weight: 900; }
+.theme-tactical .task-state { border: 2rpx solid #334137; border-radius: 3rpx; background: #dce4da; color: #273229; font-weight: 800; }
+.theme-tactical .task-state.is-done { border-color: #2f6c4a; background: #d9efe0; color: #225238; }
+.theme-tactical .reading-hero { overflow: hidden; }
+.theme-tactical .reading-hero .tactical-subpage-banner {
+  display: block;
+  width: calc(100% + 64rpx);
+  height: 280rpx;
+  margin: -34rpx -32rpx 26rpx;
+  opacity: 1;
+  filter: none;
+}
+.theme-tactical .reading-title { color: #172019; }

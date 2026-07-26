@@ -1,0 +1,132 @@
+.theme-tactical,
+.custom-tabbar.theme-tactical {
+  --bg-cream: #d1dbcf;
+  --bg-warm: #a7b7a4;
+  --surface: #e8ede6;
+  --surface-soft: #dce4da;
+  --surface-subtle: #d9e1d7;
+  --surface-glass: rgba(232, 237, 230, 0.96);
+  --surface-raised: #e8ede6;
+  --control-muted-bg: rgba(169, 184, 165, 0.12);
+  --control-strong-bg: rgba(215, 255, 69, 0.16);
+  --text-main: #243027;
+  --text-strong: #172019;
+  --text-muted: #4f5d53;
+  --text-soft: #718077;
+  --text-inverse: #111813;
+  --accent: #d7ff45;
+  --accent-deep: #b9dd36;
+  --accent-soft: rgba(215, 255, 69, 0.12);
+  --accent-contrast: #111813;
+  --growth: #5dd7ba;
+  --growth-deep: #3cab92;
+  --growth-soft: rgba(93, 215, 186, 0.12);
+  --reward: #ffbd55;
+  --reward-soft: rgba(255, 189, 85, 0.14);
+  --warning: #ffbd55;
+  --warning-soft: rgba(255, 189, 85, 0.14);
+  --danger: #ff6e61;
+  --danger-soft: rgba(255, 110, 97, 0.13);
+  --border-soft: #cbd4c9;
+  --border-strong: rgba(215, 255, 69, 0.5);
+  --shadow-soft: 0 10rpx 24rpx rgba(31, 47, 35, 0.1);
+  --shadow-card: 0 16rpx 36rpx rgba(31, 47, 35, 0.14);
+  --shadow-accent: 0 10rpx 24rpx rgba(184, 221, 54, 0.2);
+  --radius-xl: 6rpx;
+  --radius-lg: 5rpx;
+  --radius-md: 4rpx;
+  --radius-sm: 3rpx;
+  --radius-pill: 999rpx;
+  --space-page-x: 28rpx;
+  --space-card: 28rpx;
+  --tabbar-bg: #a7b7a4;
+  --tabbar-text: #35433a;
+  --tabbar-active: #203000;
+  --tabbar-border: #91a45f;
+  --font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-body-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-title-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-number-family: "DIN Alternate", "Helvetica Neue", sans-serif;
+  --font-english-serif-family: Georgia, "Times New Roman", serif;
+  --font-english-sans-family: "Helvetica Neue", Arial, sans-serif;
+  --font-brand-size: 40rpx;
+  --font-page-title-size: 42rpx;
+  --font-card-title-size: 34rpx;
+  --font-section-title-size: 30rpx;
+  --font-body-size: 26rpx;
+  --font-caption-size: 22rpx;
+  --font-control-size: 28rpx;
+  --font-eyebrow-size: 20rpx;
+  --font-product-copy-size: 25rpx;
+  --font-code-size: 68rpx;
+  --font-display-size: 104rpx;
+  --result-score-size: 48rpx;
+  --result-title-size: 32rpx;
+  --result-section-size: 28rpx;
+  --result-body-size: 26rpx;
+  --result-support-size: 23rpx;
+  --result-meta-size: 21rpx;
+  --result-line-body: 1.72;
+  --result-line-support: 1.58;
+  --font-brand-weight: 800;
+  --font-title-weight: 750;
+  --font-section-weight: 750;
+  --font-section-heading-weight: 750;
+  --font-body-weight: 400;
+  --font-caption-weight: 600;
+  --font-badge-weight: 750;
+  --font-strong-number-weight: 800;
+  --line-title: 1.24;
+  --line-section: 1.3;
+  --line-body: 1.55;
+  --line-caption: 1.35;
+  color: var(--text-main);
+  font-family: var(--font-body-family);
+}
+
+.theme-tactical.page-shell,
+.theme-tactical.page-container {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #d1dbcf;
+  color: var(--text-main);
+}
+
+.theme-tactical .card,
+.theme-tactical .section-panel,
+.theme-tactical .form-panel,
+.theme-tactical .task-row,
+.theme-tactical .directory-row,
+.theme-tactical .profile-row,
+.theme-tactical .report-card,
+.theme-tactical .question-card,
+.theme-tactical .study-card {
+  border: 1rpx solid var(--border-soft);
+  border-radius: 6rpx;
+  background: #e8ede6;
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-tactical .button-primary,
+.theme-tactical .submit-button,
+.theme-tactical .plan-action,
+.theme-tactical .study-complete-button {
+  border: 1rpx solid #d7ff45;
+  border-radius: 4rpx;
+  background: #d7ff45;
+  color: #111813;
+  font-weight: 750;
+}
+
+.theme-tactical input,
+.theme-tactical textarea,
+.theme-tactical .form-input,
+.theme-tactical .answer-input {
+  border: 1rpx solid #aab6a8;
+  border-radius: 4rpx;
+  background: #e8ede6;
+  color: #172019;
+}

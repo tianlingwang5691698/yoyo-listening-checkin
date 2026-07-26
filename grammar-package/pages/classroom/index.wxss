@@ -406,3 +406,41 @@ page { overflow-x: hidden; }
   .theme-dragon .section-map-item,
   .theme-dragon .lesson-row { padding-left: 14rpx; padding-right: 14rpx; }
 }
+
+/* Tactical Ops classroom: bright workbook surfaces and solid controls. */
+.theme-tactical.classroom-page { --bg:#d1dbcf; --card:#e8ede6; --line:#b3bdb2; --ink:#172019; --muted:#4f5d53; --accent:#2f5f43; --soft:#dce4da; background:#d1dbcf; color:#172019; }
+.theme-tactical .page-topbar { border-bottom:3rpx solid #91a45f; background:#c3d0c1; color:#172019; box-shadow:none; }
+.theme-tactical .topbar-back,
+.theme-tactical .topbar-title { color:#fff; }
+.theme-tactical .hero-card,
+.theme-tactical .content-card { border:2rpx solid #adb7ad; border-radius:6rpx; background:#e8ede6; box-shadow:0 10rpx 24rpx rgba(31,42,33,.1); }
+.theme-tactical .hero-card { border-top:10rpx solid #273229; }
+.theme-tactical .hero-eyebrow,
+.theme-tactical .section-kicker,
+.theme-tactical .lesson-progress,
+.theme-tactical .topic-count,
+.theme-tactical .section-map-meta { color:#42624c; font-weight:800; }
+.theme-tactical .syntax-chip,
+.theme-tactical .domain-item,
+.theme-tactical .domain-course-item,
+.theme-tactical .topic-item,
+.theme-tactical .verb-map-item,
+.theme-tactical .section-map-item,
+.theme-tactical .lesson-row,
+.theme-tactical .sentence-card,
+.theme-tactical .option-item,
+.theme-tactical .review-option { border:2rpx solid #b4bdb3; border-radius:4rpx; background:#dce4da; box-shadow:0 4rpx 0 #d9ded6; }
+.theme-tactical .domain-code,
+.theme-tactical .verb-map-code,
+.theme-tactical .section-map-no,
+.theme-tactical .lesson-no { border:2rpx solid #66745f; border-radius:3rpx; background:#dce4da; color:#172019; }
+.theme-tactical .inline-back,
+.theme-tactical .back-button { border:2rpx solid #879486; border-radius:4rpx; background:#e8ede6; color:#334138; }
+.theme-tactical .level-core,
+.theme-tactical .level-advanced { border:1rpx solid #879486; border-radius:3rpx; background:#dce4da; color:#334138; }
+.theme-tactical .narration-card,
+.theme-tactical .rule-card { border:2rpx solid #9ca89a; border-radius:4rpx; background:#dce4da; }
+.theme-tactical .narration-button,
+.theme-tactical .next-button { border:2rpx solid #273229; border-radius:4rpx; background:#273229; color:#fff; box-shadow:none; }
+.theme-tactical .narration-control { border:2rpx solid #879486; border-radius:4rpx; background:#e8ede6; color:#334138; }
+.theme-tactical .footer-actions { background:linear-gradient(to bottom,rgba(223,230,220,0),#d1dbcf 24%); }

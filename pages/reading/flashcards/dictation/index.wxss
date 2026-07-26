@@ -174,3 +174,22 @@ page { overflow-x: hidden; }
   .complete-numbers text:last-child { font-size: 17rpx; }
 }
 .dictation-duration { margin: 24rpx 0; color: #536b78; font-size: 28rpx; font-weight: 700; text-align: center; }
+
+.theme-tactical.dictation-nav{border-bottom:3rpx solid #91a45f;background:#c3d0c1;color:#172019;box-shadow:none}
+.theme-tactical .dictation-back,.theme-tactical .dictation-nav-title{color:#fff}
+.theme-tactical.dictation-page{background:#d1dbcf;color:#172019}
+.theme-tactical .dictation-hero{border:2rpx solid #91a45f;border-radius:6rpx;background:#c3d0c1;color:#172019;box-shadow:0 10rpx 24rpx rgba(31,47,35,.1)}
+.theme-tactical .dictation-kicker{color:#c9d4c7;font-weight:800}
+.theme-tactical .dictation-title{color:#fff;font-weight:800}
+.theme-tactical .dictation-menu,.theme-tactical .dictation-card,.theme-tactical .dictation-complete,.theme-tactical .dictation-today{border:2rpx solid #adb7ad;border-radius:6rpx;background:#e8ede6;box-shadow:0 10rpx 24rpx rgba(31,42,33,.1);backdrop-filter:none}
+.theme-tactical .dictation-count-picker,.theme-tactical .dictation-answer{border:2rpx solid #b4bdb3;border-radius:4rpx;background:#dce4da}
+.theme-tactical .dictation-count-head,.theme-tactical .dictation-count-hint{color:#4f5d53}
+.theme-tactical .dictation-count-total{color:#172019}
+.theme-tactical .dictation-count-controls button{border:2rpx solid #344238;border-radius:4rpx;background:#d9ef52;color:#172019}
+.theme-tactical .dictation-action.primary{border:2rpx solid #273229;border-radius:4rpx;background:#273229;color:#fff;box-shadow:none}
+.theme-tactical .dictation-wrong-actions button,.theme-tactical .dictation-history,.theme-tactical .dictation-change-mode{border:2rpx solid #879486;border-radius:4rpx;background:#e8ede6;color:#334138}
+.theme-tactical .dictation-play,.theme-tactical .complete-mark{border:2rpx solid #344238;background:#d9ef52;color:#172019;box-shadow:none}
+.theme-tactical .dictation-input{border:2rpx solid #879486;border-radius:4rpx;background:#e8ede6;color:#172019}
+.theme-tactical .dictation-today-bar{border:1rpx solid #879486;border-radius:3rpx;background:#dfe5da}
+.theme-tactical .dictation-today-bar view{background:#536d58}
+.theme-tactical .complete-numbers view{border:1rpx solid #b4bdb3;border-radius:3rpx;background:#dce4da}
