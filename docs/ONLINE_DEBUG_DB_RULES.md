@@ -1,5 +1,13 @@
 # 线上 Debug 数据库规则
 
+### 2026-07-27 佑佑今日计划显示历史课程
+
+1. 现象：首页进入今日听力后显示旧的新概念 1、Peppa 与 Unlock 1 听口课本；线上真实计划应为新概念 2、当前 Peppa 与 Unlock 1 练习册 MID 1。
+2. 查询：生产库与首页 `getDashboard` 返回正确；阶段页 `getLevelOverview` 仍调用 `buildPlanForDay + decoratePlanTasks` 旧日历计划，并覆盖首页的新概念 2、当前 Peppa 与 Unlock 练习册快照。URL 编码后的学生快照 ID 也未解码，导致专属快照未命中。
+3. 修复：首页进入计划前等待当前云请求成功；阶段快照 ID 解码并立即复验；`getLevelOverview` 改为与首页共用 `progressScope=home` 的固定计划分组，禁止旧日历计划覆盖实际推进结果。
+4. 是否需要发版：需部署 `yoyo` 云函数并重新发布小程序前端；无需修改线上学习数据。
+5. 线上验证：`getLevelOverview.syncMode=cloud`；返回 `grammar-article-7..11`、`newconcept2-2__fixed_listening_round_1`、`peppa-41/37/38/39/35`、`unlock1workbook-5__fixed_listening_round_1`，阶段页与首页一致。
+
 ### 2026-07-26 家长日报看不到 Unlock 练习册 3.1 学习包
 
 1. 现象：317613 在 2026-07-25 已生成 `3.1` 听力学习包，但家长当天日报听力档案不显示。

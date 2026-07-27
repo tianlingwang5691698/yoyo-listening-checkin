@@ -65,6 +65,8 @@ Object.assign(module.exports.levelStage.en, {
   dailySpeakingCompleted: "Today's repeat practice is complete",
   openNextSpeakingSegment: 'Opening the next unfinished paragraph'
 });
+module.exports.home['zh-CN'].planRefreshFailed = '今日计划刷新失败，请重试';
+module.exports.home.en.planRefreshFailed = "Could not refresh today's plan. Try again.";
 module.exports.level['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';
 module.exports.level.en.peppaSeasons = 'Peppa Pig · Seasons 1–3';
 module.exports.listeningPlan['zh-CN'].peppaSeasons = 'Peppa Pig · 第1–3季';

@@ -11,28 +11,53 @@ const LEVEL_CATEGORY_GROUPS = {
 
 const STANDALONE_CATEGORY_IDS = [].concat(LEVEL_CATEGORY_GROUPS.A2, LEVEL_CATEGORY_GROUPS.B1, LEVEL_CATEGORY_GROUPS.B2);
 
+function buildFixedDashboardCategories(groupedDailyTasks, planDayIndex) {
+  return (groupedDailyTasks || []).map((group) => {
+    const tasks = Array.isArray(group.tasks) ? group.tasks : [];
+    const todayTask = group.nextTask || tasks.find((task) => !task.completedToday) || tasks[0] || {};
+    return {
+      category: group.category || todayTask.category || '',
+      categoryLabel: group.categoryLabel || todayTask.categoryLabel || '',
+      totalCount: Number(group.totalCount || tasks.length),
+      completedCount: Number(group.completedCount || 0),
+      todayTask,
+      tasks,
+      isPendingAsset: !!(group.isPendingAsset || todayTask.isPendingAsset),
+      todayTaskCount: tasks.length,
+      plannedDurationSec: Number(group.durationSec || 0),
+      planRunType: todayTask.planRunType || 'normal',
+      planDayIndex
+    };
+  }).filter((group) => group.category && group.tasks.length);
+}
+
 async function getLevelOverview(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getLevelOverview'
   }));
   const payload = (event && event.payload) || {};
   const requestedPhase = String(payload.phase || '').trim();
-  const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
   const isA1PhaseOverview = requestedPhase === 'round-1' || requestedPhase === 'round-2';
   const vocabularyPlan = isA1PhaseOverview && study.isYoyoChild(ctx.child)
     ? await flashcardService.getJuniorListPlanSummary(ctx, today)
     : null;
   const dashboard = await study.getDashboardData(ctx, {
     includeDailyTasks: requestedPhase === 'custom',
-    includeHomeTaskGroups: false,
+    includeHomeTaskGroups: true,
     includeCategorySummaries: false,
     includeCatchupState: false,
     includePlanDebug: false,
-    includeTaskProgressSummary: false,
+    includeTaskProgressSummary: true,
     includeUser: false,
     includeFamily: false,
-    includeStats: true
+    includeStats: true,
+    progressScope: 'home',
+    reconcileCheckins: false
   });
+  const useDashboardFixedPlan = isA1PhaseOverview && dashboard.planSource === 'fixed-yoyo';
+  const progressRecords = useDashboardFixedPlan
+    ? []
+    : await study.getChildProgressRecords(study.getUserScope(ctx));
   const speakingPlan = isA1PhaseOverview
     && requestedPhase === 'round-2'
     && dashboard.planSource === 'fixed-yoyo'
@@ -84,8 +109,14 @@ async function getLevelOverview(event) {
       planPhaseLabel: dashboard.planPhaseLabel
     };
   }
-  const todayPlan = study.buildPlanForDay(dashboard.planDayIndex);
-  const todayTasks = isA1PhaseOverview
+  const todayPlan = useDashboardFixedPlan
+    ? {
+      dayIndex: dashboard.planDayIndex,
+      phase: { key: dashboard.planPhase, label: dashboard.planPhaseLabel },
+      byCategory: {}
+    }
+    : study.buildPlanForDay(dashboard.planDayIndex);
+  const todayTasks = isA1PhaseOverview && !useDashboardFixedPlan
     ? study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
       planRunType: 'normal',
       targetDate: today,
@@ -161,14 +192,9 @@ async function getLevelOverview(event) {
       ]
     }
     : null;
-  return {
-    user: ctx.user,
-    currentUser: ctx.user,
-    currentMember: ctx.member,
-    child: ctx.child,
-    level: study.level,
-    stats: dashboard.stats,
-    categories: overviewCategoryIds.map((category) => {
+  const overviewCategories = useDashboardFixedPlan
+    ? buildFixedDashboardCategories(dashboard.groupedDailyTasks, dashboard.planDayIndex)
+    : overviewCategoryIds.map((category) => {
       const categoryTasks = isA1PhaseOverview
         ? todayTasks.filter((item) => item.category === category)
         : [];
@@ -192,7 +218,15 @@ async function getLevelOverview(event) {
         planRunType: 'normal',
         planDayIndex: dashboard.planDayIndex
       };
-    }).concat(speakingPlan ? [{
+    });
+  return {
+    user: ctx.user,
+    currentUser: ctx.user,
+    currentMember: ctx.member,
+    child: ctx.child,
+    level: study.level,
+    stats: dashboard.stats,
+    categories: overviewCategories.concat(speakingPlan ? [{
       category: 'speaking',
       categoryLabel: '口语跟读',
       totalCount: speakingPlan.curriculumSentenceCount,
@@ -275,8 +309,8 @@ async function getLevelOverview(event) {
     },
     fixedPlanOutline,
     planDayIndex: dashboard.planDayIndex,
-    planPhase: todayPlan.phase.key,
-    planPhaseLabel: todayPlan.phase.label || dashboard.planPhaseLabel
+    planPhase: useDashboardFixedPlan ? dashboard.planPhase : todayPlan.phase.key,
+    planPhaseLabel: useDashboardFixedPlan ? dashboard.planPhaseLabel : (todayPlan.phase.label || dashboard.planPhaseLabel)
   };
 }
 

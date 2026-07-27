@@ -11,7 +11,7 @@ const {
   getActiveListeningLessonKey,
   findListeningContinueTask
 } = require('../../utils/listening-resume');
-const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
+const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV2';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
@@ -798,13 +798,13 @@ Page({
       entryPosterPage: entryPosterVisible ? 0 : this.data.entryPosterPage,
       identitySelectedInSession
     }, this.buildStudyModePresentation({ studyRole: deviceStudyRole })));
+    const homeRefreshPromise = this.startHomeDashboardRefresh({ skipCache: true, perf: homePerf });
     await new Promise((resolve) => wx.nextTick(resolve));
     homePerf.ready('pageReady', {
       cacheHit: memoryReady || cacheReady,
       source: memoryReady ? 'memory' : (cacheReady ? 'cache' : 'skeleton'),
       groups: (this.data.groupedDailyTasks || []).length
     });
-    const homeRefreshPromise = this.startHomeDashboardRefresh({ skipCache: true, perf: homePerf });
     setTimeout(() => {
       writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     }, 100);
@@ -939,18 +939,29 @@ Page({
   },
   invalidateHomeDashboardRefresh() {
     this._homeDashboardRefreshId = Number(this._homeDashboardRefreshId || 0) + 1;
+    this.homeDashboardFresh = false;
+    this.homeDashboardRefreshPromise = null;
   },
   isHomeDashboardRefreshCurrent(refreshId) {
     return refreshId === this._homeDashboardRefreshId;
   },
   startHomeDashboardRefresh(options = {}) {
     const refreshId = this.beginHomeDashboardRefresh();
-    return this.refreshHomeDashboard(Object.assign({}, options, { refreshId })).catch(() => {
+    this.homeDashboardFresh = false;
+    const refreshPromise = this.refreshHomeDashboard(Object.assign({}, options, { refreshId })).catch(() => {
       if (this.isHomeDashboardRefreshCurrent(refreshId)) {
         this.setData({ homeLoading: false });
       }
       return this.data.groupedDailyTasks || [];
     });
+    this.homeDashboardRefreshPromise = refreshPromise;
+    const clearRefreshPromise = () => {
+      if (this.homeDashboardRefreshPromise === refreshPromise) {
+        this.homeDashboardRefreshPromise = null;
+      }
+    };
+    refreshPromise.then(clearRefreshPromise, clearRefreshPromise);
+    return refreshPromise;
   },
   async refreshHomeDashboard(options = {}) {
     const refreshId = options.refreshId || this.beginHomeDashboardRefresh();
@@ -980,6 +991,7 @@ Page({
     if (!this.isHomeDashboardRefreshCurrent(refreshId)) {
       return this.data.groupedDailyTasks || [];
     }
+    this.homeDashboardFresh = !!(data && data.syncMode === 'cloud' && !data.__cacheHit);
     const groups = this.applyDashboard(data);
     if (options.perf || this.homePerf) {
       (options.perf || this.homePerf).mark('cloudRefresh', {
@@ -1219,9 +1231,20 @@ Page({
       url: '/pages/reading/flashcards/index'
     });
   },
-  openCompleted() {
+  async openCompleted() {
     if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
+      return;
+    }
+    if (this.openingCompleted) return;
+    this.openingCompleted = true;
+    try {
+    if (this.homeDashboardRefreshPromise) {
+      await this.homeDashboardRefreshPromise;
+    }
+    if (!this.homeDashboardFresh) {
+      console.warn('[fixed-plan-freshness] pages/home.openCompleted -> startHomeDashboardRefresh -> store.getDashboard: cloud freshness unavailable');
+      wx.showToast({ title: t('planRefreshFailed'), icon: 'none' });
       return;
     }
     if (!this.data.homeDataReady) return;
@@ -1269,6 +1292,9 @@ Page({
       animationType: 'none',
       animationDuration: 0
     });
+    } finally {
+      this.openingCompleted = false;
+    }
   },
   openFamilyPage() {
     if (!this.ensureIdentityReady()) return;

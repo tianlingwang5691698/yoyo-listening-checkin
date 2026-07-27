@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
-const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
+const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV2';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const YOYO_FIXED_PLAN_OUTLINE = {
@@ -278,6 +278,10 @@ Page({
       ? currentExpandedGroupKey
       : '';
     const nextData = {
+      syncMode: data.syncMode,
+      syncDebug: data.syncDebug,
+      showCloudDebug: data.showCloudDebug,
+      isReviewBuild: data.isReviewBuild,
       levelId,
       phase: displayPhase,
       stage: getStage(displayPhase),
@@ -301,15 +305,48 @@ Page({
       forceRefresh: options.forceRefresh === true
     };
     const data = await store.getLevelOverview(payload, (fresh) => {
+      this.overviewFresh = !!(fresh && fresh.syncMode === 'cloud' && !fresh.__cacheHit);
       this.applyOverview(fresh, request.phase, request.levelId, request.preferredExpandedGroupKey, request.snapshotId);
       if (this.levelStagePerf) {
         this.levelStagePerf.mark('cloudRefresh', { phase: request.phase, groups: (fresh.categories || []).length });
       }
     });
     if (!data || data.syncMode !== 'cloud-error' || !this.data.hydrated) {
+      this.overviewFresh = !!(data && data.syncMode === 'cloud' && !data.__cacheHit);
       this.applyOverview(data, request.phase, request.levelId, request.preferredExpandedGroupKey, request.snapshotId);
     }
     return data;
+  },
+  async ensureOverviewFresh(options = {}) {
+    if (this.overviewFresh) return true;
+    let refreshPromise = this.overviewRefreshPromise;
+    if (!refreshPromise) {
+      refreshPromise = this.refreshOverview({ forceRefresh: true });
+      this.overviewRefreshPromise = refreshPromise;
+      const clearRefreshPromise = () => {
+        if (this.overviewRefreshPromise === refreshPromise) {
+          this.overviewRefreshPromise = null;
+        }
+      };
+      refreshPromise.then(clearRefreshPromise, clearRefreshPromise);
+    }
+    try {
+      const data = await refreshPromise;
+      const fresh = !!(data && data.syncMode === 'cloud' && !data.__cacheHit);
+      this.overviewFresh = fresh;
+      if (!fresh && !options.silent) {
+        console.warn('[fixed-plan-freshness] pages/level-stage.ensureOverviewFresh -> store.getLevelOverview: cloud freshness unavailable');
+        wx.showToast({ title: t('progressRefreshFailed'), icon: 'none' });
+      }
+      return fresh;
+    } catch (error) {
+      this.overviewFresh = false;
+      if (!options.silent) {
+        console.warn(`[fixed-plan-freshness] pages/level-stage.ensureOverviewFresh -> store.getLevelOverview: ${error && error.message || 'unknown error'}`);
+        wx.showToast({ title: t('progressRefreshFailed'), icon: 'none' });
+      }
+      return false;
+    }
   },
   async onLoad(query) {
     this.levelStagePerf = page.startPagePerf('level-stage');
@@ -317,10 +354,15 @@ Page({
     const phase = query.phase || 'round-1';
     const levelId = query.levelId || 'A1';
     const preferredExpandedGroupKey = query.expand || '';
-    const snapshotId = query.snapshotId || phase;
+    let snapshotId = query.snapshotId || phase;
+    try {
+      snapshotId = decodeURIComponent(snapshotId);
+    } catch (error) {}
     const fastMode = query.fast === '1';
     this.fixedPlanMode = query.fixed === '1';
     this.levelStageDidShow = false;
+    this.overviewFresh = false;
+    this.overviewRefreshPromise = null;
     this.overviewRequest = { phase, levelId, preferredExpandedGroupKey, snapshotId };
     this.resumeOpenToken = 0;
     this.resumeTaskOpened = false;
@@ -339,7 +381,7 @@ Page({
       fixedPlanOutline: this.fixedPlanMode ? buildFixedPlanOutline(YOYO_FIXED_PLAN_OUTLINE) : null,
       hydrated: false
     }));
-    const snapshot = getStageSnapshot(snapshotId) || getStageSnapshot(phase);
+    const snapshot = getStageSnapshot(snapshotId);
     if (snapshot && !this.fixedPlanMode) {
       this.setData(page.buildCloudPageData(this.data, {
         levelId,
@@ -358,15 +400,13 @@ Page({
         phase,
         groups: (snapshot.taskGroups || []).length
       });
-      this.tryOpenResumeTask();
     }
     if (snapshot && fastMode && !this.fixedPlanMode) {
+      this.ensureOverviewFresh({ silent: true }).catch(() => {});
       return;
     }
     if (snapshot && !this.fixedPlanMode) {
-      setTimeout(() => {
-        this.refreshOverview().catch(() => {});
-      }, 1200);
+      this.ensureOverviewFresh({ silent: true }).catch(() => {});
       return;
     }
     await new Promise((resolve) => wx.nextTick(resolve));
@@ -376,7 +416,7 @@ Page({
       phase,
       groups: 0
     });
-    const data = await this.refreshOverview();
+    const data = await this.refreshOverview({ forceRefresh: true });
     this.levelStagePerf.mark('cloudRefresh', {
       source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
       cacheHit: !!(data && data.__cacheHit),
@@ -394,7 +434,8 @@ Page({
       this.levelStageDidShow = true;
       return;
     }
-    this.refreshOverview({ forceRefresh: true }).catch(() => {});
+    this.overviewFresh = false;
+    this.ensureOverviewFresh({ silent: true }).catch(() => {});
   },
   toggleTaskGroup(event) {
     const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
@@ -407,7 +448,7 @@ Page({
     });
   },
   tryOpenResumeTask() {
-    if (this.resumeTaskOpened || !this.resumeTaskRequest) return false;
+    if (!this.overviewFresh || this.resumeTaskOpened || !this.resumeTaskRequest) return false;
     const request = this.resumeTaskRequest;
     const groupIndex = (this.data.taskGroups || []).findIndex((group) => (
       String(group.category || '') === String(request.category || '')
@@ -532,7 +573,7 @@ Page({
       });
     }
   },
-  openTask(event) {
+  async openTask(event) {
     const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
     const taskIndex = Number(event.currentTarget.dataset.taskIndex || 0);
     this.resumeOpenToken += 1;
@@ -544,6 +585,30 @@ Page({
       this.openFreshSpeakingTask(taskRow && taskRow.taskId);
       return;
     }
-    this.openTaskByIndex(groupIndex, taskIndex);
+    if (this.taskOpening) return;
+    this.taskOpening = true;
+    try {
+    const groupKey = taskGroup && taskGroup.groupKey;
+    const category = taskGroup && taskGroup.category;
+    const taskId = taskRow && taskRow.taskId;
+    if (!await this.ensureOverviewFresh()) return;
+    const freshGroupIndex = (this.data.taskGroups || []).findIndex((group) => (
+      (groupKey && String(group.groupKey || '') === String(groupKey))
+      || String(group.category || '') === String(category || '')
+    ));
+    const freshGroup = (this.data.taskGroups || [])[freshGroupIndex];
+    const freshTasks = freshGroup && freshGroup.tasks || [];
+    const requestedTaskIndex = freshTasks.findIndex((task) => String(task.taskId || '') === String(taskId || ''));
+    const freshTaskIndex = requestedTaskIndex >= 0
+      ? requestedTaskIndex
+      : freshTasks.findIndex((task) => !task.completedToday && !task.disabled);
+    if (freshGroupIndex < 0 || freshTaskIndex < 0) {
+      wx.showToast({ title: t('progressRefreshFailed'), icon: 'none' });
+      return;
+    }
+    this.openTaskByIndex(freshGroupIndex, freshTaskIndex);
+    } finally {
+      this.taskOpening = false;
+    }
   }
 });

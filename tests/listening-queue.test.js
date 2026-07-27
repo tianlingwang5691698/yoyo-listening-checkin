@@ -128,7 +128,24 @@ test('任务表手动选择 B 会取消待执行的自动恢复 A', () => {
   const stageSource = fs.readFileSync(path.join(__dirname, '../pages/level-stage/index.js'), 'utf8');
   assert.match(stageSource, /const resumeOpenToken = \+\+this\.resumeOpenToken/);
   assert.match(stageSource, /if \(resumeOpenToken !== this\.resumeOpenToken\) return/);
-  assert.match(stageSource, /openTask\(event\)[\s\S]*this\.resumeOpenToken \+= 1;[\s\S]*this\.resumeTaskRequest = null;[\s\S]*this\.openTaskByIndex\(groupIndex, taskIndex\)/);
+  assert.match(stageSource, /async openTask\(event\)[\s\S]*this\.resumeOpenToken \+= 1;[\s\S]*this\.resumeTaskRequest = null;[\s\S]*this\.openTaskByIndex\(freshGroupIndex, freshTaskIndex\)/);
+});
+
+test('今日计划进入和任务打开都必须先通过云端新鲜度门禁', () => {
+  const homeSource = fs.readFileSync(path.join(__dirname, '../pages/home/index.js'), 'utf8');
+  const stageSource = fs.readFileSync(path.join(__dirname, '../pages/level-stage/index.js'), 'utf8');
+  assert.match(homeSource, /LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV2'/);
+  assert.match(stageSource, /LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV2'/);
+  assert.match(stageSource, /snapshotId = decodeURIComponent\(snapshotId\)/);
+  assert.match(stageSource, /syncMode: data\.syncMode,[\s\S]*syncDebug: data\.syncDebug/);
+  assert.match(homeSource, /async openCompleted\(\)[\s\S]*await this\.homeDashboardRefreshPromise[\s\S]*if \(!this\.homeDashboardFresh\)/);
+  assert.match(homeSource, /this\.homeDashboardFresh = !!\(data && data\.syncMode === 'cloud' && !data\.__cacheHit\)/);
+  assert.ok(homeSource.indexOf('const homeRefreshPromise = this.startHomeDashboardRefresh') < homeSource.indexOf('await new Promise((resolve) => wx.nextTick(resolve))'));
+  assert.match(stageSource, /snapshot && fastMode[\s\S]*this\.ensureOverviewFresh\(\{ silent: true \}\)/);
+  assert.doesNotMatch(stageSource, /getStageSnapshot\(snapshotId\) \|\| getStageSnapshot\(phase\)/);
+  assert.match(stageSource, /if \(!this\.overviewFresh \|\| this\.resumeTaskOpened/);
+  assert.match(stageSource, /async openTask\(event\)[\s\S]*if \(!await this\.ensureOverviewFresh\(\)\) return/);
+  assert.match(stageSource, /requestedTaskIndex[\s\S]*freshTasks\.findIndex\(\(task\) => !task\.completedToday && !task\.disabled\)/);
 });
 
 test('音频就绪后等待页面渲染完成再恢复断点', () => {

@@ -25,20 +25,72 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
     today: '2026-07-15'
   }));
   t.mock.method(study, 'getUserScope', () => ({ childId: 'child-yoyo' }));
-  t.mock.method(study, 'getChildProgressRecords', async () => []);
-  t.mock.method(study, 'getDashboardData', async () => ({
-    planSource: 'fixed-yoyo',
-    planDayIndex: 86,
-    planPhase: 'round-2',
-    planPhaseLabel: '阶段二',
-    stats: { completedTasks: 0 }
-  }));
-  t.mock.method(study, 'buildPlanForDay', () => ({
-    dayIndex: 86,
-    phase: { key: 'round-2', label: '阶段二' },
-    byCategory: { grammar: grammarTasks }
-  }));
-  t.mock.method(study, 'decoratePlanTasks', () => grammarTasks);
+  t.mock.method(study, 'getChildProgressRecords', async () => {
+    throw new Error('fixed-yoyo overview must not load legacy progress records');
+  });
+  t.mock.method(study, 'getDashboardData', async (ctx, options) => {
+    assert.equal(options.progressScope, 'home');
+    assert.equal(options.includeHomeTaskGroups, true);
+    assert.equal(options.includeTaskProgressSummary, true);
+    return {
+      planSource: 'fixed-yoyo',
+      planDayIndex: 86,
+      planPhase: 'round-2',
+      planPhaseLabel: '阶段二',
+      stats: { completedTasks: 0 },
+      groupedDailyTasks: [{
+        category: 'grammar',
+        categoryLabel: '词法微课',
+        totalCount: 1,
+        completedCount: 0,
+        durationSec: 60,
+        nextTask: grammarTasks[0],
+        tasks: grammarTasks
+      }, {
+        category: 'newconcept2',
+        categoryLabel: 'New Concept 2',
+        totalCount: 1,
+        completedCount: 0,
+        durationSec: 180,
+        nextTask: {
+          category: 'newconcept2',
+          taskId: 'newconcept2-2__fixed_listening_round_1',
+          title: '02－Breakfast or Lunch',
+          completedToday: false
+        },
+        tasks: [{
+          category: 'newconcept2',
+          taskId: 'newconcept2-2__fixed_listening_round_1',
+          title: '02－Breakfast or Lunch',
+          completedToday: false
+        }]
+      }, {
+        category: 'unlock1workbook',
+        categoryLabel: 'Unlock 1 听口练习册 第二版',
+        totalCount: 1,
+        completedCount: 0,
+        durationSec: 180,
+        nextTask: {
+          category: 'unlock1workbook',
+          taskId: 'unlock1workbook-5__fixed_listening_round_1',
+          title: 'MID 1',
+          completedToday: false
+        },
+        tasks: [{
+          category: 'unlock1workbook',
+          taskId: 'unlock1workbook-5__fixed_listening_round_1',
+          title: 'MID 1',
+          completedToday: false
+        }]
+      }]
+    };
+  });
+  t.mock.method(study, 'buildPlanForDay', () => {
+    throw new Error('fixed-yoyo overview must not rebuild the legacy calendar plan');
+  });
+  t.mock.method(study, 'decoratePlanTasks', () => {
+    throw new Error('fixed-yoyo overview must not decorate legacy calendar tasks');
+  });
   t.mock.method(study, 'buildCategorySummary', (tasks) => Object.assign({
     plannedTaskCount: tasks.length,
     isPendingAsset: false
@@ -96,12 +148,16 @@ test('佑佑阶段详情返回周期和固定内容范围', async (t) => {
   const vocabularyCategory = result.categories.find((item) => item.category === 'vocabulary');
   assert.equal(vocabularyCategory.todayTask.displayTitle, '初中词汇第2轮 · List 3');
   assert.equal(result.categories.find((item) => item.category === 'speaking').todayTask.taskId, 'unlock1workbook-1-paragraph-1-sentences-1-5');
+  assert.equal(result.categories.find((item) => item.category === 'newconcept2').todayTask.taskId, 'newconcept2-2__fixed_listening_round_1');
+  assert.equal(result.categories.find((item) => item.category === 'unlock1workbook').todayTask.taskId, 'unlock1workbook-5__fixed_listening_round_1');
+  assert.equal(result.categories.some((item) => item.category === 'newconcept1'), false);
+  assert.equal(result.categories.some((item) => item.category === 'unlock1'), false);
 });
 
 test('阶段页显示佑佑口语每天 20 句', () => {
   const source = fs.readFileSync(path.join(__dirname, '../../../pages/level-stage/index.js'), 'utf8');
   assert.match(source, /练习册 → 课本连续循环/);
   assert.match(source, /每天\$\{Number\(item\.dailySentenceCount \|\| 20\)\}句/);
-  assert.match(source, /onShow\(\)[\s\S]*refreshOverview\(\{ forceRefresh: true \}\)/);
+  assert.match(source, /onShow\(\)[\s\S]*ensureOverviewFresh\(\{ silent: true \}\)/);
   assert.match(source, /openFreshSpeakingTask[\s\S]*tasks\.findIndex\(\(task\) => !task\.completedToday/);
 });
