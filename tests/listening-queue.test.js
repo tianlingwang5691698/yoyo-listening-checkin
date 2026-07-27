@@ -148,6 +148,25 @@ test('今日计划进入和任务打开都必须先通过云端新鲜度门禁',
   assert.match(stageSource, /requestedTaskIndex[\s\S]*freshTasks\.findIndex\(\(task\) => !task\.completedToday && !task\.disabled\)/);
 });
 
+test('已完成每日跟读可回看成绩且不会挤掉未完成句', () => {
+  const stageSource = fs.readFileSync(path.join(__dirname, '../pages/level-stage/index.js'), 'utf8');
+  const speakingSource = fs.readFileSync(path.join(__dirname, '../pages/speaking/index.js'), 'utf8');
+  const speakingTemplate = fs.readFileSync(path.join(__dirname, '../pages/speaking/index.wxml'), 'utf8');
+  assert.match(stageSource, /requestedTask\.completedToday[\s\S]*reviewCompleted: true/);
+  assert.match(stageSource, /reviewCompleted=1/);
+  assert.match(speakingSource, /reviewCompleted: String\(options\.reviewCompleted/);
+  assert.match(speakingSource, /if \(request\.reviewCompleted\)[\s\S]*buildStoredRepeatResult/);
+  assert.match(speakingSource, /else \{\s*exercises = exercises\.filter\(\(exercise\) => !latestAttempts\.has\(exercise\.id\)\)/);
+  assert.match(speakingTemplate, /result && !tempFilePath[\s\S]*restartRepeatRecording/);
+});
+
+test('战术主题跟读分数与播放键在浅色卡片上保持深色对比', () => {
+  const speakingStyles = fs.readFileSync(path.join(__dirname, '../pages/speaking/index.wxss'), 'utf8');
+  assert.match(speakingStyles, /\.theme-tactical \.repeat-sentence-score \{\s*border: 2rpx solid #668000;\s*background: #e4efbd;\s*color: #314000;/);
+  assert.match(speakingStyles, /\.theme-tactical \.repeat-sentence-play \{\s*border: 2rpx solid #314000;\s*background: #eef2ec;/);
+  assert.match(speakingStyles, /\.theme-tactical \.repeat-inline-result-total \{ color: #314000; \}/);
+});
+
 test('音频就绪后等待页面渲染完成再恢复断点', () => {
   const lessonSource = fs.readFileSync(path.join(__dirname, '../pages/lesson/index.js'), 'utf8');
   assert.match(lessonSource, /this\.setData\(\{[\s\S]*audioReady: true[\s\S]*\}, \(\) => \{\s*setTimeout\(\(\) => \{[\s\S]*this\.restoreListeningResumeCheckpoint\(\)/);

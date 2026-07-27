@@ -160,4 +160,6 @@ test('阶段页显示佑佑口语每天 20 句', () => {
   assert.match(source, /每天\$\{Number\(item\.dailySentenceCount \|\| 20\)\}句/);
   assert.match(source, /onShow\(\)[\s\S]*ensureOverviewFresh\(\{ silent: true \}\)/);
   assert.match(source, /openFreshSpeakingTask[\s\S]*tasks\.findIndex\(\(task\) => !task\.completedToday/);
+  assert.match(source, /requestedTask\.completedToday[\s\S]*reviewCompleted: true/);
+  assert.match(source, /reviewCompleted=1/);
 });

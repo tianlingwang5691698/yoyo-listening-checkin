@@ -262,8 +262,12 @@ test('home view 任务分组保留播放字段但不返回大字段', async () =
     getDailyReport: async () => ({
       totalMinutes: 31,
       items: [
-        { repeatTarget: 1, taskSnapshot: { durationSec: 900 } },
-        { repeatTarget: 1, taskSnapshot: { durationSec: 960 } }
+        {
+          category: 'peppa',
+          taskId: 'peppa-1',
+          repeatTarget: 1,
+          taskSnapshot: { category: 'peppa', taskId: 'peppa-1', durationSec: 1860 }
+        }
       ]
     }),
     isYoyoChild: () => true,
@@ -349,6 +353,77 @@ test('home view 任务分组保留播放字段但不返回大字段', async () =
     'topic',
     'topicLabel'
   ].sort());
+});
+
+test('固定计划日报任务已过期时首页按今天实际计划统计分钟', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {},
+    member: { studyRole: 'student' },
+    family: {},
+    child: { childId: 'child-1', childLoginCode: '317613' }
+  }, {
+    getTodayString: () => '2026-07-27',
+    getUserScope: () => ({ familyId: 'family-1', childId: 'child-1' }),
+    getHomeProgressRecords: async () => [],
+    getCheckins: async () => [],
+    getDailyReport: async () => ({
+      totalMinutes: 0,
+      planSource: 'fixed-yoyo',
+      items: [
+        { category: 'newconcept1', taskId: 'newconcept1-old', taskSnapshot: { taskId: 'newconcept1-old', durationSec: 300 } },
+        { category: 'peppa', taskId: 'peppa-old', taskSnapshot: { taskId: 'peppa-old', durationSec: 1200 } }
+      ]
+    }),
+    isYoyoChild: () => true,
+    getPlanDayIndexForDate: () => 86,
+    buildPlanForDay: () => ({
+      dayIndex: 86,
+      phase: { key: 'round-2', label: '第2轮' },
+      byCategory: {},
+      flatTasks: []
+    }),
+    getPlanCategoryOrder: () => ['newconcept2', 'peppa', 'unlock1workbook'],
+    decoratePlannedTasks: () => [],
+    buildCategorySummary: () => ({}),
+    decoratePlanTasks: () => [
+      {
+        category: 'newconcept2', taskId: 'newconcept2-2__fixed_listening_round_1',
+        originalTaskId: 'newconcept2-2', durationSec: 180, repeatTarget: 3,
+        completedToday: true, isPendingAsset: false
+      },
+      {
+        category: 'peppa', taskId: 'peppa-41__fixed_listening_round_1',
+        originalTaskId: 'peppa-41', durationSec: 1560, repeatTarget: 1,
+        completedToday: false, isPendingAsset: false
+      },
+      {
+        category: 'unlock1workbook', taskId: 'unlock1workbook-mid1__fixed_listening_round_1',
+        originalTaskId: 'unlock1workbook-mid1', durationSec: 128.7, repeatTarget: 3,
+        completedToday: true, isPendingAsset: false
+      }
+    ],
+    buildStats: () => ({ streakDays: 0 }),
+    buildCatchupState: () => ({}),
+    getPlanStartDate: () => '',
+    getCatalog: () => [],
+    getCategoryLabel: (category) => category
+  }, {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false,
+    includeTodayListeningMinutes: true,
+    progressScope: 'home',
+    reconcileCheckins: false
+  });
+
+  assert.equal(dashboard.todayListeningMinutes, 15);
+  assert.equal(dashboard.todayListeningGoalMinutes, 41);
 });
 
 test('自定义计划晚于旧日报更新时首页使用当前任务时长', async () => {

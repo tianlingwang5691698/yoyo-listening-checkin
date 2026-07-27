@@ -504,8 +504,9 @@ Page({
     }
     if (category === 'speaking') {
       const task = taskRow.taskSnapshot || taskRow;
+      const reviewQuery = routeOptions.reviewCompleted === true ? '&reviewCompleted=1' : '';
       wx.navigateTo({
-        url: `/pages/speaking/index?dailyPlan=unlock1speaking&audioCategory=${encodeURIComponent(task.audioCategory || 'unlock1workbook')}&audioTaskId=${encodeURIComponent(task.audioTaskId || '')}&paragraphIndex=${Number(task.paragraphIndex || 1)}&sentenceStart=${Number(task.sentenceStartIndex || 1)}&sentenceEnd=${Number(task.sentenceEndIndex || task.sentenceStartIndex || 1)}`
+        url: `/pages/speaking/index?dailyPlan=unlock1speaking&audioCategory=${encodeURIComponent(task.audioCategory || 'unlock1workbook')}&audioTaskId=${encodeURIComponent(task.audioTaskId || '')}&paragraphIndex=${Number(task.paragraphIndex || 1)}&sentenceStart=${Number(task.sentenceStartIndex || 1)}&sentenceEnd=${Number(task.sentenceEndIndex || task.sentenceStartIndex || 1)}${reviewQuery}`
       });
       return;
     }
@@ -536,15 +537,16 @@ Page({
       const tasks = taskGroup && taskGroup.tasks || [];
       const requestedIndex = tasks.findIndex((task) => String(task.taskId || '') === String(taskId || ''));
       const requestedTask = tasks[requestedIndex];
-      const taskIndex = requestedTask && !requestedTask.completedToday
+      if (groupIndex >= 0 && requestedTask && requestedTask.completedToday && !requestedTask.disabled) {
+        this.openTaskByIndex(groupIndex, requestedIndex, { reviewCompleted: true });
+        return;
+      }
+      const taskIndex = requestedTask && !requestedTask.disabled
         ? requestedIndex
         : tasks.findIndex((task) => !task.completedToday && !task.disabled);
       if (groupIndex < 0 || taskIndex < 0) {
         wx.showToast({ title: t('dailySpeakingCompleted'), icon: 'none' });
         return;
-      }
-      if (requestedTask && requestedTask.completedToday && taskIndex !== requestedIndex) {
-        wx.showToast({ title: t('openNextSpeakingSegment'), icon: 'none' });
       }
       this.openTaskByIndex(groupIndex, taskIndex);
     } finally {

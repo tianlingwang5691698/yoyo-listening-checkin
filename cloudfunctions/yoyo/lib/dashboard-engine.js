@@ -151,9 +151,32 @@ function getTaskMinutes(tasks, completedOnly) {
   return durationSec > 0 ? Math.max(1, Math.round(durationSec / 60)) : 0;
 }
 
-function isReportCurrentForPlan(report, activeListeningPlan, useCustomListeningPlan) {
+function isReportCurrentForPlan(report, activeListeningPlan, useCustomListeningPlan, dailyTasks) {
   if (!report) return false;
-  if (!useCustomListeningPlan) return true;
+  if (!useCustomListeningPlan) {
+    const getAliases = (item) => new Set([
+      item && item.taskId,
+      item && item.originalTaskId,
+      item && item.taskSnapshot && item.taskSnapshot.taskId,
+      item && item.taskSnapshot && item.taskSnapshot.originalTaskId
+    ].map((value) => String(value || '')).filter(Boolean));
+    const currentRows = (dailyTasks || []).filter((task) => getAliases(task).size);
+    const reportRows = (report.items || []).filter((item) => getAliases(item).size);
+    if (!currentRows.length || currentRows.length !== reportRows.length) return false;
+    const unmatchedReports = reportRows.slice();
+    return currentRows.every((task) => {
+      const taskCategory = String(task.category || '');
+      const taskAliases = getAliases(task);
+      const matchIndex = unmatchedReports.findIndex((item) => {
+        const reportCategory = String(item.category || (item.taskSnapshot && item.taskSnapshot.category) || '');
+        return (!taskCategory || !reportCategory || taskCategory === reportCategory)
+          && Array.from(getAliases(item)).some((taskId) => taskAliases.has(taskId));
+      });
+      if (matchIndex < 0) return false;
+      unmatchedReports.splice(matchIndex, 1);
+      return true;
+    });
+  }
   if (String(report.planSource || '') !== 'custom-listening') return false;
   const planId = String((activeListeningPlan && (activeListeningPlan.planId || activeListeningPlan._id)) || '');
   if (planId && String(report.listeningPlanId || '') !== planId) return false;
@@ -398,7 +421,7 @@ async function getDashboardData(ctx, deps, options = {}) {
     isYoyoFixedPlan: useFixedYoyoPlan
   };
   if (includeTodayListeningMinutes) {
-    const reportIsCurrent = isReportCurrentForPlan(todayReport, activeListeningPlan, useCustomListeningPlan);
+    const reportIsCurrent = isReportCurrentForPlan(todayReport, activeListeningPlan, useCustomListeningPlan, dailyTasks);
     const reportGoalMinutes = reportIsCurrent ? getReportGoalMinutes(todayReport) : null;
     result.todayListeningMinutes = reportIsCurrent
       ? Number(todayReport.totalMinutes || 0)

@@ -193,6 +193,7 @@
           </view>
           <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
             <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting && !repeatScoring}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
+            <button class="repeat-inline-choice-button is-secondary" wx:if="{{result && !tempFilePath && !recording && !submitting && !repeatScoring}}" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
             <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting && !repeatScoring}}">
               <button class="repeat-inline-choice-button is-secondary" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
               <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>
@@ -461,6 +462,7 @@
           </view>
           <view class="repeat-inline-actions" wx:if="{{activeId === item.id && repeatPromptReady && !questionPlaying && !questionLoading}}">
             <button class="repeat-inline-record {{recording ? 'is-recording' : ''}}" wx:if="{{!tempFilePath && !result && !submitting && !repeatScoring}}" hover-class="is-pressed" bindtap="toggleRepeatRecording">{{recording ? texts.endRepeat : texts.startRepeat}}</button>
+            <button class="repeat-inline-choice-button is-secondary" wx:if="{{result && !tempFilePath && !recording && !submitting && !repeatScoring}}" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
             <view class="repeat-inline-choice" wx:if="{{tempFilePath && !recording && !submitting && !repeatScoring}}">
               <button class="repeat-inline-choice-button is-secondary" hover-class="is-pressed" bindtap="restartRepeatRecording">{{texts.restartRepeat}}</button>
               <button class="repeat-inline-choice-button is-primary" hover-class="is-pressed" bindtap="replayRepeatRecording">{{answerPlaying ? texts.stopPlayback : texts.replayRecording}}</button>

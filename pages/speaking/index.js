@@ -332,6 +332,21 @@ function formatDuration(ms) {
   return seconds ? `${seconds}${text('scoreUnit', ' 秒').replace('分', '秒').replace(' points', ' sec')}` : '';
 }
 
+function getAttemptTimestamp(attempt) {
+  const timestamp = Date.parse(attempt && (attempt.updatedAt || attempt.createdAt) || '');
+  return Number.isFinite(timestamp) ? timestamp : 0;
+}
+
+function buildStoredRepeatResult(attempt) {
+  return {
+    score: Number(attempt && attempt.score || 0),
+    accuracy: Number(attempt && attempt.pronunciationAccuracyScore || 0),
+    fluency: Number(attempt && attempt.pronunciationFluencyScore || 0),
+    completion: Number(attempt && attempt.pronunciationCompletionScore || 0),
+    feedback: String(attempt && attempt.feedback || '')
+  };
+}
+
 Page({
   data: page.createCloudPageData({
     viewMode: 'home',
@@ -422,7 +437,8 @@ Page({
         audioTaskId: String(options.audioTaskId || ''),
         paragraphIndex: Math.max(1, Number(options.paragraphIndex || 1)),
         sentenceStartIndex: Math.max(1, Number(options.sentenceStart || 1)),
-        sentenceEndIndex: Math.max(1, Number(options.sentenceEnd || options.sentenceStart || 1))
+        sentenceEndIndex: Math.max(1, Number(options.sentenceEnd || options.sentenceStart || 1)),
+        reviewCompleted: String(options.reviewCompleted || '') === '1'
       }
       : null;
     let selectedLevel = this.repeatPlanRequest ? 'A1' : 'A2';
@@ -1010,17 +1026,60 @@ Page({
     let exercises = isDailySegment
       ? allExercises.slice(request.sentenceStartIndex - 1, request.sentenceEndIndex)
       : allExercises;
-    if (isDailySegment && store.getDeviceStudyRole && store.getDeviceStudyRole() === 'student') {
+    let reviewSessions = {};
+    const shouldLoadDailyAttempts = isDailySegment && (
+      request.reviewCompleted
+      || (store.getDeviceStudyRole && store.getDeviceStudyRole() === 'student')
+    );
+    if (shouldLoadDailyAttempts) {
       try {
         const result = await store.getSpeakingAttempts({});
         if (result && result.syncMode === 'cloud-error') {
           throw new Error(result.cloudError && result.cloudError.message || 'getSpeakingAttempts-cloud-error');
         }
-        const completedSentenceIds = new Set((result.attempts || [])
+        const latestAttempts = (result.attempts || [])
           .filter((item) => item.category === 'speaking' && item.attemptType === 'standalone_sentence_repeat')
-          .map((item) => String(item.taskId || ''))
-          .filter(Boolean));
-        exercises = exercises.filter((exercise) => !completedSentenceIds.has(exercise.id));
+          .reduce((byTaskId, item) => {
+            const taskId = String(item.taskId || '');
+            const previous = byTaskId.get(taskId);
+            if (taskId && (!previous || getAttemptTimestamp(item) >= getAttemptTimestamp(previous))) {
+              byTaskId.set(taskId, item);
+            }
+            return byTaskId;
+          }, new Map());
+        if (request.reviewCompleted) {
+          exercises = exercises.map((exercise) => {
+            const attempt = latestAttempts.get(exercise.id);
+            return attempt
+              ? Object.assign({}, exercise, { repeatResult: buildStoredRepeatResult(attempt) })
+              : exercise;
+          });
+          const sessionRows = await Promise.all(exercises.map(async (exercise) => {
+            const attempt = latestAttempts.get(exercise.id);
+            if (!attempt) return null;
+            let tempFilePath = '';
+            if (attempt.answerAudioFileId) {
+              try {
+                tempFilePath = await store.getTempFileURL(attempt.answerAudioFileId);
+              } catch (error) {}
+            }
+            const recordDurationMs = Number(attempt.answerDurationMs || attempt.recordDurationMs || 0);
+            return [exercise.id, {
+              result: buildStoredRepeatResult(attempt),
+              tempFilePath,
+              recordDurationMs,
+              recordDurationText: attempt.answerDurationText || formatDuration(recordDurationMs),
+              scoring: false,
+              errorText: ''
+            }];
+          }));
+          reviewSessions = sessionRows.filter(Boolean).reduce((sessions, row) => {
+            sessions[row[0]] = row[1];
+            return sessions;
+          }, {});
+        } else {
+          exercises = exercises.filter((exercise) => !latestAttempts.has(exercise.id));
+        }
       } catch (error) {
         const message = String(error && error.message || error || '');
         console.warn(`[speaking-daily-plan] pages/speaking.startSelectedRepeat -> store.getSpeakingAttempts -> cloud.getSpeakingAttempts -> attempts: ${message}; taskId=${request.audioTaskId}`);
@@ -1034,8 +1093,9 @@ Page({
       }
     }
     if (!exercises.length) return;
-    this.repeatPracticeSessions = {};
+    this.repeatPracticeSessions = reviewSessions;
     this.repeatScoringRequests = {};
+    const initialSession = reviewSessions[exercises[0].id] || {};
     this.setData({
       viewMode: 'practice',
       pageTitle: text('practiceTitle', '分级句子跟读'),
@@ -1043,10 +1103,10 @@ Page({
       exercises,
       activeId: exercises[0].id,
       activeExercise: exercises[0],
-      tempFilePath: '',
-      recordDurationMs: 0,
-      recordDurationText: '',
-      result: null,
+      tempFilePath: initialSession.tempFilePath || '',
+      recordDurationMs: Number(initialSession.recordDurationMs || 0),
+      recordDurationText: initialSession.recordDurationText || '',
+      result: initialSession.result || null,
       repeatScoring: false,
       errorText: '',
       repeatPromptReady: false,

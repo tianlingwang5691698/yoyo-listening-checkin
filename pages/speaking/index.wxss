@@ -4200,6 +4200,18 @@
   background: #d6e0d4;
   box-shadow: inset 5rpx 0 0 #668000;
 }
+.theme-tactical .repeat-sentence-score {
+  border: 2rpx solid #668000;
+  background: #e4efbd;
+  color: #314000;
+}
+.theme-tactical .repeat-sentence-play {
+  border: 2rpx solid #314000;
+  background: #eef2ec;
+}
+.theme-tactical .repeat-sentence-play view { border-left-color: #314000; }
+.theme-tactical .repeat-sentence-play text { background: #668000; }
+.theme-tactical .repeat-inline-result-total { color: #314000; }
 .theme-tactical .repeat-audio-option.is-active { background: #e4edc9; }
 .theme-tactical .tactical-speaking-section-tab.is-active,
 .theme-tactical .speaking-level-tab.is-active,
