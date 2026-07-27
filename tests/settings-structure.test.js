@@ -18,6 +18,23 @@ test('settings page is registered and every profile theme has one settings entry
   assert.match(profileJs, /openSettingsPage\(\)[\s\S]*url: '\/pages\/settings\/index',[\s\S]*animationType: 'none',[\s\S]*animationDuration: 0/);
 });
 
+test('new users default to the dragon theme without overriding saved valid themes', () => {
+  const appJs = read('app.js');
+  const themeJs = read('utils/theme.js');
+  const pageJs = read('utils/page.js');
+  const tabBarJs = read('custom-tab-bar/index.js');
+  const grammarClassroomJs = read('grammar-package/pages/classroom/index.js');
+
+  assert.match(appJs, /theme:\s*'dragon'/);
+  assert.match(themeJs, /return THEME_MAP\[value\] \? value : 'dragon'/);
+  assert.match(pageJs, /theme:\s*'dragon'/);
+  assert.match(pageJs, /themeClass:\s*'theme-dragon'/);
+  assert.match(pageJs, /currentThemeLabel:\s*'龙珠修炼'/);
+  assert.match(tabBarJs, /theme:\s*'dragon'/);
+  assert.match(tabBarJs, /themeClass:\s*'theme-dragon'/);
+  assert.match(grammarClassroomJs, /theme:\s*'dragon'/);
+});
+
 test('settings and profile render all five themes explicitly', () => {
   const settingsJs = read('pages/settings/index.js');
   const settingsWxml = read('pages/settings/index.wxml');

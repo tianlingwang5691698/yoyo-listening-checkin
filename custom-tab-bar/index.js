@@ -15,8 +15,8 @@ Component({
   data: {
     selected: 0,
     hidden: false,
-    theme: 'warm',
-    themeClass: 'theme-warm',
+    theme: 'dragon',
+    themeClass: 'theme-dragon',
     list: buildTabList()
   },
   lifetimes: {

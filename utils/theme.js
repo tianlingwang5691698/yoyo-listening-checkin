@@ -50,7 +50,7 @@ const SLIDER_COLORS = {
 };
 
 function normalizeTheme(value) {
-  return THEME_MAP[value] ? value : 'warm';
+  return THEME_MAP[value] ? value : 'dragon';
 }
 
 function getTheme() {

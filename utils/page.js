@@ -7,10 +7,10 @@ const CLOUD_PAGE_DEFAULTS = {
   isReviewBuild: false,
   showCloudDebug: false,
   syncDebug: null,
-  theme: 'warm',
-  themeClass: 'theme-warm',
+  theme: 'dragon',
+  themeClass: 'theme-dragon',
   themeOptions: theme.getThemeOptions(),
-  currentThemeLabel: '雾蓝玻璃',
+  currentThemeLabel: '龙珠修炼',
   language: i18n.getLanguage(),
   texts: i18n.getCommonTexts()
 };

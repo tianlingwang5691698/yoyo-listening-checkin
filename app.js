@@ -7,7 +7,7 @@ App({
     brandName: appConfig.brandName,
     identityConfirmed: false,
     heatmapRefreshToken: 0,
-    theme: 'warm',
+    theme: 'dragon',
     language: 'zh-CN'
   },
   onLaunch() {

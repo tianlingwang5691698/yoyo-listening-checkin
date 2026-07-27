@@ -152,7 +152,7 @@ function uiText(english) {
 
 Page({
   data: {
-    theme: 'warm',
+    theme: 'dragon',
     language: 'zh-CN',
     ui: uiText(false),
     screen: 'system',
