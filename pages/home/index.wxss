@@ -3920,6 +3920,151 @@
   filter: saturate(1.04) brightness(1.04);
 }
 
+.theme-voyage .voyage-header {
+  margin-top: 520rpx;
+  padding-top: 0 !important;
+}
+
+.theme-voyage .voyage-scroll {
+  margin-top: 24rpx;
+}
+
+.theme-voyage .voyage-poster-ocean {
+  left: 0;
+  width: 100%;
+  height: 620rpx;
+  object-fit: cover;
+}
+
+.theme-voyage .voyage-poster-strawhat {
+  position: relative;
+  width: 180rpx;
+  height: 180rpx;
+  margin: -14rpx auto 22rpx;
+  overflow: hidden;
+  border: 8rpx solid #a86e34;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background:
+    linear-gradient(180deg, #65c8ed 0 56%, #e9f8ff 57% 60%, #1686ba 61% 100%);
+  box-shadow:
+    inset 0 0 0 5rpx rgba(255, 244, 214, 0.55),
+    0 10rpx 0 #173a50,
+    0 18rpx 28rpx rgba(23, 58, 80, 0.2);
+}
+
+.theme-voyage .voyage-strawhat-crown {
+  position: absolute;
+  z-index: 2;
+  top: 46rpx;
+  left: 50%;
+  width: 88rpx;
+  height: 58rpx;
+  margin-left: -44rpx;
+  border: 5rpx solid #8b5527;
+  border-radius: 46rpx 46rpx 16rpx 16rpx;
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(90deg, rgba(157, 94, 35, 0.13) 0 3rpx, transparent 3rpx 12rpx),
+    #f3c75a;
+}
+
+.theme-voyage .voyage-strawhat-crown::after {
+  content: "";
+  position: absolute;
+  right: -4rpx;
+  bottom: 5rpx;
+  left: -4rpx;
+  height: 17rpx;
+  border-top: 3rpx solid #8c2f29;
+  border-bottom: 3rpx solid #8c2f29;
+  background: #c84436;
+}
+
+.theme-voyage .voyage-strawhat-brim {
+  position: absolute;
+  z-index: 1;
+  top: 92rpx;
+  left: 50%;
+  width: 138rpx;
+  height: 42rpx;
+  margin-left: -69rpx;
+  border: 5rpx solid #8b5527;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(12deg, rgba(157, 94, 35, 0.12) 0 3rpx, transparent 3rpx 13rpx),
+    #f6cf67;
+}
+
+.theme-voyage .voyage-poster-anchor-mark {
+  width: 190rpx;
+  height: 190rpx;
+  margin: -8rpx auto 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8rpx solid #a86e34;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 34% 24%, rgba(255, 255, 255, 0.72) 0 7%, transparent 8%),
+    linear-gradient(145deg, #73d6ef, #2388b6 68%, #176a99);
+  box-shadow:
+    inset 0 0 0 6rpx rgba(255, 244, 214, 0.52),
+    0 10rpx 0 #173a50,
+    0 18rpx 28rpx rgba(23, 58, 80, 0.2);
+}
+
+.theme-voyage .voyage-poster-anchor-mark text {
+  color: #fff4d6;
+  font-family: "Apple Symbols", sans-serif;
+  font-size: 96rpx;
+  line-height: 1;
+  text-shadow: 0 5rpx 0 #8a5b2b;
+}
+
+.theme-voyage .voyage-poster-credit {
+  width: 336rpx;
+  min-height: 100rpx;
+  padding: 12rpx 20rpx;
+  gap: 18rpx;
+  border: 4rpx solid #176a99;
+  border-radius: 12rpx;
+  background: #fff4d6;
+  box-shadow: 0 7rpx 0 #a86e34;
+  transform: rotate(-1deg);
+}
+
+.theme-voyage .voyage-credit-anchor {
+  width: 70rpx;
+  height: 70rpx;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid #a86e34;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: #176a99;
+  color: #fff4d6;
+}
+
+.theme-voyage .voyage-credit-anchor text {
+  font-family: "Apple Symbols", sans-serif;
+  font-size: 41rpx;
+  line-height: 1;
+}
+
+.theme-voyage .voyage-poster-credit-copy {
+  color: #8a5b2b;
+}
+
+.theme-voyage .voyage-poster-credit-copy view {
+  color: #173a50;
+  font-family: "PingFang SC", sans-serif;
+}
+
 .voyage-sun,
 .voyage-cloud,
 .voyage-gull,
@@ -3985,12 +4130,14 @@
   right: 0;
   bottom: auto;
   left: 0;
-  height: auto;
+  width: 100%;
+  height: 650rpx;
+  object-fit: cover;
 }
 
 .theme-dragon .voyage-header {
   min-height: 146rpx;
-  margin-top: 160rpx;
+  margin-top: 350rpx;
   padding-right: 0;
   padding-left: 0;
 }
@@ -4370,6 +4517,104 @@
 .theme-dragon .voyage-poster-credit {
   border-color: #102e62;
   background: #fffdf1;
+}
+
+.theme-dragon .voyage-avatar .dragon-classic-avatar {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  transform: none;
+}
+
+.theme-dragon .dragon-poster-four-star {
+  position: relative;
+  width: 190rpx;
+  height: 190rpx;
+  margin: -8rpx auto 26rpx;
+  border: 8rpx solid #f45a16;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 33% 25%, rgba(255, 255, 255, 0.9) 0 7%, rgba(255, 255, 255, 0) 8%),
+    linear-gradient(145deg, #ffe66f 0%, #ffc22e 58%, #f59a18 100%);
+  box-shadow:
+    inset 0 0 0 6rpx rgba(255, 255, 255, 0.35),
+    0 9rpx 0 #102e62,
+    0 18rpx 28rpx rgba(16, 46, 98, 0.18);
+}
+
+.theme-dragon .dragon-poster-four-star text {
+  position: absolute;
+  color: #c92818;
+  font-size: 35rpx;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2rpx 0 rgba(119, 25, 17, 0.14);
+}
+
+.theme-dragon .dragon-poster-four-star .star-one { top: 42rpx; left: 72rpx; }
+.theme-dragon .dragon-poster-four-star .star-two { top: 72rpx; left: 45rpx; }
+.theme-dragon .dragon-poster-four-star .star-three { top: 72rpx; right: 45rpx; }
+.theme-dragon .dragon-poster-four-star .star-four { top: 104rpx; left: 72rpx; }
+
+.theme-dragon .voyage-poster-credit.is-dragon-classic {
+  width: 340rpx;
+  min-height: 100rpx;
+  padding: 12rpx 20rpx;
+  gap: 18rpx;
+  border: 4rpx solid #102e62;
+  border-radius: 12rpx;
+  background: #fffdf1;
+  box-shadow: 0 7rpx 0 #f45a16;
+  transform: rotate(-1deg);
+}
+
+.theme-dragon .dragon-credit-ball {
+  position: relative;
+  width: 72rpx;
+  height: 72rpx;
+  flex: 0 0 auto;
+  border: 4rpx solid #f45a16;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #ffe36a, #ffae1d);
+  box-shadow: inset 0 0 0 3rpx rgba(255, 255, 255, 0.36);
+}
+
+.theme-dragon .dragon-credit-ball text {
+  position: absolute;
+  color: #c92818;
+  font-size: 14rpx;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.theme-dragon .dragon-credit-ball text:nth-child(1) { top: 14rpx; left: 26rpx; }
+.theme-dragon .dragon-credit-ball text:nth-child(2) { top: 27rpx; left: 15rpx; }
+.theme-dragon .dragon-credit-ball text:nth-child(3) { top: 27rpx; right: 15rpx; }
+.theme-dragon .dragon-credit-ball text:nth-child(4) { top: 40rpx; left: 26rpx; }
+
+.theme-dragon .is-dragon-classic .voyage-poster-credit-copy {
+  color: #f45a16;
+}
+
+.theme-dragon .is-dragon-classic .voyage-poster-credit-copy text {
+  font-size: 16rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+}
+
+.theme-dragon .is-dragon-classic .voyage-poster-credit-copy view {
+  color: #102e62;
+  font-family: "PingFang SC", sans-serif;
+  font-size: 28rpx;
+  font-weight: 800;
 }
 
 .theme-dragon .voyage-poster-dots view { border-color: #f45a16; }

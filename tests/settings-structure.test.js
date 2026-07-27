@@ -94,8 +94,8 @@ test('dragon theme uses dedicated home art and global theme tokens', () => {
 
   assert.match(themeJs, /key: 'dragon', label: '龙珠修炼'/);
   assert.match(themeEntry, /themes\/dragon\.wxss/);
-  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/home-kid-goku-nimbus\.jpg/);
-  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/subpages\/profile-kid-goku\.jpg/);
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-home-v2\/home-kid-goku-nimbus-fullbody-750x650-v2\.jpg/);
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-avatar-v2\/avatar-young-goku-v2\.jpg/);
   assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/ad-goku-bulma-quest\.jpg/);
   assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-classic-v1\/ad-kame-training\.jpg/);
   assert.match(dragonWxss, /\.theme-dragon/);
@@ -239,10 +239,23 @@ test('tactical subpage images keep their dedicated sources and fixed display siz
 
 test('voyage anime theme uses distinct role-matched images with stable sizes', () => {
   const release = '_assets/themes/voyage/20260727-anime-v1/';
+  const singleShipRelease = '_assets/themes/voyage/20260727-single-ship-v4/';
   const homeWxml = read('pages/home/index.wxml');
-  assert.match(homeWxml, new RegExp(`${release}ad-shanks-sunny\\.jpg`));
-  assert.match(homeWxml, new RegExp(`${release}ad-luffy-zoro-sunny\\.jpg`));
-  assert.match(homeWxml, new RegExp(`${release}home-luffy-nami-sunny\\.jpg`));
+  const homeWxss = read('pages/home/index.wxss');
+  const levelWxss = read('pages/level/index.wxss');
+  assert.match(homeWxml, new RegExp(`${singleShipRelease}ad-luffy-shanks-harbor-750x620-v4\\.jpg`));
+  assert.match(homeWxml, /_assets\/themes\/voyage\/20260727-ad2-v3\/ad-luffy-sanji-breakfast-750x620-v3\.jpg/);
+  assert.match(homeWxml, new RegExp(`${singleShipRelease}home-luffy-zoro-one-deck-750x520-v4\\.jpg`));
+  assert.match(homeWxml, /class="voyage-poster-strawhat"/);
+  assert.match(homeWxml, /class="voyage-poster-anchor-mark"/);
+  assert.match(homeWxml, /class="voyage-credit-anchor"/);
+  assert.match(homeWxss, /\.theme-voyage \.voyage-poster-ocean\s*\{[^}]*left:\s*0[^}]*width:\s*100%[^}]*height:\s*620rpx/);
+  assert.match(homeWxss, /\.theme-voyage \.voyage-header\s*\{[^}]*margin-top:\s*520rpx[^}]*padding-top:\s*0 !important/);
+  assert.match(homeWxss, /\.theme-voyage \.voyage-scroll\s*\{[^}]*margin-top:\s*24rpx/);
+  assert.match(levelWxss, /\.theme-voyage \.voyage-level-title\s*\{[^}]*color:\s*#102f43[^}]*opacity:\s*1/);
+  assert.ok(fs.existsSync(path.join(root, 'assets/voyage-framed-v2/ad-luffy-shanks-harbor-750x620-v4.jpg')));
+  assert.ok(fs.existsSync(path.join(root, 'assets/voyage-framed-v2/ad-luffy-sanji-breakfast-750x620-v3.jpg')));
+  assert.ok(fs.existsSync(path.join(root, 'assets/voyage-framed-v2/home-luffy-zoro-one-deck-750x520-v4.jpg')));
 
   const cases = [
     ['pages/level/index.wxml', 'pages/level/index.wxss', 'listening-usopp-radio.jpg', 'voyage-anime-subpage-banner', '268rpx'],
@@ -269,7 +282,19 @@ test('classic dragon theme uses child-era role-matched images with stable sizes'
   const homeWxml = read('pages/home/index.wxml');
   assert.match(homeWxml, new RegExp(`${release}ad-goku-bulma-quest\\.jpg`));
   assert.match(homeWxml, new RegExp(`${release}ad-kame-training\\.jpg`));
-  assert.match(homeWxml, new RegExp(`${release}home-kid-goku-nimbus\\.jpg`));
+  assert.match(homeWxml, /_assets\/themes\/dragon\/20260727-home-v2\/home-kid-goku-nimbus-fullbody-750x650-v2\.jpg/);
+  assert.match(homeWxml, /20260727-avatar-v2\/avatar-young-goku-v2\.jpg" mode="aspectFill"/);
+  assert.match(homeWxml, /wx:if="\{\{theme === 'dragon'\}\}" class="dragon-poster-four-star"/);
+  assert.match(homeWxml, /class="dragon-credit-ball"/);
+  assert.ok(fs.existsSync(path.join(root, 'assets/dragon-classic-v1/avatar-young-goku-v2.jpg')));
+
+  const homeWxss = read('pages/home/index.wxss');
+  assert.match(homeWxss, /\.theme-dragon \.dragon-shenron-art\s*\{[^}]*width:\s*100%[^}]*height:\s*650rpx/);
+  assert.match(homeWxss, /\.theme-dragon \.voyage-header\s*\{[^}]*margin-top:\s*350rpx/);
+  assert.match(homeWxss, /\.theme-dragon \.voyage-avatar \.dragon-classic-avatar\s*\{[^}]*position:\s*static[^}]*height:\s*100%/);
+  assert.match(homeWxss, /\.theme-dragon \.dragon-poster-four-star\s*\{[^}]*border-radius:\s*50%/);
+  assert.match(homeWxss, /\.theme-dragon \.voyage-poster-credit\.is-dragon-classic\s*\{[^}]*border:\s*4rpx solid #102e62/);
+  assert.ok(fs.existsSync(path.join(root, 'assets/dragon-home-v2/home-kid-goku-nimbus-fullbody-750x650-v2.jpg')));
 
   const cases = [
     ['pages/level/index.wxml', 'pages/level/index.wxss', 'listening-goku-bulma-radio.jpg', 'dragon-classic-subpage-banner', '268rpx'],
@@ -309,7 +334,8 @@ test('voyage entry poster keeps the design and content credit', () => {
   assert.ok(voyagePoster);
   assert.match(voyagePoster[0], /voyage-poster-credit/);
   assert.match(voyagePoster[0], /\{\{texts\.posterCreditName\}\}/);
-  assert.match(homeWxss, /\.voyage-poster-credit-seal/);
+  assert.match(voyagePoster[0], /voyage-credit-anchor/);
+  assert.match(homeWxss, /\.theme-voyage \.voyage-credit-anchor/);
 });
 
 test('settings is local-first and admin visibility is cloud-authoritative', () => {

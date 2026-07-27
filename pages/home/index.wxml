@@ -120,8 +120,8 @@
 
 <view wx:elif="{{theme === 'voyage' || theme === 'dragon'}}" class="theme-{{theme}} page-shell voyage-home-page {{theme === 'dragon' ? 'dragon-home-page' : ''}} language-{{language}}">
   <view class="voyage-sky" aria-hidden="true">
-    <image wx:if="{{theme === 'dragon'}}" class="voyage-ocean-art dragon-shenron-art dragon-classic-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/home-kid-goku-nimbus.jpg" mode="aspectFill" />
-    <image wx:else class="voyage-ocean-art voyage-anime-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/home-luffy-nami-sunny.jpg" mode="aspectFill" />
+    <image wx:if="{{theme === 'dragon'}}" class="voyage-ocean-art dragon-shenron-art dragon-classic-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-home-v2/home-kid-goku-nimbus-fullbody-750x650-v2.jpg" mode="aspectFill" />
+    <image wx:else class="voyage-ocean-art voyage-anime-home-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-single-ship-v4/home-luffy-zoro-one-deck-750x520-v4.jpg" mode="aspectFill" />
     <view class="voyage-sun"></view>
     <view class="voyage-cloud cloud-left"></view>
     <view class="voyage-cloud cloud-right"></view>
@@ -142,7 +142,7 @@
 
   <view class="voyage-header" style="{{homeNavStyle}}">
     <view class="voyage-avatar">
-      <image wx:if="{{theme === 'dragon'}}" class="dragon-avatar-image dragon-classic-avatar" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/subpages/profile-kid-goku.jpg" mode="widthFix" />
+      <image wx:if="{{theme === 'dragon'}}" class="dragon-avatar-image dragon-classic-avatar" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-avatar-v2/avatar-young-goku-v2.jpg" mode="aspectFill" />
       <image wx:else class="voyage-profile-avatar" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/subpages/profile-luffy-sunny.jpg" mode="widthFix" />
     </view>
     <view class="voyage-welcome">
@@ -252,21 +252,16 @@
   <view class="voyage-entry-poster is-page-{{entryPosterPage}}" wx:if="{{entryPosterVisible}}">
     <image wx:if="{{theme === 'dragon' && entryPosterPage === 0}}" class="voyage-poster-ocean dragon-classic-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/ad-goku-bulma-quest.jpg" mode="aspectFill" aria-hidden="true" />
     <image wx:elif="{{theme === 'dragon'}}" class="voyage-poster-ocean dragon-classic-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/dragon/20260727-classic-v1/ad-kame-training.jpg" mode="aspectFill" aria-hidden="true" />
-    <image wx:elif="{{entryPosterPage === 0}}" class="voyage-poster-ocean voyage-anime-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/ad-shanks-sunny.jpg" mode="aspectFill" aria-hidden="true" />
-    <image wx:else class="voyage-poster-ocean voyage-anime-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-anime-v1/ad-luffy-zoro-sunny.jpg" mode="aspectFill" aria-hidden="true" />
+    <image wx:elif="{{entryPosterPage === 0}}" class="voyage-poster-ocean voyage-anime-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-single-ship-v4/ad-luffy-shanks-harbor-750x620-v4.jpg" mode="aspectFill" aria-hidden="true" />
+    <image wx:else class="voyage-poster-ocean voyage-anime-poster-art" src="https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la/_assets/themes/voyage/20260727-ad2-v3/ad-luffy-sanji-breakfast-750x620-v3.jpg" mode="aspectFill" aria-hidden="true" />
     <view class="voyage-poster-sun-glow" aria-hidden="true"></view>
     <view class="voyage-poster-skip" bindtap="closeEntryPoster">{{texts.posterSkip}}</view>
     <view class="voyage-poster-sheet">
       <view class="voyage-poster-sheet-rope" aria-hidden="true"></view>
       <block wx:if="{{entryPosterPage === 0}}">
-        <view class="voyage-poster-compass">
-          <view class="voyage-poster-compass-ring"></view>
-          <text class="voyage-poster-cardinal cardinal-n">N</text>
-          <text class="voyage-poster-cardinal cardinal-e">E</text>
-          <text class="voyage-poster-cardinal cardinal-s">S</text>
-          <text class="voyage-poster-cardinal cardinal-w">W</text>
-          <view class="voyage-poster-needle"></view>
-          <view class="voyage-poster-pin"></view>
+        <view wx:if="{{theme === 'voyage'}}" class="voyage-poster-strawhat" aria-hidden="true">
+          <view class="voyage-strawhat-crown"></view>
+          <view class="voyage-strawhat-brim"></view>
         </view>
         <view class="voyage-poster-kicker">{{theme === 'dragon' ? 'TRAIN · LEARN · BREAK LIMITS' : 'LISTEN · LEARN · VOYAGE'}}</view>
         <view class="voyage-poster-title">{{theme === 'dragon' ? texts.dragonPosterTitle : texts.posterIntroTitle}}</view>
@@ -275,12 +270,21 @@
         <view class="voyage-poster-action" bindtap="showNextEntryPosterPage">{{texts.posterNext}}<text>›</text></view>
       </block>
       <block wx:else>
-        <view class="voyage-poster-map-mark"><view></view></view>
+        <view wx:if="{{theme === 'dragon'}}" class="dragon-poster-four-star" aria-hidden="true">
+          <text class="star-one">★</text>
+          <text class="star-two">★</text>
+          <text class="star-three">★</text>
+          <text class="star-four">★</text>
+        </view>
+        <view wx:else class="voyage-poster-anchor-mark" aria-hidden="true"><text>⚓</text></view>
         <view class="voyage-poster-kicker">CHOOSE YOUR CREW</view>
         <view class="voyage-poster-title is-guide">{{texts.posterGuideTitle}}</view>
         <view class="voyage-poster-copy">{{texts.posterGuideStep1}} {{texts.posterGuideStep2}}</view>
-        <view class="voyage-poster-credit">
-          <view class="voyage-poster-credit-seal"><text>WTL</text><view>CAPTAIN</view></view>
+        <view class="voyage-poster-credit {{theme === 'dragon' ? 'is-dragon-classic' : ''}}">
+          <view wx:if="{{theme === 'dragon'}}" class="dragon-credit-ball" aria-hidden="true">
+            <text>★</text><text>★</text><text>★</text><text>★</text>
+          </view>
+          <view wx:else class="voyage-credit-anchor" aria-hidden="true"><text>⚓</text></view>
           <view class="voyage-poster-credit-copy"><text>{{texts.posterCreditLabel}}</text><view>{{texts.posterCreditName}}</view></view>
         </view>
         <view class="voyage-poster-back" bindtap="showPrevEntryPosterPage">{{texts.posterBack}}</view>

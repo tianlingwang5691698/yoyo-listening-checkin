@@ -741,6 +741,22 @@
   filter: none;
 }
 
+.theme-voyage .voyage-level-kicker {
+  color: #8a5b2b;
+  opacity: 1;
+}
+
+.theme-voyage .voyage-level-title {
+  color: #102f43;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.theme-voyage .voyage-level-subtitle {
+  color: #5d5141;
+  opacity: 1;
+}
+
 .theme-dragon .voyage-level-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 94rpx;
